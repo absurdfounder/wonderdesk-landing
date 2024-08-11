@@ -18,6 +18,30 @@
 
 
 
+.font-roboto-mono {
+    font-family: var(--font-roboto-mono);
+  }
+  
+  .font-source-serif-4 {
+    font-family: var(--font-source-serif-4);
+  }
+  
+  .font-comfortaa {
+    font-family: var(--font-comfortaa);
+  }
+  
+  .font-josefin-slab {
+    font-family: var(--font-josefin-slab);
+  }
+  
+  .font-silkscreen {
+    font-family: var(--font-silkscreen);
+  }
+  
+  .font-bungee {
+    font-family: var(--font-bungee);
+  }
+
 
 /*custom css for the website here*/
 
