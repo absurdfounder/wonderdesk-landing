@@ -144,7 +144,7 @@ export default function FeaturesBlocks() {
 
             <div className="md:w-1/2 sm:w-full">
               <div className="text-start mt-6 w-full p-4">
-                <h2 className="h2 font-bold mb-4">Your content lives in Notion</h2>
+                <h2 className="h2 font-bold mb-4">Your content <span className="font-source-serif-4 font-normal text-orange-600">lives in Notion</span></h2>
                 <p className="text-gray-700">
                   Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus what’s actually important to you: creating content and building
                   your brand without worrying about configurations, plugins, downtime, performance, or security.
@@ -175,7 +175,7 @@ export default function FeaturesBlocks() {
 
             <div className="md:w-1/2 sm:w-full">
               <div className="text-start mt-6 w-full p-4">
-                <h2 className="h2 font-bold mb-4">Customize to your brand</h2>
+                <h2 className="h2 font-bold mb-4">Customize to <span className="font-source-serif-4 font-normal text-orange-600">your brand</span></h2>
                 <p className="text-gray-700">
                   Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside BoringSites without code to make you proud of the unique site you share with the world. Add
                   custom-code only if you want to.
@@ -205,7 +205,7 @@ export default function FeaturesBlocks() {
           <section className="py-12 mt-8 mb-8 md:flex sm:grid">
             <div className="md:w-1/2 sm:w-full">
               <div className="text-start mt-6 w-full p-4">
-                <h2 className="h2 font-bold mb-4">World-class Performance</h2>
+                <h2 className="h2 font-bold mb-4">World-class <span className="font-source-serif-4 font-normal text-orange-600">Performance</span></h2>
                 <p className="text-gray-700">
                   Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they’ll never close the page for taking too long to load. On average BoringSites sites perform better than any
                   industry leading website builder.
@@ -235,7 +235,7 @@ export default function FeaturesBlocks() {
           <section className="py-12 mt-8 mb-8 md:flex sm:grid">
             <div className="md:w-1/2 sm:w-full">
               <div className="text-start mt-6 w-full p-4">
-                <h2 className="h2 font-bold mb-4">In-built Analytics</h2>
+                <h2 className="h2 font-bold mb-4">In-built <span className="font-source-serif-4 font-normal text-orange-600">Analytics</span></h2>
                 <p className="text-gray-700">
                   See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites tp help ou find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                 </p>
@@ -263,7 +263,7 @@ export default function FeaturesBlocks() {
           <section className="py-12 mt-8 mb-8 md:flex sm:grid">
             <div className="md:w-1/2 sm:w-full">
               <div className="text-start mt-6 w-full p-4">
-                <h2 className="h2 font-bold mb-4">Optimized for SEO</h2>
+                <h2 className="h2 font-bold mb-4">Optimized for <span className="font-source-serif-4 font-normal text-orange-600">SEO</span></h2>
                 <p className="text-gray-700">
 
 
@@ -293,7 +293,7 @@ export default function FeaturesBlocks() {
           <section className="py-12 mt-8 mb-8 md:flex sm:grid">
             <div className="md:w-1/2 sm:w-full">
               <div className="text-start mt-6 w-full p-4">
-                <h2 className="h2 font-bold mb-4">Integrates with your existing apps</h2>
+                <h2 className="h2 font-bold mb-4">Integrates with  <span className="font-source-serif-4 font-normal text-orange-600">your existing apps</span></h2>
                 <p className="text-gray-700">
                   BoringSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to BoringSites? We got you covered.
                 </p>

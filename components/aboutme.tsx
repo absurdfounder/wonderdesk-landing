@@ -7,12 +7,15 @@ export default function aboutme() {
 
       <div className="px-6 pt-16 mb-10 md:pt-20 max-w-6xl mx-auto px-4 sm:px-6 pb-12">
         <h2 className="mb-1 font-semibold leading-6 tracking-wide text-center text-orange-600 uppercase">
-          About BoringSites
+          How did i come to this idea ?
         </h2>
-        <h3 className="pb-8 text-2xl font-black text-center text-gray-900 sm:text-4xl tracking-snug sm:leading-15 md:leading-20">
-          Launch businesses in minutes, then grow to millions without leaving
-          Notion.
-        </h3>
+
+
+        <h1 className="h2 mb-4 text-center">
+              Launch businesses in minutes <span className="font-source-serif-4 block font-normal text-orange-600">grow to millions in traffic </span> without leaving
+              Notion.
+        </h1>
+
         <div className="grid items-start pt-6 mx-auto gap-8 md:flex md:items-start justify-center">
           <div className="float-right md:w-1/3 sm:w-full mb-6 m-auto sm:float-none sm:ml-12 sm:mb-0  ">
             <Image
