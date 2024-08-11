@@ -8,13 +8,17 @@ import { StarIcon, ArrowUpRight, Check, ShoppingBag, BookOpen, FileText, FileQue
 import VideoThumb from "@/public/images/hero-image.png";
 import ModalVideo from "@/components/modal-video";
 
-export default function Hero() {
+interface HeroProps {
+  onCategorySelect?: (category: string) => void;
+}
+
+export default function Hero({ onCategorySelect }: HeroProps) {
   const words = [
-    "Helpdesk",
-    "Marketplace",
-    "Blog",
-    "Company Wiki",
-    "Documentation",
+    "helpdesk",
+    "marketplace",
+    "blog",
+    "company wiki",
+    "documentation",
   ];
   const [index, setIndex] = useState(0);
 
@@ -25,6 +29,16 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
   
+  const handleCategoryClick = (category: string) => {
+    if (typeof onCategorySelect === 'function') {
+      onCategorySelect(category);
+    }
+    const templateSection = document.getElementById('template-section');
+    if (templateSection) {
+      templateSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section>
       <div
@@ -86,30 +100,42 @@ export default function Hero() {
             >
               <span className="text-gray-900">Turn your Notion docs</span> quickly
               into a beautiful{" "}
-              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+              <b 
+                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
+                onClick={() => handleCategoryClick('saas')}
+              >
                 SaaS
               </b>,
-              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+              <b 
+                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
+                onClick={() => handleCategoryClick('app')}
+              >
                 Apps
               </b>,
-              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+              <b 
+                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
+                onClick={() => handleCategoryClick('directory')}
+              >
                 Directories
               </b>,
-              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+              <b 
+                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
+                onClick={() => handleCategoryClick('marketplace')}
+              >
                 Marketplaces
               </b>,
-              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+              <b 
+                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
+                onClick={() => handleCategoryClick('blog')}
+              >
                 Blogs
               </b>,
-              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+              <b 
+                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
+                onClick={() => handleCategoryClick('helpdesk')}
+              >
                 Helpdesk
               </b>
-
-
-
-
-
-              
               {" "}
               – no code required.
             </p>
@@ -152,12 +178,11 @@ export default function Hero() {
             </div>
           </div>
 
-
-
           <div className="sm:flex gap-4 justify-center items-center mt-8 flex-col sm:flex-row hidden">
             <Link
               href="#"
               className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
+              onClick={() => handleCategoryClick('helpdesk')}
             >
               <FileQuestionIcon className="w-5 h-5 ml-2 text-gray-400" />
               <div className="ml-4">
@@ -168,6 +193,7 @@ export default function Hero() {
             <Link
               href="#"
               className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
+              onClick={() => handleCategoryClick('marketplace')}
             >
               <ShoppingBag className="w-5 h-5 ml-2 text-gray-400" />
               <div className="ml-4">
@@ -178,6 +204,7 @@ export default function Hero() {
             <Link
               href="#"
               className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
+              onClick={() => handleCategoryClick('blog')}
             >
               <BookOpen className="w-5 h-5 ml-2 text-gray-400" />
               <div className="ml-4">
@@ -188,6 +215,7 @@ export default function Hero() {
             <Link
               href="#"
               className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
+              onClick={() => handleCategoryClick('directory')}
             >
               <FileText className="w-5 h-5 ml-2 text-gray-400" />
               <div className="ml-4">

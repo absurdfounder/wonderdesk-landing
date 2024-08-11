@@ -5,7 +5,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "Blockchain Grants",
-        "type": "Heeelpdesk",
+        "type": "Directory",
         "provider": "CryptoFund",
         "description": "Secure funding for your blockchain projects through targeted grants.",
         "callToCopy": {
@@ -36,6 +36,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/jobwebsite.png",
         "name": "Remote Jobs",
+        "type": "Marketplace",
         "provider": "Vaibhav",
         "description": "Create a website for listing remote jobs for job applicants.",
         "callToCopy": {
@@ -66,7 +67,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/vettedtalent.png",
         "name": "Vetted Talent",
-        "type": "Heeelpdesk",
+        "type": "Marketplace",
         "provider": "BoringSites",
         "description": "Website for showing vetted talent for companies to hire.",
         "callToCopy": {
