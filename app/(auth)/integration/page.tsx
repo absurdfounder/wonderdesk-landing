@@ -37,7 +37,7 @@ const Integration = async () => {
             <p className="text-xl text-gray-600">Integrate with your stack and extend functionality with powerful integrations built by us and our amazing community.</p>
 
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center aos-init aos-animate mt-6">
-              <div><Link className="btn text-dark bg-orange-600 hover:bg-orange-700 w-full mb-4 sm:w-auto sm:mb-0" href="/contact-us">Missing Integration? Ask for Help</Link></div>
+              <div><Link className="btn text-dark bg-orange-600 hover:bg-orange-200 hover:text-orange-800 w-full mb-4 sm:w-auto sm:mb-0" href="/contact-us">Missing Integration? Ask for Help</Link></div>
             </div>
 
           </div>
