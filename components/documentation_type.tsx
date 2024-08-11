@@ -38,11 +38,7 @@ export default function Marketplace_Type() {
   return (
     <section
       id="featured-section"
-      className="relative mt-4 mb-4 pb-4 bg-gray-900 rounded-4 border-gray-600"
-      style={{
-        background:
-          "linear-gradient(45deg, rgb(255 236 225), rgb(255 222 205))",
-      }}
+      className="relative mt-4 mb-4 pb-4"
     >
       {/* Section background (needs .relative class on parent and next sibling elements) */}
       <div

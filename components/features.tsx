@@ -19,7 +19,7 @@ interface TabButtonProps {
 const TabButton: React.FC<TabButtonProps> = ({ tabIndex, icon: Icon, text, currentTab, setTab }) => (
   <button
     className={`group flex items-center justify-between text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-gray-600 hover:shadow-lg text-gray-900 ${
-      currentTab !== tabIndex ? "bg-gray-100" : "bg-orange-800 text-white"
+      currentTab !== tabIndex ? "bg-gray-100" : "bg-orange-100 text-orange-600"
     }`}
     onClick={() => setTab(tabIndex)}
   >
@@ -102,10 +102,7 @@ export default function Features() {
   return (
     <section
       id="featured-section"
-      className="relative mt-4 mb-4 pb-4 bg-gray-900 rounded-4 border-gray-600"
-      style={{
-        background: "linear-gradient(45deg, rgb(255 236 225), rgb(255 222 205))",
-      }}
+      className="relative mt-4 mb-4 pb-4"
     >
       <div className="inset-0 bg-gray-100 pointer-events-none mb-16" aria-hidden="true"></div>
 
@@ -113,7 +110,7 @@ export default function Features() {
         <div className="pt-12 md:pt-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">
-              No matter how unique your website concept is, BoringSites can support it.
+              Unique your website concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
             </h1>
             <p className="text-xl text-gray-600">
               BoringSites is designed for all types from content curation to

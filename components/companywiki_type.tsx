@@ -38,11 +38,7 @@ export default function CompanyWiki_Type() {
   return (
     <section
       id="featured-section"
-      className="relative mt-4 mb-4 pb-4 bg-gray-900 rounded-4 border-gray-600"
-      style={{
-        background:
-          "linear-gradient(45deg, rgb(255 236 225), rgb(255 222 205))",
-      }}
+      className="relative mt-4 mb-4 pb-4"
     >
       {/* Section background (needs .relative class on parent and next sibling elements) */}
       <div
@@ -54,9 +50,8 @@ export default function CompanyWiki_Type() {
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">
-              No matter how unique your company wikipedia concept is, BoringSites can support it.
-              over.
+          <h1 className="h2 mb-4">
+              Unique your company wiki concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
             </h1>
             <p className="text-xl text-gray-600">
               BoringSites is designed for all types from content curation to

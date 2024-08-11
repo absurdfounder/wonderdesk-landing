@@ -61,7 +61,7 @@ export default function Header() {
             <ul className="flex grow justify-end flex-wrap items-center">
               <li className="relative" ref={dropdownRef}>
                 <button
-                  className="font-bold text-gray-900 hover:text-gray-900 px-5 py-3 flex gap-2 items-center transition duration-150 ease-in-out hover:text-orange-600"
+                  className="font-bold text-gray-900 hover:text-gray-900 px-5 py-3 flex gap-2 items-center transition duration-150 ease-in-out hover:text-orange-500"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                 >
                   Create a..

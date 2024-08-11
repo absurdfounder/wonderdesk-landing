@@ -50,19 +50,19 @@ export default function Hero() {
         </svg>
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-18 md:pb-20">
+        <div className="pt-32 pb-12 md:pt-18 md:pb-20 space-y-8 mt-8">
           <div className="text-center px-4 sm:px-6 lg:px-8">
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-loose mb-4 aos-init aos-animate"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 aos-init aos-animate"
               data-aos="zoom-y-out"
             >
-              <span className="font-normal">Effortlessly publish</span> <br />
-              <span className=" -translate-y-full slideUp h-full w-full bg-clip-text text-transparent gradient-text-accent">
+              <span className="">Effortlessly publish</span> <br />
+              <span className=" -translate-y-full slideUp h-full w-full font-source-serif-4 font-normal italic text-orange-400">
                 {words[index]}
               </span>{" "}
               <br />
               <span className="flex gap-4 justify-center items-center mt-2">
-                from 
+                <span className="">from </span> 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="12 0.19 487.619 510.941"
@@ -73,22 +73,44 @@ export default function Hero() {
                     fill-rule="evenodd"
                   ></path>
                 </svg>
-                Notion.
+                <span className="">Notion.</span>
               </span>
             </h1>
           </div>
 
           <div className="max-w-3xl mx-auto text-center">
             <p
-              className="text-lg text-gray-600 mb-8"
+              className="text-lg text-gray-600 mb-8 font-lato"
               data-aos="zoom-y-out"
               data-aos-delay="150"
             >
-              <b className="text-gray-900">Turn your Notion docs</b> quickly
+              <span className="text-gray-900">Turn your Notion docs</span> quickly
               into a beautiful{" "}
-              <b className="text-gray-900">
-                SaaS, Apps, Directories, Marketplaces, Blogs, Helpdesks
-              </b>{" "}
+              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+                SaaS
+              </b>,
+              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+                Apps
+              </b>,
+              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+                Directories
+              </b>,
+              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+                Marketplaces
+              </b>,
+              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+                Blogs
+              </b>,
+              <b className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer">
+                Helpdesk
+              </b>
+
+
+
+
+
+              
+              {" "}
               – no code required.
             </p>
             <div
@@ -130,43 +152,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hidden sm:flex justify-center items-center pt-12 sm:mb-0 mb-3 bg-white w-fit mx-auto mx-4 p-4 rounded-md">
-            <div className="flex-shrink-0 sm:block hidden">
-              <Image
-                src="https://www.helpkit.so/imgs/testimonials/adjust_square_portrait.jpg"
-                unoptimized
-                width={100}
-                height={100}
-                alt="Author's image"
-                className="w-16 h-16 object-cover text-gray-300 bg-white rounded-full"
-              />
-            </div>
-            <div className="ml-5">
-              <div className="text-left">
-                <p className="mt-1">
-                  <span className="mr-1 text-xl italic opacity-60 font-medium">
-                    "
-                  </span>
-                  With BoringSites we literally went
-                  <span className="bg-[#ffecd7] text-[#ce6a01] font-medium px-0.5 py-0.5 mx-1 px-2">
-                    from 0 to fully functional knowledge-base in 1 hour.
-                  </span>{" "}
-                  I highly recommend it!
-                  <span className="ml-0 font-serif text-xl italic opacity-50">
-                    "
-                  </span>
-                </p>
-                <div className="mt-2 text-sm opacity-100 text-gray-400 inline-flex justify-start items-center">
-                  <div className="inline-flex mr-2 space-x-0.5 justify-start text-yellow-300">
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} className="w-4 h-4" />
-                    ))}
-                  </div>
-                  Dan Kelly, CEO at Adjust Square
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           <div className="sm:flex gap-4 justify-center items-center mt-8 flex-col sm:flex-row hidden">
             <Link
@@ -175,7 +161,7 @@ export default function Hero() {
             >
               <FileQuestionIcon className="w-5 h-5 ml-2 text-gray-400" />
               <div className="ml-4">
-                <p className="text-sm font-medium">Helpdesk Site Demo</p>
+                <p className="text-sm font-medium mr-2">Helpdesk Site Demo</p>
               </div>
             </Link>
 
@@ -185,7 +171,7 @@ export default function Hero() {
             >
               <ShoppingBag className="w-5 h-5 ml-2 text-gray-400" />
               <div className="ml-4">
-                <p className="text-sm font-medium">Marketplace Site Demo</p>
+                <p className="text-sm font-medium mr-2">Marketplace Site Demo</p>
               </div>
             </Link>
 
@@ -195,7 +181,7 @@ export default function Hero() {
             >
               <BookOpen className="w-5 h-5 ml-2 text-gray-400" />
               <div className="ml-4">
-                <p className="text-sm font-medium">Blog Site Demo</p>
+                <p className="text-sm font-medium mr-2">Blog Site Demo</p>
               </div>
             </Link>
 
@@ -205,7 +191,7 @@ export default function Hero() {
             >
               <FileText className="w-5 h-5 ml-2 text-gray-400" />
               <div className="ml-4">
-                <p className="text-sm font-medium">Directory Site Demo</p>
+                <p className="text-sm font-medium mr-2">Directory Site Demo</p>
               </div>
             </Link>
           </div>

@@ -40,22 +40,17 @@ const josefinSlab = Josefin_Slab({
 const silkscreen = localFont({
   src: [
     {
-      path: './fonts/Silkscreen-Regular.ttf',
+      path: '../public/fonts/Silkscreen-Regular.ttf',
       weight: '400',
       style: 'normal',
-    },
-    {
-      path: './fonts/Silkscreen-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
+    }
   ],
   variable: '--font-silkscreen'
 })
 
 // For Bungee, which is also not available in next/font/google
 const bungee = localFont({
-  src: 'public/fonts/Bungee-Regular.ttf',
+  src: '../public/fonts/Bungee-Regular.ttf',
   variable: '--font-bungee'
 })
 
