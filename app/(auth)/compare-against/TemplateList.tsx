@@ -28,13 +28,14 @@ const truncateText = (text: string, maxLength: number): string => {
   return text;
 };
 
+
 interface TemplateLibraryProps {
-  initialSelectedType: string;
+  initialSelectedType?: string; // Make this prop optional
 }
 
-const TemplateLibrary = ({ initialSelectedType }: TemplateLibraryProps) => {
+const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) => {
   const [templates, setTemplates] = useState<Template[]>([]);
-  const [selectedType, setSelectedType] = useState<string>(initialSelectedType || 'all');
+  const [selectedType, setSelectedType] = useState<string>(initialSelectedType);
   const [displayedTemplates, setDisplayedTemplates] = useState<Template[]>([]);
 
   const types = ['all', 'helpdesk', 'blog', 'directory', 'marketplace', 'company wiki', 'documentation'];
@@ -46,12 +47,12 @@ const TemplateLibrary = ({ initialSelectedType }: TemplateLibraryProps) => {
   }, []);
 
   useEffect(() => {
-    setSelectedType(initialSelectedType || 'all');
+    setSelectedType(initialSelectedType);
   }, [initialSelectedType]);
 
   useEffect(() => {
     // Filter templates based on selected type
-    const filteredTemplates = selectedType === 'all' || !selectedType
+    const filteredTemplates = selectedType === 'all'
       ? templates 
       : templates.filter(template => {
           const templateType = template.type || template.product?.type;
@@ -61,6 +62,7 @@ const TemplateLibrary = ({ initialSelectedType }: TemplateLibraryProps) => {
     // Limit to 6 templates
     setDisplayedTemplates(filteredTemplates.slice(0, 6));
   }, [selectedType, templates]);
+
 
   useEffect(() => {
     // Filter templates based on selected type
