@@ -158,7 +158,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
               <div>
                 <div>
                   <div className="items-start">
-                    <div className="m-auto flex border justify-center items-center h-64">
+                    <div className="m-auto flex justify-center items-center h-64">
                       <Image
                         className="w-auto mx-auto"
                         width={100}

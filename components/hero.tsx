@@ -166,15 +166,15 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           <div className="flex flex-col items-center justify-center space-x-2 space-y-1 text-sm opacity-60 sm:flex-row sm:space-y-0 mt-6">
             <div className="flex items-center justify-start">
               <Check className="w-4 h-4 mr-2 text-orange-600" />
-              Free 7-day trial
+              7-day trial
             </div>{" "}
             <div className="flex items-center justify-start">
               <Check className="w-4 h-4 mr-2 text-orange-600" />
-              No credit card required
+              Free Design Service
             </div>{" "}
             <div className="flex items-center justify-start">
               <Check className="w-4 h-4 mr-2 text-orange-600" />
-              24/7 support
+              Free Data Migration
             </div>
           </div>
 

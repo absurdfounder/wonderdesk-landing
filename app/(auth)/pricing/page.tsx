@@ -193,7 +193,7 @@ const faqs: Record<string, FAQ[]> = {
     {
       question: "How does the free 7 day trial work?",
       answer:
-        "BoringSites offers a 7 day free trial to help you explore. No credit card required. There’s zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
+        "BoringSites offers a 7 day free trial to help you explore. Free Design Service. There’s zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
     },
     {
       question: "What are the pricing plans?",
@@ -723,14 +723,14 @@ const Pricing: React.FC = () => {
                     ></path>
                   </svg>
                   <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                    Remove BoringSites Branding (Addon)
+                    Collaboration Seats for Teams
                   </h2>
                 </div>
                 <div className="flex items-center gap-0.5">
                   <p className="text-3xl font-semibold tracking-tight text-gray-900">
-                    +$50
+                    $5
                   </p>
-                  <p className="text-lg font-medium text-gray-500">/mo</p>
+                  <p className="text-lg font-medium text-gray-500 ml-2">  user / mo</p>
                 </div>
               </div>
               <hr className="border-gray-200" />
@@ -749,7 +749,7 @@ const Pricing: React.FC = () => {
                     ></path>
                   </svg>
                   <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                    Extra 2k Traffic (Addon)
+                    Extra 5 Websites (Addon)
                   </h2>
                 </div>
                 <div className="flex items-center gap-0.5">

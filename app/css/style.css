@@ -24,6 +24,7 @@
   
   .font-source-serif-4 {
     font-family: var(--font-source-serif-4);
+    font-family: "Source Serif 4",ui-serif,Georgia,Cambria,"Times New Roman",Times,serif !important;
   }
   
   .font-comfortaa {

@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="sm:col-span-12 lg:col-span-3">
             <Link href={"0"}  className="mb-2">
             <Image src={Logo} loading='eager'  alt="Logo" width={200} height={200} />
-              <p className="text-sm text-gray-600 mt-4 mb-4">Boring Sites is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder">@absurdfounder</Link>.</p>
+              <p className="text-sm text-gray-600 mt-4 mb-4">Boring Sites is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder" className='text-orange-600'>@absurdfounder</Link>.</p>
 
               <p className='mb-2 text-sm text-gray-400'>BoringSites is not related with Notion™ the company in any way.</p>
 

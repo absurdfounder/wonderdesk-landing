@@ -56,7 +56,7 @@ const TemplateDesign = () => {
                         <div className="space-y-2">
                             <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">World-class Performance</h1>
                             <p className="mt-2 text-base font-normal text-gray-700 lg:text-lg">
-                                Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they’ll never close the page for taking too long to load. On average BoringSites sites perform better than any industry leading website builder.
+                                Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they’ll never close the page for taking too long to load. On average BoringSites sites perform better than any industry leading website builder. We use NextJs, Vercel and Google Cloud for your websites. You can scale to 100 million monthly active users with this stack.
 
                             </p>
                         </div>
@@ -82,7 +82,7 @@ const TemplateDesign = () => {
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
                         <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">In-built Analytics</h1>
+                            <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">In-built analytics</h1>
                             <p className="mt-2 text-base font-normal text-gray-700 lg:text-lg">
                                 See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites tp help ou find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                             </p>

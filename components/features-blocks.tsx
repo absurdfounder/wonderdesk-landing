@@ -144,7 +144,7 @@ export default function FeaturesBlocks() {
 
             <div className="md:w-1/2 sm:w-full">
               <div className="text-start mt-6 w-full p-4">
-                <h2 className="h2 font-bold mb-4">Your content <span className="font-source-serif-4 font-normal text-orange-600">lives in Notion</span></h2>
+                <h2 className="h2 font-bold mb-4">Your content <span className="font-source-serif-4 font-normal text-orange-600">lives inside Notion</span></h2>
                 <p className="text-gray-700">
                   Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus what’s actually important to you: creating content and building
                   your brand without worrying about configurations, plugins, downtime, performance, or security.
@@ -235,7 +235,7 @@ export default function FeaturesBlocks() {
           <section className="py-12 mt-8 mb-8 md:flex sm:grid">
             <div className="md:w-1/2 sm:w-full">
               <div className="text-start mt-6 w-full p-4">
-                <h2 className="h2 font-bold mb-4">In-built <span className="font-source-serif-4 font-normal text-orange-600">Analytics</span></h2>
+                <h2 className="h2 font-bold mb-4">In-built <span className="font-source-serif-4 font-normal text-orange-600">analytics</span></h2>
                 <p className="text-gray-700">
                   See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites tp help ou find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                 </p>

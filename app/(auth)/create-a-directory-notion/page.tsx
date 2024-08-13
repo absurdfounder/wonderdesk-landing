@@ -83,7 +83,7 @@ export default function PageDetail() {
                                     <Link href="/signup" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-full shadow bg-orange-700 sm:w-auto">
                                         <strong className="mr-1">Create your directory with Notion →</strong>
                                     </Link>
-                                    <p className="mt-3 text-sm text-gray-700"><strong>Free</strong> 7 day trial. No credit card required.</p>
+                                    <p className="mt-3 text-sm text-gray-700"><strong>Free</strong> 7 day trial. Free Design Service.</p>
                                     </div>
                                 </div>
                                 </div>
