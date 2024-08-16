@@ -58,7 +58,7 @@ export default function ModalVideo({
               style={{borderRadius: '0.3rem', imageRendering: 'auto' }} 
               poster="https://web3summary.com/assets/videos/mainvid.jpg"
             >
-              <source src="https://web3summary.com/assets/videos/mainvid.mp4" type="video/mp4" />
+              <source src="https://dazzling-cat.netlify.app/Effortless%20Website%20Creation.mp4" type="video/mp4" />
             </video>
           </div>
 
