@@ -29,8 +29,8 @@ export default function FeaturesBlocks() {
               {/* 1st item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
-                width={130}
-                height={30}
+                width={100}
+                height={100}
                 src="/images/feature-aibots.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">AI-Powered</h4>
@@ -41,8 +41,8 @@ export default function FeaturesBlocks() {
               {/* 2nd item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2"
-                width={90}
-                height={30}
+                width={100}
+                height={100}
                 src="/images/feature_lovespayment.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Accept Payments</h4>
@@ -53,9 +53,9 @@ export default function FeaturesBlocks() {
               {/* 3rd item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2"
-                width={80}
-                height={30}
-                src="/images/feature_handsfree" />
+                width={100}
+                height={100}
+                src="/images/feature_handsfree.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">100% No Code</h4>
                   <p className="text-gray-600 text-center">No need to code to build a powerful website.</p>
@@ -66,7 +66,7 @@ export default function FeaturesBlocks() {
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" 
                 width={100}
-                height={30}
+                height={100}
                 className="h-20 mb-2" src="/images/feature_beautifuldesigns.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">UI & UX-Ready</h4>
@@ -77,10 +77,8 @@ export default function FeaturesBlocks() {
               {/* 5th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
-                
-              width={120}
-              height={30}
-
+                width={100}
+                height={100}
                 src="/images/feature_customcode.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Custom Code</h4>
@@ -91,8 +89,8 @@ export default function FeaturesBlocks() {
               {/* 6th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" 
-                width={80}
-                height={30}
+                width={100}
+                height={100}
                 className="h-20 mb-2" src="/images/feature_analytics.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Full Analytics</h4>
@@ -103,8 +101,8 @@ export default function FeaturesBlocks() {
               {/* 7th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
-                width={80}
-                height={30}
+                width={100}
+                height={100}
                 src="/images/feature_customdomain.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Your Domain</h4>
@@ -116,7 +114,7 @@ export default function FeaturesBlocks() {
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
                 width={100}
-                height={30}
+                height={100}
                 src="/images/feature_teams.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Perfect for Teams</h4>
@@ -127,8 +125,8 @@ export default function FeaturesBlocks() {
               {/* 9th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
-                width={90}
-                height={30}
+                width={100}
+                height={100}
                 src="/images/feature_gatedcontent.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Gated Content</h4>
