@@ -28,7 +28,7 @@ export default function FeaturesBlocks() {
             <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
               {/* 1st item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2" 
                 width={100}
                 height={100}
                 src="/images/feature-aibots.png" />
@@ -40,7 +40,7 @@ export default function FeaturesBlocks() {
 
               {/* 2nd item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2"
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2"
                 width={100}
                 height={100}
                 src="/images/feature_lovespayment.png" />
@@ -52,7 +52,7 @@ export default function FeaturesBlocks() {
 
               {/* 3rd item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2"
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2"
                 width={100}
                 height={100}
                 src="/images/feature_handsfree.png" />
@@ -67,7 +67,7 @@ export default function FeaturesBlocks() {
                 <Image alt="image" loading="lazy" decoding="async" 
                 width={100}
                 height={100}
-                className="h-20 mb-2" src="/images/feature_beautifuldesigns.png" />
+                className="mb-2" src="/images/feature_beautifuldesigns.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">UI & UX-Ready</h4>
                   <p className="text-gray-600 text-center">No need to be a designer.</p>
@@ -76,7 +76,7 @@ export default function FeaturesBlocks() {
 
               {/* 5th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2" 
                 width={100}
                 height={100}
                 src="/images/feature_customcode.png" />
@@ -91,7 +91,7 @@ export default function FeaturesBlocks() {
                 <Image alt="image" loading="lazy" decoding="async" 
                 width={100}
                 height={100}
-                className="h-20 mb-2" src="/images/feature_analytics.png" />
+                className="mb-2" src="/images/feature_analytics.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Full Analytics</h4>
                   <p className="text-gray-600 text-center">Know how your website performs.</p>
@@ -100,7 +100,7 @@ export default function FeaturesBlocks() {
 
               {/* 7th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2" 
                 width={100}
                 height={100}
                 src="/images/feature_customdomain.png" />
@@ -112,7 +112,7 @@ export default function FeaturesBlocks() {
 
               {/* 8th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2" 
                 width={100}
                 height={100}
                 src="/images/feature_teams.png" />
@@ -124,7 +124,7 @@ export default function FeaturesBlocks() {
 
               {/* 9th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="h-20 mb-2" 
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2" 
                 width={100}
                 height={100}
                 src="/images/feature_gatedcontent.png" />
