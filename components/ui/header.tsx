@@ -136,8 +136,8 @@ export default function Header() {
               <NavLink href="/showcase" text="Showcase" />
               <NavLink href="https://app.BoringSites.com" text="Login" />
               <li>
-                <Link href="https://app.BoringSites.com" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3 hover:bg-orange-400">
-                  <span>Create a Site</span>
+                <Link href="https://app.youform.com/forms/r3rvhjv4" target='_blank' className="btn-sm text-white bg-gray-900 hover:bg-gray-800 ml-3 w-full justify-between">
+                  <span>Ask us to Help</span>
                   <ArrowRight className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" />
                 </Link>
               </li>
