@@ -137,7 +137,7 @@ export default function Header() {
               <NavLink href="https://app.BoringSites.com" text="Login" />
               <li>
                 <Link href="https://app.youform.com/forms/r3rvhjv4" target='_blank' className="btn-sm text-white bg-gray-900 hover:bg-gray-800 ml-3 w-full justify-between">
-                  <span>Ask us to Help</span>
+                  <span>Ask us to Build</span>
                   <ArrowRight className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" />
                 </Link>
               </li>
