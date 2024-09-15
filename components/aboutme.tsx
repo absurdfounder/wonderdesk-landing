@@ -1,42 +1,40 @@
 import Image from "next/image";
 
-
-export default function aboutme() {
+export default function AboutMe() {
   return (
     <section className="relative">
-
-      <div className="px-6 pt-16 mb-10 md:pt-20 max-w-6xl mx-auto px-4 sm:px-6 pb-12">
+      <div className="px-4 sm:px-6 pt-16 md:pt-20 pb-12 max-w-6xl mx-auto">
         <h2 className="mb-1 font-semibold leading-6 tracking-wide text-center text-orange-600 uppercase">
-          How did i come to this idea ?
+          How did I come to this idea?
         </h2>
 
-
-        <h1 className="h2 mb-4 text-center">
-              Launch businesses in minutes <span className="font-source-serif-4 block font-normal text-orange-600">grow to millions in traffic </span> without leaving
-              Notion.
+        <h1 className="h2 mb-8 text-center">
+          Launch businesses in minutes{" "}
+          <span className="font-source-serif-4 block font-normal text-orange-600">
+            grow to millions in traffic
+          </span>{" "}
+          without leaving Notion.
         </h1>
 
-        <div className="grid items-start pt-6 mx-auto gap-8 md:flex md:items-start justify-center">
-          <div className="float-right md:w-1/3 sm:w-full mb-6 m-auto sm:float-none sm:ml-12 sm:mb-0  ">
+        <div className="flex flex-col md:flex-row items-center justify-center">
+          <div className="w-full md:w-1/3 mb-6 md:mb-0 flex justify-center">
             <Image
-              src="https://dazzling-cat.netlify.app/image 1469.png"
-              width="600"
-              height="905"
-              unoptimized
+              src="https://dazzling-cat.netlify.app/xprofileim.jpg"
+              width={300}
+              height={452}
               className="rounded-2xl"
-              alt={''}
-              style={{ filter: "grayscale(1)", opacity: 0.85 }}
+              alt="Profile"
             />
           </div>
-          <div className="prose-sm text-gray-600 sm:prose sm:w-2/3 prose-indigo">
+          <div className="w-full md:w-2/3 md:pl-8 prose prose-sm sm:prose text-gray-600 prose-indigo">
             <p className="my-2">
               Hey 👋 <br className="block sm:hidden" />
-              I’m Vaibhav, the founder of BoringSites.
+              I'm Vaibhav, the founder of BoringSites.
             </p>
             <p className="my-2">
               There are already a couple of website builders and knowledge base
               softwares out there to help you post and manage content. And while
-              most of them are certainly doing a good job,
+              most of them are certainly doing a good job,{" "}
               <strong className="text-gray-900">
                 are they actually making use of the best content management
                 system in the world?
@@ -46,15 +44,15 @@ export default function aboutme() {
               I have been using{" "}
               <strong className="text-gray-900">Notion</strong> for a few years
               now. It's an amazing tool for storing and organizing all of my
-              company's knowledge and writings. It should feel similiar to tools
-              such as Intercom or Zendesk when it comes to support or webflow
-              and framer if your building marketplaces with 1000s of documents.{" "}
+              company's knowledge and writings. It should feel similar to tools
+              such as Intercom or Zendesk when it comes to support or Webflow
+              and Framer if you're building marketplaces with 1000s of documents.
               <br />
               <br />
               Since I couldn't find the right solution –{" "}
               <strong className="text-gray-900">I built BoringSites</strong>.
               Sure, you can publish your Notion page on its own but it might
-              come across as unprofessional. The messy Notion url, distracting
+              come across as unprofessional. The messy Notion URL, distracting
               links pointing to Notion and the lack of customizability are just
               a few disadvantages...
             </p>
@@ -65,7 +63,6 @@ export default function aboutme() {
                 Notion.{" "}
               </strong>
             </p>
-            <br /> <br />
             <p className="my-2">— Vaibhav, Creator</p>
           </div>
         </div>

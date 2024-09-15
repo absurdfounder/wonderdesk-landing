@@ -149,7 +149,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   className="btn text-dark bg-orange-600 hover:bg-orange-200 hover:text-orange-800 w-full mb-4 sm:w-auto sm:mb-0"
                   href="https://app.BoringSites.com"
                 >
-                  Get Started
+                  Create a Site 
                 </Link>
               </div>
               <div>
