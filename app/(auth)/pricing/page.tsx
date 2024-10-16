@@ -70,19 +70,19 @@ const features: Feature[] = [
     },
   },
   {
-    name: "Password Protection",
-    popup: {
-      image: "/path/to/image_password_protection.png",
-      headline: "Password Protection",
-      description: "Protect your content with secure password protection.",
-    },
-  },
-  {
     name: "SEO Ready",
     popup: {
       image: "/path/to/image4.png",
       headline: "SEO Ready",
       description: "Optimize your content for search engines with built-in SEO tools.",
+    },
+  },
+  {
+    name: "Password Protection",
+    popup: {
+      image: "/path/to/image_password_protection.png",
+      headline: "Password Protection",
+      description: "Protect your content with secure password protection.",
     },
   },
   {
@@ -295,7 +295,7 @@ const FAQSection: React.FC = () => {
 };
 
 const Pricing: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"Monthly" | "Yearly">("Yearly");
+  const [activeTab, setActiveTab] = useState<"Monthly" | "Yearly">("Monthly");
   const [selectedUsers, setSelectedUsers] = useState<keyof typeof pricingMap>(3000);
   const [monthlyPrice, setMonthlyPrice] = useState(pricingMap[selectedUsers]);
   const [yearlyPrice, setYearlyPrice] = useState(monthlyPrice * 10);
@@ -426,20 +426,20 @@ const Pricing: React.FC = () => {
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
 
           <h1
-              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 justify-center text-center"
-            >
-              <span className="opacity-50 font-normal">Simplify your life with a</span>
-              <br/>
-              <div className="flex gap-2 text-center w-full justify-center">
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 justify-center text-center"
+          >
+            <span className="opacity-50 font-normal">Simplify your life with a</span>
+            <br />
+            <div className="flex gap-2 text-center w-full justify-center">
               <span className="flex gap-4 justify-center items-center mt-2 text-orange-600">
                 <span className="">Boring Site</span>
               </span>
               <span className="flex gap-4 justify-center items-center mt-2">
-                <span className="">+  </span> 
+                <span className="">+  </span>
                 <span className="">Notion.</span>
               </span>
-              </div>
-            </h1>
+            </div>
+          </h1>
 
 
           {/* Pricing Toggle */}
@@ -453,7 +453,7 @@ const Pricing: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full ${activeTab === 'Yearly' ? 'bg-orange-600 text-white' : 'text-gray-700'
+                className={`px-6 py-3 rounded-full ${activeTab === 'Yearly' ? 'bg-orange-200 text-orange-900' : 'text-gray-700'
                   }`}
                 onClick={() => handleTabClick('Yearly')}
               >
@@ -462,7 +462,7 @@ const Pricing: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full ${activeTab === 'Monthly' ? 'bg-orange-600 text-white' : 'text-gray-700'
+                className={`px-6 py-3 rounded-full ${activeTab === 'Monthly' ? 'bg-orange-200 text-orange-900' : 'text-gray-700'
                   }`}
                 onClick={() => handleTabClick('Monthly')}
               >
@@ -471,146 +471,151 @@ const Pricing: React.FC = () => {
             </div>
           </motion.div>
 
-          <div className="flex gap-4">
-            {/* Free Plan */}
-            <motion.div
-              className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2 h-fit mt-0"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
-              <div className="px-8 py-10 text-start">
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">
-                  Free
-                </h2>
-                <div className="flex items-baseline mb-4">
-                  <span className="text-6xl font-extrabold text-slate-800">
-                    $0
-                  </span>
-                  <span className="text-xl font-medium text-slate-500 ml-2">/mo</span>
-                </div>
+          <div className="justify-center m-auto">
+            <div className="flex gap-4 max-w-4xl m-auto">
+              {/* Free Plan */}
+              <motion.div
+                className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2 h-fit mt-0"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <div className="px-8 py-10 text-start">
+                  <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                    Hobby
+                  </h2>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-6xl font-extrabold text-slate-800">
+                      $0
+                    </span>
+                    <span className="text-xl font-medium text-slate-500 ml-2">/mo</span>
+                  </div>
 
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Fixed upto
-                  </label>
-                  <p className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold">1000 Users</p>
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Fixed upto
+                    </label>
+                    <p className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold">1000 Users</p>
 
-                </div>
+                  </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl bg-gray-600 hover:bg-orange-700 active:bg-orange-800 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
-                >
-                  Get Started
-                </motion.button>
-              </div>
-              <div className="px-8 pt-6 pb-8 bg-slate-50">
-                <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center">
-                  <span className="bg-gray-600 w-1 h-6 mr-3"></span>
-                  What's included
-                </h3>
-                <ul className="space-y-2">
-                  {features.slice(0, 5).map((feature, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-center text-sm text-slate-700"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Check className="flex-shrink-0 h-4 w-4 text-green-500 mr-2" />
-                      <span>{feature.name}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-
-            {/* Scale Plan */}
-            <motion.div
-              className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
-              <div className="px-8 py-10 text-start flex-grow">
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">
-                  Scale
-                </h2>
-                <div className="flex items-baseline mb-4">
-                  <span className="text-6xl font-extrabold text-slate-800">
-                    ${activeTab === 'Yearly' ? yearlyPrice : monthlyPrice}
-                  </span>
-                  <span className="text-2xl font-medium text-slate-500 ml-2">/{activeTab.toLowerCase()}</span>
-                </div>
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Number of Users Every Month - Transparent Pricing
-                  </label>
-                  <select
-                    className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold"
-                    value={selectedUsers}
-                    onChange={handleUserChange}
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl bg-gray-600 hover:bg-orange-700 active:bg-orange-800 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
                   >
-                    <option value="3000">3000 Users</option>
-                    <option value="10000">10,000 Users</option>
-                    <option value="50000">50,000 Users</option>
-                    <option value="100000">100,000 Users</option>
-                    <option value="1000000">1 Million Users</option>
-                  </select>
+                    Get a Boring Site
+                  </motion.button>
+                  <p className="mt-4 text-sm text-slate-500">
+                    BoringSites AI is an add-on feature compatible with all subscription plans.
+                  </p>
                 </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handleUpgradeClick}
-                  disabled={loading}
-                  className={`w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl ${loading
+                <div className="px-8 pt-6 pb-8 bg-slate-50">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
+                    <span className="bg-gray-600 w-1 h-8 mr-4"></span>
+                    What's included
+                  </h3>
+                  <ul className="grid grid-cols-1 gap-1 text-left">
+                    {features.slice(0, 6).map((feature, index) => (
+                      <motion.li
+                        key={index}
+                        className="text-md flex items-start gap-2 leading-[32px] mb-2 items-center"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Check className="flex-shrink-0 h-4 w-4 text-green-500 mr-2" />
+                        <span>{feature.name}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+
+              {/* Scale Plan */}
+              <motion.div
+                className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <div className="px-8 py-10 text-start flex-grow">
+                  <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                    Scale
+                  </h2>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-6xl font-extrabold text-slate-800">
+                      ${activeTab === 'Yearly' ? yearlyPrice : monthlyPrice}
+                    </span>
+                    <span className="text-2xl font-medium text-slate-500 ml-2">/{activeTab.toLowerCase()}</span>
+                  </div>
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Number of Users Every Month - Transparent Pricing
+                    </label>
+                    <select
+                      className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold"
+                      value={selectedUsers}
+                      onChange={handleUserChange}
+                    >
+                      <option value="3000">3000 Users</option>
+                      <option value="10000">10,000 Users</option>
+                      <option value="50000">50,000 Users</option>
+                      <option value="100000">100,000 Users</option>
+                      <option value="1000000">1 Million Users</option>
+                    </select>
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleUpgradeClick}
+                    disabled={loading}
+                    className={`w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl ${loading
                       ? 'bg-orange-400 cursor-not-allowed'
                       : 'bg-orange-600 hover:bg-orange-700 active:bg-orange-800'
-                    } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
-                >
-                  {loading ? (
-                    <span className="flex items-center justify-center">
-                      <Loader className="mr-2 animate-spin" />
-                      Processing...
-                    </span>
-                  ) : (
-                    "Upgrade Now"
-                  )}
-                </motion.button>
-                <p className="mt-4 text-sm text-slate-500">
-                  BoringSites AI is an add-on feature compatible with all subscription plans.
-                </p>
-              </div>
-              <div className="px-8 pt-8 pb-10 bg-slate-50">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
-                  <span className="bg-orange-600 w-1 h-8 mr-4"></span>
-                  What's included
-                </h3>
-                <ul className="grid grid-cols-2 gap-4 text-left">
-                  {features.map((feature, index) => (
-                    <motion.li
-                      key={index}
-                      ref={(el) => {
-                        featureRefs.current[index] = el;
-                      }}
-                      className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center`}
-                      onMouseEnter={() => handleMouseEnter(feature, index)}
-                      onMouseLeave={handleMouseLeave}
-                      onClick={() => feature.popup && handleFeatureClick(feature)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Check className="flex-shrink-0 h-5 w-5 text-green-500 mt-1 mr-3" />
-                      <span className="text-base text-slate-700">
-                        {feature.name}
+                      } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
+                  >
+                    {loading ? (
+                      <span className="flex items-center justify-center">
+                        <Loader className="mr-2 animate-spin" />
+                        Processing...
                       </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
+                    ) : (
+                      "Upgrade Now"
+                    )}
+                  </motion.button>
+                  <p className="mt-4 text-sm text-slate-500">
+                    BoringSites AI is an add-on feature compatible with all subscription plans.
+                  </p>
+                </div>
+                <div className="px-8 pt-8 pb-10 bg-slate-50">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
+                    <span className="bg-orange-600 w-1 h-8 mr-4"></span>
+                    What's included
+                  </h3>
+                  <ul className="grid grid-cols-1 gap-1 text-left">
+                    {features.map((feature, index) => (
+                      <motion.li
+                        key={index}
+                        ref={(el) => {
+                          featureRefs.current[index] = el;
+                        }}
+                        className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center`}
+                        onMouseEnter={() => handleMouseEnter(feature, index)}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={() => feature.popup && handleFeatureClick(feature)}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Check className="flex-shrink-0 h-5 w-5 text-green-500 mt-1 mr-3" />
+                        <span className="text-base text-slate-700">
+                          {feature.name}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            </div>
           </div>
 
           {/* Tooltip */}
@@ -775,12 +780,12 @@ const Pricing: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <FileText className="h-8 w-8 text-orange-600" />
                     <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                      Extra 5 Websites (Addon)
+                      Extra 5 Websites
                     </h2>
                   </div>
                   <div className="flex items-center gap-0.5">
                     <p className="text-3xl font-semibold tracking-tight text-gray-900">
-                      +$7
+                      +$10
                     </p>
                     <p className="text-lg font-medium text-gray-500">/mo</p>
                   </div>
