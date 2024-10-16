@@ -1,13 +1,15 @@
 "use client";
 
-import { useState, useEffect, ChangeEvent, useRef } from "react";
+import React, { useState, useEffect, ChangeEvent, useRef } from "react";
 import Image from "next/image";
 import notionfooterImage from "@/public/images/nb-herosec.png";
 import MigrateFrom from "@/public/images/migratefrom.png";
 import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
 import Link from "next/link";
-import confetti from "canvas-confetti"; // Importing the confetti library
+import confetti from "canvas-confetti";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, Loader, Users, MessageSquare, FileText } from 'lucide-react';
 
 const pricingMap: Record<number, number> = {
   3000: 5,
@@ -193,7 +195,7 @@ const faqs: Record<string, FAQ[]> = {
     {
       question: "How does the free 7 day trial work?",
       answer:
-        "BoringSites offers a 7 day free trial to help you explore. Free Design Service. There’s zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
+        "BoringSites offers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
     },
     {
       question: "What are the pricing plans?",
@@ -224,11 +226,19 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ question, answer }) => {
       >
         <span className="font-semibold text-gray-900">{question}</span>
       </button>
-      {isOpen && (
-        <div className="px-4 pb-4 text-gray-500">
-          <p>{answer}</p>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="px-4 pb-4 text-gray-500"
+          >
+            <p>{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
@@ -258,8 +268,10 @@ const FAQSection: React.FC = () => {
         <div className="mt-12">
           <div className="flex justify-center mb-8 flex-wrap">
             {["Website", "AI Support Bot", "Pricing"].map((tab) => (
-              <button
+              <motion.button
                 key={tab}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className={`px-4 py-2 font-semibold text-lg rounded-full m-2 ${activeTab === tab
                   ? "bg-orange-600 text-white"
                   : "text-gray-700"
@@ -267,7 +279,7 @@ const FAQSection: React.FC = () => {
                 onClick={() => handleTabClick(tab as keyof typeof faqs)}
               >
                 {tab}
-              </button>
+              </motion.button>
             ))}
           </div>
 
@@ -288,15 +300,16 @@ const Pricing: React.FC = () => {
   const [monthlyPrice, setMonthlyPrice] = useState(pricingMap[selectedUsers]);
   const [yearlyPrice, setYearlyPrice] = useState(monthlyPrice * 10);
   const [popupFeature, setPopupFeature] = useState<Feature | null>(null);
-  const [tooltipFeature, setTooltipFeature] = useState<Feature | null>(null); // State for tooltip
-  const [tooltipPosition, setTooltipPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 }); // State for tooltip position
+  const [tooltipFeature, setTooltipFeature] = useState<Feature | null>(null);
+  const [tooltipPosition, setTooltipPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 });
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [countdown, setCountdown] = useState<number>(86400); // 24 hours in seconds
+  const [countdown, setCountdown] = useState<number>(86400);
   const [isLifetimeDealVisible, setIsLifetimeDealVisible] = useState(true);
-  const featureRefs = useRef<(HTMLLIElement | null)[]>([]); // Ref to track feature elements
+  const [loading, setLoading] = useState(false);
+  const featureRefs = useRef<(HTMLLIElement | null)[]>([]);
 
-  const startDate = new Date("2023-05-01"); // Replace with your start date
-  const endDate = new Date("2024-06-30"); // Replace with your end date
+  const startDate = new Date("2023-05-01");
+  const endDate = new Date("2024-06-30");
 
   useEffect(() => {
     const today = new Date();
@@ -318,14 +331,13 @@ const Pricing: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Confetti effect when the page is rendered
   useEffect(() => {
     confetti({
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
     });
-  }, []); // Empty dependency array to run only on initial render
+  }, []);
 
   const handleTabClick = (tabName: "Monthly" | "Yearly") => {
     setActiveTab(tabName);
@@ -370,14 +382,29 @@ const Pricing: React.FC = () => {
     setTooltipFeature(null);
   };
 
+  const handleUpgradeClick = async () => {
+    setLoading(true);
+    try {
+      // Implement payment logic here
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulating API call
+    } catch (error) {
+      console.error('Error during payment:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
-      <div
+      <motion.div
         className="absolute bottom-0 pointer-events-none z-1 h-screen w-screen"
         aria-hidden="true"
         style={{ width: "-webkit-fill-available", opacity: 0.1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 1 }}
       >
-        <svg className=" h-full w-full" xmlns="http://www.w3.org/2000/svg">
+        <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern
               id="grid-pattern"
@@ -393,413 +420,428 @@ const Pricing: React.FC = () => {
           </defs>
           <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
         </svg>
-      </div>
+      </motion.div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
-          {/* Page header */}
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate">
-              Try BoringSites free for{" "}
-              <span className="gradient-border-accent"> 7 days</span>
-            </h1>
-          </div>
 
-          {/* Form */}
-          <div className="max-w-3xl m-auto">
-            <div>
-              <div className="w-full text-center ltr:mr-4 rtl:ml-4 md:block mb-8">
-                <p className="mt-2 text-lg font-medium text-gray-400">
-                  Join 50+ happy customers who set up fully functional
-                  marketplaces, helpdesk and blogs in hours not days - All
-                  powered by Notion.
+          <h1
+              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 justify-center text-center"
+            >
+              <span className="opacity-50 font-normal">Simplify your life with a</span>
+              <br/>
+              <div className="flex gap-2 text-center w-full justify-center">
+              <span className="flex gap-4 justify-center items-center mt-2 text-orange-600">
+                <span className="">Boring Site</span>
+              </span>
+              <span className="flex gap-4 justify-center items-center mt-2">
+                <span className="">+  </span> 
+                <span className="">Notion.</span>
+              </span>
+              </div>
+            </h1>
+
+
+          {/* Pricing Toggle */}
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="inline-flex rounded-full border border-gray-300 bg-white">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-6 py-3 rounded-full ${activeTab === 'Yearly' ? 'bg-orange-600 text-white' : 'text-gray-700'
+                  }`}
+                onClick={() => handleTabClick('Yearly')}
+              >
+                ANNUALLY ♥ 2 MONTHS FREE
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-6 py-3 rounded-full ${activeTab === 'Monthly' ? 'bg-orange-600 text-white' : 'text-gray-700'
+                  }`}
+                onClick={() => handleTabClick('Monthly')}
+              >
+                MONTHLY
+              </motion.button>
+            </div>
+          </motion.div>
+
+          <div className="flex gap-4">
+            {/* Free Plan */}
+            <motion.div
+              className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2 h-fit mt-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <div className="px-8 py-10 text-start">
+                <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                  Free
+                </h2>
+                <div className="flex items-baseline mb-4">
+                  <span className="text-6xl font-extrabold text-slate-800">
+                    $0
+                  </span>
+                  <span className="text-xl font-medium text-slate-500 ml-2">/mo</span>
+                </div>
+
+                <div className="mb-6">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Fixed upto
+                  </label>
+                  <p className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold">1000 Users</p>
+
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl bg-gray-600 hover:bg-orange-700 active:bg-orange-800 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
+                >
+                  Get Started
+                </motion.button>
+              </div>
+              <div className="px-8 pt-6 pb-8 bg-slate-50">
+                <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                  <span className="bg-gray-600 w-1 h-6 mr-3"></span>
+                  What's included
+                </h3>
+                <ul className="space-y-2">
+                  {features.slice(0, 5).map((feature, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-center text-sm text-slate-700"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Check className="flex-shrink-0 h-4 w-4 text-green-500 mr-2" />
+                      <span>{feature.name}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Scale Plan */}
+            <motion.div
+              className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <div className="px-8 py-10 text-start flex-grow">
+                <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                  Scale
+                </h2>
+                <div className="flex items-baseline mb-4">
+                  <span className="text-6xl font-extrabold text-slate-800">
+                    ${activeTab === 'Yearly' ? yearlyPrice : monthlyPrice}
+                  </span>
+                  <span className="text-2xl font-medium text-slate-500 ml-2">/{activeTab.toLowerCase()}</span>
+                </div>
+                <div className="mb-6">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Number of Users Every Month - Transparent Pricing
+                  </label>
+                  <select
+                    className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold"
+                    value={selectedUsers}
+                    onChange={handleUserChange}
+                  >
+                    <option value="3000">3000 Users</option>
+                    <option value="10000">10,000 Users</option>
+                    <option value="50000">50,000 Users</option>
+                    <option value="100000">100,000 Users</option>
+                    <option value="1000000">1 Million Users</option>
+                  </select>
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleUpgradeClick}
+                  disabled={loading}
+                  className={`w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl ${loading
+                      ? 'bg-orange-400 cursor-not-allowed'
+                      : 'bg-orange-600 hover:bg-orange-700 active:bg-orange-800'
+                    } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
+                >
+                  {loading ? (
+                    <span className="flex items-center justify-center">
+                      <Loader className="mr-2 animate-spin" />
+                      Processing...
+                    </span>
+                  ) : (
+                    "Upgrade Now"
+                  )}
+                </motion.button>
+                <p className="mt-4 text-sm text-slate-500">
+                  BoringSites AI is an add-on feature compatible with all subscription plans.
                 </p>
               </div>
-              <div className="justify-center mb-4 w-full my-5">
-                <div className="w-full"></div>
+              <div className="px-8 pt-8 pb-10 bg-slate-50">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
+                  <span className="bg-orange-600 w-1 h-8 mr-4"></span>
+                  What's included
+                </h3>
+                <ul className="grid grid-cols-2 gap-4 text-left">
+                  {features.map((feature, index) => (
+                    <motion.li
+                      key={index}
+                      ref={(el) => {
+                        featureRefs.current[index] = el;
+                      }}
+                      className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center`}
+                      onMouseEnter={() => handleMouseEnter(feature, index)}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={() => feature.popup && handleFeatureClick(feature)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Check className="flex-shrink-0 h-5 w-5 text-green-500 mt-1 mr-3" />
+                      <span className="text-base text-slate-700">
+                        {feature.name}
+                      </span>
+                    </motion.li>
+                  ))}
+                </ul>
               </div>
+            </motion.div>
+          </div>
 
-              {isLifetimeDealVisible && (
-                <div className="relative bg-gray-900 rounded-2xl py-6 px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden hidden">
+          {/* Tooltip */}
+          <AnimatePresence>
+            {tooltipFeature && tooltipFeature.popup && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.2 }}
+                className="absolute z-50 p-4 bg-white shadow-md rounded-md"
+                style={{ top: tooltipPosition.top, left: tooltipPosition.left }}
+              >
+                <h3 className="text-lg font-bold">{tooltipFeature.popup.headline}</h3>
+                <p className="text-sm">{tooltipFeature.popup.description}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-<span className="mt-4 mb-4  inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
-        Lifetime Deal 🤯
-      </span>
+          {/* Feature Popup */}
+          <AnimatePresence>
+            {popupFeature && popupFeature.popup && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+              >
+                <motion.div
+                  initial={{ scale: 0.9, y: 20 }}
+                  animate={{ scale: 1, y: 0 }}
+                  exit={{ scale: 0.9, y: 20 }}
+                  className="bg-white p-8 px-12 rounded-lg shadow-lg max-w-md mx-auto relative"
+                >
+                  <button
+                    onClick={closePopup}
+                    className="absolute top-2 right-2 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
+                  >
+                    ✕
+                  </button>
+                  <Image
+                    src={popupFeature.popup.image}
+                    alt={popupFeature.popup.headline}
+                    width={300}
+                    height={200}
+                  />
+                  <h2 className="text-2xl font-bold mt-4">
+                    {popupFeature.popup.headline}
+                  </h2>
+                  <p className="mt-2">{popupFeature.popup.description}</p>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-                  <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block ">
-                    <Image
-                      alt="Logo"
-                      width={250}
-                      className="block"
-                      src={notionfooterImage}
-                    />
-                  </div>
-
-                  <div className="relative flex flex-col lg:flex-row justify-between items-center">
-                    {/* CTA content */}
-                    
-                    <div className="text-center lg:text-left lg:max-w-xl">
-                    <h3 className="h3 text-white mb-2">
-                        Get <b className="text-orange-600">Unlimited </b> at  
-                        <span className="line-through text-gray-400 ml-2 mr-2 font-normal">$599</span>{" "}
-                        <b className="text-white">$99</b>
-                      </h3>
-
-                      {/* CTA form */}
-                      <form className="w-full lg:w-auto">
-                        <button
-                          className="btn bg-orange-600 hover:bg-orange-700 shadow px-12"
-                          type="button"
-                          onClick={toggleModal}
-                        >
-                          Buy Now
-                        </button>
-
-                        <p className="text-lg text-red-400 mt-3">
-                          Ending in{" "}
-                          <b className="text-lg text-red-400 mt-3">
-                            {formatTime(countdown)}
-                          </b>
-                        </p>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-
-
-{isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto relative">
-            <button
-              onClick={toggleModal}
-              className="absolute top-2 right-2 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
+          {/* Lifetime Deal Section */}
+          {isLifetimeDealVisible && (
+            <motion.div
+              className="mt-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1 }}
             >
-              ✕
-            </button>
-
-            <h2 className="text-2xl font-bold mt-4">Limited Lifetime Deal</h2>
-            <p className="mt-2">
-            $99 for super early birds. <span className="font-bold text-gray-500 border-b-2 border-gray-600">Due to the high demand, the lifetime deal price will be increased to $199 in {formatTime(countdown)}.</span> Timer is real; I'm not kidding :) We will launch our subscription plan soon! Grab our limited lifetime deal. You pay once, use forever with no limit!
-            </p>
-
-            <div className="text-center mt-4">
-              <h3 className="text-3xl font-bold mt-4 mb-4">$99.00</h3>
-              <Link
-                className="bg-orange-700 text-white text-xl w-full py-4 px-16 rounded-lg block"
-                href="https://buy.stripe.com/5kAeV0b6K27w8BG6os"
-              >
-                Buy
-              </Link>
-            </div>
-            <div className="text-center text-gray-500 mt-8">
-              Supported payment methods
-            </div>
-
-    <img alt="Xumm" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_e9xJ7ce6A2N49hHB1Woit1mj6b3o13Lt3Q1NT-tW&s" className=" h-20 w-full object-contain mt-4" />
-
-            
-          </div>
-        </div>
-      )}
-
-
-
-              <div
-                dir="ltr"
-                data-orientation="horizontal"
-                className="mt-8 mb-4 w-fit lg:mb-13 border rounded-full m-auto border-gray-600"
-              >
-                <div
-                  role="tablist"
-                  aria-orientation="horizontal"
-                  className="relative flex w-full rounded-full bg-gray-100 font-semibold z-0 border-1 border-gray-600"
-                  data-orientation="horizontal"
+              <div className="bg-gray-900 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">
+                  Limited Time Offer: Lifetime Deal
+                </h3>
+                <p className="text-xl mb-4">
+                  Get <span className="text-orange-600 font-bold">Unlimited</span> at{" "}
+                  <span className="line-through text-gray-400">$599</span>{" "}
+                  <span className="font-bold">$99</span>
+                </p>
+                <p className="text-lg text-red-400 mb-4">
+                  Ending in <b>{formatTime(countdown)}</b>
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-orange-600 text-white text-xl py-3 px-8 rounded-lg inline-block hover:bg-orange-700 transition-colors"
+                  onClick={toggleModal}
                 >
-                  <span
-                    className={`absolute inset-y-0 left-0 -z-10 rounded-full border-2 w-full h-14 transition-transform duration-300 ease-in-out white-space-nowrap ${
-                      activeTab === "Monthly" ? "translate-x-full" : ""
-                    }`}
-                  ></span>
-                  <button
-                    className={`w-fit text-md h-14 flex items-center justify-center uppercase transition-colors duration-300 ease-in-out px-6 ${
-                      activeTab === "Yearly"
-                        ? "bg-orange-600 rounded-full border-2 border-dark"
-                        : "bg-transparent text-gray-900"
-                    }`}
-                    type="button"
-                    role="tab"
-                    aria-selected={activeTab === "Yearly"}
-                    onClick={() => handleTabClick("Yearly")}
-                  >
-                    ANNUALLY ♥ 2 MONTHS FREE
-                  </button>
-                  <button
-                    className={`w-fit text-md h-14 flex items-center justify-center uppercase transition-colors duration-300 ease-in-out px-6 ${
-                      activeTab === "Monthly"
-                        ? "bg-orange-600 rounded-full border-2 border-dark"
-                        : "bg-transparent text-gray-900"
-                    }`}
-                    type="button"
-                    role="tab"
-                    aria-selected={activeTab === "Monthly"}
-                    onClick={() => handleTabClick("Monthly")}
-                  >
-                    MONTHLY
-                  </button>
-                </div>
+                  Buy Now
+                </motion.button>
               </div>
+            </motion.div>
+          )}
 
-              <div className="sm:block hidden text-xs opacity-50 font-medium justify-center text-center mb-4">
-                Save 2 months on yearly 🎁
-              </div>
-
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700">
-                  Number of Users Every Month
-                </label>
-                <select
-                  className="relative bg-white border-1 rounded-full mt-2 w-full p-4 font-bold h3"
-                  id="num-of-views"
-                  value={selectedUsers}
-                  onChange={handleUserChange}
+          {/* Modal */}
+          <AnimatePresence>
+            {isModalOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+              >
+                <motion.div
+                  initial={{ scale: 0.9, y: 20 }}
+                  animate={{ scale: 1, y: 0 }}
+                  exit={{ scale: 0.9, y: 20 }}
+                  className="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto relative"
                 >
-                  <option value="3000">3K Users</option>
-                  <option value="10000">10K Users</option>
-                  <option value="50000">50K Users</option>
-                  <option value="100000">100K Users</option>
-                  <option value="1000000">1 Million Users</option>
-                </select>
-              </div>
-              <div>
-                <article className="overflow-hidden rounded-lg border-2 pb-5 shadow-md gradient-border-accent">
-                  <div className="relative bg-white border-b-2 border-dashed px-7 py-6 md:pt-7">
-                    <h5 className="h2 flex gap-2">
-                      <span>
-                        <div className="font-bold">
-                          {activeTab === "Yearly"
-                            ? `$${yearlyPrice}`
-                            : `$${monthlyPrice}`}
-                        </div>
-                      </span>
-                      <span
-                        className="relative text-3xl leading-8 text-neutral-500 m-auto"
-                        style={{ marginLeft: "0" }}
-                      >
-                        / {activeTab}
-                      </span>
-                    </h5>
-                    <div className="flex grow flex-col gap-2 md:flex-row md:items-end mt-6 mb-4">
-                    <Link href="app.BoringSites.com" className="bg-orange-700 font-bold w-full p-4 rounded-lg text-center">
-                        Coming Soon..
-                      </Link>
-                    </div>
+                  <button
+                    onClick={toggleModal}
+                    className="absolute top-2 right-2 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
+                  >
+                    ✕
+                  </button>
 
-                    <div className="relative overflow-hidden rounded-full border border-gray-200 bg-white">
-                      <div className="p-6 md:px-10 md:py-4 justify-center bg-gray-200">
-                        <div className="relative flex items-center">
-                          <div className="flex h-5 items-center">
-                            <input
-                              type="checkbox"
-                              id="addon"
-                              checked
-                              name="addon"
-                              className="h-5 w-5 rounded-full border-gray-300 text-gray-900 focus:ring-gray-900"
-                              aria-label="Sub-marketplace blogs addon"
-                            />
-                          </div>
-                          <div className="ml-3 text-base">
-                            <label className="font-normal text-gray-900">
-                              <span>Including </span>
-                              <span className="mr-3 inline-flex items-center rounded-full bg-gray-900 px-2.5 py-0.5 text-sm font-medium uppercase text-white">
-                                Free Design Services
-                              </span>
-                              <span>limited time only.</span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <h2 className="text-2xl font-bold mt-4">Limited Lifetime Deal</h2>
+                  <p className="mt-2">
+                    $99 for super early birds. <span className="font-bold text-gray-500 border-b-2 border-gray-600">Due to the high demand, the lifetime deal price will be increased to $199 in {formatTime(countdown)}.</span> Timer is real $99 for super early birds. <span className="font-bold text-gray-500 border-b-2 border-gray-600">Due to the high demand, the lifetime deal price will be increased to $199 in {formatTime(countdown)}.</span> Timer is real; I'm not kidding :) We will launch our subscription plan soon! Grab our limited lifetime deal. You pay once, use forever with no limit!
+                  </p>
 
-                    <p className="text-md max-w-[482px] pt-6 text-gray-500 md:pt-4">
-                      Extend your workflows with round-robin and collective
-                      events and make advanced routing forms.
-                    </p>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4  p-8">
-                      {features.map((feature, index) => (
-                        <li
-                          key={index}
-                          ref={(el) => {
-                            featureRefs.current[index] = el;
-                          }}
-                          className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center `}
-                          onMouseEnter={() => handleMouseEnter(feature, index)}
-                          onMouseLeave={handleMouseLeave}
-                          onClick={() =>
-                            feature.popup && handleFeatureClick(feature)
-                          }
-                        >
-                          <figure className="border bg-orange-700 p-2 px-4 rounded-full font-bold text-white">
-                            ✓
-                          </figure>
-                          <span
-                            className={`p-0 px-1 ml-2 ${
-                              feature.popup
-                                ? "border-b-2 border-gray-600 border-dashed pointer hover:text-orange-600"
-                                : ""
-                            }`}
-                          >
-                            {feature.name}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="text-center mt-4">
+                    <h3 className="text-3xl font-bold mt-4 mb-4">$99.00</h3>
+                    <Link
+                      href="https://buy.stripe.com/5kAeV0b6K27w8BG6os"
+                      className="bg-orange-700 text-white text-xl w-full py-4 px-16 rounded-lg block hover:bg-orange-600 transition-colors"
+                    >
+                      Buy
+                    </Link>
                   </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
+                  <div className="text-center text-gray-500 mt-8">
+                    Supported payment methods
+                  </div>
 
-        {tooltipFeature && tooltipFeature.popup && (
-          <div
-            className="absolute z-50 p-4 bg-white shadow-md rounded-md"
-            style={{ top: tooltipPosition.top, left: tooltipPosition.left }}
+                  <img alt="Xumm" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_e9xJ7ce6A2N49hHB1Woit1mj6b3o13Lt3Q1NT-tW&s" className="h-20 w-full object-contain mt-4" />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Add-ons Section */}
+          <motion.div
+            className="mt-12 sm:mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
           >
-            <h3 className="text-lg font-bold">{tooltipFeature.popup.headline}</h3>
-            <p className="text-sm">{tooltipFeature.popup.description}</p>
-          </div>
-        )}
-
-        {popupFeature && popupFeature.popup && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-8 px-12 rounded-lg shadow-lg max-w-md mx-auto relative">
-              <button
-                onClick={closePopup}
-                className="absolute top-2 right-2 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
-              >
-                ✕
-              </button>
-              <Image
-                src={popupFeature.popup.image}
-                alt={popupFeature.popup.headline}
-                width={300}
-                height={200}
-              />
-              <h2 className="text-2xl font-bold mt-4">
-                {popupFeature.popup.headline}
-              </h2>
-              <p className="mt-2">{popupFeature.popup.description}</p>
-            </div>
-          </div>
-        )}
-
-        <div className="text-center">
-          <p className="text-sm font-medium text-gray-600">
-            Pricing is exclusive of taxes and additional local tax may be
-            collected depending on your region.
-          </p>
-        </div>
-
-        <div className="mt-12 sm:mt-16">
-          <h4 className="font-display text-4xl font-bold tracking-tight text-gray-900 text-center">
-            Add-ons
-          </h4>
-          <div className="max-w-xl bg-white shadow-sm ring-1 ring-inset ring-gray-200 mx-auto mt-6 rounded-2xl lg:max-w-2xl">
-            <div className="space-y-6 px-8 py-6">
-              <div className="flex items-center justify-between gap-6">
-                <div className="flex items-center gap-3">
-                  <svg
-                    aria-hidden="true"
-                    className="h-8 w-8 shrink-0 text-orange-600"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                  >
-                    <path d="M208,88H152V32Z" opacity="0.2"></path>
-                    <path
-                      d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-42.34-82.34L139.31,152l18.35,18.34a8,8,0,0,1-11.32,11.32L128,163.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L116.69,152,98.34,133.66a8,8,0,0,1,11.32-11.32L128,140.69l18.34-18.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path>
-                  </svg>
-                  <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                    Collaboration Seats for Teams
-                  </h2>
+            <h4 className="font-display text-4xl font-bold tracking-tight text-gray-900 text-center">
+              Add-ons
+            </h4>
+            <div className="max-w-xl bg-white shadow-sm ring-1 ring-inset ring-gray-200 mx-auto mt-6 rounded-2xl lg:max-w-2xl">
+              <div className="space-y-6 px-8 py-6">
+                <div className="flex items-center justify-between gap-6">
+                  <div className="flex items-center gap-3">
+                    <Users className="h-8 w-8 text-orange-600" />
+                    <h2 className="text-xl font-semibold tracking-tight text-gray-900">
+                      Collaboration Seats for Teams
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-0.5">
+                    <p className="text-3xl font-semibold tracking-tight text-gray-900">
+                      $5
+                    </p>
+                    <p className="text-lg font-medium text-gray-500 ml-2">  user / mo</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-0.5">
-                  <p className="text-3xl font-semibold tracking-tight text-gray-900">
-                    $5
-                  </p>
-                  <p className="text-lg font-medium text-gray-500 ml-2">  user / mo</p>
-                </div>
-              </div>
-              <hr className="border-gray-200" />
-              <div className="flex items-center justify-between gap-6">
-                <div className="flex items-center gap-3">
-                  <svg
-                    aria-hidden="true"
-                    className="h-8 w-8 shrink-0 text-orange-600"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                  >
-                    <path d="M224,96V224l-39.58-32H88a8,8,0,0,1-8-8V144h88a8,8,0,0,0,8-8V88h40A8,8,0,0,1,224,96Z" opacity="0.2"></path>
-                    <path
-                      d="M216,80H184V48a16,16,0,0,0-16-16H40A16,16,0,0,0,24,48V176a8,8,0,0,0,13,6.22L72,154V184a16,16,0,0,0,16,16h93.59L219,230.22a8,8,0,0,0,5,1.78,8,8,0,0,0,8-8V96A16,16,0,0,0,216,80ZM66.55,137.78,40,159.25V48H168v88H71.58A8,8,0,0,0,66.55,137.78ZM216,207.25l-26.55-21.47a8,8,0,0,0-5-1.78H88V152h80a16,16,0,0,0,16-16V96h32Z"
-                    ></path>
-                  </svg>
-                  <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                    Extra 5 Websites (Addon)
-                  </h2>
-                </div>
-                <div className="flex items-center gap-0.5">
-                  <p className="text-3xl font-semibold tracking-tight text-gray-900">
-                    +$7
-                  </p>
-                  <p className="text-lg font-medium text-gray-500">/mo</p>
+                <hr className="border-gray-200" />
+                <div className="flex items-center justify-between gap-6">
+                  <div className="flex items-center gap-3">
+                    <FileText className="h-8 w-8 text-orange-600" />
+                    <h2 className="text-xl font-semibold tracking-tight text-gray-900">
+                      Extra 5 Websites (Addon)
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-0.5">
+                    <p className="text-3xl font-semibold tracking-tight text-gray-900">
+                      +$7
+                    </p>
+                    <p className="text-lg font-medium text-gray-500">/mo</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
 
-        <FAQSection />
+          <FAQSection />
 
-        <div className="relative bg-gray-900 rounded-2xl py-6 px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden">
-          {/* Background illustration */}
-          <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
-            <Image alt="Logo" width={400} className="block" src={MigrateFrom} />
-          </div>
-
-          <div className="relative flex flex-col lg:flex-row justify-between items-center">
-            {/* CTA content */}
-            <div className="text-center lg:text-left lg:max-w-xl">
-              <h3 className="h3 text-white mb-2">
-                Planning to <b className="text-orange-600">migrate</b> to
-                BoringSites from another platform?
-              </h3>
-
-              {/* CTA form */}
-              <form className="w-full lg:w-auto">
-                <div>
-                  <Link
-                    className="btn bg-orange-600 hover:bg-orange-700 shadow px-12"
-                    href="/migrating-to-BoringSites"
-                  >
-                    We can do it for you →
-                  </Link>
-                </div>
-                {/* Success message */}
-                {/* <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> */}
-                <p className="text-sm text-gray-400 mt-3">Free of charge</p>
-              </form>
+          <motion.div
+            className="relative bg-gray-900 rounded-2xl py-6 px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.4 }}
+          >
+            {/* Background illustration */}
+            <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
+              <Image alt="Logo" width={400} className="block" src={MigrateFrom} />
             </div>
-          </div>
+
+            <div className="relative flex flex-col lg:flex-row justify-between items-center">
+              {/* CTA content */}
+              <div className="text-center lg:text-left lg:max-w-xl">
+                <h3 className="h3 text-white mb-2">
+                  Planning to <b className="text-orange-600">migrate</b> to
+                  BoringSites from another platform?
+                </h3>
+
+                {/* CTA form */}
+                <form className="w-full lg:w-auto">
+                  <div>
+                    <Link
+                      href="/migrating-to-BoringSites"
+                      className="btn bg-orange-600 hover:bg-orange-700 shadow px-12 inline-block text-white py-3 rounded-lg transition-colors"
+                    >
+                      We can do it for you →
+                    </Link>
+                  </div>
+                  <p className="text-sm text-gray-400 mt-3">Free of charge</p>
+                </form>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.6 }}
+          >
+            <Rating />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.8 }}
+          >
+            <Testimonials />
+          </motion.div>
         </div>
-
-        <Rating />
-
-        <Testimonials />
       </div>
     </section>
   );
