@@ -172,7 +172,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           </motion.div>
 
           <motion.div
-            className="sm:flex gap-4 justify-center items-center mt-8 flex-col sm:flex-row hidden"
+            className="sm:flex gap-4 justify-center items-center mt-8 mb-8  flex-col sm:flex-row hidden"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
