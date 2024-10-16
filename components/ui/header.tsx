@@ -38,7 +38,7 @@ export default function Header() {
   }, [dropdownOpen]);
 
   return (
-    <header className={`fixed w-full z-30 transition-all duration-300 ease-in-out ${!top ? 'bg-white shadow-lg' : ''}`}>
+    <header className={`fixed w-full z-30 transition-all duration-300 ease-in-out ${!top ? 'bg-white' : ''}`}>
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="shrink-0 mr-4">
@@ -62,7 +62,7 @@ export default function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute z-10 w-screen max-w-lg px-2 transform -translate-x-1/2 left-1/2 mt-3 sm:px-0"
+                      className="absolute z-10 w-screen max-w-lg px-2 transform -translate-x-1/2 left-1/4 mt-3 sm:px-0"
                     >
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white">
                         <div className="relative grid gap-6 px-5 py-6 sm:gap-8 sm:p-8">

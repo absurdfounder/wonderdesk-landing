@@ -98,7 +98,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/BoringSiteshelpdesk-template.png",
         "name": "Boring Sites Helpdesk",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "BoringSites",
         "description": "Website for showing vetted talent for companies to hire.",
         "callToCopy": {
@@ -129,7 +129,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/Screenshot%202024-02-09%203.38.42%20AM.png",
         "name": "Blockchain Grants ",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "BoringSites",
         "description": "Website for showing vetted talent for companies to hire.",
         "callToCopy": {
@@ -160,7 +160,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
         "name": "Agency Hub",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "AgencySolutions",
         "description": "A classifieds platform to connect businesses with the best agencies and for agencies to receive offers from potential clients.",
         "callToCopy": {
@@ -191,7 +191,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/supportgroups.vercel.app_.png",
         "name": "Support Groups Events",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "HealthConnect",
         "description": "Find and organize support group meetings for mental health, addiction recovery, and more.",
         "callToCopy": {
@@ -222,7 +222,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "Top Talent Hub",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "TalentInc",
         "description": "Connect with top professionals and industry leaders to grow your career.",
         "callToCopy": {
@@ -253,7 +253,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/eventstown.vercel.app_.png",
         "name": "Events Website",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "Eventify",
         "description": "A dynamic platform for hosting and managing all types of events online.",
         "callToCopy": {
@@ -284,7 +284,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "Starter Story",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "StartupJourney",
         "description": "Learn from successful entrepreneurs and launch your startup using proven strategies.",
         "callToCopy": {
@@ -315,7 +315,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "APK Store",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "AndroidMarket",
         "description": "A trusted platform for downloading Android apps and games.",
         "callToCopy": {
@@ -346,7 +346,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "APK Store",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "AndroidMarket",
         "description": "A trusted platform for downloading Android apps and games.",
         "callToCopy": {
@@ -377,7 +377,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "VCSheet",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "InvestorTools",
         "description": "Streamline your investment tracking and analysis with VCSheet.",
         "callToCopy": {
@@ -408,7 +408,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "Real Estate Website",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "PropertyPortal",
         "description": "Buy, sell, or rent properties with ease using our comprehensive real estate platform.",
         "callToCopy": {
@@ -439,7 +439,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "Messaging Platforms Servers",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "ChatConnect",
         "description": "Create and manage your own private servers on Discord, Telegram, and WhatsApp for business or personal use.",
         "callToCopy": {
@@ -470,7 +470,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "SaaS Boilerplates",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "SaaSTech",
         "description": "Jumpstart your SaaS application development with our ready-to-use code boilerplates.",
         "callToCopy": {
@@ -501,7 +501,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "Mental Health Blogs",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "MindfulBlogs",
         "description": "Explore and contribute to our collection of blogs focusing on mental health awareness and well-being.",
         "callToCopy": {
@@ -532,7 +532,7 @@
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "name": "Product Hunt",
-        "type": "Heeelpdesk",
+        "type": "Helpdesk",
         "provider": "HuntTech",
         "description": "Discover new products, upvote your favorites, and engage with creators and other enthusiasts.",
         "callToCopy": {

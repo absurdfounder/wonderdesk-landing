@@ -30,7 +30,7 @@ export default function FeaturesBlocks() {
                 src="/images/feature-aibots.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">AI-Powered</h4>
-                  <p className="text-gray-600 text-center">Build a website or make changes with prompts.</p>
+                  <p className="text-gray-600 text-center w-3/4 m-auto">Build a website or make changes with prompts.</p>
                 </div>
               </div>
 
@@ -42,7 +42,7 @@ export default function FeaturesBlocks() {
                 src="/images/feature_lovespayment.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Accept Payments</h4>
-                  <p className="text-gray-600 text-center">Accept payments with secure Stripe</p>
+                  <p className="text-gray-600 text-center w-3/4 m-auto">Accept payments with secure Stripe</p>
                 </div>
               </div>
 
@@ -54,7 +54,7 @@ export default function FeaturesBlocks() {
                 src="/images/feature_handsfree.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">100% No Code</h4>
-                  <p className="text-gray-600 text-center">No need to code to build a powerful website.</p>
+                  <p className="text-gray-600 text-center w-3/4 m-auto">No need to code to build a powerful website.</p>
                 </div>
               </div>
 
@@ -66,7 +66,7 @@ export default function FeaturesBlocks() {
                 className="mb-2" src="/images/feature_beautifuldesigns.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">UI & UX-Ready</h4>
-                  <p className="text-gray-600 text-center">No need to be a designer.</p>
+                  <p className="text-gray-600 text-center w-3/4 m-auto">No need to be a designer.</p>
                 </div>
               </div>
 
@@ -78,7 +78,7 @@ export default function FeaturesBlocks() {
                 src="/images/feature_customcode.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Custom Code</h4>
-                  <p className="text-gray-600 text-center">If you need more, you can add custom code.</p>
+                  <p className="text-gray-600 text-center w-3/4 m-auto">If you need more, you can add custom code.</p>
                 </div>
               </div>
 
@@ -93,7 +93,7 @@ export default function FeaturesBlocks() {
                 src="/images/feature_customdomain.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Your Domain</h4>
-                  <p className="text-gray-600 text-center">Your site your address.</p>
+                  <p className="text-gray-600 text-center w-3/4 m-auto">Your site your address.</p>
                 </div>
               </div>
 
@@ -115,8 +115,8 @@ export default function FeaturesBlocks() {
             <section className="bg-white">
     <div className="">
         <div className="flex flex-col items-start space-y-6 lg:space-y-8 xl:space-y-10">
-            <div className="bg-white shadow-sm ring-1 ring-inset ring-gray-200 rounded-3xl xl:sticky xl:top-20">
-                <div className="grid grid-cols-1 items-center -space-y-12 lg:grid-cols-2 lg:space-y-0">
+        <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-screen overflow-hidden">
+        <div className="grid grid-cols-1 items-center -space-y-12 lg:grid-cols-2 lg:space-y-0">
                     <div className="p-8 sm:p-12 lg:p-16">
                         <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Your content</p>
                         <h3 className="text-2xl font-bold tracking-tight text-gray-900 mt-4 sm:text-3xl sm:mt-6 lg:text-4xl">
@@ -132,8 +132,8 @@ export default function FeaturesBlocks() {
                 </div>
             </div>
 
-            <div className="bg-white shadow-sm ring-1 ring-inset ring-gray-200 rounded-3xl xl:sticky xl:top-20">
-                <div className="grid grid-cols-1 items-center -space-y-12 lg:grid-cols-2 lg:space-y-0 min-h-96">
+            <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-screen overflow-hidden">
+                <div className="grid grid-cols-1 items-center -space-y-12 lg:grid-cols-2 lg:space-y-0">
                     <div className="p-8 sm:p-12 lg:p-16">
                         <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Easy customization</p>
                         <h3 className="text-2xl font-bold tracking-tight text-gray-900 mt-4 sm:text-3xl sm:mt-6 lg:text-4xl">
@@ -149,7 +149,7 @@ export default function FeaturesBlocks() {
                 </div>
             </div>
 
-            <div className="bg-white shadow-sm ring-1 ring-inset ring-gray-200 rounded-3xl xl:sticky xl:top-20">
+            <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-screen overflow-hidden">
                 <div className="grid grid-cols-1 items-center -space-y-12 lg:grid-cols-2 lg:space-y-0">
                     <div className="p-8 sm:p-12 lg:p-16">
                         <p className="text-sm font-bold uppercase tracking-wide text-orange-600">In-built</p>
@@ -166,7 +166,7 @@ export default function FeaturesBlocks() {
                 </div>
             </div>
 
-            <div className="bg-white shadow-sm ring-1 ring-inset ring-gray-200 rounded-3xl xl:sticky xl:top-20">
+            <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-screen overflow-hidden">
                 <div className="grid grid-cols-1 items-center -space-y-12 lg:grid-cols-2 lg:space-y-0">
                     <div className="p-8 sm:p-12 lg:p-16">
                         <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Optimized for</p>
@@ -183,7 +183,7 @@ export default function FeaturesBlocks() {
                 </div>
             </div>
 
-            <div className="bg-white shadow-sm ring-1 ring-inset ring-gray-200 rounded-3xl xl:sticky xl:top-20">
+            <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-screen overflow-hidden">
                 <div className="grid grid-cols-1 items-center -space-y-12 lg:grid-cols-2 lg:space-y-0">
                     <div className="p-8 sm:p-12 lg:p-16">
                         <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Integrates with</p>
