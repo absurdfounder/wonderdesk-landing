@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { StarIcon, ArrowUpRight, Check, ShoppingBag, BookOpen, FileText, FileQuestionIcon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { StarIcon, ArrowUpRight, Check, ShoppingBag, BookOpen, FileText, FileQuestion, ExternalLink } from "lucide-react";
 
 import VideoThumb from "@/public/images/hero-image.png";
 import ModalVideo from "@/components/modal-video";
@@ -40,13 +41,17 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   };
 
   return (
-    <section>
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div
         className="absolute bottom-0 pointer-events-none z-1 h-screen w-screen"
         aria-hidden="true"
         style={{ width: "-webkit-fill-available", opacity: 0.1 }}
       >
-        <svg className=" w-full h-full opacity-50" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-full opacity-50" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern
               id="grid-pattern"
@@ -65,18 +70,29 @@ export default function Hero({ onCategorySelect }: HeroProps) {
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20 space-y-8 mt-8">
-          <div className="text-center px-4 sm:px-6 lg:px-8">
-            <h1
-              className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 aos-init aos-animate"
-              data-aos="zoom-y-out"
-            >
-              <span className="">Effortlessly publish</span> <br />
-              <span className=" -translate-y-full slideUp h-full w-full font-source-serif-4 font-normal italic text-orange-400">
-                {words[index]}
-              </span>{" "}
+          <motion.div
+            className="text-center px-4 sm:px-6 lg:px-8"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4">
+              <span className="">Easily create a </span> <br />
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={words[index]}
+                  className="font-source-serif-4 font-normal italic text-orange-400"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {words[index]}
+                </motion.span>
+              </AnimatePresence>
               <br />
               <span className="flex gap-4 justify-center items-center mt-2">
-                <span className="">from </span> 
+                <span className="">on </span> 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="12 0.19 487.619 510.941"
@@ -90,151 +106,119 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 <span className="">Notion.</span>
               </span>
             </h1>
-          </div>
+          </motion.div>
 
-          <div className="max-w-3xl mx-auto text-center">
-            <p
-              className="text-lg text-gray-600 mb-8 font-lato"
-              data-aos="zoom-y-out"
-              data-aos-delay="150"
-            >
-              <span className="text-gray-900">Turn your Notion docs</span> quickly
+          <motion.div
+            className="max-w-3xl mx-auto text-center"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <p className="text-lg text-gray-600 mb-8 font-lato">
+              <span className="text-gray-900">Simple editor like Notion - Sleek and beautiful like Webflow your Notion docs</span> quickly
               into a beautiful{" "}
-              <b 
-                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
-                onClick={() => handleCategoryClick('saas')}
-              >
-                SaaS
-              </b>,
-              <b 
-                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
-                onClick={() => handleCategoryClick('app')}
-              >
-                Apps
-              </b>,
-              <b 
-                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
-                onClick={() => handleCategoryClick('directory')}
-              >
-                Directories
-              </b>,
-              <b 
-                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
-                onClick={() => handleCategoryClick('marketplace')}
-              >
-                Marketplaces
-              </b>,
-              <b 
-                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
-                onClick={() => handleCategoryClick('blog')}
-              >
-                Blogs
-              </b>,
-              <b 
-                className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
-                onClick={() => handleCategoryClick('helpdesk')}
-              >
-                Helpdesk
-              </b>
+              {["Helpdesk", "Blog", "Directory", "Marketplace"].map((category, index) => (
+                <motion.b
+                  key={category}
+                  className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
+                  onClick={() => handleCategoryClick(category)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {category}
+                </motion.b>
+              ))}
               {" "}
               – no code required.
             </p>
-            <div
-              className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
-              data-aos="zoom-y-out"
-              data-aos-delay="300"
-            >
-              <div>
+            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
-                  className="btn text-dark bg-orange-600 hover:bg-orange-200 hover:text-orange-800 w-full mb-4 sm:w-auto sm:mb-0"
+                  className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center"
                   href="https://app.BoringSites.com"
                 >
-                  Create a Site 
+                  Create your website <ExternalLink className="ml-2 w-4 h-4" />
                 </Link>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
-                  className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4"
+                  className="btn text-black text-2xl border-gray-900 hover:bg-gray-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center"
                   href="#template-section"
                 >
-                  View Examples
+                  View Examples <ArrowUpRight className="ml-2 w-4 h-4" />
                 </Link>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center justify-center space-x-2 space-y-1 text-sm opacity-60 sm:flex-row sm:space-y-0 mt-6">
-            <div className="flex items-center justify-start">
-              <Check className="w-4 h-4 mr-2 text-orange-600" />
-              7-day trial
-            </div>{" "}
-            <div className="flex items-center justify-start">
-              <Check className="w-4 h-4 mr-2 text-orange-600" />
-              Free Design Service
-            </div>{" "}
-            <div className="flex items-center justify-start">
-              <Check className="w-4 h-4 mr-2 text-orange-600" />
-              Free Data Migration
-            </div>
-          </div>
-
-          <div className="sm:flex gap-4 justify-center items-center mt-8 flex-col sm:flex-row hidden">
-            <Link
-              href="#"
-              className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
-              onClick={() => handleCategoryClick('helpdesk')}
-            >
-              <FileQuestionIcon className="w-5 h-5 ml-2 text-gray-400" />
-              <div className="ml-4">
-                <p className="text-sm font-medium mr-2">Helpdesk Site Demo</p>
+          <motion.div
+            className="flex flex-col items-center justify-center space-x-2 space-y-1 text-sm opacity-60 sm:flex-row sm:space-y-0 mt-6"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            {["7-day trial", "Free Design Service", "Free Data Migration"].map((feature, index) => (
+              <div key={index} className="flex items-center justify-start">
+                <Check className="w-4 h-4 mr-2 text-orange-600" />
+                {feature}
               </div>
-            </Link>
+            ))}
+          </motion.div>
 
-            <Link
-              href="#"
-              className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
-              onClick={() => handleCategoryClick('marketplace')}
-            >
-              <ShoppingBag className="w-5 h-5 ml-2 text-gray-400" />
-              <div className="ml-4">
-                <p className="text-sm font-medium mr-2">Marketplace Site Demo</p>
-              </div>
-            </Link>
+          <motion.div
+            className="sm:flex gap-4 justify-center items-center mt-8 flex-col sm:flex-row hidden"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            {[
+              { icon: FileQuestion, text: "Helpdesk Site Demo", category: "helpdesk" },
+              { icon: ShoppingBag, text: "Marketplace Site Demo", category: "marketplace" },
+              { icon: BookOpen, text: "Blog Site Demo", category: "blog" },
+              { icon: FileText, text: "Directory Site Demo", category: "directory" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href="#"
+                  className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
+                  onClick={() => handleCategoryClick(item.category)}
+                >
+                  <item.icon className="w-5 h-5 ml-2 text-gray-400" />
+                  <div className="ml-4">
+                    <p className="text-sm font-medium mr-2">{item.text}</p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
 
-            <Link
-              href="#"
-              className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
-              onClick={() => handleCategoryClick('blog')}
-            >
-              <BookOpen className="w-5 h-5 ml-2 text-gray-400" />
-              <div className="ml-4">
-                <p className="text-sm font-medium mr-2">Blog Site Demo</p>
-              </div>
-            </Link>
-
-            <Link
-              href="#"
-              className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
-              onClick={() => handleCategoryClick('directory')}
-            >
-              <FileText className="w-5 h-5 ml-2 text-gray-400" />
-              <div className="ml-4">
-                <p className="text-sm font-medium mr-2">Directory Site Demo</p>
-              </div>
-            </Link>
-          </div>
-
-          <ModalVideo
-            thumb={VideoThumb}
-            thumbWidth={768}
-            thumbHeight={432}
-            thumbAlt="Modal video thumbnail"
-            video="/videos/videos01.mp4"
-            videoWidth={1920}
-            videoHeight={1080}
-          />
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
+          >
+            <ModalVideo
+              thumb={VideoThumb}
+              thumbWidth={768}
+              thumbHeight={432}
+              thumbAlt="Modal video thumbnail"
+              video="/videos/videos01.mp4"
+              videoWidth={1920}
+              videoHeight={1080}
+            />
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

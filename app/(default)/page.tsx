@@ -38,8 +38,8 @@ export default function Home() {
       {/* 
       <Testimonials />
       */}
-      <Features />
       <FeaturesBlocks />
+      <Features />
       <Showcases />
       <AboutMe />
       <Newsletter />

@@ -79,8 +79,8 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
 
   return (
     <section className='max-w-6xl m-auto text-center' id="template-section">
-      <h1 className="h2 mb-4">
-        <span className="font-source-serif-4 block font-normal text-orange-600">Incredible websites </span> 
+      <h1 className="h2 mb-4 space-y-2">
+        <span className="font-source-serif-4 block font-normal text-orange-600">Beautiful websites </span> 
         <div className="flex items-center justify-center m-auto">
           <span className="mr-2 font-normal">made with</span>
 
@@ -128,10 +128,10 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
 
       <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center aos-init aos-animate mt-6" data-aos="zoom-y-out" data-aos-delay="300">
         <div>
-          <Link className="btn text-dark bg-orange-600 hover:bg-orange-200 hover:text-orange-800 w-full mb-4 sm:w-auto sm:mb-0" href="https://app.BoringSites.com">Ask our Designer for Help</Link>
+          <Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://app.BoringSites.com">Get <b className='mx-2'>Free</b> design assistance</Link>
         </div>
         <div>
-          <Link className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-2 m-auto" href="/showcase">View all</Link>
+          <Link className="btn text-black text-2xl border-gray-900 hover:bg-gray-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center" href="/showcase">View all</Link>
         </div>
       </div>
 

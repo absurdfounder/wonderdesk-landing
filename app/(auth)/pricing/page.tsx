@@ -12,7 +12,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, Loader, Users, MessageSquare, FileText } from 'lucide-react';
 
 const pricingMap: Record<number, number> = {
-  3000: 5,
   10000: 15,
   50000: 30,
   100000: 50,
@@ -296,7 +295,7 @@ const FAQSection: React.FC = () => {
 
 const Pricing: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"Monthly" | "Yearly">("Monthly");
-  const [selectedUsers, setSelectedUsers] = useState<keyof typeof pricingMap>(3000);
+  const [selectedUsers, setSelectedUsers] = useState<keyof typeof pricingMap>(10000);
   const [monthlyPrice, setMonthlyPrice] = useState(pricingMap[selectedUsers]);
   const [yearlyPrice, setYearlyPrice] = useState(monthlyPrice * 10);
   const [popupFeature, setPopupFeature] = useState<Feature | null>(null);
@@ -557,7 +556,6 @@ const Pricing: React.FC = () => {
                       value={selectedUsers}
                       onChange={handleUserChange}
                     >
-                      <option value="3000">3000 Users</option>
                       <option value="10000">10,000 Users</option>
                       <option value="50000">50,000 Users</option>
                       <option value="100000">100,000 Users</option>

@@ -147,15 +147,11 @@ export default function MobileMenu() {
                 </div>
               )}
             </li>
-            <li>
-              <Link href="/affiliate" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Earn $$$</Link>
-            </li>
+
             <li>
               <Link href="/pricing" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Pricing</Link>
             </li>
-            <li>
-              <Link href="/integration" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Integrations</Link>
-            </li>
+
             <li>
               <Link href="/showcase" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Showcase</Link>
             </li>

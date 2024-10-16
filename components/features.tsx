@@ -110,7 +110,7 @@ export default function Features() {
         <div className="pt-12 md:pt-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">
-              Unique your website concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
+              Need Something Unique ? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can <b>create</b> it.</span>
             </h1>
             <p className="text-xl text-gray-600">
               BoringSites is designed for all types from content curation to
