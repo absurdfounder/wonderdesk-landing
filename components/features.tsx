@@ -1,176 +1,94 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import { Transition } from "@headlessui/react";
-import Image, { StaticImageData } from "next/image";
-import { ArrowRight, HelpCircle, BookOpen, ShoppingBag, FileText, LucideIcon } from "lucide-react";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HelpCircle, BookOpen, ShoppingBag, FileText, ChevronRight } from 'lucide-react';
 
-import helpdeskImage from "@/public/images/helpdesk.gif";
-import marketplaceImage from "@/public/images/marketplace.gif";
+const tabData = [
+  { id: 'helpdesk', icon: HelpCircle, title: 'Helpdesk', color: 'bg-orange-100 text-orange-600' },
+  { id: 'blog', icon: BookOpen, title: 'Blog', color: 'bg-blue-100 text-blue-600' },
+  { id: 'marketplace', icon: ShoppingBag, title: 'Marketplace', color: 'bg-green-100 text-green-600' },
+  { id: 'wiki', icon: FileText, title: 'Company Wiki', color: 'bg-purple-100 text-purple-600' },
+];
 
-interface TabButtonProps {
-  tabIndex: number;
-  icon: LucideIcon;
-  text: string;
-  currentTab: number;
-  setTab: (index: number) => void;
-}
-
-const TabButton: React.FC<TabButtonProps> = ({ tabIndex, icon: Icon, text, currentTab, setTab }) => (
-  <button
-    className={`group flex items-center justify-between text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-gray-600 hover:shadow-lg text-gray-900 ${
-      currentTab !== tabIndex ? "bg-gray-100" : "bg-orange-100 text-orange-600"
-    }`}
-    onClick={() => setTab(tabIndex)}
-  >
-    <div className="flex items-center">
-      <Icon className="w-6 h-6 mr-2" />
-      <div className="h4 font-bold leading-snug tracking-tight mb-1">
-        Notion to <span className="bg-clip-text">{text}</span>
+const TabButton = ({ tab, isActive, onClick }) => {
+  const Icon = tab.icon;
+  return (
+    <motion.button
+      className={`flex items-center justify-between w-full p-4 rounded-lg transition-all ${
+        isActive ? tab.color : 'bg-gray-100 text-gray-600'
+      } hover:shadow-md`}
+      onClick={onClick}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <div className="flex items-center">
+        <Icon className="w-6 h-6 mr-3" />
+        <span className="font-semibold text-2xl">Notion to {tab.title}</span>
       </div>
-    </div>
-    <ArrowRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-  </button>
-);
+      <ChevronRight className={`w-5 h-5 transition-transform ${isActive ? 'rotate-90' : ''}`} />
+    </motion.button>
+  );
+};
 
-interface TabContentProps {
-  show: boolean;
-  image: string | StaticImageData;
-  alt1: string;
-  alt2: string;
-}
-
-const TabContent: React.FC<TabContentProps> = ({ show, image, alt1, alt2 }) => (
-  <Transition
-    show={show}
-    appear={true}
-    className="w-full"
-    enter="transition ease-in-out duration-700 transform order-first"
-    enterFrom="opacity-0 translate-y-16"
-    enterTo="opacity-100 translate-y-0"
-    leave="transition ease-in-out duration-300 transform absolute"
-    leaveFrom="opacity-100 translate-y-0"
-    leaveTo="opacity-0 -translate-y-16"
-    unmount={false}
-  >
-    <div className="relative inline-flex flex-col">
-      <Image
-        className="md:max-w-none mx-auto rounded-2xl border border-2 border-gray-600 shadow-lg"
-        src={image}
-        unoptimized
-        width={500}
-        height={462}
-        alt="Features bg"
-      />
-      <div className="flex gap-2 justify-center mt-4 text-xl text-gray-900">
-        A simpler alternative to{" "}
-        <Image
-          alt="Alternative 1"
-          width={120}
-          height={120}
-          src={alt1}
-          className="rounded-full w-auto h-8"
-          unoptimized
-        />{" "}
-        and{" "}
-        <Image
-          alt="Alternative 2"
-          width={120}
-          height={120}
-          src={alt2}
-          className="rounded-full w-auto h-8"
-          unoptimized
-        />
-      </div>
-    </div>
-  </Transition>
-);
-
-export default function Features() {
-  const [tab, setTab] = useState(1);
-  const tabs = useRef<HTMLDivElement>(null);
-
-  const heightFix = () => {
-    if (tabs.current && tabs.current.parentElement)
-      tabs.current.parentElement.style.height = `${tabs.current.clientHeight}px`;
-  };
-
-  useEffect(() => {
-    heightFix();
-  }, []);
+const TabContent = ({ id }) => {
+  // Replace these with your actual image paths
+  const imageSrc = `/images/${id}.png`;
+  const alt1Src = `/images/${id}-alt1.png`;
+  const alt2Src = `/images/${id}-alt2.png`;
 
   return (
-    <section
-      id="featured-section"
-      className="relative mt-4 mb-4 pb-4"
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+      className="bg-white rounded-lg shadow-lg overflow-hidden"
     >
-      <div className="inset-0 bg-gray-100 pointer-events-none mb-16" aria-hidden="true"></div>
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-12 md:pt-20">
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">
-              Need Something Unique ? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can <b>create</b> it.</span>
-            </h1>
-            <p className="text-xl text-gray-600">
-              BoringSites is designed for all types from content curation to
-              content creation. Build company blogs, helpdesks, company wiki,
-              documentations, and marketplaces.
-            </p>
-          </div>
-
-          <div className="md:grid md:grid-cols-12 md:gap-6">
-            <div
-              className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6"
-              data-aos="fade-right"
-            >
-              <div className="grid gap-4 mb-8 md:mb-0">
-                <TabButton tabIndex={1} icon={HelpCircle} text="Helpdesk" currentTab={tab} setTab={setTab} />
-                <TabButton tabIndex={2} icon={BookOpen} text="Blog" currentTab={tab} setTab={setTab} />
-                <TabButton tabIndex={3} icon={ShoppingBag} text="Marketplace" currentTab={tab} setTab={setTab} />
-                <TabButton tabIndex={4} icon={FileText} text="Company Wiki" currentTab={tab} setTab={setTab} />
-              </div>
-            </div>
-
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 grid gap-4 mb-8 md:mb-0 md:order-1 m-auto w-full">
-              <div className="transition-all">
-                <div
-                  className="relative flex flex-col text-center lg:text-right"
-                  data-aos="zoom-y-out"
-                  ref={tabs}
-                >
-                  <TabContent
-                    show={tab === 1}
-                    image={helpdeskImage}
-                    alt1="./images/simpler-helpdesk2.png"
-                    alt2="./images/simpler-helpdesk.png"
-                  />
-                  <TabContent
-                    show={tab === 2}
-                    image="/images/blog.gif"
-                    alt1="./images/simpler-blog.png"
-                    alt2="./images/simpler-blog2.png"
-                  />
-                  <TabContent
-                    show={tab === 3}
-                    image={marketplaceImage}
-                    alt1="./images/simpler-marketplaceue2.png"
-                    alt2="./images/simpler-marketplaceue.png"
-                  />
-                  <TabContent
-                    show={tab === 4}
-                    image="/path/to/your/fourth-tab-image.gif"
-                    alt1="./images/webflow-icon.png"
-                    alt2="/images/framer-icon.png"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+      <img src={imageSrc} alt={`${id} preview`} className="w-full h-auto" />
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-2xl mb-4">A simpler alternative to</h3>
+        <div className="flex items-center space-x-4">
+          <img src={alt1Src} alt="Alternative 1" className="h-8" />
+          <span className="text-gray-500">and</span>
+          <img src={alt2Src} alt="Alternative 2" className="h-8" />
         </div>
       </div>
-      <br />
-      <br />
+    </motion.div>
+  );
+};
+
+export default function Features() {
+  const [activeTab, setActiveTab] = useState(tabData[0].id);
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Need Something Unique?</h2>
+          <p className="text-2xl font-light text-orange-600">BoringSites can create it.</p>
+          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+            BoringSites is designed for all types from content curation to content creation. 
+            Build company blogs, helpdesks, company wiki, documentations, and marketplaces.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            {tabData.map((tab) => (
+              <TabButton
+                key={tab.id}
+                tab={tab}
+                isActive={activeTab === tab.id}
+                onClick={() => setActiveTab(tab.id)}
+              />
+            ))}
+          </div>
+          <AnimatePresence mode="wait">
+            <TabContent key={activeTab} id={activeTab} />
+          </AnimatePresence>
+        </div>
+      </div>
     </section>
   );
 }

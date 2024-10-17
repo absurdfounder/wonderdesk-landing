@@ -152,7 +152,7 @@ interface DropdownLinkProps {
 
 function DropdownLink({ href, icon: Icon, title, description }: DropdownLinkProps) {
   return (
-    <Link href={href} className="flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100">
+    <Link href={href} className="flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-orange-100">
       <Icon className="flex-shrink-0 w-6 h-6 text-orange-600" />
       <div className="ml-4">
         <p className="text-base font-medium text-gray-900">{title}</p>

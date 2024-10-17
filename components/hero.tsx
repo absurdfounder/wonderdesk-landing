@@ -114,9 +114,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <p className="text-lg text-gray-600 mb-8 font-lato">
-              <span className="text-gray-900">Simple editor like Notion - Sleek and beautiful like Webflow your Notion docs</span> quickly
-              into a beautiful{" "}
+            <p className="text-lg text-gray-600 mb-8 font-lato max-w-lg m-auto">
+              <span className="text-gray-900">Turn your notion docs into beautiful</span> {" "}
               {["Helpdesk", "Blog", "Directory", "Marketplace"].map((category, index) => (
                 <motion.b
                   key={category}

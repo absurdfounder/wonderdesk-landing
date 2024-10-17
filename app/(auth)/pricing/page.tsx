@@ -12,10 +12,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, Loader, Users, MessageSquare, FileText } from 'lucide-react';
 
 const pricingMap: Record<number, number> = {
-  10000: 15,
-  50000: 30,
-  100000: 50,
-  1000000: 100,
+  10000: 18,
+  50000: 37,
+  100000: 56,
+  1000000: 92,
 };
 
 interface Feature {
