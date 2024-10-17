@@ -18,7 +18,7 @@ interface TabButtonProps {
 
 const TabButton: React.FC<TabButtonProps> = ({ tabIndex, text, currentTab, setTab }) => (
   <button
-    className={`group flex items-center justify-between text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-gray-600 hover:shadow-lg text-gray-900 ${
+    className={`group flex items-center justify-between text-lg p-5 rounded-full border transition duration-300 ease-in-out d hover:shadow-lg text-gray-900 ${
       currentTab !== tabIndex ? "bg-gray-100" : "bg-orange-100 text-orange-600"
     }`}
     onClick={() => setTab(tabIndex)}
