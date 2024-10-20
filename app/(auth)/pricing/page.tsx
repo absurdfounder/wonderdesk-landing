@@ -30,7 +30,7 @@ interface HobbyFeature extends Feature {
 
 const hobbyFeatures: HobbyFeature[] = [
   { name: "50 articles & collections", included: true, description: "Create up to 50 articles and organize them into collections.", imageUrl: "/api/placeholder/200/150" },
-  { name: "1 Boring Site - Helpdesk, Blog, Directory", included: true, description: "Set up one Boring Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
+  { name: "1 website - Helpdesk, Blog, Directory", included: true, description: "Set up one Boring Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
   { name: "Basic Analytics", included: true, description: "Access fundamental analytics to track your site's performance.", imageUrl: "/api/placeholder/200/150" },
   { name: "Basic SEO", included: true, description: "Implement basic SEO practices to improve your site's visibility.", imageUrl: "/api/placeholder/200/150" },
   { name: "Customization", included: true, description: "Customize your site's appearance with basic options.", imageUrl: "/api/placeholder/200/150" },
@@ -41,13 +41,13 @@ const hobbyFeatures: HobbyFeature[] = [
   { name: "Paywall - Gumroad, LemonSqueezy, Stripe", included: false, description: "Set up paywalls with popular payment processors (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
   { name: "Tally Form Connection", included: false, description: "Connect and use Tally forms on your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
   { name: "Open AI Assistant ", included: false, description: "Integrate OpenAI assistant for enhanced functionality (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
-  { name: "General Search", included: false, description: "Implement a general search feature on your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "General Search", included: true, description: "Implement a general search feature on your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
   { name: "Remove 'Powered by' badge", included: false, description: "Remove the 'Powered by' badge from your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
 ];
 
 const scaleFeatures: Feature[] = [
   { name: "Unlimited articles & collections", description: "Create unlimited articles and collections without any restrictions.", imageUrl: "/api/placeholder/200/150" },
-  { name: "5 BoringSites Sites - any type", description: "Set up and manage up to 5 different BoringSites, choosing from any available type.", imageUrl: "/api/placeholder/200/150" },
+  { name: "5 Websites - Helpdesk, Blog, Directory", description: "Set up and manage up to 5 different BoringSites, choosing from any available type.", imageUrl: "/api/placeholder/200/150" },
   { name: "Detailed Analytics", description: "Access comprehensive analytics to gain deep insights into your site's performance and user behavior.", imageUrl: "/api/placeholder/200/150" },
   { name: "Full SEO Ready", description: "Utilize advanced SEO tools and features to maximize your site's search engine visibility.", imageUrl: "/api/placeholder/200/150" },
   { name: "Advanced Customization", description: "Enjoy extensive customization options to tailor your site's look and feel to your exact preferences.", imageUrl: "/api/placeholder/200/150" },
@@ -57,7 +57,7 @@ const scaleFeatures: Feature[] = [
   { name: "Custom Code & Integrations", description: "Add your own custom code and integrate with a wide range of third-party services and APIs.", imageUrl: "/api/placeholder/200/150" },
   { name: "Paywall - Gumroad, LemonSqueezy, Stripe", description: "Implement paywalls using popular payment processors to monetize your content effectively.", imageUrl: "/api/placeholder/200/150" },
   { name: "Tally Form Connection", description: "Seamlessly connect and use Tally forms within your site for data collection and user interaction.", imageUrl: "/api/placeholder/200/150" },
-  { name: "Advanced AI Assistant", description: "Access an advanced AI assistant to help with content creation, site management, and user engagement.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Open AI Assistant", description: "Access an advanced AI assistant to help with content creation, site management, and user engagement.", imageUrl: "/api/placeholder/200/150" },
   { name: "General Search", description: "Implement a powerful, site-wide search feature to help users find content quickly and easily.", imageUrl: "/api/placeholder/200/150" },
   { name: "Remove 'Powered by' badge", description: "Remove the 'Powered by BoringSites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
 ];
