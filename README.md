@@ -1,28 +1,15 @@
-# Free Tailwind landing page template
+# Boring Sites : Simplest builder for all your boring needs
 
-![Simple TailwindCSS template preview](https://user-images.githubusercontent.com/2683512/231426766-72ae7bcd-618b-4a3e-87cd-b46a464bde61.png)
+![Boring template preview](https://dazzling-cat.netlify.app/boringscreenshot.png)
 
 **Simple Light** is a free landing page template built on top of **TailwindCSS** and fully coded in **React** / **Next.js**. Simple light is designed to provide all the basic components a developer need to create a landing page for SaaS products, online services, and more. 
 Use it for whatever you want, and be sure to reach us out on Twitter if you build anything cool/useful with it.
 Created and maintained with ❤️ by [BoringSites.com](https://BoringSites.com/).
 
-*Version 1.3.3 built with Tailwind CSS and React + Vite is available [here](https://github.com/BoringSites/tailwind-landing-page-template/releases/tag/1.3.3).*
-
 ## Live demo
 
-Check the live demo here 👉️ [https://simple.BoringSites.com/](https://simple.BoringSites.com/)
+Check the live demo here 👉️ [https://BoringSites.com/](https://BoringSites.com/)
 
-## Simple Pro
-
-[![Simple Pro](https://user-images.githubusercontent.com/2683512/151178282-fd81b300-349a-42c3-a30a-f70f6e711e74.png)](https://BoringSites.com/)
-
-## Design files
-
-If you need the design files, you can download them from Figma's Community 👉 https://bit.ly/3HOZMpf
-
-## Usage
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ### Getting Started
 
@@ -69,12 +56,12 @@ For more information about what support covers, please see our (FAQs)[https://Bo
 
 ## Credits
 
-- [Nucleo](https://nucleoapp.com/)
+- [Vaibhav](https://vaibhavkalra.com/)
 
 ## Terms and License
 
 - Released under the [GPL](https://www.gnu.org/licenses/gpl-3.0.html).
-- Copyright 2020 [BoringSites](https://BoringSites.com/).
+- Copyright 2024 [BoringSites](https://BoringSites.com/).
 - Use it for personal and commercial projects, but please don’t republish, redistribute, or resell the template.
 - Attribution is not required, although it is really appreciated.
 

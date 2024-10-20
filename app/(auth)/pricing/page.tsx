@@ -9,7 +9,7 @@ import Rating from "../compare-against/Rating";
 import Link from "next/link";
 import confetti from "canvas-confetti";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Loader, Users, MessageSquare, FileText } from 'lucide-react';
+import { Check, X, Loader, Users, MessageSquare, FileText } from 'lucide-react';
 
 const pricingMap: Record<number, number> = {
   10000: 18,
@@ -27,7 +27,26 @@ interface Feature {
   };
 }
 
-const features: Feature[] = [
+interface HobbyFeature {
+  name: string;
+  included: boolean;
+}
+
+const hobbyFeatures: HobbyFeature[] = [
+  { name: "50 articles & collections", included: true },
+  { name: "1 Boring Site - Helpdesk, Blog, Directory", included: true },
+  { name: "Basic Analytics", included: true },
+  { name: "Basic SEO", included: true },
+  { name: "Customization", included: true },
+  { name: "Auto Upgrades", included: true },
+  { name: "Custom Domain / SSL", included: false },
+  { name: "Custom Components AI", included: false },
+  { name: "Integration Library", included: false },
+  { name: "Paywall Integration", included: false },
+  { name: "Community Features", included: false },
+];
+
+const scaleFeatures: Feature[] = [
   {
     name: "Unlimited articles & collections",
     popup: {
@@ -37,19 +56,43 @@ const features: Feature[] = [
     },
   },
   {
-    name: "Unlimited languages",
-    popup: {
-      image: "/path/to/image_languages.png",
-      headline: "Multiple Languages",
-      description: "Support for multiple languages to cater to a global audience.",
-    },
-  },
-  {
-    name: "5 BoringSites Sites",
+    name: "5 BoringSites Sites - any type",
     popup: {
       image: "/path/to/image2.png",
       headline: "Multiple Sites",
       description: "Manage up to 5 different BoringSites sites.",
+    },
+  },
+  {
+    name: "Detailed Analytics",
+    popup: {
+      image: "/path/to/image_detailed_analytics.png",
+      headline: "Detailed Analytics",
+      description: "Access in-depth analytics to track your site's performance.",
+    },
+  },
+  {
+    name: "Full SEO Ready",
+    popup: {
+      image: "/path/to/image4.png",
+      headline: "SEO Ready",
+      description: "Optimize your content for search engines with built-in SEO tools.",
+    },
+  },
+  {
+    name: "Advanced Customization",
+    popup: {
+      image: "/path/to/image_advanced_customization.png",
+      headline: "Advanced Customization",
+      description: "Customize your site extensively with no-code themes and templates.",
+    },
+  },
+  {
+    name: "Instant Upgrades",
+    popup: {
+      image: "/path/to/image_advanced_customization.png",
+      headline: "Advanced Customization",
+      description: "Get template and future upgrades out of the box, issues are fixed before you can spot them.",
     },
   },
   {
@@ -61,7 +104,15 @@ const features: Feature[] = [
     },
   },
   {
-    name: "Paywall Integration",
+    name: "Custom Sections AI",
+    popup: {
+      image: "/path/to/image3.png",
+      headline: "Custom Sections AI",
+      description: "We use AI to generate beautiful sections that can be applied to your website and they match your theme out of the box.",
+    },
+  },
+  {
+    name: "Custom Code & Integration",
     popup: {
       image: "/path/to/image3.png",
       headline: "Paywall Integration",
@@ -69,11 +120,11 @@ const features: Feature[] = [
     },
   },
   {
-    name: "SEO Ready",
+    name: "Paywall Integration",
     popup: {
-      image: "/path/to/image4.png",
-      headline: "SEO Ready",
-      description: "Optimize your content for search engines with built-in SEO tools.",
+      image: "/path/to/image3.png",
+      headline: "Paywall Integration",
+      description: "Integrate paywall seamlessly with your content.",
     },
   },
   {
@@ -90,14 +141,6 @@ const features: Feature[] = [
       image: "/path/to/image_integrations.png",
       headline: "Integrations",
       description: "Integrate with your existing apps like Slack, Intercom, and more.",
-    },
-  },
-  {
-    name: "Advanced Customization",
-    popup: {
-      image: "/path/to/image_advanced_customization.png",
-      headline: "Advanced Customization",
-      description: "Customize your site extensively with no-code themes and templates.",
     },
   },
   {
@@ -138,14 +181,6 @@ const features: Feature[] = [
       image: "/path/to/image_remove_badge.png",
       headline: "Remove Branding",
       description: "Remove the 'Powered by BoringSites' badge from your site.",
-    },
-  },
-  {
-    name: "Detailed Analytics",
-    popup: {
-      image: "/path/to/image_detailed_analytics.png",
-      headline: "Detailed Analytics",
-      description: "Access in-depth analytics to track your site's performance.",
     },
   },
 ];
@@ -440,7 +475,6 @@ const Pricing: React.FC = () => {
             </div>
           </h1>
 
-
           {/* Pricing Toggle */}
           <motion.div
             className="flex justify-center mb-8"
@@ -472,7 +506,7 @@ const Pricing: React.FC = () => {
 
           <div className="justify-center m-auto">
             <div className="flex gap-4 max-w-4xl m-auto">
-              {/* Free Plan */}
+              {/* Hobby Plan */}
               <motion.div
                 className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2 h-fit mt-0"
                 initial={{ opacity: 0, y: 20 }}
@@ -492,10 +526,9 @@ const Pricing: React.FC = () => {
 
                   <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Fixed upto
+                      Fixed up to
                     </label>
                     <p className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold">1000 Users</p>
-
                   </div>
 
                   <motion.button
@@ -510,19 +543,25 @@ const Pricing: React.FC = () => {
                   </p>
                 </div>
                 <div className="px-8 pt-6 pb-8 bg-slate-50">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
                     <span className="bg-gray-600 w-1 h-8 mr-4"></span>
                     What's included
                   </h3>
                   <ul className="grid grid-cols-1 gap-1 text-left">
-                    {features.slice(0, 6).map((feature, index) => (
+                    {hobbyFeatures.map((feature, index) => (
                       <motion.li
                         key={index}
-                        className="text-md flex items-start gap-2 leading-[32px] mb-2 items-center"
+                        className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center ${
+                          feature.included ? 'text-slate-700' : 'text-slate-400 line-through'
+                        }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <Check className="flex-shrink-0 h-4 w-4 text-green-500 mr-2" />
+                        {feature.included ? (
+                          <Check className="flex-shrink-0 h-4 w-4 text-green-500 mr-2" />
+                        ) : (
+                          <X className="flex-shrink-0 h-4 w-4 text-red-500 mr-2" />
+                        )}
                         <span>{feature.name}</span>
                       </motion.li>
                     ))}
@@ -591,7 +630,7 @@ const Pricing: React.FC = () => {
                     What's included
                   </h3>
                   <ul className="grid grid-cols-1 gap-1 text-left">
-                    {features.map((feature, index) => (
+                    {scaleFeatures.map((feature, index) => (
                       <motion.li
                         key={index}
                         ref={(el) => {
@@ -682,7 +721,7 @@ const Pricing: React.FC = () => {
                   Limited Time Offer: Lifetime Deal
                 </h3>
                 <p className="text-xl mb-4">
-                  Get <span className="text-orange-600 font-bold">Unlimited</span> at{" "}
+                Get <span className="text-orange-600 font-bold">Unlimited</span> at{" "}
                   <span className="line-through text-gray-400">$599</span>{" "}
                   <span className="font-bold">$99</span>
                 </p>
