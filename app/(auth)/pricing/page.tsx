@@ -463,7 +463,9 @@ const Pricing: React.FC = () => {
                     {hobbyFeatures.map((feature, index) => (
                       <motion.li
                         key={index}
-                        ref={(el) => (hobbyFeatureRefs.current[index] = el)}
+                        ref={(el: HTMLLIElement | null) => {
+                          hobbyFeatureRefs.current[index] = el;
+                        }}
                         className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center cursor-pointer ${
                           feature.included ? 'text-slate-700' : 'text-slate-400 line-through'
                         }`}
@@ -550,7 +552,9 @@ const Pricing: React.FC = () => {
                     {scaleFeatures.map((feature, index) => (
                       <motion.li
                         key={index}
-                        ref={(el) => (scaleFeatureRefs.current[index] = el)}
+                        ref={(el: HTMLLIElement | null) => {
+                          scaleFeatureRefs.current[index] = el;
+                        }}
                         className="text-md flex items-start gap-2 leading-[32px] mb-2 items-center cursor-pointer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
