@@ -40,9 +40,9 @@ const hobbyFeatures: HobbyFeature[] = [
   { name: "Customization", included: true },
   { name: "Auto Upgrades", included: true },
   { name: "Custom Domain / SSL", included: false },
-  { name: "Custom Components AI", included: false },
-  { name: "Integration Library", included: false },
-  { name: "Paywall Integration", included: false },
+  { name: "Custom Sections AI", included: false },
+  { name: "Custom Code & Integrations", included: false },
+  { name: "Paywall - Gumroad, LemonSqueezy, Stripe", included: false },
   { name: "Community Features", included: false },
 ];
 
@@ -112,7 +112,15 @@ const scaleFeatures: Feature[] = [
     },
   },
   {
-    name: "Custom Code & Integration",
+    name: "Custom Code & Integrations",
+    popup: {
+      image: "/path/to/image3.png",
+      headline: "Custom Code & Integration Library",
+      description: "Integrate paywall seamlessly with your content.",
+    },
+  },
+  {
+    name: "Paywall - Gumroad, LemonSqueezy, Stripe",
     popup: {
       image: "/path/to/image3.png",
       headline: "Paywall Integration",
@@ -120,39 +128,15 @@ const scaleFeatures: Feature[] = [
     },
   },
   {
-    name: "Paywall Integration",
-    popup: {
-      image: "/path/to/image3.png",
-      headline: "Paywall Integration",
-      description: "Integrate paywall seamlessly with your content.",
-    },
-  },
-  {
-    name: "Password Protection",
+    name: "Tally Form Connection",
     popup: {
       image: "/path/to/image_password_protection.png",
       headline: "Password Protection",
       description: "Protect your content with secure password protection.",
     },
-  },
+  },  
   {
-    name: "Integrations",
-    popup: {
-      image: "/path/to/image_integrations.png",
-      headline: "Integrations",
-      description: "Integrate with your existing apps like Slack, Intercom, and more.",
-    },
-  },
-  {
-    name: "Article Suggester",
-    popup: {
-      image: "/path/to/image_article_suggester.png",
-      headline: "Article Suggester",
-      description: "Get intelligent article suggestions to enhance your content.",
-    },
-  },
-  {
-    name: "Advanced Article Search",
+    name: "Advanced AI Search",
     popup: {
       image: "/path/to/image_advanced_search.png",
       headline: "Advanced Article Search",
@@ -160,19 +144,11 @@ const scaleFeatures: Feature[] = [
     },
   },
   {
-    name: "Content Rating",
+    name: "General Search",
     popup: {
       image: "/path/to/image_content_rating.png",
-      headline: "Content Rating",
+      headline: "General Search",
       description: "Allow users to rate your content for better feedback.",
-    },
-  },
-  {
-    name: "Auto Sync",
-    popup: {
-      image: "/path/to/image_auto_sync.png",
-      headline: "Auto Sync",
-      description: "Automatically sync your content with Notion.",
     },
   },
   {
