@@ -4,16 +4,10 @@ export default function AboutMe() {
   return (
     <section className="relative">
       <div className="px-4 sm:px-6 pt-16 md:pt-20 pb-12 max-w-6xl mx-auto">
-        <h2 className="mb-1 font-semibold leading-6 tracking-wide text-center text-orange-600 uppercase">
-          How did I come to this idea?
-        </h2>
 
-        <h1 className="h2 mb-8 text-center">
-          Launch businesses in minutes{" "}
-          <span className="font-source-serif-4 block font-normal text-orange-600">
-            grow to millions in traffic
-          </span>{" "}
-          without leaving Notion.
+      <h1 className="h2 mb-8 text-center font-silkscreen">
+        Hello! 👋<br/>
+        My name is Vaibhav.
         </h1>
 
         <div className="flex flex-col md:flex-row items-center justify-center">

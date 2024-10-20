@@ -26,7 +26,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 1000);
+    }, 1800);
     return () => clearInterval(interval);
   }, []);
   
@@ -76,7 +76,29 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4">
+
+<h1 className="h2 mb-8 text-center leading-tight font-comfortaa tracking-loose">
+          Launch 
+          
+                <motion.span
+                  key={words[index]}
+                  className="font-source-serif-4 font-normal italic text-orange-600 px-4"
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -40, opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {words[index]}
+                </motion.span>
+
+           in minutes{" "}
+          <span className="font-bungee block font-normal text-orange-600">
+            grow to millions in traffic
+          </span>{" "}
+          using Notion.
+        </h1>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 hidden">
               <span className="">Easily create a </span> <br />
               <AnimatePresence mode="wait">
                 <motion.span
