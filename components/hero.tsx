@@ -29,7 +29,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
     }, 1800);
     return () => clearInterval(interval);
   }, []);
-  
+
   const handleCategoryClick = (category: string) => {
     if (typeof onCategorySelect === 'function') {
       onCategorySelect(category);
@@ -77,26 +77,26 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
 
-<h1 className="h2 mb-8 text-center leading-tight font-comfortaa tracking-loose text-slate-700">
-          Launch 
-          
-                <motion.span
-                  key={words[index]}
-                  className="font-source-serif-4 font-normal italic text-orange-600 px-4"
-                  initial={{ y: 40, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -40, opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {words[index]}
-                </motion.span>
+            <h1 className="h2 mb-8 text-center leading-tight font-comfortaa tracking-loose text-slate-700">
+              Launch
 
-           in minutes{" "}
-          <span className="font-bungee block font-normal text-orange-600 my-2">
-            grow to millions in traffic
-          </span>{" "}
-          using Notion.
-        </h1>
+              <motion.span
+                key={words[index]}
+                className="font-source-serif-4 font-normal italic text-orange-600 px-4"
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -40, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {words[index]}
+              </motion.span>
+
+              in minutes{" "}
+              <span className="font-bungee block font-normal text-orange-600 my-2">
+                grow to millions in traffic
+              </span>{" "}
+              using Notion.
+            </h1>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 hidden">
               <span className="">Easily create a </span> <br />
@@ -114,7 +114,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               </AnimatePresence>
               <br />
               <span className="flex gap-4 justify-center items-center mt-2">
-                <span className="">on </span> 
+                <span className="">on </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="12 0.19 487.619 510.941"
@@ -136,25 +136,25 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-<p className="text-lg text-slate-600 mb-8 font-lato max-w-lg m-auto">
-  <span className="text-slate-600 block">Turn your notion docs into beautiful</span> {" "}
-  {["Helpdesk", "Blog", "Directory", "Marketplace"].map((category, index) => (
-    <>
-      {index > 0 && ", "}
-      <motion.b
-        key={category}
-        className="text-slate-800 border-b border-orange-600 hover:text-orange-500 cursor-pointer"
-        onClick={() => handleCategoryClick(category)}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        {category}
-      </motion.b>
-    </>
-  ))}
-  {" "}
-  – no code required.
-</p>
+            <p className="text-lg text-slate-600 mb-8 font-lato max-w-lg m-auto">
+              <span className="text-slate-600 block">Turn your notion docs into beautiful</span> {" "}
+              {["Helpdesk", "Blog", "Directory", "Marketplace"].map((category, index) => (
+                <>
+                  {index > 0 && ", "}
+                  <motion.b
+                    key={category}
+                    className="text-slate-800 border-b border-orange-600 hover:text-orange-500 cursor-pointer"
+                    onClick={() => handleCategoryClick(category)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {category}
+                  </motion.b>
+                </>
+              ))}
+              {" "}
+              – no code required.
+            </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <motion.div
                 whileHover={{ scale: 1.05 }}
