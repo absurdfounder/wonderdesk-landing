@@ -16,7 +16,7 @@ function IntegrationDetail() {
 
             {/* Integration Details */}
 
-            <div className="space-y-8 bg-gray-100 p-8">
+            <div className="space-y-8 bg-slate-100 p-8">
 
               <div className="flex space-y-6" >
                 <div className="space-y-4">
@@ -27,15 +27,15 @@ function IntegrationDetail() {
                       <Image  src="https://framerusercontent.com/images/FS1of0gxF0A6UP7GmCpIBKQM.png" unoptimized alt="" width={100} height={100} className="w-full h-full object-contain" />
                     </div>
                     <div className="space-y-2" >
-                      <h1 className="text-2xl font-bold text-gray-800">Arcade</h1>
-                      <p className="text-md text-gray-600">By BoringSites</p>
+                      <h1 className="text-2xl font-bold text-slate-800">Arcade</h1>
+                      <p className="text-md text-slate-600">By BoringSites</p>
                     </div>
                   </div>
-                  <div className="text-gray-800" >
+                  <div className="text-slate-800" >
                     <p>Embed interactive product demos in your documentation and turn all users into power users.</p>
                   </div>
                   <div className="flex space-x-2 items-center" >
-                    <Link href="https://app.BoringSites.com/integrations/arcade" className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
+                    <Link href="https://app.BoringSites.com/integrations/arcade" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
                       <span>Install</span>
                     </Link>
                   </div>

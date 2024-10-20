@@ -42,19 +42,19 @@ export default async function Template() {
   const templates = await _loadFromJson();
 
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white" id="template-section">
+    <section className="bg-gradient-to-b from-slate-100 to-white" id="template-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h1 className="h2 mb-4">Find your Template</h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-slate-600">
               Jumpstart your SaaS business with pre-built solutions from
               BoringSites and our community.
             </p>
 
             <div className="mt-6">
-              <div className="relative bg-gray-900 rounded-2xl py-6 px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden">
+              <div className="relative bg-slate-900 rounded-2xl py-6 px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden">
                 {/* Background illustration */}
                 <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
                   <Image
@@ -84,8 +84,8 @@ export default async function Template() {
                         </Link>
                       </div>
                       {/* Success message */}
-                      {/* <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> */}
-                      <p className="text-sm text-gray-400 mt-3">
+                      {/* <p className="text-sm text-slate-400 mt-3">Thanks for subscribing!</p> */}
+                      <p className="text-sm text-slate-400 mt-3">
                         Subsribe to a monthly plan
                       </p>
                     </form>
@@ -142,11 +142,11 @@ export default async function Template() {
                           </span>
                         </Link>
 
-                        <p className="text-sm text-gray-400 mt-2 mb-3">
+                        <p className="text-sm text-slate-400 mt-2 mb-3">
                         {truncateText(template?.product?.description, 76)}
                         </p>
 
-                        <span className="bg-gray-100 border-gray-200 border-dashed border-2 p-1 px-4 rounded-full my-2">
+                        <span className="bg-slate-100 border-slate-200 border-dashed border-2 p-1 px-4 rounded-full my-2">
                           Helpdesk
                         </span>
                       </div>

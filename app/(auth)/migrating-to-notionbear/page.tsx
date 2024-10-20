@@ -28,7 +28,7 @@ twitter: {
 
 export default function PageDetail() {
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white">
+    <section className="bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
 
@@ -49,12 +49,12 @@ export default function PageDetail() {
         </div>
     </div>
     <div className="text-center">
-        <h1 className="md:text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Migrate</span> your content from another external Knowledge Base</h1>
-        <p className="mt-6 leading-7 text-gray-600 sm:text-lg sm:leading-8">
+        <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Migrate</span> your content from another external Knowledge Base</h1>
+        <p className="mt-6 leading-7 text-slate-600 sm:text-lg sm:leading-8">
             Planning to move your help content from another provider? We can seamlessly import your existing knowledge base from pretty much any platform into our Notion template.
         </p>
         <div className="flex items-center justify-center mt-10 gap-x-6">
-        <Link href="/contact-us#migration" className="px-6 py-2 text-lg font-semibold text-white rounded-lg gradient-bg-accent bg-gray-800">
+        <Link href="/contact-us#migration" className="px-6 py-2 text-lg font-semibold text-white rounded-lg gradient-bg-accent bg-slate-800">
                 Contact Us →
             </Link>
         </div>
@@ -67,10 +67,10 @@ export default function PageDetail() {
             <p className="text-base font-semibold leading-7 text-orange-600">
                 SUPPORTED PLATFORMS
             </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 Migrate from 100+ Knowledge base platforms
             </h2>
-            <p className="mt-6 text-gray-600 sm:text-lg sm:leading-8">
+            <p className="mt-6 text-slate-600 sm:text-lg sm:leading-8">
                 Migrate your articles from pretty much any knowledge base platform to BoringSites. Our experts will make sure it’s a hassle-free and quick transition.
             </p>
         </div>
@@ -78,16 +78,16 @@ export default function PageDetail() {
     <div className="bg-white">
         <div className="px-6 mx-auto max-w-7xl lg:px-8">
             <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-full md:grid-cols-3">
-                <div className="p-8 bg-gray-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/intercom.png" unoptimized alt="Intercom" width="158" height="48" className="object-contain w-full max-h-10" /></div>
-                <div className="p-6 bg-gray-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/crisp.png" unoptimized alt="Crisp" width="158" height="48" className="object-contain w-full pt-1 max-h-10" /></div>
-                <div className="p-6 bg-gray-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/helpscout.png" unoptimized alt="HelpScout" width="158" height="48" className="object-contain w-full pt-3 max-h-10" /></div>
-                <div className="p-6 bg-gray-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/document360.png" unoptimized alt="Document360" width="158" height="48" className="object-contain w-full max-h-12" /></div>
-                <div className="p-6 bg-gray-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/gitbook.png" unoptimized alt="Gitbook" width="158" height="48" className="object-contain w-full max-h-12" /></div>
-                <div className="flex items-center justify-center p-6 bg-gray-400/5 sm:p-10"><span className="text-2xl font-semibold gradient-text-accent">Many more</span></div>
+                <div className="p-8 bg-slate-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/intercom.png" unoptimized alt="Intercom" width="158" height="48" className="object-contain w-full max-h-10" /></div>
+                <div className="p-6 bg-slate-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/crisp.png" unoptimized alt="Crisp" width="158" height="48" className="object-contain w-full pt-1 max-h-10" /></div>
+                <div className="p-6 bg-slate-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/helpscout.png" unoptimized alt="HelpScout" width="158" height="48" className="object-contain w-full pt-3 max-h-10" /></div>
+                <div className="p-6 bg-slate-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/document360.png" unoptimized alt="Document360" width="158" height="48" className="object-contain w-full max-h-12" /></div>
+                <div className="p-6 bg-slate-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/gitbook.png" unoptimized alt="Gitbook" width="158" height="48" className="object-contain w-full max-h-12" /></div>
+                <div className="flex items-center justify-center p-6 bg-slate-400/5 sm:p-10"><span className="text-2xl font-semibold gradient-text-accent">Many more</span></div>
             </div>
         </div>
         <div className="flex items-center justify-center w-full pt-12">
-        <Link href="/contact-us#migration" className="px-6 py-2 text-lg font-semibold text-white rounded-lg gradient-bg-accent bg-gray-800">
+        <Link href="/contact-us#migration" className="px-6 py-2 text-lg font-semibold text-white rounded-lg gradient-bg-accent bg-slate-800">
                 Contact Us →
             </Link>
         </div>

@@ -114,12 +114,12 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <p className="text-lg text-gray-600 mb-8 font-lato max-w-lg m-auto">
-              <span className="text-gray-900">Turn your notion docs into beautiful</span> {" "}
+            <p className="text-lg text-slate-600 mb-8 font-lato max-w-lg m-auto">
+              <span className="text-slate-900">Turn your notion docs into beautiful</span> {" "}
               {["Helpdesk", "Blog", "Directory", "Marketplace"].map((category, index) => (
                 <motion.b
                   key={category}
-                  className="text-gray-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
+                  className="text-slate-900 border-b border-orange-600 ml-2 hover:text-orange-500 cursor-pointer"
                   onClick={() => handleCategoryClick(category)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -147,7 +147,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  className="btn text-black text-2xl border-gray-900 hover:bg-gray-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center"
+                  className="btn text-slate-800 text-2xl border-slate-900 hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center"
                   href="#template-section"
                 >
                   View Examples <ArrowUpRight className="ml-2 w-4 h-4" />
@@ -189,10 +189,10 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               >
                 <Link
                   href="#"
-                  className="flex items-center p-2 transition duration-150 ease-in-out border border-gray-600 text-gray-600 rounded-lg hover:bg-gray-900 hover:text-white"
+                  className="flex items-center p-2 transition duration-150 ease-in-out border border-slate-600 text-slate-600 rounded-lg hover:bg-slate-900 hover:text-white"
                   onClick={() => handleCategoryClick(item.category)}
                 >
-                  <item.icon className="w-5 h-5 ml-2 text-gray-400" />
+                  <item.icon className="w-5 h-5 ml-2 text-slate-400" />
                   <div className="ml-4">
                     <p className="text-sm font-medium mr-2">{item.text}</p>
                   </div>

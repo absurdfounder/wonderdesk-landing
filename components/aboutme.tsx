@@ -26,7 +26,7 @@ export default function AboutMe() {
               alt="Profile"
             />
           </div>
-          <div className="w-full md:w-2/3 md:pl-8 prose prose-sm sm:prose text-gray-600 prose-indigo">
+          <div className="w-full md:w-2/3 md:pl-8 prose prose-sm sm:prose text-slate-600 prose-indigo">
             <p className="my-2">
               Hey 👋 <br className="block sm:hidden" />
               I'm Vaibhav, the founder of BoringSites.
@@ -35,14 +35,14 @@ export default function AboutMe() {
               There are already a couple of website builders and knowledge base
               softwares out there to help you post and manage content. And while
               most of them are certainly doing a good job,{" "}
-              <strong className="text-gray-900">
+              <strong className="text-slate-900">
                 are they actually making use of the best content management
                 system in the world?
               </strong>
             </p>
             <p className="my-2">
               I have been using{" "}
-              <strong className="text-gray-900">Notion</strong> for a few years
+              <strong className="text-slate-900">Notion</strong> for a few years
               now. It's an amazing tool for storing and organizing all of my
               company's knowledge and writings. It should feel similar to tools
               such as Intercom or Zendesk when it comes to support or Webflow
@@ -50,14 +50,14 @@ export default function AboutMe() {
               <br />
               <br />
               Since I couldn't find the right solution –{" "}
-              <strong className="text-gray-900">I built BoringSites</strong>.
+              <strong className="text-slate-900">I built BoringSites</strong>.
               Sure, you can publish your Notion page on its own but it might
               come across as unprofessional. The messy Notion URL, distracting
               links pointing to Notion and the lack of customizability are just
               a few disadvantages...
             </p>
             <p className="my-2">
-              <strong className="text-gray-900">
+              <strong className="text-slate-900">
                 BoringSites is solving all of this. It is for businesses who need
                 an easy way to create a reliable knowledge site powered by
                 Notion.{" "}

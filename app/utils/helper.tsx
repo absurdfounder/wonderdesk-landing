@@ -14,9 +14,9 @@ import Link from 'next/link';
 const renderContent = (item: any, index: number) => {
   switch (item.type) {
     case 'heading':
-      return <h3 key={index} className="text-xl font-bold text-gray-900 mt-4 mb-2">{item.text}</h3>;
+      return <h3 key={index} className="text-xl font-bold text-slate-900 mt-4 mb-2">{item.text}</h3>;
     case 'paragraph':
-      return <p key={index} className="text-base text-gray-700 my-2">{item.text}</p>;
+      return <p key={index} className="text-base text-slate-700 my-2">{item.text}</p>;
     case 'image':
       return (
         <div key={index} className="flex justify-center">
@@ -28,17 +28,17 @@ const renderContent = (item: any, index: number) => {
       return (
         <ul key={index} className="list-disc pl-5 space-y-1">
           {item.items.map((listItem: string, listItemIndex: number) => (
-            <li key={listItemIndex} className="text-gray-700">{listItem}</li>
+            <li key={listItemIndex} className="text-slate-700">{listItem}</li>
           ))}
         </ul>
       );
     case 'link':
       return <Link key={index} href={item.href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 underline">{item.text}</Link>;
     case 'blockquote':
-      return <blockquote key={index} className="italic border-l-4 border-gray-200 pl-4 py-2 my-2">{item.text}</blockquote>;
+      return <blockquote key={index} className="italic border-l-4 border-slate-200 pl-4 py-2 my-2">{item.text}</blockquote>;
     case 'code':
       return (
-        <pre key={index} className="bg-gray-100 rounded-full p-3 overflow-auto">
+        <pre key={index} className="bg-slate-100 rounded-full p-3 overflow-auto">
           <code className="text-sm">{item.code}</code>
         </pre>
       );

@@ -14,9 +14,9 @@ export default function Banner() {
 
             <button 
               type="button" 
-              className="bg-white text-xs font-bold shadow-lg backdrop-blur-lg rounded-md flex items-center border text-white p-2 hover:border-gray-600"
+              className="bg-white text-xs font-bold shadow-lg backdrop-blur-lg rounded-md flex items-center border text-white p-2 hover:border-slate-600"
             >
-              <span className="hidden sm:inline mr-2 text-black">Made with</span>
+              <span className="hidden sm:inline mr-2 text-slate-800">Made with</span>
                 
 
               <svg width="1886" height="240" viewBox="0 0 1886 240" className="h-4 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">

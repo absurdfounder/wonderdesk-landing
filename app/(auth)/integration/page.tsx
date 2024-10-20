@@ -29,12 +29,12 @@ twitter: {
 const Integration = async () => {
   const integrations = await _loadFromJson(false);
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white">
+    <section className="bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h1 className="h3 mb-4">BoringSites Integrations</h1>
-            <p className="text-xl text-gray-600">Integrate with your stack and extend functionality with powerful integrations built by us and our amazing community.</p>
+            <p className="text-xl text-slate-600">Integrate with your stack and extend functionality with powerful integrations built by us and our amazing community.</p>
 
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center aos-init aos-animate mt-6">
               <div><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="/contact-us">Missing Integration? Ask for Help</Link></div>
@@ -58,7 +58,7 @@ const Integration = async () => {
 
                       <span className="text-dark font-bold">{integration?.product?.name}  </span>
                     </div>
-                    <button className="text-white bg-gray-900 rounded-full w-full p-2 mt-4">
+                    <button className="text-white bg-slate-900 rounded-full w-full p-2 mt-4">
                       {integration?.callToCopy?.text || "Integrate"}
                     </button>
                   </div>
@@ -67,13 +67,13 @@ const Integration = async () => {
             ))}
 
             <Link href="https://iframely.com/domains" target='_blank'>
-            <div className="cursor-pointer relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border border-gray-600 border-dashed">
+            <div className="cursor-pointer relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border border-slate-600 border-dashed">
                 <div className="w-full">
                     <div className="flex items-center space-x-2 mb-4">
-                        <div className="w-10 h-10 bg-gray-200 rounded-full" ></div>
+                        <div className="w-10 h-10 bg-slate-200 rounded-full" ></div>
                         <span className="text-dark font-bold">And a lot more..</span>
                     </div>
-                    <button className="border border-gray-200 bg-orange-600 rounded-full w-full p-2 mt-4">Add More...</button>
+                    <button className="border border-slate-200 bg-orange-600 rounded-full w-full p-2 mt-4">Add More...</button>
                 </div>
             </div>
 

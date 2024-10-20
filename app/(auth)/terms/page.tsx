@@ -28,7 +28,7 @@ twitter: {
 
 export default function PageDetail() {
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white">
+    <section className="bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
 
@@ -48,7 +48,7 @@ export default function PageDetail() {
                             <b><span>AGREEMENT TO TERMS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and&nbsp;Malai Tikka Labs LLC, doing business as BoringSites&nbsp;("BoringSites", “</span>
                             <b><span>we</span></b><span>”, “</span><b><span>us</span></b><span>”, or “</span><b><span>our</span></b><span>”), concerning your access to and use of the&nbsp;</span>
@@ -60,7 +60,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or
@@ -70,7 +70,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 The information provided on the Site is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would
@@ -79,7 +79,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 The Site is not tailored to comply with industry-specific regulations (Health Insurance Portability and Accountability Act (HIPAA), Federal Information Security Management Act (FISMA), etc.), so if your interactions
@@ -87,7 +87,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>The Site is intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use or&nbsp;register for the Site.</span></span>
                     </p>
                     <div className="blank">&nbsp;</div>
@@ -96,7 +96,7 @@ export default function PageDetail() {
                             <b><span>INTELLECTUAL PROPERTY RIGHTS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the
@@ -107,7 +107,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 Provided that you are eligible to use the Site, you are granted a limited license to access and use the Site and to download or print a copy of any portion of the Content to which you have properly gained access solely
@@ -121,7 +121,7 @@ export default function PageDetail() {
                             <b><span>USER REPRESENTATIONS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 By using the Site, you represent and warrant that:&nbsp;(1)&nbsp;all registration information you submit will be true, accurate, current, and complete; (2) you will maintain the accuracy of such information and promptly
@@ -131,7 +131,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Site (or any portion
@@ -144,7 +144,7 @@ export default function PageDetail() {
                             <b><span>USER REGISTRATION</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 You may be required to register with the Site. You agree to keep your password confidential and will be responsible for all use of your account and password. We reserve the right to remove, reclaim, or change a username
@@ -158,7 +158,7 @@ export default function PageDetail() {
                             <b><span>FEES AND PAYMENT</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>We accept the following forms of payment:</span></span>
                     </p>
                     <ul className="list list-disc my-2">
@@ -186,7 +186,7 @@ export default function PageDetail() {
                         
                     </ul>
                     <div className="blank">&nbsp;</div>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 You may be required to purchase or pay a fee to access some of our services. You agree to provide current, complete, and accurate purchase and account information for all purchases made via the Site. You further agree to
@@ -195,7 +195,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 You agree to pay all charges or fees at the prices then in effect for your purchases, and you authorize us to charge your chosen payment provider for any such amounts upon making your purchase.&nbsp;If&nbsp;your purchase
@@ -203,7 +203,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>We reserve the right to correct any errors or mistakes in pricing, even if we have already requested or received payment. We also reserve the right to refuse any order placed through the Site.</span></span>
                     </p>
                     <div className="blank">&nbsp;</div>
@@ -212,7 +212,7 @@ export default function PageDetail() {
                             <b><span>MONTHLY SUBSCRIPTION</span></b>
                         </span>
                     </h3>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 If you have chosen a monthly term, your BoringSites subscription will continue month-to-month unless and until you cancel or we terminate it. You must cancel your subscription before it renews each month in order to avoid
@@ -221,13 +221,13 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>With a monthly subscription, your license to use BoringSites will be extended monthly, and is valid for one whole month (for example July 14, 2019 until August 14, 2019).</span></span>
                     </p>
                     <h3 className="h4 my-2">
                         <span><span>YEARLY SUBSCRIPTION</span></span>
                     </h3>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 If you have chosen a yearly term, your BoringSites subscription will continue year-to-year unless and until you cancel or we terminate it. You must cancel your subscription before it renews each year in order to avoid
@@ -236,7 +236,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>With a yearly subscription, your license will be extended yearly, and is valid for the year you paid for (for example July 14, 2019 until July 14, 2020).</span></span>
                     </p>
                     <h2 className="h4 my-2">
@@ -244,7 +244,7 @@ export default function PageDetail() {
                             <b><span>CANCELLATION</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 All purchases are non-refundable.&nbsp;You can cancel your subscription at any time in your user account under your account settings or&nbsp;by contacting us using the contact&nbsp;information provided below. Your
@@ -252,19 +252,19 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>If you are unsatisfied with our services, please email us at&nbsp;vaibhav@BoringSites.com</span></span>
                     </p>
                     <h2 className="h4 my-2">
                         <span><span>LICENSE</span></span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span> LLC grants you a revocable, non-exclusive, non-transferable, limited license to use the Application strictly in accordance with the terms of this Agreement. </span></span>
                     </p>
                     <h2 className="h4 my-2">
                         <span><span>RESTRICTIONS</span></span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>You agree not to, and you will not permit others to:</span></span>
                     </p>
                     <ul className="list list-disc my-2">
@@ -289,7 +289,7 @@ export default function PageDetail() {
                     <h2 className="h4 my-2">
                         <span><span>FAIR USE POLICY</span></span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>Customers of Malai Tikka Labs need to adhere the following fair use policy:</span></span>
                     </p>
                     <ul className="list list-disc my-2">
@@ -306,7 +306,7 @@ export default function PageDetail() {
                     <h2 className="h4 my-2">
                         <span><span>YOUR SUGGESTIONS</span></span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 Any feedback, comments, ideas, improvements or suggestions (collectively, "Suggestions") provided by you to Malai Tikka Labs LLC with respect to the Application shall remain the sole and exclusive property of Malai
@@ -320,7 +320,7 @@ export default function PageDetail() {
                             <b><span>PROHIBITED ACTIVITIES</span></b><span></span>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or
@@ -328,15 +328,15 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>As a user of the Site, you agree not to:</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>1.&nbsp;&nbsp;Systematically retrieve data or other content from the Site to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 2.&nbsp;&nbsp;Make any unauthorized use of the Site, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by
@@ -344,13 +344,13 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>3.&nbsp;&nbsp;Use a buying agent or purchasing agent to make purchases on the Site.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>4.&nbsp;&nbsp;Use the Site to advertise or offer to sell goods and services.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 5.&nbsp;&nbsp;Circumvent, disable, or otherwise interfere with security-related  of the Site, including features that prevent or restrict the use or copying of any Content or enforce limitations on the use of the
@@ -358,49 +358,49 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>6.&nbsp;&nbsp;Engage in unauthorized framing of or linking to the Site.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>7.&nbsp;&nbsp;Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as user passwords.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>8.&nbsp;&nbsp;Make improper use of our support services or submit false reports of abuse or misconduct.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>9.&nbsp;&nbsp;Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering and extraction tools.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>10.&nbsp;&nbsp;Interfere with, disrupt, or create an undue burden on the Site or the networks or services connected to the Site.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>11.&nbsp;&nbsp;Attempt to impersonate another user or person or use the username of another user.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>12.&nbsp;&nbsp;Sell or otherwise transfer your profile.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>13.&nbsp;&nbsp;Use any information obtained from the Site in order to harass, abuse, or harm another person.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>14.&nbsp;&nbsp;Use the Site as part of any effort to compete with us or otherwise use the Site and/or the Content for any revenue-generating endeavor or commercial enterprise.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>15.&nbsp;&nbsp;Decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the Site.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>16.&nbsp;&nbsp;Attempt to bypass any measures of the Site designed to prevent or restrict access to the Site, or any portion of the Site.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>17.&nbsp;&nbsp;Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the Site to you.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>18.&nbsp;&nbsp;Delete the copyright or other proprietary rights notice from any Content.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>19.&nbsp;&nbsp;Copy or adapt the Site’s software, including but not limited to Flash, PHP, HTML, JavaScript, or other code.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 20.&nbsp;&nbsp;Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including excessive use of capital letters and spamming (continuous posting of repetitive text), that
@@ -408,7 +408,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 21.&nbsp;&nbsp;Upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information collection or transmission mechanism, including without limitation, clear graphics
@@ -416,7 +416,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 22.&nbsp;&nbsp;Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or distribute any automated system, including without limitation, any spider, robot, cheat utility,
@@ -424,10 +424,10 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>23.&nbsp;&nbsp;Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Site.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>24.&nbsp;&nbsp;Use the Site in a manner inconsistent with any applicable laws or regulations.</span></span>
                     </p>
                     <div className="blank">&nbsp;</div>
@@ -436,7 +436,7 @@ export default function PageDetail() {
                             <b><span>USER GENERATED CONTRIBUTIONS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 The Site offers users to create and submit knowledge base websites and embeddable widgets. We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast
@@ -446,7 +446,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 1. &nbsp;The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not
@@ -454,7 +454,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 2. &nbsp;You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Site, and other users of the Site to use your Contributions in any
@@ -462,7 +462,7 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 3. &nbsp;You have the written consent, release, and/or permission of each and every identifiable individual person in your Contributions to use the name or likeness of each and every such identifiable individual person
@@ -470,40 +470,40 @@ export default function PageDetail() {
                             </span>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>4. &nbsp;Your Contributions are not false, inaccurate, or misleading.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>5. &nbsp;Your Contributions are not unsolicited or unauthorized advertising, promotional materials, pyramid schemes, chain letters, spam, mass mailings, or other forms of solicitation.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>6. &nbsp;Your Contributions are not obscene, lewd, lascivious, filthy, violent, harassing, libelous, slanderous, or otherwise objectionable (as determined by us).</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>7. &nbsp;Your Contributions do not ridicule, mock, disparage, intimidate, or abuse anyone.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>8. &nbsp;Your Contributions do not advocate the violent overthrow of any government or incite, encourage, or threaten physical harm against another.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>9. &nbsp;Your Contributions do not violate any applicable law, regulation, or rule.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>10. Your Contributions do not violate the privacy or publicity rights of any third party.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>11. &nbsp;Your Contributions do not contain any material that solicits personal information from anyone under the age of 18 or exploits people under the age of 18 in a sexual or violent manner.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>12. &nbsp;Your Contributions do not violate any applicable law concerning child pornography, or otherwise intended to protect the health or well-being of minors.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>13. &nbsp;Your Contributions do not include any offensive comments that are connected to race, national origin, gender, sexual preference, or physical handicap.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>14. &nbsp;Your Contributions do not otherwise violate, or link to material that violates, any provision of these Terms of Use, or any applicable law or regulation.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>Any use of the Site in violation of the foregoing violates these Terms of Use and may result in, among other things, termination or suspension of your rights to use the Site.</span></span>
                     </p>
                     <div className="blank">&nbsp;</div>
@@ -512,7 +512,7 @@ export default function PageDetail() {
                             <b><span>CONTRIBUTION LICENSE</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 You and the Site agree that we may access, store, process, and use any information and personal data that you provide following the terms of the Privacy Policy and your choices (including settings).By submitting
@@ -529,7 +529,7 @@ export default function PageDetail() {
                             <b><span>SOCIAL MEDIA</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”) by either: (1) providing your Third-Party
@@ -555,7 +555,7 @@ export default function PageDetail() {
                             <b><span>SUBMISSIONS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 You acknowledge and agree that any questions, comments, suggestions, ideas, feedback, or other information regarding the Site ("Submissions") provided by you to us are non-confidential and shall become our sole property.
@@ -571,7 +571,7 @@ export default function PageDetail() {
                             <b><span>THIRD-PARTY WEBSITES AND CONTENT</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 The Site may contain (or you may be sent via the Site) links to other websites ("Third-Party Websites") as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications,
@@ -592,7 +592,7 @@ export default function PageDetail() {
                             <b><span>U.S. GOVERNMENT RIGHTS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 Our services are “commercial items” as defined in Federal Acquisition Regulation (“FAR”) 2.101. If our services are acquired by or on behalf of any agency not within the Department of Defense (“DOD”), our services are
@@ -608,7 +608,7 @@ export default function PageDetail() {
                             <b><span>SITE MANAGEMENT</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 We reserve the right, but not the obligation, to: (1) monitor the Site for violations of these Terms of Use; (2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Terms
@@ -624,7 +624,7 @@ export default function PageDetail() {
                             <b><span>PRIVACY POLICY</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>We care about data privacy and security. Please review our Privacy Policy:&nbsp;</span><Link target="_blank" href="https://www.BoringSites.com/privacy" className="link"><span>https://www.BoringSites.com/privacy</span></Link>
                             <span>. By using the Site, you agree to be bound by our Privacy Policy, which is incorporated into these Terms of Use.</span>
@@ -636,7 +636,7 @@ export default function PageDetail() {
                             <b><span>TERM AND TERMINATION</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 These Terms of Use shall remain in full force and effect while you use the Site. WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS OF USE, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR
@@ -654,7 +654,7 @@ export default function PageDetail() {
                             <b><span>MODIFICATIONS AND INTERRUPTIONS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 We reserve the right to change, modify, or remove the contents of the Site at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Site. We
@@ -671,10 +671,10 @@ export default function PageDetail() {
                             <b><span>GOVERNING LAW</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>These Terms shall be governed and construed in accordance with the laws of Wyoming, United States, without regard to its conflict of law provisions.</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of
@@ -688,7 +688,7 @@ export default function PageDetail() {
                             <b><span>DISPUTE RESOLUTION</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>The European Commission provides an online dispute resolution platform, which you can access here:&nbsp;</span>
                             <Link target="_blank" href="https://ec.europa.eu/consumers/odr" className="link"><span>https://ec.europa.eu/consumers/odr</span></Link>
@@ -700,7 +700,7 @@ export default function PageDetail() {
                             <b><span>CORRECTIONS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 There may be information on the Site that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any
@@ -713,7 +713,7 @@ export default function PageDetail() {
                             <b><span>DISCLAIMER</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 THE SITE IS PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR
@@ -734,7 +734,7 @@ export default function PageDetail() {
                             <b><span>LIMITATIONS OF LIABILITY</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 IN&nbsp;NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT,
@@ -750,7 +750,7 @@ export default function PageDetail() {
                             <b><span>INDEMNIFICATION</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or
@@ -767,7 +767,7 @@ export default function PageDetail() {
                             <b><span>USER DATA</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 We will maintain certain data that you transmit to the Site for the purpose of managing the performance of the Site, as well as data relating to your use of the Site. Although we perform regular routine backups of data,
@@ -781,7 +781,7 @@ export default function PageDetail() {
                             <b><span>ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 Visiting&nbsp;the Site, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and
@@ -797,7 +797,7 @@ export default function PageDetail() {
                             <b><span>CALIFORNIA USERS AND RESIDENTS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 If any complaint with us is not satisfactorily resolved, you can contact the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs in writing at 1625 North Market
@@ -809,7 +809,7 @@ export default function PageDetail() {
                     <h2 className="h4 my-2">
                         <span><span>AFFILIATE PROGRAM TERMS OF SERVICE</span></span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>There are a few rules about our affiliate program you should know about. No “gotchas” here, just some terms to keep everyone happy. We are using </span>
                             <Link target="_blank" href="https://tolt.io" className="link"><span>tolt.io</span></Link>
@@ -884,7 +884,7 @@ export default function PageDetail() {
                         </li>
                         
                     </ul>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 If you do not comply with our terms of service for the affiliate program, we reserve the right to immediately remove you from the program without notice, withhold any remaining commissions, and prohibit you from
@@ -898,7 +898,7 @@ export default function PageDetail() {
                             <b><span>MISCELLANEOUS</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>
                                 These Terms of Use and any policies or operating rules posted by us on the Site or in respect to the Site constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right
@@ -915,30 +915,30 @@ export default function PageDetail() {
                             <b><span>CONTACT US</span></b>
                         </span>
                     </h2>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span><span>In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:</span></span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <b><span>Malai Tikka Labs LLC</span></b>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <b><span>Kohat Enclave, Delhi, India 110033</span></b>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <b><span>Phone:&nbsp;+919711269346</span></b>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <b><span>hey@vaibhavkalra.com</span></b>
                         </span>
                     </p>
-                    <p className="text-gray-600 my-2">
+                    <p className="text-slate-600 my-2">
                         <span>
                             <span>These terms of use were created using&nbsp;</span>
                             <Link target="_blank" href="https://termly.io/products/terms-and-conditions-generator/?ftseo" className="link"><span>Termly’s Terms and Conditions Generator</span></Link><span>.</span>

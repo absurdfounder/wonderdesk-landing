@@ -24,7 +24,7 @@ export default function Newsletter() {
         <div className="pb-12 md:pb-20">
 
           {/* CTA box */}
-          <div className="relative bg-gray-900 py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden rounded-2xl" 
+          <div className="relative bg-slate-900 py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden rounded-2xl" 
           >
 
             {/* Background illustration */}
@@ -46,7 +46,7 @@ export default function Newsletter() {
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
                 <h3 className="h3 text-white mb-2">Ready to turn your Notion pages into <span className=" -translate-y-full slideUp h-full w-full bg-clip-text text-transparent text-orange-600">{words[index]}</span> ?</h3>
-                <p className="text-xl text-gray-600 mb-4">Join the BoringSites AI and discover the easiest way to manage your website.</p>
+                <p className="text-xl text-slate-600 mb-4">Join the BoringSites AI and discover the easiest way to manage your website.</p>
 
                 {/* CTA form */}
                 <form className="w-full lg:w-auto">
@@ -54,8 +54,8 @@ export default function Newsletter() {
                   <Link href="app.BoringSites.com" className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Create</Link>
                   </div>
                   {/* Success message */}
-                  {/* <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> */}
-                  <p className="text-sm text-gray-400 mt-3">Phew! Hassle free life starts here.</p>
+                  {/* <p className="text-sm text-slate-400 mt-3">Thanks for subscribing!</p> */}
+                  <p className="text-sm text-slate-400 mt-3">Phew! Hassle free life starts here.</p>
                 </form>
               </div>
 

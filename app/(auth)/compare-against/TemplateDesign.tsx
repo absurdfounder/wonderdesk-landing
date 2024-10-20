@@ -10,15 +10,15 @@ const TemplateDesign = () => {
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
                         <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">Your content <span className='font-source-serif-4 block font-normal text-orange-600'>lives in Notion</span></h1>
-                            <p className="mt-2 text-base font-normal text-gray-700 lg:text-lg">
+                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">Your content <span className='font-source-serif-4 block font-normal text-orange-600'>lives in Notion</span></h1>
+                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
                                 Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus what’s actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
 
                             </p>
                         </div>
                     </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-gray-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
+                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
                 <div className="relative w-full"><Image 
@@ -35,15 +35,15 @@ const TemplateDesign = () => {
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
                         <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">Customize to your brand</h1>
-                            <p className="mt-2 text-base font-normal text-gray-700 lg:text-lg">
+                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">Customize to your brand</h1>
+                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
                                 Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside BoringSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
 
                             </p>
                         </div>
                     </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-gray-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
+                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
             </div>
@@ -54,15 +54,15 @@ const TemplateDesign = () => {
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
                         <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">World-class Performance</h1>
-                            <p className="mt-2 text-base font-normal text-gray-700 lg:text-lg">
+                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">World-class Performance</h1>
+                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
                                 Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they’ll never close the page for taking too long to load. On average BoringSites sites perform better than any industry leading website builder. We use NextJs, Vercel and Google Cloud for your websites. You can scale to 100 million monthly active users with this stack.
 
                             </p>
                         </div>
                     </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-gray-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
+                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
                 <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/performancewebsite.png" 
@@ -82,14 +82,14 @@ const TemplateDesign = () => {
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
                         <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">In-built analytics</h1>
-                            <p className="mt-2 text-base font-normal text-gray-700 lg:text-lg">
+                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">In-built analytics</h1>
+                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
                                 See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites tp help ou find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                             </p>
                         </div>
                     </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-gray-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
+                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
             </div>
@@ -101,14 +101,14 @@ const TemplateDesign = () => {
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
                         <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl">Integrates with your existing apps</h1>
-                            <p className="mt-2 text-base font-normal text-gray-700 lg:text-lg">
+                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">Integrates with your existing apps</h1>
+                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
                                 BoringSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to BoringSites? We got you covered.
                             </p>
                         </div>
                     </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-gray-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
+                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
             </div>

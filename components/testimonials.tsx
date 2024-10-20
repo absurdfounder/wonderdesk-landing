@@ -47,7 +47,7 @@ export default function Testimonials() {
             <h2 className="h2 mb-4">
               Trusted by 100's of companies all over the world
             </h2>
-            <p className="text-xl text-gray-600" data-aos="zoom-y-out">
+            <p className="text-xl text-slate-600" data-aos="zoom-y-out">
               Arcu cursus vitae congue mauris rhoncus viverra nibh cras pulvinar
               mattis blandit libero cursus mattis.
             </p>
@@ -102,7 +102,7 @@ export default function Testimonials() {
                 <cite className="block font-bold text-lg not-italic mb-1">
                   Corey Haines
                 </cite>
-                <div className="text-gray-600">
+                <div className="text-slate-600">
                   <span>CEO & Co-Founder</span>{" "}
                   <Link href="#" className="text-orange-600 hover:underline" >
                     Conversion Factory
@@ -135,7 +135,7 @@ export default function Testimonials() {
                 <cite className="block font-bold text-lg not-italic mb-1">
                   Ayush
                 </cite>
-                <div className="text-gray-600">
+                <div className="text-slate-600">
                   <span>CEO & Co-Founder</span>{" "}
                   <Link href="#" className="text-orange-600 hover:underline" >
                     Indie Master Minds
@@ -168,7 +168,7 @@ export default function Testimonials() {
                 <cite className="block font-bold text-lg not-italic mb-1">
                   Tom
                 </cite>
-                <div className="text-gray-600">
+                <div className="text-slate-600">
                   <span>CEO & Co-Founder</span>{" "}
                   <Link href="#" className="text-orange-600 hover:underline" >
                     TweetHunter
@@ -202,7 +202,7 @@ export default function Testimonials() {
                 <cite className="block font-bold text-lg not-italic mb-1">
                   Alex MacCaw
                 </cite>
-                <div className="text-gray-600">
+                <div className="text-slate-600">
                   <span>CEO & Co-Founder</span>{" "}
                   <Link href="#" className="text-orange-600 hover:underline" >
                     ClearBit
@@ -235,7 +235,7 @@ export default function Testimonials() {
                 <cite className="block font-bold text-lg not-italic mb-1">
                   Adam Wathan
                 </cite>
-                <div className="text-gray-600">
+                <div className="text-slate-600">
                   <span>CEO & Co-Founder</span>{" "}
                   <Link href="#" className="text-orange-600 hover:underline" >
                     Tailwind
@@ -269,7 +269,7 @@ export default function Testimonials() {
                 <cite className="block font-bold text-lg not-italic mb-1">
                   Darya Finger
                 </cite>
-                <div className="text-gray-600">
+                <div className="text-slate-600">
                   <span>CEO & Co-Founder</span>{" "}
                   <Link href="#" className="text-orange-600 hover:underline" >
                     Floosh

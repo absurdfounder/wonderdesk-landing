@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState, useEffect, ChangeEvent, useRef } from "react";
+import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, X, Loader, Users, MessageSquare, FileText, FolderGit2 } from 'lucide-react';
+import confetti from "canvas-confetti";
 import notionfooterImage from "@/public/images/nb-herosec.png";
 import MigrateFrom from "@/public/images/migratefrom.png";
 import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
-import Link from "next/link";
-import confetti from "canvas-confetti";
-import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, Loader, Users, MessageSquare, FileText } from 'lucide-react';
 
 const pricingMap: Record<number, number> = {
   10000: 18,
@@ -20,145 +20,46 @@ const pricingMap: Record<number, number> = {
 
 interface Feature {
   name: string;
-  popup?: {
-    image: string;
-    headline: string;
-    description: string;
-  };
+  description: string;
+  imageUrl: string;
 }
 
-interface HobbyFeature {
-  name: string;
+interface HobbyFeature extends Feature {
   included: boolean;
 }
 
 const hobbyFeatures: HobbyFeature[] = [
-  { name: "50 articles & collections", included: true },
-  { name: "1 Boring Site - Helpdesk, Blog, Directory", included: true },
-  { name: "Basic Analytics", included: true },
-  { name: "Basic SEO", included: true },
-  { name: "Customization", included: true },
-  { name: "Auto Upgrades", included: true },
-  { name: "Custom Domain / SSL", included: false },
-  { name: "Custom Sections AI", included: false },
-  { name: "Custom Code & Integrations", included: false },
-  { name: "Paywall - Gumroad, LemonSqueezy, Stripe", included: false },
-  { name: "Community Features", included: false },
+  { name: "50 articles & collections", included: true, description: "Create up to 50 articles and organize them into collections.", imageUrl: "/api/placeholder/200/150" },
+  { name: "1 Boring Site - Helpdesk, Blog, Directory", included: true, description: "Set up one Boring Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Basic Analytics", included: true, description: "Access fundamental analytics to track your site's performance.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Basic SEO", included: true, description: "Implement basic SEO practices to improve your site's visibility.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Customization", included: true, description: "Customize your site's appearance with basic options.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Auto Upgrades", included: true, description: "Receive automatic upgrades to keep your site up-to-date.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Custom Domain / SSL", included: false, description: "Use your own domain and secure it with SSL (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "Custom Sections AI", included: false, description: "AI-powered custom section creation (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "Custom Code & Integrations", included: false, description: "Add custom code and integrate with other services (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "Paywall - Gumroad, LemonSqueezy, Stripe", included: false, description: "Set up paywalls with popular payment processors (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "Tally Form Connection", included: false, description: "Connect and use Tally forms on your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "Open AI Assistant ", included: false, description: "Integrate OpenAI assistant for enhanced functionality (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "General Search", included: false, description: "Implement a general search feature on your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "Remove 'Powered by' badge", included: false, description: "Remove the 'Powered by' badge from your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
 ];
 
 const scaleFeatures: Feature[] = [
-  {
-    name: "Unlimited articles & collections",
-    popup: {
-      image: "/path/to/image1.png",
-      headline: "Unlimited Articles",
-      description: "Create unlimited articles and collections effortlessly.",
-    },
-  },
-  {
-    name: "5 BoringSites Sites - any type",
-    popup: {
-      image: "/path/to/image2.png",
-      headline: "Multiple Sites",
-      description: "Manage up to 5 different BoringSites sites.",
-    },
-  },
-  {
-    name: "Detailed Analytics",
-    popup: {
-      image: "/path/to/image_detailed_analytics.png",
-      headline: "Detailed Analytics",
-      description: "Access in-depth analytics to track your site's performance.",
-    },
-  },
-  {
-    name: "Full SEO Ready",
-    popup: {
-      image: "/path/to/image4.png",
-      headline: "SEO Ready",
-      description: "Optimize your content for search engines with built-in SEO tools.",
-    },
-  },
-  {
-    name: "Advanced Customization",
-    popup: {
-      image: "/path/to/image_advanced_customization.png",
-      headline: "Advanced Customization",
-      description: "Customize your site extensively with no-code themes and templates.",
-    },
-  },
-  {
-    name: "Instant Upgrades",
-    popup: {
-      image: "/path/to/image_advanced_customization.png",
-      headline: "Advanced Customization",
-      description: "Get template and future upgrades out of the box, issues are fixed before you can spot them.",
-    },
-  },
-  {
-    name: "Custom Domain / SSL",
-    popup: {
-      image: "/path/to/image_custom_domain.png",
-      headline: "Custom Domain & SSL",
-      description: "Use your custom domain with SSL encryption for added security.",
-    },
-  },
-  {
-    name: "Custom Sections AI",
-    popup: {
-      image: "/path/to/image3.png",
-      headline: "Custom Sections AI",
-      description: "We use AI to generate beautiful sections that can be applied to your website and they match your theme out of the box.",
-    },
-  },
-  {
-    name: "Custom Code & Integrations",
-    popup: {
-      image: "/path/to/image3.png",
-      headline: "Custom Code & Integration Library",
-      description: "Integrate paywall seamlessly with your content.",
-    },
-  },
-  {
-    name: "Paywall - Gumroad, LemonSqueezy, Stripe",
-    popup: {
-      image: "/path/to/image3.png",
-      headline: "Paywall Integration",
-      description: "Integrate paywall seamlessly with your content.",
-    },
-  },
-  {
-    name: "Tally Form Connection",
-    popup: {
-      image: "/path/to/image_password_protection.png",
-      headline: "Password Protection",
-      description: "Protect your content with secure password protection.",
-    },
-  },  
-  {
-    name: "Advanced AI Search",
-    popup: {
-      image: "/path/to/image_advanced_search.png",
-      headline: "Advanced Article Search",
-      description: "Provide powerful search capabilities for your articles.",
-    },
-  },
-  {
-    name: "General Search",
-    popup: {
-      image: "/path/to/image_content_rating.png",
-      headline: "General Search",
-      description: "Allow users to rate your content for better feedback.",
-    },
-  },
-  {
-    name: "Remove 'Powered by' badge",
-    popup: {
-      image: "/path/to/image_remove_badge.png",
-      headline: "Remove Branding",
-      description: "Remove the 'Powered by BoringSites' badge from your site.",
-    },
-  },
+  { name: "Unlimited articles & collections", description: "Create unlimited articles and collections without any restrictions.", imageUrl: "/api/placeholder/200/150" },
+  { name: "5 BoringSites Sites - any type", description: "Set up and manage up to 5 different BoringSites, choosing from any available type.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Detailed Analytics", description: "Access comprehensive analytics to gain deep insights into your site's performance and user behavior.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Full SEO Ready", description: "Utilize advanced SEO tools and features to maximize your site's search engine visibility.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Advanced Customization", description: "Enjoy extensive customization options to tailor your site's look and feel to your exact preferences.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Instant Upgrades", description: "Receive immediate upgrades and new features as soon as they're available.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Custom Domain / SSL", description: "Use your own domain name and benefit from included SSL encryption for enhanced security.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Custom Sections AI", description: "Leverage AI technology to create unique, custom sections that match your site's theme and content.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Custom Code & Integrations", description: "Add your own custom code and integrate with a wide range of third-party services and APIs.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Paywall - Gumroad, LemonSqueezy, Stripe", description: "Implement paywalls using popular payment processors to monetize your content effectively.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Tally Form Connection", description: "Seamlessly connect and use Tally forms within your site for data collection and user interaction.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Advanced AI Assistant", description: "Access an advanced AI assistant to help with content creation, site management, and user engagement.", imageUrl: "/api/placeholder/200/150" },
+  { name: "General Search", description: "Implement a powerful, site-wide search feature to help users find content quickly and easily.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Remove 'Powered by' badge", description: "Remove the 'Powered by BoringSites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
 ];
 
 interface FAQ {
@@ -170,62 +71,89 @@ const faqs: Record<string, FAQ[]> = {
   Website: [
     {
       question: "What is BoringSites?",
-      answer:
-        "BoringSites is the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and BoringSites takes care of the rest. It's as simple as that.",
+      answer: "BoringSites is the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and BoringSites takes care of the rest. It's as simple as that.",
     },
     {
       question: "Why do I need a knowledge base?",
-      answer:
-        "Unless you have built a flawless product (congratulations 🤩), your customers will always have questions and they demand immediate help. A knowledge base can provide all the information that users need in one place. It can range from FAQs about your product/service, common issues and their solutions, videos with tutorials on how to do things and more.",
+      answer: "Unless you have built a flawless product (congratulations 🤩), your customers will always have questions and they demand immediate help. A knowledge base can provide all the information that users need in one place. It can range from FAQs about your product/service, common issues and their solutions, videos with tutorials on how to do things and more.",
     },
     {
       question: "Is my data safe with BoringSites?",
-      answer:
-        "BoringSites takes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
+      answer: "BoringSites takes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
     },
   ],
   "AI Support Bot": [
     {
       question: "How does the AI Support Bot work?",
-      answer:
-        "The AI Support Bot integrates seamlessly with BoringSites to provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
+      answer: "The AI Support Bot integrates seamlessly with BoringSites to provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
     },
     {
       question: "Can I customize the AI Support Bot?",
-      answer:
-        "Yes, you can customize the AI Support Bot to align with your brand's voice and style. Adjust the responses, add personalized greetings, and more to create a cohesive user experience.",
+      answer: "Yes, you can customize the AI Support Bot to align with your brand's voice and style. Adjust the responses, add personalized greetings, and more to create a cohesive user experience.",
     },
     {
       question: "Does the AI Support Bot support multiple languages?",
-      answer:
-        "The AI Support Bot supports multiple languages, allowing you to cater to a global audience and provide support in the preferred language of your users.",
+      answer: "The AI Support Bot supports multiple languages, allowing you to cater to a global audience and provide support in the preferred language of your users.",
     },
   ],
   Pricing: [
     {
       question: "How does the free 7 day trial work?",
-      answer:
-        "BoringSites offers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
+      answer: "BoringSites offers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
     },
     {
       question: "What are the pricing plans?",
-      answer:
-        "BoringSites offers various pricing plans based on the number of users and features required. Check our pricing page for detailed information on each plan.",
+      answer: "BoringSites offers various pricing plans based on the number of users and features required. Check our pricing page for detailed information on each plan.",
     },
     {
       question: "Are there any additional fees?",
-      answer:
-        "Pricing is exclusive of taxes and additional local tax may be collected depending on your region. Some add-ons and advanced features might incur additional costs.",
+      answer: "Pricing is exclusive of taxes and additional local tax may be collected depending on your region. Some add-ons and advanced features might incur additional costs.",
     },
   ],
 };
 
-interface FAQAccordionProps {
-  question: string;
-  answer: string;
-}
+const FeatureTooltip: React.FC<{ feature: Feature; position: { top: number; left: number } }> = ({ feature, position }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.9 }}
+    transition={{ duration: 0.2 }}
+    className="absolute z-50 p-4 bg-white shadow-md rounded-md max-w-xs"
+    style={{ top: position.top, left: position.left }}
+  >
+    <Image src={feature.imageUrl} alt={feature.name} width={200} height={150} className="mb-2 rounded" />
+    <h3 className="text-lg font-bold">{feature.name}</h3>
+    <p className="text-sm">{feature.description}</p>
+  </motion.div>
+);
 
-const FAQAccordion: React.FC<FAQAccordionProps> = ({ question, answer }) => {
+const FeaturePopup: React.FC<{ feature: Feature; onClose: () => void }> = ({ feature, onClose }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+  >
+    <motion.div
+      initial={{ scale: 0.9, y: 20 }}
+      animate={{ scale: 1, y: 0 }}
+      exit={{ scale: 0.9, y: 20 }}
+      className="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto relative"
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-2 right-2 bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center"
+      >
+        ✕
+      </button>
+      <Image src={feature.imageUrl} alt={feature.name} width={400} height={300} className="mb-4 rounded" />
+      <h2 className="text-2xl font-bold mt-4">{feature.name}</h2>
+      <p className="mt-2">{feature.description}</p>
+    </motion.div>
+  </motion.div>
+);
+
+const FAQAccordion: React.FC<FAQ> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -234,7 +162,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ question, answer }) => {
         className="w-full text-left p-4"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="font-semibold text-gray-900">{question}</span>
+        <span className="font-semibold text-slate-900">{question}</span>
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -243,7 +171,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ question, answer }) => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="px-4 pb-4 text-gray-500"
+            className="px-4 pb-4 text-slate-500"
           >
             <p>{answer}</p>
           </motion.div>
@@ -261,20 +189,18 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <div className="bg-white w-11/12 mx-auto mt-10">
+    <div className="mx-auto mt-10">
       <div className="px-4 py-16 mx-auto max-w-7xl sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center sm:max-w-2xl lg:mx-auto">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Frequently Asked Questions
           </h2>
-
-          <p className="text-base font-normal text-gray-600 mt-4 sm:text-lg">
+          <p className="text-base font-normal text-slate-600 mt-4 sm:text-lg">
             Have a different question and can't find the answer you're looking for? Reach out to our support team by
             <a target="_blank" rel="noopener noreferrer" href="mailto:vaibhav@BoringSites.com" className="isomorphic-link isomorphic-link--external text-orange-800 hover:text-blue-500 hover:underline px-4">sending us an email</a>
             and we'll get back to you as soon as we can.
           </p>
         </div>
-
         <div className="mt-12">
           <div className="flex justify-center mb-8 flex-wrap">
             {["Website", "AI Support Bot", "Pricing"].map((tab) => (
@@ -282,17 +208,13 @@ const FAQSection: React.FC = () => {
                 key={tab}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 font-semibold text-lg rounded-full m-2 ${activeTab === tab
-                  ? "bg-orange-600 text-white"
-                  : "text-gray-700"
-                  }`}
+                className={`px-4 py-2 font-semibold text-lg rounded-full m-2 ${activeTab === tab ? "bg-orange-600 text-slate-800" : "text-slate-700"}`}
                 onClick={() => handleTabClick(tab as keyof typeof faqs)}
               >
                 {tab}
               </motion.button>
             ))}
           </div>
-
           <div className="space-y-6">
             {faqs[activeTab].map((faq, index) => (
               <FAQAccordion key={index} {...faq} />
@@ -310,13 +232,16 @@ const Pricing: React.FC = () => {
   const [monthlyPrice, setMonthlyPrice] = useState(pricingMap[selectedUsers]);
   const [yearlyPrice, setYearlyPrice] = useState(monthlyPrice * 10);
   const [popupFeature, setPopupFeature] = useState<Feature | null>(null);
-  const [tooltipFeature, setTooltipFeature] = useState<Feature | null>(null);
-  const [tooltipPosition, setTooltipPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 });
+  const [hoveredHobbyFeature, setHoveredHobbyFeature] = useState<HobbyFeature | null>(null);
+  const [hoveredScaleFeature, setHoveredScaleFeature] = useState<Feature | null>(null);
+  const [hobbyTooltipPosition, setHobbyTooltipPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 });
+  const [scaleTooltipPosition, setScaleTooltipPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [countdown, setCountdown] = useState<number>(86400);
   const [isLifetimeDealVisible, setIsLifetimeDealVisible] = useState(true);
   const [loading, setLoading] = useState(false);
-  const featureRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const hobbyFeatureRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const scaleFeatureRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   const startDate = new Date("2023-05-01");
   const endDate = new Date("2024-06-30");
@@ -376,20 +301,36 @@ const Pricing: React.FC = () => {
     return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  const handleMouseEnter = (feature: Feature, index: number) => {
-    setTooltipFeature(feature);
-    const element = featureRefs.current[index];
+  const handleHobbyFeatureHover = (feature: HobbyFeature, index: number) => {
+    setHoveredHobbyFeature(feature);
+    const element = hobbyFeatureRefs.current[index];
     if (element) {
       const rect = element.getBoundingClientRect();
-      setTooltipPosition({
+      setHobbyTooltipPosition({
         top: rect.bottom + window.scrollY,
         left: rect.left + window.scrollX,
       });
     }
   };
 
-  const handleMouseLeave = () => {
-    setTooltipFeature(null);
+  const handleScaleFeatureHover = (feature: Feature, index: number) => {
+    setHoveredScaleFeature(feature);
+    const element = scaleFeatureRefs.current[index];
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      setScaleTooltipPosition({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+      });
+    }
+  };
+
+  const handleHobbyFeatureLeave = () => {
+    setHoveredHobbyFeature(null);
+  };
+
+  const handleScaleFeatureLeave = () => {
+    setHoveredScaleFeature(null);
   };
 
   const handleUpgradeClick = async () => {
@@ -405,7 +346,7 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white">
+    <section className="bg-gradient-to-b from-slate-100 to-white">
       <motion.div
         className="absolute bottom-0 pointer-events-none z-1 h-screen w-screen"
         aria-hidden="true"
@@ -434,19 +375,16 @@ const Pricing: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
-
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 justify-center text-center"
-          >
-            <span className="opacity-50 font-normal">Simplify your life with a</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight tracking-loose mb-4 justify-center text-center">
+            <span className="opacity-50  font-roboto-mono">Simplify your life with a</span>
             <br />
             <div className="flex gap-2 text-center w-full justify-center">
               <span className="flex gap-4 justify-center items-center mt-2 text-orange-600">
-                <span className="">Boring Site</span>
+                <span className="font-comfortaa">Boring Site </span>
               </span>
               <span className="flex gap-4 justify-center items-center mt-2">
-                <span className="">+  </span>
-                <span className="">Notion.</span>
+                <span className="font-bungee"> +  </span>
+                <span className="font-bungee">Notion</span>
               </span>
             </div>
           </h1>
@@ -458,12 +396,11 @@ const Pricing: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <div className="inline-flex rounded-full border border-gray-300 bg-white">
+            <div className="inline-flex rounded-full border border-slate-300 bg-white">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full ${activeTab === 'Yearly' ? 'bg-orange-200 text-orange-900' : 'text-gray-700'
-                  }`}
+                className={`px-6 py-3 rounded-full ${activeTab === 'Yearly' ? 'bg-orange-200 text-orange-900' : 'text-slate-700'}`}
                 onClick={() => handleTabClick('Yearly')}
               >
                 ANNUALLY ♥ 2 MONTHS FREE
@@ -471,8 +408,7 @@ const Pricing: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full ${activeTab === 'Monthly' ? 'bg-orange-200 text-orange-900' : 'text-gray-700'
-                  }`}
+                className={`px-6 py-3 rounded-full ${activeTab === 'Monthly' ? 'bg-orange-200 text-orange-900' : 'text-slate-700'}`}
                 onClick={() => handleTabClick('Monthly')}
               >
                 MONTHLY
@@ -490,7 +426,7 @@ const Pricing: React.FC = () => {
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <div className="px-8 py-10 text-start">
-                  <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-4xl font-bold text-slate-900 mb-4 font-josefin-slab">
                     Hobby
                   </h2>
                   <div className="flex items-baseline mb-4">
@@ -501,37 +437,41 @@ const Pricing: React.FC = () => {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       Fixed up to
                     </label>
-                    <p className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold">1000 Users</p>
+                    <p className="w-full p-3 border border-slate-300 rounded-md text-lg font-bold">1000 Users</p>
                   </div>
 
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl bg-gray-600 hover:bg-orange-700 active:bg-orange-800 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
+                    className="w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl bg-slate-600 hover:bg-orange-700 active:bg-orange-800 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
                   >
                     Get a Boring Site
                   </motion.button>
                   <p className="mt-4 text-sm text-slate-500">
-                    BoringSites AI is an add-on feature compatible with all subscription plans.
+                    For open-source softwares feel free to reach out for a free plan with no strings attached.  
                   </p>
                 </div>
-                <div className="px-8 pt-6 pb-8 bg-slate-50">
+                <div className="px-8 pt-6 pb-10 bg-slate-50">
                   <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
-                    <span className="bg-gray-600 w-1 h-8 mr-4"></span>
+                    <span className="bg-slate-600 w-1 h-8 mr-4"></span>
                     What's included
                   </h3>
                   <ul className="grid grid-cols-1 gap-1 text-left">
                     {hobbyFeatures.map((feature, index) => (
                       <motion.li
                         key={index}
-                        className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center ${
+                        ref={(el) => (hobbyFeatureRefs.current[index] = el)}
+                        className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center cursor-pointer ${
                           feature.included ? 'text-slate-700' : 'text-slate-400 line-through'
                         }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => handleFeatureClick(feature)}
+                        onMouseEnter={() => handleHobbyFeatureHover(feature, index)}
+                        onMouseLeave={handleHobbyFeatureLeave}
                       >
                         {feature.included ? (
                           <Check className="flex-shrink-0 h-4 w-4 text-green-500 mr-2" />
@@ -553,7 +493,7 @@ const Pricing: React.FC = () => {
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <div className="px-8 py-10 text-start flex-grow">
-                  <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-4xl font-bold text-slate-900 mb-4 font-josefin-slab">
                     Scale
                   </h2>
                   <div className="flex items-baseline mb-4">
@@ -563,11 +503,11 @@ const Pricing: React.FC = () => {
                     <span className="text-2xl font-medium text-slate-500 ml-2">/{activeTab.toLowerCase()}</span>
                   </div>
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       Number of Users Every Month - Transparent Pricing
                     </label>
                     <select
-                      className="w-full p-3 border border-gray-300 rounded-md text-lg font-bold"
+                      className="w-full p-3 border border-slate-300 rounded-md text-lg font-bold"
                       value={selectedUsers}
                       onChange={handleUserChange}
                     >
@@ -582,10 +522,11 @@ const Pricing: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                     onClick={handleUpgradeClick}
                     disabled={loading}
-                    className={`w-full px-6 py-4 rounded-full text-white font-semibold text-center text-xl ${loading
-                      ? 'bg-orange-400 cursor-not-allowed'
-                      : 'bg-orange-600 hover:bg-orange-700 active:bg-orange-800'
-                      } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
+                    className={`w-full px-6 py-4 rounded-full text-slate-800 font-semibold text-center text-xl ${
+                      loading
+                        ? 'bg-orange-400 cursor-not-allowed'
+                        : 'bg-orange-600 hover:bg-orange-700 active:bg-orange-800'
+                    } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
                   >
                     {loading ? (
                       <span className="flex items-center justify-center">
@@ -593,15 +534,15 @@ const Pricing: React.FC = () => {
                         Processing...
                       </span>
                     ) : (
-                      "Upgrade Now"
+                      "Start"
                     )}
                   </motion.button>
                   <p className="mt-4 text-sm text-slate-500">
-                    BoringSites AI is an add-on feature compatible with all subscription plans.
+                    Prices are about to change sometime soon, get the low prices while they last.
                   </p>
                 </div>
                 <div className="px-8 pt-8 pb-10 bg-slate-50">
-                  <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
                     <span className="bg-orange-600 w-1 h-8 mr-4"></span>
                     What's included
                   </h3>
@@ -609,20 +550,16 @@ const Pricing: React.FC = () => {
                     {scaleFeatures.map((feature, index) => (
                       <motion.li
                         key={index}
-                        ref={(el) => {
-                          featureRefs.current[index] = el;
-                        }}
-                        className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center`}
-                        onMouseEnter={() => handleMouseEnter(feature, index)}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={() => feature.popup && handleFeatureClick(feature)}
+                        ref={(el) => (scaleFeatureRefs.current[index] = el)}
+                        className="text-md flex items-start gap-2 leading-[32px] mb-2 items-center cursor-pointer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => handleFeatureClick(feature)}
+                        onMouseEnter={() => handleScaleFeatureHover(feature, index)}
+                        onMouseLeave={handleScaleFeatureLeave}
                       >
-                        <Check className="flex-shrink-0 h-5 w-5 text-green-500 mt-1 mr-3" />
-                        <span className="text-base text-slate-700">
-                          {feature.name}
-                        </span>
+                        <Check className="flex-shrink-0 h-4 w-4 text-green-500 mr-2" />
+                        <span>{feature.name}</span>
                       </motion.li>
                     ))}
                   </ul>
@@ -631,56 +568,20 @@ const Pricing: React.FC = () => {
             </div>
           </div>
 
-          {/* Tooltip */}
+          {/* Tooltips */}
           <AnimatePresence>
-            {tooltipFeature && tooltipFeature.popup && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.2 }}
-                className="absolute z-50 p-4 bg-white shadow-md rounded-md"
-                style={{ top: tooltipPosition.top, left: tooltipPosition.left }}
-              >
-                <h3 className="text-lg font-bold">{tooltipFeature.popup.headline}</h3>
-                <p className="text-sm">{tooltipFeature.popup.description}</p>
-              </motion.div>
+            {hoveredHobbyFeature && (
+              <FeatureTooltip feature={hoveredHobbyFeature} position={hobbyTooltipPosition} />
+            )}
+            {hoveredScaleFeature && (
+              <FeatureTooltip feature={hoveredScaleFeature} position={scaleTooltipPosition} />
             )}
           </AnimatePresence>
 
           {/* Feature Popup */}
           <AnimatePresence>
-            {popupFeature && popupFeature.popup && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-              >
-                <motion.div
-                  initial={{ scale: 0.9, y: 20 }}
-                  animate={{ scale: 1, y: 0 }}
-                  exit={{ scale: 0.9, y: 20 }}
-                  className="bg-white p-8 px-12 rounded-lg shadow-lg max-w-md mx-auto relative"
-                >
-                  <button
-                    onClick={closePopup}
-                    className="absolute top-2 right-2 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
-                  >
-                    ✕
-                  </button>
-                  <Image
-                    src={popupFeature.popup.image}
-                    alt={popupFeature.popup.headline}
-                    width={300}
-                    height={200}
-                  />
-                  <h2 className="text-2xl font-bold mt-4">
-                    {popupFeature.popup.headline}
-                  </h2>
-                  <p className="mt-2">{popupFeature.popup.description}</p>
-                </motion.div>
-              </motion.div>
+            {popupFeature && (
+              <FeaturePopup feature={popupFeature} onClose={closePopup} />
             )}
           </AnimatePresence>
 
@@ -692,13 +593,13 @@ const Pricing: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
             >
-              <div className="bg-gray-900 rounded-2xl p-8 text-white">
+              <div className="bg-slate-900 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">
                   Limited Time Offer: Lifetime Deal
                 </h3>
                 <p className="text-xl mb-4">
-                Get <span className="text-orange-600 font-bold">Unlimited</span> at{" "}
-                  <span className="line-through text-gray-400">$599</span>{" "}
+                  Get <span className="text-orange-600 font-bold">Unlimited</span> at{" "}
+                  <span className="line-through text-slate-400">$599</span>{" "}
                   <span className="font-bold">$99</span>
                 </p>
                 <p className="text-lg text-red-400 mb-4">
@@ -733,14 +634,14 @@ const Pricing: React.FC = () => {
                 >
                   <button
                     onClick={toggleModal}
-                    className="absolute top-2 right-2 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
+                    className="absolute top-2 right-2 bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center"
                   >
                     ✕
                   </button>
 
                   <h2 className="text-2xl font-bold mt-4">Limited Lifetime Deal</h2>
                   <p className="mt-2">
-                    $99 for super early birds. <span className="font-bold text-gray-500 border-b-2 border-gray-600">Due to the high demand, the lifetime deal price will be increased to $199 in {formatTime(countdown)}.</span> Timer is real $99 for super early birds. <span className="font-bold text-gray-500 border-b-2 border-gray-600">Due to the high demand, the lifetime deal price will be increased to $199 in {formatTime(countdown)}.</span> Timer is real; I'm not kidding :) We will launch our subscription plan soon! Grab our limited lifetime deal. You pay once, use forever with no limit!
+                    $99 for super early birds. <span className="font-bold text-slate-500 border-b-2 border-slate-600">Due to the high demand, the lifetime deal price will be increased to $199 in {formatTime(countdown)}.</span> Timer is real $99 for super early birds. <span className="font-bold text-slate-500 border-b-2 border-slate-600">Due to the high demand, the lifetime deal price will be increased to $199 in {formatTime(countdown)}.</span> Timer is real; I'm not kidding :) We will launch our subscription plan soon! Grab our limited lifetime deal. You pay once, use forever with no limit!
                   </p>
 
                   <div className="text-center mt-4">
@@ -752,7 +653,7 @@ const Pricing: React.FC = () => {
                       Buy
                     </Link>
                   </div>
-                  <div className="text-center text-gray-500 mt-8">
+                  <div className="text-center text-slate-500 mt-8">
                     Supported payment methods
                   </div>
 
@@ -769,38 +670,62 @@ const Pricing: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 }}
           >
-            <h4 className="font-display text-4xl font-bold tracking-tight text-gray-900 text-center">
+            <h4 className="font-display text-4xl font-bold tracking-tight text-slate-900 text-center">
               Add-ons
             </h4>
-            <div className="max-w-xl bg-white shadow-sm ring-1 ring-inset ring-gray-200 mx-auto mt-6 rounded-2xl lg:max-w-2xl">
+            <div className="max-w-xl bg-white shadow-sm ring-1 ring-inset ring-slate-200 mx-auto mt-6 rounded-2xl lg:max-w-2xl">
               <div className="space-y-6 px-8 py-6">
                 <div className="flex items-center justify-between gap-6">
                   <div className="flex items-center gap-3">
-                    <Users className="h-8 w-8 text-orange-600" />
-                    <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                      Collaboration Seats for Teams
-                    </h2>
+                    <FolderGit2 className="h-8 w-8 text-orange-600" />
+                    <div className="grid">
+                      <h2 className="text-xl font-semibold tracking-tight text-slate-900">
+                        SubDirectory
+                      </h2>
+                      <p className="text-sm text-slate-600">youdomain.com/blog</p>
+                    </div>
                   </div>
                   <div className="flex items-center gap-0.5">
-                    <p className="text-3xl font-semibold tracking-tight text-gray-900">
-                      $5
+                    <p className="text-3xl font-semibold tracking-tight text-slate-900">
+                      $10
                     </p>
-                    <p className="text-lg font-medium text-gray-500 ml-2">  user / mo</p>
+                    <p className="text-lg font-medium text-slate-500 ml-2"> / mo</p>
                   </div>
                 </div>
-                <hr className="border-gray-200" />
+                <hr className="border-slate-200" />
+                <div className="flex items-center justify-between gap-6">
+                  <div className="flex items-center gap-3">
+                    <Users className="h-8 w-8 text-orange-600" />
+                    <div className="grid">
+                      <h2 className="text-xl font-semibold tracking-tight text-slate-900">
+                        Collaboration Seats for Teams
+                      </h2>
+                      <p className="text-sm text-slate-600">Account access for each member to boringsites admin.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-0.5">
+                    <p className="text-3xl font-semibold tracking-tight text-slate-900">
+                      $5
+                    </p>
+                    <p className="text-lg font-medium text-slate-500 ml-2">  user / mo</p>
+                  </div>
+                </div>
+                <hr className="border-slate-200" />
                 <div className="flex items-center justify-between gap-6">
                   <div className="flex items-center gap-3">
                     <FileText className="h-8 w-8 text-orange-600" />
-                    <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                      Extra 5 Websites
-                    </h2>
+                    <div className="grid">
+                      <h2 className="text-xl font-semibold tracking-tight text-slate-900">
+                        Extra 5 Websites
+                      </h2>
+                      <p className="text-sm text-slate-600">Each plan comes with 5 sites, you can get more.</p>
+                    </div>
                   </div>
                   <div className="flex items-center gap-0.5">
-                    <p className="text-3xl font-semibold tracking-tight text-gray-900">
-                      +$10
+                    <p className="text-3xl font-semibold tracking-tight text-slate-900">
+                      $10
                     </p>
-                    <p className="text-lg font-medium text-gray-500">/mo</p>
+                    <p className="text-lg font-medium text-slate-500 ml-2"> / mo</p>
                   </div>
                 </div>
               </div>
@@ -810,7 +735,7 @@ const Pricing: React.FC = () => {
           <FAQSection />
 
           <motion.div
-            className="relative bg-gray-900 rounded-2xl py-6 px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12"
+            className="relative bg-slate-900 rounded-2xl py-6 px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.4 }}
@@ -838,7 +763,7 @@ const Pricing: React.FC = () => {
                       We can do it for you →
                     </Link>
                   </div>
-                  <p className="text-sm text-gray-400 mt-3">Free of charge</p>
+                  <p className="text-sm text-slate-400 mt-3">Free of charge</p>
                 </form>
               </div>
             </div>

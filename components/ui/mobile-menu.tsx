@@ -43,7 +43,7 @@ export default function MobileMenu() {
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
         <span className="sr-only">Menu</span>
-        <svg className="w-6 h-6 fill-current text-gray-900" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-6 h-6 fill-current text-slate-900" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <rect y="4" width="24" height="2" />
           <rect y="11" width="24" height="2" />
           <rect y="18" width="24" height="2" />
@@ -67,60 +67,60 @@ export default function MobileMenu() {
           <ul className="px-5 py-2 space-y-4">
             <li>
               <button
-                className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2"
+                className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 Create a..
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-gray-400 transition duration-150 ease-in-out group-hover:text-gray-500 group-focus:text-gray-500" data-v-0d428460=""><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" data-v-0d428460=""></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-slate-400 transition duration-150 ease-in-out group-hover:text-slate-500 group-focus:text-slate-500" data-v-0d428460=""><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" data-v-0d428460=""></path></svg>
               </button>
               {dropdownOpen && (
                 <div className="bg-white w-full">
                   <ul>
-                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100">
+                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-orange-600">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
                       </svg>
                       <div className="ml-4">
                         <Link href="/create-a-helpdesk-servicedesk-notion">
-                          <Link href="#" className="text-base font-medium text-gray-900">Help Center</Link>
+                          <Link href="#" className="text-base font-medium text-slate-900">Help Center</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-gray-500">Create your professional self-service help center with Notion and BoringSites.</p>
+                        <p className="mt-1 text-sm text-slate-500">Create your professional self-service help center with Notion and BoringSites.</p>
                       </div>
                     </li>
-                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100">
+                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-orange-600">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                       </svg>
                       <div className="ml-4">
                         <Link href="/create-a-documentation-notion">
-                          <Link href="#" className="text-base font-medium text-gray-900">Documentation</Link>
+                          <Link href="#" className="text-base font-medium text-slate-900">Documentation</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-gray-500">Create your world-class product documentation with Notion and BoringSites.</p>
+                        <p className="mt-1 text-sm text-slate-500">Create your world-class product documentation with Notion and BoringSites.</p>
                       </div>
                     </li>
-                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100">
+                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-orange-600">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                       </svg>
                       <div className="ml-4">
                         <Link href="/create-a-marketplace-notion">
-                          <Link href="#" className="text-base font-medium text-gray-900">Marketplace</Link>
+                          <Link href="#" className="text-base font-medium text-slate-900">Marketplace</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-gray-500">Create a self-serving community marketplace that can handle millions in traffic on Notion.</p>
+                        <p className="mt-1 text-sm text-slate-500">Create a self-serving community marketplace that can handle millions in traffic on Notion.</p>
                       </div>
                     </li>
-                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100">
+                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-orange-600">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
                       </svg>
                       <div className="ml-4">
                         <Link href="/create-a-company-wiki-notion">
-                          <Link href="#" className="text-base font-medium text-gray-900">Company Wiki</Link>
+                          <Link href="#" className="text-base font-medium text-slate-900">Company Wiki</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-gray-500">Create a company wiki with protected access and AI to answer queries on top of Notion as a database.</p>
+                        <p className="mt-1 text-sm text-slate-500">Create a company wiki with protected access and AI to answer queries on top of Notion as a database.</p>
                       </div>
                     </li>
-                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100">
+                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="url(#grad1)" className="flex-shrink-0 w-6 h-6 text-orange-600">
                         <defs>
                           <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -138,9 +138,9 @@ export default function MobileMenu() {
                       </svg>
                       <div className="ml-4">
                         <Link href="/create-a-blog-notion">
-                          <Link href="#" className="text-base font-medium text-gray-900">Blog</Link>
+                          <Link href="#" className="text-base font-medium text-slate-900">Blog</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-gray-500">Create a beautiful blog for your startup or company with Notion and BoringSites.</p>
+                        <p className="mt-1 text-sm text-slate-500">Create a beautiful blog for your startup or company with Notion and BoringSites.</p>
                       </div>
                     </li>
                   </ul>
@@ -149,19 +149,19 @@ export default function MobileMenu() {
             </li>
 
             <li>
-              <Link href="/pricing" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Pricing</Link>
+              <Link href="/pricing" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Pricing</Link>
             </li>
 
             <li>
-              <Link href="/showcase" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Showcase</Link>
+              <Link href="/showcase" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Showcase</Link>
             </li>
             <li>
-              <Link href="https://app.BoringSites.com" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between">Login</Link>
+              <Link href="https://app.BoringSites.com" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between">Login</Link>
             </li>
             <li>
-              <Link href="https://app.youform.com/forms/r3rvhjv4" target='_blank' className="btn-sm text-white bg-gray-900 hover:bg-gray-800 ml-3 w-full justify-between">
+              <Link href="https://app.youform.com/forms/r3rvhjv4" target='_blank' className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 w-full justify-between">
                 <span>Ask us to Build</span>
-                <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-3 h-3 fill-current text-slate-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
                 </svg>
               </Link>

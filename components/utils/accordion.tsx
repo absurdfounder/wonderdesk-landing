@@ -27,7 +27,7 @@ export default function Accordion({
   return (
     <Component>
       <button
-        className="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200"
+        className="flex items-center w-full text-lg font-medium text-left py-5 border-t border-slate-200"
         onClick={(e) => { e.preventDefault(); setAccordionOpen(!accordionOpen); }}
         aria-expanded={accordionOpen}
       >
@@ -39,7 +39,7 @@ export default function Accordion({
       </button>
       <div
         ref={accordion}
-        className="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
+        className="text-slate-600 overflow-hidden transition-all duration-300 ease-in-out"
         style={accordionOpen ? { maxHeight: accordion.current?.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0 }}
       >
         <p className="pb-5">{children}</p>

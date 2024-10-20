@@ -63,8 +63,8 @@ export default function ModalVideo({
           </div>
 
 
-          <button className="relative top-full flex items-center transform -translate-y-1/2 rounded-full group p-4 shadow-lg border border-4 border-gray-100 bg-orange-400 text-black m-auto text-xl font-bold px-6 px-4" onClick={() => { setModalOpen(true) }}>
-            <svg className="w-6 h-6 fill-current text-gray-900 group-hover:text-blue-600 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <button className="relative top-full flex items-center transform -translate-y-1/2 rounded-full group p-4 shadow-lg border border-4 border-slate-100 bg-orange-400 text-slate-800 m-auto text-xl font-bold px-6 px-4" onClick={() => { setModalOpen(true) }}>
+            <svg className="w-6 h-6 fill-current text-slate-900 group-hover:text-blue-600 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-10 12z" />
               <path d="M10 17l6-5-6-5z" />
             </svg>
@@ -80,7 +80,7 @@ export default function ModalVideo({
 
 
         <div className="mt-8 text-center">
-    <p className="text-lg font-semibold text-gray-700">Trusted by startups</p>
+    <p className="text-lg font-semibold text-slate-700">Trusted by startups</p>
     <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:mt-10 lg:gap-x-16 lg:gap-y-8">
     <img alt="Xumm" src="https://dazzling-cat.netlify.app/remotedesk-gray.png" className="h-10 w-auto object-contain" />
         <img alt="Green Got" src="https://dazzling-cat.netlify.app/downtown.png" className="h-12 w-auto object-contain lg:h-20" />

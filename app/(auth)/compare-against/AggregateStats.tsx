@@ -8,7 +8,7 @@ const AggregateStats: React.FC = () => {
 
         <div className='max-w-3xl mx-auto text-center py-20 pb-12 md:pb-20'>
           <h1 className="h3 mb-4">More work gets done with BoringSites.</h1>
-          <p className="text-xl text-gray-600">Jumpstart your SaaS business with pre-built solutions from BoringSites and our community.</p>
+          <p className="text-xl text-slate-600">Jumpstart your SaaS business with pre-built solutions from BoringSites and our community.</p>
 
 
           {/* Items */}
@@ -17,7 +17,7 @@ const AggregateStats: React.FC = () => {
             <Link href={"0"} className="relative flex flex-col items-center p-6 bg-white rounded-full h-full">
               <div>
                 <div >
-                  <h1 className="h3 mb-4 text-gray-500">86%</h1>
+                  <h1 className="h3 mb-4 text-slate-500">86%</h1>
                   <span className="text-dark font-bold">of users save time with BoringSites</span>
                 </div>
               </div>
@@ -27,7 +27,7 @@ const AggregateStats: React.FC = () => {
             <Link href={"0"}   className="relative flex flex-col items-center p-6 bg-white rounded-full h-full">
               <div>
                 <div>
-                  <h1 className="h3 mb-4 text-gray-500">90%</h1>
+                  <h1 className="h3 mb-4 text-slate-500">90%</h1>
                   <span className="text-dark font-bold">of users replaced 2+ tools</span>
                 </div>
               </div>
@@ -36,7 +36,7 @@ const AggregateStats: React.FC = () => {
             <Link href={"0"}   className="relative flex flex-col items-center p-6 bg-white rounded-full h-full">
               <div>
                 <div>
-                  <h1 className="h3 mb-4 text-gray-500">91%</h1>
+                  <h1 className="h3 mb-4 text-slate-500">91%</h1>
                   <span className="text-dark font-bold">faster project completion</span>
                 </div>
               </div>
@@ -45,7 +45,7 @@ const AggregateStats: React.FC = () => {
             <Link href={"0"}   className="relative flex flex-col items-center p-6 bg-white rounded-full h-full">
               <div>
                 <div>
-                  <h1 className="h3 mb-4 text-gray-500">86%</h1>
+                  <h1 className="h3 mb-4 text-slate-500">86%</h1>
                   <span className="text-dark font-bold">less emails sent and received</span>
                 </div>
               </div>

@@ -93,20 +93,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <MoveBack />
 
           <div className="mb-4">
-            <h1 className="text-3xl font-bold text-gray-800 mt-8">{filterBySlug.product.name}</h1>
-            <p className="text-md text-gray-600">{filterBySlug.product.provider}</p>
+            <h1 className="text-3xl font-bold text-slate-800 mt-8">{filterBySlug.product.name}</h1>
+            <p className="text-md text-slate-600">{filterBySlug.product.provider}</p>
           </div>
-          <div className="text-gray-800">
+          <div className="text-slate-800">
             <p>{filterBySlug.product.description}</p>
           </div>
           <div className="flex flex-col sm:flex-row mt-4 gap-4">
             <div className="flex space-x-2 items-center">
-              <Link href={filterBySlug.product.callToCopy.link} className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
+              <Link href={filterBySlug.product.callToCopy.link} className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
                 <span>{filterBySlug.product.callToCopy.text}</span>
               </Link>
             </div>
             <div className="flex space-x-2 items-center">
-              <Link href={filterBySlug.product.ViewDemo.link} className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
+              <Link href={filterBySlug.product.ViewDemo.link} className="bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
                 <span>{filterBySlug.product.ViewDemo.text}</span>
               </Link>
             </div>
@@ -124,18 +124,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </div>
 
       <div className="mb-4">
-        <h1 className="text-2xl font-bold text-gray-800">Overview</h1>
-        <p className="text-md text-gray-600">{filterBySlug.overview.content}</p>
+        <h1 className="text-2xl font-bold text-slate-800">Overview</h1>
+        <p className="text-md text-slate-600">{filterBySlug.overview.content}</p>
       </div>
 
       <div className="mb-4">
-        <h1 className="text-2xl font-bold text-gray-800">How it Works</h1>
-        <p className="text-md text-gray-600">{filterBySlug.howItWorks.content}</p>
+        <h1 className="text-2xl font-bold text-slate-800">How it Works</h1>
+        <p className="text-md text-slate-600">{filterBySlug.howItWorks.content}</p>
       </div>
 
       <div className="mb-4">
-        <h1 className="text-2xl font-bold text-gray-800">Configuration</h1>
-        <p className="text-md text-gray-600">{filterBySlug.configuration.content}</p>
+        <h1 className="text-2xl font-bold text-slate-800">Configuration</h1>
+        <p className="text-md text-slate-600">{filterBySlug.configuration.content}</p>
       </div>
 
       {postPageView.map((item, index) => renderContent(item, index))}

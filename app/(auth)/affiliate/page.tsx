@@ -28,7 +28,7 @@ twitter: {
 
 export default function PageDetail() {
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white">
+    <section className="bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
 
@@ -40,7 +40,7 @@ export default function PageDetail() {
 
           <div className="max-w-3xl mx-auto text-center pb-4">
             <h1 className="h2 mb-4">Earn <b className="text-orange-600">$972 per month</b>* promoting an award-winning notion backed web app builder</h1>
-            <p className="px-2 mt-6 leading-7 text-gray-600 sm:px-0 sm:text-lg sm:leading-8">
+            <p className="px-2 mt-6 leading-7 text-slate-600 sm:px-0 sm:text-lg sm:leading-8">
         Earn <b>30% recurring commissions</b> for every paying customer you
 refer to BoringSites, without limits. Join
         our affiliate program today and start earning money.
@@ -62,8 +62,8 @@ refer to BoringSites, without limits. Join
               <div className="max-w-md mx-auto">
                 <div className="text-center">
                   <h2 className="h2 font-bold leading-tight">How it works</h2>
-                  <div className="mt-4 text-gray-600">
-                    <p className="text-md mt-4 mb-4 text-gray-800">You can start earning money in 30 minutes.</p>
+                  <div className="mt-4 text-slate-600">
+                    <p className="text-md mt-4 mb-4 text-slate-800">You can start earning money in 30 minutes.</p>
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@ refer to BoringSites, without limits. Join
                 {/* SVG icon */}
                 <Image src="/images/🤑.png" alt="Cash out in one click" className="h-10" width={40} height={100}/>
                 <h2 className="h2 font-semibold">33%</h2>
-                <span className="text-base text-gray-600">your commission</span>
+                <span className="text-base text-slate-600">your commission</span>
               </Link>
 
               {/* Affiliate Detail Item */}
@@ -126,7 +126,7 @@ refer to BoringSites, without limits. Join
                 {/* SVG icon */}
                 <Image src="/images/🍪.png" alt="Cash out in one click" className="h-10" width={40} height={100}/>
                 <h2 className="h2 font-semibold">60 days</h2>
-                <span className="text-base text-gray-600">cookie period</span>
+                <span className="text-base text-slate-600">cookie period</span>
               </Link>
 
               {/* Affiliate Detail Item */}
@@ -134,7 +134,7 @@ refer to BoringSites, without limits. Join
                 {/* SVG icon */}
                 <Image src="/images/partyblow.png" alt="Cash out in one click" className="h-10" width={40} height={100} />
                 <h2 className="h2 font-semibold">10%</h2>
-                <span className="text-base text-gray-600">2nd tier commission</span>
+                <span className="text-base text-slate-600">2nd tier commission</span>
               </Link>
             </div>
           </div>
@@ -147,7 +147,7 @@ refer to BoringSites, without limits. Join
             <div className="w-full lg:w-1/2 p-8 m-auto">
               <h2 className="h2 font-bold text-accent">An essential collection of banners</h2>
               <br />
-              <p className="text-md mt-4 mb-4 text-gray-800">We prepared designs for you to download and use right away — no extra work. Missing a format? Just ask and we will make unique design files just for you. Free of charge.</p>
+              <p className="text-md mt-4 mb-4 text-slate-800">We prepared designs for you to download and use right away — no extra work. Missing a format? Just ask and we will make unique design files just for you. Free of charge.</p>
             </div>
             <Image src="https://dazzling-cat.netlify.app/nb-assets.png" unoptimized alt="Banners free pack" width={100} height={100} className="w-full lg:w-1/2 p-8 m-auto" />
           </div>
@@ -157,7 +157,7 @@ refer to BoringSites, without limits. Join
             <Image src="https://dazzling-cat.netlify.app/freelancer-mockup.webp" unoptimized alt="Design agency" width={100} height={100} className="w-full lg:w-1/2 p-8 m-auto" />
             <div className="w-full lg:w-1/2 p-8 m-auto">
               <h2 className="h2 font-bold mb-8">You’re a freelancer or an agency</h2>
-              <p className="text-md mt-4 mb-4 text-gray-800">Demonstrate your industry knowledge by recommending BoringSites to your clients and fellow marketers. This will help you create an additional revenue source for your business. "Diversification is the key to financial resilience." — Warren Buffett.</p>
+              <p className="text-md mt-4 mb-4 text-slate-800">Demonstrate your industry knowledge by recommending BoringSites to your clients and fellow marketers. This will help you create an additional revenue source for your business. "Diversification is the key to financial resilience." — Warren Buffett.</p>
             </div>
           </div>
 
@@ -165,7 +165,7 @@ refer to BoringSites, without limits. Join
           <div className="flex mx-auto px-4 py-8 mt-8">
             <div className="w-full lg:w-1/2 p-8 m-auto">
               <h2 className="h2 font-bold mb-8">You have an audience</h2>
-              <p className="text-md mt-4 mb-4 text-gray-800">Have an X.com account that is followed by marketers? Or a website about web design? Monetize your audience by recommending them a great tool. Use our affiliate program link alongside with your existing monetization. Boost your earnings!</p>
+              <p className="text-md mt-4 mb-4 text-slate-800">Have an X.com account that is followed by marketers? Or a website about web design? Monetize your audience by recommending them a great tool. Use our affiliate program link alongside with your existing monetization. Boost your earnings!</p>
             </div>
             <Image src="https://dazzling-cat.netlify.app/influencer-mockup.webp" unoptimized alt="Influencer" width={100} height={100} className="w-full lg:w-1/2 p-8 m-auto" />
           </div>
@@ -176,17 +176,17 @@ refer to BoringSites, without limits. Join
           <div className="pt-12 pb-16 relative z-10 bg-white">
             <div className="max-w-lg mx-auto text-center mb-12">
               <h2 className="h2 font-semibold mb-4 mt-8">Make Passive Income!</h2>
-              <p className="text-md mt-4 mb-4 text-gray-800">Just imagine this amount of cash coming into your bank account every single month. *Calculations are based on the Startup plan.</p>
+              <p className="text-md mt-4 mb-4 text-slate-800">Just imagine this amount of cash coming into your bank account every single month. *Calculations are based on the Startup plan.</p>
             </div>
             <div className="max-w-6xl  container mx-auto">
               <ul className="flex flex-wrap justify-center">
                 <li className="w-1/3 px-2 mb-4">
-                  <div className="bg-gray-100 p-4 rounded-lg shadow border-gray-600 border">
+                  <div className="bg-slate-100 p-4 rounded-lg shadow border-slate-600 border">
                     <div className="text-center mb-4 p-4">
 
                       <span className="h4">🐻 BEAR</span>
                       <h2 className="h2 mt-4">$<b className="font-bold">146</b></h2>
-                      <p className="text-md mt-4 mb-4 text-gray-800">per month</p>
+                      <p className="text-md mt-4 mb-4 text-slate-800">per month</p>
 
                     </div>
                     <div className="text-center">
@@ -195,11 +195,11 @@ refer to BoringSites, without limits. Join
                   </div>
                 </li>
                 <li className="w-1/3 px-2 mb-4">
-                  <div className="bg-gray-100 p-4 rounded-lg shadow border-gray-600 border">
+                  <div className="bg-slate-100 p-4 rounded-lg shadow border-slate-600 border">
                     <div className="text-center mb-4 p-4">
                       <span className="h4">🐴 HORSE</span>
                       <h2 className="h2 mt-4">$<b className="font-bold">957</b></h2>
-                      <p className="text-md mt-4 mb-4 text-gray-800">per month</p>
+                      <p className="text-md mt-4 mb-4 text-slate-800">per month</p>
                     </div>
                     <div className="text-center">
                       100 people = $957/m
@@ -207,11 +207,11 @@ refer to BoringSites, without limits. Join
                   </div>
                 </li>
                 <li className="w-1/3 px-2 mb-4">
-                  <div className="bg-gray-100 p-4 rounded-lg shadow border-gray-600 border">
+                  <div className="bg-slate-100 p-4 rounded-lg shadow border-slate-600 border">
                     <div className="text-center mb-4 p-4">
                       <span className="h4">🦄 UNICORN</span>
                       <h2 className="h2 mt-4">$<b className="font-bold">4785</b></h2>
-                      <p className="text-md mt-4 mb-4 text-gray-800">per month</p>
+                      <p className="text-md mt-4 mb-4 text-slate-800">per month</p>
                     </div>
                     <div className="text-center">
                       500 people = $4785/m
@@ -269,22 +269,22 @@ refer to BoringSites, without limits. Join
 
               <div className="mt-8">
                 <div className="space-y-6">
-                  <div className='p-8 border rounded-2xl border-gray-600'>
+                  <div className='p-8 border rounded-2xl border-slate-600'>
                     <h3 className="font-bold text-xl">Who is BoringSites for?</h3>
                     <br />
-                    <p className="text-md mt-4 mb-4 text-gray-800">BoringSites is a quick business builder for startup founders. Our users can quickly create a beautiful web apps, blogs, and helpdesks for a mobile or desktop, for a SaaS product, for a plugin, an open-source project, a SMM tool etc.</p>
-                    <p className="text-md mt-4 mb-4 text-gray-800">If your audience are tech guys, BoringSites is for them. They will be more willing to use a tailored tool for startups rather than generic old-fashioned Webflow or Wordpress.</p>
+                    <p className="text-md mt-4 mb-4 text-slate-800">BoringSites is a quick business builder for startup founders. Our users can quickly create a beautiful web apps, blogs, and helpdesks for a mobile or desktop, for a SaaS product, for a plugin, an open-source project, a SMM tool etc.</p>
+                    <p className="text-md mt-4 mb-4 text-slate-800">If your audience are tech guys, BoringSites is for them. They will be more willing to use a tailored tool for startups rather than generic old-fashioned Webflow or Wordpress.</p>
                   </div>
 
-                  <div className='p-8 border rounded-2xl border-gray-600'>
+                  <div className='p-8 border rounded-2xl border-slate-600'>
                     <h3 className="font-bold text-xl">Why promote you while I can promote some other website builder?</h3>
                     <br />
-                    <p className="text-md mt-4 mb-4 text-gray-800">The key advantage is the approach. We are building a landing page generator for startups only. That means, we pay all the attention to startups-only demands. In particular, we will provide not-so-popular integrations, specific components and templates.</p>
-                    <p className="text-md mt-4 mb-4 text-gray-800">This is why startup founders love BoringSites more than other tools.</p>
-                    <p className="text-md mt-4 mb-4 text-gray-800">Why believe me? Just A/B test it yourself. Put a Wix affiliate link for a month, measure your earnings. Then put our link. Compare. Pick the winner.</p>
+                    <p className="text-md mt-4 mb-4 text-slate-800">The key advantage is the approach. We are building a landing page generator for startups only. That means, we pay all the attention to startups-only demands. In particular, we will provide not-so-popular integrations, specific components and templates.</p>
+                    <p className="text-md mt-4 mb-4 text-slate-800">This is why startup founders love BoringSites more than other tools.</p>
+                    <p className="text-md mt-4 mb-4 text-slate-800">Why believe me? Just A/B test it yourself. Put a Wix affiliate link for a month, measure your earnings. Then put our link. Compare. Pick the winner.</p>
                   </div>
 
-                  <div className='p-8 border rounded-2xl border-gray-600'>
+                  <div className='p-8 border rounded-2xl border-slate-600'>
                     <h3 className="font-bold text-xl">What is the minimum payout amount?</h3>
                     <br />
                     <ul>
@@ -299,10 +299,10 @@ refer to BoringSites, without limits. Join
                     </ul>
                   </div>
 
-                  <div className='p-8 border rounded-2xl border-gray-600'>
+                  <div className='p-8 border rounded-2xl border-slate-600'>
                     <h3 className="font-bold text-xl">Can I have multiple affiliate offers on the same page?</h3>
                     <br />
-                    <p className="text-md mt-4 mb-4 text-gray-800">Yes. Nothing stops your from selling let's say an analytics tool or a social media scheduler alongside with a landing page builder. Take the maximum out of your resource!</p>
+                    <p className="text-md mt-4 mb-4 text-slate-800">Yes. Nothing stops your from selling let's say an analytics tool or a social media scheduler alongside with a landing page builder. Take the maximum out of your resource!</p>
                   </div>
                 </div>
               </div>
@@ -312,12 +312,12 @@ refer to BoringSites, without limits. Join
 
 
 
-          <div className="bg-gray-800 border border-gray-800 text-white border-2 border-dashed py-20 rounded-md">
+          <div className="bg-slate-800 border border-slate-800 text-white border-2 border-dashed py-20 rounded-md">
     <div className="max-w-md mx-auto text-center">
         <h2 className="h2 font-bold">Start earning cash by referring customers to BoringSites</h2>
         <br />
         <p className="mt-4">Quick payouts to Wise, Paypal or your local bank. Premium support and cross-promotions from us.</p>
-        <div className="mt-8"><Link href="https://BoringSites.lemonsqueezy.com/affiliates" target="_blank" className="btn text-gray-900 bg-gray-200 hover:bg-gray-600 w-full mb-4 sm:w-auto sm:mb-0">Become our partner</Link></div>
+        <div className="mt-8"><Link href="https://BoringSites.lemonsqueezy.com/affiliates" target="_blank" className="btn text-slate-900 bg-slate-200 hover:bg-slate-600 w-full mb-4 sm:w-auto sm:mb-0">Become our partner</Link></div>
     </div>
 </div>
 

@@ -125,7 +125,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
       </motion.h1>
 
       <motion.p 
-        className="text-xl text-gray-600 mb-8"
+        className="text-xl text-slate-600 mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -145,7 +145,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
           </Link>
         </div>
         <div>
-          <Link className="btn text-black text-2xl border-gray-900 hover:bg-gray-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center" href="/showcase">View all</Link>
+          <Link className="btn text-slate-800 text-2xl border-slate-900 hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center" href="/showcase">View all</Link>
         </div>
       </motion.div>
 
@@ -161,7 +161,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
             <motion.button
               key={type}
               onClick={() => setSelectedType(type)}
-              className={`px-3 py-1 rounded flex items-center ${selectedType === type ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+              className={`px-3 py-1 rounded flex items-center ${selectedType === type ? 'bg-orange-600 text-white' : 'bg-slate-200 text-slate-700'}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -209,12 +209,12 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                         <span className="text-start mt-2 mb-1 font-bold hover:text-orange-600">
                           {template.product.name}
                         </span>
-                        <ArrowRight className="h-4 w-4 text-gray-400" />
+                        <ArrowRight className="h-4 w-4 text-slate-400" />
                       </Link>
-                      <p className="text-sm text-gray-400 mt-2 mb-3">
+                      <p className="text-sm text-slate-400 mt-2 mb-3">
                         {truncateText(template.product.description, 76)}
                       </p>
-                      <span className="bg-gray-100 border-gray-200 border-dashed border-2 p-1 px-4 rounded-full my-2">
+                      <span className="bg-slate-100 border-slate-200 border-dashed border-2 p-1 px-4 rounded-full my-2">
                         {template.product.type}
                       </span>
                       </div>
@@ -226,7 +226,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
         ) : (
           <motion.div 
             key="empty"
-            className="flex flex-col items-center justify-center mt-8 p-8 bg-gray-100 rounded-lg"
+            className="flex flex-col items-center justify-center mt-8 p-8 bg-slate-100 rounded-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -234,7 +234,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
           >
             <AlertCircle size={48} className="text-orange-600 mb-4" />
             <h2 className="text-2xl font-bold mb-2">Coming Soon</h2>
-            <p className="text-gray-600">We're working on adding templates for this category. Check back later!</p>
+            <p className="text-slate-600">We're working on adding templates for this category. Check back later!</p>
           </motion.div>
         )}
       </AnimatePresence>

@@ -49,11 +49,11 @@ export default function Header() {
             <ul className="flex grow justify-end flex-wrap items-center">
               <li className="relative" ref={dropdownRef}>
                 <button
-                  className="font-bold text-gray-900 hover:text-orange-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+                  className="font-bold text-slate-900 hover:text-orange-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                 >
                   Create a..
-                  <ChevronDown className="w-5 h-5 ml-1 text-gray-400" />
+                  <ChevronDown className="w-5 h-5 ml-1 text-slate-400" />
                 </button>
                 <AnimatePresence>
                   {dropdownOpen && (
@@ -91,7 +91,7 @@ export default function Header() {
                             description="Create a beautiful blog for your startup or company with Notion and BoringSites."
                           />
                         </div>
-                        <div className="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
+                        <div className="px-5 py-5 bg-slate-50 sm:px-8 sm:py-8">
                           <div className="grid grid-cols-2 gap-4">
                             <DemoLink
                               href="https://support.boringsites.com/"
@@ -127,7 +127,7 @@ export default function Header() {
                 <Link
                   href="https://app.youform.com/forms/r3rvhjv4"
                   target='_blank'
-                  className="btn-sm text-white bg-gray-900 hover:bg-gray-800 ml-3 flex items-center justify-between px-4 py-2 rounded-full transition duration-150 ease-in-out"
+                  className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-full transition duration-150 ease-in-out"
                 >
                   <span>Ask us to Build</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -155,8 +155,8 @@ function DropdownLink({ href, icon: Icon, title, description }: DropdownLinkProp
     <Link href={href} className="flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-orange-100">
       <Icon className="flex-shrink-0 w-6 h-6 text-orange-600" />
       <div className="ml-4">
-        <p className="text-base font-medium text-gray-900">{title}</p>
-        <p className="mt-1 text-sm text-gray-500">{description}</p>
+        <p className="text-base font-medium text-slate-900">{title}</p>
+        <p className="mt-1 text-sm text-slate-500">{description}</p>
       </div>
     </Link>
   );
@@ -170,10 +170,10 @@ interface DemoLinkProps {
 
 function DemoLink({ href, imageSrc, text }: DemoLinkProps) {
   return (
-    <Link href={href} target="_blank" className="flex items-center p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-gray-100">
+    <Link href={href} target="_blank" className="flex items-center p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-slate-100">
       <Image src={imageSrc} alt="" width={30} height={30} className="flex-shrink-0 w-6 h-6 rounded-full" />
       <div className="ml-4">
-        <p className="text-base font-medium text-gray-900">{text}</p>
+        <p className="text-base font-medium text-slate-900">{text}</p>
       </div>
     </Link>
   );
@@ -187,7 +187,7 @@ interface NavLinkProps {
 function NavLink({ href, text }: NavLinkProps) {
   return (
     <li>
-      <Link href={href} className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+      <Link href={href} className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
         {text}
       </Link>
     </li>

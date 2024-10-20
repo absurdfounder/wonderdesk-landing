@@ -52,7 +52,7 @@ export default function TrustedBy() {
 
 
 <div className="mt-8 text-center">
-    <p className="text-lg font-semibold text-gray-700">Trusted by 100+ startups</p>
+    <p className="text-lg font-semibold text-slate-700">Trusted by 100+ startups</p>
     <div className="mt-5 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 lg:mt-10 lg:gap-x-16 lg:gap-y-8">
     <img alt="Testimonial" src="https://dazzling-cat.netlify.app/dicordbots.png" className="h-10 w-auto object-contain lg:h-10" />
         <img alt="Xumm" src="https://dazzling-cat.netlify.app/remotedesk-gray.png" className="h-10 w-auto object-contain" />

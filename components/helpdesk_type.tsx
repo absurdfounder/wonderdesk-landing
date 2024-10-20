@@ -25,8 +25,8 @@ interface TabButtonProps {
 
 const TabButton: React.FC<TabButtonProps> = ({ tabIndex, text, subText, currentTab, setTab }) => (
   <button
-    className={`group flex items-center justify-between text-lg p-5 rounded-full border transition duration-300 ease-in-out d hover:shadow-lg text-gray-900 ${
-      currentTab !== tabIndex ? "bg-gray-100" : "bg-orange-100 text-orange-600"
+    className={`group flex items-center justify-between text-lg p-5 rounded-full border transition duration-300 ease-in-out d hover:shadow-lg text-slate-900 ${
+      currentTab !== tabIndex ? "bg-slate-100" : "bg-orange-100 text-orange-600"
     }`}
     onClick={() => setTab(tabIndex)}
   >
@@ -61,14 +61,14 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt1, alt2 }) => (
   >
     <div className="relative inline-flex flex-col">
       <Image
-        className="md:max-w-none mx-auto rounded-2xl border border-2 border-gray-600 shadow-lg"
+        className="md:max-w-none mx-auto rounded-2xl border border-2 border-slate-600 shadow-lg"
         src={image}
         unoptimized
         width={500}
         height={462}
         alt="Features bg"
       />
-      <div className="flex gap-2 justify-center mt-4 text-xl text-gray-900">
+      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
         A simpler alternative to{" "}
         <Image
           alt="Alternative 1"
@@ -107,7 +107,7 @@ export default function Helpdesk_Type() {
 
   return (
     <section id="helpdesk-section" className="relative mt-4 mb-4 pb-4">
-      <div className="inset-0 bg-gray-100 pointer-events-none mb-16" aria-hidden="true"></div>
+      <div className="inset-0 bg-slate-100 pointer-events-none mb-16" aria-hidden="true"></div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-12 md:pt-20">
@@ -115,7 +115,7 @@ export default function Helpdesk_Type() {
             <h1 className="h2 mb-4">
               Unique your helpdesk concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-slate-600">
               BoringSites is designed for all types from content curation to
               content creation. Build company blogs, helpdesks, company wiki,
               documentations, and marketplaces.

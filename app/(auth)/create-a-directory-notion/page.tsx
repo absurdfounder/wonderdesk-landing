@@ -48,7 +48,7 @@ export default function PageDetail() {
     return (
 
         <div>
-            <section className="bg-gradient-to-b from-gray-100 to-white">
+            <section className="bg-gradient-to-b from-slate-100 to-white">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     <div className="pt-32 pb-12 md:pt-18 md:pb-20">
                         {/* Page header */}
@@ -59,7 +59,7 @@ export default function PageDetail() {
 
                                 <div className="max-w-screen-xl px-4 mx-auto sm:px-6 mb-20">
                                 <div className="text-center px-4 sm:px-6 lg:px-8">
-                                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tighter tracking-tighter mb-4 aos-init aos-animate">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tighter tracking-tighter mb-4 aos-init aos-animate">
                                     Turn
                                     <span className="text-3xl sm:text-4xl md:text-5xl relative">
                                     <span className="inline-flex items-center relative sm:bottom-0 bottom-[-1px] justify-center mx-2">
@@ -75,7 +75,7 @@ export default function PageDetail() {
                                     <br className="block" />
                                     professional <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">directory</span>
                                 </h1>
-                                <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
+                                <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
                                     BoringSites is the perfect tool for creating your directorys powered by Notion. You write your articles in Notion and BoringSites takes care of the rest. It's as simple as that.
                                 </p>
                                 <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
@@ -83,7 +83,7 @@ export default function PageDetail() {
                                     <Link href="/signup" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-full shadow bg-orange-700 sm:w-auto">
                                         <strong className="mr-1">Create your directory with Notion →</strong>
                                     </Link>
-                                    <p className="mt-3 text-sm text-gray-700"><strong>Free</strong> 7 day trial. Free Design Service.</p>
+                                    <p className="mt-3 text-sm text-slate-700"><strong>Free</strong> 7 day trial. Free Design Service.</p>
                                     </div>
                                 </div>
                                 </div>
@@ -124,10 +124,10 @@ export default function PageDetail() {
                         <p className="text-base font-semibold leading-7 text-orange-600">
                             EXPERTS CAN HELP
                         </p>
-                        <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                             What can BoringSites Experts do for you?
                         </h2>
-                        <p className="mt-6 text-gray-600 sm:text-lg sm:leading-8">
+                        <p className="mt-6 text-slate-600 sm:text-lg sm:leading-8">
                             Experts can help with a wide range of design, development, and
                             marketing projects. Helping you reach your business goals as a
                             solo founder or small team.

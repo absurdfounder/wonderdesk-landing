@@ -42,7 +42,7 @@ export default function Marketplace_Type() {
     >
       {/* Section background (needs .relative class on parent and next sibling elements) */}
       <div
-        className="inset-0 bg-gray-100 pointer-events-none mb-16"
+        className="inset-0 bg-slate-100 pointer-events-none mb-16"
         aria-hidden="true"
       ></div>
 
@@ -53,7 +53,7 @@ export default function Marketplace_Type() {
           <h1 className="h2 mb-4">
               Unique your knowledge base concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-slate-600">
               BoringSites is designed for all types from content curation to
               content creation. Build company blogs, helpdesks, company wiki,
               documentations, and marketplaces.
@@ -70,7 +70,7 @@ export default function Marketplace_Type() {
               {/* Tabs buttons */}
               <div className="grid gap-4 mb-8 md:mb-0">
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-gray-600 hover:shadow-lg text-gray-900 ${tab !== 1 ? "bg-gray-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 1 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -86,7 +86,7 @@ export default function Marketplace_Type() {
                   </div>
                 </Link>
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-gray-600 hover:shadow-lg text-gray-900 ${tab !== 2 ? "bg-gray-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 2 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -103,7 +103,7 @@ export default function Marketplace_Type() {
                 </Link>
 
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-gray-600 hover:shadow-lg text-gray-900 ${tab !== 3 ? "bg-gray-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 3 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -120,7 +120,7 @@ export default function Marketplace_Type() {
                 </Link>
 
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-gray-600 hover:shadow-lg text-gray-900 ${tab !== 4 ? "bg-gray-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 4 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -165,14 +165,14 @@ export default function Marketplace_Type() {
                   >
                     <div className="relative inline-flex flex-col">
                       <Image
-                        className="md:max-w-none mx-auto rounded-2xl border border-2 border-gray-600 shadow-lg"
+                        className="md:max-w-none mx-auto rounded-2xl border border-2 border-slate-600 shadow-lg"
                         src={helpdeskImage}
                         unoptimized
                         width={500}
                         height={462}
                         alt="Features bg"
                       />
-                      <div className="flex gap-2 justify-center mt-4 text-xl text-gray-900">
+                      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
                         A simpler alternative to{" "}
                         <Image
                           alt="Ana"
@@ -213,14 +213,14 @@ export default function Marketplace_Type() {
                   >
                     <div className="relative inline-flex flex-col">
                       <Image
-                        className="md:max-w-none mx-auto rounded-2xl border border-2 border-gray-600 shadow-lg"
+                        className="md:max-w-none mx-auto rounded-2xl border border-2 border-slate-600 shadow-lg"
                         src={blogImage}
                         unoptimized
                         width={500}
                         height="462"
                         alt="Features bg"
                       />
-                      <div className="flex gap-2 justify-center mt-4 text-xl text-gray-900">
+                      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
                         A simpler alternative to{" "}
                         <Image
                           alt="Ana"
@@ -262,14 +262,14 @@ export default function Marketplace_Type() {
                   >
                     <div className="relative inline-flex flex-col">
                       <Image
-                        className="md:max-w-none mx-auto rounded-2xl border border-2 border-gray-600 shadow-lg"
+                        className="md:max-w-none mx-auto rounded-2xl border border-2 border-slate-600 shadow-lg"
                         src={marketplaceImage}
                         width={500}
                         height={462}
                         unoptimized
                         alt="Features bg"
                       />
-                      <div className="flex gap-2 justify-center mt-4 text-xl text-gray-900">
+                      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
                         A simpler alternative to{" "}
                         <Image
                           alt="Ana"
@@ -310,14 +310,14 @@ export default function Marketplace_Type() {
                   >
                     <div className="relative inline-flex flex-col">
                       <Image
-                        className="md:max-w-none mx-auto rounded-2xl border border-2 border-gray-600 shadow-lg"
+                        className="md:max-w-none mx-auto rounded-2xl border border-2 border-slate-600 shadow-lg"
                         src={"/path/to/your/fourth-tab-image.gif"} // Update this path
                         width={500}
                         height={462}
                         unoptimized
                         alt="Fourth tab gif"
                       />
-                      <div className="flex gap-2 justify-center mt-4 text-xl text-gray-900">
+                      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
                         A simpler alternative to{" "}
                         <Image
                           alt="Ana"

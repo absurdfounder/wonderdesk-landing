@@ -87,7 +87,7 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
   const transformedData = _transformDataToPostPageView(filteredContent);
 
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white">
+    <section className="bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-24 pb-12 md:pt-20 md:pb-20">
           <div className="max-w-xl mx-auto text-center pb-12 md:pb-20 pt-12">
@@ -102,10 +102,10 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
             <h1 className="text-4xl font-bold mb-4">
               Tired of <b>{filteredContent.product.name}</b>? <br /> Say hi to BoringSites
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600">
+            <p className="text-lg sm:text-xl text-slate-600">
               {filteredContent.product.description}
             </p>
-            <Link href="app.BoringSites.com" className="text-white bg-gray-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
+            <Link href="app.BoringSites.com" className="text-white bg-slate-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
               Create a Site
             </Link>
           </div>
