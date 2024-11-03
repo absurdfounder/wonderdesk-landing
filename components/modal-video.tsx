@@ -1,53 +1,48 @@
 'use client'
 
 import { useState, useRef, Fragment } from 'react'
-import type { StaticImageData } from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
 import Image from 'next/image'
 
-//import BoringSites_character  from '../public/images/BoringSites-herosec.png';
+/**
+ * @typedef {Object} ModalVideoProps
+ * @property {import('next/image').StaticImageData} thumb
+ * @property {number} thumbWidth
+ * @property {number} thumbHeight
+ * @property {string} thumbAlt
+ * @property {string} video
+ * @property {number} videoWidth
+ * @property {number} videoHeight
+ */
 
+const BRAND_LOGOS = [
+  { id: 'xumm', src: 'https://dazzling-cat.netlify.app/remotedesk-gray.png', alt: 'Xumm', className: 'h-10 w-auto object-contain' },
+  { id: 'green-got', src: 'https://dazzling-cat.netlify.app/downtown.png', alt: 'Green Got', className: 'h-12 w-auto object-contain lg:h-20' },
+  { id: 'growthx', src: 'https://dazzling-cat.netlify.app/saasboiler-gray.png', alt: 'GrowthX', className: 'h-10 w-auto object-contain lg:h-8' },
+  { id: 'beyonk', src: 'https://dazzling-cat.netlify.app/vcdeal.png', alt: 'Beyonk', className: 'h-10 w-auto object-contain lg:h-10' },
+  { id: 'taplio', src: 'https://dazzling-cat.netlify.app/tinystartups-gray.png', alt: 'Taplio', className: 'h-10 w-auto object-contain lg:h-10' },
+  { id: 'lal10', src: 'https://dazzling-cat.netlify.app/rightagency-gray.png', alt: 'Lal10', className: 'h-10 w-auto object-contain' },
+  { id: 'indie', src: 'https://dazzling-cat.netlify.app/betterhealth.png', alt: 'Indie Worldwide', className: 'h-10 w-auto object-contain lg:h-8' }
+];
 
-interface ModalVideoProps {
-  thumb: StaticImageData
-  thumbWidth: number
-  thumbHeight: number
-  thumbAlt: string
-  video: string
-  videoWidth: number
-  videoHeight: number
-}
-
+/**
+ * Modal Video Component
+ * @param {ModalVideoProps} props
+ */
 export default function ModalVideo({
-  thumb,
-  thumbWidth,
-  thumbHeight,
-  thumbAlt,
   video,
   videoWidth,
   videoHeight,
-}: ModalVideoProps) {
-  const [modalOpen, setModalOpen] = useState<boolean>(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
+}) {
+  const [modalOpen, setModalOpen] = useState(false)
+  const videoRef = useRef(null)
 
   return (
     <div>
-
       {/* Video thumbnail */}
       <div>
         <div className="justify-center mb-8 mt-8 aos-init aos-animate" data-aos="zoom-y-out" data-aos-delay="450">
-
-
-          {/*
-        <Image className="md:max-w-none mx-auto rounded" 
-          src={BoringSites_character}
-         width={750} height={462}
-         unoptimized
-          alt="Features bg" />
-  */}
-
           <div className="banner-bottom-wrapper">
-
             <video 
               autoPlay 
               loop 
@@ -62,8 +57,10 @@ export default function ModalVideo({
             </video>
           </div>
 
-
-          <button className="relative top-full flex items-center transform -translate-y-1/2 rounded-full group p-4 shadow-lg border border-4 border-slate-100 bg-orange-400 text-slate-800 m-auto text-xl font-bold px-6 px-4" onClick={() => { setModalOpen(true) }}>
+          <button 
+            className="relative top-full flex items-center transform -translate-y-1/2 rounded-full group p-4 shadow-lg border border-4 border-slate-100 bg-orange-400 text-slate-800 m-auto text-xl font-bold px-6" 
+            onClick={() => { setModalOpen(true) }}
+          >
             <svg className="w-6 h-6 fill-current text-slate-900 group-hover:text-blue-600 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-10 12z" />
               <path d="M10 17l6-5-6-5z" />
@@ -72,41 +69,26 @@ export default function ModalVideo({
           </button>
         </div>
 
-
-
-
         <div>
-
-
-
-        <div className="mt-8 text-center">
-    <p className="text-lg font-semibold text-slate-700">Trusted by startups</p>
-    <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:mt-10 lg:gap-x-16 lg:gap-y-8">
-    <img alt="Xumm" src="https://dazzling-cat.netlify.app/remotedesk-gray.png" className="h-10 w-auto object-contain" />
-        <img alt="Green Got" src="https://dazzling-cat.netlify.app/downtown.png" className="h-12 w-auto object-contain lg:h-20" />
-        <img alt="GrowthX" src="https://dazzling-cat.netlify.app/saasboiler-gray.png" className="h-10 w-auto object-contain lg:h-8" />
-
-
-        <img alt="Beyonk" src="https://dazzling-cat.netlify.app/vcdeal.png" className="h-10 w-auto object-contain lg:h-10" />
-        <img alt="Taplio" src="https://dazzling-cat.netlify.app/tinystartups-gray.png" className="h-10 w-auto object-contain lg:h-10" />
-
-        <img alt="Lal10" src="https://dazzling-cat.netlify.app/rightagency-gray.png" className="h-10 w-auto object-contain" />
-        <img alt="Indie Worldwide" src="https://dazzling-cat.netlify.app/betterhealth.png" className="h-10 w-auto object-contain lg:h-8" />
-
-    </div>
-</div>
-
-
+          <div className="mt-8 text-center">
+            <p className="text-lg font-semibold text-slate-700">Trusted by startups</p>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:mt-10 lg:gap-x-16 lg:gap-y-8">
+              {BRAND_LOGOS.map(logo => (
+                <img
+                  key={logo.id}
+                  alt={logo.alt}
+                  src={logo.src}
+                  className={logo.className}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-
-
-
       </div>
       {/* End: Video thumbnail */}
 
       <Transition show={modalOpen} as={Fragment} afterEnter={() => videoRef.current?.play()}>
         <Dialog initialFocus={videoRef} onClose={() => setModalOpen(false)}>
-
           {/* Modal backdrop */}
           <Transition.Child
             className="fixed inset-0 z-[99999] bg-black bg-opacity-75 transition-opacity"
@@ -126,8 +108,8 @@ export default function ModalVideo({
             enter="transition ease-out duration-200"
             enterFrom="opacity-0 scale-95"
             enterTo="opacity-100 scale-100"
-            leave="ttransition ease-out duration-200"
-            leaveFrom="oopacity-100 scale-100"
+            leave="transition ease-out duration-200"
+            leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
             <div className="max-w-6xl mx-auto h-full flex items-center">
@@ -143,7 +125,6 @@ export default function ModalVideo({
 
         </Dialog>
       </Transition>
-
     </div>
   )
 }
