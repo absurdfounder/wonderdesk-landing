@@ -97,10 +97,6 @@ export default function PageDetail() {
 
 
                         <ModalVideo
-                            thumb={VideoThumb}
-                            thumbWidth={768}
-                            thumbHeight={432}
-                            thumbAlt="Modal video thumbnail"
                             video="/videos/videos01.mp4"
                             videoWidth={1920}
                             videoHeight={1080}

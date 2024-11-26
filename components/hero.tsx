@@ -231,15 +231,11 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
           >
-            <ModalVideo
-              thumb={VideoThumb}
-              thumbWidth={768}
-              thumbHeight={432}
-              thumbAlt="Modal video thumbnail"
-              video="/videos/videos01.mp4"
-              videoWidth={1920}
-              videoHeight={1080}
-            />
+                        <ModalVideo
+                            video="/videos/videos01.mp4"
+                            videoWidth={1920}
+                            videoHeight={1080}
+                        />
           </motion.div>
         </div>
       </div>
