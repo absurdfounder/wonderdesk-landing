@@ -1,6 +1,6 @@
 // app/sitemap.xml/route.ts
 import { type NextRequest } from 'next/server';
-import { _loadFromJson, _loadFromJsonComparison } from "../../utils/helper";
+import { _loadFromJson, _loadFromJsonComparison } from "../utils/helper";
 
 const URL = "https://boringsites.com";
 
