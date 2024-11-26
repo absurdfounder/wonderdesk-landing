@@ -5,7 +5,7 @@ export default function AboutMe() {
     <section className="relative">
       <div className="px-4 sm:px-6 pt-16 md:pt-20 pb-12 max-w-6xl mx-auto">
 
-      <h1 className="h2 mb-8 text-center font-silkscreen">
+      <h1 className="h2 mb-8 text-start font-silkscreen">
         Hello! 👋<br/>
         My name is Vaibhav.
         </h1>
