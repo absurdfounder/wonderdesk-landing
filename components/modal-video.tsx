@@ -6,14 +6,16 @@ import Image from 'next/image'
 
 /**
  * @typedef {Object} ModalVideoProps
- * @property {import('next/image').StaticImageData} thumb
- * @property {number} thumbWidth
- * @property {number} thumbHeight
- * @property {string} thumbAlt
- * @property {string} video
- * @property {number} videoWidth
- * @property {number} videoHeight
+ * @property {string} video - The URL of the video to be played
+ * @property {number} videoWidth - The width of the video player
+ * @property {number} videoHeight - The height of the video player
  */
+
+interface ModalVideoProps {
+  video: string;
+  videoWidth: number;
+  videoHeight: number;
+}
 
 const BRAND_LOGOS = [
   { id: 'xumm', src: 'https://dazzling-cat.netlify.app/remotedesk-gray.png', alt: 'Xumm', className: 'h-10 w-auto object-contain' },
@@ -25,17 +27,13 @@ const BRAND_LOGOS = [
   { id: 'indie', src: 'https://dazzling-cat.netlify.app/betterhealth.png', alt: 'Indie Worldwide', className: 'h-10 w-auto object-contain lg:h-8' }
 ];
 
-/**
- * Modal Video Component
- * @param {ModalVideoProps} props
- */
 export default function ModalVideo({
   video,
   videoWidth,
   videoHeight,
-}) {
+}: ModalVideoProps) {
   const [modalOpen, setModalOpen] = useState(false)
-  const videoRef = useRef(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
     <div>
