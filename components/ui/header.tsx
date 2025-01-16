@@ -49,7 +49,7 @@ export default function Header() {
             <ul className="flex grow justify-end flex-wrap items-center">
               <li className="relative" ref={dropdownRef}>
                 <button
-                  className="font-bold text-slate-900 hover:text-orange-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+                  className="hidden font-bold text-slate-900 hover:text-orange-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                 >
                   Create a..
@@ -121,7 +121,9 @@ export default function Header() {
                 </AnimatePresence>
               </li>
               <NavLink href="/showcase" text="Showcase" />
+              <NavLink href="/affilate" text="Affilate(50%)" />
               <NavLink href="/pricing" text="Pricing" />
+              <NavLink href="/roadmap" text="Roadmap" />
               <NavLink href="https://app.BoringSites.com" text="Login" />
               <li>
                 <Link

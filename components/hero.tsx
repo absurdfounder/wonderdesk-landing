@@ -14,6 +14,8 @@ interface HeroProps {
 }
 
 export default function Hero({ onCategorySelect }: HeroProps) {
+
+/*
   const words = [
     "helpdesk",
     "marketplace",
@@ -21,6 +23,16 @@ export default function Hero({ onCategorySelect }: HeroProps) {
     "company wiki",
     "documentation",
   ];
+  */
+
+  const words = [
+    "directory",
+    "directory",
+    "marketplace",
+    "marketplace",
+    "directory",
+  ];
+  
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -82,7 +94,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
               <motion.span
                 key={words[index]}
-                className="font-source-serif-4 font-normal italic text-orange-600 px-4"
+                className="font-source-serif-4 h1 font-normal italic text-orange-600 px-4"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -40, opacity: 0 }}
@@ -136,9 +148,9 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <p className="text-lg text-slate-600 mb-8 font-lato max-w-lg m-auto">
-              <span className="text-slate-600 block">Turn your notion docs into beautiful</span> {" "}
-              {["Helpdesk", "Blog", "Directory", "Marketplace"].map((category, index) => (
+            <p className="text-lg text-slate-600 mb-8 font-lato max-w-2xl m-auto">
+              <span className="text-slate-600 block">Notion into a beautiful Marketplace in a <u>few mins</u> with </span> {" "}
+              {["Listings", "SEO", "Custom Domains", "Payments"].map((category, index) => (
                 <>
                   {index > 0 && ", "}
                   <motion.b
@@ -153,7 +165,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 </>
               ))}
               {" "}
-              – no code required.
+              – without any technical skills.
             </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <motion.div
@@ -164,7 +176,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center"
                   href="https://app.BoringSites.com"
                 >
-                  Create your website <ExternalLink className="ml-2 w-4 h-4" />
+                  Create your directory <ExternalLink className="ml-2 w-4 h-4" />
                 </Link>
               </motion.div>
               <motion.div

@@ -29,7 +29,7 @@ import Testimonials from '@/components/testimonials'
 import AboutMe from '@/components/aboutme'
 import Showcases from '@/components/showcase'
 import Newsletter from '@/components/newsletter'
-
+import Marketplace_Type from '@/components/marketplaces_type'
 
 export default function Home() {
   return (
@@ -39,7 +39,7 @@ export default function Home() {
       <Testimonials />
       */}
       <FeaturesBlocks />
-      <Features />
+              <Marketplace_Type />
       <Showcases />
       <AboutMe />
       <Newsletter />

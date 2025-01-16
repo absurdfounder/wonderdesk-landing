@@ -69,7 +69,7 @@ export default function ModalVideo({
 
         <div>
           <div className="mt-8 text-center">
-            <p className="text-lg font-semibold text-slate-700">Trusted by startups</p>
+            <p className="text-lg font-semibold text-slate-700">Trusted by creators and </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:mt-10 lg:gap-x-16 lg:gap-y-8">
               {BRAND_LOGOS.map(logo => (
                 <img

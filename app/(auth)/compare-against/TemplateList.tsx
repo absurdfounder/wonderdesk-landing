@@ -141,7 +141,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
       >
         <div>
           <Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://app.BoringSites.com">
-            Get <b className='mx-2'>Free</b> design assistance
+             <b className='mx-2'>Ask Us</b> to Build 
           </Link>
         </div>
         <div>
