@@ -9,25 +9,25 @@ export default function OldWays() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div>
-          <section className="mt-2">
+          <section className="mt-2 bg-slate-900 rounded-2xl pb-12 mb-12 ">
             {/* Section header */}
             <div className="max-w-3xl mx-auto text-center pt-12 mb-8 ">
-              <h1 className="h2 mb-4">
+              <h1 className="h2 mb-4 text-white">
               Let's be honest.
                  <span className="font-source-serif-4 block font-normal text-orange-600">You're tired of this:</span>
               </h1>
 
-              <p className="text-xl text-slate-600">We know you have too much on your plate, this is why Boring Sites exists to help you set and forget. <span className="font-source-serif-4 font-normal text-orange-600 border-b">Just focus on writing </span>.</p>
+              <p className="text-xl text-slate-300">We know you have too much on your plate, this is why Boring Sites exists to help you set and forget. <span className="font-source-serif-4 font-normal text-orange-600 border-b">Just focus on writing </span>.</p>
             </div>
 
 
+            <div className="max-w-xs mx-auto sm:max-w-none sm:flex aos-init aos-animate mt-6 justify-center py-12" data-aos="zoom-y-out" data-aos-delay="300">
+            <div><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://app.BoringSites.com">Get a Directory</Link></div>
+            <div><Link href="#template-section" className="btn text-white text-2xl border-white hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center">Sites built on BoringSites</Link></div>
+          </div>
 
           </section>
 
-          <div className="max-w-xs mx-auto sm:max-w-none sm:flex aos-init aos-animate mt-6 justify-center py-12" data-aos="zoom-y-out" data-aos-delay="300">
-            <div><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://app.BoringSites.com">Get a Directory</Link></div>
-            <div><Link href="#template-section" className="btn text-slate-800 text-2xl border-slate-900 hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center">Marketplaces built on BoringSites</Link></div>
-          </div>
 
           <section className="bg-white">
             <div className="container mx-auto">

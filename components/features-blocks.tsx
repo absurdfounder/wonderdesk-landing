@@ -13,8 +13,8 @@ export default function FeaturesBlocks() {
             {/* Section header */}
             <div className="max-w-3xl mx-auto text-center pt-12 mb-8 ">
               <h1 className="h2 mb-4">
-              Ready for anything, 
-                 <span className="font-source-serif-4 block font-normal text-orange-600">launch faster, make $ right now.</span>
+                Ready for anything,
+                <span className="font-source-serif-4 block font-normal text-orange-600">launch faster, make $ right now.</span>
               </h1>
 
               <p className="text-xl text-slate-600">We know you have too much on your plate, this is why Boring Sites exists to help you set and forget. <span className="font-source-serif-4 font-normal text-orange-600 border-b">Just focus on writing </span>.</p>
