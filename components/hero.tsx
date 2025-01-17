@@ -120,7 +120,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             </h1>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 hidden">
-              <span className="">Easily create a </span> <br />
+              <span className="">Easily Get a </span> <br />
               <AnimatePresence mode="wait">
                 <motion.span
                   key={words[index]}
@@ -185,7 +185,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center"
                   href="https://app.BoringSites.com"
                 >
-                  Create your directory <ExternalLink className="ml-2 w-4 h-4" />
+                  Get a directory <ExternalLink className="ml-2 w-4 h-4" />
                 </Link>
               </motion.div>
               <motion.div

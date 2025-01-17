@@ -70,13 +70,13 @@ export default function Header() {
                             href="/create-a-helpdesk-servicedesk-notion"
                             icon={HelpCircle}
                             title="Help Center"
-                            description="Create your professional self-service help center with Notion and BoringSites"
+                            description="Get a professional self-service help center with Notion and BoringSites"
                           />
                           <DropdownLink
                             href="/create-a-marketplace-notion"
                             icon={ShoppingBag}
                             title="Marketplace / Directories"
-                            description="Create a self serving community marketplace that can handle millions in traffic on Notion."
+                            description="Get a self serving community marketplace that can handle millions in traffic on Notion."
                           />
                           <DropdownLink
                             href="/create-a-company-wiki-notion"
@@ -88,7 +88,7 @@ export default function Header() {
                             href="/create-a-blog-notion"
                             icon={BookOpen}
                             title="Blog"
-                            description="Create a beautiful blog for your startup or company with Notion and BoringSites."
+                            description="Get a beautiful blog for your startup or company with Notion and BoringSites."
                           />
                         </div>
                         <div className="px-5 py-5 bg-slate-50 sm:px-8 sm:py-8">

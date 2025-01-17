@@ -7,7 +7,7 @@ export const metadata = {
             url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
             width: 1200,
             height: 630,
-            alt: "Create a Marketplace with Notion",
+            alt: "Get a Marketplace with Notion",
         },
     ],
 },
@@ -16,7 +16,7 @@ twitter: {
     images: [
         {
             url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
-            alt: "Create a Marketplace with Notion",
+            alt: "Get a Marketplace with Notion",
         },
     ],
 },
@@ -25,6 +25,7 @@ twitter: {
 import Hero from '@/components/hero'
 import Features from '@/components/features'
 import FeaturesBlocks from '@/components/features-blocks'
+import OldWays from '@/components/old-ways'
 import Testimonials from '@/components/testimonials'
 import AboutMe from '@/components/aboutme'
 import Showcases from '@/components/showcase'
@@ -35,11 +36,14 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <OldWays/>
+
+
       {/* 
       <Testimonials />
       */}
       <FeaturesBlocks />
-              <Marketplace_Type />
+      <Marketplace_Type />
       <Showcases />
       <AboutMe />
       <Newsletter />

@@ -63,7 +63,7 @@ export const metadata = {
             url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
             width: 1200,
             height: 630,
-            alt: "Create a Marketplace with Notion",
+            alt: "Get a Marketplace with Notion",
         },
     ],
 },
@@ -72,7 +72,7 @@ twitter: {
     images: [
         {
             url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
-            alt: "Create a Marketplace with Notion",
+            alt: "Get a Marketplace with Notion",
         },
     ],
 },

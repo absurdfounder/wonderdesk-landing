@@ -2,7 +2,7 @@
 
 ![Boring template preview](https://dazzling-cat.netlify.app/boringscreenshot.png)
 
-**Simple Light** is a free landing page template built on top of **TailwindCSS** and fully coded in **React** / **Next.js**. Simple light is designed to provide all the basic components a developer need to create a landing page for SaaS products, online services, and more. 
+**Simple Light** is a free landing page template built on top of **TailwindCSS** and fully coded in **React** / **Next.js**. Simple light is designed to provide all the basic components a developer need to Get a landing page for SaaS products, online services, and more. 
 Use it for whatever you want, and be sure to reach us out on Twitter if you build anything cool/useful with it.
 Created and maintained with ❤️ by [BoringSites.com](https://BoringSites.com/).
 

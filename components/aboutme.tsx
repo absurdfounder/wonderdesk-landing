@@ -54,7 +54,7 @@ export default function AboutMe() {
             <p className="my-2">
               <strong className="text-slate-900">
                 BoringSites is solving all of this. It is for businesses who need
-                an easy way to create a reliable knowledge site powered by
+                an easy way to Get a reliable knowledge site powered by
                 Notion.{" "}
               </strong>
             </p>

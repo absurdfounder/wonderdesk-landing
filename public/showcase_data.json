@@ -38,7 +38,7 @@
         "name": "Remote Jobs",
         "type": "Marketplace",
         "provider": "Vaibhav",
-        "description": "Create a website for listing remote jobs for job applicants.",
+        "description": "Get a website for listing remote jobs for job applicants.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -238,7 +238,7 @@
         "content": "Top Talent Hub is your gateway to meeting elite professionals and mentors in your field."
       },
       "howItWorks": {
-        "content": "Create your profile, showcase your achievements, and connect with industry leaders."
+        "content": "Get a profile, showcase your achievements, and connect with industry leaders."
       },
       "configuration": {
         "content": "Sign up, complete your profile, and start networking with other top-tier professionals."
@@ -458,7 +458,7 @@
         "content": "Choose your platform, customize your server settings, invite members, and manage permissions for optimal security and functionality."
       },
       "configuration": {
-        "content": "Follow our step-by-step guide to create your server, integrate bots for automation, and adjust settings according to your needs."
+        "content": "Follow our step-by-step guide to Get a server, integrate bots for automation, and adjust settings according to your needs."
       },
       "proof": {
         "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
@@ -551,7 +551,7 @@
         "content": "Browse new listings, upvote products you like, and join discussions to connect with the product community."
       },
       "configuration": {
-        "content": "Create your profile, follow topics of interest, and stay updated with daily newsletters."
+        "content": "Get a profile, follow topics of interest, and stay updated with daily newsletters."
       },
       "proof": {
         "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",

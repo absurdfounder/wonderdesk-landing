@@ -84,7 +84,7 @@ export default function MobileMenu() {
                         <Link href="/create-a-helpdesk-servicedesk-notion">
                           <Link href="#" className="text-base font-medium text-slate-900">Help Center</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-slate-500">Create your professional self-service help center with Notion and BoringSites.</p>
+                        <p className="mt-1 text-sm text-slate-500">Get a professional self-service help center with Notion and BoringSites.</p>
                       </div>
                     </li>
                     <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
@@ -95,7 +95,7 @@ export default function MobileMenu() {
                         <Link href="/create-a-documentation-notion">
                           <Link href="#" className="text-base font-medium text-slate-900">Documentation</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-slate-500">Create your world-class product documentation with Notion and BoringSites.</p>
+                        <p className="mt-1 text-sm text-slate-500">Get a world-class product documentation with Notion and BoringSites.</p>
                       </div>
                     </li>
                     <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
@@ -106,7 +106,7 @@ export default function MobileMenu() {
                         <Link href="/create-a-marketplace-notion">
                           <Link href="#" className="text-base font-medium text-slate-900">Marketplace</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-slate-500">Create a self-serving community marketplace that can handle millions in traffic on Notion.</p>
+                        <p className="mt-1 text-sm text-slate-500">Get a self-serving community marketplace that can handle millions in traffic on Notion.</p>
                       </div>
                     </li>
                     <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
@@ -117,7 +117,7 @@ export default function MobileMenu() {
                         <Link href="/create-a-company-wiki-notion">
                           <Link href="#" className="text-base font-medium text-slate-900">Company Wiki</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-slate-500">Create a company wiki with protected access and AI to answer queries on top of Notion as a database.</p>
+                        <p className="mt-1 text-sm text-slate-500">Get a company wiki with protected access and AI to answer queries on top of Notion as a database.</p>
                       </div>
                     </li>
                     <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
@@ -140,7 +140,7 @@ export default function MobileMenu() {
                         <Link href="/create-a-blog-notion">
                           <Link href="#" className="text-base font-medium text-slate-900">Blog</Link>
                         </Link>
-                        <p className="mt-1 text-sm text-slate-500">Create a beautiful blog for your startup or company with Notion and BoringSites.</p>
+                        <p className="mt-1 text-sm text-slate-500">Get a beautiful blog for your startup or company with Notion and BoringSites.</p>
                       </div>
                     </li>
                   </ul>

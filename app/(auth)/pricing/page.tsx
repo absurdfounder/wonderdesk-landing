@@ -89,7 +89,7 @@ const faqs: Record<string, FAQ[]> = {
     },
     {
       question: "Can I customize the AI Support Bot?",
-      answer: "Yes, you can customize the AI Support Bot to align with your brand's voice and style. Adjust the responses, add personalized greetings, and more to create a cohesive user experience.",
+      answer: "Yes, you can customize the AI Support Bot to align with your brand's voice and style. Adjust the responses, add personalized greetings, and more to Get a cohesive user experience.",
     },
     {
       question: "Does the AI Support Bot support multiple languages?",

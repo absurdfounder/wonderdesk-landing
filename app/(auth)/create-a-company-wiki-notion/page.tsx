@@ -20,7 +20,7 @@ import 'aos/dist/aos.css'
 
 
 export const metadata = {
-    title: "Create a company wiki with Notion (no-code and free)",
+    title: "Get a company wiki with Notion (no-code and free)",
     description:
         "Build a company wiki in Notion, with our Notion company wiki maker. Go live in under a minute.  Build your free BoringSites company wiki website in a minute!",
         openGraph: {
@@ -29,7 +29,7 @@ export const metadata = {
                     url: "https://dazzling-cat.netlify.app/notiontocompanywiki_socialshare.png",
                     width: 1200,
                     height: 630,
-                    alt: "Create a company wiki with Notion",
+                    alt: "Get a company wiki with Notion",
                 },
             ],
         },
@@ -38,7 +38,7 @@ export const metadata = {
             images: [
                 {
                     url: "https://dazzling-cat.netlify.app/notiontocompanywiki_socialshare.png",
-                    alt: "Create a company wiki with Notion",
+                    alt: "Get a company wiki with Notion",
                 },
             ],
         },
@@ -79,7 +79,7 @@ export default function PageDetail() {
       <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
         <div className="mt-3 sm:mt-0">
           <Link href="/signup" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-full shadow bg-orange-700 sm:w-auto">
-            <strong className="mr-1">Create your company wiki with Notion →</strong>
+            <strong className="mr-1">Get a company wiki with Notion →</strong>
           </Link>
           <p className="mt-3 text-sm text-slate-700"><strong>Free</strong> 7 day trial. Free Design Service.</p>
         </div>

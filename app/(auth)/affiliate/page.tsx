@@ -11,7 +11,7 @@ export const metadata = {
             url: "https://dazzling-cat.netlify.app/BoringSitesaffilate_socialshare.png",
             width: 1200,
             height: 630,
-            alt: "Create a Marketplace with Notion",
+            alt: "Get a Marketplace with Notion",
         },
     ],
 },
@@ -20,7 +20,7 @@ twitter: {
     images: [
         {
             url: "https://dazzling-cat.netlify.app/BoringSitesaffilate_socialshare.png",
-            alt: "Create a Marketplace with Notion",
+            alt: "Get a Marketplace with Notion",
         },
     ],
 },
@@ -272,7 +272,7 @@ refer to BoringSites, without limits. Join
                   <div className='p-8 border rounded-2xl border-slate-600'>
                     <h3 className="font-bold text-xl">Who is BoringSites for?</h3>
                     <br />
-                    <p className="text-md mt-4 mb-4 text-slate-800">BoringSites is a quick business builder for startup founders. Our users can quickly create a beautiful web apps, blogs, and helpdesks for a mobile or desktop, for a SaaS product, for a plugin, an open-source project, a SMM tool etc.</p>
+                    <p className="text-md mt-4 mb-4 text-slate-800">BoringSites is a quick business builder for startup founders. Our users can quickly Get a beautiful web apps, blogs, and helpdesks for a mobile or desktop, for a SaaS product, for a plugin, an open-source project, a SMM tool etc.</p>
                     <p className="text-md mt-4 mb-4 text-slate-800">If your audience are tech guys, BoringSites is for them. They will be more willing to use a tailored tool for startups rather than generic old-fashioned Webflow or Wordpress.</p>
                   </div>
 
