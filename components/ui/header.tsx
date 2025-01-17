@@ -121,7 +121,7 @@ export default function Header() {
                 </AnimatePresence>
               </li>
               <NavLink href="/showcase" text="Showcase" />
-              <NavLink href="/affilate" text="Affilate(50%)" />
+              <NavLink href="https://boringsites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
               <NavLink href="/pricing" text="Pricing" />
               <NavLink href="/roadmap" text="Roadmap" />
               <NavLink href="https://app.BoringSites.com" text="Login" />

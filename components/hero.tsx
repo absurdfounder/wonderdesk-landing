@@ -286,7 +286,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             height="192"
             decoding="async"
             data-nimg="1"
-            className="w-48"
+            className="w-48 p-4"
             srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=384&q=75 2x"
             src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=384&q=75"
           />

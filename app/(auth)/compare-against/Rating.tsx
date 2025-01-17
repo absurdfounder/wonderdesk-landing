@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Rating = () => {
     return (
         
-        <div className='max-w-3xl mx-auto text-center py-20 pb-12 md:pb-20'>
+        <div className='hidden max-w-3xl mx-auto text-center py-20 pb-12 md:pb-20'>
         <h1 className="h2 mb-4">BoringSites is rated the Best.</h1>
         <p className="text-xl text-slate-600"> Numbers quantify everything, this is what stands us apart from the competition.</p>
 

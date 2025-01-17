@@ -47,10 +47,9 @@ export default async function Template() {
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h2 mb-4">Find your Template</h1>
+            <h1 className="h2 mb-4">Not Templates, Beautiful Businesses</h1>
             <p className="text-xl text-slate-600">
-              Jumpstart your SaaS business with pre-built solutions from
-              BoringSites and our community.
+              Jumpstart your SaaS business with pre-built open-source solutions.
             </p>
 
             <div className="mt-6">
@@ -80,13 +79,13 @@ export default async function Template() {
                           className="btn bg-orange-600 hover:bg-orange-700 shadow"
                           href="https://app.BoringSites.com"
                         >
-                          Sign Up
+                          Ask Us to Build
                         </Link>
                       </div>
                       {/* Success message */}
                       {/* <p className="text-sm text-slate-400 mt-3">Thanks for subscribing!</p> */}
                       <p className="text-sm text-slate-400 mt-3">
-                        Subsribe to a monthly plan
+                        We setup the whole flow for you.
                       </p>
                     </form>
                   </div>

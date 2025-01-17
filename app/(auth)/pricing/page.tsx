@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, Loader, Users, MessageSquare, FileText, FolderGit2 } from 'lucide-react';
+import { Check, X, Loader, Users, MessageSquare, FileText, FolderGit2, DatabaseIcon,Gift, Lock } from 'lucide-react';
 import confetti from "canvas-confetti";
 import notionfooterImage from "@/public/images/nb-herosec.png";
 import MigrateFrom from "@/public/images/migratefrom.png";
@@ -30,7 +30,7 @@ interface HobbyFeature extends Feature {
 
 const hobbyFeatures: HobbyFeature[] = [
   { name: "50 articles & collections", included: true, description: "Create up to 50 articles and organize them into collections.", imageUrl: "/api/placeholder/200/150" },
-  { name: "1 website - Helpdesk, Blog, Directory", included: true, description: "Set up one Boring Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
+  { name: "1 website", included: true, description: "Set up one Boring Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
   { name: "Basic Analytics", included: true, description: "Access fundamental analytics to track your site's performance.", imageUrl: "/api/placeholder/200/150" },
   { name: "Basic SEO", included: true, description: "Implement basic SEO practices to improve your site's visibility.", imageUrl: "/api/placeholder/200/150" },
   { name: "Customization", included: true, description: "Customize your site's appearance with basic options.", imageUrl: "/api/placeholder/200/150" },
@@ -42,12 +42,12 @@ const hobbyFeatures: HobbyFeature[] = [
   { name: "Tally Form Connection", included: false, description: "Connect and use Tally forms on your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
   { name: "Open AI Assistant ", included: false, description: "Integrate OpenAI assistant for enhanced functionality (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
   { name: "General Search", included: true, description: "Implement a general search feature on your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
-  { name: "Remove 'Powered by' badge", included: false, description: "Remove the 'Powered by' badge from your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "Remove 'Watermark' badge", included: false, description: "Remove the 'Powered by' badge from your site (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
 ];
 
 const scaleFeatures: Feature[] = [
   { name: "Unlimited articles & collections", description: "Create unlimited articles and collections without any restrictions.", imageUrl: "/api/placeholder/200/150" },
-  { name: "5 Websites - Helpdesk, Blog, Directory", description: "Set up and manage up to 5 different BoringSites, choosing from any available type.", imageUrl: "/api/placeholder/200/150" },
+  { name: "5 Websites", description: "Set up and manage up to 5 different BoringSites, choosing from any available type.", imageUrl: "/api/placeholder/200/150" },
   { name: "Detailed Analytics", description: "Access comprehensive analytics to gain deep insights into your site's performance and user behavior.", imageUrl: "/api/placeholder/200/150" },
   { name: "Full SEO Ready", description: "Utilize advanced SEO tools and features to maximize your site's search engine visibility.", imageUrl: "/api/placeholder/200/150" },
   { name: "Advanced Customization", description: "Enjoy extensive customization options to tailor your site's look and feel to your exact preferences.", imageUrl: "/api/placeholder/200/150" },
@@ -59,7 +59,7 @@ const scaleFeatures: Feature[] = [
   { name: "Tally Form Connection", description: "Seamlessly connect and use Tally forms within your site for data collection and user interaction.", imageUrl: "/api/placeholder/200/150" },
   { name: "Open AI Assistant", description: "Access an advanced AI assistant to help with content creation, site management, and user engagement.", imageUrl: "/api/placeholder/200/150" },
   { name: "General Search", description: "Implement a powerful, site-wide search feature to help users find content quickly and easily.", imageUrl: "/api/placeholder/200/150" },
-  { name: "Remove 'Powered by' badge", description: "Remove the 'Powered by BoringSites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Remove 'Watermark' badge", description: "Remove the 'Powered by BoringSites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
 ];
 
 interface FAQ {
@@ -162,7 +162,7 @@ const FAQAccordion: React.FC<FAQ> = ({ question, answer }) => {
         className="w-full text-left p-4"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="font-semibold text-slate-900">{question}</span>
+        <span className="font-semibold text-slate-900 h4">{question}</span>
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -197,7 +197,7 @@ const FAQSection: React.FC = () => {
           </h2>
           <p className="text-base font-normal text-slate-600 mt-4 sm:text-lg">
             Have a different question and can't find the answer you're looking for? Reach out to our support team by
-            <a target="_blank" rel="noopener noreferrer" href="mailto:vaibhav@BoringSites.com" className="isomorphic-link isomorphic-link--external text-orange-800 hover:text-blue-500 hover:underline px-4">sending us an email</a>
+            <a target="_blank" rel="noopener noreferrer" href="mailto:vaibhav@BoringSites.com" className="isomorphic-link isomorphic-link--external text-orange-800 hover:text-blue-500 hover:underline px-2">sending us an email</a>
             and we'll get back to you as soon as we can.
           </p>
         </div>
@@ -376,7 +376,7 @@ const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
           <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight tracking-loose mb-4 justify-center text-center">
-            <span className="opacity-50  font-roboto-mono">Simplify your life with a</span>
+            <span className="opacity-50  font-roboto-mono">Start a Business with a</span>
             <br />
             <div className="flex gap-2 text-center w-full justify-center">
               <span className="flex gap-4 justify-center items-center mt-2 text-orange-600">
@@ -388,6 +388,9 @@ const Pricing: React.FC = () => {
               </span>
             </div>
           </h1>
+
+ 
+
 
           {/* Pricing Toggle */}
           <motion.div
@@ -415,6 +418,15 @@ const Pricing: React.FC = () => {
               </motion.button>
             </div>
           </motion.div>
+
+          <p className="text-sm md:text-base flex items-center justify-center gap-3 pb-4">
+  <Lock className="w-5 h-5 text-accent animate-pulse text-orange-600" />
+  <span>
+    <span className="text-accent font-medium font-bold">Pricing is locked for early users</span>
+    {' '}-  secure your price.{' '}
+  </span>
+</p>
+
 
           <div className="justify-center m-auto">
             <div className="flex gap-4 max-w-4xl m-auto">
@@ -451,7 +463,7 @@ const Pricing: React.FC = () => {
                     Get a Boring Site
                   </motion.button>
                   <p className="mt-4 text-sm text-slate-500">
-                    For open-source softwares feel free to reach out for a free plan with no strings attached.  
+                    For open-source softwares feel free to reach out for a free plan with no strings attached.
                   </p>
                 </div>
                 <div className="px-8 pt-6 pb-10 bg-slate-50">
@@ -466,9 +478,8 @@ const Pricing: React.FC = () => {
                         ref={(el: HTMLLIElement | null) => {
                           hobbyFeatureRefs.current[index] = el;
                         }}
-                        className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center cursor-pointer ${
-                          feature.included ? 'text-slate-700' : 'text-slate-400 line-through'
-                        }`}
+                        className={`text-md flex items-start gap-2 leading-[32px] mb-2 items-center cursor-pointer ${feature.included ? 'text-slate-700' : 'text-slate-400 line-through'
+                          }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => handleFeatureClick(feature)}
@@ -496,7 +507,7 @@ const Pricing: React.FC = () => {
               >
                 <div className="px-8 py-10 text-start flex-grow">
                   <h2 className="text-4xl font-bold text-slate-900 mb-4 font-josefin-slab">
-                    Scale
+                    Rocket
                   </h2>
                   <div className="flex items-baseline mb-4">
                     <span className="text-6xl font-extrabold text-slate-800">
@@ -524,11 +535,10 @@ const Pricing: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                     onClick={handleUpgradeClick}
                     disabled={loading}
-                    className={`w-full px-6 py-4 rounded-full text-slate-800 font-semibold text-center text-xl ${
-                      loading
+                    className={`w-full px-6 py-4 rounded-full text-slate-800 font-semibold text-center text-xl ${loading
                         ? 'bg-orange-400 cursor-not-allowed'
                         : 'bg-orange-600 hover:bg-orange-700 active:bg-orange-800'
-                    } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
+                      } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
                   >
                     {loading ? (
                       <span className="flex items-center justify-center">
@@ -544,7 +554,7 @@ const Pricing: React.FC = () => {
                   </p>
                 </div>
                 <div className="px-8 pt-8 pb-10 bg-slate-50">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
                     <span className="bg-orange-600 w-1 h-8 mr-4"></span>
                     What's included
                   </h3>
@@ -732,6 +742,26 @@ const Pricing: React.FC = () => {
                     <p className="text-lg font-medium text-slate-500 ml-2"> / mo</p>
                   </div>
                 </div>
+
+                <hr className="border-slate-200" />
+                <div className="flex items-center justify-between gap-6">
+                  <div className="flex items-center gap-3">
+                    <DatabaseIcon className="h-8 w-8 text-orange-600" />
+                    <div className="grid">
+                      <h2 className="text-xl font-semibold tracking-tight text-slate-900">
+                        Fetch Kitty - Data Entry AI
+                      </h2>
+                      <p className="text-sm text-slate-600">Get access to fetchkitty.com ai web scraper and publisher.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-0.5">
+                    <p className="text-3xl font-semibold tracking-tight text-slate-900">
+                      $20
+                    </p>
+                    <p className="text-lg font-medium text-slate-500 ml-2"> / mo</p>
+                  </div>
+                </div>
+
               </div>
             </div>
           </motion.div>
@@ -761,8 +791,9 @@ const Pricing: React.FC = () => {
                 <form className="w-full lg:w-auto">
                   <div>
                     <Link
-                      href="/migrating-to-BoringSites"
-                      className="btn bg-orange-600 hover:bg-orange-700 shadow px-12 inline-block text-white py-3 rounded-lg transition-colors"
+                      href="https://fetchkitty.com"
+                      target="_blank"
+                      className="btn bg-orange-600 hover:bg-orange-700 shadow px-12 inline-block text-slate-900 py-3 rounded-lg transition-colors"
                     >
                       We can do it for you →
                     </Link>

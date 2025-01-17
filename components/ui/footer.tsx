@@ -180,7 +180,7 @@ export default function Footer() {
                 <Link href="mailto:hey@vaibhavkalra.com?subject=Hi%2C%20I%20have%20a%20query%20regarding%20BoringSites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Email Us</Link>
               </li>
               <li className="mb-2">
-                <Link href="/affiliate" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Affiliate Program</Link>
+                <Link href="https://boringsites.lemonsqueezy.com/affiliates" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Affiliate Program</Link>
               </li>
 
 
