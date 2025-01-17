@@ -57,7 +57,7 @@ export default function OldWays() {
                     <div className="p-8 sm:p-12 lg:p-16">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Optimized for</p>
                       <h3 className="text-2xl font-bold tracking-tight text-slate-900 mt-4 sm:text-3xl sm:mt-6 lg:text-4xl">
-                        Optimized for <span className="font-serif font-normal text-orange-600">SEO</span>
+                      Perfected for <span className="font-serif font-normal text-orange-600">SEO</span>
                       </h3>
                       <p className="text-base font-normal text-slate-700 mt-4">
                         All you have to do is to write good content that satisfies the needs of your readers. We take care of the rest. Set all the proper meta tags and canonical links, Structured Schema markup for all your posts, Served from the edge to make the blog super fast, Easy controls to override the SEO settings.
