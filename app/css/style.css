@@ -11,37 +11,37 @@
 
 /* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
 @layer utilities {
-    .rtl {
-        direction: rtl;
-    }
+  .rtl {
+    direction: rtl;
+  }
 }
 
 
 
 .font-roboto-mono {
-    font-family: var(--font-roboto-mono);
-  }
-  
-  .font-source-serif-4 {
-    font-family: var(--font-source-serif-4);
-    font-family: "Source Serif 4",ui-serif,Georgia,Cambria,"Times New Roman",Times,serif !important;
-  }
-  
-  .font-comfortaa {
-    font-family: var(--font-comfortaa);
-  }
-  
-  .font-josefin-slab {
-    font-family: var(--font-josefin-slab);
-  }
-  
-  .font-silkscreen {
-    font-family: var(--font-silkscreen);
-  }
-  
-  .font-bungee {
-    font-family: var(--font-bungee);
-  }
+  font-family: var(--font-roboto-mono);
+}
+
+.font-source-serif-4 {
+  font-family: var(--font-source-serif-4);
+  font-family: "Source Serif 4", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif !important;
+}
+
+.font-comfortaa {
+  font-family: var(--font-comfortaa);
+}
+
+.font-josefin-slab {
+  font-family: var(--font-josefin-slab);
+}
+
+.font-silkscreen {
+  font-family: var(--font-silkscreen);
+}
+
+.font-bungee {
+  font-family: var(--font-bungee);
+}
 
 
 /*custom css for the website here*/
@@ -51,73 +51,91 @@
 
 
 .bg-orange-600 {
-    background-color: #faad5e;
-    font-family: 'circular';
+  background-color: #faad5e;
+  font-family: 'circular';
 }
 
-.bg-orange-700{
-    background-color: #d8914b;
-    font-family: 'circular';
+.bg-orange-700 {
+  background-color: #d8914b;
+  font-family: 'circular';
 }
 
-.bg-orange-800{
-    background-color: #b06921;
-    font-family: 'circular';
+.bg-orange-800 {
+  background-color: #b06921;
+  font-family: 'circular';
 }
 
 .text-orange-600 {
-    color: #d17d2c !important;
+  color: #d17d2c !important;
 }
 
 .stroke-orange-600 {
-    color: #d17d2c !important;
+  color: #d17d2c !important;
 }
 
-.dyanmictext{
-    background: #ffba73;
+.dyanmictext {
+  background: #ffba73;
 }
 
 
 @keyframes flip {
-    0% { transform: rotateX(0); opacity: 1; }
-    50% { transform: rotateX(90deg); opacity: 0; }
-    100% { transform: rotateX(0); opacity: 1; }
+  0% {
+    transform: rotateX(0);
+    opacity: 1;
   }
-  
-  .word-flip {
-    display: inline-block;
-    transition: transform 0.3s, opacity 0.3s;
-    animation: flip 1s infinite;
-  }
-  
 
-  .slideUp {
-    animation: slideUp 10s ease-in-out infinite;
+  50% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+.word-flip {
+  display: inline-block;
+  transition: transform 0.3s, opacity 0.3s;
+  animation: flip 1s infinite;
+}
+
+
+.slideUp {
+  animation: slideUp 10s ease-in-out infinite;
 }
 
 .gradient-text-accent {
-    background-image: linear-gradient(-60deg, #f73, #fa5, #e89d13);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(-60deg, #f73, #fa5, #e89d13);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .slideUp:first-child {
-    animation-delay: 0s;
+  animation-delay: 0s;
 }
 
 .-translate-y-full {
-    --tw-translate-y: -100%;
-    transform: var(--tw-transform);
+  --tw-translate-y: -100%;
+  transform: var(--tw-transform);
 }
 
 
 .gradient-border-accent {
-    border-bottom: 4px solid #3333;
-    border-image-source: linear-gradient(-60deg, #f73, #fa5, #e89d13);
-    border-image-slice: 1;
+  border-bottom: 4px solid #3333;
+  border-image-source: linear-gradient(-60deg, #f73, #fa5, #e89d13);
+  border-image-slice: 1;
 }
 
 
 
 
-  
+
+
+
+
+
+.bg-accent-pink {
+  background-color: #ffb97359;
+}

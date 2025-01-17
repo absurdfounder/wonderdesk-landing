@@ -1,13 +1,14 @@
+import React from "react";
 import Image from "next/image";
+import ModalVideo from "@/components/modal-video";
 
 export default function AboutMe() {
   return (
     <section className="relative">
       <div className="px-4 sm:px-6 pt-16 md:pt-20 pb-12 max-w-6xl mx-auto">
-
-      <h1 className="h2 mb-8 text-start font-silkscreen">
-        Hello! 👋<br/>
-        My name is Vaibhav.
+        <h1 className="h2 mb-8 text-start font-silkscreen">
+          Hello! 👋<br/>
+          My name is Vaibhav.
         </h1>
 
         <div className="flex flex-col md:flex-row items-center justify-center">
@@ -59,6 +60,14 @@ export default function AboutMe() {
             </p>
             <p className="my-2">— Vaibhav, Creator</p>
           </div>
+        </div>
+
+        <div className="mt-8">
+          <ModalVideo
+            video="/videos/videos01.mp4"
+            videoWidth={1920}
+            videoHeight={1080}
+          />
         </div>
       </div>
     </section>

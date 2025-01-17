@@ -61,7 +61,7 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt1, alt2 }) => (
         height={462}
         alt="Features bg"
       />
-      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
+      <div className="hidden flex gap-2 justify-center mt-4 text-xl text-slate-900">
         A simpler alternative to{" "}
         <Image
           alt="Alternative 1"
