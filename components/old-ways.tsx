@@ -17,8 +17,10 @@ export default function OldWays() {
                  <span className="font-source-serif-4 block font-normal text-orange-600">You're tired of this:</span>
               </h1>
 
-              <p className="text-xl text-slate-300">We know you have too much on your plate, this is why Boring Sites exists to help you set and forget. <span className="font-source-serif-4 font-normal text-orange-600 border-b">Just focus on writing </span>.</p>
+              <p className="text-xl text-slate-300">We know you have too much on your plate.</p>
             </div>
+
+<img src="https://dazzling-cat.netlify.app/marry.png" className="max-w-2xl m-auto"/>
 
 
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex aos-init aos-animate mt-6 justify-center py-12" data-aos="zoom-y-out" data-aos-delay="300">
