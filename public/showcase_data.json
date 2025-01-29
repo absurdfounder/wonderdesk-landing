@@ -65,7 +65,7 @@
     {
       "id": "web3jobs",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/web3 job.png",
+        "logo": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
         "name": "Web3 Jobs",
         "type": "Marketplace",
         "provider": "Vaibhav",
@@ -375,10 +375,10 @@
     {
       "id": "apk-store",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+        "logo": "https://dazzling-cat.netlify.app/template_images/apkwork.png",
         "name": "APK Store",
         "type": "Helpdesk",
-        "provider": "AndroidMarket",
+        "provider": "DroidMarket",
         "description": "A trusted platform for downloading Android apps and games.",
         "callToCopy": {
           "text": "Deploy Template",
@@ -401,37 +401,6 @@
       "proof": {
         "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
         "youtubevideo": "https://youtube.com/watch?v=apk-store-demo"
-      }
-    },
-    {
-      "id": "web3-jobs",
-      "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/web3 jobs.png",
-        "name": "Web3 Crypto Jobs",
-        "type": "Marketplace",
-        "provider": "Vaibhav",
-        "description": "Get a website for listing web3 jobs for job applicants.",
-        "callToCopy": {
-          "text": "Deploy Template",
-          "link": "https://example.com/install-arcade-BoringSites"
-        },
-        "ViewDemo": {
-          "text": "View Demo",
-          "link": "https://web3jobs.cc"
-        }
-      },
-      "overview": {
-        "content": "Arcade lets you create interactive product demos in minutes and turn all users into power users. Let users experience your product through interactive, guided demos. No more pausing and rewinding, users can progress at their own pace. This integration allows you to embed Arcade interactive demos into your BoringSites documentation."
-      },
-      "howItWorks": {
-        "content": "Embedding an Arcade flow in your documentation is simple - just paste an Arcade flow link into the BoringSites editor. The app will turn the link into an Arcade embed showing your recorded demo."
-      },
-      "configuration": {
-        "content": "To install on a single space, navigate to integrations in sub-navigation. If you prefer to install the Arcade integration on multiple or all spaces, navigate to your organization settings and enable it from the integrations panel. This will give you access to the custom arcade block."
-      },
-      "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
-        "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
       }
     },
     {
@@ -497,13 +466,13 @@
       }
     },
     {
-      "id": "discord-telegram-whatsapp-servers",
+      "id": "goodmarketing",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-        "name": "Messaging Platforms Servers",
-        "type": "Helpdesk",
+        "logo": "https://dazzling-cat.netlify.app/template_images/goodmarketing.png",
+        "name": "Good Marketing",
+        "type": "Directory",
         "provider": "ChatConnect",
-        "description": "Create and manage your own private servers on Discord, Telegram, and WhatsApp for business or personal use.",
+        "description": "Get access to marketing tips and tricks used by statups and founders to sell there SAAS business better.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -528,13 +497,13 @@
       }
     },
     {
-      "id": "saas-boilerplates",
+      "id": "linkpool",
       "product": {
         "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-        "name": "SaaS Boilerplates",
-        "type": "Helpdesk",
-        "provider": "SaaSTech",
-        "description": "Jumpstart your SaaS application development with our ready-to-use code boilerplates.",
+        "name": "LinkPool",
+        "type": "Directory",
+        "provider": "LinkPool",
+        "description": "Backlink directory of High DA links that are avalible for free on the web.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
