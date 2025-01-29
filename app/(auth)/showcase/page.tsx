@@ -99,12 +99,12 @@ export default async function Template() {
               <Link
                 href={"/showcase/" + template.id}
                 key={index}
-                className="relative flex flex-col items-center  bg-white rounded-2xl shadow-xl h-full border"
+                className="relative flex flex-col items-center overflow-hidden bg-white rounded-2xl shadow-xl h-full border"
               >
                 <div>
                   <div>
                     <div className="items-start">
-                      <div className="m-auto flex justify-center items-center h-64">
+                      <div className="m-auto flex justify-center items-center">
                       <Image
                         className="w-auto mx-auto"
                         width={100}
