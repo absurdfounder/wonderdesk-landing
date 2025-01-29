@@ -3,7 +3,7 @@
     {
       "id": "blockchain-grants",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+        "logo": "https://dazzling-cat.netlify.app/template_images/blockchaingrants.png",
         "name": "Blockchain Grants",
         "type": "Directory",
         "provider": "CryptoFund",
@@ -34,7 +34,7 @@
     {
       "id": "remote-jobs",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/jobwebsite.png",
+        "logo": "https://dazzling-cat.netlify.app/template_images/jobwebsite.png",
         "name": "Remote Jobs",
         "type": "Marketplace",
         "provider": "Vaibhav",
@@ -63,13 +63,75 @@
       }
     },
     {
-      "id": "vetted-talent",
+      "id": "web3jobs",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/vettedtalent.png",
-        "name": "Vetted Talent",
+        "logo": "https://dazzling-cat.netlify.app/template_images/template_images/web3 job.png",
+        "name": "Web3 Jobs",
+        "type": "Marketplace",
+        "provider": "Vaibhav",
+        "description": "Get a website for listing web3, smart contract and blockchain jobs aggregated accross the thrid web.",
+        "callToCopy": {
+          "text": "Deploy Template",
+          "link": "https://example.com/install-arcade-BoringSites"
+        },
+        "ViewDemo": {
+          "text": "View Demo",
+          "link": "https://remote-jobs.com"
+        }
+      },
+      "overview": {
+        "content": "Arcade lets you create interactive product demos in minutes and turn all users into power users. Let users experience your product through interactive, guided demos. No more pausing and rewinding, users can progress at their own pace. This integration allows you to embed Arcade interactive demos into your BoringSites documentation."
+      },
+      "howItWorks": {
+        "content": "Embedding an Arcade flow in your documentation is simple - just paste an Arcade flow link into the BoringSites editor. The app will turn the link into an Arcade embed showing your recorded demo."
+      },
+      "configuration": {
+        "content": "To install on a single space, navigate to integrations in sub-navigation. If you prefer to install the Arcade integration on multiple or all spaces, navigate to your organization settings and enable it from the integrations panel. This will give you access to the custom arcade block."
+      },
+      "proof": {
+        "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+        "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
+      }
+    },
+    {
+      "id": "ai-jobs",
+      "product": {
+        "logo": "https://dazzling-cat.netlify.app/template_images/aijobs24.png",
+        "name": "AI Jobs 24",
+        "type": "Marketplace",
+        "provider": "Vaibhav",
+        "description": "Get a website for listing AI, ML and LLM jobs, invest your time in the future of technology.",
+        "callToCopy": {
+          "text": "Deploy Template",
+          "link": "https://example.com/install-arcade-BoringSites"
+        },
+        "ViewDemo": {
+          "text": "View Demo",
+          "link": "https://remote-jobs.com"
+        }
+      },
+      "overview": {
+        "content": "Arcade lets you create interactive product demos in minutes and turn all users into power users. Let users experience your product through interactive, guided demos. No more pausing and rewinding, users can progress at their own pace. This integration allows you to embed Arcade interactive demos into your BoringSites documentation."
+      },
+      "howItWorks": {
+        "content": "Embedding an Arcade flow in your documentation is simple - just paste an Arcade flow link into the BoringSites editor. The app will turn the link into an Arcade embed showing your recorded demo."
+      },
+      "configuration": {
+        "content": "To install on a single space, navigate to integrations in sub-navigation. If you prefer to install the Arcade integration on multiple or all spaces, navigate to your organization settings and enable it from the integrations panel. This will give you access to the custom arcade block."
+      },
+      "proof": {
+        "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+        "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
+      }
+    },
+    {
+      "id": "zeroslist",
+      "product": {
+        "logo": "https://dazzling-cat.netlify.app/template_images/zero list.png",
+        "name": "Zeroslist : Yelp for accountants and CPAs",
         "type": "Marketplace",
         "provider": "BoringSites",
-        "description": "Website for showing vetted talent for companies to hire.",
+        "description": "Website for hiring the best accountants and CPAs.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -94,13 +156,13 @@
       }
     },
     {
-      "id": "notion-helpdesk",
+      "id": "startupleads",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/BoringSiteshelpdesk-template.png",
-        "name": "Boring Sites Helpdesk",
-        "type": "Helpdesk",
+        "logo": "https://dazzling-cat.netlify.app/template_images/startup%20leads.png",
+        "name": "Funded Startup Leads",
+        "type": "Marketplace",
         "provider": "BoringSites",
-        "description": "Website for showing vetted talent for companies to hire.",
+        "description": "Website to show the funded startup leads",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -341,7 +403,7 @@
         "youtubevideo": "https://youtube.com/watch?v=apk-store-demo"
       }
     },
-      {
+    {
       "id": "web3-jobs",
       "product": {
         "logo": "https://dazzling-cat.netlify.app/template_images/web3 jobs.png",
