@@ -191,10 +191,10 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
               >
                 <Link
                   href={"/showcase/" + template.id}
-                  className="relative flex flex-col items-center bg-white rounded-2xl shadow-xl h-full border"
+                  className="relative flex flex-col items-center overflow-hidden bg-white rounded-2xl shadow-xl h-full border"
                 >
                   <div className="w-full">
-                    <div className="m-auto flex justify-center items-center h-64">
+                    <div className="m-auto flex justify-center items-center">
                       <Image
                         className="w-auto mx-auto"
                         width={100}
