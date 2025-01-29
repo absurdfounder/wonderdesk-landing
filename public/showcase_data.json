@@ -27,7 +27,7 @@
         "content": "Setup your profile and track your application status through our user-friendly dashboard."
       },
       "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+        "screenshot": "https://dazzling-cat.netlify.app/template_images/blockchaingrants.png",
         "youtubevideo": "https://youtube.com/watch?v=blockchain-grants-intro"
       }
     },
@@ -58,7 +58,7 @@
         "content": "To install on a single space, navigate to integrations in sub-navigation. If you prefer to install the Arcade integration on multiple or all spaces, navigate to your organization settings and enable it from the integrations panel. This will give you access to the custom arcade block."
       },
       "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/jobwebsite.png",
+        "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
         "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
       }
     },
@@ -125,13 +125,13 @@
       }
     },
     {
-      "id": "blockchain-grants",
+      "id": "airdropwork",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/Screenshot%202024-02-09%203.38.42%20AM.png",
-        "name": "Blockchain Grants ",
-        "type": "Helpdesk",
+        "logo": "https://dazzling-cat.netlify.app/template_images/airdrop.work.png",
+        "name": "Crypto Airdrop Aggregator",
+        "type": "Marketplace",
         "provider": "BoringSites",
-        "description": "Website for showing vetted talent for companies to hire.",
+        "description": "Publish research on upcoming crypto airdrops.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -280,10 +280,10 @@
       }
     },
     {
-      "id": "starter-story",
+      "id": "solo-story",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-        "name": "Starter Story",
+        "logo": "https://dazzling-cat.netlify.app/template_images/solo story.png",
+        "name": "Solo Story",
         "type": "Helpdesk",
         "provider": "StartupJourney",
         "description": "Learn from successful entrepreneurs and launch your startup using proven strategies.",
@@ -341,35 +341,35 @@
         "youtubevideo": "https://youtube.com/watch?v=apk-store-demo"
       }
     },
-    {
-      "id": "apk-store",
+      {
+      "id": "web3-jobs",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-        "name": "APK Store",
-        "type": "Helpdesk",
-        "provider": "AndroidMarket",
-        "description": "A trusted platform for downloading Android apps and games.",
+        "logo": "https://dazzling-cat.netlify.app/template_images/web3 jobs.png",
+        "name": "Web3 Crypto Jobs",
+        "type": "Marketplace",
+        "provider": "Vaibhav",
+        "description": "Get a website for listing web3 jobs for job applicants.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
         },
         "ViewDemo": {
           "text": "View Demo",
-          "link": "https://remote-jobs.com"
+          "link": "https://web3jobs.cc"
         }
       },
       "overview": {
-        "content": "APK Store offers a wide range of free and paid Android applications, ensuring a safe and secure download experience."
+        "content": "Arcade lets you create interactive product demos in minutes and turn all users into power users. Let users experience your product through interactive, guided demos. No more pausing and rewinding, users can progress at their own pace. This integration allows you to embed Arcade interactive demos into your BoringSites documentation."
       },
       "howItWorks": {
-        "content": "Search for the app you need, review the details and user comments, and download directly to your device."
+        "content": "Embedding an Arcade flow in your documentation is simple - just paste an Arcade flow link into the BoringSites editor. The app will turn the link into an Arcade embed showing your recorded demo."
       },
       "configuration": {
-        "content": "Create an account to keep track of your downloads and preferences."
+        "content": "To install on a single space, navigate to integrations in sub-navigation. If you prefer to install the Arcade integration on multiple or all spaces, navigate to your organization settings and enable it from the integrations panel. This will give you access to the custom arcade block."
       },
       "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-        "youtubevideo": "https://youtube.com/watch?v=apk-store-demo"
+        "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+        "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
       }
     },
     {
