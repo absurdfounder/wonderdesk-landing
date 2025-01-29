@@ -34,7 +34,7 @@
     {
       "id": "remote-jobs",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/jobwebsite.png",
+        "logo": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
         "name": "Remote Jobs",
         "type": "Marketplace",
         "provider": "Vaibhav",
@@ -65,7 +65,7 @@
     {
       "id": "web3jobs",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/template_images/web3 job.png",
+        "logo": "https://dazzling-cat.netlify.app/template_images/web3 job.png",
         "name": "Web3 Jobs",
         "type": "Marketplace",
         "provider": "Vaibhav",
@@ -249,13 +249,13 @@
       }
     },
     {
-      "id": "support-groups-events",
+      "id": "opensource-alternatives",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/supportgroups.vercel.app_.png",
-        "name": "Support Groups Events",
-        "type": "Helpdesk",
-        "provider": "HealthConnect",
-        "description": "Find and organize support group meetings for mental health, addiction recovery, and more.",
+        "logo": "https://dazzling-cat.netlify.app/template_images/Open Source Alternatives.png",
+        "name": "Open Source Alternatives",
+        "type": "Marketplace",
+        "provider": "Open Source",
+        "description": "Find open source alternatives for the closed source apps that charge you monthly. Saving you thousands each month.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
