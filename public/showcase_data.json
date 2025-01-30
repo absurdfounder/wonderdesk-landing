@@ -155,99 +155,100 @@
         "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
       }
     },
-    {
-      "id": "airdropwork",
-      "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/airdrop.work.png",
-        "name": "Crypto Airdrop Aggregator",
-        "type": "Marketplace",
-        "provider": "BoringSites",
-        "description": "Publish research on upcoming crypto airdrops.",
-        "callToCopy": {
-          "text": "Deploy Template",
-          "link": "https://example.com/install-arcade-BoringSites"
-        },
-        "ViewDemo": {
-          "text": "View Demo",
-          "link": "https://remote-jobs.com"
-        }
+{
+    "id": "airdropwork",
+    "product": {
+      "logo": "https://dazzling-cat.netlify.app/template_images/airdrop.work.png",
+      "name": "Crypto Airdrop Aggregator",
+      "type": "Marketplace",
+      "provider": "BoringSites",
+      "description": "Build a comprehensive crypto airdrop platform with AI-powered insights, analytics, and community features.",
+      "callToCopy": {
+        "text": "Deploy Template",
+        "link": "https://example.com/install-arcade-BoringSites"
       },
-      "overview": {
-        "content": "Slack enables you to integrate interactive demos into your Slack channels, allowing your team to explore and understand your product's features directly from Slack. No need to switch between apps or pause and rewind; team members can interact with the demos at their own pace, fostering better understanding and collaboration."
-      },
-      "howItWorks": {
-        "content": "To add an Slack demo to your Slack channel, simply share an Slack flow link in the channel. Slack will automatically recognize and embed the interactive demo, making it accessible for your team to view and interact with directly within the Slack interface."
-      },
-      "configuration": {
-        "content": "To get started, navigate to the Slack App marketplace and search for the Slack app. Once found, add it to your workspace. You can then share Slack demos in any channel by pasting the demo link, enhancing your team's collaboration and product knowledge."
-      },
-      "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/Screenshot%202024-02-09%203.38.42%20AM.png",
-        "youtubevideo": "https://youtube.com/watch?v=example-slack"
+      "ViewDemo": {
+        "text": "View Demo",
+        "link": "https://remote-jobs.com"
       }
     },
-    {
-      "id": "agency-hub",
-      "product": {
-        "logo": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
-        "name": "Agency Hub",
-        "type": "Marketplace",
-        "provider": "AgencySolutions",
-        "description": "A classifieds platform to connect businesses with the best agencies and for agencies to receive offers from potential clients.",
-        "callToCopy": {
-          "text": "Deploy Template",
-          "link": "https://example.com/install-arcade-BoringSites"
-        },
-        "ViewDemo": {
-          "text": "View Demo",
-          "link": "https://remote-jobs.com"
-        }
+    "overview": {
+      "content": "Create a powerful airdrop discovery platform with advanced features: Analytics dashboard, Content management, Forms system, Premium memberships, AI-powered airdrop analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can track airdrops, receive alerts, and get personalized recommendations."
+    },
+    "howItWorks": {
+      "content": "Users discover and track upcoming airdrops with community-driven insights. Features include airdrop tracking, verification system, upvoting, and staff recommendations. Powered by analytics, AI research, custom forms, membership tiers, and flexible component sections."
+    },
+    "configuration": {
+      "content": "1. Set up branding and domain settings\n2. Configure membership tiers\n3. Customize airdrop submission forms\n4. Enable AI analysis features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community engagement features"
+    },
+    "proof": {
+      "screenshot": "https://dazzling-cat.netlify.app/Screenshot%202024-02-09%203.38.42%20AM.png",
+      "youtubevideo": "https://youtube.com/watch?v=example-slack"
+    }
+  },
+  {
+    "id": "agency-hub",
+    "product": {
+      "logo": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
+      "name": "Agency Hub",
+      "type": "Marketplace",
+      "provider": "AgencySolutions",
+      "description": "Launch a comprehensive agency directory with AI matching, analytics, and verified reviews.",
+      "callToCopy": {
+        "text": "Deploy Template",
+        "link": "https://example.com/install-arcade-BoringSites"
       },
-      "overview": {
-        "content": "Agency Hub is the premier marketplace for businesses seeking top-notch agencies and for agencies looking to expand their clientele. Whether you're a business seeking marketing, design, or IT services, or an agency looking to showcase your expertise, Agency Hub connects you to the right opportunities."
-      },
-      "howItWorks": {
-        "content": "Businesses can browse agency profiles, review portfolios, and submit requests for proposals (RFPs). Agencies can manage their profiles, receive direct offers, and respond to RFPs from potential clients."
-      },
-      "configuration": {
-        "content": "Set up your business or agency profile, specify the services you offer or need, and start connecting through our intuitive platform."
-      },
-      "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
-        "youtubevideo": "https://youtube.com/watch?v=agency-hub-intro"
+      "ViewDemo": {
+        "text": "View Demo",
+        "link": "https://remote-jobs.com"
       }
     },
-    {
-      "id": "opensource-alternatives",
-      "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/Open Source Alternatives.png",
-        "name": "Open Source Alternatives",
-        "type": "Marketplace",
-        "provider": "Open Source",
-        "description": "Find open source alternatives for the closed source apps that charge you monthly. Saving you thousands each month.",
-        "callToCopy": {
-          "text": "Deploy Template",
-          "link": "https://example.com/install-arcade-BoringSites"
-        },
-        "ViewDemo": {
-          "text": "View Demo",
-          "link": "https://remote-jobs.com"
-        }
+    "overview": {
+      "content": "Build the ultimate agency marketplace with powerful features: Analytics dashboard, Content management, Custom forms, Membership tiers, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Agencies can showcase work while clients can find perfect matches."
+    },
+    "howItWorks": {
+      "content": "Agencies create profiles and showcase work while clients can search, review, and connect. Features include verified reviews, upvoting system, and staff recommendations. Platform includes analytics, AI matching, custom forms, membership options, and flexible component sections."
+    },
+    "configuration": {
+      "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize agency profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable review and engagement features"
+    },
+    "proof": {
+      "screenshot": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
+      "youtubevideo": "https://youtube.com/watch?v=agency-hub-intro"
+    }
+  },
+  {
+    "id": "opensource-alternatives",
+    "product": {
+      "logo": "https://dazzling-cat.netlify.app/template_images/Open Source Alternatives.png",
+      "name": "Open Source Alternatives",
+      "type": "Marketplace",
+      "provider": "Open Source",
+      "description": "Create a comprehensive directory of open-source alternatives with AI recommendations and community insights.",
+      "callToCopy": {
+        "text": "Deploy Template",
+        "link": "https://example.com/install-arcade-BoringSites"
       },
-      "overview": {
-        "content": "Our platform connects individuals seeking support with a wide range of group events focused on various health issues."
-      },
-      "howItWorks": {
-        "content": "Browse events by topic or location, register online, and gain the support you need in a community setting."
-      },
-      "configuration": {
-        "content": "Create an account, set up event notifications, and manage your event participation through our user-friendly dashboard."
-      },
-      "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/supportgroups.vercel.app_.png",
-        "youtubevideo": "https://youtube.com/watch?v=support-groups-events-demo"
+      "ViewDemo": {
+        "text": "View Demo",
+        "link": "https://remote-jobs.com"
       }
     },
+    "overview": {
+      "content": "Launch a platform for discovering open-source alternatives with powerful features: Analytics dashboard, Content management, Forms system, Premium memberships, AI-powered recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can compare options and share experiences."
+    },
+    "howItWorks": {
+      "content": "Users discover and compare open-source alternatives through community-driven insights. Features include software comparisons, reviews, upvoting, and staff recommendations. Powered by analytics, AI matching, custom forms, membership tiers, and flexible component sections."
+    },
+    "configuration": {
+      "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize submission forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable community features"
+    },
+    "proof": {
+      "screenshot": "https://dazzling-cat.netlify.app/template_images/Open Source Alternatives.png",
+      "youtubevideo": "https://youtube.com/watch?v=support-groups-events-demo"
+    }
+  }
+},
     {
       "id": "top-talent-hub",
       "product": {
