@@ -32,68 +32,7 @@
             "youtubevideo": "https://youtube.com/watch?v=blockchain-grants-intro"
           }
         },
-        {
-          "id": "remote-jobs",
-          "product": {
-            "logo": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
-            "name": "Remote Jobs",
-            "type": "Marketplace",
-            "provider": "Vaibhav",
-            "description": "Launch a complete remote jobs marketplace with AI-powered matching, analytics, and membership features.",
-            "callToCopy": {
-              "text": "Deploy Template",
-              "link": "https://example.com/install-arcade-BoringSites"
-            },
-            "ViewDemo": {
-              "text": "View Demo",
-              "link": "https://remote-jobs.com"
-            }
-          },
-          "overview": {
-            "content": "Build a comprehensive remote jobs platform with powerful features: Built-in analytics, Content management, Forms system, Memberships & Paywall, AI-powered job matching, Custom integrations, Component-based design, Notion sync, and Custom domains. Users can save jobs, upvote listings, and receive personalized recommendations."
-          },
-          "howItWorks": {
-            "content": "Employers and job seekers get personalized experiences. Features include user profiles, job bookmarking, upvoting system, and staff recommendations. The platform includes analytics, AI assistance, custom forms, membership tiers, and flexible component sections. Notion sync enables easy content management."
-          },
-          "configuration": {
-            "content": "1. Customize branding and domain settings\n2. Set up membership levels and paywalls\n3. Configure job listing forms\n4. Enable AI features and matching\n5. Add custom sections using component creator\n6. Set up Notion integration\n7. Configure analytics and tracking\n8. Customize user engagement features"
-          },
-          "proof": {
-            "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
-            "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
-          }
-        },
-        {
-          "id": "web3jobs",
-          "product": {
-            "logo": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
-            "name": "Web3 Jobs",
-            "type": "Marketplace",
-            "provider": "Vaibhav",
-            "description": "Create a Web3 job board with AI-powered matching, analytics, and comprehensive engagement features.",
-            "callToCopy": {
-              "text": "Deploy Template",
-              "link": "https://example.com/install-arcade-BoringSites"
-            },
-            "ViewDemo": {
-              "text": "View Demo",
-              "link": "https://remote-jobs.com"
-            }
-          },
-          "overview": {
-            "content": "Launch a specialized Web3 jobs marketplace with advanced features: Analytics dashboard, Content management, Custom forms, Membership system, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can save jobs, upvote listings, and get personalized recommendations."
-          },
-          "howItWorks": {
-            "content": "Connect Web3 employers with talent through a feature-rich platform. Includes user profiles, job bookmarking, upvoting, and staff recommendations. Powered by analytics, AI assistance, custom forms, membership options, and flexible component sections. Seamless Notion integration for content management."
-          },
-          "configuration": {
-            "content": "1. Set up branding and domain configuration\n2. Configure membership tiers\n3. Customize job listing forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable user engagement features"
-          },
-          "proof": {
-            "screenshot": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
-            "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
-          }
-        },
+
     {
         "id": "airdropwork",
         "product": {
