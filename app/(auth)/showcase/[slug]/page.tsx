@@ -11,7 +11,7 @@ interface CallToCopy {
   link: string;
 }
 
-interface ViewDemo {
+interface viewDemo {
   text: string;
   link: string;
 }
@@ -23,7 +23,7 @@ interface Product {
   type: string;
   description: string;
   callToCopy: CallToCopy;
-  ViewDemo: ViewDemo;
+  viewDemo: viewDemo;
 }
 
 interface ContentSection {
@@ -50,24 +50,40 @@ export async function generateMetadata(
   { params }: { params: { slug: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const slug = params.slug;
-  const content = await _loadFromJson();
-  const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
+  try {
+    const slug = params.slug;
+    const content = await _loadFromJson();
+    
+    if (!content) {
+      return {
+        title: 'BoringSites - Error Loading Content',
+        description: 'Unable to load template content',
+      };
+    }
 
-  if (!filteredContent) {
+    const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
+
+    if (!filteredContent) {
+      return {
+        title: 'BoringSites vs Unknown Template',
+        description: 'Compare BoringSites to an unknown template',
+      };
+    }
+
     return {
-      title: 'BoringSites vs Unknown Template',
-      description: 'Compare BoringSites to an unknown template',
+      title: `${filteredContent.product.name}`,
+      description: `${filteredContent.product.name}: ${filteredContent.product.description}`,
+      openGraph: {
+        images: [{ url: filteredContent.proof.screenshot }],
+      },
+    };
+  } catch (error) {
+    console.error('Error in generateMetadata:', error);
+    return {
+      title: 'BoringSites - Error',
+      description: 'An error occurred while loading the content',
     };
   }
-
-  return {
-    title: `${filteredContent.product.name}`,
-    description: `${filteredContent.product.name}: ${filteredContent.product.description}`,
-    openGraph: {
-      images: [{ url: filteredContent.proof.screenshot }],
-    },
-  };
 }
 
 async function getData(slug: string): Promise<{ 
@@ -118,12 +134,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </div>
             <div className="flex space-x-2 items-center">
               <Link 
-                href={filterBySlug.product.ViewDemo.link} 
+                href={filterBySlug.product.viewDemo.link} 
                 className="bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" 
                 rel="noopener noreferrer" 
                 target="_blank"
               >
-                <span>{filterBySlug.product.ViewDemo.text}</span>
+                <span>{filterBySlug.product.viewDemo.text}</span>
               </Link>
             </div>
           </div>

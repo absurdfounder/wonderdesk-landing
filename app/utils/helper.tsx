@@ -8,7 +8,7 @@ interface CallToAction {
 }
 
 
-interface ViewDemo {
+interface viewDemo {
   text: string;
   link: string;
 }
@@ -20,7 +20,7 @@ interface Product {
   provider: string;
   description: string;
   callToCopy: CallToAction;
-  ViewDemo: ViewDemo;
+  viewDemo: viewDemo;
 }
 
 interface ContentSection {
@@ -150,9 +150,12 @@ export const renderContent = (item: ContentItem, index: number) => {
 
 export const _loadFromJson = async (template: boolean = true): Promise<Template[] | any[]> => {
   try {
-    return template 
-      ? (templateData as TemplateData).template_library 
-      : (integrationData as IntegrationData).integration_library;
+    if (template) {
+      // Handle array wrapper in template data
+      return (templateData[0] as TemplateData).template_library;
+    } else {
+      return (integrationData as IntegrationData).integration_library;
+    }
   } catch (error) {
     console.error("Failed to load templates", error);
     return [];
