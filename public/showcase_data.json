@@ -7,24 +7,24 @@
         "name": "Blockchain Grants",
         "type": "Directory",
         "provider": "CryptoFund",
-        "description": "Secure funding for your blockchain projects through targeted grants.",
+        "description": "Launch a fully-featured blockchain grants directory with built-in analytics, memberships, and AI-powered insights.",
         "callToCopy": {
           "text": "Deploy Template",
-          "link": "https://example.com/install-arcade-BoringSites"
+          "link": "https://blockchaingrants.org?duplicate=true"
         },
         "ViewDemo": {
           "text": "View Demo",
-          "link": "https://remote-jobs.com"
+          "link": "https://blockchaingrants.org?duplicate=true"
         }
       },
       "overview": {
-        "content": "Blockchain Grants provides financial support for innovative projects in the blockchain space. With our funding, developers and startups can propel their ideas into reality."
+        "content": "Create a powerful blockchain grants platform with comprehensive features including analytics, content management, membership systems, and AI support. Built for SEO with user engagement features like upvotes, bookmarks, and personalized recommendations. Seamlessly sync with Notion and customize with flexible component sections."
       },
       "howItWorks": {
-        "content": "Applying for a grant is straightforward. Simply fill out the application form on our website and submit your project proposal for review."
+        "content": "Users can browse, upvote, and bookmark grants while logged in. Staff can suggest personalized listings to users. Features include: Analytics dashboard, Forms builder, Memberships & Paywall, Boring AI support, Custom script integration, Component-based sections (carousel, testimonials, pricing), Branding options, Notion sync, and Custom domain setup."
       },
       "configuration": {
-        "content": "Setup your profile and track your application status through our user-friendly dashboard."
+        "content": "1. Set up your branding and domain\n2. Configure membership tiers and paywalls\n3. Customize sections using the component creator\n4. Enable AI features and staff suggestions\n5. Set up Notion sync for content\n6. Add custom scripts and iframe embeds\n7. Configure analytics tracking\n8. Customize forms and user engagement features"
       },
       "proof": {
         "screenshot": "https://dazzling-cat.netlify.app/template_images/blockchaingrants.png",
