@@ -29,9 +29,9 @@ interface HobbyFeature extends Feature {
 }
 
 const hobbyFeatures: HobbyFeature[] = [
-  { name: "50 articles & collections", included: true, description: "Create up to 50 articles and organize them into collections.", imageUrl: "/api/placeholder/200/150" },
   { name: "1 website", included: true, description: "Set up one Boring Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
   { name: "Custom Domain / SSL", included: false, description: "Use your own domain and secure it with SSL (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
+  { name: "50 articles & collections", included: true, description: "Create up to 50 articles and organize them into collections.", imageUrl: "/api/placeholder/200/150" },
   { name: "No Analytics", included: true, description: "Access fundamental analytics to track your site's performance.", imageUrl: "/api/placeholder/200/150" },
   { name: "Basic SEO", included: true, description: "Implement basic SEO practices to improve your site's visibility.", imageUrl: "/api/placeholder/200/150" },
   { name: "Customization", included: true, description: "Customize your site's appearance with basic options.", imageUrl: "/api/placeholder/200/150" },
@@ -46,10 +46,10 @@ const hobbyFeatures: HobbyFeature[] = [
 ];
 
 const scaleFeatures: Feature[] = [
-  { name: "Unlimited articles & collections", description: "Create unlimited articles and collections without any restrictions.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited Websites", description: "Set up and manage unlimited helpdesks, documentations, directories and blogs on BoringSites.", imageUrl: "/api/placeholder/200/150" },
-  { name: "Unlimited Analytics", description: "Access comprehensive analytics to gain deep insights into your site's performance and user behavior.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited Custom Domain / SSL", description: "Use your own domain name and benefit from included SSL encryption for enhanced security.", imageUrl: "/api/placeholder/200/150" }, 
+  { name: "Unlimited articles & collections", description: "Create unlimited articles and collections without any restrictions.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Unlimited Analytics", description: "Access comprehensive analytics to gain deep insights into your site's performance and user behavior.", imageUrl: "/api/placeholder/200/150" },
   { name: "Full SEO Ready", description: "Utilize advanced SEO tools and features to maximize your site's search engine visibility.", imageUrl: "/api/placeholder/200/150" },
   { name: "Advanced Customization", description: "Enjoy extensive customization options to tailor your site's look and feel to your exact preferences.", imageUrl: "/api/placeholder/200/150" },
   { name: "Instant Upgrades", description: "Receive immediate upgrades and new features as soon as they're available.", imageUrl: "/api/placeholder/200/150" },
