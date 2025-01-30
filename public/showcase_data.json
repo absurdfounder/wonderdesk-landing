@@ -1,533 +1,534 @@
 [
     {
-        "template_library": [
-            {
-                "id": "blockchain-grants",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/blockchaingrants.png",
-                    "name": "Blockchain Grants",
-                    "type": "Directory",
-                    "provider": "CryptoFund",
-                    "description": "Launch a fully-featured blockchain grants directory with built-in analytics, memberships, and AI-powered insights.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://blockchaingrants.org?duplicate=true"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://blockchaingrants.org?duplicate=true"
-                    }
-                },
-                "overview": {
-                    "content": "Create a powerful blockchain grants platform with comprehensive features including analytics, content management, membership systems, and AI support. Built for SEO with user engagement features like upvotes, bookmarks, and personalized recommendations. Seamlessly sync with Notion and customize with flexible component sections."
-                },
-                "howItWorks": {
-                    "content": "Users can browse, upvote, and bookmark grants while logged in. Staff can suggest personalized listings to users. Features include: Analytics dashboard, Forms builder, Memberships & Paywall, Boring AI support, Custom script integration, Component-based sections (carousel, testimonials, pricing), Branding options, Notion sync, and Custom domain setup."
-                },
-                "configuration": {
-                    "content": "1. Set up your branding and domain\n2. Configure membership tiers and paywalls\n3. Customize sections using the component creator\n4. Enable AI features and staff suggestions\n5. Set up Notion sync for content\n6. Add custom scripts and iframe embeds\n7. Configure analytics tracking\n8. Customize forms and user engagement features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/blockchaingrants.png",
-                    "youtubevideo": "https://youtube.com/watch?v=blockchain-grants-intro"
-                }
+      "template_library": [
+        {
+          "id": "blockchain-grants",
+          "product": {
+            "logo": "https://dazzling-cat.netlify.app/template_images/blockchaingrants.png",
+            "name": "Blockchain Grants",
+            "type": "Directory",
+            "provider": "CryptoFund",
+            "description": "Launch a fully-featured blockchain grants directory with built-in analytics, memberships, and AI-powered insights.",
+            "callToCopy": {
+              "text": "Deploy Template",
+              "link": "https://blockchaingrants.org?duplicate=true"
             },
-            {
-                "id": "remote-jobs",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
-                    "name": "Remote Jobs",
-                    "type": "Marketplace",
-                    "provider": "Vaibhav",
-                    "description": "Launch a complete remote jobs marketplace with AI-powered matching, analytics, and membership features.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Build a comprehensive remote jobs platform with powerful features: Built-in analytics, Content management, Forms system, Memberships & Paywall, AI-powered job matching, Custom integrations, Component-based design, Notion sync, and Custom domains. Users can save jobs, upvote listings, and receive personalized recommendations."
-                },
-                "howItWorks": {
-                    "content": "Employers and job seekers get personalized experiences. Features include user profiles, job bookmarking, upvoting system, and staff recommendations. The platform includes analytics, AI assistance, custom forms, membership tiers, and flexible component sections. Notion sync enables easy content management."
-                },
-                "configuration": {
-                    "content": "1. Customize branding and domain settings\n2. Set up membership levels and paywalls\n3. Configure job listing forms\n4. Enable AI features and matching\n5. Add custom sections using component creator\n6. Set up Notion integration\n7. Configure analytics and tracking\n8. Customize user engagement features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
-                    "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
-                }
-            },
-            {
-                "id": "web3jobs",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
-                    "name": "Web3 Jobs",
-                    "type": "Marketplace",
-                    "provider": "Vaibhav",
-                    "description": "Create a Web3 job board with AI-powered matching, analytics, and comprehensive engagement features.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Launch a specialized Web3 jobs marketplace with advanced features: Analytics dashboard, Content management, Custom forms, Membership system, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can save jobs, upvote listings, and get personalized recommendations."
-                },
-                "howItWorks": {
-                    "content": "Connect Web3 employers with talent through a feature-rich platform. Includes user profiles, job bookmarking, upvoting, and staff recommendations. Powered by analytics, AI assistance, custom forms, membership options, and flexible component sections. Seamless Notion integration for content management."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain configuration\n2. Configure membership tiers\n3. Customize job listing forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable user engagement features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
-                    "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
-                }
-            },
-            {
-                "id": "remote-jobs",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
-                    "name": "Remote Jobs",
-                    "type": "Marketplace",
-                    "provider": "Vaibhav",
-                    "description": "Launch a complete remote jobs marketplace with AI-powered matching, analytics, and membership features.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Build a comprehensive remote jobs platform with powerful features: Built-in analytics, Content management, Forms system, Memberships & Paywall, AI-powered job matching, Custom integrations, Component-based design, Notion sync, and Custom domains. Users can save jobs, upvote listings, and receive personalized recommendations."
-                },
-                "howItWorks": {
-                    "content": "Employers and job seekers get personalized experiences. Features include user profiles, job bookmarking, upvoting system, and staff recommendations. The platform includes analytics, AI assistance, custom forms, membership tiers, and flexible component sections. Notion sync enables easy content management."
-                },
-                "configuration": {
-                    "content": "1. Customize branding and domain settings\n2. Set up membership levels and paywalls\n3. Configure job listing forms\n4. Enable AI features and matching\n5. Add custom sections using component creator\n6. Set up Notion integration\n7. Configure analytics and tracking\n8. Customize user engagement features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
-                    "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
-                }
-            },
-            {
-                "id": "web3jobs",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
-                    "name": "Web3 Jobs",
-                    "type": "Marketplace",
-                    "provider": "Vaibhav",
-                    "description": "Create a Web3 job board with AI-powered matching, analytics, and comprehensive engagement features.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Launch a specialized Web3 jobs marketplace with advanced features: Analytics dashboard, Content management, Custom forms, Membership system, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can save jobs, upvote listings, and get personalized recommendations."
-                },
-                "howItWorks": {
-                    "content": "Connect Web3 employers with talent through a feature-rich platform. Includes user profiles, job bookmarking, upvoting, and staff recommendations. Powered by analytics, AI assistance, custom forms, membership options, and flexible component sections. Seamless Notion integration for content management."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain configuration\n2. Configure membership tiers\n3. Customize job listing forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable user engagement features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
-                    "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
-                }
-            },
-            {
-                "id": "airdropwork",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/airdrop.work.png",
-                    "name": "Crypto Airdrop Aggregator",
-                    "type": "Marketplace",
-                    "provider": "BoringSites",
-                    "description": "Build a comprehensive crypto airdrop platform with AI-powered insights, analytics, and community features.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Create a powerful airdrop discovery platform with advanced features: Analytics dashboard, Content management, Forms system, Premium memberships, AI-powered airdrop analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can track airdrops, receive alerts, and get personalized recommendations."
-                },
-                "howItWorks": {
-                    "content": "Users discover and track upcoming airdrops with community-driven insights. Features include airdrop tracking, verification system, upvoting, and staff recommendations. Powered by analytics, AI research, custom forms, membership tiers, and flexible component sections."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain settings\n2. Configure membership tiers\n3. Customize airdrop submission forms\n4. Enable AI analysis features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community engagement features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/Screenshot%202024-02-09%203.38.42%20AM.png",
-                    "youtubevideo": "https://youtube.com/watch?v=example-slack"
-                }
-            },
-            {
-                "id": "agency-hub",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
-                    "name": "Agency Hub",
-                    "type": "Marketplace",
-                    "provider": "AgencySolutions",
-                    "description": "Launch a comprehensive agency directory with AI matching, analytics, and verified reviews.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Build the ultimate agency marketplace with powerful features: Analytics dashboard, Content management, Custom forms, Membership tiers, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Agencies can showcase work while clients can find perfect matches."
-                },
-                "howItWorks": {
-                    "content": "Agencies create profiles and showcase work while clients can search, review, and connect. Features include verified reviews, upvoting system, and staff recommendations. Platform includes analytics, AI matching, custom forms, membership options, and flexible component sections."
-                },
-                "configuration": {
-                    "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize agency profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable review and engagement features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
-                    "youtubevideo": "https://youtube.com/watch?v=agency-hub-intro"
-                }
-            },
-            {
-                "id": "opensource-alternatives",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/Open Source Alternatives.png",
-                    "name": "Open Source Alternatives",
-                    "type": "Marketplace",
-                    "provider": "Open Source",
-                    "description": "Create a comprehensive directory of open-source alternatives with AI recommendations and community insights.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Launch a platform for discovering open-source alternatives with powerful features: Analytics dashboard, Content management, Forms system, Premium memberships, AI-powered recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can compare options and share experiences."
-                },
-                "howItWorks": {
-                    "content": "Users discover and compare open-source alternatives through community-driven insights. Features include software comparisons, reviews, upvoting, and staff recommendations. Powered by analytics, AI matching, custom forms, membership tiers, and flexible component sections."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize submission forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable community features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/Open Source Alternatives.png",
-                    "youtubevideo": "https://youtube.com/watch?v=support-groups-events-demo"
-                }
-            },
-            {
-                "id": "top-talent-hub",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-                    "name": "Top Talent Hub",
-                    "type": "Marketplace",
-                    "provider": "TalentInc",
-                    "description": "Build a premium talent network with AI matching, analytics, and verified professional profiles.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Create an elite talent platform with comprehensive features: Analytics dashboard, Content management, Professional profile forms, Tiered memberships, AI-powered talent matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable professionals to showcase expertise while companies discover top talent."
-                },
-                "howItWorks": {
-                    "content": "Professionals create verified profiles while companies can search and connect. Features include skill verification, endorsements, upvoting system, and staff recommendations. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable verification features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-                    "youtubevideo": "https://youtube.com/watch?v=top-talent-hub-demo"
-                }
-            },
-            {
-                "id": "events-website",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/eventstown.vercel.app_.png",
-                    "name": "Events Website",
-                    "type": "Marketplace",
-                    "provider": "Eventify",
-                    "description": "Launch a comprehensive events platform with AI recommendations, analytics, and community features.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Create a powerful events marketplace with advanced features: Analytics dashboard, Content management, Event submission forms, Tiered memberships, AI-powered event recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable event discovery and community engagement."
-                },
-                "howItWorks": {
-                    "content": "Organizers list events while attendees discover and bookmark interests. Features include event ratings, upvoting system, and staff picks. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections."
-                },
-                "configuration": {
-                    "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize event forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community tools"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/eventstown.vercel.app_.png",
-                    "youtubevideo": "https://youtube.com/watch?v=events-website-setup"
-                }
-            },
-            {
-                "id": "solo-story",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/solo story.png",
-                    "name": "Solo Story",
-                    "type": "Marketplace",
-                    "provider": "StartupJourney",
-                    "description": "Build a founder stories platform with AI insights, analytics, and community engagement.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Launch an entrepreneur story-sharing platform with powerful features: Analytics dashboard, Content management, Story submission forms, Premium memberships, AI-powered insights, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect founders and share valuable experiences."
-                },
-                "howItWorks": {
-                    "content": "Entrepreneurs share journeys while readers discover insights. Features include story collections, upvoting system, and curated recommendations. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize story forms\n4. Enable AI insights\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/solo story.png",
-                    "youtubevideo": "https://youtube.com/watch?v=starter-story-interview"
-                }
-            },
-            {
-                "id": "apk-store",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/apkwork.png",
-                    "name": "APK Store",
-                    "type": "Marketplace",
-                    "provider": "DroidMarket",
-                    "description": "Create a comprehensive Android app marketplace with AI recommendations, analytics, and community reviews.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Build a powerful APK marketplace with advanced features: Analytics dashboard, Content management, App submission forms, Premium memberships, AI-powered app recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable users to discover and review Android applications."
-                },
-                "howItWorks": {
-                    "content": "Developers can list apps while users discover and review them. Features include app ratings, upvoting system, and staff picks. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections for showcasing apps."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain\n2. Configure membership tiers\n3. Customize app submission forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable review features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/apkwork.png",
-                    "youtubevideo": "https://youtube.com/watch?v=apk-store-demo"
-                }
-            },
-            {
-                "id": "vcsheet",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-                    "name": "VCSheet",
-                    "type": "Marketplace",
-                    "provider": "InvestorTools",
-                    "description": "Launch a venture capital database with AI insights, analytics, and investment tracking.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Create a comprehensive VC insights platform with powerful features: Analytics dashboard, Content management, Investment tracking forms, Premium memberships, AI-powered investment analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Track deals and discover opportunities."
-                },
-                "howItWorks": {
-                    "content": "Users can track investments and discover opportunities. Features include deal tracking, upvoting system, and expert insights. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for investment data."
-                },
-                "configuration": {
-                    "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize tracking forms\n4. Enable AI insights\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable deal tracking"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-                    "youtubevideo": "https://youtube.com/watch?v=vcsheet-demo"
-                }
-            },
-            {
-                "id": "goodmarketing",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/template_images/goodmarketing.png",
-                    "name": "Good Marketing",
-                    "type": "Directory",
-                    "provider": "ChatConnect",
-                    "description": "Build a marketing insights platform with AI analysis, analytics, and expert strategies.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Launch a comprehensive marketing resource platform with advanced features: Analytics dashboard, Content management, Strategy submission forms, Premium memberships, AI-powered marketing insights, Custom integrations, Component-based sections, Notion sync, and Custom domains. Share and discover effective marketing strategies."
-                },
-                "howItWorks": {
-                    "content": "Marketers share strategies while users discover proven tactics. Features include case studies, upvoting system, and expert recommendations. Powered by analytics, AI insights, custom forms, membership tiers, and flexible component sections for marketing content."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize content forms\n4. Enable AI analysis\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community features"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/template_images/goodmarketing.png",
-                    "youtubevideo": "https://youtube.com/watch?v=messaging-platforms-setup"
-                }
-            },
-            {
-                "id": "linkpool",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-                    "name": "LinkPool",
-                    "type": "Directory",
-                    "provider": "LinkPool",
-                    "description": "Create a high-quality backlink directory with AI analysis, analytics, and SEO insights.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Build a comprehensive backlink resource platform with powerful features: Analytics dashboard, Content management, Link submission forms, Premium memberships, AI-powered link analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover and share valuable backlink opportunities."
-                },
-                "howItWorks": {
-                    "content": "Users can discover and share high-quality backlink sources. Features include DA checking, upvoting system, and expert verifications. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for link organization."
-                },
-                "configuration": {
-                    "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize submission forms\n4. Enable AI analysis\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable verification tools"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-                    "youtubevideo": "https://youtube.com/watch?v=saas-boilerplates-demo"
-                }
-            },
-            {
-                "id": "mental-health-blogs",
-                "product": {
-                    "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-                    "name": "Mental Health Blogs",
-                    "type": "Blog",
-                    "provider": "MindfulBlogs",
-                    "description": "Launch a mental health content platform with AI insights, analytics, and community support.",
-                    "callToCopy": {
-                        "text": "Deploy Template",
-                        "link": "https://example.com/install-arcade-BoringSites"
-                    },
-                    "ViewDemo": {
-                        "text": "View Demo",
-                        "link": "https://remote-jobs.com"
-                    }
-                },
-                "overview": {
-                    "content": "Create a supportive mental health blogging platform with comprehensive features: Analytics dashboard, Content management, Blog submission forms, Premium memberships, AI-powered content recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Share experiences and insights."
-                },
-                "howItWorks": {
-                    "content": "Writers share mental health content while readers find relevant resources. Features include content curation, upvoting system, and expert verification. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections."
-                },
-                "configuration": {
-                    "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize blog forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community tools"
-                },
-                "proof": {
-                    "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-                    "youtubevideo": "https://youtube.com/watch?v=mental-health-blogs-intro"
-                }
+            "ViewDemo": {
+              "text": "View Demo",
+              "link": "https://blockchaingrants.org?duplicate=true"
             }
-        ]
+          },
+          "overview": {
+            "content": "Create a powerful blockchain grants platform with comprehensive features including analytics, content management, membership systems, and AI support. Built for SEO with user engagement features like upvotes, bookmarks, and personalized recommendations. Seamlessly sync with Notion and customize with flexible component sections."
+          },
+          "howItWorks": {
+            "content": "Users can browse, upvote, and bookmark grants while logged in. Staff can suggest personalized listings to users. Features include: Analytics dashboard, Forms builder, Memberships & Paywall, Boring AI support, Custom script integration, Component-based sections (carousel, testimonials, pricing), Branding options, Notion sync, and Custom domain setup."
+          },
+          "configuration": {
+            "content": "1. Set up your branding and domain\n2. Configure membership tiers and paywalls\n3. Customize sections using the component creator\n4. Enable AI features and staff suggestions\n5. Set up Notion sync for content\n6. Add custom scripts and iframe embeds\n7. Configure analytics tracking\n8. Customize forms and user engagement features"
+          },
+          "proof": {
+            "screenshot": "https://dazzling-cat.netlify.app/template_images/blockchaingrants.png",
+            "youtubevideo": "https://youtube.com/watch?v=blockchain-grants-intro"
+          }
+        },
+        {
+          "id": "remote-jobs",
+          "product": {
+            "logo": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+            "name": "Remote Jobs",
+            "type": "Marketplace",
+            "provider": "Vaibhav",
+            "description": "Launch a complete remote jobs marketplace with AI-powered matching, analytics, and membership features.",
+            "callToCopy": {
+              "text": "Deploy Template",
+              "link": "https://example.com/install-arcade-BoringSites"
+            },
+            "ViewDemo": {
+              "text": "View Demo",
+              "link": "https://remote-jobs.com"
+            }
+          },
+          "overview": {
+            "content": "Build a comprehensive remote jobs platform with powerful features: Built-in analytics, Content management, Forms system, Memberships & Paywall, AI-powered job matching, Custom integrations, Component-based design, Notion sync, and Custom domains. Users can save jobs, upvote listings, and receive personalized recommendations."
+          },
+          "howItWorks": {
+            "content": "Employers and job seekers get personalized experiences. Features include user profiles, job bookmarking, upvoting system, and staff recommendations. The platform includes analytics, AI assistance, custom forms, membership tiers, and flexible component sections. Notion sync enables easy content management."
+          },
+          "configuration": {
+            "content": "1. Customize branding and domain settings\n2. Set up membership levels and paywalls\n3. Configure job listing forms\n4. Enable AI features and matching\n5. Add custom sections using component creator\n6. Set up Notion integration\n7. Configure analytics and tracking\n8. Customize user engagement features"
+          },
+          "proof": {
+            "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+            "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
+          }
+        },
+        {
+          "id": "web3jobs",
+          "product": {
+            "logo": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
+            "name": "Web3 Jobs",
+            "type": "Marketplace",
+            "provider": "Vaibhav",
+            "description": "Create a Web3 job board with AI-powered matching, analytics, and comprehensive engagement features.",
+            "callToCopy": {
+              "text": "Deploy Template",
+              "link": "https://example.com/install-arcade-BoringSites"
+            },
+            "ViewDemo": {
+              "text": "View Demo",
+              "link": "https://remote-jobs.com"
+            }
+          },
+          "overview": {
+            "content": "Launch a specialized Web3 jobs marketplace with advanced features: Analytics dashboard, Content management, Custom forms, Membership system, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can save jobs, upvote listings, and get personalized recommendations."
+          },
+          "howItWorks": {
+            "content": "Connect Web3 employers with talent through a feature-rich platform. Includes user profiles, job bookmarking, upvoting, and staff recommendations. Powered by analytics, AI assistance, custom forms, membership options, and flexible component sections. Seamless Notion integration for content management."
+          },
+          "configuration": {
+            "content": "1. Set up branding and domain configuration\n2. Configure membership tiers\n3. Customize job listing forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable user engagement features"
+          },
+          "proof": {
+            "screenshot": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
+            "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
+          }
+        },
+        {
+          "id": "remote-jobs",
+          "product": {
+            "logo": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+            "name": "Remote Jobs",
+            "type": "Marketplace",
+            "provider": "Vaibhav",
+            "description": "Launch a complete remote jobs marketplace with AI-powered matching, analytics, and membership features.",
+            "callToCopy": {
+              "text": "Deploy Template",
+              "link": "https://example.com/install-arcade-BoringSites"
+            },
+            "ViewDemo": {
+              "text": "View Demo",
+              "link": "https://remote-jobs.com"
+            }
+          },
+          "overview": {
+            "content": "Build a comprehensive remote jobs platform with powerful features: Built-in analytics, Content management, Forms system, Memberships & Paywall, AI-powered job matching, Custom integrations, Component-based design, Notion sync, and Custom domains. Users can save jobs, upvote listings, and receive personalized recommendations."
+          },
+          "howItWorks": {
+            "content": "Employers and job seekers get personalized experiences. Features include user profiles, job bookmarking, upvoting system, and staff recommendations. The platform includes analytics, AI assistance, custom forms, membership tiers, and flexible component sections. Notion sync enables easy content management."
+          },
+          "configuration": {
+            "content": "1. Customize branding and domain settings\n2. Set up membership levels and paywalls\n3. Configure job listing forms\n4. Enable AI features and matching\n5. Add custom sections using component creator\n6. Set up Notion integration\n7. Configure analytics and tracking\n8. Customize user engagement features"
+          },
+          "proof": {
+            "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+            "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
+          }
+        },
+        {
+          "id": "web3jobs",
+          "product": {
+            "logo": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
+            "name": "Web3 Jobs",
+            "type": "Marketplace",
+            "provider": "Vaibhav",
+            "description": "Create a Web3 job board with AI-powered matching, analytics, and comprehensive engagement features.",
+            "callToCopy": {
+              "text": "Deploy Template",
+              "link": "https://example.com/install-arcade-BoringSites"
+            },
+            "ViewDemo": {
+              "text": "View Demo",
+              "link": "https://remote-jobs.com"
+            }
+          },
+          "overview": {
+            "content": "Launch a specialized Web3 jobs marketplace with advanced features: Analytics dashboard, Content management, Custom forms, Membership system, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can save jobs, upvote listings, and get personalized recommendations."
+          },
+          "howItWorks": {
+            "content": "Connect Web3 employers with talent through a feature-rich platform. Includes user profiles, job bookmarking, upvoting, and staff recommendations. Powered by analytics, AI assistance, custom forms, membership options, and flexible component sections. Seamless Notion integration for content management."
+          },
+          "configuration": {
+            "content": "1. Set up branding and domain configuration\n2. Configure membership tiers\n3. Customize job listing forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable user engagement features"
+          },
+          "proof": {
+            "screenshot": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
+            "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
+          }
+        },
+    {
+        "id": "airdropwork",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/template_images/airdrop.work.png",
+          "name": "Crypto Airdrop Aggregator",
+          "type": "Marketplace",
+          "provider": "BoringSites",
+          "description": "Build a comprehensive crypto airdrop platform with AI-powered insights, analytics, and community features.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Create a powerful airdrop discovery platform with advanced features: Analytics dashboard, Content management, Forms system, Premium memberships, AI-powered airdrop analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can track airdrops, receive alerts, and get personalized recommendations."
+        },
+        "howItWorks": {
+          "content": "Users discover and track upcoming airdrops with community-driven insights. Features include airdrop tracking, verification system, upvoting, and staff recommendations. Powered by analytics, AI research, custom forms, membership tiers, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Set up branding and domain settings\n2. Configure membership tiers\n3. Customize airdrop submission forms\n4. Enable AI analysis features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community engagement features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/Screenshot%202024-02-09%203.38.42%20AM.png",
+          "youtubevideo": "https://youtube.com/watch?v=example-slack"
+        }
+      },
+      {
+        "id": "agency-hub",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
+          "name": "Agency Hub",
+          "type": "Marketplace",
+          "provider": "AgencySolutions",
+          "description": "Launch a comprehensive agency directory with AI matching, analytics, and verified reviews.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Build the ultimate agency marketplace with powerful features: Analytics dashboard, Content management, Custom forms, Membership tiers, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Agencies can showcase work while clients can find perfect matches."
+        },
+        "howItWorks": {
+          "content": "Agencies create profiles and showcase work while clients can search, review, and connect. Features include verified reviews, upvoting system, and staff recommendations. Platform includes analytics, AI matching, custom forms, membership options, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize agency profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable review and engagement features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/agencydatahub.vercel.app_.png",
+          "youtubevideo": "https://youtube.com/watch?v=agency-hub-intro"
+        }
+      },
+      {
+        "id": "opensource-alternatives",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/template_images/Open Source Alternatives.png",
+          "name": "Open Source Alternatives",
+          "type": "Marketplace",
+          "provider": "Open Source",
+          "description": "Create a comprehensive directory of open-source alternatives with AI recommendations and community insights.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Launch a platform for discovering open-source alternatives with powerful features: Analytics dashboard, Content management, Forms system, Premium memberships, AI-powered recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can compare options and share experiences."
+        },
+        "howItWorks": {
+          "content": "Users discover and compare open-source alternatives through community-driven insights. Features include software comparisons, reviews, upvoting, and staff recommendations. Powered by analytics, AI matching, custom forms, membership tiers, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize submission forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable community features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/template_images/Open Source Alternatives.png",
+          "youtubevideo": "https://youtube.com/watch?v=support-groups-events-demo"
+        }
+      },
+    {
+        "id": "top-talent-hub",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "name": "Top Talent Hub",
+          "type": "Marketplace",
+          "provider": "TalentInc",
+          "description": "Build a premium talent network with AI matching, analytics, and verified professional profiles.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Create an elite talent platform with comprehensive features: Analytics dashboard, Content management, Professional profile forms, Tiered memberships, AI-powered talent matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable professionals to showcase expertise while companies discover top talent."
+        },
+        "howItWorks": {
+          "content": "Professionals create verified profiles while companies can search and connect. Features include skill verification, endorsements, upvoting system, and staff recommendations. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable verification features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "youtubevideo": "https://youtube.com/watch?v=top-talent-hub-demo"
+        }
+      },
+      {
+        "id": "events-website",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/eventstown.vercel.app_.png",
+          "name": "Events Website",
+          "type": "Marketplace",
+          "provider": "Eventify",
+          "description": "Launch a comprehensive events platform with AI recommendations, analytics, and community features.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Create a powerful events marketplace with advanced features: Analytics dashboard, Content management, Event submission forms, Tiered memberships, AI-powered event recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable event discovery and community engagement."
+        },
+        "howItWorks": {
+          "content": "Organizers list events while attendees discover and bookmark interests. Features include event ratings, upvoting system, and staff picks. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize event forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community tools"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/eventstown.vercel.app_.png",
+          "youtubevideo": "https://youtube.com/watch?v=events-website-setup"
+        }
+      },
+      {
+        "id": "solo-story",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/template_images/solo story.png",
+          "name": "Solo Story",
+          "type": "Marketplace",
+          "provider": "StartupJourney",
+          "description": "Build a founder stories platform with AI insights, analytics, and community engagement.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Launch an entrepreneur story-sharing platform with powerful features: Analytics dashboard, Content management, Story submission forms, Premium memberships, AI-powered insights, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect founders and share valuable experiences."
+        },
+        "howItWorks": {
+          "content": "Entrepreneurs share journeys while readers discover insights. Features include story collections, upvoting system, and curated recommendations. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize story forms\n4. Enable AI insights\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/template_images/solo story.png",
+          "youtubevideo": "https://youtube.com/watch?v=starter-story-interview"
+        }
+      },
+    {
+        "id": "apk-store",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/template_images/apkwork.png",
+          "name": "APK Store",
+          "type": "Marketplace",
+          "provider": "DroidMarket",
+          "description": "Create a comprehensive Android app marketplace with AI recommendations, analytics, and community reviews.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Build a powerful APK marketplace with advanced features: Analytics dashboard, Content management, App submission forms, Premium memberships, AI-powered app recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable users to discover and review Android applications."
+        },
+        "howItWorks": {
+          "content": "Developers can list apps while users discover and review them. Features include app ratings, upvoting system, and staff picks. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections for showcasing apps."
+        },
+        "configuration": {
+          "content": "1. Set up branding and domain\n2. Configure membership tiers\n3. Customize app submission forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable review features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/template_images/apkwork.png",
+          "youtubevideo": "https://youtube.com/watch?v=apk-store-demo"
+        }
+      },
+      {
+        "id": "vcsheet",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "name": "VCSheet",
+          "type": "Marketplace",
+          "provider": "InvestorTools",
+          "description": "Launch a venture capital database with AI insights, analytics, and investment tracking.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Create a comprehensive VC insights platform with powerful features: Analytics dashboard, Content management, Investment tracking forms, Premium memberships, AI-powered investment analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Track deals and discover opportunities."
+        },
+        "howItWorks": {
+          "content": "Users can track investments and discover opportunities. Features include deal tracking, upvoting system, and expert insights. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for investment data."
+        },
+        "configuration": {
+          "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize tracking forms\n4. Enable AI insights\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable deal tracking"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "youtubevideo": "https://youtube.com/watch?v=vcsheet-demo"
+        }
+      },
+      {
+        "id": "goodmarketing",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/template_images/goodmarketing.png",
+          "name": "Good Marketing",
+          "type": "Directory",
+          "provider": "ChatConnect",
+          "description": "Build a marketing insights platform with AI analysis, analytics, and expert strategies.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Launch a comprehensive marketing resource platform with advanced features: Analytics dashboard, Content management, Strategy submission forms, Premium memberships, AI-powered marketing insights, Custom integrations, Component-based sections, Notion sync, and Custom domains. Share and discover effective marketing strategies."
+        },
+        "howItWorks": {
+          "content": "Marketers share strategies while users discover proven tactics. Features include case studies, upvoting system, and expert recommendations. Powered by analytics, AI insights, custom forms, membership tiers, and flexible component sections for marketing content."
+        },
+        "configuration": {
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize content forms\n4. Enable AI analysis\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/template_images/goodmarketing.png",
+          "youtubevideo": "https://youtube.com/watch?v=messaging-platforms-setup"
+        }
+      },
+      {
+        "id": "linkpool",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "name": "LinkPool",
+          "type": "Directory",
+          "provider": "LinkPool",
+          "description": "Create a high-quality backlink directory with AI analysis, analytics, and SEO insights.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Build a comprehensive backlink resource platform with powerful features: Analytics dashboard, Content management, Link submission forms, Premium memberships, AI-powered link analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover and share valuable backlink opportunities."
+        },
+        "howItWorks": {
+          "content": "Users can discover and share high-quality backlink sources. Features include DA checking, upvoting system, and expert verifications. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for link organization."
+        },
+        "configuration": {
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize submission forms\n4. Enable AI analysis\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable verification tools"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "youtubevideo": "https://youtube.com/watch?v=saas-boilerplates-demo"
+        }
+      },
+      {
+        "id": "mental-health-blogs",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "name": "Mental Health Blogs",
+          "type": "Blog",
+          "provider": "MindfulBlogs",
+          "description": "Launch a mental health content platform with AI insights, analytics, and community support.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
+        },
+        "overview": {
+          "content": "Create a supportive mental health blogging platform with comprehensive features: Analytics dashboard, Content management, Blog submission forms, Premium memberships, AI-powered content recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Share experiences and insights."
+        },
+        "howItWorks": {
+          "content": "Writers share mental health content while readers find relevant resources. Features include content curation, upvoting system, and expert verification. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize blog forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community tools"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "youtubevideo": "https://youtube.com/watch?v=mental-health-blogs-intro"
+        }
+      }]
     },
     {
         "id": "product-hunt",
         "product": {
-            "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-            "name": "Product Hunt",
-            "type": "Marketplace",
-            "provider": "HuntTech",
-            "description": "Create a product discovery platform with AI recommendations, analytics, and community engagement.",
-            "callToCopy": {
-                "text": "Deploy Template",
-                "link": "https://example.com/install-arcade-BoringSites"
-            },
-            "ViewDemo": {
-                "text": "View Demo",
-                "link": "https://remote-jobs.com"
-            }
+          "logo": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "name": "Product Hunt",
+          "type": "Marketplace",
+          "provider": "HuntTech",
+          "description": "Create a product discovery platform with AI recommendations, analytics, and community engagement.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "ViewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          }
         },
         "overview": {
-            "content": "Launch a dynamic product discovery platform with comprehensive features: Analytics dashboard, Content management, Product submission forms, Premium memberships, AI-powered product recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable makers to showcase products and users to discover innovations."
+          "content": "Launch a dynamic product discovery platform with comprehensive features: Analytics dashboard, Content management, Product submission forms, Premium memberships, AI-powered product recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable makers to showcase products and users to discover innovations."
         },
         "howItWorks": {
-            "content": "Makers can launch products while users discover and review them. Features include daily rankings, upvoting system, and staff picks. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections for product showcases."
+          "content": "Makers can launch products while users discover and review them. Features include daily rankings, upvoting system, and staff picks. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections for product showcases."
         },
         "configuration": {
-            "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize product forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable launch features"
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize product forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable launch features"
         },
         "proof": {
-            "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
-            "youtubevideo": "https://youtube.com/watch?v=product-hunt-launch"
-        }
-    }
-]
+          "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
+          "youtubevideo": "https://youtube.com/watch?v=product-hunt-launch"
+         }}
+      
+    ]
+      
+    

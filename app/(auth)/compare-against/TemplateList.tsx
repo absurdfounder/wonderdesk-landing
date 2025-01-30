@@ -53,7 +53,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
   useEffect(() => {
     // Fetch all templates from the JSON data
     const allTemplates = templateData.template_library as Template[];
-    setTemplates(allTemplates);
+    setTemplates(allTemplates || []); // Ensure we always set an array
   }, []);
 
   useEffect(() => {
@@ -61,16 +61,26 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
   }, [initialSelectedType]);
 
   useEffect(() => {
+    // Ensure templates is an array before filtering
+    if (!Array.isArray(templates)) {
+      setDisplayedTemplates([]);
+      return;
+    }
+
     // Filter templates based on selected type
     const filteredTemplates = selectedType === 'all'
       ? templates 
       : templates.filter(template => {
-          const templateType = template.type || template.product?.type;
+          if (!template) return false;
+          const templateType = template.type || template?.product?.type;
           return templateType && templateType.toLowerCase() === selectedType.toLowerCase();
         });
 
+    // Ensure filteredTemplates is an array before slicing
+    const templatesArray = Array.isArray(filteredTemplates) ? filteredTemplates : [];
+    
     // Limit to 6 templates
-    setDisplayedTemplates(filteredTemplates.slice(0, 6));
+    setDisplayedTemplates(templatesArray.slice(0, 6));
   }, [selectedType, templates]);
 
   return (
