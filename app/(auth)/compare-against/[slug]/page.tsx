@@ -48,7 +48,7 @@ interface FilterBySlugType {
   howItWorks?: ContentSection;
   configuration?: ContentSection;
   proof?: Proof;
-  comparison_table: ComparisonFeature[];
+  comparison_table?: ComparisonFeature[]; // Make optional if not always present
 }
 
 export async function generateMetadata(
@@ -60,10 +60,7 @@ export async function generateMetadata(
   const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
 
   if (!filteredContent) {
-    return {
-      title: 'BoringSites vs Unknown Template',
-      description: 'Compare BoringSites to an unknown template',
-    };
+    throw new Error('Comparision not found');
   }
 
   return {
@@ -84,7 +81,6 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
     return <Loading />;
   }
 
-  const transformedData = _transformDataToPostPageView(filteredContent);
 
   return (
     <section className="bg-gradient-to-b from-slate-100 to-white">
