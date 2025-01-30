@@ -20,6 +20,7 @@ interface Product {
   logo: string;
   name: string;
   provider: string;
+  type: string;
   description: string;
   callToCopy: CallToCopy;
   ViewDemo: ViewDemo;
@@ -42,6 +43,8 @@ interface FilterBySlugType {
   configuration: ContentSection;
   proof: Proof;
 }
+
+type Template = FilterBySlugType;
 
 export async function generateMetadata(
   { params }: { params: { slug: string } },
@@ -67,7 +70,10 @@ export async function generateMetadata(
   };
 }
 
-async function getData(slug: string) {
+async function getData(slug: string): Promise<{ 
+  filterBySlug: FilterBySlugType; 
+  postPageView: any; 
+} | null> {
   const content = await _loadFromJson();
   const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
   if (filteredContent) {
@@ -101,12 +107,22 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
           <div className="flex flex-col sm:flex-row mt-4 gap-4">
             <div className="flex space-x-2 items-center">
-              <Link href={filterBySlug.product.callToCopy.link} className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
+              <Link 
+                href={filterBySlug.product.callToCopy.link} 
+                className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" 
+                rel="noopener noreferrer" 
+                target="_blank"
+              >
                 <span>{filterBySlug.product.callToCopy.text}</span>
               </Link>
             </div>
             <div className="flex space-x-2 items-center">
-              <Link href={filterBySlug.product.ViewDemo.link} className="bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
+              <Link 
+                href={filterBySlug.product.ViewDemo.link} 
+                className="bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" 
+                rel="noopener noreferrer" 
+                target="_blank"
+              >
                 <span>{filterBySlug.product.ViewDemo.text}</span>
               </Link>
             </div>
@@ -138,7 +154,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <p className="text-md text-slate-600">{filterBySlug.configuration.content}</p>
       </div>
 
-      {postPageView.map((item, index) => renderContent(item, index))}
+      {postPageView.map((item: any, index: number) => renderContent(item, index))}
     </div>
   );
 }
