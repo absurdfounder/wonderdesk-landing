@@ -724,24 +724,7 @@ const Pricing: React.FC = () => {
                     <p className="text-lg font-medium text-slate-500 ml-2">  user / mo</p>
                   </div>
                 </div>
-                <hr className="border-slate-200" />
-                <div className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-3">
-                    <FileText className="h-8 w-8 text-orange-600" />
-                    <div className="grid">
-                      <h2 className="text-xl font-semibold tracking-tight text-slate-900">
-                        Extra 5 Websites
-                      </h2>
-                      <p className="text-sm text-slate-600">Each plan comes with 5 sites, you can get more.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-0.5">
-                    <p className="text-3xl font-semibold tracking-tight text-slate-900">
-                      $10
-                    </p>
-                    <p className="text-lg font-medium text-slate-500 ml-2"> / mo</p>
-                  </div>
-                </div>
+
 
                 <hr className="border-slate-200" />
                 <div className="flex items-center justify-between gap-6">
