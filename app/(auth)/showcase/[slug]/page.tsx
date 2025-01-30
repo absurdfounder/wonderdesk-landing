@@ -24,6 +24,7 @@ interface Product {
   description: string;
   callToCopy: CallToCopy;
   viewDemo: viewDemo;
+  callToAction:CallToCopy;
 }
 
 interface ContentSection {
@@ -93,6 +94,10 @@ async function getData(slug: string): Promise<{
   const content = await _loadFromJson();
   const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
   if (filteredContent) {
+    // Add callToAction if it doesn't exist
+    if (!filteredContent.product.callToAction) {
+      filteredContent.product.callToAction = filteredContent.product.callToCopy;
+    }
     const transformedData = _transformDataToPostPageView(filteredContent);
     return { filterBySlug: filteredContent, postPageView: transformedData };
   }
