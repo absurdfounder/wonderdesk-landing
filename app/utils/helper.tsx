@@ -50,9 +50,28 @@ interface IntegrationData {
   integration_library: Template[];
 }
 
+
+
 interface ComparisonData {
-  comparison_library: any[];
+  comparision_library: {
+    id: string;
+    product: {
+      logo: string;
+      name: string;
+      provider: string;
+      description: string;
+      heroimage: string;
+    };
+    comparison_table: {
+      feature: string;
+      feature_value: {
+        Item: boolean;
+        Notion: boolean;
+      };
+    }[];
+  }[];
 }
+
 
 interface ContentItem {
   type: string;
@@ -164,7 +183,7 @@ export const _loadFromJson = async (template: boolean = true): Promise<Template[
 
 export const _loadFromJsonComparison = async () => {
   try {
-    return (comparisonData as ComparisonData).comparison_library;
+    return (comparisonData as ComparisonData).comparision_library;
   } catch (error) {
     console.error("Failed to load templates", error);
     return [];
