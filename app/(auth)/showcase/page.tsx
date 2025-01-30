@@ -106,7 +106,7 @@ export default async function Template() {
                     <div className="items-start">
                       <div className="m-auto flex justify-center items-center">
                       <Image
-                        className="w-auto mx-auto"
+                        className="w-full"
                         width={100}
                         height={100}
                         src={template?.product?.logo}
