@@ -1,17 +1,73 @@
 import Image from 'next/image';
-
-import integrationData from '../../public/integration_data.json';
-import templateData from '../../public/showcase_data.json';
-import comparisonData from '../../public/comparison_data.json';
 import Link from 'next/link';
 
+// Type definitions
+interface CallToAction {
+  text: string;
+  link: string;
+}
 
-  const goBack = () => {
-    window.history.back();
-  };
+interface Product {
+  logo: string;
+  name: string;
+  type: string;
+  provider: string;
+  description: string;
+  callToCopy: CallToAction;
+  ViewDemo: CallToAction;
+}
 
+interface ContentSection {
+  content: string;
+}
 
-const renderContent = (item: any, index: number) => {
+interface Proof {
+  screenshot: string;
+  youtubevideo: string;
+}
+
+interface Template {
+  id: string;
+  product: Product;
+  overview: ContentSection;
+  howItWorks: ContentSection;
+  configuration: ContentSection;
+  proof: Proof;
+}
+
+interface TemplateData {
+  template_library: Template[];
+}
+
+interface IntegrationData {
+  integration_library: any[]; // Define proper type if needed
+}
+
+interface ComparisonData {
+  comparision_library: any[]; // Define proper type if needed
+}
+
+// Import with type assertions
+import templateData from '../../public/showcase_data.json';
+import integrationData from '../../public/integration_data.json';
+import comparisonData from '../../public/comparison_data.json';
+
+interface ContentItem {
+  type: string;
+  text?: string;
+  url?: string;
+  alt?: string;
+  items?: string[];
+  href?: string;
+  code?: string;
+  src?: string;
+}
+
+export const goBack = () => {
+  window.history.back();
+};
+
+export const renderContent = (item: ContentItem, index: number) => {
   switch (item.type) {
     case 'heading':
       return <h3 key={index} className="text-xl font-bold text-slate-900 mt-4 mb-2">{item.text}</h3>;
@@ -20,20 +76,38 @@ const renderContent = (item: any, index: number) => {
     case 'image':
       return (
         <div key={index} className="flex justify-center">
-          <Image width={1000} height={1000} src={item.url} unoptimized alt={item.alt} className="max-w-full h-auto rounded-lg shadow-md" />
+          <Image 
+            width={1000} 
+            height={1000} 
+            src={item.url || ''} 
+            unoptimized 
+            alt={item.alt || ''} 
+            className="max-w-full h-auto rounded-lg shadow-md" 
+          />
         </div>
-      ); case 'bold':
+      );
+    case 'bold':
       return <strong key={index} className="font-semibold">{item.text}</strong>;
     case 'list':
       return (
         <ul key={index} className="list-disc pl-5 space-y-1">
-          {item.items.map((listItem: string, listItemIndex: number) => (
+          {item.items?.map((listItem: string, listItemIndex: number) => (
             <li key={listItemIndex} className="text-slate-700">{listItem}</li>
           ))}
         </ul>
       );
     case 'link':
-      return <Link key={index} href={item.href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 underline">{item.text}</Link>;
+      return (
+        <Link 
+          key={index} 
+          href={item.href || '#'} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-blue-500 hover:text-blue-700 underline"
+        >
+          {item.text}
+        </Link>
+      );
     case 'blockquote':
       return <blockquote key={index} className="italic border-l-4 border-slate-200 pl-4 py-2 my-2">{item.text}</blockquote>;
     case 'code':
@@ -43,53 +117,77 @@ const renderContent = (item: any, index: number) => {
         </pre>
       );
     case 'video':
-      return <video key={index} width={1000} height={1000} src={item.src} loop className="w-full h-auto max-w-full rounded-lg shadow-md"></video>;
+      return (
+        <video 
+          key={index} 
+          width={1000} 
+          height={1000} 
+          src={item.src} 
+          loop 
+          className="w-full h-auto max-w-full rounded-lg shadow-md"
+        />
+      );
     case 'iframe':
-      return <iframe key={index} src={item.src} frameBorder="0" allowFullScreen className="w-full h-64 md:h-96 rounded-lg shadow-md"></iframe>;
+      return (
+        <iframe 
+          key={index} 
+          src={item.src} 
+          frameBorder="0" 
+          allowFullScreen 
+          className="w-full h-64 md:h-96 rounded-lg shadow-md"
+        />
+      );
     default:
       return null;
   }
 };
 
-
-
-const _loadFromJson = async (template: boolean = true) => {
+export const _loadFromJson = async (template: boolean = true): Promise<Template[] | any[]> => {
   try {
-    return template ? templateData?.template_library : integrationData.integration_library;
+    return template 
+      ? (templateData as TemplateData).template_library 
+      : (integrationData as IntegrationData).integration_library;
   } catch (error) {
     console.error("Failed to load templates", error);
     return [];
   }
 };
 
-
-const _loadFromJsonComparison = async () => {
+export const _loadFromJsonComparison = async () => {
   try {
-    return comparisonData.comparision_library;
+    return (comparisonData as ComparisonData).comparision_library;
   } catch (error) {
     console.error("Failed to load templates", error);
     return [];
   }
 };
 
-function _transformDataToPostPageView(dataObject: any) {
-  let postPageView = [];
+interface TransformedContent {
+  type: string;
+  text?: string;
+  url?: string;
+  alt?: string;
+  src?: string;
+}
 
-  if (dataObject.overview && dataObject.overview.content) {
+export const _transformDataToPostPageView = (dataObject: Template): TransformedContent[] => {
+  const postPageView: TransformedContent[] = [];
+
+  if (dataObject.overview?.content) {
     postPageView.push({
       type: 'paragraph',
       text: dataObject.overview.content
     });
   }
 
-  if (dataObject.howItWorks && dataObject.howItWorks.content) {
+  if (dataObject.howItWorks?.content) {
     postPageView.push({
       type: 'paragraph',
       text: dataObject.howItWorks.content
     });
   }
 
-  if (dataObject.configuration && dataObject.configuration.content) {
+  if (dataObject.configuration?.content) {
     postPageView.push({
       type: 'paragraph',
       text: dataObject.configuration.content
@@ -114,8 +212,4 @@ function _transformDataToPostPageView(dataObject: any) {
   }
 
   return postPageView;
-}
-
-
-
-export { renderContent,_loadFromJsonComparison ,_loadFromJson, goBack,_transformDataToPostPageView }
+};
