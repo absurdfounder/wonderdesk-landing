@@ -13,7 +13,7 @@
               "text": "Deploy Template",
               "link": "https://blockchaingrants.org?duplicate=true"
             },
-            "ViewDemo": {
+            "viewDemo": {
               "text": "View Demo",
               "link": "https://blockchaingrants.org?duplicate=true"
             }
@@ -45,7 +45,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -76,7 +76,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -107,7 +107,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -138,7 +138,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -169,7 +169,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -200,7 +200,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -231,7 +231,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -262,7 +262,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -293,7 +293,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -324,7 +324,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -355,7 +355,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -373,7 +373,6 @@
           "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
           "youtubevideo": "https://youtube.com/watch?v=mental-health-blogs-intro"
         }
-      }]
     },
     {
         "id": "product-hunt",
@@ -387,7 +386,7 @@
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
           },
-          "ViewDemo": {
+          "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
           }
@@ -404,8 +403,11 @@
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/workremotelyeverywhere.vercel.app.png",
           "youtubevideo": "https://youtube.com/watch?v=product-hunt-launch"
-         }}
+         }
+    }
       
-    ]
+]
+}
+]
       
     

@@ -7,6 +7,12 @@ interface CallToAction {
   link: string;
 }
 
+
+interface ViewDemo {
+  text: string;
+  link: string;
+}
+
 interface Product {
   logo: string;
   name: string;
@@ -14,7 +20,7 @@ interface Product {
   provider: string;
   description: string;
   callToCopy: CallToAction;
-  ViewDemo: CallToAction;
+  ViewDemo: ViewDemo;
 }
 
 interface ContentSection {

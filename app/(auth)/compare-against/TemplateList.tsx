@@ -13,6 +13,12 @@ interface CallToAction {
   link: string;
 }
 
+interface ViewDemo {
+  text: string;
+  link: string;
+}
+
+
 interface Product {
   name: string;
   logo: string;
@@ -20,7 +26,7 @@ interface Product {
   type: string;
   provider: string;
   callToCopy: CallToAction;
-  ViewDemo: CallToAction;
+  ViewDemo: ViewDemo;
 }
 
 interface Template {
