@@ -38,7 +38,7 @@
         "name": "Remote Jobs",
         "type": "Marketplace",
         "provider": "Vaibhav",
-        "description": "Get a website for listing remote jobs for job applicants.",
+        "description": "Launch a complete remote jobs marketplace with AI-powered matching, analytics, and membership features.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -49,13 +49,13 @@
         }
       },
       "overview": {
-        "content": "Arcade lets you create interactive product demos in minutes and turn all users into power users. Let users experience your product through interactive, guided demos. No more pausing and rewinding, users can progress at their own pace. This integration allows you to embed Arcade interactive demos into your BoringSites documentation."
+        "content": "Build a comprehensive remote jobs platform with powerful features: Built-in analytics, Content management, Forms system, Memberships & Paywall, AI-powered job matching, Custom integrations, Component-based design, Notion sync, and Custom domains. Users can save jobs, upvote listings, and receive personalized recommendations."
       },
       "howItWorks": {
-        "content": "Embedding an Arcade flow in your documentation is simple - just paste an Arcade flow link into the BoringSites editor. The app will turn the link into an Arcade embed showing your recorded demo."
+        "content": "Employers and job seekers get personalized experiences. Features include user profiles, job bookmarking, upvoting system, and staff recommendations. The platform includes analytics, AI assistance, custom forms, membership tiers, and flexible component sections. Notion sync enables easy content management."
       },
       "configuration": {
-        "content": "To install on a single space, navigate to integrations in sub-navigation. If you prefer to install the Arcade integration on multiple or all spaces, navigate to your organization settings and enable it from the integrations panel. This will give you access to the custom arcade block."
+        "content": "1. Customize branding and domain settings\n2. Set up membership levels and paywalls\n3. Configure job listing forms\n4. Enable AI features and matching\n5. Add custom sections using component creator\n6. Set up Notion integration\n7. Configure analytics and tracking\n8. Customize user engagement features"
       },
       "proof": {
         "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
@@ -69,7 +69,7 @@
         "name": "Web3 Jobs",
         "type": "Marketplace",
         "provider": "Vaibhav",
-        "description": "Get a website for listing web3, smart contract and blockchain jobs aggregated accross the thrid web.",
+        "description": "Create a Web3 job board with AI-powered matching, analytics, and comprehensive engagement features.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -80,27 +80,27 @@
         }
       },
       "overview": {
-        "content": "Arcade lets you create interactive product demos in minutes and turn all users into power users. Let users experience your product through interactive, guided demos. No more pausing and rewinding, users can progress at their own pace. This integration allows you to embed Arcade interactive demos into your BoringSites documentation."
+        "content": "Launch a specialized Web3 jobs marketplace with advanced features: Analytics dashboard, Content management, Custom forms, Membership system, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can save jobs, upvote listings, and get personalized recommendations."
       },
       "howItWorks": {
-        "content": "Embedding an Arcade flow in your documentation is simple - just paste an Arcade flow link into the BoringSites editor. The app will turn the link into an Arcade embed showing your recorded demo."
+        "content": "Connect Web3 employers with talent through a feature-rich platform. Includes user profiles, job bookmarking, upvoting, and staff recommendations. Powered by analytics, AI assistance, custom forms, membership options, and flexible component sections. Seamless Notion integration for content management."
       },
       "configuration": {
-        "content": "To install on a single space, navigate to integrations in sub-navigation. If you prefer to install the Arcade integration on multiple or all spaces, navigate to your organization settings and enable it from the integrations panel. This will give you access to the custom arcade block."
+        "content": "1. Set up branding and domain configuration\n2. Configure membership tiers\n3. Customize job listing forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable user engagement features"
       },
       "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+        "screenshot": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
         "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
       }
     },
     {
-      "id": "ai-jobs",
+      "id": "remote-jobs",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/aijobs24.png",
-        "name": "AI Jobs 24",
+        "logo": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
+        "name": "Remote Jobs",
         "type": "Marketplace",
         "provider": "Vaibhav",
-        "description": "Get a website for listing AI, ML and LLM jobs, invest your time in the future of technology.",
+        "description": "Launch a complete remote jobs marketplace with AI-powered matching, analytics, and membership features.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -111,13 +111,13 @@
         }
       },
       "overview": {
-        "content": "Arcade lets you create interactive product demos in minutes and turn all users into power users. Let users experience your product through interactive, guided demos. No more pausing and rewinding, users can progress at their own pace. This integration allows you to embed Arcade interactive demos into your BoringSites documentation."
+        "content": "Build a comprehensive remote jobs platform with powerful features: Built-in analytics, Content management, Forms system, Memberships & Paywall, AI-powered job matching, Custom integrations, Component-based design, Notion sync, and Custom domains. Users can save jobs, upvote listings, and receive personalized recommendations."
       },
       "howItWorks": {
-        "content": "Embedding an Arcade flow in your documentation is simple - just paste an Arcade flow link into the BoringSites editor. The app will turn the link into an Arcade embed showing your recorded demo."
+        "content": "Employers and job seekers get personalized experiences. Features include user profiles, job bookmarking, upvoting system, and staff recommendations. The platform includes analytics, AI assistance, custom forms, membership tiers, and flexible component sections. Notion sync enables easy content management."
       },
       "configuration": {
-        "content": "To install on a single space, navigate to integrations in sub-navigation. If you prefer to install the Arcade integration on multiple or all spaces, navigate to your organization settings and enable it from the integrations panel. This will give you access to the custom arcade block."
+        "content": "1. Customize branding and domain settings\n2. Set up membership levels and paywalls\n3. Configure job listing forms\n4. Enable AI features and matching\n5. Add custom sections using component creator\n6. Set up Notion integration\n7. Configure analytics and tracking\n8. Customize user engagement features"
       },
       "proof": {
         "screenshot": "https://dazzling-cat.netlify.app/template_images/remote desk work jobs.png",
@@ -125,13 +125,13 @@
       }
     },
     {
-      "id": "zeroslist",
+      "id": "web3jobs",
       "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/zero list.png",
-        "name": "Zeroslist : Yelp for accountants and CPAs",
+        "logo": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
+        "name": "Web3 Jobs",
         "type": "Marketplace",
-        "provider": "BoringSites",
-        "description": "Website for hiring the best accountants and CPAs.",
+        "provider": "Vaibhav",
+        "description": "Create a Web3 job board with AI-powered matching, analytics, and comprehensive engagement features.",
         "callToCopy": {
           "text": "Deploy Template",
           "link": "https://example.com/install-arcade-BoringSites"
@@ -142,48 +142,17 @@
         }
       },
       "overview": {
-        "content": "Slack enables you to integrate interactive demos into your Slack channels, allowing your team to explore and understand your product's features directly from Slack. No need to switch between apps or pause and rewind; team members can interact with the demos at their own pace, fostering better understanding and collaboration."
+        "content": "Launch a specialized Web3 jobs marketplace with advanced features: Analytics dashboard, Content management, Custom forms, Membership system, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can save jobs, upvote listings, and get personalized recommendations."
       },
       "howItWorks": {
-        "content": "To add an Slack demo to your Slack channel, simply share an Slack flow link in the channel. Slack will automatically recognize and embed the interactive demo, making it accessible for your team to view and interact with directly within the Slack interface."
+        "content": "Connect Web3 employers with talent through a feature-rich platform. Includes user profiles, job bookmarking, upvoting, and staff recommendations. Powered by analytics, AI assistance, custom forms, membership options, and flexible component sections. Seamless Notion integration for content management."
       },
       "configuration": {
-        "content": "To get started, navigate to the Slack App marketplace and search for the Slack app. Once found, add it to your workspace. You can then share Slack demos in any channel by pasting the demo link, enhancing your team's collaboration and product knowledge."
+        "content": "1. Set up branding and domain configuration\n2. Configure membership tiers\n3. Customize job listing forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable user engagement features"
       },
       "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/vettedtalent.png",
-        "youtubevideo": "https://youtube.com/watch?v=example-slack"
-      }
-    },
-    {
-      "id": "startupleads",
-      "product": {
-        "logo": "https://dazzling-cat.netlify.app/template_images/startup%20leads.png",
-        "name": "Funded Startup Leads",
-        "type": "Marketplace",
-        "provider": "BoringSites",
-        "description": "Website to show the funded startup leads",
-        "callToCopy": {
-          "text": "Deploy Template",
-          "link": "https://example.com/install-arcade-BoringSites"
-        },
-        "ViewDemo": {
-          "text": "View Demo",
-          "link": "https://remote-jobs.com"
-        }
-      },
-      "overview": {
-        "content": "Slack enables you to integrate interactive demos into your Slack channels, allowing your team to explore and understand your product's features directly from Slack. No need to switch between apps or pause and rewind; team members can interact with the demos at their own pace, fostering better understanding and collaboration."
-      },
-      "howItWorks": {
-        "content": "To add an Slack demo to your Slack channel, simply share an Slack flow link in the channel. Slack will automatically recognize and embed the interactive demo, making it accessible for your team to view and interact with directly within the Slack interface."
-      },
-      "configuration": {
-        "content": "To get started, navigate to the Slack App marketplace and search for the Slack app. Once found, add it to your workspace. You can then share Slack demos in any channel by pasting the demo link, enhancing your team's collaboration and product knowledge."
-      },
-      "proof": {
-        "screenshot": "https://dazzling-cat.netlify.app/BoringSiteshelpdesk-template.png",
-        "youtubevideo": "https://youtube.com/watch?v=example-slack"
+        "screenshot": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
+        "youtubevideo": "https://youtube.com/watch?v=example-arcade-BoringSites"
       }
     },
     {
