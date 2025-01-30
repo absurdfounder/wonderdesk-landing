@@ -1,3 +1,4 @@
+import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,8 +8,7 @@ interface CallToAction {
   link: string;
 }
 
-
-interface viewDemo {
+interface ViewDemo {
   text: string;
   link: string;
 }
@@ -20,7 +20,8 @@ interface Product {
   provider: string;
   description: string;
   callToCopy: CallToAction;
-  viewDemo: viewDemo;
+  callToAction: CallToAction;
+  viewDemo: ViewDemo;
 }
 
 interface ContentSection {
@@ -46,17 +47,12 @@ interface TemplateData {
 }
 
 interface IntegrationData {
-  integration_library: any[]; // Define proper type if needed
+  integration_library: Template[];
 }
 
 interface ComparisonData {
-  comparision_library: any[]; // Define proper type if needed
+  comparison_library: any[];
 }
-
-// Import with type assertions
-import templateData from '../../public/showcase_data.json';
-import integrationData from '../../public/integration_data.json';
-import comparisonData from '../../public/comparison_data.json';
 
 interface ContentItem {
   type: string;
@@ -68,6 +64,11 @@ interface ContentItem {
   code?: string;
   src?: string;
 }
+
+// Import with type assertions
+import templateData from '../../public/showcase_data.json';
+import integrationData from '../../public/integration_data.json';
+import comparisonData from '../../public/comparison_data.json';
 
 export const goBack = () => {
   window.history.back();
@@ -148,10 +149,9 @@ export const renderContent = (item: ContentItem, index: number) => {
   }
 };
 
-export const _loadFromJson = async (template: boolean = true): Promise<Template[] | any[]> => {
+export const _loadFromJson = async (template: boolean = true): Promise<Template[]> => {
   try {
     if (template) {
-      // Handle array wrapper in template data
       return (templateData[0] as TemplateData).template_library;
     } else {
       return (integrationData as IntegrationData).integration_library;
@@ -164,7 +164,7 @@ export const _loadFromJson = async (template: boolean = true): Promise<Template[
 
 export const _loadFromJsonComparison = async () => {
   try {
-    return (comparisonData as ComparisonData).comparision_library;
+    return (comparisonData as ComparisonData).comparison_library;
   } catch (error) {
     console.error("Failed to load templates", error);
     return [];

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Metadata, ResolvingMetadata } from 'next';
 import { _loadFromJson, _transformDataToPostPageView } from '../../../utils/helper';
@@ -6,7 +7,13 @@ import Link from 'next/link';
 import MoveBack from '@/components/MoveBack';
 import Loading from '@/components/Loading';
 
+// Type definitions
 interface CallToAction {
+  text: string;
+  link: string;
+}
+
+interface ViewDemo {
   text: string;
   link: string;
 }
@@ -14,9 +21,12 @@ interface CallToAction {
 interface Product {
   logo: string;
   name: string;
+  type: string;
   provider: string;
   description: string;
   callToAction: CallToAction;
+  callToCopy: CallToAction;
+  viewDemo: ViewDemo;
 }
 
 interface ContentSection {
@@ -65,7 +75,20 @@ async function getData(slug: string) {
   const content = await _loadFromJson(false);
   const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
   if (filteredContent) {
-    const transformedData = _transformDataToPostPageView(filteredContent);
+    // Add default values for missing properties
+    const enhancedContent = {
+      ...filteredContent,
+      product: {
+        ...filteredContent.product,
+        type: 'integration',
+        callToCopy: filteredContent.product.callToAction,
+        viewDemo: {
+          text: 'View Demo',
+          link: filteredContent.proof.youtubevideo || '#'
+        }
+      }
+    };
+    const transformedData = _transformDataToPostPageView(enhancedContent);
     return { filterBySlug: filteredContent, postPageView: transformedData };
   }
   return null;
