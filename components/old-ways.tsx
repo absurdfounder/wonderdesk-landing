@@ -139,8 +139,8 @@ export default function OldWays() {
             {/* Section header */}
             <div className="max-w-3xl mx-auto text-center pt-12 mb-8 ">
               <h1 className="h2 mb-4 text-white">
-                Let's be honest.
-                <span className="font-source-serif-4 block font-normal text-orange-600">You're tired of this:</span>
+              This Time, You'll Actually Launch
+                <span className="font-source-serif-4 block font-normal text-orange-600">Skip the Setup Hell</span>
               </h1>
 
               <p className="text-xl text-slate-300">We know you have too much on your plate.</p>

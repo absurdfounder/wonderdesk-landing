@@ -104,16 +104,15 @@ const FAQ: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-base font-normal text-slate-600 mt-4 sm:text-lg">
-            Have a different question and can't find the answer you're looking for? Reach out to our support team by
+            Have a different question and can't find the answer you're looking for? Reach out to us by
             <a 
               href="mailto:vaibhav@BoringSites.com" 
               className="text-orange-800 hover:text-blue-500 hover:underline px-2"
               target="_blank" 
               rel="noopener noreferrer"
             >
-              sending us an email
+              sending us an email.
             </a>
-            and we'll get back to you as soon as we can.
           </p>
         </div>
 
@@ -126,7 +125,7 @@ const FAQ: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-4 py-2 font-semibold text-lg rounded-full m-2 ${
                   activeTab === tab 
-                    ? "bg-orange-600 text-white" 
+                    ? "bg-orange-700 text-orange-50" 
                     : "text-slate-700 hover:bg-orange-100"
                 }`}
                 onClick={() => setActiveTab(tab)}

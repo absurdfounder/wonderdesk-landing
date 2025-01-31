@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* 2nd block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+          <div className="sm:col-span-7 md:col-span-4 lg:col-span-3">
             <h6 className="text-slate-800 font-medium mb-2">Product</h6>
             <ul className="text-sm">
               <li className="mb-2">
@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
 
           {/* 3rd block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+          <div className="sm:col-span-7 md:col-span-4 lg:col-span-3">
             <h6 className="text-slate-800 font-medium mb-2">Resources</h6>
             <ul className="text-sm">
 
@@ -163,41 +163,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 4th block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-slate-800 font-medium mb-2">Company</h6>
-            <ul className="text-sm">
-              <li className="mb-2">
-                <Link href="#"  className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Join on Telegram</Link>
-              </li>
-              <li className="mb-2">
-                <Link href="https://www.whatsapp.com/channel/0029VaBrxz9FnSzC4z2HGd2T" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Join Whatsapp Channel</Link>
-              </li>
-              <li className="mb-2">
-                <Link href="https://drive.google.com/drive/u/2/folders/13TfS2QV-VHg5Snw6rVbgmoVVRXTeiDHA" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Media Kit</Link>
-              </li>
-              <li className="mb-2">
-                <Link href="mailto:hey@vaibhavkalra.com?subject=Hi%2C%20I%20have%20a%20query%20regarding%20BoringSites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Email Us</Link>
-              </li>
-              <li className="mb-2">
-                <Link href="https://boringsites.lemonsqueezy.com/affiliates" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Affiliate Program</Link>
-              </li>
-
-
-              <li className="mb-2">
-                <Link href="https://BoringSites.com/help" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Helpcenter</Link>
-              </li>   
-
-              <li className="mb-2">
-                <Link href="/contact-us" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Contact Us</Link>
-              </li>   
-
-
-            </ul>
-          </div>
 
           {/* 5th block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+          <div className="sm:col-span-7 md:col-span-4 lg:col-span-3">
             <h6 className="text-slate-800 font-medium mb-2">Sites by Bear 🐻</h6>
             <ul className="text-sm">
               <li className="mb-2">

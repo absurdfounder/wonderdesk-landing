@@ -106,10 +106,10 @@ export default function Blog_Type() {
 
   return (
     <section id="blog-section" className="relative mt-4 mb-4 pb-4">
-      <div className="inset-0 bg-slate-100 pointer-events-none mb-16" aria-hidden="true"></div>
+      
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-12 md:pt-20">
+        <div className="pt-6 md:pt-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">
               Unique your blog concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
