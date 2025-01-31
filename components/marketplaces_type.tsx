@@ -1,49 +1,88 @@
-"use client";
+"use client"
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Transition } from "@headlessui/react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 import helpdeskImage from "@/public/images/helpdesk.gif";
 import blogImage from "@/public/images/blog.gif";
 import marketplaceImage from "@/public/images/marketplace.gif";
 
-interface TabButtonProps {
-  tabIndex: number;
-  text: string;
-  currentTab: number;
-  setTab: (index: number) => void;
+interface MarketplaceItem {
+  title: string;
+  description: string;
 }
 
-const TabButton: React.FC<TabButtonProps> = ({ tabIndex, text, currentTab, setTab }) => (
-  <button
-    className={`group flex items-center justify-between text-lg p-5 rounded-full border transition duration-300 ease-in-out d hover:shadow-lg text-slate-900 ${
-      currentTab !== tabIndex ? "bg-slate-100" : "bg-orange-100 text-orange-600"
-    }`}
-    onClick={() => setTab(tabIndex)}
-  >
-    <div className="flex items-center">
-      <div className="font-bold leading-snug tracking-tight">
-        <span className="bg-clip-text">{text}</span> Marketplace
-      </div>
-    </div>
-    <ArrowRight className="hidden w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-  </button>
-);
+interface MarketplaceTypes {
+  [key: number]: MarketplaceItem[];
+}
+
+interface MarketplaceCardProps extends MarketplaceItem {
+  index: number;
+}
+
+interface TabButtonProps {
+  text: string;
+  isActive: boolean;
+  onClick: () => void;
+  ariaControls: string;
+}
 
 interface TabContentProps {
   show: boolean;
-  image: string | StaticImageData;
-  alt1: string;
-  alt2: string;
+  image: string;
+  alt: string;
+  id: string;
 }
 
-const TabContent: React.FC<TabContentProps> = ({ show, image, alt1, alt2 }) => (
+const MarketplaceCard: React.FC<MarketplaceCardProps> = ({ title, description, index }) => (
+  <div 
+    className="bg-white p-6 rounded-lg border shadow-md h-full w-full"
+    role="article"
+    aria-labelledby={`marketplace-title-${index}`}
+  >
+    <div>
+      <h3 
+        id={`marketplace-title-${index}`}
+        className="text-xl font-semibold mb-3 text-gray-900"
+      >
+        {title}
+      </h3>
+      <p className="text-gray-600 mb-4">{description}</p>
+    </div>
+    <a 
+      href="#" 
+      className="flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded"
+      aria-label={`Learn more about ${title}`}
+    >
+      Learn more <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
+    </a>
+  </div>
+);
+
+const TabButton: React.FC<TabButtonProps> = ({ text, isActive, onClick, ariaControls }) => (
+  <button
+    className={`px-6 py-2 rounded-full text-xl font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black ${
+      isActive
+        ? 'bg-black text-white shadow-sm'
+        : 'text-gray-600 hover:text-gray-900'
+    }`}
+    onClick={onClick}
+    role="tab"
+    aria-selected={isActive}
+    aria-controls={ariaControls}
+    tabIndex={isActive ? 0 : -1}
+  >
+    {text}
+  </button>
+);
+
+const TabContent: React.FC<TabContentProps> = ({ show, image, alt, id }) => (
   <Transition
     show={show}
     appear={true}
-    className="w-full"
+    className="w-full h-full m-auto text-center"
     enter="transition ease-in-out duration-700 transform order-first"
     enterFrom="opacity-0 translate-y-16"
     enterTo="opacity-100 translate-y-0"
@@ -52,121 +91,187 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt1, alt2 }) => (
     leaveTo="opacity-0 -translate-y-16"
     unmount={false}
   >
-    <div className="relative inline-flex flex-col">
+    <div 
+      className="relative inline-flex flex-col m-auto"
+      role="tabpanel"
+      id={id}
+      aria-label={`${alt} visualization`}
+    >
       <Image
-        className="md:max-w-none mx-auto rounded-2xl border border-2 border-slate-600 shadow-lg"
+        className="md:max-w-none mx-auto rounded-lg shadow-lg"
         src={image}
-        unoptimized
         width={500}
         height={462}
-        alt="Features bg"
+        alt={alt}
+        priority={show}
+        quality={90}
       />
-      <div className="hidden flex gap-2 justify-center mt-4 text-xl text-slate-900">
-        A simpler alternative to{" "}
-        <Image
-          alt="Alternative 1"
-          width={120}
-          height={120}
-          src={alt1}
-          className="rounded-full w-auto h-8"
-          unoptimized
-        />{" "}
-        and{" "}
-        <Image
-          alt="Alternative 2"
-          width={120}
-          height={120}
-          src={alt2}
-          className="rounded-full w-auto h-8"
-          unoptimized
-        />
-      </div>
     </div>
   </Transition>
 );
 
-export default function Marketplace_Type() {
-  const [tab, setTab] = useState<number>(1);
-  const tabs = useRef<HTMLDivElement>(null);
+const marketplaceTypes: MarketplaceTypes = {
+  1: [ // Rental
+    {
+      title: "Property rentals",
+      description: "Build a marketplace for renting homes, apartments, or vacation properties."
+    },
+    {
+      title: "Equipment rentals",
+      description: "Create a platform for renting tools, machinery, or specialized equipment."
+    },
+    {
+      title: "Vehicle rentals",
+      description: "Develop a marketplace for car, bike, or boat rentals."
+    },
+    {
+      title: "Fashion rentals",
+      description: "Enable users to rent designer clothes, accessories, or costumes."
+    }
+  ],
+  2: [ // Service
+    {
+      title: "Professional services",
+      description: "Connect clients with freelancers, consultants, or service providers."
+    },
+    {
+      title: "Local services",
+      description: "Build a platform for home services, repairs, or maintenance."
+    },
+    {
+      title: "Educational services",
+      description: "Create a marketplace for tutors, instructors, or online courses."
+    },
+    {
+      title: "Wellness services",
+      description: "Connect users with health, fitness, or wellness professionals."
+    }
+  ],
+  3: [ // Product
+    {
+      title: "Handmade goods",
+      description: "Build a marketplace for artisans and craftspeople to sell their creations."
+    },
+    {
+      title: "Digital products",
+      description: "Create a platform for selling digital downloads, software, or art."
+    },
+    {
+      title: "Vintage items",
+      description: "Connect collectors and sellers of antiques and vintage goods."
+    },
+    {
+      title: "Local products",
+      description: "Enable local businesses to sell their products online."
+    }
+  ],
+  4: [ // Other
+    {
+      title: "Classifieds and directories",
+      description: "Build a directory or classified ads site like Craigslist or Gumtree."
+    },
+    {
+      title: "Matchmaking and recruiting",
+      description: "Build a job board, dating site, or matching platform."
+    },
+    {
+      title: "Multiflow marketplaces",
+      description: "Allow services, rentals, and product-selling in one marketplace."
+    },
+    {
+      title: "Bartering and gifting",
+      description: "Let users swap things or services with each other."
+    }
+  ]
+};
 
-  const heightFix = () => {
-    if (tabs.current && tabs.current.parentElement)
-      tabs.current.parentElement.style.height = `${tabs.current.clientHeight}px`;
-  };
+const tabData = [
+  { text: "Rental marketplace", image: helpdeskImage, alt: "Rental marketplace interface demonstration" },
+  { text: "Service marketplace", image: blogImage, alt: "Service marketplace interface demonstration" },
+  { text: "Product directory", image: marketplaceImage, alt: "Product marketplace interface demonstration" },
+  { text: "Other Concepts", image: "/path/to/your/fourth-tab-image.gif", alt: "Other marketplace types demonstration" }
+];
 
-  useEffect(() => {
-    heightFix();
-  }, []);
+export default function MarketplaceType() {
+  const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <section id="marketplace-section" className="relative mt-4 mb-4 pb-4">
-      
+    <section 
+      className="relative max-w-6xl mx-auto px-4 sm:px-6 py-12"
+      aria-label="Marketplace types selector"
+    >
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-6 md:pt-20">
-          <div className="max-w-3xl mx-auto text-center pb-8 md:pb-16">
-            <h1 className="h2 mb-4">
-              Unique your marketplace concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
-            </h1>
-            <p className="text-xl text-slate-600">
-              BoringSites is designed for all types from content curation to
-              content creation. Build company blogs, helpdesks, company wiki,
-              documentations, and marketplaces.
-            </p>
-          </div>
+            <div className="max-w-3xl mx-auto text-center pt-4 mb-8 ">
+              <h1 className="h2 mb-4">
+              No matter how unique your concept,
 
-          <div className="grid gap-6">
-            <div
-              className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6"
-              data-aos="fade-right"
-            >
-              <div className="flex gap-4 mb-8 md:mb-0 justify-center">
-                <TabButton tabIndex={1} text="Rental" currentTab={tab} setTab={setTab} />
-                <TabButton tabIndex={2} text="Service" currentTab={tab} setTab={setTab} />
-                <TabButton tabIndex={3} text="Product" currentTab={tab} setTab={setTab} />
-                <TabButton tabIndex={4} text="Other" currentTab={tab} setTab={setTab} />
-              </div>
+                <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
+              </h1>
+
             </div>
 
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 grid gap-4 mb-8 md:mb-0 md:order-1 m-auto w-full">
-              <div className="transition-all">
-                <div
-                  className="relative flex flex-col text-center lg:text-right"
-                  data-aos="zoom-y-out"
-                  ref={tabs}
-                >
-                  <TabContent
-                    show={tab === 1}
-                    image={helpdeskImage}
-                    alt1="./images/simpler-helpdesk.png"
-                    alt2="./images/simpler-helpdesk2.png"
-                  />
-                  <TabContent
-                    show={tab === 2}
-                    image={blogImage}
-                    alt1="./images/simpler-blog.png"
-                    alt2="./images/simpler-blog2.png"
-                  />
-                  <TabContent
-                    show={tab === 3}
-                    image={marketplaceImage}
-                    alt1="./images/simpler-catalogue.png"
-                    alt2="./images/simpler-catalogue2.png"
-                  />
-                  <TabContent
-                    show={tab === 4}
-                    image="/path/to/your/fourth-tab-image.gif"
-                    alt1="./images/webflow-icon.png"
-                    alt2="/images/framer-icon.png"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Top Navigation Pills */}
+      <div className="flex justify-center mb-12">
+        <div 
+          className="inline-flex bg-gray-100 p-1 rounded-full"
+          role="tablist"
+          aria-label="Marketplace categories"
+        >
+          {tabData.map((tab, index) => (
+            <TabButton
+              key={index + 1}
+              text={tab.text}
+              isActive={activeTab === index + 1}
+              onClick={() => setActiveTab(index + 1)}
+              ariaControls={`tab-content-${index + 1}`}
+            />
+          ))}
         </div>
       </div>
-      <br />
-      <br />
+
+      {/* Main Content */}
+      <div className="grid md:grid-cols-2 gap-12">
+        {/* Left Column - Grid */}
+        <div 
+          className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start md:max-w-2xl lg:max-w-none"
+          role="region"
+          aria-label={`${tabData[activeTab - 1].text} options`}
+        >
+          {marketplaceTypes[activeTab].map((item, index) => (
+            <MarketplaceCard
+              key={index}
+              index={index}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
+
+        {/* Right Column - Image */}
+        <div className="relative">
+          {tabData.map((tab, index) => (
+            <TabContent
+              key={index + 1}
+              show={activeTab === index + 1}
+              image={tab.image}
+              alt={tab.alt}
+              id={`tab-content-${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className="mt-12 text-center">
+        <a
+          href="#"
+          className="inline-flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded"
+          aria-label="Learn more about building marketplaces with BoringSites"
+        >
+          Build any kind of Marketplace / Directory with BoringSites
+          <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
+        </a>
+      </div>
     </section>
   );
 }
