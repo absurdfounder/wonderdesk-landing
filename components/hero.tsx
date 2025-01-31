@@ -267,7 +267,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               alt="Notion site preview"
               className="w-full rounded-lg object-cover"
             />
-            <p className="text-gray-500 text-sm font-medium text-center">From Notion Site</p>
+            <p className="text-gray-800 text-sm text-center font-bold">From Notion Site</p>
           </div>
         </div>
       </div>
@@ -289,7 +289,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               alt="Super site preview"
               className="w-full rounded-lg object-cover"
             />
-            <p className="text-gray-500 text-sm font-medium text-center">To Custom Boring Site</p>
+            <p className="text-gray-800 text-sm text-center font-bold">To Custom Boring Site</p>
           </div>
         </div>
       </div>
