@@ -112,11 +112,10 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 <span className="bottom-0 absolute bg-accent-pink h-4 md:h-6 md:-bottom-0.5 -inset-x-2 mx-4"></span>
               </span>
 
-              in 4 hours, <b className="font-source-serif-4 h1 font-normal italic text-orange-600">not weeks</b>.{" "}
+              in hours, <b className="font-source-serif-4 h1 font-normal italic text-orange-600">not weeks</b>.{" "}
               <span className="font-bungee block font-normal text-orange-600 my-2">
-                grow to millions in traffic
+                grow to millions from <b className="text-gray-800 border-b-4 border-gray-400">Notion</b>
               </span>{" "}
-              using Notion.
             </h1>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 hidden">
@@ -249,105 +248,105 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
 
           <div className="w-full py-12 overflow-x-hidden">
-  <div className="max-w-7xl mx-auto relative">
-    {/* Timeline line - positioned absolutely relative to container */}
-    <div className="hidden lg:block absolute top-[192px] left-[10%] right-[10%] h-[2px] bg-primary z-10"></div>
+            <div className="max-w-7xl mx-auto relative">
+              {/* Timeline line - positioned absolutely relative to container */}
+              <div className="hidden lg:block absolute top-[192px] left-[10%] right-[10%] h-[2px] bg-primary z-10"></div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-      <div className="flex flex-col items-center text-center gap-4">
-        <div className="relative">
-          <img
-            alt="Learn fundamentals"
-            fetchPriority="high"
-            width="192"
-            height="192"
-            decoding="async"
-            data-nimg="1"
-            className="w-48 scale-[0.60] translate-y-4"
-            srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=384&q=75 2x"
-            src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=384&q=75"
-          />
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-            <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
-          </div>
-        </div>
-        <div className="lg:pt-8">
-          <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 1</div>
-          <p className="text-base-content-secondary max-w-[20rem] mx-auto">Design the website.</p>
-        </div>
-      </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="relative">
+                    <img
+                      alt="Learn fundamentals"
+                      fetchPriority="high"
+                      width="192"
+                      height="192"
+                      decoding="async"
+                      data-nimg="1"
+                      className="w-48 scale-[0.60] translate-y-4"
+                      srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=384&q=75 2x"
+                      src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=384&q=75"
+                    />
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
+                      <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
+                    </div>
+                  </div>
+                  <div className="lg:pt-8">
+                    <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 1</div>
+                    <p className="text-base-content-secondary max-w-[20rem] mx-auto">Design the website.</p>
+                  </div>
+                </div>
 
-      <div className="flex flex-col items-center text-center gap-4">
-        <div className="relative">
-          <img
-            alt="Build SaaS"
-            fetchPriority="high"
-            width="192"
-            height="192"
-            decoding="async"
-            data-nimg="1"
-            className="w-48 p-4"
-            srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=384&q=75 2x"
-            src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=384&q=75"
-          />
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-            <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
-          </div>
-        </div>
-        <div className="lg:pt-8">
-          <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 3</div>
-          <p className="text-base-content-secondary max-w-[20rem] mx-auto">Build a Database on Notion using FetchKitty.</p>
-        </div>
-      </div>
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="relative">
+                    <img
+                      alt="Build SaaS"
+                      fetchPriority="high"
+                      width="192"
+                      height="192"
+                      decoding="async"
+                      data-nimg="1"
+                      className="w-48 p-4"
+                      srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=384&q=75 2x"
+                      src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=384&q=75"
+                    />
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
+                      <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
+                    </div>
+                  </div>
+                  <div className="lg:pt-8">
+                    <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 3</div>
+                    <p className="text-base-content-secondary max-w-[20rem] mx-auto">Build a Database on Notion using FetchKitty.</p>
+                  </div>
+                </div>
 
-      <div className="flex flex-col items-center text-center gap-4">
-        <div className="relative">
-          <img
-            alt="AI coding"
-            fetchPriority="high"
-            width="192"
-            height="192"
-            decoding="async"
-            data-nimg="1"
-            className="w-48 p-4 scale-75 translate-y-4"
-            srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=384&q=75 2x"
-            src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=384&q=75"
-          />
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-            <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
-          </div>
-        </div>
-        <div className="lg:pt-8">
-          <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 4</div>
-          <p className="text-base-content-secondary max-w-[20rem] mx-auto">Set up subscription payments</p>
-        </div>
-      </div>
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="relative">
+                    <img
+                      alt="AI coding"
+                      fetchPriority="high"
+                      width="192"
+                      height="192"
+                      decoding="async"
+                      data-nimg="1"
+                      className="w-48 p-4 scale-75 translate-y-4"
+                      srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=384&q=75 2x"
+                      src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=384&q=75"
+                    />
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
+                      <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
+                    </div>
+                  </div>
+                  <div className="lg:pt-8">
+                    <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 4</div>
+                    <p className="text-base-content-secondary max-w-[20rem] mx-auto">Set up subscription payments</p>
+                  </div>
+                </div>
 
-      <div className="flex flex-col items-center text-center gap-4">
-        <div className="relative">
-          <img
-            alt="Launch product"
-            fetchPriority="high"
-            width="192"
-            height="192"
-            decoding="async"
-            data-nimg="1"
-            className="w-48 p-4"
-            srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=384&q=75 2x"
-            src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=384&q=75"
-          />
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-            <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="relative">
+                    <img
+                      alt="Launch product"
+                      fetchPriority="high"
+                      width="192"
+                      height="192"
+                      decoding="async"
+                      data-nimg="1"
+                      className="w-48 p-4"
+                      srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=384&q=75 2x"
+                      src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=384&q=75"
+                    />
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
+                      <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
+                    </div>
+                  </div>
+                  <div className="lg:pt-8">
+                    <div className="font-bold text-lg border-b-4 border border-0 w-full">In hours</div>
+                    <p className="text-base-content-secondary max-w-[20rem] mx-auto">Launch your idea!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="lg:pt-8">
-          <div className="font-bold text-lg border-b-4 border border-0 w-full">In 4 hours</div>
-          <p className="text-base-content-secondary max-w-[20rem] mx-auto">Launch your idea!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
