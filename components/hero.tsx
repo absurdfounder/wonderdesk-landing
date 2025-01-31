@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { StarIcon, ArrowUpRight, Check, ShoppingBag, BookOpen, FileText, FileQuestion, ExternalLink } from "lucide-react";
+import { StarIcon, ArrowUpRight,ArrowRight, Check, ShoppingBag, BookOpen, FileText, FileQuestion, ExternalLink } from "lucide-react";
 
 import VideoThumb from "@/public/images/hero-image.png";
 import ModalVideo from "@/components/modal-video";
@@ -254,102 +254,50 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
           <div className="w-full py-12 overflow-x-hidden">
             <div className="max-w-7xl mx-auto relative">
-              {/* Timeline line - positioned absolutely relative to container */}
-              <div className="hidden lg:block absolute top-[192px] left-[10%] right-[10%] h-[2px] bg-primary z-10"></div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="relative">
-                    <img
-                      alt="Learn fundamentals"
-                      fetchPriority="high"
-                      width="192"
-                      height="192"
-                      decoding="async"
-                      data-nimg="1"
-                      className="w-48 scale-[0.60] translate-y-4"
-                      srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=384&q=75 2x"
-                      src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgear.1c9850d2.png&w=384&q=75"
-                    />
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                      <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
-                    </div>
-                  </div>
-                  <div className="lg:pt-8">
-                    <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 1</div>
-                    <p className="text-base-content-secondary max-w-[20rem] mx-auto">Design the website.</p>
-                  </div>
-                </div>
 
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="relative">
-                    <img
-                      alt="Build SaaS"
-                      fetchPriority="high"
-                      width="192"
-                      height="192"
-                      decoding="async"
-                      data-nimg="1"
-                      className="w-48 p-4"
-                      srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=384&q=75 2x"
-                      src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fserver.41b0b400.png&w=384&q=75"
-                    />
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                      <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
-                    </div>
-                  </div>
-                  <div className="lg:pt-8">
-                    <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 3</div>
-                    <p className="text-base-content-secondary max-w-[20rem] mx-auto">Build a Database on Notion using FetchKitty.</p>
-                  </div>
-                </div>
+            <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl mx-auto px-4 md:px-8 py-8 md:py-12 gap-8 md:gap-4">
+      {/* Notion Site Column */}
+      <div className="w-full">
+        <div className="">
 
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="relative">
-                    <img
-                      alt="AI coding"
-                      fetchPriority="high"
-                      width="192"
-                      height="192"
-                      decoding="async"
-                      data-nimg="1"
-                      className="w-48 p-4 scale-75 translate-y-4"
-                      srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=384&q=75 2x"
-                      src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcredit-card-reader.d1cc3127.png&w=384&q=75"
-                    />
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                      <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
-                    </div>
-                  </div>
-                  <div className="lg:pt-8">
-                    <div className="font-bold text-lg border-b-4 border border-0 w-full">Hour 4</div>
-                    <p className="text-base-content-secondary max-w-[20rem] mx-auto">Set up subscription payments</p>
-                  </div>
-                </div>
+          <div className="space-y-4">
+            <img
+              src="https://dazzling-cat.netlify.app/notiondatabase.png"
+              alt="Notion site preview"
+              className="w-full rounded-lg object-cover"
+            />
+            <p className="text-gray-500 text-sm font-medium text-center">From Notion Site</p>
+          </div>
+        </div>
+      </div>
 
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="relative">
-                    <img
-                      alt="Launch product"
-                      fetchPriority="high"
-                      width="192"
-                      height="192"
-                      decoding="async"
-                      data-nimg="1"
-                      className="w-48 p-4"
-                      srcSet="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=256&q=75 1x, https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=384&q=75 2x"
-                      src="https://codefa.st/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwizard.671ce364.png&w=384&q=75"
-                    />
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                      <div className="w-4 h-4 bg-primary rounded-full hidden lg:block z-20 relative"></div>
-                    </div>
-                  </div>
-                  <div className="lg:pt-8">
-                    <div className="font-bold text-lg border-b-4 border border-0 w-full">In hours</div>
-                    <p className="text-base-content-secondary max-w-[20rem] mx-auto">Launch your idea!</p>
-                  </div>
-                </div>
-              </div>
+      {/* Arrow Column */}
+      <div className="rotate-90 md:rotate-0 flex-shrink-0">
+        <div className="bg-gray-100 rounded-full p-2">
+          <ArrowRight className="w-6 h-6 text-gray-400" />
+        </div>
+      </div>
+
+      {/* Super Site Column */}
+      <div className="w-full">
+        <div>
+
+          <div className="space-y-4">
+            <img
+              src="https://dazzling-cat.netlify.app/boringsite.png"
+              alt="Super site preview"
+              className="w-full rounded-lg object-cover"
+            />
+            <p className="text-gray-500 text-sm font-medium text-center">To Custom Super Site</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
             </div>
           </div>
 

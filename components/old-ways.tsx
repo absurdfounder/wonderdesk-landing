@@ -13,20 +13,20 @@ export default function OldWays() {
             {/* Section header */}
             <div className="max-w-3xl mx-auto text-center pt-12 mb-8 ">
               <h1 className="h2 mb-4 text-white">
-              Let's be honest.
-                 <span className="font-source-serif-4 block font-normal text-orange-600">You're tired of this:</span>
+                Let's be honest.
+                <span className="font-source-serif-4 block font-normal text-orange-600">You're tired of this:</span>
               </h1>
 
               <p className="text-xl text-slate-300">We know you have too much on your plate.</p>
             </div>
 
-<img src="https://dazzling-cat.netlify.app/marry.png" className="max-w-2xl m-auto"/>
+            <img src="https://dazzling-cat.netlify.app/marry.png" className="max-w-2xl m-auto" />
 
 
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex aos-init aos-animate mt-6 justify-center py-12" data-aos="zoom-y-out" data-aos-delay="300">
-            <div><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://app.BoringSites.com">Get a Directory</Link></div>
-            <div><Link href="#template-section" className="btn text-white text-2xl border-white hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center">Sites built on BoringSites</Link></div>
-          </div>
+              <div><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://app.BoringSites.com">Start from 98% Ready</Link></div>
+              <div><Link href="#template-section" className="btn text-white text-2xl border-white hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center">Sites built on BoringSites</Link></div>
+            </div>
 
           </section>
 
@@ -59,7 +59,7 @@ export default function OldWays() {
                     <div className="p-8 sm:p-12 lg:p-16">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Optimized for</p>
                       <h3 className="text-2xl font-bold tracking-tight text-slate-900 mt-4 sm:text-3xl sm:mt-6 lg:text-4xl">
-                      Perfected for <span className="font-serif font-normal text-orange-600">SEO</span>
+                        Perfected for <span className="font-serif font-normal text-orange-600">SEO</span>
                       </h3>
                       <p className="text-base font-normal text-slate-700 mt-4">
                         All you have to do is to write good content that satisfies the needs of your readers. We take care of the rest. Set all the proper meta tags and canonical links, Structured Schema markup for all your posts, Served from the edge to make the blog super fast, Easy controls to override the SEO settings.
