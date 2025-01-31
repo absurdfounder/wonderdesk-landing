@@ -206,6 +206,14 @@ export default function MarketplaceType() {
       className="relative max-w-6xl mx-auto px-4 sm:px-6 py-12"
       aria-label="Marketplace types selector"
     >
+
+            <div className="max-w-3xl mx-auto text-center pt-4 mb-8 ">
+              <h1 className="h2 mb-4">
+              No matter how unique your concept,
+                <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
+              </h1>
+            </div>
+
       {/* Top Navigation Pills */}
       <div className="flex justify-center mb-12">
         <div 
