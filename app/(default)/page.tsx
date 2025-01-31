@@ -31,20 +31,24 @@ import AboutMe from '@/components/aboutme'
 import Showcases from '@/components/showcase'
 import Newsletter from '@/components/newsletter'
 import Marketplace_Type from '@/components/marketplaces_type'
+import FAQ from '@/components/faq'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <OldWays/>
 
+      <Marketplace_Type />
 
       {/* 
       <Testimonials />
       */}
       <FeaturesBlocks />
-      <Marketplace_Type />
+      <OldWays/>
+
       <Showcases />
+
+<FAQ/>
       <AboutMe />
       <Newsletter />
     </>

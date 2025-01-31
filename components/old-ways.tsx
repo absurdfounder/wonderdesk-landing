@@ -9,26 +9,6 @@ export default function OldWays() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div>
-          <section className="mt-2 bg-slate-900 rounded-2xl pb-12 mb-12 ">
-            {/* Section header */}
-            <div className="max-w-3xl mx-auto text-center pt-12 mb-8 ">
-              <h1 className="h2 mb-4 text-white">
-                Let's be honest.
-                <span className="font-source-serif-4 block font-normal text-orange-600">You're tired of this:</span>
-              </h1>
-
-              <p className="text-xl text-slate-300">We know you have too much on your plate.</p>
-            </div>
-
-            <img src="https://dazzling-cat.netlify.app/marry.png" className="max-w-2xl m-auto" />
-
-
-            <div className="max-w-xs mx-auto sm:max-w-none sm:flex aos-init aos-animate mt-6 justify-center py-12" data-aos="zoom-y-out" data-aos-delay="300">
-              <div><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://app.BoringSites.com">Start from 98% Ready</Link></div>
-              <div><Link href="#template-section" className="btn text-white text-2xl border-white hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center">Sites built on BoringSites</Link></div>
-            </div>
-
-          </section>
 
 
           <section className="bg-white">
@@ -154,6 +134,29 @@ export default function OldWays() {
               </div>
             </div>
           </section>
+
+          <section className="mt-2 bg-slate-900 rounded-2xl pb-12 mb-12 ">
+            {/* Section header */}
+            <div className="max-w-3xl mx-auto text-center pt-12 mb-8 ">
+              <h1 className="h2 mb-4 text-white">
+                Let's be honest.
+                <span className="font-source-serif-4 block font-normal text-orange-600">You're tired of this:</span>
+              </h1>
+
+              <p className="text-xl text-slate-300">We know you have too much on your plate.</p>
+            </div>
+
+            <img src="https://dazzling-cat.netlify.app/marry.png" className="max-w-2xl m-auto" />
+
+
+            <div className="max-w-xs mx-auto sm:max-w-none sm:flex aos-init aos-animate mt-6 justify-center py-12" data-aos="zoom-y-out" data-aos-delay="300">
+              <div><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://app.BoringSites.com">Start from 98% Ready</Link></div>
+              <div><Link href="#template-section" className="btn text-white text-2xl border-white hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center">Sites built on BoringSites</Link></div>
+            </div>
+
+          </section>
+
+
 
         </div>
       </div>
