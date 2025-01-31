@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ArrowRight } from "lucide-react";
 
 import helpdeskImage from "@/public/images/helpdesk.gif";
@@ -31,9 +31,15 @@ interface TabButtonProps {
 
 interface TabContentProps {
   show: boolean;
-  image: string;
+  image: StaticImageData | string;
   alt: string;
   id: string;
+}
+
+interface TabItem {
+  text: string;
+  image: StaticImageData | string;
+  alt: string;
 }
 
 const MarketplaceCard: React.FC<MarketplaceCardProps> = ({ title, description, index }) => (
@@ -185,11 +191,11 @@ const marketplaceTypes: MarketplaceTypes = {
   ]
 };
 
-const tabData = [
+const tabData: TabItem[] = [
   { text: "Rental marketplace", image: helpdeskImage, alt: "Rental marketplace interface demonstration" },
   { text: "Service marketplace", image: blogImage, alt: "Service marketplace interface demonstration" },
-  { text: "Product directory", image: marketplaceImage, alt: "Product marketplace interface demonstration" },
-  { text: "Other Concepts", image: "/path/to/your/fourth-tab-image.gif", alt: "Other marketplace types demonstration" }
+  { text: "Product marketplace", image: marketplaceImage, alt: "Product marketplace interface demonstration" },
+  { text: "Other marketplace", image: "/path/to/your/fourth-tab-image.gif", alt: "Other marketplace types demonstration" }
 ];
 
 export default function MarketplaceType() {
@@ -200,16 +206,6 @@ export default function MarketplaceType() {
       className="relative max-w-6xl mx-auto px-4 sm:px-6 py-12"
       aria-label="Marketplace types selector"
     >
-
-            <div className="max-w-3xl mx-auto text-center pt-4 mb-8 ">
-              <h1 className="h2 mb-4">
-              No matter how unique your concept,
-
-                <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
-              </h1>
-
-            </div>
-
       {/* Top Navigation Pills */}
       <div className="flex justify-center mb-12">
         <div 
