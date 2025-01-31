@@ -24,11 +24,11 @@ const TabButton: React.FC<TabButtonProps> = ({ tabIndex, text, currentTab, setTa
     onClick={() => setTab(tabIndex)}
   >
     <div className="flex items-center">
-      <div className="h4 font-bold leading-snug tracking-tight mb-1">
+      <div className="font-bold leading-snug tracking-tight">
         <span className="bg-clip-text">{text}</span> Marketplace
       </div>
     </div>
-    <ArrowRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <ArrowRight className="hidden w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
   </button>
 );
 
@@ -104,7 +104,7 @@ export default function Marketplace_Type() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-6 md:pt-20">
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+          <div className="max-w-3xl mx-auto text-center pb-8 md:pb-16">
             <h1 className="h2 mb-4">
               Unique your marketplace concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
             </h1>
@@ -115,12 +115,12 @@ export default function Marketplace_Type() {
             </p>
           </div>
 
-          <div className="md:grid md:grid-cols-12 md:gap-6">
+          <div className="grid gap-6">
             <div
               className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6"
               data-aos="fade-right"
             >
-              <div className="grid gap-4 mb-8 md:mb-0">
+              <div className="flex gap-4 mb-8 md:mb-0 justify-center">
                 <TabButton tabIndex={1} text="Rental" currentTab={tab} setTab={setTab} />
                 <TabButton tabIndex={2} text="Service" currentTab={tab} setTab={setTab} />
                 <TabButton tabIndex={3} text="Product" currentTab={tab} setTab={setTab} />
