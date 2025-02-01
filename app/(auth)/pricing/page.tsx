@@ -12,10 +12,10 @@ import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
 
 const pricingMap: Record<number, number> = {
-  10000: 18,
-  50000: 37,
-  100000: 56,
-  1000000: 92,
+  10000: 9,
+  50000: 24,
+  100000: 43,
+  1000000: 237,
 };
 
 interface Feature {
