@@ -22,7 +22,7 @@ export default function OldWays() {
                       <h3 className="text-2xl font-bold tracking-tight text-slate-900 mt-4 sm:text-3xl sm:mt-6 lg:text-4xl">
                         Your content <span className="font-serif font-normal text-orange-600">lives inside Notion</span>
                       </h3>
-                      <p className="text-base font-normal text-slate-700 mt-4">
+                      <p className="text-sm sm:text-base text-slate-700 mt-4">
                         Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
                       </p>
                     </div>
