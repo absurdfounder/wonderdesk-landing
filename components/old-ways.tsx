@@ -107,7 +107,7 @@ export default function OldWays() {
                     </div>
                     <div className="align-content-center py-8">
 
-                      <img className=" w-full h-fit m-auto p-2" src="https://dazzling-cat.netlify.app/integrationsdb.png" alt="Integrations DB" />
+                      <img className=" w-full h-fit m-auto p-2" src="https://dazzling-cat.netlify.app/aisupportreco.png" alt="Integrations DB" />
                     </div>
                   </div>
                 </div>
