@@ -99,10 +99,10 @@ export default function OldWays() {
                     <div className="p-8 sm:p-12 lg:p-16">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">AI SUPPORT & SUGGESTIONS</p>
                       <h3 className="text-2xl font-bold tracking-tight text-slate-900 mt-4 sm:text-3xl sm:mt-6 lg:text-4xl">
-                        Integrates with <span className="font-serif font-normal text-orange-600">your existing apps</span>
+                        Create AI Agents powered <span className="font-serif font-normal text-orange-600">by your content. </span>
                       </h3>
                       <p className="text-base font-normal text-slate-700 mt-4">
-                        BoringSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to BoringSites? We got you covered.
+                        Create AI Agents for support, suggestions or any other purposes you have in mind. Because it's 2025 and AI is cheap. Make AI do most of work so that you can focus on whats important, which is write on notion. 
                       </p>
                     </div>
                     <div className="align-content-center py-8">
