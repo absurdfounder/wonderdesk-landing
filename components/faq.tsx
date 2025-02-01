@@ -15,46 +15,70 @@ type FAQCategories = {
 const faqs: FAQCategories = {
   Website: [
     {
-      question: "What is BoringSites?",
-      answer: "BoringSites is the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and BoringSites takes care of the rest. It's as simple as that.",
+      question: "What is an online marketplace?",
+      answer: "An online marketplace platform is a website (or sometimes a mobile app) that aggregates inventory from multiple suppliers (sellers) in one place. It also lets customers (buyers) engage in transactions with the suppliers. A transaction on a marketplace can mean a product purchase, a calendar booking, a message to request a quote, or anything else that leads to an exchange of value between the customer and the supplier. Airbnb, Uber, eBay, Amazon, and Upwork are examples of popular online marketplaces.",
     },
     {
-      question: "Why do I need a knowledge base?",
-      answer: "Unless you have built a flawless product (congratulations 🤩), your customers will always have questions and they demand immediate help. A knowledge base can provide all the information that users need in one place. It can range from FAQs about your product/service, common issues and their solutions, videos with tutorials on how to do things and more.",
+      question: "Who is BoringSites for?",
+      answer: "BoringSites is for founders who have a marketplace idea. You and your team may be entrepreneurs looking to build the next marketplace unicorn. Or you might have a great idea for a side project. Perhaps you are an intrapreneur in a bigger organization. Maybe you want to start a non-profit or cooperative marketplace. In each case, BoringSites's online marketplace software is for you.",
     },
     {
-      question: "Is my data safe with BoringSites?",
-      answer: "BoringSites takes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
-    },
-  ],
-  "AI Support Bot": [
-    {
-      question: "How does the AI Support Bot work?",
-      answer: "The AI Support Bot integrates seamlessly with BoringSites to provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
+      question: "Does BoringSites work for my idea?",
+      answer: "If your business idea is an online marketplace for something, you can make it happen with BoringSites's marketplace software. Your platform can be about selling products, renting items, vehicles, or spaces, or selling services. And a host of other things.",
     },
     {
-      question: "Can I customize the AI Support Bot?",
-      answer: "Yes, you can customize the AI Support Bot to align with your brand's voice and style. Adjust the responses, add personalized greetings, and more to get a cohesive user experience.",
+      question: "How does BoringSites work?",
+      answer: "You start your marketplace project by answering a series of questions. Based on your answers, we'll create a test marketplace website for you. This only takes a few minutes. You can then customize the marketplace to your liking using BoringSites's intuitive no-code marketplace website builder. Once you're happy with your marketplace, you can make it live, connect it to your own custom domain, and start inviting people to use it. You can also customize and extend your marketplace with custom code. Add any unique features or designs with BoringSites's developer platform.",
     },
     {
-      question: "Does the AI Support Bot support multiple languages?",
-      answer: "The AI Support Bot supports multiple languages, allowing you to cater to a global audience and provide support in the preferred language of your users.",
+      question: "Is it easy to create a marketplace with BoringSites?",
+      answer: "Yes. With BoringSites's online marketplace builder, you can have a fully functional marketplace up and running in minutes. Customizing it to match your unique concept usually takes no more than a day. You don't need any coding skills. Comprehensive text and video tutorials will guide you through the setup process.",
     },
+    {
+      question: "Can I use my own design?",
+      answer: "Yes. BoringSites comes with a beautiful design template that is available out of the box. However, you have full freedom to modify or even replace it with your own unique design, thanks to BoringSites's headless approach. BoringSites gives you full control over the user interface of your marketplace. Modifying template design requires custom development with HTML, CSS, and Javascript. You can either develop a new design yourself or hire a BoringSites Expert or another developer to help you.",
+    },
+    {
+      question: "Can I add any features I want?",
+      answer: "Yes. BoringSites's developer platform allows you to customize and extend your marketplace platform infinitely. You can add any features, integrate any third-party services, or change your design and workflows. Making these changes requires custom development with HTML, CSS, and Javascript.",
+    },
+    {
+      question: "What should I do if I need help?",
+      answer: "If you need help setting up your marketplace platform, BoringSites's free email support is available seven days a week. Just send us a message at hello@boringsites.com, and we'll get back to you in no time.",
+    },
+    {
+      question: "Do I need to hire someone to build my marketplace?",
+      answer: "No. You can build your marketplace yourself. No coding skills are required to create a marketplace with BoringSites. However, if you need a specific unique feature that is not available in BoringSites's marketplace builder out of the box, and you're not a developer, you might need to hire a developer to build the feature for you.",
+    }
   ],
   Pricing: [
     {
-      question: "How does the free 7 day trial work?",
-      answer: "BoringSites offers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
+      question: "How much does it cost to build a marketplace with BoringSites?",
+      answer: "The BoringSites Build plan is $39/month with a 14-day free trial. There are no upfront fees to create an account with BoringSites, and you can build the marketplace yourself. No coding skills are required. Once you're ready to set your marketplace live and invite actual users, you can subscribe to a live plan, which start at $99/month.",
     },
     {
-      question: "What are the pricing plans?",
-      answer: "BoringSites offers various pricing plans based on the number of users and features required. Check our pricing page for detailed information on each plan.",
+      question: "How does free trial work?",
+      answer: "You can start your free 14-day BoringSites trial without any payment commitment. We only ask for payment once you're ready to go live or your trial period has passed. During the trial, you have all Build plan features at your disposal. You have access to a test marketplace, which will be the basis for your eventual live platform.",
     },
     {
       question: "Are there any additional fees?",
       answer: "Pricing is exclusive of taxes and additional local tax may be collected depending on your region. Some add-ons and advanced features might incur additional costs.",
-    },
+    }
   ],
+  Technical: [
+    {
+      question: "How do I host my BoringSites-powered marketplace?",
+      answer: "You don't need to install or host anything to launch a marketplace with BoringSites. BoringSites's cloud hosting infrastructure takes care of hosting for you. You can either connect your own domain to your marketplace or use a default domain, [your-marketplace].myboringsites.com.",
+    },
+    {
+      question: "Can I build a mobile app with BoringSites?",
+      answer: "Yes. BoringSites comes with a responsive marketplace website template that looks great on mobile browsers. You can also build a native mobile app. This requires custom development on top of BoringSites's APIs using the developer platform.",
+    },
+    {
+      question: "Is BoringSites secure?",
+      answer: "Yes. BoringSites's marketplace software has been powering online marketplace businesses for over ten years. Over the years, we've built powerful safeguards against hacking attempts and DDoS attacks and follow best practices to ensure your data is safe.",
+    }
+  ]
 };
 
 interface FAQAccordionProps {

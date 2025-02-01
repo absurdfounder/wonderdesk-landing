@@ -56,12 +56,14 @@ export default function ModalVideo({
           </div>
 
           <button 
-            className="absolute -mt-64 flex items-center transform -translate-y-1/2 m-auto justify-center w-full" 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110" 
             onClick={() => { setModalOpen(true) }}
           >
-
-<img src="https://dazzling-cat.netlify.app/sticky.webp"/>
-
+            <img 
+              src="https://dazzling-cat.netlify.app/sticky.webp"
+              alt="Play video"
+              className="w-full h-auto"
+            />
           </button>
         </div>
 

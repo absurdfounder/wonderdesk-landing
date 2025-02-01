@@ -9,6 +9,7 @@ import helpdeskImage from "@/public/images/helpdesk.gif";
 import blogImage from "@/public/images/blog.gif";
 import marketplaceImage from "@/public/images/marketplace.gif";
 
+// Interfaces remain the same
 interface MarketplaceItem {
   title: string;
   description: string;
@@ -44,22 +45,22 @@ interface TabItem {
 
 const MarketplaceCard: React.FC<MarketplaceCardProps> = ({ title, description, index }) => (
   <div 
-    className="bg-white p-6 rounded-lg border shadow-md h-full w-full"
+    className="bg-white p-4 sm:p-6 rounded-lg border shadow-md h-full w-full transition-shadow hover:shadow-lg"
     role="article"
     aria-labelledby={`marketplace-title-${index}`}
   >
     <div>
       <h3 
         id={`marketplace-title-${index}`}
-        className="text-xl font-semibold mb-3 text-gray-900"
+        className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-900"
       >
         {title}
       </h3>
-      <p className="text-gray-600 mb-4">{description}</p>
+      <p className="text-sm sm:text-base text-gray-600 mb-4">{description}</p>
     </div>
     <a 
       href="#" 
-      className="flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded"
+      className="hidden flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded"
       aria-label={`Learn more about ${title}`}
     >
       Learn more <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
@@ -69,10 +70,10 @@ const MarketplaceCard: React.FC<MarketplaceCardProps> = ({ title, description, i
 
 const TabButton: React.FC<TabButtonProps> = ({ text, isActive, onClick, ariaControls }) => (
   <button
-    className={`px-6 py-2 rounded-full text-xl font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black ${
+    className={`px-3 py-2 sm:px-6 text-sm sm:text-base lg:text-xl font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black whitespace-nowrap ${
       isActive
-        ? 'bg-black text-white shadow-sm'
-        : 'text-gray-600 hover:text-gray-900'
+        ? 'bg-black text-white shadow-sm rounded-full'
+        : 'text-gray-600 hover:text-gray-900 rounded-full'
     }`}
     onClick={onClick}
     role="tab"
@@ -98,13 +99,13 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt, id }) => (
     unmount={false}
   >
     <div 
-      className="relative inline-flex flex-col m-auto"
+      className="relative inline-flex flex-col m-auto w-full"
       role="tabpanel"
       id={id}
       aria-label={`${alt} visualization`}
     >
       <Image
-        className="md:max-w-none mx-auto rounded-lg shadow-lg"
+        className="md:max-w-none mx-auto rounded-lg shadow-lg w-full h-auto"
         src={image}
         width={500}
         height={462}
@@ -116,6 +117,7 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt, id }) => (
   </Transition>
 );
 
+// marketplaceTypes data remains the same
 const marketplaceTypes: MarketplaceTypes = {
   1: [ // Rental
     {
@@ -191,6 +193,7 @@ const marketplaceTypes: MarketplaceTypes = {
   ]
 };
 
+
 const tabData: TabItem[] = [
   { text: "Rental marketplace", image: helpdeskImage, alt: "Rental marketplace interface demonstration" },
   { text: "Service marketplace", image: blogImage, alt: "Service marketplace interface demonstration" },
@@ -203,21 +206,22 @@ export default function MarketplaceType() {
 
   return (
     <section 
-      className="relative max-w-6xl mx-auto px-4 sm:px-6 py-12"
+      className="relative max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12"
       aria-label="Marketplace types selector"
     >
+      <div className="max-w-3xl mx-auto text-center pt-4 mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          No matter how unique your concept,
+          <span className="font-source-serif-4 block font-normal text-orange-600">
+            BoringSites can support it.
+          </span>
+        </h1>
+      </div>
 
-            <div className="max-w-3xl mx-auto text-center pt-4 mb-8 ">
-              <h1 className="h2 mb-4">
-              No matter how unique your concept,
-                <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
-              </h1>
-            </div>
-
-      {/* Top Navigation Pills */}
-      <div className="flex justify-center mb-12">
+      {/* Tab Navigation */}
+      <div className="flex justify-center mb-8 sm:mb-12 overflow-x-auto pb-4 sm:pb-0">
         <div 
-          className="inline-flex bg-gray-100 p-1 rounded-full"
+          className="inline-flex bg-gray-100 p-1 rounded-full min-w-0"
           role="tablist"
           aria-label="Marketplace categories"
         >
@@ -234,10 +238,10 @@ export default function MarketplaceType() {
       </div>
 
       {/* Main Content */}
-      <div className="grid md:grid-cols-2 gap-12">
-        {/* Left Column - Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        {/* Grid Column */}
         <div 
-          className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start md:max-w-2xl lg:max-w-none"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
           role="region"
           aria-label={`${tabData[activeTab - 1].text} options`}
         >
@@ -251,8 +255,8 @@ export default function MarketplaceType() {
           ))}
         </div>
 
-        {/* Right Column - Image */}
-        <div className="relative">
+        {/* Image Column */}
+        <div className="relative order-first md:order-last">
           {tabData.map((tab, index) => (
             <TabContent
               key={index + 1}
@@ -266,10 +270,10 @@ export default function MarketplaceType() {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-12 text-center">
+      <div className="mt-8 sm:mt-12 text-center">
         <a
-          href="#"
-          className="inline-flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded"
+          href="https://app.boringsites.com"
+          className="inline-flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded text-sm sm:text-base"
           aria-label="Learn more about building marketplaces with BoringSites"
         >
           Build any kind of Marketplace / Directory with BoringSites
