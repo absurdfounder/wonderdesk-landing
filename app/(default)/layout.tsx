@@ -25,7 +25,7 @@ export default function DefaultLayout({
   })
 
   return (
-    <PlausibleProvider domain="BoringSites.com">
+    <PlausibleProvider domain="boringsites.com">
       <main className="grow">
         {children}
       </main>
