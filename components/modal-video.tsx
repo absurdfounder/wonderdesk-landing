@@ -51,12 +51,12 @@ export default function ModalVideo({
               style={{borderRadius: '0.3rem', imageRendering: 'auto' }} 
               poster="https://web3summary.com/assets/videos/mainvid.jpg"
             >
-              <source src="https://dazzling-cat.netlify.app/Effortless%20Website%20Creation.mp4" type="video/mp4" />
+              <source src="https://dazzling-cat.netlify.app/boring.mp4" type="video/mp4" />
             </video>
           </div>
 
           <button 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110" 
+            className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110" 
             onClick={() => { setModalOpen(true) }}
           >
             <img 
@@ -65,6 +65,9 @@ export default function ModalVideo({
               className="w-full h-auto"
             />
           </button>
+
+
+
         </div>
 
 
