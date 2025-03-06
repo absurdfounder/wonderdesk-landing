@@ -94,10 +94,11 @@ export default function PageDetail() {
                         </div>
 
 <ModalVideo
-    src="/videos/videos01.mp4"
+    youtubeId="bs3LiGl7zQQ" // Replace with the actual YouTube video ID
     videoWidth={1920}
     videoHeight={1080}
 />
+
 
                     </div>
                 </div>
