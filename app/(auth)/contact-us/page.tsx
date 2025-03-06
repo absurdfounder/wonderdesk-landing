@@ -174,8 +174,15 @@ export default function ContactUs() {
 
         </div>
         <div className="w-full border p-4 px-12 rounded-2xl shadow-lg bg-white">
-          <iframe src="https://app.youform.com/forms/r3rvhjv4" loading="lazy" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-
+<iframe 
+  src="https://app.youform.com/forms/r3rvhjv4" 
+  loading="lazy" 
+  width="100%" 
+  height="700" 
+  frameBorder="0" 
+  marginHeight="0" 
+  marginWidth="0">
+</iframe>
 
 
         </div>
