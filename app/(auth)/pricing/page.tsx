@@ -112,33 +112,41 @@ const faqs: Record<string, FAQ[]> = {
   ],
 };
 
-const FeatureTooltip: React.FC<{ feature: Feature; position: { top: number; left: number } }> = ({ feature, position }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    exit={{ opacity: 0, scale: 0.9 }}
-    transition={{ duration: 0.2 }}
-    className="absolute z-50 p-4 bg-white shadow-md rounded-md max-w-xs"
-    style={{ top: position.top, left: position.left }}
-  >
-    <Image src={feature.imageUrl} alt={feature.name} width={200} height={150} className="mb-2 rounded" />
-    <h3 className="text-lg font-bold">{feature.name}</h3>
-    <p className="text-sm">{feature.description}</p>
-  </motion.div>
-);
+const FeatureTooltip: React.FC<{ feature: Feature; position: { top: number; left: number } }> = ({ feature, position }) => {
+  // Calculate adjusted position to ensure tooltip stays in viewport
+  const adjustedPosition = {
+    top: Math.min(position.top, window.innerHeight - 200),
+    left: Math.min(position.left, window.innerWidth - 300)
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.2 }}
+      className="fixed z-50 p-4 bg-white shadow-md rounded-md max-w-xs"
+      style={{ top: adjustedPosition.top, left: adjustedPosition.left }}
+    >
+      <Image src={feature.imageUrl} alt={feature.name} width={200} height={150} className="mb-2 rounded" />
+      <h3 className="text-lg font-bold">{feature.name}</h3>
+      <p className="text-sm">{feature.description}</p>
+    </motion.div>
+  );
+};
 
 const FeaturePopup: React.FC<{ feature: Feature; onClose: () => void }> = ({ feature, onClose }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
   >
     <motion.div
       initial={{ scale: 0.9, y: 20 }}
       animate={{ scale: 1, y: 0 }}
       exit={{ scale: 0.9, y: 20 }}
-      className="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto relative"
+      className="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-md mx-auto relative"
     >
       <button
         onClick={onClose}
@@ -146,8 +154,10 @@ const FeaturePopup: React.FC<{ feature: Feature; onClose: () => void }> = ({ fea
       >
         ✕
       </button>
-      <Image src={feature.imageUrl} alt={feature.name} width={400} height={300} className="mb-4 rounded" />
-      <h2 className="text-2xl font-bold mt-4">{feature.name}</h2>
+      <div className="max-w-full overflow-hidden">
+        <Image src={feature.imageUrl} alt={feature.name} width={400} height={300} className="mb-4 rounded w-full h-auto" />
+      </div>
+      <h2 className="text-xl md:text-2xl font-bold mt-4">{feature.name}</h2>
       <p className="mt-2">{feature.description}</p>
     </motion.div>
   </motion.div>
@@ -162,7 +172,7 @@ const FAQAccordion: React.FC<FAQ> = ({ question, answer }) => {
         className="w-full text-left p-4"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="font-semibold text-slate-900 h4">{question}</span>
+        <span className="font-semibold text-slate-900 h4 text-sm md:text-base">{question}</span>
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -171,7 +181,7 @@ const FAQAccordion: React.FC<FAQ> = ({ question, answer }) => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="px-4 pb-4 text-slate-500"
+            className="px-4 pb-4 text-slate-500 text-sm md:text-base"
           >
             <p>{answer}</p>
           </motion.div>
@@ -180,6 +190,7 @@ const FAQAccordion: React.FC<FAQ> = ({ question, answer }) => {
     </div>
   );
 };
+
 
 const FAQSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<keyof typeof faqs>("Website");
@@ -202,19 +213,19 @@ const FAQSection: React.FC = () => {
           </p>
         </div>
         <div className="mt-12">
-          <div className="flex justify-center mb-8 flex-wrap">
-            {["Website", "AI Support Bot", "Pricing"].map((tab) => (
-              <motion.button
-                key={tab}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 font-semibold text-lg rounded-full m-2 ${activeTab === tab ? "bg-orange-600 text-slate-800" : "text-slate-700"}`}
-                onClick={() => handleTabClick(tab as keyof typeof faqs)}
-              >
-                {tab}
-              </motion.button>
-            ))}
-          </div>
+        <div className="flex justify-center mb-6 md:mb-8 flex-wrap">
+  {["Website", "AI Support Bot", "Pricing"].map((tab) => (
+    <motion.button
+      key={tab}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className={`px-3 md:px-4 py-2 font-semibold text-sm md:text-lg rounded-full m-1 md:m-2 ${activeTab === tab ? "bg-orange-600 text-slate-800" : "text-slate-700"}`}
+      onClick={() => handleTabClick(tab as keyof typeof faqs)}
+    >
+      {tab}
+    </motion.button>
+  ))}
+</div>
           <div className="space-y-6">
             {faqs[activeTab].map((faq, index) => (
               <FAQAccordion key={index} {...faq} />
@@ -242,6 +253,25 @@ const Pricing: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const hobbyFeatureRefs = useRef<(HTMLLIElement | null)[]>([]);
   const scaleFeatureRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    // Check if we're on a mobile device
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Set up event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
 
   const startDate = new Date("2023-05-01");
   const endDate = new Date("2024-06-30");
@@ -302,6 +332,8 @@ const Pricing: React.FC = () => {
   };
 
   const handleHobbyFeatureHover = (feature: HobbyFeature, index: number) => {
+    if (isMobile) return; // Don't show tooltips on mobile
+    
     setHoveredHobbyFeature(feature);
     const element = hobbyFeatureRefs.current[index];
     if (element) {
@@ -312,8 +344,10 @@ const Pricing: React.FC = () => {
       });
     }
   };
-
+  
   const handleScaleFeatureHover = (feature: Feature, index: number) => {
+    if (isMobile) return; // Don't show tooltips on mobile
+    
     setHoveredScaleFeature(feature);
     const element = scaleFeatureRefs.current[index];
     if (element) {
@@ -376,14 +410,14 @@ const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
           <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight tracking-loose mb-4 justify-center text-center">
-            <span className="opacity-50  font-roboto-mono">Start a Business with a</span>
+            <span className="opacity-50  font-roboto-mono">Build anything with</span>
             <br />
             <div className="flex gap-2 text-center w-full justify-center">
               <span className="flex gap-4 justify-center items-center mt-2 text-orange-600">
-                <span className="font-comfortaa">Boring Site </span>
+                <span className="font-bungee">BORING  </span>
               </span>
               <span className="flex gap-4 justify-center items-center mt-2">
-                <span className="font-bungee"> +  </span>
+                <span className="font-bungee ml-2"> +  </span>
                 <span className="font-bungee">Notion</span>
               </span>
             </div>
@@ -428,15 +462,15 @@ const Pricing: React.FC = () => {
 </p>
 
 
-          <div className="justify-center m-auto">
-            <div className="flex gap-4 max-w-4xl m-auto">
-              {/* Hobby Plan */}
-              <motion.div
-                className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2 h-fit mt-0"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-              >
+<div className="justify-center m-auto">
+  <div className="flex flex-col md:flex-row gap-4 max-w-4xl m-auto">
+    {/* Hobby Plan */}
+    <motion.div
+      className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-full md:w-1/2 h-fit mt-0"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.8 }}
+    >
                 <div className="px-8 py-10 text-start">
                   <h2 className="text-4xl font-bold text-slate-900 mb-4 font-josefin-slab">
                     Hobby
@@ -500,11 +534,11 @@ const Pricing: React.FC = () => {
 
               {/* Scale Plan */}
               <motion.div
-                className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-1/2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-              >
+  className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl flex flex-col w-full md:w-1/2 mt-6 md:mt-0"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.8 }}
+>
                 <div className="px-8 py-10 text-start flex-grow">
                   <h2 className="text-4xl font-bold text-slate-900 mb-4 font-josefin-slab">
                     Rocket
@@ -583,14 +617,15 @@ const Pricing: React.FC = () => {
           </div>
 
           {/* Tooltips */}
-          <AnimatePresence>
-            {hoveredHobbyFeature && (
-              <FeatureTooltip feature={hoveredHobbyFeature} position={hobbyTooltipPosition} />
-            )}
-            {hoveredScaleFeature && (
-              <FeatureTooltip feature={hoveredScaleFeature} position={scaleTooltipPosition} />
-            )}
-          </AnimatePresence>
+{/* Tooltips - Only show on non-mobile */}
+<AnimatePresence>
+  {!isMobile && hoveredHobbyFeature && (
+    <FeatureTooltip feature={hoveredHobbyFeature} position={hobbyTooltipPosition} />
+  )}
+  {!isMobile && hoveredScaleFeature && (
+    <FeatureTooltip feature={hoveredScaleFeature} position={scaleTooltipPosition} />
+  )}
+</AnimatePresence>
 
           {/* Feature Popup */}
           <AnimatePresence>
@@ -678,76 +713,77 @@ const Pricing: React.FC = () => {
           </AnimatePresence>
 
           {/* Add-ons Section */}
-          <motion.div
-            className="mt-12 sm:mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
-          >
-            <h4 className="font-display text-4xl font-bold tracking-tight text-slate-900 text-center">
-              Add-ons
-            </h4>
-            <div className="max-w-xl bg-white shadow-sm ring-1 ring-inset ring-slate-200 mx-auto mt-6 rounded-2xl lg:max-w-2xl">
-              <div className="space-y-6 px-8 py-6">
-                <div className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-3">
-                    <FolderGit2 className="h-8 w-8 text-orange-600" />
-                    <div className="grid">
-                      <h2 className="text-xl font-semibold tracking-tight text-slate-900">
-                        SubDirectory
-                      </h2>
-                      <p className="text-sm text-slate-600">youdomain.com/blog</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-0.5">
-                    <p className="text-3xl font-semibold tracking-tight text-slate-900">
-                      $10
-                    </p>
-                    <p className="text-lg font-medium text-slate-500 ml-2"> / mo</p>
-                  </div>
-                </div>
-                <hr className="border-slate-200" />
-                <div className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-3">
-                    <Users className="h-8 w-8 text-orange-600" />
-                    <div className="grid">
-                      <h2 className="text-xl font-semibold tracking-tight text-slate-900">
-                        Collaboration Seats for Teams
-                      </h2>
-                      <p className="text-sm text-slate-600">Account access for each member to boringsites admin.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-0.5">
-                    <p className="text-3xl font-semibold tracking-tight text-slate-900">
-                      $5
-                    </p>
-                    <p className="text-lg font-medium text-slate-500 ml-2">  user / mo</p>
-                  </div>
-                </div>
+{/* Add-ons Section */}
+<motion.div
+  className="mt-8 md:mt-12 lg:mt-16 px-4"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 1.2 }}
+>
+  <h4 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 text-center">
+    Add-ons
+  </h4>
+  <div className="bg-white shadow-sm ring-1 ring-inset ring-slate-200 mx-auto mt-4 md:mt-6 rounded-2xl max-w-xl lg:max-w-2xl">
+    <div className="space-y-4 md:space-y-6 px-4 md:px-8 py-4 md:py-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-6">
+        <div className="flex items-center gap-2 md:gap-3">
+          <FolderGit2 className="h-6 w-6 md:h-8 md:w-8 text-orange-600 flex-shrink-0" />
+          <div>
+            <h2 className="text-lg md:text-xl font-semibold tracking-tight text-slate-900">
+              SubDirectory
+            </h2>
+            <p className="text-xs md:text-sm text-slate-600">youdomain.com/blog</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-0.5 mt-2 md:mt-0">
+          <p className="text-xl md:text-3xl font-semibold tracking-tight text-slate-900">
+            $10
+          </p>
+          <p className="text-base md:text-lg font-medium text-slate-500 ml-1 md:ml-2"> / mo</p>
+        </div>
+      </div>
+      <hr className="border-slate-200" />
+      
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-6">
+        <div className="flex items-center gap-2 md:gap-3">
+          <Users className="h-6 w-6 md:h-8 md:w-8 text-orange-600 flex-shrink-0" />
+          <div>
+            <h2 className="text-lg md:text-xl font-semibold tracking-tight text-slate-900">
+              Collaboration Seats
+            </h2>
+            <p className="text-xs md:text-sm text-slate-600">Account access for each team member.</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-0.5 mt-2 md:mt-0">
+          <p className="text-xl md:text-3xl font-semibold tracking-tight text-slate-900">
+            $5
+          </p>
+          <p className="text-base md:text-lg font-medium text-slate-500 ml-1 md:ml-2">user / mo</p>
+        </div>
+      </div>
 
-
-                <hr className="border-slate-200" />
-                <div className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-3">
-                    <DatabaseIcon className="h-8 w-8 text-orange-600" />
-                    <div className="grid">
-                      <h2 className="text-xl font-semibold tracking-tight text-slate-900">
-                        Fetch Kitty - Data Entry AI
-                      </h2>
-                      <p className="text-sm text-slate-600">Get access to fetchkitty.com ai web scraper and publisher.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-0.5">
-                    <p className="text-3xl font-semibold tracking-tight text-slate-900">
-                      $20
-                    </p>
-                    <p className="text-lg font-medium text-slate-500 ml-2"> / mo</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </motion.div>
+      <hr className="border-slate-200" />
+      
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-6">
+        <div className="flex items-center gap-2 md:gap-3">
+          <DatabaseIcon className="h-6 w-6 md:h-8 md:w-8 text-orange-600 flex-shrink-0" />
+          <div>
+            <h2 className="text-lg md:text-xl font-semibold tracking-tight text-slate-900">
+              Fetch Kitty - Data Entry AI
+            </h2>
+            <p className="text-xs md:text-sm text-slate-600">AI web scraper and publisher.</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-0.5 mt-2 md:mt-0">
+          <p className="text-xl md:text-3xl font-semibold tracking-tight text-slate-900">
+            $20
+          </p>
+          <p className="text-base md:text-lg font-medium text-slate-500 ml-1 md:ml-2"> / mo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</motion.div>
 
           <FAQSection />
 

@@ -6,13 +6,13 @@ import Image from 'next/image'
 
 /**
  * @typedef {Object} ModalVideoProps
- * @property {string} video - The URL of the video to be played
+ * @property {string} youtubeId - The ID of the YouTube video to be played
  * @property {number} videoWidth - The width of the video player
  * @property {number} videoHeight - The height of the video player
  */
 
 interface ModalVideoProps {
-  video: string;
+  youtubeId: string;
   videoWidth: number;
   videoHeight: number;
 }
@@ -28,12 +28,11 @@ const BRAND_LOGOS = [
 ];
 
 export default function ModalVideo({
-  video,
+  youtubeId,
   videoWidth,
   videoHeight,
 }: ModalVideoProps) {
   const [modalOpen, setModalOpen] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
     <div>
@@ -56,7 +55,7 @@ export default function ModalVideo({
           </div>
 
           <button 
-            className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110" 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110" 
             onClick={() => { setModalOpen(true) }}
           >
             <img 
@@ -65,17 +64,12 @@ export default function ModalVideo({
               className="w-full h-auto"
             />
           </button>
-
-
-
         </div>
-
-
       </div>
       {/* End: Video thumbnail */}
 
-      <Transition show={modalOpen} as={Fragment} afterEnter={() => videoRef.current?.play()}>
-        <Dialog initialFocus={videoRef} onClose={() => setModalOpen(false)}>
+      <Transition show={modalOpen} as={Fragment}>
+        <Dialog onClose={() => setModalOpen(false)}>
           {/* Modal backdrop */}
           <Transition.Child
             className="fixed inset-0 z-[99999] bg-black bg-opacity-75 transition-opacity"
@@ -99,17 +93,13 @@ export default function ModalVideo({
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className="max-w-6xl mx-auto h-full flex items-center">
+            <div className=" mx-auto h-full flex items-center">
               <Dialog.Panel className="w-full max-h-full aspect-video bg-black overflow-hidden">
-                <video ref={videoRef} width={videoWidth} height={videoHeight} loop controls>
-                  <source src={video} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              <iframe width="1150" height="715" src="https://www.youtube.com/embed/bs3LiGl7zQQ?si=9ISLE22f4ku3U1tR&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </Dialog.Panel>
             </div>
           </Transition.Child>
           {/* End: Modal dialog */}
-
         </Dialog>
       </Transition>
     </div>
