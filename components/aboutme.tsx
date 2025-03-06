@@ -64,9 +64,6 @@ export default function AboutMe() {
 
         <div className="mt-8">
           <ModalVideo
-            video="/videos/videos01.mp4"
-            videoWidth={1920}
-            videoHeight={1080}
           />
         </div>
       </div>
