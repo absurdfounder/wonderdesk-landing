@@ -157,8 +157,8 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="card create-demo mt-24">
-      <div className="justify-center mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start max-w-7xl border bg-slate-100 rounded-full p-8 mb-12">
+    <div className="card create-demo mt-12">
+      <div className="justify-center mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start max-w-7xl border bg-slate-100 rounded-2xl p-8 mb-12">
         <div className="w-full p-4 h-full px-12">
           <h3 className="text-center text-sm font-semibold mt-12 mb-12 opacity-75">"Your success is our success. This is why all our services are at cost to cost basis. <u>We only make money when you grow</u> ."</h3>
           <div className="flex justify-center my-4">
@@ -166,7 +166,7 @@ export default function ContactUs() {
           </div>
           <div className="text-center">
             <h3 className="text-xl font-semibold">VP of Success</h3>
-            <a href="mailto:success@BoringSites.com" className="text-orange-700 block">success@BoringSites.com</a>
+            <a href="mailto:success@boringsites.com" className="text-orange-700 block">success@boringsites.com</a>
           </div>
           <p className="text-center mt-4 mb-8">Please complete this form, and VP of Success will be in touch with you shortly.</p>
           <div className="awards mt-4 flex justify-around">
@@ -184,7 +184,7 @@ export default function ContactUs() {
             </a>
           </div>
         </div>
-        <div className="w-full border p-4 px-12 rounded-full shadow-lg bg-white">
+        <div className="w-full border p-4 px-12 rounded-2xl shadow-lg bg-white">
           <h3 className="text-center text-2xl font-semibold mt-12 mb-12">Let us know</h3>
           <form className="new_demo mt-4" onSubmit={handleSubmit}>
             <div className="field mb-4">
@@ -203,7 +203,7 @@ export default function ContactUs() {
           </form>
           <div className="contact-us mt-4 text-center">
             <span className="block">+1 (833) 387 3877</span>
-            <a href="mailto:support@BoringSites.com" className="text-orange-700 block">support@BoringSites.com</a>
+            <a href="mailto:support@boringsites.com" className="text-orange-700 block">support@boringsites.com</a>
           </div>
         </div>
       </div>

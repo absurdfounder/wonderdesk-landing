@@ -4,11 +4,11 @@
 
 **Simple Light** is a free landing page template built on top of **TailwindCSS** and fully coded in **React** / **Next.js**. Simple light is designed to provide all the basic components a developer need to Get a landing page for SaaS products, online services, and more. 
 Use it for whatever you want, and be sure to reach us out on Twitter if you build anything cool/useful with it.
-Created and maintained with ❤️ by [BoringSites.com](https://BoringSites.com/).
+Created and maintained with ❤️ by [boringsites.com](https://boringsites.com/).
 
 ## Live demo
 
-Check the live demo here 👉️ [https://BoringSites.com/](https://BoringSites.com/)
+Check the live demo here 👉️ [https://boringsites.com/](https://boringsites.com/)
 
 
 ### Getting Started
@@ -52,7 +52,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ### Support notes
 This template has been developed with the App Router (`app`) and React Server Components. If you’re unfamiliar with these beta features, you can find more information about them on the Next.js beta documentation page. So, please note that any request dealing with React (e.g. extra features, customisations, et cetera) is to be considered out of the support scope.
 
-For more information about what support covers, please see our (FAQs)[https://BoringSites.com/faq/].
+For more information about what support covers, please see our (FAQs)[https://boringsites.com/faq/].
 
 ## Credits
 
@@ -61,7 +61,7 @@ For more information about what support covers, please see our (FAQs)[https://Bo
 ## Terms and License
 
 - Released under the [GPL](https://www.gnu.org/licenses/gpl-3.0.html).
-- Copyright 2024 [BoringSites](https://BoringSites.com/).
+- Copyright 2024 [BoringSites](https://boringsites.com/).
 - Use it for personal and commercial projects, but please don’t republish, redistribute, or resell the template.
 - Attribution is not required, although it is really appreciated.
 
@@ -71,4 +71,4 @@ We're an Italian developer/designer duo creating high-quality design/code resour
 
 ## Stay in the loop
 
-If you would like to know when we release new resources, you can follow us on [Twitter](https://twitter.com/absurdfounder), or you can subscribe to our monthly [newsletter](https://BoringSites.com/#subscribe).
+If you would like to know when we release new resources, you can follow us on [Twitter](https://twitter.com/absurdfounder), or you can subscribe to our monthly [newsletter](https://boringsites.com/#subscribe).

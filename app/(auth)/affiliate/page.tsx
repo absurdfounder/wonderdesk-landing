@@ -30,7 +30,7 @@ export default function PageDetail() {
   return (
     <section className="bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-18 md:pb-20">
+        <div className="pt-12 pb-12 md:pt-18 md:pb-20">
 
           {/* Page header */}
 
@@ -220,7 +220,7 @@ refer to BoringSites, without limits. Join
                 </li>
               </ul>
               <div className="text-center mt-8">
-                <Link href="https://partner.BoringSites.com/" target="_self" className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center">Start to earn money</Link>
+                <Link href="https://partner.boringsites.com/" target="_self" className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center">Start to earn money</Link>
               </div>
             </div>
           </div>

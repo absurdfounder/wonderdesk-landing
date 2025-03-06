@@ -208,7 +208,7 @@ const FAQSection: React.FC = () => {
           </h2>
           <p className="text-base font-normal text-slate-600 mt-4 sm:text-lg">
             Have a different question and can't find the answer you're looking for? Reach out to our support team by
-            <a target="_blank" rel="noopener noreferrer" href="mailto:vaibhav@BoringSites.com" className="isomorphic-link isomorphic-link--external text-orange-800 hover:text-blue-500 hover:underline px-2">sending us an email</a>
+            <a target="_blank" rel="noopener noreferrer" href="mailto:vaibhav@boringsites.com" className="isomorphic-link isomorphic-link--external text-orange-800 hover:text-blue-500 hover:underline px-2">sending us an email</a>
             and we'll get back to you as soon as we can.
           </p>
         </div>
@@ -408,7 +408,7 @@ const Pricing: React.FC = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-18 md:pb-20">
+        <div className="pt-12 pb-12 md:pt-18 md:pb-20">
           <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight tracking-loose mb-4 justify-center text-center">
             <span className="opacity-50  font-roboto-mono">Build anything with</span>
             <br />

@@ -30,7 +30,7 @@ export default function PageDetail() {
   return (
     <section className="bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-18 md:pb-20">
+        <div className="pt-12 pb-12 md:pt-18 md:pb-20">
 
           {/* Page header */}
 
@@ -49,7 +49,7 @@ export default function PageDetail() {
         </div>
     </div>
     <div className="text-center">
-        <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Migrate</span> your content from another external Knowledge Base</h1>
+        <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Migrate</span> your content from another external Website</h1>
         <p className="mt-6 leading-7 text-slate-600 sm:text-lg sm:leading-8">
             Planning to move your help content from another provider? We can seamlessly import your existing knowledge base from pretty much any platform into our Notion template.
         </p>
@@ -77,7 +77,7 @@ export default function PageDetail() {
     </div>
     <div className="bg-white">
         <div className="px-6 mx-auto max-w-7xl lg:px-8">
-            <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-full md:grid-cols-3">
+            <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3">
                 <div className="p-8 bg-slate-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/intercom.png" unoptimized alt="Intercom" width="158" height="48" className="object-contain w-full max-h-10" /></div>
                 <div className="p-6 bg-slate-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/crisp.png" unoptimized alt="Crisp" width="158" height="48" className="object-contain w-full pt-1 max-h-10" /></div>
                 <div className="p-6 bg-slate-400/5 sm:p-10"><Image src="https://boringsites.com/imgs/providers/helpscout.png" unoptimized alt="HelpScout" width="158" height="48" className="object-contain w-full pt-3 max-h-10" /></div>

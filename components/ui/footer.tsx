@@ -49,8 +49,8 @@ export default function Footer() {
               <Image src={Logo} loading='eager' alt="Logo" width={160} height={160} className="w-auto h-auto max-w-[160px]" />
             </Link>
             <p className="text-sm text-slate-600 mb-4">Boring Sites is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder" className='text-orange-600 hover:underline'>@absurdfounder</Link>.</p>
-            <p className='mb-3 text-xs text-slate-400'>BoringSites is not related with Notion™ the company in any way.</p>
-            <div className="text-xs md:text-sm text-slate-600 mb-8">
+            <p className='mb-3 text-xs text-slate-400'>Boring is the biggest admirer of Notion™ , no-relation, just admiration.</p>
+<div className="text-xs md:text-sm text-slate-600 mb-8">
               <Link href="/terms" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Terms</Link> · <Link href="/privacy" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
             </div>
           </div>
@@ -62,16 +62,16 @@ export default function Footer() {
             <FooterSection title="Product">
               <ul className="text-sm space-y-2 md:mt-4">
                 <li>
-                  <Link href="https://app.BoringSites.com" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">BoringSites Builder</Link>
+                  <Link href="https://app.boringsites.com" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">BoringSites Builder</Link>
                 </li>
                 <li>
                   <Link href="/showcase" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Showcase</Link>
                 </li>
                 <li>
-                  <Link href="https://BoringSites.com/blog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blog</Link>
+                  <Link href="https://boringsites.com/blog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blog</Link>
                 </li>
                 <li>
-                  <Link href="https://BoringSites.com/changelog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Changelog</Link>
+                  <Link href="https://boringsites.com/changelog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Changelog</Link>
                 </li>
                 <li>
                   <Link href="/integration" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Integrations</Link>
@@ -81,7 +81,7 @@ export default function Footer() {
                 </li>
                 {/* Show limited links on mobile */}
                 <li className="md:block">
-                  <Link href="/migrating-to-BoringSites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Migrate to BoringSites</Link>
+                  <Link href="/migrating-to-boringsites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Migrate to BoringSites</Link>
                 </li>
                 <li className="md:block">
                   <Link href="/agency" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Hire Experts</Link>

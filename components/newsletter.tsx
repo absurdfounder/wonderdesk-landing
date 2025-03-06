@@ -52,7 +52,7 @@ const [index, setIndex] = useState(0);
                 {/* CTA form */}
                 <form className="w-full lg:w-auto">
                   <div className="flex flex-col sm:flex-row max-w-xs mx-auto sm:max-w-md lg:mx-0">
-                  <Link href="app.BoringSites.com" className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Get a Directory</Link>
+                  <Link href="app.boringsites.com" className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Get a Directory</Link>
                   </div>
                   {/* Success message */}
                   {/* <p className="text-sm text-slate-400 mt-3">Thanks for subscribing!</p> */}

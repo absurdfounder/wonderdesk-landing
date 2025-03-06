@@ -187,7 +187,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               >
                 <Link
                   className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center"
-                  href="https://app.BoringSites.com"
+                  href="https://app.boringsites.com"
                 >
                   Get a directory <ExternalLink className="ml-2 w-4 h-4" />
                 </Link>

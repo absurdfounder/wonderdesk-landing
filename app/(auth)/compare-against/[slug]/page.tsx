@@ -101,7 +101,7 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
             <p className="text-lg sm:text-xl text-slate-600">
               {filteredContent.product.description}
             </p>
-            <Link href="app.BoringSites.com" className="text-white bg-slate-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
+            <Link href="app.boringsites.com" className="text-white bg-slate-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
               Get a Directory
             </Link>
           </div>

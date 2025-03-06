@@ -156,7 +156,7 @@ export default function MobileMenu() {
               <Link href="/showcase" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Showcase</Link>
             </li>
             <li>
-              <Link href="https://app.BoringSites.com" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between">Login</Link>
+              <Link href="https://app.boringsites.com" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between">Login</Link>
             </li>
             <li>
               <Link href="https://app.youform.com/forms/r3rvhjv4" target='_blank' className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 w-full justify-between">

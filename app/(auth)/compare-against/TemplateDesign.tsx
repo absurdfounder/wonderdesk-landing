@@ -18,19 +18,19 @@ const TemplateDesign = () => {
                         </div>
                     </div>
                     <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
                 <div className="relative w-full"><Image 
                 width={100}
                 height={100}
-                unoptimized src="https://dazzling-cat.netlify.app/write%20on%20notion.png" alt="" className="h-full w-full rounded-full object-cover" /></div>
+                unoptimized src="https://dazzling-cat.netlify.app/write%20on%20notion.png" alt="" className="h-full w-full rounded-2xl object-cover" /></div>
             </div>
 
 
 
             <div className="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2 lg:items-center xl:gap-x-16 mb-12">
-                <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/notion%20to%20website.png" width={100} height={100}  alt="" className="h-full w-full rounded-full object-cover" /></div>
+                <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/notion%20to%20website.png" width={100} height={100}  alt="" className="h-full w-full rounded-2xl object-cover" /></div>
 
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
@@ -43,7 +43,7 @@ const TemplateDesign = () => {
                         </div>
                     </div>
                     <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
             </div>
@@ -62,13 +62,13 @@ const TemplateDesign = () => {
                         </div>
                     </div>
                     <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
                 <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/performancewebsite.png" 
                 width={100}
                 height={100}
-                alt="" className="h-full w-full rounded-full object-cover" /></div>
+                alt="" className="h-full w-full rounded-2xl object-cover" /></div>
             </div>
 
 
@@ -77,7 +77,7 @@ const TemplateDesign = () => {
                 <div className="relative w-full"><Image unoptimized
                 
                 
-                src="https://dazzling-cat.netlify.app/analyticsseo.png" alt="" width={100} height={100} className="h-full w-full rounded-full object-cover" /></div>
+                src="https://dazzling-cat.netlify.app/analyticsseo.png" alt="" width={100} height={100} className="h-full w-full rounded-2xl object-cover" /></div>
 
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
@@ -89,14 +89,14 @@ const TemplateDesign = () => {
                         </div>
                     </div>
                     <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
             </div>
 
             <div className="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2 lg:items-center xl:gap-x-16 mb-12">
 
-                <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/integrationsdb.png" alt="" width={100} height={100} className="h-full w-full rounded-full object-cover" /></div>
+                <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/integrationsdb.png" alt="" width={100} height={100} className="h-full w-full rounded-2xl object-cover" /></div>
 
                 <div className="max-w-sm">
                     <div className="flex items-center space-x-4">
@@ -108,7 +108,7 @@ const TemplateDesign = () => {
                         </div>
                     </div>
                     <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.BoringSites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
+                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ export default function PageDetail() {
   return (
     <section className="bg-gradient-to-b from-slate-100 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-18 md:pb-20">
+        <div className="pt-12 pb-12 md:pt-18 md:pb-20">
 
           {/* Page header */}
 
@@ -52,7 +52,7 @@ export default function PageDetail() {
                         <span>
                             <span>These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and&nbsp;Malai Tikka Labs LLC, doing business as BoringSites&nbsp;("BoringSites", “</span>
                             <b><span>we</span></b><span>”, “</span><b><span>us</span></b><span>”, or “</span><b><span>our</span></b><span>”), concerning your access to and use of the&nbsp;</span>
-                            <Link target="_blank" href="https://www.BoringSites.com/" className="link"><span>https://www.BoringSites.com</span></Link>
+                            <Link target="_blank" href="https://www.boringsites.com/" className="link"><span>https://www.boringsites.com</span></Link>
                             <span>
                                 &nbsp;website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). You agree that by accessing the Site, you
                                 have read, understood, and agree to be bound by all of these Terms of Use. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST&nbsp;DISCONTINUE USE
@@ -253,7 +253,7 @@ export default function PageDetail() {
                         </span>
                     </p>
                     <p className="text-slate-600 my-2">
-                        <span><span>If you are unsatisfied with our services, please email us at&nbsp;vaibhav@BoringSites.com</span></span>
+                        <span><span>If you are unsatisfied with our services, please email us at&nbsp;vaibhav@boringsites.com</span></span>
                     </p>
                     <h2 className="h4 my-2">
                         <span><span>LICENSE</span></span>
@@ -626,7 +626,7 @@ export default function PageDetail() {
                     </h2>
                     <p className="text-slate-600 my-2">
                         <span>
-                            <span>We care about data privacy and security. Please review our Privacy Policy:&nbsp;</span><Link target="_blank" href="https://www.BoringSites.com/privacy" className="link"><span>https://www.BoringSites.com/privacy</span></Link>
+                            <span>We care about data privacy and security. Please review our Privacy Policy:&nbsp;</span><Link target="_blank" href="https://www.boringsites.com/privacy" className="link"><span>https://www.boringsites.com/privacy</span></Link>
                             <span>. By using the Site, you agree to be bound by our Privacy Policy, which is incorporated into these Terms of Use.</span>
                         </span>
                     </p>

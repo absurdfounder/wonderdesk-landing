@@ -124,7 +124,7 @@ export default function Header() {
               <NavLink href="https://boringsites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
               <NavLink href="/pricing" text="Pricing" />
               <NavLink href="https://boringsites.canny.io" text="Roadmap" />
-              <NavLink href="https://app.BoringSites.com" text="Login" />
+              <NavLink href="https://app.boringsites.com" text="Login" />
               <li>
                 <Link
                   href="https://app.youform.com/forms/r3rvhjv4"

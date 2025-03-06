@@ -166,7 +166,7 @@ export default function OldWays() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-xl mx-auto px-4">
               <Link 
-                href="https://app.BoringSites.com"
+                href="https://app.boringsites.com"
                 className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300 text-center"
               >
                 Start from 98% Ready

@@ -35,7 +35,7 @@ function IntegrationDetail() {
                     <p>Embed interactive product demos in your documentation and turn all users into power users.</p>
                   </div>
                   <div className="flex space-x-2 items-center" >
-                    <Link href="https://app.BoringSites.com/integrations/arcade" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
+                    <Link href="https://app.boringsites.com/integrations/arcade" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
                       <span>Install</span>
                     </Link>
                   </div>

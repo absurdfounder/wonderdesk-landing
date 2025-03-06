@@ -44,7 +44,7 @@ export default async function Template() {
   return (
     <section className="bg-gradient-to-b from-slate-100 to-white" id="template-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-18 md:pb-20">
+        <div className="pt-12 pb-12 md:pt-18 md:pb-20">
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h1 className="h2 mb-4">Not Templates, Beautiful Businesses</h1>
@@ -77,7 +77,7 @@ export default async function Template() {
                       <div>
                         <Link
                           className="btn bg-orange-600 hover:bg-orange-700 shadow"
-                          href="https://app.BoringSites.com"
+                          href="https://app.boringsites.com"
                         >
                           Ask Us to Build
                         </Link>
