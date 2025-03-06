@@ -8,10 +8,10 @@ import { useState } from 'react';
 // Create collapsible section component for mobile
 const FooterSection = ({ title, children }: { title: string; children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <div className="border-b border-slate-200 md:border-none">
-      <button 
+      <button
         className="flex w-full justify-between items-center py-3 md:py-0 md:cursor-default"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -19,11 +19,11 @@ const FooterSection = ({ title, children }: { title: string; children: React.Rea
         <span className="md:hidden">
           {isOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+              <path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
             </svg>
           ) : (
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
             </svg>
           )}
         </span>
@@ -39,10 +39,10 @@ export default function Footer() {
   return (
     <footer className="bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
         {/* Top area: Blocks */}
         <div className="py-8 md:py-12 border-t border-slate-200">
-          
+
           {/* Company info - Always visible */}
           <div className="mb-8 md:mb-0">
             <Link href={"/"} className="inline-block mb-4">
@@ -54,10 +54,10 @@ export default function Footer() {
               <Link href="/terms" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Terms</Link> · <Link href="/privacy" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
             </div>
           </div>
-          
+
           {/* Footer link sections - Collapsible on mobile */}
           <div className="grid md:grid-cols-3 gap-8">
-            
+
             {/* Product section */}
             <FooterSection title="Product">
               <ul className="text-sm space-y-2 md:mt-4">
@@ -94,7 +94,7 @@ export default function Footer() {
                 </li>
               </ul>
             </FooterSection>
-            
+
             {/* Resources section */}
             <FooterSection title="Resources">
               <ul className="text-sm space-y-2 md:mt-4">
@@ -125,7 +125,7 @@ export default function Footer() {
                 </li>
               </ul>
             </FooterSection>
-            
+
             {/* Sites by Bear section */}
             <FooterSection title="Sites by Bear 🐻">
               <ul className="text-sm space-y-2 md:mt-4">
@@ -149,17 +149,17 @@ export default function Footer() {
                 </li>
               </ul>
             </FooterSection>
-            
+
           </div>
         </div>
-        
+
         {/* Bottom area */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200">
           {/* Copyrights note */}
           <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1">
             &copy; Boring Sites LLC. All rights reserved.
           </div>
-          
+
           {/* Social links */}
           <ul className="flex flex-wrap mb-4 md:mb-0 order-1 md:order-2 gap-3">
             <li>
@@ -180,7 +180,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        
+
       </div>
     </footer>
   )
