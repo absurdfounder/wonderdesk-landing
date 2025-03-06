@@ -41,9 +41,6 @@ export default function Home() {
 
 
       <ModalVideo
-                            video="/videos/videos01.mp4"
-                            videoWidth={1920}
-                            videoHeight={1080}
                         />
 
 

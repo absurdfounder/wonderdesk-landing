@@ -96,9 +96,6 @@ export default function PageDetail() {
 
 
                     <ModalVideo
-                            video="/videos/videos01.mp4"
-                            videoWidth={1920}
-                            videoHeight={1080}
                         />
 
                 </div>

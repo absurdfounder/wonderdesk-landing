@@ -81,7 +81,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
         </svg>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-18 md:pb-20 space-y-8 mt-8">
+        <div className="pt-12 pb-12">
           <motion.div
             className="text-center px-4 sm:px-6 lg:px-8"
             initial={{ y: 20, opacity: 0 }}
