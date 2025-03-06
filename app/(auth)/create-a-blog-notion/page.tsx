@@ -93,11 +93,11 @@ export default function PageDetail() {
                             </div>
                         </div>
 
-                        <ModalVideo
-                            video="/videos/videos01.mp4"
-                            videoWidth={1920}
-                            videoHeight={1080}
-                        />
+<ModalVideo
+    src="/videos/videos01.mp4"
+    videoWidth={1920}
+    videoHeight={1080}
+/>
 
                     </div>
                 </div>
