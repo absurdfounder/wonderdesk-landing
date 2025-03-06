@@ -5,7 +5,7 @@ import ModalVideo from "@/components/modal-video";
 export default function AboutMe() {
   return (
     <section className="relative">
-      <div className="px-4 sm:px-6 pt-16 md:pt-20 pb-12 max-w-6xl mx-auto">
+      <div className="px-4 sm:px-6 pt-16 md:pt-20 pb-12 max-w-7xl mx-auto">
         <h1 className="h2 mb-8 text-start font-silkscreen">
           Hello! 👋<br/>
           My name is Vaibhav.

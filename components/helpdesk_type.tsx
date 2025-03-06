@@ -109,7 +109,7 @@ export default function Helpdesk_Type() {
     <section id="helpdesk-section" className="relative mt-4 mb-4 pb-4">
       
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-6 md:pt-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">

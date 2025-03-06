@@ -107,7 +107,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
   }, [selectedType, templates]);
 
   return (
-    <section className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8' id="template-section">
+    <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' id="template-section">
       <motion.h1 
         className="text-center mb-4 space-y-2"
         initial={{ opacity: 0, y: 20 }}

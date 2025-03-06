@@ -29,7 +29,7 @@ twitter: {
 export default function PageDetail() {
   return (
     <section className="bg-gradient-to-b from-slate-100 to-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
 
           {/* Page header */}

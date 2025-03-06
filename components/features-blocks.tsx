@@ -7,7 +7,7 @@ export default function FeaturesBlocks() {
     <section className="relative">
       {/* Section background (needs .relative class on parent and next sibling elements) */}
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div>
           <section className="mt-2">
             {/* Section header */}

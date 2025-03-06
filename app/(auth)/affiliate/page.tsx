@@ -29,7 +29,7 @@ twitter: {
 export default function PageDetail() {
   return (
     <section className="bg-gradient-to-b from-slate-100 to-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20">
 
           {/* Page header */}
@@ -111,7 +111,7 @@ refer to BoringSites, without limits. Join
 
 
 
-          <div className="max-w-6xl  container mx-auto py-8">
+          <div className="max-w-7xl  container mx-auto py-8">
             <div className="flex gap-4 justify-center space-x-4 relative items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border w-fit m-auto">
               {/* Affiliate Detail Item */}
               <Link href="." className="flex flex-col items-center space-y-2 px-8 border p-6 rounded">
@@ -178,7 +178,7 @@ refer to BoringSites, without limits. Join
               <h2 className="h2 font-semibold mb-4 mt-8">Make Passive Income!</h2>
               <p className="text-md mt-4 mb-4 text-slate-800">Just imagine this amount of cash coming into your bank account every single month. *Calculations are based on the Startup plan.</p>
             </div>
-            <div className="max-w-6xl  container mx-auto">
+            <div className="max-w-7xl  container mx-auto">
               <ul className="flex flex-wrap justify-center">
                 <li className="w-1/3 px-2 mb-4">
                   <div className="bg-slate-100 p-4 rounded-lg shadow border-slate-600 border">
@@ -262,7 +262,7 @@ refer to BoringSites, without limits. Join
 
 
           <div className="py-20 bg-white relative">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
               <div className="text-center">
                 <h2 className="text-3xl font-semibold">Questions?</h2>
               </div>

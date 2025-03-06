@@ -80,7 +80,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
         </svg>
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-18 md:pb-20 space-y-8 mt-8">
           <motion.div
             className="text-center px-4 sm:px-6 lg:px-8"
@@ -256,7 +256,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             <div className="max-w-7xl mx-auto relative">
 
 
-            <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl mx-auto px-4 md:px-8 gap-8 md:gap-4">
+            <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 gap-8 md:gap-4">
       {/* Notion Site Column */}
       <div className="w-full">
         <div className="">

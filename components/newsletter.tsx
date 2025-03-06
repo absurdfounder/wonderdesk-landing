@@ -21,7 +21,7 @@ const [index, setIndex] = useState(0);
 
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 ">
         <div className="pb-12 md:pb-20">
 
           {/* CTA box */}

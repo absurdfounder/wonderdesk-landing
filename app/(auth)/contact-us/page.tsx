@@ -158,7 +158,7 @@ export default function ContactUs() {
 
   return (
     <div className="card create-demo mt-24">
-      <div className="justify-center mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start max-w-6xl border bg-slate-100 rounded-full p-8 mb-12">
+      <div className="justify-center mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start max-w-7xl border bg-slate-100 rounded-full p-8 mb-12">
         <div className="w-full p-4 h-full px-12">
           <h3 className="text-center text-sm font-semibold mt-12 mb-12 opacity-75">"Your success is our success. This is why all our services are at cost to cost basis. <u>We only make money when you grow</u> ."</h3>
           <div className="flex justify-center my-4">

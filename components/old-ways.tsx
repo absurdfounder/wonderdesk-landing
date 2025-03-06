@@ -4,16 +4,16 @@ import Link from "next/link";
 export default function OldWays() {
   return (
     <section className="relative w-full">
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div>
           <section className="bg-white">
             <div className="container mx-auto">
               <div className="flex flex-col items-start space-y-6 lg:space-y-8 xl:space-y-10">
                 {/* Your content lives inside Notion */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 items-center h-full">
-                    <div className="p-6 sm:p-8 lg:p-10">
-                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600">No Hosting Hassles</p>
+                <div className="grid md:flex items-center h-full">
+                <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
+                <p className="text-sm font-bold uppercase tracking-wide text-orange-600">No Hosting Hassles</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Your content <span className="font-serif font-normal text-orange-600">lives inside Notion</span>
                       </h3>
@@ -21,8 +21,8 @@ export default function OldWays() {
                         Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6">
-                      <img 
+                    <div className="w-full p-4 lg:p-6 md:w-3/5">
+                    <img 
                         src="https://dazzling-cat.netlify.app/write%20on%20notion.png" 
                         alt="Write on Notion" 
                         className="w-full h-auto rounded-lg object-cover"
@@ -33,8 +33,8 @@ export default function OldWays() {
 
                 {/* Optimized for SEO */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 items-center h-full">
-                    <div className="p-6 sm:p-8 lg:p-10">
+                  <div className="grid md:flex items-center h-full">
+                    <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Optimized for</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Perfected for <span className="font-serif font-normal text-orange-600">SEO</span>
@@ -43,7 +43,7 @@ export default function OldWays() {
                         All you have to do is to write good content that satisfies the needs of your readers. We take care of the rest. Set all the proper meta tags and canonical links, Structured Schema markup for all your posts, Served from the edge to make the blog super fast, Easy controls to override the SEO settings.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6">
+                    <div className="w-full p-4 lg:p-6 md:w-3/5">
                       <img 
                         src="https://dazzling-cat.netlify.app/performancewebsite.png" 
                         alt="Performance Website" 
@@ -55,8 +55,8 @@ export default function OldWays() {
 
                 {/* Easy customization */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 items-center h-full">
-                    <div className="p-6 sm:p-8 lg:p-10">
+                  <div className="grid md:flex items-center h-full">
+                    <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Paid Subscribers</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Membership for <span className="font-serif font-normal text-orange-600">paid subscribers.</span>
@@ -65,7 +65,7 @@ export default function OldWays() {
                         Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside BoringSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6">
+                    <div className="w-full p-4 lg:p-6 md:w-3/5">
                       <img 
                         src="https://dazzling-cat.netlify.app/notion%20to%20website.png" 
                         alt="Notion to Website" 
@@ -77,8 +77,8 @@ export default function OldWays() {
 
                 {/* In-built analytics */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 items-center h-full">
-                    <div className="p-6 sm:p-8 lg:p-10">
+                  <div className="grid md:flex items-center h-full">
+                    <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">In-built</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         In-built <span className="font-serif font-normal text-orange-600">analytics</span>
@@ -87,7 +87,7 @@ export default function OldWays() {
                         See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6">
+                    <div className="w-full p-4 lg:p-6 md:w-3/5">
                       <img 
                         src="https://dazzling-cat.netlify.app/analyticsseo.png" 
                         alt="Analytics SEO" 
@@ -99,8 +99,8 @@ export default function OldWays() {
 
                 {/* AI Support */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 items-center h-full">
-                    <div className="p-6 sm:p-8 lg:p-10">
+                  <div className="grid md:flex items-center h-full">
+                    <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">AI SUPPORT & SUGGESTIONS</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Create AI Agents <span className="font-serif font-normal text-orange-600">over your content.</span>
@@ -109,7 +109,7 @@ export default function OldWays() {
                         Create AI Agents for support, suggestions, sales, therapy or any other purposes you have in mind. Because it's 2025 and AI is cheap. Make AI do most of work so that you can focus on whats important.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6">
+                    <div className="w-full p-4 lg:p-6 md:w-3/5">
                       <img 
                         src="https://dazzling-cat.netlify.app/aisupportreco.png" 
                         alt="AI Support" 
@@ -121,8 +121,8 @@ export default function OldWays() {
 
                 {/* Integrations */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 items-center h-full">
-                    <div className="p-6 sm:p-8 lg:p-10">
+                  <div className="grid md:flex items-center h-full">
+                    <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Integrates with</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Integrates with <span className="font-serif font-normal text-orange-600">your existing apps</span>
@@ -131,7 +131,7 @@ export default function OldWays() {
                         BoringSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to BoringSites? We got you covered.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6">
+                    <div className="w-full p-4 lg:p-6 md:w-3/5">
                       <img 
                         src="https://dazzling-cat.netlify.app/integrationsdb.png" 
                         alt="Integrations DB" 
