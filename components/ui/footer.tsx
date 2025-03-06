@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 // Create collapsible section component for mobile
-const FooterSection = ({ title, children }) => {
+const FooterSection = ({ title, children }: { title: string; children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
@@ -38,7 +38,7 @@ const FooterSection = ({ title, children }) => {
 export default function Footer() {
   return (
     <footer className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Top area: Blocks */}
         <div className="py-8 md:py-12 border-t border-slate-200">
