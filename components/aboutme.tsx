@@ -62,10 +62,7 @@ export default function AboutMe() {
           </div>
         </div>
 
-        <div className="mt-8">
-          <ModalVideo
-          />
-        </div>
+
       </div>
     </section>
   );

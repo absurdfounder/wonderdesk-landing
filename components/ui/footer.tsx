@@ -130,22 +130,22 @@ export default function Footer() {
             <FooterSection title="Sites by Bear 🐻">
               <ul className="text-sm space-y-2 md:mt-4">
                 <li>
-                  <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Discord Bots</Link>
+                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blockchain Grants</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Telegram Bots</Link>
+                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Airdrops Work</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Whatsapp Bots</Link>
+                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Solo Story</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Remote Jobs</Link>
+                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Funded Startups</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Mental Health</Link>
+                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Remote Desk</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Agency marketplace</Link>
+                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Agency marketplace</Link>
                 </li>
               </ul>
             </FooterSection>
