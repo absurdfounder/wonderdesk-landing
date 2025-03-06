@@ -32,13 +32,25 @@ import Showcases from '@/components/showcase'
 import Newsletter from '@/components/newsletter'
 import Marketplace_Type from '@/components/marketplaces_type'
 import FAQ from '@/components/faq'
+import ModalVideo from '@/components/modal-video'
 
 export default function Home() {
   return (
     <>
       <Hero />
 
+
+      <ModalVideo
+                            video="/videos/videos01.mp4"
+                            videoWidth={1920}
+                            videoHeight={1080}
+                        />
+
+
       <Marketplace_Type />
+
+
+
 
       {/* 
       <Testimonials />

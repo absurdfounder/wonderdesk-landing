@@ -4,13 +4,6 @@ import { useState, useRef, Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import Image from 'next/image'
 
-/**
- * @typedef {Object} ModalVideoProps
- * @property {string} youtubeId - The ID of the YouTube video to be played
- * @property {number} videoWidth - The width of the video player
- * @property {number} videoHeight - The height of the video player
- */
-
 interface ModalVideoProps {
   youtubeId: string;
   videoWidth: number;
@@ -18,13 +11,13 @@ interface ModalVideoProps {
 }
 
 const BRAND_LOGOS = [
-  { id: 'xumm', src: 'https://dazzling-cat.netlify.app/remotedesk-gray.png', alt: 'Xumm', className: 'h-10 w-auto object-contain' },
-  { id: 'green-got', src: 'https://dazzling-cat.netlify.app/downtown.png', alt: 'Green Got', className: 'h-12 w-auto object-contain lg:h-20' },
-  { id: 'growthx', src: 'https://dazzling-cat.netlify.app/saasboiler-gray.png', alt: 'GrowthX', className: 'h-10 w-auto object-contain lg:h-8' },
-  { id: 'beyonk', src: 'https://dazzling-cat.netlify.app/vcdeal.png', alt: 'Beyonk', className: 'h-10 w-auto object-contain lg:h-10' },
-  { id: 'taplio', src: 'https://dazzling-cat.netlify.app/tinystartups-gray.png', alt: 'Taplio', className: 'h-10 w-auto object-contain lg:h-10' },
-  { id: 'lal10', src: 'https://dazzling-cat.netlify.app/rightagency-gray.png', alt: 'Lal10', className: 'h-10 w-auto object-contain' },
-  { id: 'indie', src: 'https://dazzling-cat.netlify.app/betterhealth.png', alt: 'Indie Worldwide', className: 'h-10 w-auto object-contain lg:h-8' }
+  { id: 'xumm', src: 'https://dazzling-cat.netlify.app/remotedesk-gray.png', alt: 'Xumm', className: 'h-8 md:h-10 w-auto object-contain' },
+  { id: 'green-got', src: 'https://dazzling-cat.netlify.app/downtown.png', alt: 'Green Got', className: 'h-10 md:h-12 w-auto object-contain lg:h-20' },
+  { id: 'growthx', src: 'https://dazzling-cat.netlify.app/saasboiler-gray.png', alt: 'GrowthX', className: 'h-8 md:h-10 w-auto object-contain lg:h-8' },
+  { id: 'beyonk', src: 'https://dazzling-cat.netlify.app/vcdeal.png', alt: 'Beyonk', className: 'h-8 md:h-10 w-auto object-contain lg:h-10' },
+  { id: 'taplio', src: 'https://dazzling-cat.netlify.app/tinystartups-gray.png', alt: 'Taplio', className: 'h-8 md:h-10 w-auto object-contain lg:h-10' },
+  { id: 'lal10', src: 'https://dazzling-cat.netlify.app/rightagency-gray.png', alt: 'Lal10', className: 'h-8 md:h-10 w-auto object-contain' },
+  { id: 'indie', src: 'https://dazzling-cat.netlify.app/betterhealth.png', alt: 'Indie Worldwide', className: 'h-8 md:h-10 w-auto object-contain lg:h-8' }
 ];
 
 export default function ModalVideo({
@@ -38,8 +31,8 @@ export default function ModalVideo({
     <div>
       {/* Video thumbnail */}
       <div>
-        <div className="justify-center mb-8 mt-8 aos-init aos-animate" data-aos="zoom-y-out" data-aos-delay="450">
-          <div className="banner-bottom-wrapper">
+        <div className="justify-center mb-8 mt-8 aos-init aos-animate max-w-6xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
+          <div className="banner-bottom-wrapper relative">
             <video 
               autoPlay 
               loop 
@@ -52,18 +45,19 @@ export default function ModalVideo({
             >
               <source src="https://dazzling-cat.netlify.app/boring.mp4" type="video/mp4" />
             </video>
+            
+            {/* Play button - placing it inside the banner wrapper for proper positioning */}
+            <button 
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110" 
+              onClick={() => { setModalOpen(true) }}
+            >
+              <img 
+                src="https://dazzling-cat.netlify.app/sticky.webp"
+                alt="Play video"
+                className="w-full h-auto"
+              />
+            </button>
           </div>
-
-          <button 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110" 
-            onClick={() => { setModalOpen(true) }}
-          >
-            <img 
-              src="https://dazzling-cat.netlify.app/sticky.webp"
-              alt="Play video"
-              className="w-full h-auto"
-            />
-          </button>
         </div>
       </div>
       {/* End: Video thumbnail */}
@@ -93,11 +87,20 @@ export default function ModalVideo({
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className=" mx-auto h-full flex items-center">
-              <Dialog.Panel className="w-full max-h-full aspect-video bg-black overflow-hidden">
-              <iframe width="1150" height="715" src="https://www.youtube.com/embed/bs3LiGl7zQQ?si=9ISLE22f4ku3U1tR&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </Dialog.Panel>
-            </div>
+            <Dialog.Panel className="max-w-[90vw] w-[1150px] h-auto aspect-video bg-black overflow-hidden">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/bs3LiGl7zQQ?si=9ISLE22f4ku3U1tR&autoplay=1" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="w-full h-full"
+                style={{ aspectRatio: '16/9' }}
+              ></iframe>
+            </Dialog.Panel>
           </Transition.Child>
           {/* End: Modal dialog */}
         </Dialog>

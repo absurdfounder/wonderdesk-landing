@@ -179,11 +179,11 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <Link 
-          className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300 text-center flex items-center justify-center"
+          className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl bg-orange-600 text-black rounded-lg hover:bg-orange-700 transition-colors duration-300 text-center flex items-center justify-center"
           href="https://app.youform.com/forms/r3rvhjv4" 
           target='_blank'
         >
-          <b className='mx-2'>Ask Us</b> to Build 
+          <b className='mx-2 font-roboto-mono'>Ask Us</b> to Build 
         </Link>
         <Link 
           className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl border border-slate-900 text-slate-800 rounded-lg hover:bg-slate-800 hover:text-white transition-colors duration-300 text-center"
