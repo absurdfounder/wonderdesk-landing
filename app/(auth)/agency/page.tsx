@@ -42,7 +42,7 @@ export default function PageDetail() {
                                 If your ready to grow from a 100 users to 10,000 , We can customize your BoringSites site to match your needs.
                             </p>
                             <div className="flex items-center justify-center mt-10 gap-x-6">
-                                <Link href="/contact-us" className="px-6 py-2 text-lg font-semibold text-white rounded-lg gradient-bg-accent bg-slate-800">
+                                <Link  href="https://app.youform.com/forms/r3rvhjv4" target="_blank" className="px-6 py-2 text-lg font-semibold text-white rounded-lg gradient-bg-accent bg-slate-800">
                                     Contact Us →
                                 </Link>
                             </div>

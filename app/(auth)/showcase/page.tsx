@@ -77,7 +77,7 @@ export default async function Template() {
                       <div>
                         <Link
                           className="btn bg-orange-600 hover:bg-orange-700 shadow"
-                          href="https://app.boringsites.com"
+                          href="https://app.youform.com/forms/r3rvhjv4" target="_blank"
                         >
                           Ask Us to Build
                         </Link>
