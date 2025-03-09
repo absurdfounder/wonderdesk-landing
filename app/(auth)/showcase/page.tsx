@@ -21,6 +21,11 @@ interface Template {
   product?: Product;
 }
 
+interface TagCount {
+  tag: string;
+  count: number;
+}
+
 // Utility function to truncate text with proper typing
 const truncateText = (text: string | undefined, maxLength: number): string => {
   if (!text) return "";
@@ -33,9 +38,12 @@ export default function Template() {
   
   const [templates, setTemplates] = useState<Template[]>([]);
   const [filteredTemplates, setFilteredTemplates] = useState<Template[]>([]);
-  const [allTags, setAllTags] = useState<string[]>([]);
+  const [allTags, setAllTags] = useState<TagCount[]>([]);
+  const [popularTags, setPopularTags] = useState<TagCount[]>([]);
+  const [lesserTags, setLesserTags] = useState<TagCount[]>([]);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showAllTags, setShowAllTags] = useState(false);
 
   // Helper function to update URL
   const updateUrlParams = (tags: string[]) => {
@@ -71,23 +79,43 @@ export default function Template() {
         setTemplates(data);
         setFilteredTemplates(data);
         
-        // Extract all unique tags
-        const tags = new Set<string>();
+        // Count tag occurrences
+        const tagCounts: Record<string, number> = {};
         data.forEach(template => {
           if (template.product?.tags) {
-            template.product.tags.forEach(tag => tags.add(tag));
+            template.product.tags.forEach(tag => {
+              tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+            });
           }
         });
         
-        const sortedTags = Array.from(tags).sort();
-        setAllTags(sortedTags);
+        // Convert to TagCount array and sort
+        const tagCountArray: TagCount[] = Object.entries(tagCounts).map(([tag, count]) => ({
+          tag,
+          count
+        }));
+        
+        // Sort by count (descending) then alphabetically
+        tagCountArray.sort((a, b) => {
+          if (b.count !== a.count) return b.count - a.count;
+          return a.tag.localeCompare(b.tag);
+        });
+        
+        setAllTags(tagCountArray);
+        
+        // Separate popular tags (more than 1 template) from lesser tags
+        const popular = tagCountArray.filter(tc => tc.count > 1);
+        const lesser = tagCountArray.filter(tc => tc.count === 1);
+        
+        setPopularTags(popular);
+        setLesserTags(lesser);
         
         // Apply URL filters after getting data
         const tagsParam = searchParams.get('tags');
         if (tagsParam) {
           const urlTags = tagsParam.split(',').map(tag => tag.trim());
           // Only keep tags that actually exist in our data
-          const validUrlTags = urlTags.filter(tag => sortedTags.includes(tag));
+          const validUrlTags = urlTags.filter(tag => tagCountArray.some(tc => tc.tag === tag));
           setSelectedTags(validUrlTags);
         }
         
@@ -130,11 +158,16 @@ export default function Template() {
     updateUrlParams([]);
   };
 
+  // Toggle showing all tags
+  const toggleShowAllTags = () => {
+    setShowAllTags(!showAllTags);
+  };
+
   return (
     <section id="template-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header with improved spacing and typography */}
-        <div className="pt-16 pb-20 md:pt-24 md:pb-28">
+        <div className="pt-4 pb-20 md:pt-24 md:pb-28">
           <div className="mx-auto text-center pb-12 md:pb-16">
             <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-4xl mb-6">
               <span className="block">Not Templates,</span>
@@ -146,9 +179,28 @@ export default function Template() {
 
             {/* Tag filtering section */}
             <div className="mt-12 mb-8">
-              <div className="mb-4">
+              <div className="mb-4 max-w-4xl m-auto">
                 <div className="flex flex-wrap justify-center gap-2 mx-auto">
-                  {allTags.map((tag) => (
+                  {/* Popular tags (with more than 1 template) */}
+                  {popularTags.map(({ tag, count }) => (
+                    <button
+                      key={tag}
+                      onClick={() => toggleTag(tag)}
+                      className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                        selectedTags.includes(tag)
+                          ? "bg-orange-500 text-white"
+                          : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                      }`}
+                    >
+                      {tag} 
+                      {selectedTags.includes(tag) && (
+                        <span className="ml-1.5">×</span>
+                      )}
+                    </button>
+                  ))}
+                  
+                  {/* Lesser tags (with 1 template) - only shown when showAllTags is true */}
+                  {showAllTags && lesserTags.map(({ tag, count }) => (
                     <button
                       key={tag}
                       onClick={() => toggleTag(tag)}
@@ -165,6 +217,17 @@ export default function Template() {
                     </button>
                   ))}
                 </div>
+                
+                {/* Show/Hide Tags Toggle */}
+                {lesserTags.length > 0 && (
+                  <button
+                    onClick={toggleShowAllTags}
+                    className="mt-4 text-sm text-orange-600 hover:text-orange-800 font-medium transition-colors duration-200"
+                  >
+                    {showAllTags ? "Show less" : `Show all (${lesserTags.length} more)`}
+                  </button>
+                )}
+                
                 <div className="mt-4 flex justify-center items-center gap-3">
                   {selectedTags.length > 0 && (
                     <button
@@ -174,7 +237,6 @@ export default function Template() {
                       Clear all filters
                     </button>
                   )}
-
                 </div>
               </div>
               <div className="text-sm text-slate-600">
