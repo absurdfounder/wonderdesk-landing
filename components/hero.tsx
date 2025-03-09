@@ -167,7 +167,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <p className="text-lg text-slate-600 mb-8 font-lato max-w-2xl m-auto">
-              <span className="text-slate-600 ">Make your first $ right from your Notion App in a <u>few hours</u> setup </span> {" "}
+              <span className="text-slate-600 "><b>Build Production-ready</b> apps in a hours setup </span> {" "}
               {["Listings", "SEO", "Custom Domains", "Payments"].map((category, index) => (
                 <>
                   {index > 0 && ", "}

@@ -38,17 +38,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-
-
       <ModalVideo
       />
-
-
       <Marketplace_Type />
-
-
-
-
       {/* 
       <Testimonials />
       */}

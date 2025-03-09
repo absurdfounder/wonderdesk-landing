@@ -13,6 +13,7 @@ interface ViewDemo {
   link: string;
 }
 
+// Updated Product interface to match the actual JSON structure
 interface Product {
   logo: string;
   name: string;
@@ -20,8 +21,9 @@ interface Product {
   provider: string;
   description: string;
   callToCopy: CallToAction;
-  callToAction: CallToAction;
+  callToAction?: CallToAction; // Make this optional
   viewDemo: ViewDemo;
+  tags?: string[]; // Add tags field
 }
 
 interface ContentSection {
@@ -42,6 +44,7 @@ interface Template {
   proof: Proof;
 }
 
+// Update TemplateData to match the actual structure
 interface TemplateData {
   template_library: Template[];
 }
@@ -49,8 +52,6 @@ interface TemplateData {
 interface IntegrationData {
   integration_library: Template[];
 }
-
-
 
 interface ComparisonData {
   comparision_library: {
@@ -72,7 +73,6 @@ interface ComparisonData {
   }[];
 }
 
-
 interface ContentItem {
   type: string;
   text?: string;
@@ -84,7 +84,7 @@ interface ContentItem {
   src?: string;
 }
 
-// Import with type assertions
+// Import JSON data
 import templateData from '../../public/showcase_data.json';
 import integrationData from '../../public/integration_data.json';
 import comparisonData from '../../public/comparison_data.json';
@@ -171,7 +171,10 @@ export const renderContent = (item: ContentItem, index: number) => {
 export const _loadFromJson = async (template: boolean = true): Promise<Template[]> => {
   try {
     if (template) {
-      return (templateData[0] as TemplateData).template_library;
+      // Fix this line to handle the actual structure of templateData
+      return (templateData as unknown as TemplateData[]).length > 0 
+        ? (templateData as unknown as TemplateData[])[0].template_library
+        : [];
     } else {
       return (integrationData as IntegrationData).integration_library;
     }
