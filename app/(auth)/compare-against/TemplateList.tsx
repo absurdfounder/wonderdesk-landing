@@ -239,7 +239,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
       </motion.div>
 
       <motion.div 
-        className="mt-24 mb-8"
+        className="mt-8 mb-8 max-w-5xl m-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
@@ -271,9 +271,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                     <Tag className="mr-2 h-4 w-4" />
                     {tag}
                   </span>
-                  <span className={`text-xs ${selectedTags.includes(tag) ? 'text-white' : 'text-slate-400'}`}>
-                    {count} templates
-                  </span>
+
                 </button>
               ))}
               
@@ -326,7 +324,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
 
         {/* Desktop tag filters */}
         <div className="hidden sm:flex flex-col items-center">
-          <div className="flex flex-wrap justify-center gap-2 mb-2">
+          <div className="flex flex-wrap justify-center gap-2 mb-2 max-w-3xl">
             {/* Popular tags (2+ templates) */}
             {popularTags.map(({ tag, count }) => (
               <motion.button
@@ -340,7 +338,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {tag} ({count})
+                {tag} 
                 {selectedTags.includes(tag) && (
                   <span className="ml-1.5">×</span>
                 )}
@@ -360,7 +358,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {tag} ({count})
+                {tag} 
                 {selectedTags.includes(tag) && (
                   <span className="ml-1.5">×</span>
                 )}

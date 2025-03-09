@@ -220,36 +220,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             ))}
           </motion.div>
 
-          <motion.div
-            className="sm:flex gap-4 justify-center items-center mt-8 mb-8  flex-col sm:flex-row hidden"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            {[
-              { icon: FileQuestion, text: "Directory Site Demo", category: "helpdesk" },
-              { icon: ShoppingBag, text: "Marketplace Site Demo", category: "marketplace" },
-              { icon: BookOpen, text: "Membership Site Demo", category: "blog" },
-              { icon: FileText, text: "Product Site Demo", category: "directory" }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  href="#"
-                  className="flex items-center p-2 transition duration-150 ease-in-out border border-slate-600 text-slate-600 rounded-lg hover:bg-slate-900 hover:text-white"
-                  onClick={() => handleCategoryClick(item.category)}
-                >
-                  <item.icon className="w-5 h-5 ml-2 text-slate-400" />
-                  <div className="ml-4">
-                    <p className="text-sm font-medium mr-2">{item.text}</p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
+
 
 
           <div className="w-full py-12 overflow-x-hidden">
