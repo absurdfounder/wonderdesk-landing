@@ -47,8 +47,9 @@ interface Template {
   };
 }
 
-interface ShowcaseData {
-  template_library: Template[];
+interface TagCount {
+  tag: string;
+  count: number;
 }
 
 const truncateText = (text: string, maxLength: number): string => {
@@ -67,7 +68,8 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [displayedTemplates, setDisplayedTemplates] = useState<Template[]>([]);
   const [isTagMenuOpen, setIsTagMenuOpen] = useState(false);
-  const [allTags, setAllTags] = useState<string[]>([]);
+  const [popularTags, setPopularTags] = useState<TagCount[]>([]);
+  const [lesserTags, setLesserTags] = useState<TagCount[]>([]);
   const [showAllTags, setShowAllTags] = useState(false);
 
   const types = ['all', 'helpdesk', 'blog', 'directory', 'marketplace', 'company wiki', 'documentation'];
@@ -86,15 +88,32 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
     const allTemplates = templateData[0]?.template_library || [];
     setTemplates(allTemplates);
     
-    // Extract all unique tags
-    const tags = new Set<string>();
+    // Count tag occurrences across all templates
+    const tagCounts: Record<string, number> = {};
+    
     allTemplates.forEach(template => {
       if (template?.product?.tags) {
-        template.product.tags.forEach(tag => tags.add(tag));
+        template.product.tags.forEach(tag => {
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+        });
       }
     });
     
-    setAllTags(Array.from(tags).sort());
+    // Convert to TagCount objects and sort alphabetically
+    const tagCountArray = Object.entries(tagCounts).map(([tag, count]) => ({
+      tag,
+      count
+    }));
+    
+    // Sort alphabetically first
+    tagCountArray.sort((a, b) => a.tag.localeCompare(b.tag));
+    
+    // Then separate popular (2+ occurrences) from lesser tags (1 occurrence)
+    const popular = tagCountArray.filter(tc => tc.count >= 2);
+    const lesser = tagCountArray.filter(tc => tc.count < 2);
+    
+    setPopularTags(popular);
+    setLesserTags(lesser);
   }, []);
 
   // Removed selectedType effect
@@ -186,7 +205,6 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
             </defs>
           </svg>
           </svg>
-
         </div>
       </motion.h1>
 
@@ -239,28 +257,61 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
           </button>
           {isTagMenuOpen && (
             <div className="absolute z-10 w-full mt-1 bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">
-              {/* Display first few tags */}
-              {allTags.slice(0, showAllTags ? allTags.length : 5).map(tag => (
+              {/* Popular tags first (2+ templates) */}
+              <div className="p-2 bg-slate-50 border-b">
+                <p className="text-xs text-slate-500 font-medium">Popular Tags</p>
+              </div>
+              {popularTags.map(({ tag, count }) => (
                 <button
                   key={tag}
                   onClick={() => toggleTag(tag)}
-                  className={`w-full px-4 py-2 text-left flex items-center ${selectedTags.includes(tag) ? 'bg-orange-600 text-white' : 'hover:bg-slate-100'}`}
+                  className={`w-full px-4 py-2 text-left flex items-center justify-between ${selectedTags.includes(tag) ? 'bg-orange-600 text-white' : 'hover:bg-slate-100'}`}
                 >
-                  <Tag className="mr-2 h-4 w-4" />
-                  {tag}
+                  <span className="flex items-center">
+                    <Tag className="mr-2 h-4 w-4" />
+                    {tag}
+                  </span>
+                  <span className={`text-xs ${selectedTags.includes(tag) ? 'text-white' : 'text-slate-400'}`}>
+                    {count} templates
+                  </span>
                 </button>
               ))}
               
-              {/* Show all/less button */}
-              {allTags.length > 5 && (
+              {/* Show less common tags when expanded */}
+              {showAllTags && lesserTags.length > 0 && (
+                <>
+                  <div className="p-2 bg-slate-50 border-b border-t">
+                    <p className="text-xs text-slate-500 font-medium">Other Tags</p>
+                  </div>
+                  {lesserTags.map(({ tag, count }) => (
+                    <button
+                      key={tag}
+                      onClick={() => toggleTag(tag)}
+                      className={`w-full px-4 py-2 text-left flex items-center justify-between ${selectedTags.includes(tag) ? 'bg-orange-600 text-white' : 'hover:bg-slate-100'}`}
+                    >
+                      <span className="flex items-center">
+                        <Tag className="mr-2 h-4 w-4" />
+                        {tag}
+                      </span>
+                      <span className={`text-xs ${selectedTags.includes(tag) ? 'text-white' : 'text-slate-400'}`}>
+                        {count} template
+                      </span>
+                    </button>
+                  ))}
+                </>
+              )}
+              
+              {/* Show/hide toggle */}
+              {lesserTags.length > 0 && (
                 <button
                   onClick={() => setShowAllTags(!showAllTags)}
-                  className="w-full px-4 py-2 text-left text-orange-600"
+                  className="w-full px-4 py-2 text-left text-orange-600 border-t"
                 >
-                  {showAllTags ? "Show less" : `Show all (${allTags.length - 5} more)`}
+                  {showAllTags ? "Show less" : `Show all (${lesserTags.length} more)`}
                 </button>
               )}
               
+              {/* Clear button */}
               {selectedTags.length > 0 && (
                 <button
                   onClick={clearTags}
@@ -276,8 +327,8 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
         {/* Desktop tag filters */}
         <div className="hidden sm:flex flex-col items-center">
           <div className="flex flex-wrap justify-center gap-2 mb-2">
-            {/* Display first few tags */}
-            {allTags.slice(0, showAllTags ? allTags.length : 8).map(tag => (
+            {/* Popular tags (2+ templates) */}
+            {popularTags.map(({ tag, count }) => (
               <motion.button
                 key={tag}
                 onClick={() => toggleTag(tag)}
@@ -289,7 +340,27 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {tag}
+                {tag} ({count})
+                {selectedTags.includes(tag) && (
+                  <span className="ml-1.5">×</span>
+                )}
+              </motion.button>
+            ))}
+            
+            {/* Show less common tags when expanded */}
+            {showAllTags && lesserTags.map(({ tag, count }) => (
+              <motion.button
+                key={tag}
+                onClick={() => toggleTag(tag)}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                  selectedTags.includes(tag)
+                    ? "bg-orange-500 text-white"
+                    : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {tag} ({count})
                 {selectedTags.includes(tag) && (
                   <span className="ml-1.5">×</span>
                 )}
@@ -297,13 +368,13 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
             ))}
           </div>
           
-          {/* Show all/less toggle */}
-          {allTags.length > 8 && (
+          {/* Show/hide toggle */}
+          {lesserTags.length > 0 && (
             <button
               onClick={toggleShowAllTags}
               className="text-sm text-orange-600 hover:text-orange-800 font-medium transition-colors duration-200 mt-2"
             >
-              {showAllTags ? "Show less" : `Show all (${allTags.length - 8} more)`}
+              {showAllTags ? "Show less" : `Show all (${lesserTags.length} more)`}
             </button>
           )}
           
@@ -353,21 +424,27 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                       />
                     </div>
                     <div className="p-4 text-start">
+
+                      <div className='flex justify-between'>
                       <Link href={"/showcase/" + template.id} className="group flex gap-2 items-center">
                         <span className="text-start font-bold group-hover:text-orange-600 transition-colors duration-300">
                           {template.product.name}
                         </span>
                         <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-600 transition-colors duration-300" />
                       </Link>
+
+                      <span className="inline-block bg-slate-100 border-slate-200 border-dashed border-2 px-3 py-1 rounded-full text-sm">
+                          {template.product.type}
+                        </span>
+                        </div>
+
                       <p className="text-sm text-slate-400 mt-2 mb-3">
                         {truncateText(template.product.description, 76)}
                       </p>
                       
                       {/* Type and tags */}
                       <div className="flex flex-wrap gap-2">
-                        <span className="inline-block bg-slate-100 border-slate-200 border-dashed border-2 px-3 py-1 rounded-full text-sm">
-                          {template.product.type}
-                        </span>
+
                         
                         {/* Tags display */}
                         {template.product.tags && template.product.tags.slice(0, 2).map((tag, tagIndex) => (
