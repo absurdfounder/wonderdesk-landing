@@ -173,54 +173,61 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const { filterBySlug, postPageView, relatedTemplates } = data;
 
   return (
-    <div className="space-y-8 mt-24 mb-16 mx-4 sm:mx-8 md:mx-16 p-4 sm:p-8">
-      <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2 xl:gap-x-12">
-        <div>
+    <div className="">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Back navigation */}
+        <div className="mb-8">
           <MoveBack />
+        </div>
 
-          <div className="mb-4">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="bg-orange-100 text-orange-700 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                {filterBySlug.product.type}
-              </span>
-              <span className="text-md text-slate-600">by {filterBySlug.product.provider}</span>
-            </div>
-            <h1 className="text-3xl font-bold text-slate-800">{filterBySlug.product.name}</h1>
-          </div>
-          
-          <div className="text-slate-800 mb-4">
-            <p>{filterBySlug.product.description}</p>
-          </div>
-          
-          {/* Tags display */}
-          {filterBySlug.product.tags && filterBySlug.product.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              {filterBySlug.product.tags.map((tag, index) => (
-                <span 
-                  key={index} 
-                  className="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full"
-                >
-                  {tag}
+        {/* Hero section with improved layout */}
+        <div className="grid gap-8 items-start mb-16">
+          <div className="space-y-6">
+            {/* Template header */}
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="bg-orange-100 text-orange-700 text-xs font-medium px-3 py-1 rounded-full">
+                  {filterBySlug.product.type}
                 </span>
-              ))}
+                <span className="text-sm text-slate-600 flex items-center">
+                  by <span className="font-medium ml-1">{filterBySlug.product.provider}</span>
+                </span>
+              </div>
+              <h1 className="text-4xl font-bold text-slate-900 tracking-tight">{filterBySlug.product.name}</h1>
             </div>
-          )}
-          
-          <div className="flex flex-col sm:flex-row mt-6 gap-4">
-            <div className="flex space-x-2 items-center">
+            
+            {/* Description */}
+            <p className="text-lg text-slate-700 leading-relaxed">
+              {filterBySlug.product.description}
+            </p>
+            
+            {/* Tags with improved styling */}
+            {filterBySlug.product.tags && filterBySlug.product.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {filterBySlug.product.tags.map((tag, index) => (
+                  <span 
+                    key={index} 
+                    className="bg-slate-100 text-slate-600 text-xs font-medium px-3 py-1.5 rounded-full"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            )}
+            
+            {/* CTAs with improved design */}
+            <div className="flex flex-wrap gap-4 pt-2">
               <Link 
                 href={filterBySlug.product.callToCopy.link} 
-                className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" 
+                className="bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-6 rounded-lg inline-flex items-center transition duration-200 shadow-sm" 
                 rel="noopener noreferrer" 
                 target="_blank"
               >
                 <span>{filterBySlug.product.callToCopy.text}</span>
               </Link>
-            </div>
-            <div className="flex space-x-2 items-center">
               <Link 
                 href={filterBySlug.product.viewDemo.link} 
-                className="bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" 
+                className="bg-white hover:bg-slate-50 text-slate-800 font-medium py-3 px-6 rounded-lg inline-flex items-center border border-slate-200 transition duration-200" 
                 rel="noopener noreferrer" 
                 target="_blank"
               >
@@ -228,94 +235,114 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </Link>
             </div>
           </div>
+
+          {/* Screenshot with improved presentation */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-tr from-orange-100 to-blue-100 rounded-2xl transform rotate-1 scale-105 opacity-30 -z-10"></div>
+            <div className="relative overflow-hidden rounded-xl shadow-2xl border border-slate-200">
+              <Image
+                src={filterBySlug.proof.screenshot}
+                alt={filterBySlug.product.name}
+                width={600}
+                height={400}
+                className="w-full object-cover"
+                quality="95"
+              />
+            </div>
+          </div>
         </div>
 
-        <Image
-          src={filterBySlug.proof.screenshot}
-          alt={filterBySlug.product.name}
-          width={400}
-          height={450}
-          className="w-full rounded-2xl object-cover shadow-xl"
-          quality="90"
-        />
-      </div>
+        {/* Content sections with improved cards */}
+        <div className="grid gap-8 mb-16">
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
+              <span className="bg-orange-100 text-orange-700 w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">1</span>
+              About
+            </h2>
+            <p className="text-slate-700 leading-relaxed">{filterBySlug.overview.content}</p>
+          </div>
 
-      <div className="mt-8 grid gap-8">
-        <div className="bg-white p-6 rounded-xl shadow-sm border">
-          <h2 className="text-xl font-bold text-slate-800 mb-3">About the Template</h2>
-          <p className="text-slate-600">{filterBySlug.overview.content}</p>
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
+              <span className="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">2</span>
+              Features
+            </h2>
+            <p className="text-slate-700 leading-relaxed">{filterBySlug.howItWorks.content}</p>
+          </div>
+
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
+              <span className="bg-green-100 text-green-700 w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">3</span>
+              Setup
+            </h2>
+            <div className="text-slate-700 leading-relaxed whitespace-pre-line">{filterBySlug.configuration.content}</div>
+          </div>
         </div>
 
-        <div className="bg-white p-6 rounded-xl shadow-sm border">
-          <h2 className="text-xl font-bold text-slate-800 mb-3">Features</h2>
-          <p className="text-slate-600">{filterBySlug.howItWorks.content}</p>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl shadow-sm border">
-          <h2 className="text-xl font-bold text-slate-800 mb-3">How to Setup</h2>
-          <div className="text-slate-600 whitespace-pre-line">{filterBySlug.configuration.content}</div>
-        </div>
-      </div>
-
-      {postPageView.map((item: any, index: number) => renderContent(item, index))}
-
-      {/* Related Templates Section */}
-      <div className="mt-16">
-        <h2 className="text-2xl font-bold text-slate-800 mb-6">Related Templates</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {relatedTemplates.map((template, index) => (
-            <Link
-              href={`/showcase/${template.id}`}
-              key={index}
-              className="relative flex flex-col items-center overflow-hidden bg-white rounded-xl shadow-md h-full border transition-all hover:shadow-lg"
-            >
-              <div className="w-full">
-                <div className="m-auto flex justify-center items-center bg-slate-50 border-b">
+        {/* Related Templates Section with improved cards */}
+        <div>
+          <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center">
+            <span className="mr-3 bg-slate-100 w-10 h-10 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-slate-700" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+              </svg>
+            </span>
+            Related Templates
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {relatedTemplates.map((template, index) => (
+              <Link
+                href={`/showcase/${template.id}`}
+                key={index}
+                className="group flex flex-col bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition duration-300"
+              >
+                <div className=" bg-slate-50 border-b flex justify-center items-center ">
                   <Image
-                    className="h-full w-full object-contain"
-                    width={100}
-                    height={100}
+                    className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-110"
+                    width={120}
+                    height={80}
                     src={template.product.logo}
                     unoptimized
                     alt={template.product.name}
                   />
                 </div>
 
-                <div className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="bg-orange-50 text-orange-600 text-xs font-semibold px-2 py-0.5 rounded-full">
+                <div className="p-5 flex-1 flex flex-col">
+                  <div className="mb-3">
+                    <span className="bg-orange-50 text-orange-600 text-xs font-medium px-2.5 py-1 rounded-full">
                       {template.product.type}
                     </span>
                   </div>
                   
-                  <h3 className="font-semibold text-slate-800 hover:text-orange-600 transition-colors">
+                  <h3 className="font-bold text-slate-800 group-hover:text-orange-600 transition-colors text-lg mb-2">
                     {template.product.name}
                   </h3>
                   
-                  <p className="text-sm text-slate-500 mt-2 mb-3">
-                    {truncateText(template.product.description, 70)}
+                  <p className="text-sm text-slate-600 mb-4 flex-grow">
+                    {truncateText(template.product.description, 100)}
                   </p>
                   
-                  {/* Show up to 2 tags */}
+                  {/* Show up to 3 tags */}
                   {template.product.tags && template.product.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-1">
-                      {template.product.tags.slice(0, 2).map((tag, tagIndex) => (
+                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                      {template.product.tags.slice(0, 3).map((tag, tagIndex) => (
                         <span 
                           key={tagIndex} 
-                          className="bg-slate-100 text-slate-600 text-xs px-2 py-0.5 rounded-full"
+                          className="bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-full"
                         >
-                          {tag}
+                          #{tag}
                         </span>
                       ))}
-                      {template.product.tags.length > 2 && (
-                        <span className="text-xs text-slate-400">+{template.product.tags.length - 2}</span>
+                      {template.product.tags.length > 3 && (
+                        <span className="text-xs text-slate-500 px-2.5 py-1">+{template.product.tags.length - 3}</span>
                       )}
                     </div>
                   )}
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,88 +1,229 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { _loadFromJson } from "@/app/utils/helper";
 import notionfooterImage from "@/public/images/freedesigner.png";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
-export const metadata = {
-  title: 'Beautiful websites built on notion using BoringSites',
-  description: 'Jumpstart your SaaS business with pre-built solutions from BoringSites and our community.',
-  openGraph: {
-    images: [
-      {
-        url: "https://dazzling-cat.netlify.app/BoringSitesshowcase_socialshare.png",
-        width: 1200,
-        height: 630,
-        alt: "Get a Marketplace with Notion",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: [
-      {
-        url: "https://dazzling-cat.netlify.app/BoringSitesshowcase_socialshare.png",
-        alt: "Get a Marketplace with Notion",
-      },
-    ],
-  },
+// Define types for the product structure
+interface Product {
+  name?: string;
+  description?: string;
+  logo?: string;
+  type?: string;
+  tags?: string[];
 }
 
-// Utility function to truncate text
-const truncateText = (text: string, maxLength: number): string => {
-  if (text.length > maxLength) {
-    return text.slice(0, maxLength) + "...";
-  }
-  return text;
+interface Template {
+  id: string;
+  product?: Product;
+}
+
+// Utility function to truncate text with proper typing
+const truncateText = (text: string | undefined, maxLength: number): string => {
+  if (!text) return "";
+  return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
 };
 
-export default async function Template() {
-  const templates = await _loadFromJson();
+export default function Template() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  
+  const [templates, setTemplates] = useState<Template[]>([]);
+  const [filteredTemplates, setFilteredTemplates] = useState<Template[]>([]);
+  const [allTags, setAllTags] = useState<string[]>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Helper function to update URL
+  const updateUrlParams = (tags: string[]) => {
+    // Create a URLSearchParams object
+    const params = new URLSearchParams();
+    
+    // Add tags to URL if there are any selected
+    if (tags.length > 0) {
+      params.set('tags', tags.join(','));
+    }
+    
+    // Update the URL without refreshing the page
+    const newUrl = tags.length > 0 
+      ? `?${params.toString()}` 
+      : window.location.pathname;
+    
+    router.push(newUrl, { scroll: false });
+  };
+
+  // Parse tags from URL on initial load
+  useEffect(() => {
+    const tagsParam = searchParams.get('tags');
+    if (tagsParam) {
+      const urlTags = tagsParam.split(',').map(tag => tag.trim());
+      setSelectedTags(urlTags);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await _loadFromJson() as Template[];
+        setTemplates(data);
+        setFilteredTemplates(data);
+        
+        // Extract all unique tags
+        const tags = new Set<string>();
+        data.forEach(template => {
+          if (template.product?.tags) {
+            template.product.tags.forEach(tag => tags.add(tag));
+          }
+        });
+        
+        const sortedTags = Array.from(tags).sort();
+        setAllTags(sortedTags);
+        
+        // Apply URL filters after getting data
+        const tagsParam = searchParams.get('tags');
+        if (tagsParam) {
+          const urlTags = tagsParam.split(',').map(tag => tag.trim());
+          // Only keep tags that actually exist in our data
+          const validUrlTags = urlTags.filter(tag => sortedTags.includes(tag));
+          setSelectedTags(validUrlTags);
+        }
+        
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error loading templates:", error);
+        setIsLoading(false);
+      }
+    };
+    
+    fetchData();
+  }, [searchParams]);
+
+  // Filter templates when selectedTags changes
+  useEffect(() => {
+    if (selectedTags.length === 0) {
+      setFilteredTemplates(templates);
+    } else {
+      const filtered = templates.filter(template => {
+        const templateTags = template.product?.tags || [];
+        return selectedTags.some(tag => templateTags.includes(tag));
+      });
+      setFilteredTemplates(filtered);
+    }
+  }, [selectedTags, templates]);
+
+  // Handle tag selection/deselection
+  const toggleTag = (tag: string) => {
+    const newSelectedTags = selectedTags.includes(tag)
+      ? selectedTags.filter(t => t !== tag)
+      : [...selectedTags, tag];
+    
+    setSelectedTags(newSelectedTags);
+    updateUrlParams(newSelectedTags);
+  };
+
+  // Clear all selected tags
+  const clearTags = () => {
+    setSelectedTags([]);
+    updateUrlParams([]);
+  };
 
   return (
-    <section className="bg-gradient-to-b from-slate-100 to-white" id="template-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-12 pb-12 md:pt-18 md:pb-20">
-          {/* Page header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h2 mb-4">Not Templates, Beautiful Businesses</h1>
-            <p className="text-xl text-slate-600">
-              Jumpstart your SaaS business with pre-built open-source solutions.
+    <section id="template-section">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Page header with improved spacing and typography */}
+        <div className="pt-16 pb-20 md:pt-24 md:pb-28">
+          <div className="mx-auto text-center pb-12 md:pb-16">
+            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-4xl mb-6">
+              <span className="block">Not Templates,</span>
+              <span className="block text-orange-600">Beautiful Businesses</span>
+            </h1>
+            <p className="mt-3 text-xl text-slate-600 sm:mt-4 max-w-2xl mx-auto">
+              Jumpstart your SaaS business with pre-built open-source solutions crafted for success.
             </p>
 
-            <div className="mt-6">
-              <div className="relative bg-slate-900 rounded-2xl py-6 px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden">
-                {/* Background illustration */}
-                <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
+            {/* Tag filtering section */}
+            <div className="mt-12 mb-8">
+              <div className="mb-4">
+                <div className="flex flex-wrap justify-center gap-2 mx-auto">
+                  {allTags.map((tag) => (
+                    <button
+                      key={tag}
+                      onClick={() => toggleTag(tag)}
+                      className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                        selectedTags.includes(tag)
+                          ? "bg-orange-500 text-white"
+                          : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                      }`}
+                    >
+                      {tag}
+                      {selectedTags.includes(tag) && (
+                        <span className="ml-1.5">×</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+                <div className="mt-4 flex justify-center items-center gap-3">
+                  {selectedTags.length > 0 && (
+                    <button
+                      onClick={clearTags}
+                      className="text-sm text-orange-600 hover:text-orange-800 font-medium transition-colors duration-200"
+                    >
+                      Clear all filters
+                    </button>
+                  )}
+
+                </div>
+              </div>
+              <div className="text-sm text-slate-600">
+                {selectedTags.length > 0 ? (
+                  <p>Showing {filteredTemplates.length} templates matching your filters</p>
+                ) : (
+                  <p>Showing all {templates.length} templates</p>
+                )}
+              </div>
+            </div>
+
+            {/* CTA banner with improved styling and layout */}
+            <div className="mt-10">
+              <div className="relative bg-slate-900 rounded-2xl py-8 px-6 md:py-10 md:px-12 shadow-2xl overflow-hidden">
+                {/* Background illustration with proper positioning */}
+                <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block transform translate-x-6 translate-y-6">
                   <Image
-                    alt="Logo"
-                    width={220}
-                    className="block"
+                    alt="Designer Logo"
+                    width={240}
+                    height={240}
+                    className="block opacity-80"
                     src={notionfooterImage}
                   />
                 </div>
 
                 <div className="relative flex flex-col lg:flex-row justify-between items-center">
-                  {/* CTA content */}
+                  {/* CTA content with improved typography */}
                   <div className="text-center lg:text-left lg:max-w-xl">
-                    <h3 className="h3 text-white mb-2">
-                      Get{" "}
-                      <b className="text-orange-600">Free Design Services</b>
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Get <span className="text-orange-500 font-extrabold">Free Design Services</span>
                     </h3>
 
-                    {/* CTA form */}
+                    {/* CTA form with improved button styling */}
                     <form className="w-full lg:w-auto">
                       <div>
                         <Link
-                          className="btn bg-orange-600 hover:bg-orange-700 shadow"
-                          href="https://app.youform.com/forms/r3rvhjv4" target="_blank"
+                          className="inline-flex items-center text-black justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-all duration-150 shadow-lg hover:shadow-xl"
+                          href="https://app.youform.com/forms/r3rvhjv4" 
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Ask Us to Build
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
                         </Link>
                       </div>
-                      {/* Success message */}
-                      {/* <p className="text-sm text-slate-400 mt-3">Thanks for subscribing!</p> */}
                       <p className="text-sm text-slate-400 mt-3">
-                        We setup the whole flow for you.
+                        We setup the whole flow for you, no technical skills required.
                       </p>
                     </form>
                   </div>
@@ -91,46 +232,63 @@ export default async function Template() {
             </div>
           </div>
 
-          <div className="max-w-3xl mx-auto aos-init aos-animate max-w-sm grid md:grid-cols-1 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none gap-6">
-            {templates.map((template: any, index: number) => (
-              <Link
-                href={"/showcase/" + template.id}
-                key={index}
-                className="relative flex flex-col items-center overflow-hidden bg-white rounded-2xl shadow-xl h-full border"
-              >
-                <div className="w-full">
-                  <div>
-                    <div className="items-start">
-                      <div className="m-auto flex justify-center items-center">
+          {/* Loading state */}
+          {isLoading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+            </div>
+          ) : (
+            <>
+              {/* Empty state */}
+              {filteredTemplates.length === 0 && (
+                <div className="text-center py-16">
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">No templates found</h3>
+                  <p className="text-slate-600">Try adjusting your filter selection or clear all filters.</p>
+                </div>
+              )}
+
+              {/* Template cards grid with improved layout and styling */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                {filteredTemplates.map((template: Template, index: number) => (
+                  <Link
+                    href={`/showcase/${template.id}`}
+                    key={index}
+                    className="group relative flex flex-col overflow-hidden bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 h-full border border-slate-200 hover:border-orange-200"
+                  >
+                    <div className="w-full">
+                      {/* Image container with improved styling */}
+                      <div className="bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
                         <Image
-                          className="w-full"
-                          width={100}
-                          height={100}
-                          src={template?.product?.logo}
+                          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                          width={120}
+                          height={120}
+                          src={template?.product?.logo || "https://via.placeholder.com/120"}
                           unoptimized
-                          alt={template?.product?.name}
+                          alt={template?.product?.name || "Template"}
                         />
                       </div>
 
                       <div className="p-6">
-                        {/* Show template type as category */}
-                        <span className="uppercase text-xs font-semibold text-orange-600 bg-orange-50 px-2 py-1 rounded-full">
+                        {/* Template type badge with improved styling */}
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
                           {template?.product?.type || "Template"}
                         </span>
 
-                        <Link href={"/showcase/" + template.id} className="flex gap-2">
-                          <span className="text-start mt-2 mb-1 font-bold hover:text-orange-600">
-                            {template?.product?.name}
-                          </span>
-                          <span className="ml-2 m-auto mb-3">
+                        {/* Title with hover effect */}
+                        <div className="mt-4 flex items-start">
+                          <h3 className="text-lg font-bold text-slate-900 group-hover:text-orange-600 transition-colors duration-200">
+                            {template?.product?.name || "Untitled Template"}
+                          </h3>
+                          <span className="ml-2 text-slate-400 group-hover:text-orange-500 transition-colors duration-200">
                             <svg
-                              width="12"
-                              height="11"
+                              width="14"
+                              height="14"
                               viewBox="0 0 12 11"
                               xmlns="http://www.w3.org/2000/svg"
+                              className="mt-1"
                             >
                               <g
-                                stroke="#52667A"
+                                stroke="currentColor"
                                 strokeWidth="1.25"
                                 fill="none"
                                 fillRule="evenodd"
@@ -141,39 +299,44 @@ export default async function Template() {
                               </g>
                             </svg>
                           </span>
-                        </Link>
+                        </div>
 
-                        <p className="text-sm text-slate-400 mt-2 mb-3">
-                          {truncateText(template?.product?.description, 76)}
+                        {/* Description with improved styling */}
+                        <p className="mt-3 text-sm text-slate-600 line-clamp-2">
+                          {truncateText(template?.product?.description, 100) || "No description available"}
                         </p>
 
-                        {/* Display tags if available */}
-                        <div className="flex flex-wrap gap-1 mt-3">
+                        {/* Tags with improved styling and layout */}
+                        <div className="flex flex-wrap gap-2 mt-4">
                           {template?.product?.tags && template.product.tags.length > 0 ? (
                             template.product.tags.slice(0, 3).map((tag: string, tagIndex: number) => (
                               <span 
                                 key={tagIndex} 
-                                className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded-full"
+                                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors duration-200 ${
+                                  selectedTags.includes(tag)
+                                    ? "bg-orange-200 text-orange-800" 
+                                    : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                                }`}
                               >
                                 {tag}
                               </span>
                             ))
                           ) : (
-                            <span className="bg-slate-100 text-slate-400 text-xs px-2 py-1 rounded-full">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-400">
                               No tags available
                             </span>
                           )}
                           {template?.product?.tags && template.product.tags.length > 3 && (
-                            <span className="text-xs text-slate-500">+{template.product.tags.length - 3} more</span>
+                            <span className="text-xs text-slate-500 self-center">+{template.product.tags.length - 3} more</span>
                           )}
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
