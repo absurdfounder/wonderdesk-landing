@@ -28,7 +28,7 @@ twitter: {
 
 export default function PageDetail() {
   return (
-    <section className="bg-gradient-to-b from-slate-100 to-white">
+    <section >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-12 pb-12 md:pt-18 md:pb-20">
 
@@ -49,7 +49,7 @@ refer to BoringSites, without limits. Join
 
 
 
-          <div className="m-auto text-center"><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://BoringSites.lemonsqueezy.com/affiliates">Sign Up</Link></div>
+          <div className="m-auto text-center"><Link className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://BoringSites.lemonsqueezy.com/affiliates">Sign Up</Link></div>
           <Link href="https://BoringSites.tolt.io/" target="_blank" className="block mt-8 text-sm text-orange-600 sm:mt-4 m-auto w-fit">Already partner? Open the affiliate dashboard →</Link>
 
 
@@ -101,7 +101,7 @@ refer to BoringSites, without limits. Join
               </div>
 
               <div className="mt-8 text-center">
-                <Link href="https://BoringSites.lemonsqueezy.com/affiliates" target="_self" className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center">Become our Partner</Link>
+                <Link href="https://BoringSites.lemonsqueezy.com/affiliates" target="_self" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center">Become our Partner</Link>
               </div>
             </div>
 
@@ -220,7 +220,7 @@ refer to BoringSites, without limits. Join
                 </li>
               </ul>
               <div className="text-center mt-8">
-                <Link href="https://partner.boringsites.com/" target="_self" className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center">Start to earn money</Link>
+                <Link href="https://partner.boringsites.com/" target="_self" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center">Start to earn money</Link>
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ twitter: {
 const Integration = async () => {
   const integrations = await _loadFromJson(false);
   return (
-    <section className="bg-gradient-to-b from-slate-100 to-white">
+    <section >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-12 pb-12 md:pt-18 md:pb-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
@@ -37,7 +37,7 @@ const Integration = async () => {
             <p className="text-xl text-slate-600">Integrate with your stack and extend functionality with powerful integrations built by us and our amazing community.</p>
 
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center aos-init aos-animate mt-6">
-              <div><Link className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="/contact-us">Missing Integration? Ask for Help</Link></div>
+              <div><Link className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="/contact-us">Missing Integration? Ask for Help</Link></div>
             </div>
 
           </div>
@@ -73,7 +73,7 @@ const Integration = async () => {
                         <div className="w-10 h-10 bg-slate-200 rounded-full" ></div>
                         <span className="text-dark font-bold">And a lot more..</span>
                     </div>
-                    <button className="border border-slate-200 bg-orange-600 rounded-full w-full p-2 mt-4">Add More...</button>
+                    <button className="border border-slate-200 bg-orange-700 rounded-full w-full p-2 mt-4">Add More...</button>
                 </div>
             </div>
 

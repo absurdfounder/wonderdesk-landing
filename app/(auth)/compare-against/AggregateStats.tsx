@@ -1,60 +1,96 @@
 import React from 'react';
-import Link from 'next/link';
 
 const AggregateStats: React.FC = () => {
-    return (
-        
-        <section>
+  // Data array for better maintainability
+  const stats = [
+    {
+      percentage: "86%",
+      description: "of users save time with BoringSites",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-orange-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
+    },
+    {
+      percentage: "90%",
+      description: "of users replaced 2+ tools",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-orange-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+        </svg>
+      )
+    },
+    {
+      percentage: "91%",
+      description: "faster project completion",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-orange-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
+    },
+    {
+      percentage: "86%",
+      description: "less emails sent and received",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-orange-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      )
+    }
+  ];
 
-        <div className='max-w-3xl mx-auto text-center py-20 pb-12 md:pb-20'>
-          <h1 className="h3 mb-4">More work gets done with BoringSites.</h1>
-          <p className="text-xl text-slate-600">Jumpstart your SaaS business with pre-built solutions from BoringSites and our community.</p>
-
-
-          {/* Items */}
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-4 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
-            {/* 1st item */}
-            <Link href={"0"} className="relative flex flex-col items-center p-6 bg-white rounded-full h-full">
-              <div>
-                <div >
-                  <h1 className="h3 mb-4 text-slate-500">86%</h1>
-                  <span className="text-dark font-bold">of users save time with BoringSites</span>
-                </div>
-              </div>
-            </Link>
-
-            {/* 2nd item */}
-            <Link href={"0"}   className="relative flex flex-col items-center p-6 bg-white rounded-full h-full">
-              <div>
-                <div>
-                  <h1 className="h3 mb-4 text-slate-500">90%</h1>
-                  <span className="text-dark font-bold">of users replaced 2+ tools</span>
-                </div>
-              </div>
-            </Link>
-            {/* 3rd item */}
-            <Link href={"0"}   className="relative flex flex-col items-center p-6 bg-white rounded-full h-full">
-              <div>
-                <div>
-                  <h1 className="h3 mb-4 text-slate-500">91%</h1>
-                  <span className="text-dark font-bold">faster project completion</span>
-                </div>
-              </div>
-            </Link>
-            {/* 4th item */}
-            <Link href={"0"}   className="relative flex flex-col items-center p-6 bg-white rounded-full h-full">
-              <div>
-                <div>
-                  <h1 className="h3 mb-4 text-slate-500">86%</h1>
-                  <span className="text-dark font-bold">less emails sent and received</span>
-                </div>
-              </div>
-            </Link>
-          </div>
-
+  return (
+    <section className="py-16 md:py-24 bg-slate-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            More gets done with BoringSites
+          </h2>
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+            Jumpstart your SaaS business with pre-built solutions from BoringSites and our community.
+          </p>
         </div>
-      </section>
-    );
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {stats.map((stat, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-xl shadow-lg p-8 text-center transform transition duration-300 hover:shadow-xl hover:-translate-y-1"
+            >
+              <div className="flex justify-center">
+                {stat.icon}
+              </div>
+              <h3 className="text-4xl md:text-5xl font-bold text-orange-600 mb-3">
+                {stat.percentage}
+              </h3>
+              <p className="text-slate-800 font-medium">
+                {stat.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="inline-block bg-white rounded-lg shadow-md p-6 md:p-8">
+            <p className="text-lg text-slate-700 mb-4">
+              <span className="font-bold">Join 50+ teams</span> already using BoringSites to simplify their workflow
+            </p>
+            <a 
+              href="https://app.boringsites.com" 
+              className="inline-flex items-center justify-center px-6 py-3 bg-slate-900 text-white font-medium rounded-full transition-colors hover:bg-slate-800"
+            >
+              Get Started Free
+              <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default AggregateStats;

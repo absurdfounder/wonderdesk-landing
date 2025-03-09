@@ -186,7 +186,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  className="btn text-dark text-2xl bg-orange-600 hover:bg-orange-600 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center"
+                  className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center"
                   href="https://app.boringsites.com"
                 >
                   Get a directory <ExternalLink className="ml-2 w-4 h-4" />

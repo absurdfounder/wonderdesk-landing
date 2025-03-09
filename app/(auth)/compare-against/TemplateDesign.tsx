@@ -3,118 +3,136 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const TemplateDesign = () => {
-    return (
-        <section>
+  // Create a features array for better maintainability and consistency
+  const features = [
+    {
+      title: "Your content",
+      highlight: "lives in Notion",
+      description: "Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.",
+      image: "https://dazzling-cat.netlify.app/write%20on%20notion.png",
+      alt: "Content in Notion",
+      imageFirst: false
+    },
+    {
+      title: "Customize to",
+      highlight: "your brand",
+      description: "Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside BoringSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.",
+      image: "https://dazzling-cat.netlify.app/notion%20to%20website.png",
+      alt: "Customizable design templates",
+      imageFirst: true
+    },
+    {
+      title: "World-class",
+      highlight: "Performance",
+      description: "Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they'll never close the page for taking too long to load. On average BoringSites sites perform better than any industry leading website builder. We use NextJs, Vercel and Google Cloud for your websites. You can scale to 100 million monthly active users with this stack.",
+      image: "https://dazzling-cat.netlify.app/performancewebsite.png",
+      alt: "Fast website performance metrics",
+      imageFirst: false
+    },
+    {
+      title: "In-built",
+      highlight: "analytics",
+      description: "See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.",
+      image: "https://dazzling-cat.netlify.app/analyticsseo.png",
+      alt: "Website analytics dashboard",
+      imageFirst: true
+    },
+    {
+      title: "Integrates with",
+      highlight: "your existing apps",
+      description: "BoringSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to BoringSites? We got you covered.",
+      image: "https://dazzling-cat.netlify.app/integrationsdb.png",
+      alt: "App integrations",
+      imageFirst: true
+    }
+  ];
 
-            <div className="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2 lg:items-center xl:gap-x-16 mb-12">
-                <div className="max-w-sm">
-                    <div className="flex items-center space-x-4">
-                        <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">Your content <span className='font-source-serif-4 block font-normal text-orange-600'>lives in Notion</span></h1>
-                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
-                                Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus what’s actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Powerful features with <span className="text-orange-600">simplicity in mind</span>
+          </h2>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            Everything you need to create, publish, and grow your web presence - without the complexity
+          </p>
+        </div>
 
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
-                    </div>
+        <div className="space-y-24">
+          {features.map((feature, index) => (
+            <div 
+              key={index} 
+              className="lg:grid lg:grid-cols-2 lg:gap-x-16 lg:items-center"
+            >
+              {/* Image Section */}
+              <div className={`relative mb-10 lg:mb-0 ${feature.imageFirst ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className="rounded-2xl overflow-hidden shadow-lg bg-slate-50 p-2">
+                  <Image 
+                    src={feature.image}
+                    alt={feature.alt}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto rounded-xl object-cover"
+                    unoptimized
+                  />
                 </div>
-                <div className="relative w-full"><Image 
-                width={100}
-                height={100}
-                unoptimized src="https://dazzling-cat.netlify.app/write%20on%20notion.png" alt="" className="h-full w-full rounded-2xl object-cover" /></div>
-            </div>
+                <div className="absolute -z-10 top-0 left-0 w-full h-full bg-orange-100 rounded-2xl transform rotate-3 translate-x-4 translate-y-6 opacity-30"></div>
+              </div>
 
-
-
-            <div className="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2 lg:items-center xl:gap-x-16 mb-12">
-                <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/notion%20to%20website.png" width={100} height={100}  alt="" className="h-full w-full rounded-2xl object-cover" /></div>
-
-                <div className="max-w-sm">
-                    <div className="flex items-center space-x-4">
-                        <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">Customize to your brand</h1>
-                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
-                                Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside BoringSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
-
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
-                    </div>
+              {/* Content Section */}
+              <div className={feature.imageFirst ? 'lg:order-2' : 'lg:order-1'}>
+                <div className="max-w-lg">
+                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+                    {feature.title}{" "}
+                    <span className="font-serif font-normal text-orange-600">
+                      {feature.highlight}
+                    </span>
+                  </h3>
+                  
+                  <p className="text-slate-700 text-lg mb-8">
+                    {feature.description}
+                  </p>
+                  
+                  <Link 
+                    href="https://app.boringsites.com" 
+                    className="inline-flex items-center px-6 py-3 bg-slate-900 text-white font-medium rounded-full hover:bg-slate-800 transition-colors duration-200 shadow-sm hover:shadow-md"
+                    rel="noopener noreferrer" 
+                    target="_blank"
+                  >
+                    <span>Get Started</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
                 </div>
+              </div>
             </div>
-
-
-
-            <div className="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2 lg:items-center xl:gap-x-16 mb-12">
-                <div className="max-w-sm">
-                    <div className="flex items-center space-x-4">
-                        <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">World-class Performance</h1>
-                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
-                                Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they’ll never close the page for taking too long to load. On average BoringSites sites perform better than any industry leading website builder. We use NextJs, Vercel and Google Cloud for your websites. You can scale to 100 million monthly active users with this stack.
-
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
-                    </div>
-                </div>
-                <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/performancewebsite.png" 
-                width={100}
-                height={100}
-                alt="" className="h-full w-full rounded-2xl object-cover" /></div>
-            </div>
-
-
-            <div className="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2 lg:items-center xl:gap-x-16 mb-12">
-
-                <div className="relative w-full"><Image unoptimized
-                
-                
-                src="https://dazzling-cat.netlify.app/analyticsseo.png" alt="" width={100} height={100} className="h-full w-full rounded-2xl object-cover" /></div>
-
-                <div className="max-w-sm">
-                    <div className="flex items-center space-x-4">
-                        <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">In-built analytics</h1>
-                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
-                                See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites tp help ou find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
-                    </div>
-                </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2 lg:items-center xl:gap-x-16 mb-12">
-
-                <div className="relative w-full"><Image unoptimized src="https://dazzling-cat.netlify.app/integrationsdb.png" alt="" width={100} height={100} className="h-full w-full rounded-2xl object-cover" /></div>
-
-                <div className="max-w-sm">
-                    <div className="flex items-center space-x-4">
-                        <div className="space-y-2">
-                            <h1 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">Integrates with your existing apps</h1>
-                            <p className="mt-2 text-base font-normal text-slate-700 lg:text-lg">
-                                BoringSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to BoringSites? We got you covered.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-6 space-y-3 text-base font-normal text-slate-700 lg:text-lg">
-                        <Link href="https://app.boringsites.com" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></Link>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    );
+          ))}
+        </div>
+        
+        {/* Final CTA */}
+        <div className="mt-32 text-center">
+          <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-12 max-w-4xl mx-auto shadow-xl">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Ship production ready apps on top of Notion
+            </h3>
+            <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+              Start creating beautiful, high-performance websites with BoringSites today.
+            </p>
+            <Link 
+              href="https://app.boringsites.com" 
+              className="inline-flex items-center px-8 py-4 bg-orange-700 text-white font-medium rounded-full hover:bg-orange-500 transition-colors duration-200 shadow-lg text-lg"
+              rel="noopener noreferrer" 
+              target="_blank"
+            >
+              Create Your Site
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default TemplateDesign;

@@ -1,54 +1,89 @@
 import React from 'react';
 import comparisonLibrary from '../../../public/comparison_data.json';
 
-const ComparisonTable = ({ id }: { id: any }) => {
+const ComparisonTable = ({ id }: { id: string }) => {
+  // Type-safe library item finding
+  const libraryItem = comparisonLibrary.comparision_library.find(
+    (item: { id: string }) => item.id === id
+  );
 
-
-
-  const libraryItem = (comparisonLibrary.comparision_library).find(item => item.id === id);
-
-  console.log('libraryItem.comparison_table', libraryItem);
-
-
-  if (!libraryItem) {
-    return <p>Library item not found</p>;
+  if (!libraryItem || !libraryItem.comparison_table) {
+    return (
+      <div className="max-w-xl mx-auto text-center py-12">
+        <p className="text-slate-600">Comparison data not available</p>
+      </div>
+    );
   }
 
-  return (
-    <div className='max-w-xl mx-auto text-center py-20 pb-12 md:pb-20'>
-      <h1 className="h3 mb-4">Get so much more than website builder with BoringSites.</h1>
-      <p className="text-xl text-slate-600">BoringSites has everything you need, from task tracking to templates to documentation. Get comfortable — you won’t be leaving all that often.</p>
+  // Extract product name for reuse
+  const competitorName = libraryItem.product?.name || 'Competitor';
 
-      <div className="max-w-xl mx-auto p-4">
-        <div className="overflow-x-auto p-4 bg-slate-200 rounded">
-          <table className="table-auto w-full text-left text-sm bg-slate-200 rounded">
-            <thead>
-              <tr>
-                <th className="px-4 py-2">Features</th>
-                <th className="px-4 py-2 text-center ">{libraryItem?.product?.name}</th>
-                <th className="px-4 py-2 text-center">BoringSites</th>
-              </tr>
-            </thead>
-            <tbody>
-              {libraryItem.comparison_table.map((item: any, index: number) => (
-                <tr key={index}>
-                  <td className="border px-4 py-4">{item.feature}</td>
-                  <td className="border px-4 py-4 text-center">
-                    <span className='border border-slate-600 p-2 px-4 rounded-full font-bold'>
-                      {item.feature_value[`${libraryItem?.product?.name}`] ? '✓' : '✕'}
-                    </span>
+  return (
+    <div className="max-w-4xl mx-auto py-16">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold mb-4">Get so much more with BoringSites</h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          BoringSites has everything you need, from task tracking to templates to documentation.
+          Get comfortable — you won't be leaving all that often.
+        </p>
+      </div>
+
+      <div className="overflow-hidden shadow-lg rounded-lg border border-slate-200">
+        <table className="w-full text-sm bg-white">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="px-6 py-4 text-left font-semibold text-slate-700 border-b">Features</th>
+              <th className="px-6 py-4 text-center font-semibold text-slate-700 border-b w-1/4">
+                {competitorName}
+              </th>
+              <th className="px-6 py-4 text-center font-semibold text-slate-700 border-b w-1/4 bg-orange-50">
+                BoringSites
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {libraryItem.comparison_table.map((item: any, index: number) => {
+              const competitorHasFeature = item.feature_value[competitorName] || false;
+              const boringSitesHasFeature = item.feature_value["BoringSites"] || item.feature_value["Notion"] || false;
+              
+              return (
+                <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                  <td className="px-6 py-4 border-b border-slate-200">
+                    {item.feature}
                   </td>
-                  <td className="border px-4 py-4 text-center">
-                    <span className='border bg-orange-600 p-2 px-4 rounded-full font-bold'>
-                      {item.feature_value["Notion"] ? '✓' : '✕'}
-                    </span>
+                  <td className="px-6 py-4 text-center border-b border-slate-200">
+                    {competitorHasFeature ? (
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-100 text-slate-600 rounded-full">
+                        ✓
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-100 text-slate-400 rounded-full">
+                        ✕
+                      </span>
+                    )}
+                  </td>
+                  <td className="px-6 py-4 text-center border-b border-slate-200 bg-orange-50">
+                    {boringSitesHasFeature ? (
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-orange-700 text-white rounded-full">
+                        ✓
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-200 text-slate-400 rounded-full">
+                        ✕
+                      </span>
+                    )}
                   </td>
                 </tr>
-              ))
-              }
-            </tbody>
-          </table>
-        </div>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      
+      <div className="mt-6 text-center">
+        <p className="text-sm text-slate-500">
+          * Features may vary based on plan selection and updates
+        </p>
       </div>
     </div>
   );

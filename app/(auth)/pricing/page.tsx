@@ -219,7 +219,7 @@ const FAQSection: React.FC = () => {
       key={tab}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className={`px-3 md:px-4 py-2 font-semibold text-sm md:text-lg rounded-full m-1 md:m-2 ${activeTab === tab ? "bg-orange-600 text-slate-800" : "text-slate-700"}`}
+      className={`px-3 md:px-4 py-2 font-semibold text-sm md:text-lg rounded-full m-1 md:m-2 ${activeTab === tab ? "bg-orange-700 text-slate-800" : "text-slate-700"}`}
       onClick={() => handleTabClick(tab as keyof typeof faqs)}
     >
       {tab}
@@ -380,7 +380,7 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-slate-100 to-white">
+    <section >
       <motion.div
         className="absolute bottom-0 pointer-events-none z-1 h-screen w-screen"
         aria-hidden="true"
@@ -571,7 +571,7 @@ const Pricing: React.FC = () => {
                     disabled={loading}
                     className={`w-full px-6 py-4 rounded-full text-slate-800 font-semibold text-center text-xl ${loading
                         ? 'bg-orange-400 cursor-not-allowed'
-                        : 'bg-orange-600 hover:bg-orange-700 active:bg-orange-800'
+                        : 'bg-orange-700 hover:bg-orange-700 active:bg-orange-800'
                       } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
                   >
                     {loading ? (
@@ -589,7 +589,7 @@ const Pricing: React.FC = () => {
                 </div>
                 <div className="px-8 pt-8 pb-10 bg-slate-50">
                   <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
-                    <span className="bg-orange-600 w-1 h-8 mr-4"></span>
+                    <span className="bg-orange-700 w-1 h-8 mr-4"></span>
                     What's included
                   </h3>
                   <ul className="grid grid-cols-1 gap-1 text-left">
@@ -657,7 +657,7 @@ const Pricing: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-orange-600 text-white text-xl py-3 px-8 rounded-lg inline-block hover:bg-orange-700 transition-colors"
+                  className="bg-orange-700 text-white text-xl py-3 px-8 rounded-lg inline-block hover:bg-orange-700 transition-colors"
                   onClick={toggleModal}
                 >
                   Buy Now
@@ -697,7 +697,7 @@ const Pricing: React.FC = () => {
                     <h3 className="text-3xl font-bold mt-4 mb-4">$99.00</h3>
                     <Link
                       href="https://buy.stripe.com/5kAeV0b6K27w8BG6os"
-                      className="bg-orange-700 text-white text-xl w-full py-4 px-16 rounded-lg block hover:bg-orange-600 transition-colors"
+                      className="bg-orange-700 text-white text-xl w-full py-4 px-16 rounded-lg block hover:bg-orange-700 transition-colors"
                     >
                       Buy
                     </Link>
@@ -812,7 +812,7 @@ const Pricing: React.FC = () => {
                     <Link
                       href="https://fetchkitty.com"
                       target="_blank"
-                      className="btn bg-orange-600 hover:bg-orange-700 shadow px-12 inline-block text-slate-900 py-3 rounded-lg transition-colors"
+                      className="btn bg-orange-700 hover:bg-orange-700 shadow px-12 inline-block text-slate-900 py-3 rounded-lg transition-colors"
                     >
                       We can do it for you →
                     </Link>
