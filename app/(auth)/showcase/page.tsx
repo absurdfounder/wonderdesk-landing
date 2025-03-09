@@ -116,6 +116,11 @@ export default async function Template() {
                       </div>
 
                       <div className="p-6">
+
+                      <span className="uppercase text-sm text-primary">
+                          Category
+                        </span>
+
                         <Link href={"/showcase/" + template.id} className="flex gap-2">
                           <span className="text-start mt-2 mb-1 font-bold hover:text-orange-600">
                             {template?.product?.name}
@@ -146,7 +151,7 @@ export default async function Template() {
                         </p>
 
                         <span className="bg-slate-100 border-slate-200 border-dashed border-2 p-1 px-4 rounded-full my-2">
-                          Helpdesk
+                          Tags here...
                         </span>
                       </div>
                     </div>
