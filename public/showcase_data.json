@@ -16,7 +16,8 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://blockchaingrants.org?duplicate=true"
-          }
+          },
+          "tags": ["blockchain", "crypto", "grants", "funding", "directory"]
         },
         "overview": {
           "content": "Create a powerful blockchain grants platform with comprehensive features including analytics, content management, membership systems, and AI support. Built for SEO with user engagement features like upvotes, bookmarks, and personalized recommendations. Seamlessly sync with Notion and customize with flexible component sections."
@@ -39,7 +40,7 @@
           "name": "Crypto Airdrop Aggregator",
           "type": "Marketplace",
           "provider": "BoringSites",
-          "description": "Build a comprehensive crypto airdrop platform with AI-powered insights, analytics, and community features.",
+          "description": "Latest crypto airdrop guides hand-picked platform by us and the community.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -47,7 +48,8 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["crypto", "airdrops", "marketplace", "aggregator", "blockchain"]
         },
         "overview": {
           "content": "Create a powerful airdrop discovery platform with advanced features: Analytics dashboard, Content management, Forms system, Premium memberships, AI-powered airdrop analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can track airdrops, receive alerts, and get personalized recommendations."
@@ -70,7 +72,7 @@
           "name": "Niche Communities",
           "type": "Marketplace",
           "provider": "Niche Communities",
-          "description": "Launch a comprehensive agency directory with AI matching, analytics, and verified reviews.",
+          "description": "This is a huge list of all the online groups across the web. Target the right communities, use our AI for help.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -78,16 +80,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://nichecommunities.com"
-          }
+          },
+          "tags": ["communities", "groups", "social", "networking", "forums"]
         },
         "overview": {
-          "content": "Build the ultimate agency marketplace with powerful features: Analytics dashboard, Content management, Custom forms, Membership tiers, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Agencies can showcase work while clients can find perfect matches."
+          "content": "Build the ultimate niche community directory with powerful features: Analytics dashboard, Content management, Community discovery tools, Membership tiers, AI-powered community matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can find relevant communities across various platforms and interest areas."
         },
         "howItWorks": {
-          "content": "Agencies create profiles and showcase work while clients can search, review, and connect. Features include verified reviews, upvoting system, and staff recommendations. Platform includes analytics, AI matching, custom forms, membership options, and flexible component sections."
+          "content": "Users can discover communities based on their interests and goals. Features include verified listings, upvoting system, and staff recommendations. Platform includes analytics, AI matching, custom forms, membership options, and flexible component sections for community discovery."
         },
         "configuration": {
-          "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize agency profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable review and engagement features"
+          "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize community listing forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community verification features"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/nichegroups.png",
@@ -109,7 +112,8 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["open source", "software", "alternatives", "directory", "tech"]
         },
         "overview": {
           "content": "Launch a platform for discovering open-source alternatives with powerful features: Analytics dashboard, Content management, Forms system, Premium memberships, AI-powered recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Users can compare options and share experiences."
@@ -132,7 +136,7 @@
           "name": "Dirty Water",
           "type": "Marketplace",
           "provider": "Dirty Water",
-          "description": "Build a premium talent network with AI matching, analytics, and verified professional profiles.",
+          "description": "See what's safe to drink. We provide lab research on drinkable tap water, bottled water, filteration pumps, air purifiers etc. across the globe.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -140,16 +144,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://dirtywater.com"
-          }
+          },
+          "tags": ["water safety", "research", "health", "filtration", "environmental"]
         },
         "overview": {
-          "content": "Create an elite talent platform with comprehensive features: Analytics dashboard, Content management, Professional profile forms, Tiered memberships, AI-powered talent matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable professionals to showcase expertise while companies discover top talent."
+          "content": "Create a comprehensive water safety platform with powerful features: Analytics dashboard, Content management, Research submission forms, Premium memberships, AI-powered water quality analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Access lab-verified information about water quality worldwide."
         },
         "howItWorks": {
-          "content": "Professionals create verified profiles while companies can search and connect. Features include skill verification, endorsements, upvoting system, and staff recommendations. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections."
+          "content": "Researchers share water quality data while users access safety information. Features include geographic search, verification system, and expert recommendations. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for water safety information."
         },
         "configuration": {
-          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable verification features"
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize research submission forms\n4. Enable AI analysis\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable verification features"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/workremotelyeverywhere.vercel.app.png",
@@ -163,7 +168,7 @@
           "name": "Youtube Jobs",
           "type": "Marketplace",
           "provider": "YT Jobs",
-          "description": "Launch a comprehensive events platform with AI recommendations, analytics, and community features.",
+          "description": "Youtube jobs website where youtubers, creators and other people alike can post jobs or proposals for collaborations.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -171,16 +176,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://youtubejobs.app"
-          }
+          },
+          "tags": ["youtube", "creators", "jobs", "collaborations", "video"]
         },
         "overview": {
-          "content": "Create a powerful events marketplace with advanced features: Analytics dashboard, Content management, Event submission forms, Tiered memberships, AI-powered event recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable event discovery and community engagement."
+          "content": "Create a powerful YouTube creator job marketplace with advanced features: Analytics dashboard, Content management, Job submission forms, Tiered memberships, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect creators with opportunities and collaborations."
         },
         "howItWorks": {
-          "content": "Organizers list events while attendees discover and bookmark interests. Features include event ratings, upvoting system, and staff picks. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections."
+          "content": "Creators can post jobs while talent can search and apply. Features include profile verification, portfolio showcase, upvoting system, and staff picks. Powered by analytics, AI matching, custom forms, membership tiers, and flexible component sections for creator jobs."
         },
         "configuration": {
-          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize event forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community tools"
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize job listing forms\n4. Enable AI matching features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable portfolio and verification tools"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/youtubejobs.png",
@@ -202,7 +208,8 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["founders", "startups", "entrepreneurship", "stories", "business"]
         },
         "overview": {
           "content": "Launch an entrepreneur story-sharing platform with powerful features: Analytics dashboard, Content management, Story submission forms, Premium memberships, AI-powered insights, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect founders and share valuable experiences."
@@ -225,7 +232,7 @@
           "name": "APK Store",
           "type": "Marketplace",
           "provider": "DroidMarket",
-          "description": "Create a comprehensive Android app marketplace with AI recommendations, analytics, and community reviews.",
+          "description": "Huge Android app marketplace with AI recommendations, analytics, and community reviews.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -233,7 +240,8 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["android", "apps", "APK", "marketplace", "mobile"]
         },
         "overview": {
           "content": "Build a powerful APK marketplace with advanced features: Analytics dashboard, Content management, App submission forms, Premium memberships, AI-powered app recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable users to discover and review Android applications."
@@ -256,7 +264,7 @@
           "name": "Funded Startups",
           "type": "Marketplace",
           "provider": "Funded Startups Directory",
-          "description": "Launch a venture capital database with AI insights, analytics, and investment tracking.",
+          "description": "Funded startups list for agency owners and startup founders to get their first high-value Enterprise customer.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -264,16 +272,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://fundedstartups.org"
-          }
+          },
+          "tags": ["startups", "funding", "venture capital", "business", "leads"]
         },
         "overview": {
-          "content": "Create a comprehensive VC insights platform with powerful features: Analytics dashboard, Content management, Investment tracking forms, Premium memberships, AI-powered investment analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Track deals and discover opportunities."
+          "content": "Create a comprehensive startup leads platform with powerful features: Analytics dashboard, Content management, Startup tracking forms, Premium memberships, AI-powered lead matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Find recently funded startups as potential clients."
         },
         "howItWorks": {
-          "content": "Users can track investments and discover opportunities. Features include deal tracking, upvoting system, and expert insights. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for investment data."
+          "content": "Users can track newly funded startups and discover potential clients. Features include funding alerts, upvoting system, and curated lists. Platform includes analytics, AI lead matching, custom forms, membership tiers, and flexible component sections for startup discovery."
         },
         "configuration": {
-          "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize tracking forms\n4. Enable AI insights\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable deal tracking"
+          "content": "1. Configure branding and domain\n2. Set up membership levels\n3. Customize tracking forms\n4. Enable AI insights\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable funding alerts"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/startupleads.png",
@@ -295,7 +304,8 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["marketing", "strategies", "insights", "analytics", "business"]
         },
         "overview": {
           "content": "Launch a comprehensive marketing resource platform with advanced features: Analytics dashboard, Content management, Strategy submission forms, Premium memberships, AI-powered marketing insights, Custom integrations, Component-based sections, Notion sync, and Custom domains. Share and discover effective marketing strategies."
@@ -326,7 +336,8 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["backlinks", "SEO", "directory", "marketing", "linking"]
         },
         "overview": {
           "content": "Build a comprehensive backlink resource platform with powerful features: Analytics dashboard, Content management, Link submission forms, Premium memberships, AI-powered link analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover and share valuable backlink opportunities."
@@ -349,7 +360,7 @@
           "name": "Remote Jobs Template",
           "type": "Directory",
           "provider": "Jobs Template",
-          "description": "Create a high-quality backlink directory with AI analysis, analytics, and SEO insights.",
+          "description": "Remote jobs aggregator to list remote jobs found across the web.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -357,16 +368,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["remote", "jobs", "employment", "careers", "work"]
         },
         "overview": {
-          "content": "Build a comprehensive backlink resource platform with powerful features: Analytics dashboard, Content management, Link submission forms, Premium memberships, AI-powered link analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover and share valuable backlink opportunities."
+          "content": "Build a comprehensive remote jobs platform with powerful features: Analytics dashboard, Content management, Job submission forms, Premium memberships, AI-powered job matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Find and list remote work opportunities worldwide."
         },
         "howItWorks": {
-          "content": "Users can discover and share high-quality backlink sources. Features include DA checking, upvoting system, and expert verifications. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for link organization."
+          "content": "Companies can post remote positions while job seekers find relevant opportunities. Features include job alerts, skill matching, upvoting system, and staff picks. Platform includes analytics, AI job matching, custom forms, membership tiers, and flexible component sections."
         },
         "configuration": {
-          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize submission forms\n4. Enable AI analysis\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable verification tools"
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize job submission forms\n4. Enable AI matching\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable job alert features"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/remotedeskwork.png",
@@ -380,7 +392,7 @@
           "name": "AI Jobs",
           "type": "Directory",
           "provider": "Jobs Template",
-          "description": "Create a high-quality backlink directory with AI analysis, analytics, and SEO insights.",
+          "description": "AI jobs aggregator across the web.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -388,19 +400,84 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["AI", "artificial intelligence", "jobs", "tech", "careers"]
         },
         "overview": {
-          "content": "Build a comprehensive backlink resource platform with powerful features: Analytics dashboard, Content management, Link submission forms, Premium memberships, AI-powered link analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover and share valuable backlink opportunities."
+          "content": "Build a specialized AI jobs platform with powerful features: Analytics dashboard, Content management, AI job submission forms, Premium memberships, AI-powered skill matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect AI talent with opportunities."
         },
         "howItWorks": {
-          "content": "Users can discover and share high-quality backlink sources. Features include DA checking, upvoting system, and expert verifications. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for link organization."
+          "content": "Companies can post AI positions while specialists find relevant opportunities. Features include skill verification, skill-based search, upvoting system, and curated job lists. Platform includes analytics, AI skill matching, custom forms, membership tiers, and flexible component sections."
         },
         "configuration": {
-          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize submission forms\n4. Enable AI analysis\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable verification tools"
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize AI job submission forms\n4. Enable skill matching\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable job alert features"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/aijobs.png",
+          "youtubevideo": "https://youtube.com/watch?v=saas-boilerplates-demo"
+        }
+      },
+      {
+        "id": "web3_jobs",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
+          "name": "Web3 Jobs",
+          "type": "Directory",
+          "provider": "Jobs Template",
+          "description": "Web3 jobs aggregator",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "viewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          },
+          "tags": ["web3", "blockchain", "crypto", "jobs", "careers"]
+        },
+        "overview": {
+          "content": "Build a specialized Web3 jobs platform with powerful features: Analytics dashboard, Content management, Web3 job submission forms, Premium memberships, AI-powered skill matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect blockchain talent with opportunities."
+        },
+        "howItWorks": {
+          "content": "Companies can post Web3 positions while specialists find relevant opportunities. Features include skill verification, blockchain-specific filters, upvoting system, and curated job lists. Platform includes analytics, AI skill matching, custom forms, membership tiers, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize Web3 job submission forms\n4. Enable blockchain skill matching\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable job alert features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/template_images/web3jobs.png",
+          "youtubevideo": "https://youtube.com/watch?v=saas-boilerplates-demo"
+        }
+      },
+      {
+        "id": "wise_bro",
+        "product": {
+          "logo": "https://dazzling-cat.netlify.app/template_images/wisebro.png",
+          "name": "Wise Bro",
+          "type": "Directory",
+          "provider": "Hire Experts",
+          "description": "Hire experts on LinkedIn who work for great companies, who help guide you and even refer you.",
+          "callToCopy": {
+            "text": "Deploy Template",
+            "link": "https://example.com/install-arcade-BoringSites"
+          },
+          "viewDemo": {
+            "text": "View Demo",
+            "link": "https://remote-jobs.com"
+          },
+          "tags": ["mentorship", "experts", "career guidance", "linkedin", "referrals"]
+        },
+        "overview": {
+          "content": "Build a comprehensive expert mentorship platform with powerful features: Analytics dashboard, Content management, Expert profile forms, Premium memberships, AI-powered mentor matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect with industry experts for guidance and referrals."
+        },
+        "howItWorks": {
+          "content": "Experts create profiles while users can find relevant mentors based on company, skills and goals. Features include verification system, background checking, scheduling tools, and curated recommendations. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections."
+        },
+        "configuration": {
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize expert profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable verification features"
+        },
+        "proof": {
+          "screenshot": "https://dazzling-cat.netlify.app/template_images/wisebro.png",
           "youtubevideo": "https://youtube.com/watch?v=saas-boilerplates-demo"
         }
       },
@@ -411,7 +488,7 @@
           "name": "Zeros List",
           "type": "Directory",
           "provider": "Accountants and CPA Marketplace",
-          "description": "Create a high-quality backlink directory with AI analysis, analytics, and SEO insights.",
+          "description": "A marketplace of accountants, CPAs, CFPs you can hire.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -419,16 +496,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["accountants", "CPA", "CFP", "financial", "professional services"]
         },
         "overview": {
-          "content": "Build a comprehensive backlink resource platform with powerful features: Analytics dashboard, Content management, Link submission forms, Premium memberships, AI-powered link analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover and share valuable backlink opportunities."
+          "content": "Build a comprehensive financial professional marketplace with powerful features: Analytics dashboard, Content management, Professional profile forms, Premium memberships, AI-powered matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Find and hire verified accountants, CPAs, and CFPs."
         },
         "howItWorks": {
-          "content": "Users can discover and share high-quality backlink sources. Features include DA checking, upvoting system, and expert verifications. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for link organization."
+          "content": "Financial professionals create verified profiles while clients can search and connect. Features include credential verification, service matching, reviews system, and curated recommendations. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections."
         },
         "configuration": {
-          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize submission forms\n4. Enable AI analysis\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable verification tools"
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize professional profile forms\n4. Enable AI matching\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable credential verification"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/zerolist.png",
@@ -441,8 +519,8 @@
           "logo": "https://dazzling-cat.netlify.app/template_images/nakedtruth.png",
           "name": "Naked Truth",
           "type": "Directory",
-          "provider": "Jobs Template",
-          "description": "Create a high-quality backlink directory with AI analysis, analytics, and SEO insights.",
+          "provider": "Beauty Analysis",
+          "description": "What are you applying to your skin? Lab research on beauty products.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -450,16 +528,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://nakedtruth.com"
-          }
+          },
+          "tags": ["beauty", "skincare", "research", "health", "cosmetics"]
         },
         "overview": {
-          "content": "Build a comprehensive backlink resource platform with powerful features: Analytics dashboard, Content management, Link submission forms, Premium memberships, AI-powered link analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover and share valuable backlink opportunities."
+          "content": "Build a comprehensive beauty product analysis platform with powerful features: Analytics dashboard, Content management, Research submission forms, Premium memberships, AI-powered ingredient analysis, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover what's really in your beauty products."
         },
         "howItWorks": {
-          "content": "Users can discover and share high-quality backlink sources. Features include DA checking, upvoting system, and expert verifications. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for link organization."
+          "content": "Scientists share research data while users access ingredient safety information. Features include product searching, ingredient analysis, safety ratings, and expert recommendations. Platform includes analytics, AI analysis, custom forms, membership tiers, and flexible component sections for cosmetic safety information."
         },
         "configuration": {
-          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize submission forms\n4. Enable AI analysis\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable verification tools"
+          "content": "1. Configure branding and domain\n2. Set up membership tiers\n3. Customize research submission forms\n4. Enable AI ingredient analysis\n5. Add custom sections\n6. Configure Notion sync\n7. Set up analytics\n8. Enable product verification tools"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/nakedtruth.png",
@@ -473,7 +552,7 @@
           "name": "NotionBear",
           "type": "Blog",
           "provider": "NotionBear",
-          "description": "Launch a mental health content platform with AI insights, analytics, and community support.",
+          "description": "Notion templates, resources and other things.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -481,16 +560,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://NotionBear.com"
-          }
+          },
+          "tags": ["notion", "templates", "productivity", "resources", "tools"]
         },
         "overview": {
-          "content": "Create a supportive mental health blogging platform with comprehensive features: Analytics dashboard, Content management, Blog submission forms, Premium memberships, AI-powered content recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Share experiences and insights."
+          "content": "Create a comprehensive Notion resource platform with powerful features: Analytics dashboard, Content management, Template submission forms, Premium memberships, AI-powered template recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Access and share high-quality Notion templates and resources."
         },
         "howItWorks": {
-          "content": "Writers share mental health content while readers find relevant resources. Features include content curation, upvoting system, and expert verification. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections."
+          "content": "Creators share Notion templates while users discover productivity resources. Features include template categories, ratings system, and staff picks. Powered by analytics, AI recommendations, custom forms, membership tiers, and flexible component sections for Notion resources."
         },
         "configuration": {
-          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize blog forms\n4. Enable AI features\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable community tools"
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize template submission forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable download and rating tools"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/NotionBear.png",
@@ -504,7 +584,7 @@
           "name": "Homely Real Estate",
           "type": "Marketplace",
           "provider": "HuntTech",
-          "description": "Create a product discovery platform with AI recommendations, analytics, and community engagement.",
+          "description": "Real estate listings and loans",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -512,16 +592,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["real estate", "property", "housing", "loans", "marketplace"]
         },
         "overview": {
-          "content": "Launch a dynamic product discovery platform with comprehensive features: Analytics dashboard, Content management, Product submission forms, Premium memberships, AI-powered product recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable makers to showcase products and users to discover innovations."
+          "content": "Launch a dynamic real estate marketplace with comprehensive features: Analytics dashboard, Content management, Property listing forms, Premium memberships, AI-powered property recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect buyers, sellers, and financing options."
         },
         "howItWorks": {
-          "content": "Makers can launch products while users discover and review them. Features include daily rankings, upvoting system, and staff picks. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections for product showcases."
+          "content": "Agents can list properties while buyers search and connect with loan options. Features include property verification, virtual tours, upvoting system, and curated listings. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections for property showcases."
         },
         "configuration": {
-          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize product forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable launch features"
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize property listing forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable loan calculator tools"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/homely_real_estate.png",
@@ -534,8 +615,8 @@
           "logo": "https://dazzling-cat.netlify.app/template_images/homely_real_estate.png",
           "name": "High Rise Rentals",
           "type": "Marketplace",
-          "provider": "Hirerise Rentals",
-          "description": "Create a product discovery platform with AI recommendations, analytics, and community engagement.",
+          "provider": "Highrise Rentals",
+          "description": "Highrise building rentals, we list rentals you can get in luxury high rise buildings",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -543,16 +624,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://remote-jobs.com"
-          }
+          },
+          "tags": ["highrise", "luxury", "rentals", "apartments", "real estate"]
         },
         "overview": {
-          "content": "Launch a dynamic product discovery platform with comprehensive features: Analytics dashboard, Content management, Product submission forms, Premium memberships, AI-powered product recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable makers to showcase products and users to discover innovations."
+          "content": "Launch a specialized luxury highrise rental marketplace with comprehensive features: Analytics dashboard, Content management, Listing submission forms, Premium memberships, AI-powered unit matching, Custom integrations, Component-based sections, Notion sync, and Custom domains. Discover exclusive highrise rental opportunities."
         },
         "howItWorks": {
-          "content": "Makers can launch products while users discover and review them. Features include daily rankings, upvoting system, and staff picks. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections for product showcases."
+          "content": "Property managers list highrise units while renters search for luxury apartments. Features include building verification, amenity filters, virtual tours, and curated suggestions. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections for luxury rentals."
         },
         "configuration": {
-          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize product forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable launch features"
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize rental listing forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable virtual tour features"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/homely_real_estate.png",
@@ -566,7 +648,7 @@
           "name": "AirBnB Template",
           "type": "Marketplace",
           "provider": "Template Builder",
-          "description": "Create a product discovery platform with AI recommendations, analytics, and community engagement.",
+          "description": "Airbnb template.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -574,16 +656,17 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://airbnb.com"
-          }
+          },
+          "tags": ["airbnb", "vacation rentals", "hospitality", "travel", "marketplace"]
         },
         "overview": {
-          "content": "Launch a dynamic product discovery platform with comprehensive features: Analytics dashboard, Content management, Product submission forms, Premium memberships, AI-powered product recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable makers to showcase products and users to discover innovations."
+          "content": "Launch a dynamic vacation rental marketplace with comprehensive features: Analytics dashboard, Content management, Property listing forms, Premium memberships, AI-powered property recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Connect hosts and travelers through a trusted platform."
         },
         "howItWorks": {
-          "content": "Makers can launch products while users discover and review them. Features include daily rankings, upvoting system, and staff picks. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections for product showcases."
+          "content": "Hosts can list properties while travelers discover and book accommodations. Features include property verification, review system, calendar management, and personalized recommendations. Platform includes analytics, AI matching, custom forms, membership tiers, and flexible component sections for vacation rentals."
         },
         "configuration": {
-          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize product forms\n4. Enable AI recommendations\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable launch features"
+          "content": "1. Set up branding and domain\n2. Configure membership levels\n3. Customize property listing forms\n4. Enable AI matching\n5. Add custom sections\n6. Set up Notion sync\n7. Configure analytics\n8. Enable booking and calendar tools"
         },
         "proof": {
           "screenshot": "https://dazzling-cat.netlify.app/template_images/airbnb.png",
@@ -594,10 +677,10 @@
         "id": "producthunt_template",
         "product": {
           "logo": "https://dazzling-cat.netlify.app/template_images/producthunt.png",
-          "name": "AirBnB Template",
+          "name": "Product Hunt Template",
           "type": "Marketplace",
           "provider": "Template Builder",
-          "description": "Create a product discovery platform with AI recommendations, analytics, and community engagement.",
+          "description": "Product Hunt styled template.",
           "callToCopy": {
             "text": "Deploy Template",
             "link": "https://example.com/install-arcade-BoringSites"
@@ -605,7 +688,8 @@
           "viewDemo": {
             "text": "View Demo",
             "link": "https://airbnb.com"
-          }
+          },
+          "tags": ["product hunt", "startups", "launch", "tech products", "discovery"]
         },
         "overview": {
           "content": "Launch a dynamic product discovery platform with comprehensive features: Analytics dashboard, Content management, Product submission forms, Premium memberships, AI-powered product recommendations, Custom integrations, Component-based sections, Notion sync, and Custom domains. Enable makers to showcase products and users to discover innovations."

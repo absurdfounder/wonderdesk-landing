@@ -3,32 +3,29 @@ import Image from "next/image";
 import { _loadFromJson } from "@/app/utils/helper";
 import notionfooterImage from "@/public/images/freedesigner.png";
 
-
-
 export const metadata = {
   title: 'Beautiful websites built on notion using BoringSites',
   description: 'Jumpstart your SaaS business with pre-built solutions from BoringSites and our community.',
   openGraph: {
     images: [
-        {
-            url: "https://dazzling-cat.netlify.app/BoringSitesshowcase_socialshare.png",
-            width: 1200,
-            height: 630,
-            alt: "Get a Marketplace with Notion",
-        },
+      {
+        url: "https://dazzling-cat.netlify.app/BoringSitesshowcase_socialshare.png",
+        width: 1200,
+        height: 630,
+        alt: "Get a Marketplace with Notion",
+      },
     ],
-},
-twitter: {
+  },
+  twitter: {
     card: "summary_large_image",
     images: [
-        {
-            url: "https://dazzling-cat.netlify.app/BoringSitesshowcase_socialshare.png",
-            alt: "Get a Marketplace with Notion",
-        },
+      {
+        url: "https://dazzling-cat.netlify.app/BoringSitesshowcase_socialshare.png",
+        alt: "Get a Marketplace with Notion",
+      },
     ],
-},
+  },
 }
-
 
 // Utility function to truncate text
 const truncateText = (text: string, maxLength: number): string => {
@@ -101,24 +98,24 @@ export default async function Template() {
                 key={index}
                 className="relative flex flex-col items-center overflow-hidden bg-white rounded-2xl shadow-xl h-full border"
               >
-                <div>
+                <div className="w-full">
                   <div>
                     <div className="items-start">
                       <div className="m-auto flex justify-center items-center">
-                      <Image
-                        className="w-full"
-                        width={100}
-                        height={100}
-                        src={template?.product?.logo}
-                        unoptimized
-                        alt={template?.product?.name}
-                      />
+                        <Image
+                          className="w-full"
+                          width={100}
+                          height={100}
+                          src={template?.product?.logo}
+                          unoptimized
+                          alt={template?.product?.name}
+                        />
                       </div>
 
                       <div className="p-6">
-
-                      <span className="uppercase text-sm text-primary">
-                          Category
+                        {/* Show template type as category */}
+                        <span className="uppercase text-xs font-semibold text-orange-600 bg-orange-50 px-2 py-1 rounded-full">
+                          {template?.product?.type || "Template"}
                         </span>
 
                         <Link href={"/showcase/" + template.id} className="flex gap-2">
@@ -147,12 +144,29 @@ export default async function Template() {
                         </Link>
 
                         <p className="text-sm text-slate-400 mt-2 mb-3">
-                        {truncateText(template?.product?.description, 76)}
+                          {truncateText(template?.product?.description, 76)}
                         </p>
 
-                        <span className="bg-slate-100 border-slate-200 border-dashed border-2 p-1 px-4 rounded-full my-2">
-                          Tags here...
-                        </span>
+                        {/* Display tags if available */}
+                        <div className="flex flex-wrap gap-1 mt-3">
+                          {template?.product?.tags && template.product.tags.length > 0 ? (
+                            template.product.tags.slice(0, 3).map((tag: string, tagIndex: number) => (
+                              <span 
+                                key={tagIndex} 
+                                className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded-full"
+                              >
+                                {tag}
+                              </span>
+                            ))
+                          ) : (
+                            <span className="bg-slate-100 text-slate-400 text-xs px-2 py-1 rounded-full">
+                              No tags available
+                            </span>
+                          )}
+                          {template?.product?.tags && template.product.tags.length > 3 && (
+                            <span className="text-xs text-slate-500">+{template.product.tags.length - 3} more</span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
