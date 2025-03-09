@@ -4,41 +4,84 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { StarIcon, ArrowUpRight,ArrowRight, Check, ShoppingBag, BookOpen, FileText, FileQuestion, ExternalLink } from "lucide-react";
-
-import VideoThumb from "@/public/images/hero-image.png";
-import ModalVideo from "@/components/modal-video";
+import { StarIcon, ArrowUpRight, ArrowRight, Check, ShoppingBag, BookOpen, FileText, FileQuestion, ExternalLink } from "lucide-react";
+// Define site bundles directly in the component
+// You can move this to a separate file later if needed
+const siteBundles = [
+  {
+    id: 1,
+    name: "Directory Site",
+    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
+    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    description: "Business Directory"
+  },
+  {
+    id: 2,
+    name: "Job Board",
+    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
+    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    description: "Job Listings Platform"
+  },
+  {
+    id: 3,
+    name: "Real Estate Listings",
+    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
+    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    description: "Property Marketplace"
+  },
+  {
+    id: 4,
+    name: "Event Directory",
+    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
+    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    description: "Event Listing Platform"
+  },
+  {
+    id: 5,
+    name: "Marketplace",
+    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
+    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    description: "Product Marketplace"
+  }
+];
 
 interface HeroProps {
   onCategorySelect?: (category: string) => void;
 }
 
 export default function Hero({ onCategorySelect }: HeroProps) {
-
-  /*
-    const words = [
-      "helpdesk",
-      "marketplace",
-      "blog",
-      "company wiki",
-      "documentation",
-    ];
-    */
-
   const words = [
     "directory",
-    "directory",
     "marketplace",
-    "marketplace",
-    "directory",
+    "job board",
+    "event listings",
+    "real estate site",
   ];
 
   const [index, setIndex] = useState(0);
+  const [currentSiteBundle, setCurrentSiteBundle] = useState(siteBundles[0]);
+  const [transitioning, setTransitioning] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 1800);
+      
+      // Start transition animation
+      setTransitioning(true);
+      
+      // After a short delay, change the site bundle
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * siteBundles.length);
+        setCurrentSiteBundle(siteBundles[randomIndex]);
+        
+        // End transition animation
+        setTimeout(() => {
+          setTransitioning(false);
+        }, 300);
+      }, 300);
+      
+    }, 3000); // Changed to 3 seconds for better user experience
+    
     return () => clearInterval(interval);
   }, []);
 
@@ -88,14 +131,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-
             <h1 className="h2 mb-8 text-center leading-tight font-comfortaa tracking-loose text-slate-700">
               Launch
-
-
-
-
-
               <span className="inline-block decoration-primary relative">
                 <span className="relative z-10">
                   <motion.span
@@ -111,47 +148,15 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 </span>
                 <span className="bottom-0 absolute bg-accent-pink h-4 md:h-6 md:-bottom-0.5 -inset-x-2 mx-4"></span>
               </span>
-
               in hours, <b className="font-source-serif-4 h1 font-normal italic text-orange-600">not weeks</b>.{" "}
               <span className="font-bungee block font-normal text-orange-600 my-2">
                 grow to millions from 
                 
                 <div className="inline-flex items-center justify-center ml-1 px-4">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="12 0.19 487.619 510.941" className="w-7 h-7 mr-2 sm:w-9 sm:h-9"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934L358.186 335.22V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fill-rule="evenodd"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="12 0.19 487.619 510.941" className="w-7 h-7 mr-2 sm:w-9 sm:h-9"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934L358.186 335.22V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fillRule="evenodd"></path></svg>
                 <b className="text-gray-800">Notion</b>
                 </div>
               </span>{" "}
-            </h1>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-loose mb-4 hidden">
-              <span className="">Easily Get a </span> <br />
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={words[index]}
-                  className="font-source-serif-4 font-normal italic text-orange-400"
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -20, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {words[index]}
-                </motion.span>
-              </AnimatePresence>
-              <br />
-              <span className="flex gap-4 justify-center items-center mt-2">
-                <span className="">on </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="12 0.19 487.619 510.941"
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain m-auto ml-0 mr-0"
-                >
-                  <path
-                    d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934L358.186 335.22V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z"
-                    fillRule="evenodd"
-                  ></path>
-                </svg>
-                <span className="">Notion.</span>
-              </span>
             </h1>
           </motion.div>
 
@@ -189,7 +194,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center"
                   href="https://app.boringsites.com"
                 >
-                  Get a directory <ExternalLink className="ml-2 w-4 h-4" />
+                  Get a {words[index]} <ExternalLink className="ml-2 w-4 h-4" />
                 </Link>
               </motion.div>
               <motion.div
@@ -220,60 +225,60 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             ))}
           </motion.div>
 
-
-
-
           <div className="w-full py-12 overflow-x-hidden">
             <div className="max-w-7xl mx-auto relative">
+              <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 gap-8 md:gap-4">
+                {/* Notion Site Column */}
+                <div className="w-full">
+                  <div className="">
+                    <div className="space-y-4">
+                      <motion.div
+                        className="relative overflow-hidden rounded-lg"
+                        initial={{ opacity: 1 }}
+                        animate={{ opacity: transitioning ? 0.5 : 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <img
+                          src={currentSiteBundle.notionImage}
+                          alt="Notion site preview"
+                          className="w-full rounded-lg object-cover"
+                        />
+                      </motion.div>
+                      <p className="text-gray-800 text-sm text-center font-bold">From Notion {currentSiteBundle.name}</p>
+                    </div>
+                  </div>
+                </div>
 
+                {/* Arrow Column */}
+                <div className="rotate-90 md:rotate-0 flex-shrink-0">
+                  <div className="bg-gray-100 rounded-full p-2">
+                    <ArrowRight className="w-8 h-9 text-orange-400" />
+                  </div>
+                </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 gap-8 md:gap-4">
-      {/* Notion Site Column */}
-      <div className="w-full">
-        <div className="">
-
-          <div className="space-y-4">
-            <img
-              src="https://dazzling-cat.netlify.app/notiondatabase.png"
-              alt="Notion site preview"
-              className="w-full rounded-lg object-cover"
-            />
-            <p className="text-gray-800 text-sm text-center font-bold">From Notion Site</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Arrow Column */}
-      <div className="rotate-90 md:rotate-0 flex-shrink-0">
-        <div className="bg-gray-100 rounded-full p-2">
-          <ArrowRight className="w-8 h-9 text-orange-400" />
-        </div>
-      </div>
-
-      {/* Super Site Column */}
-      <div className="w-full">
-        <div>
-
-          <div className="space-y-4">
-            <img
-              src="https://dazzling-cat.netlify.app/boringsite.png"
-              alt="Super site preview"
-              className="w-full rounded-lg object-cover"
-            />
-            <p className="text-gray-800 text-sm text-center font-bold">To Custom Boring Site</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
+                {/* Super Site Column */}
+                <div className="w-full">
+                  <div>
+                    <div className="space-y-4">
+                      <motion.div
+                        className="relative overflow-hidden rounded-lg"
+                        initial={{ opacity: 1 }}
+                        animate={{ opacity: transitioning ? 0.5 : 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <img
+                          src={currentSiteBundle.siteImage}
+                          alt="Super site preview"
+                          className="w-full rounded-lg object-cover"
+                        />
+                      </motion.div>
+                      <p className="text-gray-800 text-sm text-center font-bold">To Custom {currentSiteBundle.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-
-
         </div>
       </div>
     </motion.section>
