@@ -33,7 +33,7 @@ const truncateText = (text: string | undefined, maxLength: number): string => {
   return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
 };
 
-export default function Template() {
+export default function TemplateClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -45,6 +45,7 @@ export default function Template() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showAllTags, setShowAllTags] = useState(false);
+  const [initialized, setInitialized] = useState(false);
 
   // Helper function to update URL
   const updateUrlParams = (tags: string[]) => {
@@ -64,16 +65,20 @@ export default function Template() {
     router.push(newUrl, { scroll: false });
   };
 
-  // Parse tags from URL on initial load
+  // Initialize and parse tags from URL on initial load
   useEffect(() => {
-    const tagsParam = searchParams?.get('tags');
+    // Only run once
+    if (initialized) return;
+    setInitialized(true);
+    
+    if (!searchParams) return;
+    
+    const tagsParam = searchParams.get('tags');
     if (tagsParam) {
       const urlTags = tagsParam.split(',').map(tag => tag.trim());
       setSelectedTags(urlTags);
     }
-  }, [searchParams]);
-
-  useEffect(() => {
+    
     const fetchData = async () => {
       try {
         const data = await _loadFromJson() as Template[];
@@ -116,7 +121,6 @@ export default function Template() {
         setLesserTags(lesser);
         
         // Apply URL filters after getting data
-        const tagsParam = searchParams?.get('tags');
         if (tagsParam) {
           const urlTags = tagsParam.split(',').map(tag => tag.trim());
           // Only keep tags that actually exist in our data
@@ -132,7 +136,7 @@ export default function Template() {
     };
     
     fetchData();
-  }, [searchParams]);
+  }, [searchParams, initialized]);
 
   // Filter templates when selectedTags changes
   useEffect(() => {
