@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { _loadFromJson } from "@/app/utils/helper";
 import notionfooterImage from "@/public/images/freedesigner.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 // Define types for the product structure
@@ -33,7 +33,8 @@ const truncateText = (text: string | undefined, maxLength: number): string => {
   return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
 };
 
-export default function TemplateClient() {
+// Create a client component to handle the search params
+function TemplateClientContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -449,5 +450,18 @@ export default function TemplateClient() {
         </div>
       </div>
     </section>
+  );
+}
+
+// Wrapper component with Suspense
+export default function TemplateClient() {
+  return (
+    <Suspense fallback={
+      <div className="flex justify-center items-center py-20">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+      </div>
+    }>
+      <TemplateClientContent />
+    </Suspense>
   );
 }
