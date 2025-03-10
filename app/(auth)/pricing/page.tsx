@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, Loader, Users, MessageSquare, FileText, FolderGit2, DatabaseIcon, Gift, Lock } from 'lucide-react';
+import { Check, X, Loader, Users, MessageSquare, FileText, FolderGit2, DatabaseIcon, Gift, Lock, ArrowBigRight, ArrowRight } from 'lucide-react';
 import confetti from "canvas-confetti";
 import MigrateFrom from "@/public/images/migratefrom.png";
 import Testimonials from "@/components/testimonials";
@@ -507,7 +507,7 @@ const Pricing: React.FC = () => {
             </div>
             
             {/* Card content */}
-            <div className="p-8">
+            <div className="p-8 grid">
               <div className="mb-8">
                 <label className="block text-sm font-medium text-slate-700 mb-2">
                   Number of Monthly Active Users
@@ -527,24 +527,16 @@ const Pricing: React.FC = () => {
                 </p>
               </div>
               
-              <button
-                onClick={handleUpgradeClick}
-                disabled={loading}
-                className={`w-full py-4 px-6 rounded-lg text-white font-medium text-lg shadow-md ${
-                  loading
-                    ? 'bg-orange-400 cursor-not-allowed'
-                    : 'bg-orange-600 hover:bg-orange-700 active:bg-orange-800'
-                } transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2`}
+              <Link
+              type="button"
+                  href="https://app.boringsites.com"
+                className="flex justify-between w-full py-4 px-6 rounded-lg text-white font-medium text-lg shadow-md bg-orange-600 hover:bg-orange-700 active:bg-orange-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
               >
-                {loading ? (
-                  <span className="flex items-center justify-center">
-                    <Loader className="mr-2 animate-spin" size={20} />
-                    Processing...
-                  </span>
-                ) : (
-                  "Get a 3-day trial"
-                )}
-              </button>
+                Start a 3-day trial
+
+                <ArrowRight className="h-5 w-5 text-white mt-0.5 mr-3 flex-shrink-0" />
+
+              </Link>
               
               <p className="mt-3 text-center text-sm text-slate-500">
                 Prices will increase soon, lock in current rates today
