@@ -66,7 +66,7 @@ export default function Template() {
 
   // Parse tags from URL on initial load
   useEffect(() => {
-    const tagsParam = searchParams.get('tags');
+    const tagsParam = searchParams?.get('tags');
     if (tagsParam) {
       const urlTags = tagsParam.split(',').map(tag => tag.trim());
       setSelectedTags(urlTags);
@@ -116,7 +116,7 @@ export default function Template() {
         setLesserTags(lesser);
         
         // Apply URL filters after getting data
-        const tagsParam = searchParams.get('tags');
+        const tagsParam = searchParams?.get('tags');
         if (tagsParam) {
           const urlTags = tagsParam.split(',').map(tag => tag.trim());
           // Only keep tags that actually exist in our data
