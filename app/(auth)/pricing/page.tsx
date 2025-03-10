@@ -11,7 +11,7 @@ import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
 
 // Pricing tiers based on user count
-const pricingMap = {
+const pricingMap: Record<number, number> = {
   10000: 9,
   50000: 24,
   100000: 43,
@@ -29,15 +29,21 @@ interface HobbyFeature extends Feature {
   included: boolean;
 }
 
+// Position interface for tooltip positioning
+interface Position {
+  top: number;
+  left: number;
+}
+
 // Features for Hobby plan (keeping this data for reference)
-const hobbyFeatures = [
+const hobbyFeatures: HobbyFeature[] = [
   { name: "1 website", included: true, description: "Set up one Boring Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
   { name: "Custom Domain / SSL", included: false, description: "Use your own domain and secure it with SSL (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
   // Additional features would be listed here
 ];
 
 // Features for Scale/Rocket plan
-const scaleFeatures = [
+const scaleFeatures: Feature[] = [
   { name: "Unlimited Websites", description: "Set up and manage unlimited helpdesks, documentations, directories and blogs on BoringSites.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited Custom Domain / SSL", description: "Use your own domain name and benefit from included SSL encryption for enhanced security.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited articles & collections", description: "Create unlimited articles and collections without any restrictions.", imageUrl: "/api/placeholder/200/150" },
@@ -55,7 +61,12 @@ const scaleFeatures = [
 ];
 
 // FAQ data structure
-const faqs = {
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+const faqs: Record<string, FAQ[]> = {
   Website: [
     {
       question: "What is BoringSites?",
@@ -101,7 +112,12 @@ const faqs = {
 };
 
 // Feature Tooltip Component
-const FeatureTooltip = ({ feature, position }) => {
+interface FeatureTooltipProps {
+  feature: Feature;
+  position: Position;
+}
+
+const FeatureTooltip: React.FC<FeatureTooltipProps> = ({ feature, position }) => {
   const adjustedPosition = {
     top: Math.min(position.top, window.innerHeight - 200),
     left: Math.min(position.left, window.innerWidth - 300)
@@ -124,7 +140,12 @@ const FeatureTooltip = ({ feature, position }) => {
 };
 
 // Feature Popup Component
-const FeaturePopup = ({ feature, onClose }) => (
+interface FeaturePopupProps {
+  feature: Feature;
+  onClose: () => void;
+}
+
+const FeaturePopup: React.FC<FeaturePopupProps> = ({ feature, onClose }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -153,7 +174,12 @@ const FeaturePopup = ({ feature, onClose }) => (
 );
 
 // FAQ Accordion Component
-const FAQAccordion = ({ question, answer }) => {
+interface FAQAccordionProps {
+  question: string;
+  answer: string;
+}
+
+const FAQAccordion: React.FC<FAQAccordionProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -189,7 +215,7 @@ const FAQAccordion = ({ question, answer }) => {
 };
 
 // FAQ Section Component
-const FAQSection = () => {
+const FAQSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Website");
 
   return (
@@ -240,22 +266,22 @@ const FAQSection = () => {
 };
 
 // Main Pricing Component
-const Pricing = () => {
+const Pricing: React.FC = () => {
   // State variables
   const [activeTab, setActiveTab] = useState("Yearly");
   const [selectedUsers, setSelectedUsers] = useState(10000);
   const [monthlyPrice, setMonthlyPrice] = useState(pricingMap[selectedUsers]);
   const [yearlyPrice, setYearlyPrice] = useState(0);
-  const [popupFeature, setPopupFeature] = useState(null);
-  const [hoveredFeature, setHoveredFeature] = useState(null);
-  const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
+  const [popupFeature, setPopupFeature] = useState<Feature | null>(null);
+  const [hoveredFeature, setHoveredFeature] = useState<Feature | null>(null);
+  const [tooltipPosition, setTooltipPosition] = useState<Position>({ top: 0, left: 0 });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [countdown, setCountdown] = useState(86400);
   const [isLifetimeDealVisible, setIsLifetimeDealVisible] = useState(true);
   const [loading, setLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   
-  const featureRefs = useRef([]);
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Check mobile status on mount and resize
   useEffect(() => {
@@ -305,15 +331,15 @@ const Pricing = () => {
   }, []);
 
   // Event handlers
-  const handleTabClick = (tabName) => {
+  const handleTabClick = (tabName: string) => {
     setActiveTab(tabName);
   };
 
-  const handleUserChange = (event) => {
+  const handleUserChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedUsers(Number(event.target.value));
   };
 
-  const handleFeatureClick = (feature) => {
+  const handleFeatureClick = (feature: Feature) => {
     setPopupFeature(feature);
   };
 
@@ -325,14 +351,14 @@ const Pricing = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const formatTime = (time) => {
+  const formatTime = (time: number) => {
     const hours = Math.floor(time / 3600);
     const minutes = Math.floor((time % 3600) / 60);
     const seconds = time % 60;
     return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  const handleFeatureHover = (feature, index) => {
+  const handleFeatureHover = (feature: Feature, index: number) => {
     if (isMobile) return;
 
     setHoveredFeature(feature);
@@ -643,7 +669,7 @@ const Pricing = () => {
                   </h3>
                   <Link
                     href="https://buy.stripe.com/5kAeV0b6K27w8BG6os"
-                    className="bg-orange-600 text-white text-lg w-full py-3 px-6 rounded-lg block hover:bg-orange-700 transition-colors shadow-md"
+                    className="bg-orange-600 text-white text-lg w-full py-3 px-6 rounded-lg block hover:bg-orange-700 transition-colors shadow-md font-medium"
                   >
                     Buy Now
                   </Link>
