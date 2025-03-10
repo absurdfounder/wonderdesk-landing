@@ -54,8 +54,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
     "directory",
     "marketplace",
     "job board",
-    "event listings",
-    "real estate site",
+    "blog",
+    "knowledge base",
   ];
 
   const [index, setIndex] = useState(0);
