@@ -6,12 +6,13 @@ import Link from 'next/link';
 import MoveBack from '@/components/MoveBack';
 import Loading from '@/components/Loading';
 
-interface CallToCopy {
+// Make the interfaces consistent with the ones in helper.tsx
+interface CallToAction {
   text: string;
   link: string;
 }
 
-interface viewDemo {
+interface ViewDemo {
   text: string;
   link: string;
 }
@@ -22,9 +23,9 @@ interface Product {
   provider: string;
   type: string;
   description: string;
-  callToCopy: CallToCopy;
-  viewDemo: viewDemo;
-  callToAction: CallToCopy;
+  callToCopy: CallToAction;
+  viewDemo: ViewDemo;
+  callToAction?: CallToAction; // Make this optional to match the helper.tsx definition
   tags?: string[];
 }
 
@@ -37,7 +38,7 @@ interface Proof {
   youtubevideo: string;
 }
 
-interface FilterBySlugType {
+interface Template {
   id: string;
   product: Product;
   overview: ContentSection;
@@ -45,8 +46,6 @@ interface FilterBySlugType {
   configuration: ContentSection;
   proof: Proof;
 }
-
-type Template = FilterBySlugType;
 
 // Function to truncate text
 const truncateText = (text: string, maxLength: number): string => {
@@ -71,7 +70,7 @@ export async function generateMetadata(
       };
     }
 
-    const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
+    const filteredContent = content.find((item: { id: string }) => item.id === slug) as Template;
 
     if (!filteredContent) {
       return {
@@ -97,12 +96,12 @@ export async function generateMetadata(
 }
 
 async function getData(slug: string): Promise<{ 
-  filterBySlug: FilterBySlugType; 
+  filterBySlug: Template; 
   postPageView: any;
-  relatedTemplates: FilterBySlugType[];
+  relatedTemplates: Template[];
 } | null> {
   const content = await _loadFromJson();
-  const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
+  const filteredContent = content.find((item: { id: string }) => item.id === slug) as Template;
   
   if (filteredContent) {
     // Add callToAction if it doesn't exist
@@ -113,30 +112,30 @@ async function getData(slug: string): Promise<{
     const transformedData = _transformDataToPostPageView(filteredContent);
     
     // Find related templates based on type or tags
-    let relatedTemplates: FilterBySlugType[] = [];
+    let relatedTemplates: Template[] = [];
     
     if (filteredContent.product.tags && filteredContent.product.tags.length > 0) {
       // Find templates with matching tags
       relatedTemplates = content
-        .filter((item: FilterBySlugType) => 
+        .filter((item: Template) => 
           item.id !== slug && // Not the current template
           item.product.tags && // Has tags
           item.product.tags.some((tag: string) => 
             filteredContent.product.tags?.includes(tag)
           )
         )
-        .slice(0, 3) as FilterBySlugType[];
+        .slice(0, 3);
     }
     
     // If not enough related templates by tags, add some based on type
     if (relatedTemplates.length < 3) {
       const typeRelated = content
-        .filter((item: FilterBySlugType) => 
+        .filter((item: Template) => 
           item.id !== slug && // Not the current template
           item.product.type === filteredContent.product.type && // Same type
           !relatedTemplates.some(rel => rel.id === item.id) // Not already included
         )
-        .slice(0, 3 - relatedTemplates.length) as FilterBySlugType[];
+        .slice(0, 3 - relatedTemplates.length);
       
       relatedTemplates = [...relatedTemplates, ...typeRelated];
     }
@@ -144,11 +143,11 @@ async function getData(slug: string): Promise<{
     // If still not enough, just add random ones
     if (relatedTemplates.length < 3) {
       const randomRelated = content
-        .filter((item: FilterBySlugType) => 
+        .filter((item: Template) => 
           item.id !== slug && // Not the current template
           !relatedTemplates.some(rel => rel.id === item.id) // Not already included
         )
-        .slice(0, 3 - relatedTemplates.length) as FilterBySlugType[];
+        .slice(0, 3 - relatedTemplates.length);
       
       relatedTemplates = [...relatedTemplates, ...randomRelated];
     }
