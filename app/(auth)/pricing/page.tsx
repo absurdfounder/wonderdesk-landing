@@ -561,7 +561,11 @@ const Pricing: React.FC = () => {
                   {scaleFeatures.map((feature, index) => (
                     <div
                       key={index}
-                      ref={(el) => (featureRefs.current[index] = el)}
+                      ref={(el: HTMLDivElement | null) => {
+                        if (featureRefs.current) {
+                          featureRefs.current[index] = el;
+                        }
+                      }}
                       className="flex items-start group cursor-pointer"
                       onClick={() => handleFeatureClick(feature)}
                       onMouseEnter={() => handleFeatureHover(feature, index)}
