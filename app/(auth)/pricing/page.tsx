@@ -219,7 +219,7 @@ const FAQSection: React.FC = () => {
       key={tab}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className={`px-3 md:px-4 py-2 font-semibold text-sm md:text-lg rounded-full m-1 md:m-2 ${activeTab === tab ? "bg-orange-700 text-slate-800" : "text-slate-700"}`}
+      className={`px-3 md:px-4 py-2 font-semibold text-sm md:text-lg rounded-full m-1 md:m-2 ${activeTab === tab ? "bg-orange-300 text-slate-800" : "text-slate-700"}`}
       onClick={() => handleTabClick(tab as keyof typeof faqs)}
     >
       {tab}
@@ -571,7 +571,7 @@ const Pricing: React.FC = () => {
                     disabled={loading}
                     className={`w-full px-6 py-4 rounded-full text-slate-800 font-semibold text-center text-xl ${loading
                         ? 'bg-orange-400 cursor-not-allowed'
-                        : 'bg-orange-700 hover:bg-orange-700 active:bg-orange-800'
+                        : 'bg-orange-400 hover:bg-orange-700 active:bg-orange-800'
                       } transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl`}
                   >
                     {loading ? (
@@ -580,7 +580,7 @@ const Pricing: React.FC = () => {
                         Processing...
                       </span>
                     ) : (
-                      "Start"
+                      "Ship Today"
                     )}
                   </motion.button>
                   <p className="mt-4 text-sm text-slate-500">
@@ -810,7 +810,7 @@ const Pricing: React.FC = () => {
                 <form className="w-full lg:w-auto">
                   <div>
                     <Link
-                      href="https://fetchkitty.com"
+                      href="https://app.youform.com/forms/r3rvhjv4"
                       target="_blank"
                       className="btn bg-orange-700 hover:bg-orange-700 shadow px-12 inline-block text-slate-900 py-3 rounded-lg transition-colors"
                     >

@@ -7,6 +7,8 @@ import { _loadFromJson } from "@/app/utils/helper";
 import notionfooterImage from "@/public/images/freedesigner.png";
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import MigrateFrom from "@/public/images/migratefrom.png";
+
 
 // Define types for the product structure
 interface Product {
@@ -173,60 +175,109 @@ function TemplateClientContent() {
     setShowAllTags(!showAllTags);
   };
 
-  // Render the template items with the "Free Design" banner inserted after every 3 rows
+  // Render the template items with alternating banners every 6 cards
   const renderTemplateItems = () => {
     const rowSize = 3; // Number of templates per row
-    const rowInterval = 3; // Show banner after every 3 rows
-    const bannerFrequency = rowSize * rowInterval; // Show banner every 9 templates
+    const bannerInterval = 6; // Show a banner after every 2 rows (6 cards)
     
     const items = [];
     const filteredTemplatesList = [...filteredTemplates];
     
     for (let i = 0; i < filteredTemplatesList.length; i++) {
-      // Add the Free Design banner after every 9 templates (3 rows with 3 templates each)
-      // We use > 0 to avoid showing the banner at the very beginning
-      if (i > 0 && i % bannerFrequency === 0) {
-        items.push(
-          <div key="free-design-banner" className="sm:col-span-2 lg:col-span-3 my-8">
-            <Link
-              href="https://app.youform.com/forms/r3rvhjv4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-orange-300 hover:border-orange-400 bg-gradient-to-br from-orange-50 to-orange-100"
-            >
-              <div className="flex flex-col md:flex-row items-center w-full p-6">
-                <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
-                  <Image
-                    className="w-20 h-20 md:w-24 md:h-24 object-contain transition-transform duration-300 group-hover:scale-110"
-                    width={120}
-                    height={120}
-                    src={notionfooterImage}
-                    alt="Free Design Services"
-                  />
-                </div>
-                <div className="md:w-3/4 md:pl-6">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 mb-2">
-                    Free Service
-                  </span>
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors duration-200">
-                    Get Free Design Services
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-600">
-                    We setup the whole flow for you, no technical skills required. Get custom design services tailored to your project needs.
-                  </p>
-                  <div className="mt-4 flex items-center">
-                    <span className="inline-flex items-center px-2.5 py-1.5 rounded-md text-sm font-medium bg-orange-500 text-white transition-colors duration-200 group-hover:bg-orange-700">
-                      Ask Us to Build
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-        );
+      // Add a banner after every 6 templates (2 rows with 3 templates each)
+      if (i > 0 && i % bannerInterval === 0) {
+        // Alternate between Design Assistance and Migration banners
+        // If i is divisible by 12 (every other banner should be Migration)
+        if ((i / bannerInterval) % 2 === 0) {
+          // Add the "Migrate From" banner
+          items.push(
+<div key={`migrate-banner-${i}`} className="sm:col-span-2 lg:col-span-3 my-8">
+  <Link
+    href="https://app.youform.com/forms/r3rvhjv4"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block"
+  >
+    <div
+      className="relative bg-slate-900 rounded-2xl px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12 w-full h-auto min-h-[200px]"
+    >
+      {/* Background illustration */}
+      <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
+        <Image alt="Logo" width={400} className="block" src={MigrateFrom} />
+      </div>
+
+      <div className="relative flex flex-col lg:flex-row justify-between items-center py-6">
+        {/* CTA content */}
+        <div className="text-center lg:text-left lg:max-w-xl space-y-6">
+          <h3 className="h3 text-white mb-2">
+            Planning to <b className="text-orange-600">migrate</b> to
+            BoringSites from another platform?
+          </h3>
+
+          {/* CTA form */}
+          <form className="w-full lg:w-auto">
+            <div>
+              <Link
+                href="https://app.youform.com/forms/r3rvhjv4"
+                target="_blank"
+                className="btn bg-orange-700 hover:bg-orange-700 shadow px-12 inline-block text-slate-900 py-3 rounded-lg transition-colors"
+              >
+                We can do it for you →
+              </Link>
+            </div>
+            <p className="text-sm text-slate-400 mt-3">Free of charge</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </Link>
+</div>
+          );
+        } else {
+          // Add the "Free Design Assistance" banner
+          items.push(
+<div key={`design-assistance-banner-${i}`} className="sm:col-span-2 lg:col-span-3 my-8">
+  <Link
+    href="https://app.youform.com/forms/design-assistance"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block"
+  >
+    <div
+      className="relative bg-gradient-to-r from-slate-700 to-slate-900 rounded-2xl px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12 w-full h-auto min-h-[200px]"
+    >
+      {/* Background illustration */}
+      <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
+        <Image alt="Designer" width={300} className="block" src={notionfooterImage} />
+      </div>
+
+      <div className="relative flex flex-col lg:flex-row justify-between items-center py-6">
+        {/* CTA content */}
+        <div className="text-center lg:text-left lg:max-w-xl space-y-6">
+          <h3 className="h3 text-white mb-2">
+            Want to get <b className="text-orange-600">free design</b> assistance?
+          </h3>
+
+          {/* CTA form */}
+          <form className="w-full lg:w-auto">
+            <div>
+              <Link
+                href="https://app.youform.com/forms/r3rvhjv4"
+                target="_blank"
+                className="btn bg-white hover:bg-slate-100 shadow px-12 inline-block text-orange-600 py-3 rounded-lg transition-colors"
+              >
+                Get started now →
+              </Link>
+            </div>
+            <p className="text-sm text-white mt-3">Professional design help at no cost</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </Link>
+</div>
+          );
+        }
       }
       
       // Add the template item
@@ -441,7 +492,7 @@ function TemplateClientContent() {
                 </div>
               )}
 
-              {/* Template grid with "Free Design" banner inserted at a specific position */}
+              {/* Template grid with banners inserted at specific positions */}
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {renderTemplateItems()}
               </div>
