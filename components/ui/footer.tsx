@@ -48,7 +48,7 @@ export default function Footer() {
             <Link href={"/"} className="inline-block mb-4">
               <Image src={Logo} loading='eager' alt="Logo" width={160} height={160} className="w-auto h-auto max-w-[160px]" />
             </Link>
-            <p className="text-sm text-slate-600 mb-4">Boring Sites is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder" className='text-orange-600 hover:underline'>@absurdfounder</Link>.</p>
+            <p className="text-sm text-slate-600 mb-4">Boring is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder" className='text-orange-600 hover:underline'>@absurdfounder</Link>.</p>
             <p className='mb-3 text-xs text-slate-400'>Boring is the biggest admirer of Notion™ , no-relation, just admiration.</p>
 <div className="text-xs md:text-sm text-slate-600 mb-8">
               <Link href="/terms" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Terms</Link> · <Link href="/privacy" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
