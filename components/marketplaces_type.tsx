@@ -195,10 +195,9 @@ const marketplaceTypes: MarketplaceTypes = {
 
 
 const tabData: TabItem[] = [
-  { text: "Rental marketplace", image: helpdeskImage, alt: "Rental marketplace interface demonstration" },
-  { text: "Service marketplace", image: blogImage, alt: "Service marketplace interface demonstration" },
-  { text: "Product marketplace", image: marketplaceImage, alt: "Product marketplace interface demonstration" },
-  { text: "Other marketplace", image: "/path/to/your/fourth-tab-image.gif", alt: "Other marketplace types demonstration" }
+  { text: "Marketplace", image: helpdeskImage, alt: "Rental marketplace interface demonstration" },
+  { text: "Directories", image: blogImage, alt: "Service marketplace interface demonstration" },
+  { text: "Any type of Website", image: marketplaceImage, alt: "Product marketplace interface demonstration" },
 ];
 
 export default function MarketplaceType() {
