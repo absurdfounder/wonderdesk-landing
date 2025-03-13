@@ -315,7 +315,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   {isAnimating && (
                     <div className="absolute top-0 left-0 right-0 bottom-0 bg-transparent pointer-events-none p-5">
                       <div className="text-lg text-slate-400 font-lato">
-                        Ask Boring to create <span className="text-orange-500">{displayedPhrase}</span>
+                        Ask Boring to create <span className="text-slate-400">{displayedPhrase}</span>
                         <span className={`${cursorVisible ? 'opacity-100' : 'opacity-0'} transition-opacity text-orange-500`}>|</span>
                       </div>
                     </div>
@@ -328,6 +328,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                       <button
                         className="text-slate-600 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100"
                         type="button"
+                        onClick={() => setShowLoginPopup(true)}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 -960 960 960" className="shrink-0 h-4 w-4" fill="currentColor">
                           <path
@@ -349,6 +350,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                         aria-haspopup="dialog"
                         aria-expanded="false"
                         data-state="closed"
+                        onClick={() => setShowLoginPopup(true)}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" className="shrink-0 h-4 w-4">
                           <mask id="figma_logo_outline_svg__a" width="21" height="20" x="0" y="0" maskUnits="userSpaceOnUse" ><path fill="#D9D9D9" d="M.286 0h20v20h-20z"></path></mask>
