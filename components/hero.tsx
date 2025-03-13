@@ -76,7 +76,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   const [transitioning, setTransitioning] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [showLoginPopup, setShowLoginPopup] = useState(false);
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   
   // Typing animation states
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -119,7 +119,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   useEffect(() => {
     if (!isAnimating) return;
     
-    let timeout;
+    let timeout: NodeJS.Timeout;
     
     if (isTyping) {
       if (displayedPhrase.length < typingPhrases[currentPhraseIndex].length) {
@@ -172,16 +172,16 @@ export default function Hero({ onCategorySelect }: HeroProps) {
     }
   };
 
-  // Handle input change
-  const handleInputChange = (e) => {
+  // Handle input change - added React.ChangeEvent<HTMLTextAreaElement> type
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(e.target.value);
     if (isAnimating) {
       setIsAnimating(false);
     }
   };
 
-  // Handle keypress (Enter)
-  const handleKeyPress = (e) => {
+  // Handle keypress (Enter) - added React.KeyboardEvent<HTMLTextAreaElement> type
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && inputValue.trim() !== '') {
       e.preventDefault();
       setShowLoginPopup(true);
@@ -189,7 +189,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   };
 
   // Add suggestion to input
-  const handleSuggestionClick = (suggestion) => {
+  const handleSuggestionClick = (suggestion: string) => {
     setInputValue(suggestion);
     setIsAnimating(false);
     if (inputRef.current) {
@@ -342,7 +342,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                         className="hidden"
                         accept="image/jpeg,.jpg,.jpeg,image/png,.png,image/webp,.webp"
                         type="file"
-                        tabIndex="-1"
+                        tabIndex={-1}
                       />
                       <button
                         className="text-slate-600 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100"
