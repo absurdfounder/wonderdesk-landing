@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -45,22 +45,52 @@ const siteBundles = [
   }
 ];
 
+// Input suggestion options
+const suggestionOptions = [
+  "Job website with location filters",
+  "Real estate directory with Sales AI",
+  "Marketplace for handmade products",
+  "Event listing platform for local events",
+  "Knowledge base for software documentation"
+];
+
+// Typing animation phrases
+const typingPhrases = [
+  "my blog...",
+  "an internal tool that...",
+  "a portfolio...",
+  "a directory...",
+  "a helpdesk...",
+  "a marketplace where..."
+];
+
 interface HeroProps {
   onCategorySelect?: (category: string) => void;
 }
 
 export default function Hero({ onCategorySelect }: HeroProps) {
-  const words = [
-    "directory",
-    "marketplace",
-    "job board",
-    "blog",
-    "knowledge base",
-  ];
-
+  // Original states
+  const words = ["directory", "marketplace", "job board", "blog", "knowledge base"];
   const [index, setIndex] = useState(0);
   const [currentSiteBundle, setCurrentSiteBundle] = useState(siteBundles[0]);
   const [transitioning, setTransitioning] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const inputRef = useRef(null);
+  
+  // Typing animation states
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [displayedPhrase, setDisplayedPhrase] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const [typingComplete, setTypingComplete] = useState(false);
+  const [cursorVisible, setCursorVisible] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(true);
+  
+  // Controls typing speed
+  const typingSpeed = 100; // milliseconds per character
+  const deletingSpeed = 50; // milliseconds per character
+  const pauseBeforeDelete = 1500; // pause before deleting starts
+  const pauseBeforeNewPhrase = 500; // pause before new phrase starts
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -85,6 +115,53 @@ export default function Hero({ onCategorySelect }: HeroProps) {
     return () => clearInterval(interval);
   }, []);
 
+  // Typing animation effect
+  useEffect(() => {
+    if (!isAnimating) return;
+    
+    let timeout;
+    
+    if (isTyping) {
+      if (displayedPhrase.length < typingPhrases[currentPhraseIndex].length) {
+        // Still typing current phrase
+        timeout = setTimeout(() => {
+          setDisplayedPhrase(typingPhrases[currentPhraseIndex].substring(0, displayedPhrase.length + 1));
+        }, typingSpeed);
+      } else {
+        // Finished typing, pause before deleting
+        setTypingComplete(true);
+        timeout = setTimeout(() => {
+          setIsTyping(false);
+          setTypingComplete(false);
+        }, pauseBeforeDelete);
+      }
+    } else {
+      if (displayedPhrase.length > 0) {
+        // Deleting
+        timeout = setTimeout(() => {
+          setDisplayedPhrase(displayedPhrase.substring(0, displayedPhrase.length - 1));
+        }, deletingSpeed);
+      } else {
+        // Finished deleting, move to next phrase
+        timeout = setTimeout(() => {
+          setCurrentPhraseIndex((currentPhraseIndex + 1) % typingPhrases.length);
+          setIsTyping(true);
+        }, pauseBeforeNewPhrase);
+      }
+    }
+    
+    return () => clearTimeout(timeout);
+  }, [displayedPhrase, isTyping, currentPhraseIndex, isAnimating]);
+  
+  // Blinking cursor effect
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setCursorVisible(prev => !prev);
+    }, 500);
+    
+    return () => clearInterval(cursorInterval);
+  }, []);
+
   const handleCategoryClick = (category: string) => {
     if (typeof onCategorySelect === 'function') {
       onCategorySelect(category);
@@ -95,12 +172,44 @@ export default function Hero({ onCategorySelect }: HeroProps) {
     }
   };
 
+  // Handle input change
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+    if (isAnimating) {
+      setIsAnimating(false);
+    }
+  };
+
+  // Handle keypress (Enter)
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && inputValue.trim() !== '') {
+      e.preventDefault();
+      setShowLoginPopup(true);
+    }
+  };
+
+  // Add suggestion to input
+  const handleSuggestionClick = (suggestion) => {
+    setInputValue(suggestion);
+    setIsAnimating(false);
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  // Close login popup
+  const closeLoginPopup = () => {
+    setShowLoginPopup(false);
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
+      className="relative"
     >
+      {/* Background grid pattern */}
       <div
         className="absolute bottom-0 pointer-events-none z-1 h-screen w-screen"
         aria-hidden="true"
@@ -123,8 +232,10 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
         </svg>
       </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-12 pb-12">
+          {/* Header section */}
           <motion.div
             className="text-center px-4 sm:px-6 lg:px-8"
             initial={{ y: 20, opacity: 0 }}
@@ -158,14 +269,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 </div>
               </span>{" "}
             </h1>
-          </motion.div>
 
-          <motion.div
-            className="max-w-3xl mx-auto text-center"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
             <p className="text-lg text-slate-600 mb-8 font-lato max-w-2xl m-auto">
               <span className="text-slate-600 "><b>Build Production-ready</b> apps in a hours setup </span> {" "}
               {["Listings", "SEO", "Custom Domains", "Payments"].map((category, index) => (
@@ -185,32 +289,134 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               {" "}
               – without any technical skills.
             </p>
-            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center"
-                  href="https://app.boringsites.com"
-                >
-                  Get a {words[index]} <ExternalLink className="ml-2 w-4 h-4" />
-                </Link>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  className="btn text-slate-800 text-2xl border-slate-900 hover:bg-slate-800 hover:text-white w-full sm:w-auto sm:ml-4 flex items-center justify-center"
-                  href="#template-section"
-                >
-                  View Examples <ArrowUpRight className="ml-2 w-4 h-4" />
-                </Link>
-              </motion.div>
+          </motion.div>
+
+          {/* Input Section with Typing Animation - FIXED OVERLAY ISSUE */}
+          <motion.div
+            className="max-w-3xl mx-auto mb-8"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className="relative">
+              <div className="bg-white border border-slate-300 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-orange-300 focus-within:border-orange-300">
+                <div className="relative">
+                  <textarea
+                    ref={inputRef}
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    onKeyPress={handleKeyPress}
+                    onClick={() => setIsAnimating(false)}
+                    placeholder={isAnimating ? "" : "Ask Boring to create a ..."}
+                    className="w-full p-5 text-lg text-slate-700 outline-none resize-none min-h-[100px] placeholder:text-slate-400 font-lato border-transparent focus:outline-none focus:ring-0 focus:border-transparent"
+                    rows={3}
+                  />
+
+                  {isAnimating && (
+                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-transparent pointer-events-none p-5">
+                      <div className="text-lg text-slate-400 font-lato">
+                        Ask Boring to create <span className="text-orange-500">{displayedPhrase}</span>
+                        <span className={`${cursorVisible ? 'opacity-100' : 'opacity-0'} transition-opacity text-orange-500`}>|</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="border-t border-slate-100 bg-slate-50 p-2 px-3">
+                  <div className="flex items-center justify-between flex-wrap">
+                    <div className="flex gap-2 items-center">
+                      <button
+                        className="text-slate-600 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100"
+                        type="button"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 -960 960 960" className="shrink-0 h-4 w-4" fill="currentColor">
+                          <path
+                            d="M180-120q-24.75 0-42.37-17.63Q120-155.25 120-180v-600q0-24.75 17.63-42.38Q155.25-840 180-840h379q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H180v600h600v-378q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v378q0 24.75-17.62 42.37Q804.75-120 780-120zm520-579h-51q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h51v-51q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v51h51q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5h-51v51q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37zM449-307l-82-108q-5-6-12-6t-12 6l-84 109q-6 8-1.5 16t13.5 8h419q8.5 0 12.75-8t-.75-16L588-458q-5-6-12-6t-12 6zm31-173"
+                          ></path>
+                        </svg>
+                        <span>Attach</span>
+                      </button>
+                      <input
+                        id="file-upload"
+                        className="hidden"
+                        accept="image/jpeg,.jpg,.jpeg,image/png,.png,image/webp,.webp"
+                        type="file"
+                        tabIndex="-1"
+                      />
+                      <button
+                        className="text-slate-600 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100"
+                        type="button"
+                        aria-haspopup="dialog"
+                        aria-expanded="false"
+                        data-state="closed"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" className="shrink-0 h-4 w-4">
+                          <mask id="figma_logo_outline_svg__a" width="21" height="20" x="0" y="0" maskUnits="userSpaceOnUse" ><path fill="#D9D9D9" d="M.286 0h20v20h-20z"></path></mask>
+                          <g mask="url(#figma_logo_outline_svg__a)">
+                            <path
+                              fill="currentColor"
+                              stroke="currentColor"
+                              strokeWidth="0.25"
+                              d="M5.772 5.716c0 .872.419 1.647 1.065 2.134a2.67 2.67 0 0 0-1.065 2.135c0 .873.419 1.647 1.065 2.135a2.67 2.67 0 0 0-1.065 2.134 2.68 2.68 0 0 0 2.683 2.67 2.704 2.704 0 0 0 2.705-2.693v-2.106c.446.333 1 .53 1.599.53h.046a2.67 2.67 0 0 0 1.606-4.805 2.67 2.67 0 0 0-1.606-4.805H8.443a2.67 2.67 0 0 0-2.67 2.67Zm6.987 5.867a1.598 1.598 0 0 1 0-3.196h.046a1.598 1.598 0 1 1 0 3.196zM8.443 8.387h1.645v3.196h-1.65a1.598 1.598 0 0 1 .005-3.196Zm-.005 4.269h1.65v1.575c0 .892-.734 1.621-1.633 1.621-.887 0-1.61-.719-1.61-1.598s.712-1.595 1.592-1.598Zm1.65-5.342H8.443a1.598 1.598 0 1 1 0-3.196h1.645zm2.717 0H11.16V4.118h1.645a1.598 1.598 0 1 1 0 3.196Z"
+                            ></path>
+                          </g>
+                        </svg>
+                        <span>Import</span>
+                      </button>
+                    </div>
+                    
+                    <div className="flex items-center">
+                      <button
+                        className="text-slate-600 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100 mr-2"
+                        type="button"
+                        aria-haspopup="dialog"
+                        aria-expanded="false"
+                        data-state="closed"
+                        onClick={() => setShowLoginPopup(true)}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 -960 960 960" className="shrink-0 h-4 w-4" fill="currentColor">
+                          <path
+                            d="M480.27-80q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34T80-480.5t31.5-155.66 86-126.84 127.34-85.5T480.5-880t155.66 31.5T763-763t85.5 127T880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80m-.27-60q142.38 0 241.19-99.5T820-480v-13q-6 26-27.41 43.5Q771.19-432 742-432h-80q-33 0-56.5-23.5T582-512v-40H422v-80q0-33 23.5-56.5T502-712h40v-22q0-16 13.5-40t30.5-29q-25-8-51.36-12.5Q508.29-820 480-820q-141 0-240.5 98.81T140-480h150q66 0 113 47t47 113v40H330v105q34 17 71.7 26t78.3 9"
+                          ></path>
+                        </svg>
+                        <span>Public</span>
+                      </button>
+                      <button 
+                        id="chatinput-send-message-button" 
+                        type="submit" 
+                        className={`flex items-center justify-center rounded-full p-2 ${inputValue.trim() ? 'bg-orange-500 text-white hover:bg-orange-600' : 'bg-slate-200 text-slate-400'} transition-colors duration-150 ease-out`}
+                        disabled={!inputValue.trim()}
+                        onClick={() => inputValue.trim() && setShowLoginPopup(true)}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 -960 960 960" className="shrink-0 h-5 w-5" fill="currentColor">
+                          <path
+                            d="M450-514v152q0 13 8.5 21.5T480-332t21.5-8.5T510-362v-152l53 53q9 9 21 9t21-9 9-21-9-21L501-607q-9-9-21-9t-21 9L355-503q-9 9-9 21t9 21 21 9 21-9zm30 434q-82 0-155-31.5t-127.5-86-86-127.5T80-480q0-83 31.5-156t86-127T325-848.5 480-880q83 0 156 31.5T763-763t85.5 127T880-480q0 82-31.5 155T763-197.5t-127 86T480-80"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Suggestion buttons */}
+              <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                {suggestionOptions.map((suggestion, idx) => (
+                  <motion.button
+                    key={idx}
+                    className="text-sm bg-slate-100 hover:bg-orange-100 text-slate-600 hover:text-orange-600 px-3 py-1.5 rounded-full border border-transparent hover:border-orange-200 transition-colors"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    onClick={() => handleSuggestionClick(suggestion)}
+                  >
+                    {suggestion}
+                  </motion.button>
+                ))}
+              </div>
             </div>
           </motion.div>
 
+          {/* Features section */}
           <motion.div
             className="flex flex-col items-center justify-center space-x-2 space-y-1 text-sm opacity-60 sm:flex-row sm:space-y-0 mt-6"
             initial={{ y: 20, opacity: 0 }}
@@ -225,6 +431,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             ))}
           </motion.div>
 
+          {/* Site transformation visualization */}
           <div className="w-full py-12 overflow-x-hidden">
             <div className="max-w-7xl mx-auto relative">
               <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 gap-8 md:gap-4">
@@ -281,6 +488,35 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           </div>
         </div>
       </div>
+
+      {/* Login Modal */}
+      {showLoginPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+          <motion.div 
+            className="bg-slate-900 rounded-lg p-8 max-w-md w-full"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="flex justify-between items-center mb-2">
+              <h2 className="text-xl font-bold text-white">Sign in to continue</h2>
+              <button 
+                onClick={closeLoginPopup}
+                className="text-gray-500 hover:text-white"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <p className="text-gray-300 mb-6 grid">Create an account or sign in to use AI Designer.</p>
+            <a type="button" href="https://app.boringsites.com" className="w-full bg-white hover:bg-gray-100 text-slate-900 py-3 rounded block text-center">
+              Sign up for free
+            </a>
+          </motion.div>
+        </div>
+      )}
     </motion.section>
   );
 }
