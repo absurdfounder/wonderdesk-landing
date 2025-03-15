@@ -34,11 +34,6 @@ const SchemaMarkup = () => {
     "applicationCategory": "WebApplication",
     "operatingSystem": "All",
     "description": "Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
