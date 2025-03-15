@@ -54,30 +54,35 @@ const bungee = localFont({
   variable: '--font-bungee'
 })
 
-export const metadata = {
-  title: 'BoringSites',
-  description: 'Turn your Notion docs quickly into a beautiful SaaS, Apps, Marketplaces, Blogs, Helpdesks – no code required.',
-  openGraph: {
-    images: [
-        {
-            url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
-            width: 1200,
-            height: 630,
-            alt: "Get a Marketplace with Notion",
-        },
-    ],
-},
-twitter: {
-    card: "summary_large_image",
-    images: [
-        {
-            url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
-            alt: "Get a Marketplace with Notion",
-        },
-    ],
-},
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
+export const metadata = {
+  metadataBase: new URL('https://boringsites.com'),
+  title: 'Boring: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
+  description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
+  openGraph: {
+    images: [
+      {
+        url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
+        width: 1200,
+        height: 630,
+        alt: "Get a Marketplace with Notion",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
+        alt: "Get a Marketplace with Notion",
+      },
+    ],
+  },
+}
 
 export default function RootLayout({
   children,
@@ -96,13 +101,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-
-
-
-
-
-
-

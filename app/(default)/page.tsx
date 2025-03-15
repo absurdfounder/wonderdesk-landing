@@ -1,7 +1,8 @@
 export const metadata = {
-  title: 'BoringSites : Notion to Blog, Notion to Helpdesk, Notion to marketplace and Notion to Company Wiki',
-  description: 'Write your content on Notion and automatically publish it to your SEO-friendly blog, helpdesk, or marketplace with a single click. No coding or design skills required.',
-  openGraph: {
+  metadataBase: new URL('https://boringsites.com'),
+  title: 'Boring: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
+  description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
+  openGraph: { 
     images: [
       {
         url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
