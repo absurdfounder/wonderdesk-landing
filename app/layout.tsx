@@ -5,6 +5,7 @@ import localFont from 'next/font/local'
 
 import Header from '@/components/ui/header'
 import Banner from '@/components/banner'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -96,6 +97,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Banner />
+          <SchemaMarkup />
         </div>
       </body>
     </html>
