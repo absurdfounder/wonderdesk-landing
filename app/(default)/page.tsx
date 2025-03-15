@@ -34,7 +34,6 @@ import Newsletter from '@/components/newsletter'
 import Marketplace_Type from '@/components/marketplaces_type'
 import FAQ from '@/components/faq'
 import ModalVideo from '@/components/modal-video'
-import SchemaMarkup from '@/components/SchemaMarkup'
 
 export default function Home() {
   return (
@@ -54,7 +53,6 @@ export default function Home() {
       <FAQ />
       <AboutMe />
       <Newsletter />
-      <SchemaMarkup />
     </>
   )
 }
