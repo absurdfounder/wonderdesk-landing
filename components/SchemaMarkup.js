@@ -91,25 +91,25 @@ const SchemaMarkup = () => {
     "itemListElement": [
       {
         "@type": "ListItem",
-        "position": 2,
+        "position": 1,
         "name": "Websites Built on Boring",
         "item": "https://boringsites.com/showcase"
       },
       {
         "@type": "ListItem",
-        "position": 3,
+        "position": 2,
         "name": "Pricing",
         "item": "https://boringsites.com/pricing"
       },
       {
         "@type": "ListItem",
-        "position": 2,
+        "position": 3,
         "name": "Integrations",
         "item": "https://boringsites.com/integrations"
       },
       {
         "@type": "ListItem",
-        "position": 1,
+        "position": 4,
         "name": "Boring App",
         "item": "https://app.boringsites.com"
       }
