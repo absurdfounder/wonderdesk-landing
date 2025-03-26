@@ -5,11 +5,11 @@ const SchemaMarkup = () => {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Boring Sites",
-    "url": "https://boringsites.com/",
+    "name": "Wonder Sites",
+    "url": "https://wondersites.co/",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://boringsites.com/search?q={search_term_string}",
+      "target": "https://wondersites.co/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -17,20 +17,20 @@ const SchemaMarkup = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Boring Sites",
-    "url": "https://boringsites.com",
-    "logo": "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
+    "name": "Wonder Sites",
+    "url": "https://wondersites.co",
+    "logo": "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
     "sameAs": [
-      "https://twitter.com/BoringSites",
-      "https://www.facebook.com/BoringSites",
-      "https://www.linkedin.com/company/BoringSites"
+      "https://twitter.com/WonderSites",
+      "https://www.facebook.com/WonderSites",
+      "https://www.linkedin.com/company/WonderSites"
     ]
   };
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Boring Sites",
+    "name": "Wonder Sites",
     "applicationCategory": "WebApplication",
     "operatingSystem": "All",
     "description": "Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!",
@@ -47,34 +47,34 @@ const SchemaMarkup = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do I create a website with Boring Sites?",
+        "name": "How do I create a website with Wonder Sites?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can create a website using Notion as your CMS and Boring Sites to turn it into powerful blog, helpdesk, documentation site, marketplace, or directory in minutes."
+          "text": "You can create a website using Notion as your CMS and Wonder Sites to turn it into powerful blog, helpdesk, documentation site, marketplace, or directory in minutes."
         }
       },
       {
         "@type": "Question",
-        "name": "Is Boring Sites SEO-friendly?",
+        "name": "Is Wonder Sites SEO-friendly?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Boring Sites creates superfast websites that are SEO-friendly, helping your content rank better in search engines."
+          "text": "Yes, Wonder Sites creates superfast websites that are SEO-friendly, helping your content rank better in search engines."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I create a marketplace with Boring Sites?",
+        "name": "Can I create a marketplace with Wonder Sites?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, you can create a marketplace or directory site with Boring Sites using Notion as your CMS. It's a no-code solution that lets you build unlimited sites."
+          "text": "Yes, you can create a marketplace or directory site with Wonder Sites using Notion as your CMS. It's a no-code solution that lets you build unlimited sites."
         }
       },
       {
         "@type": "Question",
-        "name": "How fast are websites created with Boring Sites?",
+        "name": "How fast are websites created with Wonder Sites?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Boring Sites using Amazon AWS the websites are superfast and optimized for excellent SEO. You can go from Notion to a live website in minutes using our AI Agents."
+          "text": "Wonder Sites using Amazon AWS the websites are superfast and optimized for excellent SEO. You can go from Notion to a live website in minutes using our AI Agents."
         }
       }
     ]
@@ -88,25 +88,25 @@ const SchemaMarkup = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Websites Built on Boring",
-        "item": "https://boringsites.com/showcase"
+        "item": "https://wondersites.co/showcase"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Pricing",
-        "item": "https://boringsites.com/pricing"
+        "item": "https://wondersites.co/pricing"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Integrations",
-        "item": "https://boringsites.com/integrations"
+        "item": "https://wondersites.co/integrations"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Boring App",
-        "item": "https://app.boringsites.com"
+        "item": "https://app.wondersites.co"
       }
     ]
   };

@@ -18,7 +18,7 @@ export default function OldWays() {
                         Your content <span className="font-serif font-normal text-orange-600">lives inside Notion</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
+                        Your work stays in a place you control and love, while WonderSites handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
                       </p>
                     </div>
                     <div className="w-full p-4 lg:p-6 md:w-3/5">
@@ -62,7 +62,7 @@ export default function OldWays() {
                         Membership for <span className="font-serif font-normal text-orange-600">paid subscribers.</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside BoringSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
+                        Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside WonderSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
                       </p>
                     </div>
                     <div className="w-full p-4 lg:p-6 md:w-3/5">
@@ -84,7 +84,7 @@ export default function OldWays() {
                         In-built <span className="font-serif font-normal text-orange-600">analytics</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
+                        See your page views, visitors, referrers, clicks, and much more for all of your websites. WonderSites provides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                       </p>
                     </div>
                     <div className="w-full p-4 lg:p-6 md:w-3/5">
@@ -128,7 +128,7 @@ export default function OldWays() {
                         Integrates with <span className="font-serif font-normal text-orange-600">your existing apps</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        BoringSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to BoringSites? We got you covered.
+                        WonderSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to WonderSites? We got you covered.
                       </p>
                     </div>
                     <div className="w-full p-4 lg:p-6 md:w-3/5">
@@ -166,7 +166,7 @@ export default function OldWays() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-xl mx-auto px-4">
               <Link 
-                href="https://app.boringsites.com"
+                href="https://app.wondersites.co"
                 className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl bg-orange-700 text-black rounded-lg hover:bg-orange-700 transition-colors duration-300 text-center"
               >
                 Start from 98% Ready
@@ -175,7 +175,7 @@ export default function OldWays() {
                 href="#template-section"
                 className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl border border-white text-white rounded-lg hover:bg-slate-800 transition-colors duration-300 text-center"
               >
-                Sites built on BoringSites
+                Sites built on WonderSites
               </Link>
             </div>
           </section>

@@ -19,46 +19,46 @@ const faqs: FAQCategories = {
       answer: "An online marketplace platform is a website (or sometimes a mobile app) that aggregates inventory from multiple suppliers (sellers) in one place. It also lets customers (buyers) engage in transactions with the suppliers. A transaction on a marketplace can mean a product purchase, a calendar booking, a message to request a quote, or anything else that leads to an exchange of value between the customer and the supplier. Airbnb, Uber, eBay, Amazon, and Upwork are examples of popular online marketplaces.",
     },
     {
-      question: "Who is BoringSites for?",
-      answer: "BoringSites is for founders who have a marketplace idea. You and your team may be entrepreneurs looking to build the next marketplace unicorn. Or you might have a great idea for a side project. Perhaps you are an intrapreneur in a bigger organization. Maybe you want to start a non-profit or cooperative marketplace. In each case, BoringSites's online marketplace software is for you.",
+      question: "Who is WonderSites for?",
+      answer: "WonderSites is for founders who have a marketplace idea. You and your team may be entrepreneurs looking to build the next marketplace unicorn. Or you might have a great idea for a side project. Perhaps you are an intrapreneur in a bigger organization. Maybe you want to start a non-profit or cooperative marketplace. In each case, WonderSites's online marketplace software is for you.",
     },
     {
-      question: "Does BoringSites work for my idea?",
-      answer: "If your business idea is an online marketplace for something, you can make it happen with BoringSites's marketplace software. Your platform can be about selling products, renting items, vehicles, or spaces, or selling services. And a host of other things.",
+      question: "Does WonderSites work for my idea?",
+      answer: "If your business idea is an online marketplace for something, you can make it happen with WonderSites's marketplace software. Your platform can be about selling products, renting items, vehicles, or spaces, or selling services. And a host of other things.",
     },
     {
-      question: "How does BoringSites work?",
-      answer: "You start your marketplace project by answering a series of questions. Based on your answers, we'll create a test marketplace website for you. This only takes a few minutes. You can then customize the marketplace to your liking using BoringSites's intuitive no-code marketplace website builder. Once you're happy with your marketplace, you can make it live, connect it to your own custom domain, and start inviting people to use it. You can also customize and extend your marketplace with custom code. Add any unique features or designs with BoringSites's developer platform.",
+      question: "How does WonderSites work?",
+      answer: "You start your marketplace project by answering a series of questions. Based on your answers, we'll create a test marketplace website for you. This only takes a few minutes. You can then customize the marketplace to your liking using WonderSites's intuitive no-code marketplace website builder. Once you're happy with your marketplace, you can make it live, connect it to your own custom domain, and start inviting people to use it. You can also customize and extend your marketplace with custom code. Add any unique features or designs with WonderSites's developer platform.",
     },
     {
-      question: "Is it easy to create a marketplace with BoringSites?",
-      answer: "Yes. With BoringSites's online marketplace builder, you can have a fully functional marketplace up and running in minutes. Customizing it to match your unique concept usually takes no more than a day. You don't need any coding skills. Comprehensive text and video tutorials will guide you through the setup process.",
+      question: "Is it easy to create a marketplace with WonderSites?",
+      answer: "Yes. With WonderSites's online marketplace builder, you can have a fully functional marketplace up and running in minutes. Customizing it to match your unique concept usually takes no more than a day. You don't need any coding skills. Comprehensive text and video tutorials will guide you through the setup process.",
     },
     {
       question: "Can I use my own design?",
-      answer: "Yes. BoringSites comes with a beautiful design template that is available out of the box. However, you have full freedom to modify or even replace it with your own unique design, thanks to BoringSites's headless approach. BoringSites gives you full control over the user interface of your marketplace. Modifying template design requires custom development with HTML, CSS, and Javascript. You can either develop a new design yourself or hire a BoringSites Expert or another developer to help you.",
+      answer: "Yes. WonderSites comes with a beautiful design template that is available out of the box. However, you have full freedom to modify or even replace it with your own unique design, thanks to WonderSites's headless approach. WonderSites gives you full control over the user interface of your marketplace. Modifying template design requires custom development with HTML, CSS, and Javascript. You can either develop a new design yourself or hire a WonderSites Expert or another developer to help you.",
     },
     {
       question: "Can I add any features I want?",
-      answer: "Yes. BoringSites's developer platform allows you to customize and extend your marketplace platform infinitely. You can add any features, integrate any third-party services, or change your design and workflows. Making these changes requires custom development with HTML, CSS, and Javascript.",
+      answer: "Yes. WonderSites's developer platform allows you to customize and extend your marketplace platform infinitely. You can add any features, integrate any third-party services, or change your design and workflows. Making these changes requires custom development with HTML, CSS, and Javascript.",
     },
     {
       question: "What should I do if I need help?",
-      answer: "If you need help setting up your marketplace platform, BoringSites's free email support is available seven days a week. Just send us a message at hello@boringsites.com, and we'll get back to you in no time.",
+      answer: "If you need help setting up your marketplace platform, WonderSites's free email support is available seven days a week. Just send us a message at hello@wondersites.co, and we'll get back to you in no time.",
     },
     {
       question: "Do I need to hire someone to build my marketplace?",
-      answer: "No. You can build your marketplace yourself. No coding skills are required to create a marketplace with BoringSites. However, if you need a specific unique feature that is not available in BoringSites's marketplace builder out of the box, and you're not a developer, you might need to hire a developer to build the feature for you.",
+      answer: "No. You can build your marketplace yourself. No coding skills are required to create a marketplace with WonderSites. However, if you need a specific unique feature that is not available in WonderSites's marketplace builder out of the box, and you're not a developer, you might need to hire a developer to build the feature for you.",
     }
   ],
   Pricing: [
     {
-      question: "How much does it cost to build a marketplace with BoringSites?",
-      answer: "The BoringSites Build plan is $39/month with a 14-day free trial. There are no upfront fees to create an account with BoringSites, and you can build the marketplace yourself. No coding skills are required. Once you're ready to set your marketplace live and invite actual users, you can subscribe to a live plan, which start at $99/month.",
+      question: "How much does it cost to build a marketplace with WonderSites?",
+      answer: "The WonderSites Build plan is $39/month with a 14-day free trial. There are no upfront fees to create an account with WonderSites, and you can build the marketplace yourself. No coding skills are required. Once you're ready to set your marketplace live and invite actual users, you can subscribe to a live plan, which start at $99/month.",
     },
     {
       question: "How does free trial work?",
-      answer: "You can start your free 14-day BoringSites trial without any payment commitment. We only ask for payment once you're ready to go live or your trial period has passed. During the trial, you have all Build plan features at your disposal. You have access to a test marketplace, which will be the basis for your eventual live platform.",
+      answer: "You can start your free 14-day WonderSites trial without any payment commitment. We only ask for payment once you're ready to go live or your trial period has passed. During the trial, you have all Build plan features at your disposal. You have access to a test marketplace, which will be the basis for your eventual live platform.",
     },
     {
       question: "Are there any additional fees?",
@@ -67,16 +67,16 @@ const faqs: FAQCategories = {
   ],
   Technical: [
     {
-      question: "How do I host my BoringSites-powered marketplace?",
-      answer: "You don't need to install or host anything to launch a marketplace with BoringSites. BoringSites's cloud hosting infrastructure takes care of hosting for you. You can either connect your own domain to your marketplace or use a default domain, [your-marketplace].myboringsites.com.",
+      question: "How do I host my WonderSites-powered marketplace?",
+      answer: "You don't need to install or host anything to launch a marketplace with WonderSites. WonderSites's cloud hosting infrastructure takes care of hosting for you. You can either connect your own domain to your marketplace or use a default domain, [your-marketplace].mywondersites.co.",
     },
     {
-      question: "Can I build a mobile app with BoringSites?",
-      answer: "Yes. BoringSites comes with a responsive marketplace website template that looks great on mobile browsers. You can also build a native mobile app. This requires custom development on top of BoringSites's APIs using the developer platform.",
+      question: "Can I build a mobile app with WonderSites?",
+      answer: "Yes. WonderSites comes with a responsive marketplace website template that looks great on mobile browsers. You can also build a native mobile app. This requires custom development on top of WonderSites's APIs using the developer platform.",
     },
     {
-      question: "Is BoringSites secure?",
-      answer: "Yes. BoringSites's marketplace software has been powering online marketplace businesses for over ten years. Over the years, we've built powerful safeguards against hacking attempts and DDoS attacks and follow best practices to ensure your data is safe.",
+      question: "Is WonderSites secure?",
+      answer: "Yes. WonderSites's marketplace software has been powering online marketplace businesses for over ten years. Over the years, we've built powerful safeguards against hacking attempts and DDoS attacks and follow best practices to ensure your data is safe.",
     }
   ]
 };
@@ -130,7 +130,7 @@ const FAQ: React.FC = () => {
           <p className="text-base font-normal text-slate-600 mt-4 sm:text-lg">
             Have a different question and can't find the answer you're looking for? Reach out to us by
             <a 
-              href="mailto:vaibhav@boringsites.com" 
+              href="mailto:vaibhav@wondersites.co" 
               className="text-orange-800 hover:text-blue-500 hover:underline px-2"
               target="_blank" 
               rel="noopener noreferrer"

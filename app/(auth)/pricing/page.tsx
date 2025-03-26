@@ -44,7 +44,7 @@ const hobbyFeatures: HobbyFeature[] = [
 
 // Features for Scale/Rocket plan
 const scaleFeatures: Feature[] = [
-  { name: "Unlimited Websites", description: "Set up and manage unlimited helpdesks, documentations, directories and blogs on BoringSites.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Unlimited Websites", description: "Set up and manage unlimited helpdesks, documentations, directories and blogs on WonderSites.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited Custom Domain / SSL", description: "Use your own domain name and benefit from included SSL encryption for enhanced security.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited articles & collections", description: "Create unlimited articles and collections without any restrictions.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited Analytics", description: "Access comprehensive analytics to gain deep insights into your site's performance and user behavior.", imageUrl: "/api/placeholder/200/150" },
@@ -57,7 +57,7 @@ const scaleFeatures: Feature[] = [
   { name: "Tally Form Connection", description: "Seamlessly connect and use Tally forms within your site for data collection and user interaction.", imageUrl: "/api/placeholder/200/150" },
   { name: "Open AI Assistant", description: "Access an advanced AI assistant to help with content creation, site management, and user engagement.", imageUrl: "/api/placeholder/200/150" },
   { name: "General Search", description: "Implement a powerful, site-wide search feature to help users find content quickly and easily.", imageUrl: "/api/placeholder/200/150" },
-  { name: "Remove 'Watermark' badge", description: "Remove the 'Powered by BoringSites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Remove 'Watermark' badge", description: "Remove the 'Powered by WonderSites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
 ];
 
 // FAQ data structure
@@ -69,22 +69,22 @@ interface FAQ {
 const faqs: Record<string, FAQ[]> = {
   Website: [
     {
-      question: "What is BoringSites?",
-      answer: "BoringSites is the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and BoringSites takes care of the rest. It's as simple as that.",
+      question: "What is WonderSites?",
+      answer: "WonderSites is the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and WonderSites takes care of the rest. It's as simple as that.",
     },
     {
       question: "Why do I need a knowledge base?",
       answer: "Unless you have built a flawless product (congratulations 🤩), your customers will always have questions and they demand immediate help. A knowledge base can provide all the information that users need in one place. It can range from FAQs about your product/service, common issues and their solutions, videos with tutorials on how to do things and more.",
     },
     {
-      question: "Is my data safe with BoringSites?",
-      answer: "BoringSites takes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
+      question: "Is my data safe with WonderSites?",
+      answer: "WonderSites takes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
     },
   ],
   "AI Support Bot": [
     {
       question: "How does the AI Support Bot work?",
-      answer: "The AI Support Bot integrates seamlessly with BoringSites to provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
+      answer: "The AI Support Bot integrates seamlessly with WonderSites to provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
     },
     {
       question: "Can I customize the AI Support Bot?",
@@ -98,11 +98,11 @@ const faqs: Record<string, FAQ[]> = {
   Pricing: [
     {
       question: "How does the free 7 day trial work?",
-      answer: "BoringSites offers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
+      answer: "WonderSites offers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
     },
     {
       question: "What are the pricing plans?",
-      answer: "BoringSites offers various pricing plans based on the number of users and features required. Check our pricing page for detailed information on each plan.",
+      answer: "WonderSites offers various pricing plans based on the number of users and features required. Check our pricing page for detailed information on each plan.",
     },
     {
       question: "Are there any additional fees?",
@@ -228,7 +228,7 @@ const FAQSection: React.FC = () => {
           <p className="text-slate-600 max-w-2xl mx-auto">
             Have a different question? Reach out to our support team by
             <a 
-              href="mailto:vaibhav@boringsites.com" 
+              href="mailto:vaibhav@wondersites.co" 
               className="text-orange-600 hover:text-orange-700 hover:underline px-2"
             >
               sending us an email
@@ -529,7 +529,7 @@ const Pricing: React.FC = () => {
               
               <Link
               type="button"
-                  href="https://app.boringsites.com"
+                  href="https://app.wondersites.co"
                 className="flex justify-between w-full py-4 px-6 rounded-lg text-white font-medium text-lg shadow-md bg-orange-600 hover:bg-orange-700 active:bg-orange-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
               >
                 Start a 3-day trial
@@ -779,7 +779,7 @@ const Pricing: React.FC = () => {
               <div className="text-center md:text-left md:max-w-lg mb-6 md:mb-0">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
                   Planning to <span className="text-orange-400">migrate</span> to
-                  BoringSites from another platform?
+                  WonderSites from another platform?
                 </h3>
                 <p className="text-slate-300 text-sm md:text-base">
                   Our expert team will handle the entire migration process for you - completely free of charge.

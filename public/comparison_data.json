@@ -1,12 +1,12 @@
 {
   "comparision_library": [
     {
-      "id": "BoringSites-vs-webflow",
+      "id": "WonderSites-vs-webflow",
       "product": {
         "logo": "https://via.placeholder.com/100",
         "name": "Webflow",
-        "provider": "BoringSites",
-        "description": "Tagline why BoringSites is better than Webflow.",
+        "provider": "WonderSites",
+        "description": "Tagline why WonderSites is better than Webflow.",
         "heroimage": "https://cdn.icon-icons.com/icons2/2699/PNG/512/webflow_logo_icon_169218.png"
       },
       "comparison_table": [
@@ -104,12 +104,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-wix",
+      "id": "WonderSites-vs-wix",
       "product": {
         "logo": "https://via.placeholder.com/100",
         "name": "Wix",
-        "provider": "BoringSites",
-        "description": "Why BoringSites is a versatile alternative to Wix for dynamic website creation.",
+        "provider": "WonderSites",
+        "description": "Why WonderSites is a versatile alternative to Wix for dynamic website creation.",
         "heroimage": "https://cdn-icons-png.flaticon.com/512/5968/5968770.png"
       },
       "comparison_table": [
@@ -207,12 +207,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-wordpress",
+      "id": "WonderSites-vs-wordpress",
       "product": {
         "logo": "https://via.placeholder.com/100",
         "name": "WordPress",
-        "provider": "BoringSites",
-        "description": "Exploring how BoringSites offers a streamlined, user-friendly alternative to WordPress.",
+        "provider": "WonderSites",
+        "description": "Exploring how WonderSites offers a streamlined, user-friendly alternative to WordPress.",
         "heroimage": "https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/wordpress-512.png"
       },
       "comparison_table": [
@@ -310,12 +310,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-squarespace",
+      "id": "WonderSites-vs-squarespace",
       "product": {
         "logo": "https://www.helpmyrank.com/wp-content/uploads/2022/04/channels4_profile.jpg",
         "name": "Squarespace",
-        "provider": "BoringSites",
-        "description": "Why BoringSites offers a more versatile solution compared to Squarespace for creative website building.",
+        "provider": "WonderSites",
+        "description": "Why WonderSites offers a more versatile solution compared to Squarespace for creative website building.",
         "heroimage": "https://www.helpmyrank.com/wp-content/uploads/2022/04/channels4_profile.jpg"
       },
       "comparison_table": [
@@ -413,12 +413,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-shopify",
+      "id": "WonderSites-vs-shopify",
       "product": {
         "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/shopify_black_logo_icon_147085.png",
         "name": "Shopify",
-        "provider": "BoringSites",
-        "description": "Discover why BoringSites is a comprehensive alternative to Shopify for seamless e-commerce solutions.",
+        "provider": "WonderSites",
+        "description": "Discover why WonderSites is a comprehensive alternative to Shopify for seamless e-commerce solutions.",
         "heroimage": "https://cdn.icon-icons.com/icons2/2428/PNG/512/shopify_black_logo_icon_147085.png"
       },
       "comparison_table": [
@@ -516,12 +516,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-zendesk",
+      "id": "WonderSites-vs-zendesk",
       "product": {
         "logo": "https://static-00.iconduck.com/assets.00/zendesk-icon-2048x2048-q18vy4hu.png",
         "name": "Zendesk",
-        "provider": "BoringSites",
-        "description": "How BoringSites presents a comprehensive alternative to Zendesk for customer support and helpdesk management.",
+        "provider": "WonderSites",
+        "description": "How WonderSites presents a comprehensive alternative to Zendesk for customer support and helpdesk management.",
         "heroimage": "https://static-00.iconduck.com/assets.00/zendesk-icon-2048x2048-q18vy4hu.png"
       },
       "comparison_table": [
@@ -619,12 +619,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-intercom",
+      "id": "WonderSites-vs-intercom",
       "product": {
         "logo": "https://seeklogo.com/images/I/intercom-logo-B222146C9B-seeklogo.com.png",
         "name": "Intercom",
-        "provider": "BoringSites",
-        "description": "Why BoringSites is a robust alternative to Intercom for customer support and engagement.",
+        "provider": "WonderSites",
+        "description": "Why WonderSites is a robust alternative to Intercom for customer support and engagement.",
         "heroimage": "https://seeklogo.com/images/I/intercom-logo-B222146C9B-seeklogo.com.png"
       },
       "comparison_table": [
@@ -722,12 +722,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-gitbook",
+      "id": "WonderSites-vs-gitbook",
       "product": {
         "logo": "https://nodesk.co/remote-companies/assets/logos/gitbook.63070d9d5dc2ca7db32f8c580351ab83849a2620947fdc5359784ac27d7a9ed5.jpg",
         "name": "GitBook",
-        "provider": "BoringSites",
-        "description": "How BoringSites is a versatile alternative to GitBook for documentation and collaboration.",
+        "provider": "WonderSites",
+        "description": "How WonderSites is a versatile alternative to GitBook for documentation and collaboration.",
         "heroimage": "https://nodesk.co/remote-companies/assets/logos/gitbook.63070d9d5dc2ca7db32f8c580351ab83849a2620947fdc5359784ac27d7a9ed5.jpg"
       },
       "comparison_table": [
@@ -825,12 +825,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-framer",
+      "id": "WonderSites-vs-framer",
       "product": {
         "logo": "https://pbs.twimg.com/profile_images/1469296240991125519/xpZr8yYS_400x400.jpg",
         "name": "Framer",
-        "provider": "BoringSites",
-        "description": "Why BoringSites is a feature-rich alternative to Framer for design-focused web development.",
+        "provider": "WonderSites",
+        "description": "Why WonderSites is a feature-rich alternative to Framer for design-focused web development.",
         "heroimage": "https://pbs.twimg.com/profile_images/1469296240991125519/xpZr8yYS_400x400.jpg"
       },
       "comparison_table": [
@@ -928,12 +928,12 @@
       ]
     },
     {
-      "id": "BoringSites-vs-ghost",
+      "id": "WonderSites-vs-ghost",
       "product": {
         "logo": "https://ghost.org/images/logos/ghost-logo-orb.png",
         "name": "Ghost",
-        "provider": "BoringSites",
-        "description": "Why BoringSites is a comprehensive alternative to Ghost for blogging and content management.",
+        "provider": "WonderSites",
+        "description": "Why WonderSites is a comprehensive alternative to Ghost for blogging and content management.",
         "heroimage": "https://ghost.org/images/logos/ghost-logo-orb.png"
       },
       "comparison_table": [

@@ -22,7 +22,7 @@ import 'aos/dist/aos.css'
 export const metadata = {
     title: "Get a help desk with Notion (no-code and free)",
     description:
-        "Build a help desk in Notion, with our Notion help desk maker. Go live in under a minute.  Build your free BoringSites help desk website in a minute!",
+        "Build a help desk in Notion, with our Notion help desk maker. Go live in under a minute.  Build your free WonderSites help desk website in a minute!",
         openGraph: {
             images: [
                 {
@@ -78,7 +78,7 @@ export default function PageDetail() {
     professional <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">help desk</span>
   </h1>
   <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
-    BoringSites is the perfect tool for creating your helpdesks powered by Notion. You write your articles in Notion and BoringSites takes care of the rest. It's as simple as that.
+    WonderSites is the perfect tool for creating your helpdesks powered by Notion. You write your articles in Notion and WonderSites takes care of the rest. It's as simple as that.
   </p>
   <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
     <div className="mt-3 sm:mt-0">
@@ -121,7 +121,7 @@ export default function PageDetail() {
                 EXPERTS CAN HELP
             </p>
             <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                What can BoringSites Experts do for you?
+                What can WonderSites Experts do for you?
             </h2>
             <p className="mt-6 text-slate-600 sm:text-lg sm:leading-8">
                 Experts can help with a wide range of design, development, and

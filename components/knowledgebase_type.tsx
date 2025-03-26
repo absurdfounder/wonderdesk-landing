@@ -51,10 +51,10 @@ export default function Marketplace_Type() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
           <h1 className="h2 mb-4">
-              Unique your knowledge base concept? <span className="font-source-serif-4 block font-normal text-orange-600">BoringSites can support it.</span>
+              Unique your knowledge base concept? <span className="font-source-serif-4 block font-normal text-orange-600">WonderSites can support it.</span>
             </h1>
             <p className="text-xl text-slate-600">
-              BoringSites is designed for all types from content curation to
+              WonderSites is designed for all types from content curation to
               content creation. Build company blogs, helpdesks, company wiki,
               documentations, and marketplaces.
             </p>

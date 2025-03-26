@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 
 export const metadata = {
-    title: 'Migrate to BoringSites',
-    description: 'Migrate your helpdesk, blog, or even marketplace to BoringSites. Start living a hassle free life just SET and FORGET.',
+    title: 'Migrate to WonderSites',
+    description: 'Migrate your helpdesk, blog, or even marketplace to WonderSites. Start living a hassle free life just SET and FORGET.',
     openGraph: {
         images: [
             {
-                url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
+                url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
                 width: 1200,
                 height: 630,
                 alt: "Get a Marketplace with Notion",
@@ -19,7 +19,7 @@ export const metadata = {
         card: "summary_large_image",
         images: [
             {
-                url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
+                url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
                 alt: "Get a Marketplace with Notion",
             },
         ],
@@ -50,9 +50,9 @@ export default function PageDetail() {
                             </h2>
                             <p className="text-slate-600 my-2">
                                 <span>
-                                    <span>These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and&nbsp;Malai Tikka Labs LLC, doing business as BoringSites&nbsp;("BoringSites", “</span>
+                                    <span>These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and&nbsp;Malai Tikka Labs LLC, doing business as WonderSites&nbsp;("WonderSites", “</span>
                                     <b><span>we</span></b><span>”, “</span><b><span>us</span></b><span>”, or “</span><b><span>our</span></b><span>”), concerning your access to and use of the&nbsp;</span>
-                                    <Link target="_blank" href="https://www.boringsites.com/" className="link"><span>https://www.boringsites.com</span></Link>
+                                    <Link target="_blank" href="https://www.wondersites.co/" className="link"><span>https://www.wondersites.co</span></Link>
                                     <span>
                                         &nbsp;website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). You agree that by accessing the Site, you
                                         have read, understood, and agree to be bound by all of these Terms of Use. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST&nbsp;DISCONTINUE USE
@@ -215,14 +215,14 @@ export default function PageDetail() {
                             <p className="text-slate-600 my-2">
                                 <span>
                                     <span>
-                                        If you have chosen a monthly term, your BoringSites subscription will continue month-to-month unless and until you cancel or we terminate it. You must cancel your subscription before it renews each month in order to avoid
+                                        If you have chosen a monthly term, your WonderSites subscription will continue month-to-month unless and until you cancel or we terminate it. You must cancel your subscription before it renews each month in order to avoid
                                         billing of the next month’s subscription fees. Monthly renewals occur on the month anniversary of your initial purchase date. We will bill the monthly fee to the Payment Method you provide to us during registration or in
                                         your account settings. Subscription fees are fully earned upon payment.
                                     </span>
                                 </span>
                             </p>
                             <p className="text-slate-600 my-2">
-                                <span><span>With a monthly subscription, your license to use BoringSites will be extended monthly, and is valid for one whole month (for example July 14, 2019 until August 14, 2019).</span></span>
+                                <span><span>With a monthly subscription, your license to use WonderSites will be extended monthly, and is valid for one whole month (for example July 14, 2019 until August 14, 2019).</span></span>
                             </p>
                             <h3 className="h4 my-2">
                                 <span><span>YEARLY SUBSCRIPTION</span></span>
@@ -230,7 +230,7 @@ export default function PageDetail() {
                             <p className="text-slate-600 my-2">
                                 <span>
                                     <span>
-                                        If you have chosen a yearly term, your BoringSites subscription will continue year-to-year unless and until you cancel or we terminate it. You must cancel your subscription before it renews each year in order to avoid
+                                        If you have chosen a yearly term, your WonderSites subscription will continue year-to-year unless and until you cancel or we terminate it. You must cancel your subscription before it renews each year in order to avoid
                                         billing of the next year’s subscription fees. Yearly renewals occur on the anniversary (month and day) of your initial purchase date. We will bill the yearly membership fee to the Payment Method you provide to us during
                                         registration or in your account settings. Subscription fees are fully earned upon payment.
                                     </span>
@@ -253,7 +253,7 @@ export default function PageDetail() {
                                 </span>
                             </p>
                             <p className="text-slate-600 my-2">
-                                <span><span>If you are unsatisfied with our services, please email us at&nbsp;vaibhav@boringsites.com</span></span>
+                                <span><span>If you are unsatisfied with our services, please email us at&nbsp;vaibhav@wondersites.co</span></span>
                             </p>
                             <h2 className="h4 my-2">
                                 <span><span>LICENSE</span></span>
@@ -296,7 +296,7 @@ export default function PageDetail() {
                                 <li>
                                     <span>
                                         <span>
-                                            Email contact integration: Customers can use BoringSites’s email contact form integration to receive their customers support tickets send via email. This email contact integration has a limit of 1000 emails per month
+                                            Email contact integration: Customers can use WonderSites’s email contact form integration to receive their customers support tickets send via email. This email contact integration has a limit of 1000 emails per month
                                             sent as a regular customer and 500 emails sent per month as an NGO customer. Exceeding the limit will require upgrading to an enterprise plan.
                                         </span>
                                     </span>
@@ -626,7 +626,7 @@ export default function PageDetail() {
                             </h2>
                             <p className="text-slate-600 my-2">
                                 <span>
-                                    <span>We care about data privacy and security. Please review our Privacy Policy:&nbsp;</span><Link target="_blank" href="https://www.boringsites.com/privacy" className="link"><span>https://www.boringsites.com/privacy</span></Link>
+                                    <span>We care about data privacy and security. Please review our Privacy Policy:&nbsp;</span><Link target="_blank" href="https://www.wondersites.co/privacy" className="link"><span>https://www.wondersites.co/privacy</span></Link>
                                     <span>. By using the Site, you agree to be bound by our Privacy Policy, which is incorporated into these Terms of Use.</span>
                                 </span>
                             </p>
@@ -819,7 +819,7 @@ export default function PageDetail() {
                             <ul className="list list-disc my-2">
                                 <li>
                                     <span>
-                                        <b><span>Self-referrals are not allowed (i.e. signing up for BoringSites through your own affiliate link)</span></b>
+                                        <b><span>Self-referrals are not allowed (i.e. signing up for WonderSites through your own affiliate link)</span></b>
                                     </span>
                                 </li>
 
@@ -859,7 +859,7 @@ export default function PageDetail() {
                             <ul className="list list-disc my-2">
                                 <li>
                                     <span>
-                                        <b><span>Listing BoringSites on discount or offer websites with your code will lead to a suspension of your account.</span></b>
+                                        <b><span>Listing WonderSites on discount or offer websites with your code will lead to a suspension of your account.</span></b>
                                     </span>
                                 </li>
 

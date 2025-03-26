@@ -65,7 +65,7 @@ export async function generateMetadata(
     
     if (!content) {
       return {
-        title: 'BoringSites - Error Loading Content',
+        title: 'WonderSites - Error Loading Content',
         description: 'Unable to load template content',
       };
     }
@@ -74,8 +74,8 @@ export async function generateMetadata(
 
     if (!filteredContent) {
       return {
-        title: 'BoringSites vs Unknown Template',
-        description: 'Compare BoringSites to an unknown template',
+        title: 'WonderSites vs Unknown Template',
+        description: 'Compare WonderSites to an unknown template',
       };
     }
 
@@ -89,7 +89,7 @@ export async function generateMetadata(
   } catch (error) {
     console.error('Error in generateMetadata:', error);
     return {
-      title: 'BoringSites - Error',
+      title: 'WonderSites - Error',
       description: 'An error occurred while loading the content',
     };
   }

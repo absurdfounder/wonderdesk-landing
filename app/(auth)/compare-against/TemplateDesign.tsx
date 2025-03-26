@@ -8,7 +8,7 @@ const TemplateDesign = () => {
     {
       title: "Your content",
       highlight: "lives in Notion",
-      description: "Your work stays in a place you control and love, while BoringSites handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.",
+      description: "Your work stays in a place you control and love, while WonderSites handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.",
       image: "https://dazzling-cat.netlify.app/write%20on%20notion.png",
       alt: "Content in Notion",
       imageFirst: false
@@ -16,7 +16,7 @@ const TemplateDesign = () => {
     {
       title: "Customize to",
       highlight: "your brand",
-      description: "Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside BoringSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.",
+      description: "Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside WonderSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.",
       image: "https://dazzling-cat.netlify.app/notion%20to%20website.png",
       alt: "Customizable design templates",
       imageFirst: true
@@ -24,7 +24,7 @@ const TemplateDesign = () => {
     {
       title: "World-class",
       highlight: "Performance",
-      description: "Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they'll never close the page for taking too long to load. On average BoringSites sites perform better than any industry leading website builder. We use NextJs, Vercel and Google Cloud for your websites. You can scale to 100 million monthly active users with this stack.",
+      description: "Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they'll never close the page for taking too long to load. On average WonderSites sites perform better than any industry leading website builder. We use NextJs, Vercel and Google Cloud for your websites. You can scale to 100 million monthly active users with this stack.",
       image: "https://dazzling-cat.netlify.app/performancewebsite.png",
       alt: "Fast website performance metrics",
       imageFirst: false
@@ -32,7 +32,7 @@ const TemplateDesign = () => {
     {
       title: "In-built",
       highlight: "analytics",
-      description: "See your page views, visitors, referrers, clicks, and much more for all of your websites. BoringSites provides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.",
+      description: "See your page views, visitors, referrers, clicks, and much more for all of your websites. WonderSites provides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.",
       image: "https://dazzling-cat.netlify.app/analyticsseo.png",
       alt: "Website analytics dashboard",
       imageFirst: true
@@ -40,7 +40,7 @@ const TemplateDesign = () => {
     {
       title: "Integrates with",
       highlight: "your existing apps",
-      description: "BoringSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to BoringSites? We got you covered.",
+      description: "WonderSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to WonderSites? We got you covered.",
       image: "https://dazzling-cat.netlify.app/integrationsdb.png",
       alt: "App integrations",
       imageFirst: true
@@ -95,7 +95,7 @@ const TemplateDesign = () => {
                   </p>
                   
                   <Link 
-                    href="https://app.boringsites.com" 
+                    href="https://app.wondersites.co" 
                     className="inline-flex items-center px-6 py-3 bg-slate-900 text-white font-medium rounded-full hover:bg-slate-800 transition-colors duration-200 shadow-sm hover:shadow-md"
                     rel="noopener noreferrer" 
                     target="_blank"
@@ -118,10 +118,10 @@ const TemplateDesign = () => {
               Ship production ready apps on top of Notion
             </h3>
             <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-              Start creating beautiful, high-performance websites with BoringSites today.
+              Start creating beautiful, high-performance websites with WonderSites today.
             </p>
             <Link 
-              href="https://app.boringsites.com" 
+              href="https://app.wondersites.co" 
               className="inline-flex items-center px-8 py-4 bg-orange-700 text-white font-medium rounded-full hover:bg-orange-500 transition-colors duration-200 shadow-lg text-lg"
               rel="noopener noreferrer" 
               target="_blank"

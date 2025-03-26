@@ -61,13 +61,13 @@ export const viewport = {
 }
 
 export const metadata = {
-  metadataBase: new URL('https://boringsites.com'),
+  metadataBase: new URL('https://wondersites.co'),
   title: 'Boring: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
   description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
   openGraph: {
     images: [
       {
-        url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
+        url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
         width: 1200,
         height: 630,
         alt: "Get a Marketplace with Notion",
@@ -78,7 +78,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://dazzling-cat.netlify.app/BoringSites_socialshare.png",
+        url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
         alt: "Get a Marketplace with Notion",
       },
     ],

@@ -72,7 +72,7 @@ export default function Header() {
                             href="/create-a-helpdesk-servicedesk-notion"
                             icon={HelpCircle}
                             title="Help Center"
-                            description="Get a professional self-service help center with Notion and BoringSites"
+                            description="Get a professional self-service help center with Notion and WonderSites"
                           />
                           <DropdownLink
                             href="/create-a-marketplace-notion"
@@ -90,28 +90,28 @@ export default function Header() {
                             href="/create-a-blog-notion"
                             icon={BookOpen}
                             title="Blog"
-                            description="Get a beautiful blog for your startup or company with Notion and BoringSites."
+                            description="Get a beautiful blog for your startup or company with Notion and WonderSites."
                           />
                         </div>
                         <div className="px-5 py-5 bg-slate-50 sm:px-8 sm:py-8">
                           <div className="grid grid-cols-2 gap-4">
                             <DemoLink
-                              href="https://support.boringsites.com/"
+                              href="https://support.wondersites.co/"
                               imageSrc="https://dazzling-cat.netlify.app/helpdesk.png"
                               text="Help Center Demo"
                             />
                             <DemoLink
-                              href="https://docs.boringsites.com/"
+                              href="https://docs.wondersites.co/"
                               imageSrc="https://dazzling-cat.netlify.app/documentation.png"
                               text="Directory Demo"
                             />
                             <DemoLink
-                              href="https://support.boringsites.com/"
+                              href="https://support.wondersites.co/"
                               imageSrc="https://dazzling-cat.netlify.app/blog.png"
                               text="Blog Site Demo"
                             />
                             <DemoLink
-                              href="https://docs.boringsites.com/"
+                              href="https://docs.wondersites.co/"
                               imageSrc="https://dazzling-cat.netlify.app/catalogue.png"
                               text="Marketplace Demo"
                             />
@@ -123,10 +123,10 @@ export default function Header() {
                 </AnimatePresence>
               </li>
               <NavLink href="/showcase" text="Showcase" />
-              <NavLink href="https://boringsites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
+              <NavLink href="https://WonderSites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
               <NavLink href="/pricing" text="Pricing" />
-              <NavLink href="https://boringsites.canny.io" text="Roadmap" />
-              <NavLink href="https://app.boringsites.com" text="Login" />
+              <NavLink href="https://WonderSites.canny.io" text="Roadmap" />
+              <NavLink href="https://app.wondersites.co" text="Login" />
               <li>
                 <Link
                   href="https://app.youform.com/forms/r3rvhjv4"

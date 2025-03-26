@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 
 export const metadata = {
-    title: 'Migrate to BoringSites',
-    description: 'Migrate your helpdesk, blog, or even marketplace to BoringSites. Start living a hassle free life just SET and FORGET.',
+    title: 'Migrate to WonderSites',
+    description: 'Migrate your helpdesk, blog, or even marketplace to WonderSites. Start living a hassle free life just SET and FORGET.',
     openGraph: {
         images: [
             {
-                url: "https://dazzling-cat.netlify.app/BoringSitesmigration_socialshare.png",
+                url: "https://dazzling-cat.netlify.app/WonderSitesmigration_socialshare.png",
                 width: 1200,
                 height: 630,
                 alt: "Get a Marketplace with Notion",
@@ -19,7 +19,7 @@ export const metadata = {
         card: "summary_large_image",
         images: [
             {
-                url: "https://dazzling-cat.netlify.app/BoringSitesmigration_socialshare.png",
+                url: "https://dazzling-cat.netlify.app/WonderSitesmigration_socialshare.png",
                 alt: "Get a Marketplace with Notion",
             },
         ],
@@ -71,7 +71,7 @@ export default function PageDetail() {
                                     Migrate from 100+ Knowledge base platforms or other websites.
                                 </h2>
                                 <p className="mt-6 text-slate-600 sm:text-lg sm:leading-8">
-                                    Migrate your articles from pretty much any knowledge base platform to BoringSites. Our experts will make sure it’s a hassle-free and quick transition.
+                                    Migrate your articles from pretty much any knowledge base platform to WonderSites. Our experts will make sure it’s a hassle-free and quick transition.
                                 </p>
                             </div>
                         </div>

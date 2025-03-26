@@ -64,8 +64,8 @@ export async function generateMetadata(
   }
 
   return {
-    title: `BoringSites vs ${filteredContent.product.name}`,
-    description: `Compare BoringSites to ${filteredContent.product.name}: ${filteredContent.product.description}`,
+    title: `WonderSites vs ${filteredContent.product.name}`,
+    description: `Compare WonderSites to ${filteredContent.product.name}: ${filteredContent.product.description}`,
     openGraph: {
       images: [{ url: filteredContent.product.heroimage }],
     },
@@ -96,12 +96,12 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
               className="w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-sm rounded-full p-8 mb-8 m-auto"
             />
             <h1 className="text-4xl font-bold mb-4">
-              Tired of <b>{filteredContent.product.name}</b>? <br /> Say hi to BoringSites
+              Tired of <b>{filteredContent.product.name}</b>? <br /> Say hi to WonderSites
             </h1>
             <p className="text-lg sm:text-xl text-slate-600">
               {filteredContent.product.description}
             </p>
-            <Link href="app.boringsites.com" className="text-white bg-slate-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
+            <Link href="app.wondersites.co" className="text-white bg-slate-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
               Get a Directory
             </Link>
           </div>

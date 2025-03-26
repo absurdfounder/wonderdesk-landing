@@ -513,7 +513,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               </button>
             </div>
             <p className="text-gray-300 mb-6 grid">Create an account or sign in to use AI Designer.</p>
-            <a type="button" href="https://app.boringsites.com" className="w-full bg-white hover:bg-gray-100 text-slate-900 py-3 rounded block text-center">
+            <a type="button" href="https://app.wondersites.co" className="w-full bg-white hover:bg-gray-100 text-slate-900 py-3 rounded block text-center">
               Sign up for free
             </a>
           </motion.div>

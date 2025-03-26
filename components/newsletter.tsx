@@ -47,12 +47,12 @@ const [index, setIndex] = useState(0);
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
                 <h3 className="h3 text-white mb-2">Ready to turn your Notion pages into <span className=" -translate-y-full slideUp h-full w-full bg-clip-text text-transparent text-orange-600">{words[index]}</span> ?</h3>
-                <p className="text-xl text-slate-400 mb-4">Join the BoringSites AI and discover the easiest way to manage your website.</p>
+                <p className="text-xl text-slate-400 mb-4">Join the WonderSites AI and discover the easiest way to manage your website.</p>
 
                 {/* CTA form */}
                 <form className="w-full lg:w-auto">
                   <div className="flex flex-col sm:flex-row max-w-xs mx-auto sm:max-w-md lg:mx-0">
-                  <Link href="app.boringsites.com" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Get a Directory</Link>
+                  <Link href="app.wondersites.co" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Get a Directory</Link>
                   </div>
                   {/* Success message */}
                   {/* <p className="text-sm text-slate-400 mt-3">Thanks for subscribing!</p> */}

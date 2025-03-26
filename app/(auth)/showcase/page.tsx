@@ -211,7 +211,7 @@ function TemplateClientContent() {
         <div className="text-center lg:text-left lg:max-w-xl space-y-6">
           <h3 className="h3 text-white mb-2">
             Planning to <b className="text-orange-600">migrate</b> to
-            BoringSites from another platform?
+            WonderSites from another platform?
           </h3>
 
           {/* CTA form */}

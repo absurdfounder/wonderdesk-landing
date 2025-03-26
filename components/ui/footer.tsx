@@ -62,16 +62,16 @@ export default function Footer() {
             <FooterSection title="Product">
               <ul className="text-sm space-y-2 md:mt-4">
                 <li>
-                  <Link href="https://app.boringsites.com" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">BoringSites Builder</Link>
+                  <Link href="https://app.wondersites.co" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">WonderSites Builder</Link>
                 </li>
                 <li>
                   <Link href="/showcase" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Showcase</Link>
                 </li>
                 <li>
-                  <Link href="https://boringsites.com/blog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blog</Link>
+                  <Link href="https://wondersites.co/blog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blog</Link>
                 </li>
                 <li>
-                  <Link href="https://boringsites.com/changelog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Changelog</Link>
+                  <Link href="https://wondersites.co/changelog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Changelog</Link>
                 </li>
                 <li>
                   <Link href="/integration" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Integrations</Link>
@@ -81,7 +81,7 @@ export default function Footer() {
                 </li>
                 {/* Show limited links on mobile */}
                 <li className="md:block">
-                  <Link href="/migrating-to-boringsites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Migrate to BoringSites</Link>
+                  <Link href="/migrating-to-WonderSites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Migrate to WonderSites</Link>
                 </li>
                 <li className="md:block">
                   <Link href="/agency" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Hire Experts</Link>
@@ -99,23 +99,23 @@ export default function Footer() {
             <FooterSection title="Resources">
               <ul className="text-sm space-y-2 md:mt-4">
                 <li>
-                  <Link href="/compare-against/BoringSites-vs-wix" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Wix</Link>
+                  <Link href="/compare-against/WonderSites-vs-wix" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Wix</Link>
                 </li>
                 <li>
-                  <Link href="/compare-against/BoringSites-vs-webflow" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Webflow</Link>
+                  <Link href="/compare-against/WonderSites-vs-webflow" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Webflow</Link>
                 </li>
                 <li>
-                  <Link href="/compare-against/BoringSites-vs-wordpress" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with WordPress</Link>
+                  <Link href="/compare-against/WonderSites-vs-wordpress" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with WordPress</Link>
                 </li>
                 <li>
-                  <Link href="/compare-against/BoringSites-vs-squarespace" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Squarespace</Link>
+                  <Link href="/compare-against/WonderSites-vs-squarespace" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Squarespace</Link>
                 </li>
                 <li>
-                  <Link href="/compare-against/BoringSites-vs-zendesk" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Zendesk</Link>
+                  <Link href="/compare-against/WonderSites-vs-zendesk" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Zendesk</Link>
                 </li>
                 {/* Show limited links on mobile */}
                 <li className="md:block">
-                  <Link href="/compare-against/BoringSites-vs-ghost" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Ghost</Link>
+                  <Link href="/compare-against/WonderSites-vs-ghost" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Ghost</Link>
                 </li>
                 {/* View more button on mobile */}
                 <li className="pt-2 md:hidden">
@@ -157,7 +157,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200">
           {/* Copyrights note */}
           <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1">
-            &copy; Boring Sites LLC. All rights reserved.
+            &copy; Wonder Sites LLC. All rights reserved.
           </div>
 
           {/* Social links */}
