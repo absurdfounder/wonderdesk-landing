@@ -87,7 +87,7 @@ const SchemaMarkup = () => {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Websites Built on Boring",
+        "name": "Websites Built on Wonder",
         "item": "https://wondersites.co/showcase"
       },
       {
@@ -105,7 +105,7 @@ const SchemaMarkup = () => {
       {
         "@type": "ListItem",
         "position": 4,
-        "name": "Boring App",
+        "name": "Wonder App",
         "item": "https://app.wondersites.co"
       }
     ]

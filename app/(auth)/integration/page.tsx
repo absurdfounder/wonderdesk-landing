@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { _loadFromJson } from '@/app/utils/helper';
 export const metadata = {
-  title: 'Boring Integrations',
+  title: 'Wonder Integrations',
   description: 'Integrate with your stack and extend functionality with powerful integrations built by us and our amazing community.',
   openGraph: {
     images: [

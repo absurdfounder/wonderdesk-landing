@@ -12,35 +12,35 @@ const siteBundles = [
     id: 1,
     name: "Directory Site",
     notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
     description: "Business Directory"
   },
   {
     id: 2,
     name: "Job Board",
     notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
     description: "Job Listings Platform"
   },
   {
     id: 3,
     name: "Real Estate Listings",
     notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
     description: "Property Marketplace"
   },
   {
     id: 4,
     name: "Event Directory",
     notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
     description: "Event Listing Platform"
   },
   {
     id: 5,
     name: "Marketplace",
     notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/boringsite.png",
+    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
     description: "Product Marketplace"
   }
 ];
@@ -307,7 +307,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     onChange={handleInputChange}
                     onKeyPress={handleKeyPress}
                     onClick={() => setIsAnimating(false)}
-                    placeholder={isAnimating ? "" : "Ask Boring to create a ..."}
+                    placeholder={isAnimating ? "" : "Ask Wonder to create a ..."}
                     className="w-full p-5 text-lg text-slate-700 outline-none resize-none min-h-[100px] placeholder:text-slate-400 font-lato border-transparent focus:outline-none focus:ring-0 focus:border-transparent"
                     rows={3}
                   />
@@ -315,7 +315,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   {isAnimating && (
                     <div className="absolute top-0 left-0 right-0 bottom-0 bg-transparent pointer-events-none p-5">
                       <div className="text-lg text-slate-400 font-lato">
-                        Ask Boring to create <span className="text-slate-400">{displayedPhrase}</span>
+                        Ask Wonder to create <span className="text-slate-400">{displayedPhrase}</span>
                         <span className={`${cursorVisible ? 'opacity-100' : 'opacity-0'} transition-opacity text-orange-500`}>|</span>
                       </div>
                     </div>

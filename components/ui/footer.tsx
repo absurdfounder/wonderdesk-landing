@@ -48,8 +48,8 @@ export default function Footer() {
             <Link href={"/"} className="inline-block mb-4">
               <Image src={Logo} loading='eager' alt="Logo" width={160} height={160} className="w-auto h-auto max-w-[160px]" />
             </Link>
-            <p className="text-sm text-slate-600 mb-4">Boring is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder" className='text-orange-600 hover:underline'>@absurdfounder</Link>.</p>
-            <p className='mb-3 text-xs text-slate-400'>Boring is the biggest admirer of Notion™ , no-relation, just admiration.</p>
+            <p className="text-sm text-slate-600 mb-4">Wonder is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder" className='text-orange-600 hover:underline'>@absurdfounder</Link>.</p>
+            <p className='mb-3 text-xs text-slate-400'>Wonder is the biggest admirer of Notion™ , no-relation, just admiration.</p>
 <div className="text-xs md:text-sm text-slate-600 mb-8">
               <Link href="/terms" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Terms</Link> · <Link href="/privacy" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
             </div>
@@ -130,22 +130,22 @@ export default function Footer() {
             <FooterSection title="Sites by Bear 🐻">
               <ul className="text-sm space-y-2 md:mt-4">
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blockchain Grants</Link>
+                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blockchain Grants</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Airdrops Work</Link>
+                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Airdrops Work</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Solo Story</Link>
+                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Solo Story</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Funded Startups</Link>
+                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Funded Startups</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Remote Desk</Link>
+                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Remote Desk</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=boring" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Agency marketplace</Link>
+                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Agency marketplace</Link>
                 </li>
               </ul>
             </FooterSection>
@@ -157,7 +157,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200">
           {/* Copyrights note */}
           <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1">
-            &copy; Wonder Sites LLC. All rights reserved.
+            &copy; Boring Sites LLC. All rights reserved.
           </div>
 
           {/* Social links */}

@@ -37,7 +37,7 @@ interface Position {
 
 // Features for Hobby plan (keeping this data for reference)
 const hobbyFeatures: HobbyFeature[] = [
-  { name: "1 website", included: true, description: "Set up one Boring Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
+  { name: "1 website", included: true, description: "Set up one Wonder Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
   { name: "Custom Domain / SSL", included: false, description: "Use your own domain and secure it with SSL (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
   // Additional features would be listed here
 ];
@@ -423,7 +423,7 @@ const Pricing: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             <span className="text-slate-500 block mb-2 font-normal">Build anything with</span>
             <div className="flex items-center justify-center gap-4">
-              <span className="text-orange-600">BORING</span>
+              <span className="text-orange-600">Wonder</span>
               <span className="text-slate-900">+</span>
               <span className="text-slate-900">Notion</span>
             </div>

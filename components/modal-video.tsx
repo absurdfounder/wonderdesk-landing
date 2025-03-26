@@ -21,7 +21,7 @@ export default function ModalVideo() {
             style={{ borderRadius: '0.3rem', imageRendering: 'auto' }} 
             poster="https://web3summary.com/assets/videos/mainvid.jpg"
           >
-            <source src="https://dazzling-cat.netlify.app/boring.mp4" type="video/mp4" />
+            <source src="https://dazzling-cat.netlify.app/Wonder.mp4" type="video/mp4" />
           </video>
 
           {/* Play Button */}

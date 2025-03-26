@@ -1,6 +1,6 @@
 export const metadata = {
   metadataBase: new URL('https://wondersites.co'),
-  title: 'Boring: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
+  title: 'Wonder: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
   description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
   openGraph: { 
     images: [
