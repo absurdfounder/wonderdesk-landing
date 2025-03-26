@@ -68,7 +68,7 @@ export default function ModalVideo() {
               <iframe 
                 width="100%" 
                 height="100%" 
-                src="https://www.youtube.com/embed/bs3LiGl7zQQ?autoplay=1" 
+                src="https://www.youtube.com/embed/IKvYliCFwxs?autoplay=1" 
                 title="YouTube video player" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -77,6 +77,7 @@ export default function ModalVideo() {
                 className="w-full h-full"
                 style={{ aspectRatio: '16/9' }}
               ></iframe>
+              
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
