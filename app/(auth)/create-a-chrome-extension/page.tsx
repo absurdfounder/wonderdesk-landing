@@ -3,6 +3,32 @@
 import React, { useState, useRef, useEffect, ChangeEvent } from 'react';
 import { Download, Globe, Chrome } from 'lucide-react';
 
+// Define the proper types for the manifest.json
+interface ManifestAction {
+  default_title?: string;
+  default_icon?: {
+    [key: string]: string;
+  };
+}
+
+interface ManifestJSON {
+  manifest_version: number;
+  name: string;
+  version: string;
+  description: string;
+  permissions: string[];
+  side_panel: {
+    default_path: string;
+  };
+  action: ManifestAction;
+  background: {
+    service_worker: string;
+  };
+  icons?: {
+    [key: string]: string;
+  };
+}
+
 const BrowserExtensionWizard: React.FC = () => {
   // State variables
   const [activeStep, setActiveStep] = useState<number>(1);
@@ -82,7 +108,7 @@ const BrowserExtensionWizard: React.FC = () => {
       }
       
       // Create manifest.json
-      const manifest = {
+      const manifest: ManifestJSON = {
         manifest_version: 3,
         name: name || 'My Website Extension',
         version: version || '1.0',
