@@ -509,7 +509,7 @@ body {
   };
   
   return (
-    <div className="flex flex-col space-y-6 w-full max-w-3xl mx-auto p-6 bg-white rounded-lg shadow">
+    <div className="flex flex-col space-y-6 w-full max-w-3xl mx-auto p-6 bg-white rounded-lg shadow my-8">
       <div className="text-center mb-4">
       <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/main-desktop-browser-logos.png" className='max-w-64 m-auto'/>
         <h1 className="text-2xl font-bold text-gray-800 mb-2">Chrome Extension Generator</h1>

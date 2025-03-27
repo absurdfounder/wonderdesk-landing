@@ -86,6 +86,10 @@ export default function Footer() {
                 <li className="md:block">
                   <Link href="/agency" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Hire Experts</Link>
                 </li>
+                <li className="md:block">
+                  <Link href="/create-a-chrome-extension" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Generate Chrome Extension</Link>
+                </li>
+
                 {/* View more button on mobile */}
                 <li className="pt-2 md:hidden">
                   <Link href="/products" className="text-orange-600 hover:text-orange-800 font-medium">
