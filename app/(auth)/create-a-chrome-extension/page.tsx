@@ -7,10 +7,10 @@ const BrowserExtensionWizard: React.FC = () => {
   // State variables
   const [activeStep, setActiveStep] = useState<number>(1);
   const [activeTab, setActiveTab] = useState<string>("chrome");
-  const [name, setName] = useState<string>('My Website Extension');
-  const [description, setDescription] = useState<string>('Easily access my website');
+  const [name, setName] = useState<string>('Wonder Sites Extension');
+  const [description, setDescription] = useState<string>('Easily create a chrome extension..');
   const [version, setVersion] = useState<string>('1.0');
-  const [websiteUrl, setWebsiteUrl] = useState<string>('https://example.com');
+  const [websiteUrl, setWebsiteUrl] = useState<string>('https://wondersites.co');
   const [icon, setIcon] = useState<File | null>(null);
   const [iconPreview, setIconPreview] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
@@ -251,10 +251,10 @@ body {
               />
               <button
                 onClick={openIframePopup}
-                className="px-3 py-2 bg-gray-100 border border-gray-200 border-l-0 rounded-r-md hover:bg-gray-200"
+                className="px-3 py-2 bg-gray-300 border border-gray-200 border-l-0 rounded-r-md hover:bg-gray-500 hover:text-white"
                 type="button"
               >
-                Test
+                Test URL
               </button>
             </div>
             <p className="mt-1 text-xs text-gray-500">The website that will appear in your extension</p>
