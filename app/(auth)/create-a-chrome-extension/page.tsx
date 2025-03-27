@@ -1,48 +1,98 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
-import { Download } from 'lucide-react';
+import React, { useState, useRef, useEffect, ChangeEvent } from 'react';
+import { Download, Globe, Chrome } from 'lucide-react';
 
-const ChromeExtensionGenerator = () => {
-  const [name, setName] = useState('My Chrome Extension');
-  const [description, setDescription] = useState('A custom Chrome extension');
-  const [version, setVersion] = useState('1.0');
-  const [url, setUrl] = useState('https://wondersites.co');
-  const [icon, setIcon] = useState(null);
-  const [iconPreview, setIconPreview] = useState(null);
-  const fileInputRef = useRef(null);
+const BrowserExtensionWizard: React.FC = () => {
+  // State variables
+  const [activeStep, setActiveStep] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<string>("chrome");
+  const [name, setName] = useState<string>('My Website Extension');
+  const [description, setDescription] = useState<string>('Easily access my website');
+  const [version, setVersion] = useState<string>('1.0');
+  const [websiteUrl, setWebsiteUrl] = useState<string>('https://example.com');
+  const [icon, setIcon] = useState<File | null>(null);
+  const [iconPreview, setIconPreview] = useState<string | null>(null);
+  const [isGenerating, setIsGenerating] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showIframePopup, setShowIframePopup] = useState<boolean>(false);
+  const [generationComplete, setGenerationComplete] = useState<boolean>(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   
-  const handleIconChange = (e) => {
-    const file = e.target.files[0];
+  // Handle icon upload
+  const handleIconChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (file) {
+      if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
+        alert('Please upload a PNG or JPEG image.');
+        return;
+      }
+      
       setIcon(file);
       const reader = new FileReader();
       reader.onload = (e) => {
-        setIconPreview(e.target.result);
+        if (e.target?.result) {
+          setIconPreview(e.target.result as string);
+        }
       };
       reader.readAsDataURL(file);
     }
   };
   
-  const generateZipFile = async () => {
+  // Make sure URL has http/https
+  const ensureProtocol = (inputUrl: string): string => {
+    if (!inputUrl.startsWith('http://') && !inputUrl.startsWith('https://')) {
+      return `https://${inputUrl}`;
+    }
+    return inputUrl;
+  };
+  
+  // Test URL preview
+  const openIframePopup = () => {
+    if (!websiteUrl.trim()) {
+      setError('Please enter a URL');
+      return;
+    }
+    setShowIframePopup(true);
+  };
+  
+  // Generate the extension
+  const generateZipFile = async (): Promise<void> => {
     try {
-      // Import JSZip from the installed package
-      const JSZip = (await import('jszip')).default;
+      setIsGenerating(true);
+      setError(null);
+      
+      // Import JSZip dynamically
+      const JSZipModule = await import('jszip');
+      const JSZip = JSZipModule.default;
       
       const zip = new JSZip();
+      
+      // Process URL
+      let processedUrl = ensureProtocol(websiteUrl);
+      
+      try {
+        const urlObj = new URL(processedUrl);
+        if (!urlObj.searchParams.has('ref')) {
+          urlObj.searchParams.append('ref', 'chrome-extension');
+          processedUrl = urlObj.toString();
+        }
+      } catch (err) {
+        throw new Error('Invalid URL. Please enter a valid website address.');
+      }
       
       // Create manifest.json
       const manifest = {
         manifest_version: 3,
-        name: name,
-        version: version,
-        description: description,
-        permissions: ["sidePanel"],
+        name: name || 'My Website Extension',
+        version: version || '1.0',
+        description: description || 'Easily access my website',
+        permissions: ["sidePanel", "storage"],
         side_panel: {
           default_path: "sidepanel.html"
         },
         action: {
-          default_title: name
+          default_title: name || 'My Website Extension'
         },
         background: {
           service_worker: "background.js"
@@ -51,21 +101,20 @@ const ChromeExtensionGenerator = () => {
       
       // Add icon to manifest if provided
       if (icon) {
-        manifest.action.default_icon = {
-          "16": "icon16.png",
-          "48": "icon48.png",
-          "128": "icon128.png"
+        manifest.action = {
+          ...manifest.action,
+          default_icon: {
+            "16": "icon16.png",
+            "48": "icon48.png",
+            "128": "icon128.png"
+          }
         };
+        
         manifest.icons = {
           "16": "icon16.png",
           "48": "icon48.png",
           "128": "icon128.png"
         };
-        
-        // Add icon to the zip file
-        zip.file("icon16.png", icon);
-        zip.file("icon48.png", icon);
-        zip.file("icon128.png", icon);
       }
       
       // Add files to zip
@@ -74,20 +123,12 @@ const ChromeExtensionGenerator = () => {
   chrome.sidePanel.open({ tabId: tab.id });
 });`);
       
-      // Process URL to add ref parameter if not present
-      let processedUrl = url;
-      if (!url.includes('ref=')) {
-        const urlObj = new URL(url);
-        urlObj.searchParams.append('ref', 'chrome-extension');
-        processedUrl = urlObj.toString();
-      }
-      
       zip.file("sidepanel.html", `<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${name}</title>
+  <title>${name || 'My Website Extension'}</title>
   <style>
     body, html {
       margin: 0;
@@ -107,7 +148,10 @@ const ChromeExtensionGenerator = () => {
 </body>
 </html>`);
       
-      // Create styles.css and script.js from the provided code
+      zip.file("script.js", `document.addEventListener('DOMContentLoaded', function() {
+  console.log('Extension initialized');
+});`);
+
       zip.file("styles.css", `* {
   margin: 0;
   padding: 0;
@@ -115,506 +159,181 @@ const ChromeExtensionGenerator = () => {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   height: 100vh;
   overflow: hidden;
-  background-color: #f8f8f8;
-  color: #333;
 }
+`);
 
-.container {
-  display: flex;
-  height: 100vh;
-  position: relative;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.sidebar {
-  width: 250px;
-  background-color: #f2f2f7;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  transform: translateX(-250px);
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-}
-
-.sidebar.expanded {
-  transform: translateX(0);
-}
-
-.sidebar-toggle {
-  position: absolute;
-  top: 15px;
-  left: 100%;
-  width: 28px;
-  height: 28px;
-  background-color: #f2f2f7;
-  border: 1px solid #e0e0e0;
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 11;
-  transition: all 0.2s ease;
-}
-
-.sidebar-toggle:hover {
-  background-color: #e5e5ea;
-}
-
-.sidebar-header {
-  padding: 20px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.sidebar-header h2 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #555;
-}
-
-.search-container {
-  padding: 12px 16px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-#search {
-  width: 100%;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  background-color: #ffffff;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-#search:focus {
-  outline: none;
-  border-color: #007aff;
-  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.1);
-}
-
-.notes-list {
-  flex-grow: 1;
-  overflow-y: auto;
-}
-
-.note-item {
-  padding: 14px 16px;
-  border-bottom: 1px solid #e0e0e0;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.note-item.active {
-  background-color: #e8e8ed;
-}
-
-.note-item:hover:not(.active) {
-  background-color: #f5f5fa;
-}
-
-.note-item h3 {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #333;
-}
-
-.note-item p {
-  font-size: 12px;
-  color: #999;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.editor {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  margin-left: 0;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: 100%;
-  position: relative;
-}
-
-.editor.with-sidebar {
-  margin-left: 250px;
-  width: calc(100% - 250px);
-}
-
-.editor-header {
-  padding: 16px 20px;
-  border-bottom: 1px solid #f0f0f0;
-  background-color: #fff;
-  z-index: 5;
-}
-
-#note-title {
-  width: 100%;
-  padding: 8px 0;
-  margin-bottom: 12px;
-  font-size: 22px;
-  font-weight: 500;
-  border: none;
-  outline: none;
-  color: #333;
-}
-
-.toolbar {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tool-button {
-  width: 32px;
-  height: 32px;
-  background: #f8f8f8;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: #555;
-  transition: all 0.2s ease;
-}
-
-.tool-button:hover {
-  background: #f0f0f0;
-  border-color: #d0d0d0;
-}
-
-.note-content {
-  flex-grow: 1;
-  padding: 20px;
-  outline: none;
-  overflow-y: auto;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #333;
-  background-image: linear-gradient(#f0f0f0 1px, transparent 1px);
-  background-size: 100% 26px;
-  background-position: 0 25px;
-  padding-top: 25px;
-}
-
-.icon-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-}
-
-.icon-button:hover {
-  background-color: #e8e8ed;
-}
-
-/* Checklist Styles */
-.checklist-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 10px;
-  padding-left: 5px;
-}
-
-.checklist-checkbox {
-  margin-right: 8px;
-  margin-top: 3px;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: white;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-.checklist-checkbox:checked {
-  background-color: #007aff;
-  border-color: #007aff;
-}
-
-.checklist-checkbox:checked::after {
-  content: '✓';
-  position: absolute;
-  color: white;
-  font-size: 12px;
-  top: 0;
-  left: 4px;
-}
-
-.checklist-text {
-  flex-grow: 1;
-  min-height: 22px;
-  padding: 1px 0;
-}
-
-.checklist-item.checked .checklist-text {
-  text-decoration: line-through;
-  color: #999;
-}`);
-
-      // Add script.js file to the zip
-      zip.file("script.js", `document.addEventListener('DOMContentLoaded', function() {
-    let notes = [];
-    let activeNoteId = null;
-    let sidebarVisible = false;
-    
-    // DOM Elements
-    const sidebar = document.querySelector('.sidebar');
-    const editor = document.querySelector('.editor');
-    const notesList = document.getElementById('notes-list');
-    const noteTitle = document.getElementById('note-title');
-    const noteContent = document.getElementById('note-content');
-    const newNoteBtn = document.getElementById('new-note');
-    const searchInput = document.getElementById('search');
-    const toolButtons = document.querySelectorAll('[data-command]');
-    const insertChecklistBtn = document.getElementById('insert-checklist');
-    const menuToggleBtn = document.getElementById('menu-toggle');
-    const sidebarToggleBtn = document.getElementById('sidebar-toggle');
-    
-    // Load notes from storage
-    function loadNotes() {
-      chrome.storage.local.get(['notes', 'activeNoteId', 'sidebarVisible'], function(result) {
-        if (result.notes) {
-          notes = result.notes;
-          activeNoteId = result.activeNoteId || (notes.length > 0 ? notes[0].id : null);
-          sidebarVisible = result.sidebarVisible !== undefined ? result.sidebarVisible : false;
-          updateSidebarVisibility();
-          renderNotesList();
-          if (activeNoteId) {
-            displayNote(activeNoteId);
-          } else if (notes.length === 0) {
-            createNewNote();
-          }
-        } else {
-          createNewNote();
+      // Handle icon
+      if (icon && iconPreview) {
+        try {
+          const response = await fetch(iconPreview);
+          const blob = await response.blob();
+          
+          zip.file("icon16.png", blob);
+          zip.file("icon48.png", blob);
+          zip.file("icon128.png", blob);
+        } catch (err) {
+          console.error('Error processing icon:', err);
         }
-      });
-    }
-    
-    // Save notes to storage
-    function saveNotes() {
-      chrome.storage.local.set({
-        'notes': notes,
-        'activeNoteId': activeNoteId,
-        'sidebarVisible': sidebarVisible
-      });
-    }
-    
-    // Update sidebar visibility with smooth animation
-    function updateSidebarVisibility() {
-      if (sidebarVisible) {
-        sidebar.classList.add('expanded');
-        setTimeout(() => {
-          editor.classList.add('with-sidebar');
-        }, 50);
-      } else {
-        editor.classList.remove('with-sidebar');
-        setTimeout(() => {
-          sidebar.classList.remove('expanded');
-        }, 50);
-      }
-    }
-    
-    // Toggle sidebar
-    function toggleSidebar() {
-      sidebarVisible = !sidebarVisible;
-      updateSidebarVisibility();
-      saveNotes();
-    }
-    
-    // Create a new note
-    function createNewNote() {
-      const newNote = {
-        id: Date.now(),
-        title: 'Untitled Note',
-        content: '',
-        createdAt: new Date().toISOString()
-      };
-      
-      notes.unshift(newNote);
-      activeNoteId = newNote.id;
-      saveNotes();
-      renderNotesList();
-      displayNote(newNote.id);
-      
-      // Focus on title
-      noteTitle.focus();
-      noteTitle.select();
-    }
-    
-    // Initialize
-    loadNotes();
-});`);
-
-      // Now we need to handle the image properly for different icon sizes
-      if (icon) {
-        // Convert the base64 string to a Blob
-        const response = await fetch(iconPreview);
-        const blob = await response.blob();
-        
-        // Add the blob directly to the zip
-        zip.file("icon16.png", blob);
-        zip.file("icon48.png", blob);
-        zip.file("icon128.png", blob);
       }
       
-      // Generate zip file
+      // Generate and download the ZIP file
       const blob = await zip.generateAsync({ type: "blob" });
-      const url = URL.createObjectURL(blob);
+      const downloadUrl = URL.createObjectURL(blob);
       
-      // Create download link
       const a = document.createElement('a');
-      a.href = url;
-      a.download = `${name.replace(/\s+/g, '-').toLowerCase()}.zip`;
+      a.href = downloadUrl;
+      a.download = `${name.replace(/\s+/g, '-').toLowerCase() || 'my-website-extension'}.zip`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+      
+      URL.revokeObjectURL(downloadUrl);
+      setGenerationComplete(true);
+      
+      // Auto-advance to step 2
+      setTimeout(() => setActiveStep(2), 1500);
+      
     } catch (error) {
       console.error('Error generating zip file:', error);
-      alert('Error generating extension. Please try again.');
+      setError(error instanceof Error ? error.message : 'Unknown error generating extension');
+    } finally {
+      setIsGenerating(false);
     }
   };
   
-  return (
-    <div className="flex flex-col space-y-6 w-full max-w-3xl mx-auto p-6 bg-white rounded-lg shadow my-8">
-      <div className="text-center mb-4">
-      <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/main-desktop-browser-logos.png" className='max-w-64 m-auto'/>
-        <h1 className="text-2xl font-bold text-gray-800 mb-2">Chrome Extension Generator</h1>
-        <p className="text-gray-600">Create your custom Chrome extension in seconds</p>
-      </div>
+  // Creation step
+  const renderStep1 = () => (
+    <div className="space-y-6">
+      {error && (
+        <div className="px-4 py-3 text-sm text-red-600 bg-red-50 border border-red-100 rounded-md">
+          {error}
+        </div>
+      )}
       
-      <div className="grid gap-4">
-        <div className="flex flex-col space-y-1">
-          <label className="text-sm font-medium text-gray-700">Extension Name</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500"
-            placeholder="My Chrome Extension"
-          />
-        </div>
-        
-        <div className="flex flex-col space-y-1">
-          <label className="text-sm font-medium text-gray-700">Description</label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 h-24"
-            placeholder="A description of what your extension does"
-          />
-        </div>
-        
-        <div className="flex flex-col space-y-1">
-          <label className="text-sm font-medium text-gray-700">Version</label>
-          <input
-            type="text"
-            value={version}
-            onChange={(e) => setVersion(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500"
-            placeholder="1.0"
-          />
-        </div>
-
-        <div className="flex flex-col space-y-1">
-          <label className="text-sm font-medium text-gray-700">URL to open in side panel</label>
-          <input
-            type="url"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500"
-            placeholder="https://example.com"
-          />
-          <p className="text-xs text-gray-500 mt-1">A referral parameter (?ref=chrome-extension) will be automatically added if not present</p>
-        </div>
-        
-        <div className="flex flex-col space-y-1">
-          <label className="text-sm font-medium text-gray-700">Icon (Square PNG recommended)</label>
-          <div className="flex items-center space-x-4">
-            <button
-              onClick={() => fileInputRef.current.click()}
-              className="px-4 py-2 bg-slate-600 text-white rounded-md hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500"
-            >
-              Upload Icon
-            </button>
+      <div className="space-y-4">
+        <div className="space-y-4">
+          <label className="block text-sm font-medium">
+            Extension Name
             <input
-              type="file"
-              ref={fileInputRef}
-              onChange={handleIconChange}
-              className="hidden"
-              accept="image/*"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="mt-1 w-full px-3 py-2 bg-white border border-gray-200 rounded-md"
+              placeholder="My Website Extension"
             />
-            {iconPreview && (
-              <div className="flex items-center space-x-2">
-                <img src={iconPreview} alt="Icon Preview" className="w-12 h-12 object-contain border rounded" />
-                <span className="text-sm text-gray-600">Icon uploaded</span>
-              </div>
-            )}
-          </div>
+          </label>
+          
+          <label className="block text-sm font-medium">
+            Description
+            <input
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="mt-1 w-full px-3 py-2 bg-white border border-gray-200 rounded-md"
+              placeholder="Easily access my website"
+            />
+          </label>
         </div>
-      </div>
-      
-      <div className="p-4 bg-gray-50 rounded-md">
-        <h3 className="text-sm font-medium text-gray-700 mb-2">Extension Preview</h3>
-        <div className="flex items-center space-x-3 p-3 bg-white border rounded-md">
-          {iconPreview ? (
-            <img src={iconPreview} alt="Extension Icon" className="w-10 h-10 object-contain" />
-          ) : (
-            <div className="w-10 h-10 bg-gray-200 rounded flex items-center justify-center">
-              <span className="text-gray-400 text-xs">Icon</span>
+        
+        <div className="space-y-4">
+          <label className="block text-sm font-medium">
+            Website URL
+            <div className="flex mt-1">
+              <input
+                type="text"
+                value={websiteUrl}
+                onChange={(e) => setWebsiteUrl(e.target.value)}
+                className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-l-md"
+                placeholder="https://example.com"
+              />
+              <button
+                onClick={openIframePopup}
+                className="px-3 py-2 bg-gray-100 border border-gray-200 border-l-0 rounded-r-md hover:bg-gray-200"
+                type="button"
+              >
+                Test
+              </button>
+            </div>
+            <p className="mt-1 text-xs text-gray-500">The website that will appear in your extension</p>
+          </label>
+
+          <div className="flex space-x-2">
+            <div className="w-1/2">
+              <label className="block text-sm font-medium">
+                Version
+                <input
+                  type="text"
+                  value={version}
+                  onChange={(e) => setVersion(e.target.value)}
+                  className="mt-1 w-full px-3 py-2 bg-white border border-gray-200 rounded-md"
+                  placeholder="1.0"
+                />
+              </label>
+            </div>
+
+            <div className="w-1/2">
+              <label className="block text-sm font-medium">
+                Icon
+                <div 
+                  onClick={() => fileInputRef.current?.click()}
+                  className="mt-1 h-9 flex items-center justify-center px-3 py-2 bg-white border border-gray-200 rounded-md cursor-pointer hover:bg-gray-50"
+                >
+                  {iconPreview ? 'Change Icon' : 'Upload Icon'}
+                </div>
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleIconChange}
+                  className="hidden"
+                  accept="image/png,image/jpeg"
+                />
+              </label>
+            </div>
+          </div>
+
+          {iconPreview && (
+            <div className="flex items-center space-x-2">
+              <img src={iconPreview} alt="Icon Preview" className="w-10 h-10 object-contain border rounded" />
+              <span className="text-sm text-gray-600">Icon uploaded</span>
             </div>
           )}
-          <div className="flex-1">
-            <div className="text-base font-medium text-gray-800">{name || 'My Chrome Extension'}</div>
-            <div className="text-sm text-gray-600 line-clamp-1">{description || 'A custom Chrome extension'}</div>
-          </div>
         </div>
       </div>
       
       <button
         onClick={generateZipFile}
-        className="flex items-center justify-center space-x-2 px-6 py-3 bg-slate-600 text-white font-medium rounded-md hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors"
+        disabled={isGenerating}
+        className={`w-full flex items-center justify-center space-x-2 px-4 py-3 bg-black text-white font-medium rounded-md hover:bg-gray-800 ${isGenerating ? 'opacity-70 cursor-not-allowed' : ''}`}
+        type="button"
       >
-        <Download size={20} />
-        <span>Generate Extension</span>
+        {isGenerating ? (
+          <span className="flex items-center">
+            <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Generating...
+          </span>
+        ) : (
+          <>
+            <Download className="w-4 h-4" />
+            <span>Generate Extension</span>
+          </>
+        )}
       </button>
       
-      <div className="text-sm text-gray-600 mt-4">
-        <p className="mb-1"><strong>How to install:</strong></p>
-        <ol className="list-decimal list-inside space-y-1">
+      {generationComplete && (
+        <div className="px-4 py-3 text-sm text-green-600 bg-green-50 border border-green-100 rounded-md">
+          Extension successfully generated! Moving to publishing step...
+        </div>
+      )}
+      
+      <div className="text-xs text-gray-500">
+        <p className="font-medium">How to install locally:</p>
+        <ol className="list-decimal list-inside pl-1 space-y-1 mt-1">
           <li>Extract the downloaded ZIP file</li>
           <li>Go to chrome://extensions in your browser</li>
           <li>Enable "Developer Mode" (top right)</li>
@@ -623,6 +342,226 @@ body {
       </div>
     </div>
   );
+  
+  // Publishing step
+  const renderStep2 = () => {
+    const browserTabs = [
+      { id: "chrome", name: "Chrome", icon: <Chrome className="w-4 h-4" /> },
+      { id: "edge", name: "Edge", icon: <Globe className="w-4 h-4" /> },
+      { id: "opera", name: "Opera", icon: <Globe className="w-4 h-4" /> },
+      { id: "brave", name: "Brave", icon: <Globe className="w-4 h-4" /> }
+    ];
+    
+    const chromePublishSteps = (
+      <div className="space-y-4 text-sm">
+        <ol className="space-y-3">
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">1. Create a developer account</p>
+            <p className="text-gray-600">Visit the <a href="https://chrome.google.com/webstore/devconsole" target="_blank" className="text-blue-600 hover:underline">Chrome Web Store Developer Dashboard</a></p>
+          </li>
+          
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">2. Pay one-time $5 registration fee</p>
+          </li>
+          
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">3. Click "New Item" and upload your ZIP file</p>
+          </li>
+          
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">4. Fill in store listing information</p>
+            <p className="text-gray-600">Add screenshots, descriptions, and categories</p>
+          </li>
+          
+          <li>
+            <p className="font-medium">5. Submit for review (takes 1-3 days)</p>
+          </li>
+        </ol>
+      </div>
+    );
+    
+    const edgePublishSteps = (
+      <div className="space-y-4 text-sm">
+        <ol className="space-y-3">
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">1. Create a Microsoft Partner Center account</p>
+            <p className="text-gray-600">Register at <a href="https://partner.microsoft.com/dashboard/microsoftedge/overview" target="_blank" className="text-blue-600 hover:underline">Microsoft Partner Center</a></p>
+          </li>
+          
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">2. Create a new submission</p>
+          </li>
+          
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">3. Upload your ZIP file</p>
+            <p className="text-gray-600">Edge supports Chrome extensions with minimal changes</p>
+          </li>
+          
+          <li>
+            <p className="font-medium">4. Complete listing details and submit</p>
+            <p className="text-gray-600">Review typically takes 1-2 days</p>
+          </li>
+        </ol>
+      </div>
+    );
+    
+    const operaPublishSteps = (
+      <div className="space-y-4 text-sm">
+        <ol className="space-y-3">
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">1. Create an Opera developer account</p>
+            <p className="text-gray-600">Sign up at <a href="https://addons.opera.com/developer/" target="_blank" className="text-blue-600 hover:underline">Opera Add-ons Dashboard</a></p>
+          </li>
+          
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">2. Upload your ZIP file</p>
+            <p className="text-gray-600">Opera works with Chrome extensions</p>
+          </li>
+          
+          <li>
+            <p className="font-medium">3. Add details and submit for review</p>
+            <p className="text-gray-600">Review takes 1-2 days</p>
+          </li>
+        </ol>
+      </div>
+    );
+    
+    const bravePublishSteps = (
+      <div className="space-y-4 text-sm">
+        <div className="p-3 bg-amber-50 border border-amber-200 rounded-md text-amber-800">
+          <p className="font-medium">Brave uses the Chrome Web Store</p>
+          <p>You only need to publish to the Chrome Web Store</p>
+        </div>
+        
+        <ol className="space-y-3">
+          <li className="pb-3 border-b border-gray-100">
+            <p className="font-medium">1. Follow the Chrome Web Store steps</p>
+          </li>
+          
+          <li>
+            <p className="font-medium">2. Mention Brave compatibility in your description</p>
+          </li>
+        </ol>
+      </div>
+    );
+    
+    const getActiveTabContent = () => {
+      switch(activeTab) {
+        case "chrome": return chromePublishSteps;
+        case "edge": return edgePublishSteps;
+        case "opera": return operaPublishSteps;
+        case "brave": return bravePublishSteps;
+        default: return chromePublishSteps;
+      }
+    };
+    
+    return (
+      <div className="space-y-6">
+        <div className="border rounded-md overflow-hidden">
+          <div className="flex justify-between border-b px-8">
+            {browserTabs.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center px-4 py-2 text-sm font-medium border-b-2 ${activeTab === tab.id ? 'text-blue-600 border-blue-600' : 'text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300'}`}
+              >
+                <span className="mr-1.5">{tab.icon}</span>
+                <span>{tab.name}</span>
+              </button>
+            ))}
+          </div>
+          
+          <div className="p-4 sm:p-5">
+            {getActiveTabContent()}
+          </div>
+        </div>
+        
+        <a
+          href={activeTab === "chrome" ? "https://chrome.google.com/webstore/devconsole" :
+               activeTab === "edge" ? "https://partner.microsoft.com/dashboard/microsoftedge/overview" :
+               activeTab === "opera" ? "https://addons.opera.com/developer/" : 
+               "https://chrome.google.com/webstore/devconsole"}
+          target="_blank"
+          className="block w-full py-3 px-4 bg-black text-white text-center font-medium rounded-md hover:bg-gray-800"
+        >
+          Go to {activeTab === "chrome" ? "Chrome" : 
+                 activeTab === "edge" ? "Edge" : 
+                 activeTab === "opera" ? "Opera" : 
+                 "Chrome"} Developer Dashboard
+        </a>
+      </div>
+    );
+  };
+  
+  // Main render
+  return (
+    <div className="max-w-4xl mx-auto p-5 bg-white rounded-lg shadow my-4">
+      <div className="mb-6">
+        <div className='grid gap-4 text-center'>
+      <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/main-desktop-browser-logos.png" className='max-w-64 m-auto'/>
+        <h1 className="text-xl font-bold mb-2">Browser Extension Generator</h1>
+        </div>
+        
+        {/* Simple Tab Navigation */}
+        <div className="flex border-b items-center m-auto justify-center">
+          <button 
+            onClick={() => setActiveStep(1)}
+            className={`py-2 px-4 text-sm font-medium border-b-2 ${activeStep === 1 ? 'text-blue-600 border-blue-600' : 'text-gray-500 border-transparent hover:text-gray-700'}`}
+          >
+            Generate Extension
+          </button>
+          
+          <button 
+            onClick={() => setActiveStep(2)}
+            className={`py-2 px-4 text-sm font-medium border-b-2 ${activeStep === 2 ? 'text-blue-600 border-blue-600' : 'text-gray-500 border-transparent hover:text-gray-700'}`}
+          >
+            Publish to Store
+          </button>
+        </div>
+      </div>
+      
+      {activeStep === 1 ? renderStep1() : renderStep2()}
+      
+      {/* Test URL popup */}
+      {showIframePopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[80vh] flex flex-col">
+            <div className="p-4 border-b flex justify-between items-center">
+              <h3 className="font-medium">Website Preview</h3>
+              <button 
+                onClick={() => setShowIframePopup(false)}
+                className="text-gray-500 hover:text-gray-700 text-lg"
+              >
+                &times;
+              </button>
+            </div>
+            
+            <div className="p-4 flex-1 overflow-auto">
+              <p className="mb-3 text-sm">Testing if <strong>{websiteUrl}</strong> works in your extension.</p>
+              
+              <div className="border rounded-md overflow-hidden h-64 bg-gray-100">
+                <iframe
+                  src={ensureProtocol(websiteUrl)}
+                  title="URL preview"
+                  className="w-full h-full border-0"
+                  sandbox="allow-same-origin allow-scripts"
+                />
+              </div>
+            </div>
+            
+            <div className="p-4 border-t flex justify-end">
+              <button
+                onClick={() => setShowIframePopup(false)}
+                className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
-export default ChromeExtensionGenerator;
+export default BrowserExtensionWizard;
