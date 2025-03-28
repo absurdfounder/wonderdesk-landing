@@ -38,7 +38,14 @@ export default function Header() {
   }, [dropdownOpen]);
 
   return (
-    <header className={`w-full z-30 transition-all duration-300 ease-in-out sticky top-0 ${!top ? 'bg-white shadow-md' : ''}`}>
+    <header 
+      className={`w-full z-30 transition-all duration-300 ease-in-out sticky top-0 ${!top ? 'bg-white shadow-md' : ''}`}
+      style={top ? {
+        backgroundImage: "url('https://dazzling-cat.netlify.app/bg-gradient.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      } : {}}
+    >
       <div className="max-w-7xl mx-auto p-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="shrink-0 mr-4 relative group">

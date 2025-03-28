@@ -208,31 +208,12 @@ export default function Hero({ onCategorySelect }: HeroProps) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className="relative"
+      style={{
+        backgroundImage: "url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}
     >
-      {/* Background grid pattern */}
-      <div
-        className="absolute bottom-0 pointer-events-none z-1 h-screen w-screen"
-        aria-hidden="true"
-        style={{ width: "-webkit-fill-available", opacity: 0.1 }}
-      >
-        <svg className="w-full h-full opacity-50" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern
-              id="grid-pattern"
-              width="32"
-              height="32"
-              patternUnits="userSpaceOnUse"
-              x="50%"
-              y="100%"
-              patternTransform="translate(0 -1)"
-            >
-              <path d="M0 32V.5H32" fill="none" stroke="currentColor"></path>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
-        </svg>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-12 pb-12">
           {/* Header section */}
@@ -521,4 +502,4 @@ export default function Hero({ onCategorySelect }: HeroProps) {
       )}
     </motion.section>
   );
-}
+} 
