@@ -9,6 +9,7 @@ import confetti from "canvas-confetti";
 import MigrateFrom from "@/public/images/migratefrom.png";
 import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
+import Header from "@/components/ui/header";
 
 // Pricing tiers based on user count
 const pricingMap: Record<number, number> = {
@@ -394,6 +395,9 @@ const Pricing: React.FC = () => {
 
   return (
     <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
+
+<Header />
+
       {/* Background grid pattern */}
       <div 
         className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none opacity-5 z-0" 
