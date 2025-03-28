@@ -232,8 +232,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               </span>{" "}
             </h1>
 
-            <p className="text-lg text-slate-600 mb-8 font-lato max-w-2xl m-auto">
-              <span className="text-slate-600 "><b>Build Production-ready</b> apps in a hours setup </span> {" "}
+            <p className="text-xl text-slate-900 mb-8 font-lato max-w-2xl m-auto">
+              <span className="text-slate-900 "><b>Build Production-ready</b> apps in a hours setup </span> {" "}
               {["Listings", "SEO", "Custom Domains", "Payments"].map((category, index) => (
                 <>
                   {index > 0 && ", "}
@@ -288,7 +288,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   <div className="flex items-center justify-between flex-wrap">
                     <div className="flex gap-2 items-center">
                       <button
-                        className="text-slate-600 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100"
+                        className="text-slate-900 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100"
                         type="button"
                         onClick={() => setShowLoginPopup(true)}
                       >
@@ -307,7 +307,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                         tabIndex={-1}
                       />
                       <button
-                        className="text-slate-600 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100"
+                        className="text-slate-900 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100"
                         type="button"
                         aria-haspopup="dialog"
                         aria-expanded="false"
@@ -331,7 +331,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     
                     <div className="flex items-center">
                       <button
-                        className="text-slate-600 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100 mr-2"
+                        className="text-slate-900 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100 mr-2"
                         type="button"
                         aria-haspopup="dialog"
                         aria-expanded="false"
@@ -368,7 +368,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 {suggestionOptions.map((suggestion, idx) => (
                   <motion.button
                     key={idx}
-                    className="text-sm bg-slate-100 hover:bg-orange-100 text-slate-600 hover:text-orange-600 px-3 py-1.5 rounded-full border border-transparent hover:border-orange-200 transition-colors"
+                    className="text-sm bg-slate-100 opacity-75 hover:bg-slate-800 hover:opacity-100 text-slate-900 hover:text-white px-3 py-1.5 rounded-full border border-transparent transition-colors"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={() => handleSuggestionClick(suggestion)}
