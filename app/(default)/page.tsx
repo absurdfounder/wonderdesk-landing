@@ -38,7 +38,6 @@ import ModalVideo from '@/components/modal-video'
 export default function Home() {
   return (
     <>
-      <Hero />
       <ModalVideo
       />
       <Marketplace_Type />

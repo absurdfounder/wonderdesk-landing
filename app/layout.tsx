@@ -4,6 +4,7 @@ import { Inter, Roboto_Mono, Source_Serif_4, Comfortaa, Josefin_Slab } from 'nex
 import localFont from 'next/font/local'
 
 import Header from '@/components/ui/header'
+import Hero from '@/components/hero'
 import Banner from '@/components/banner'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
@@ -94,7 +95,17 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${robotoMono.variable} ${sourceSerif4.variable} ${comfortaa.variable} ${josefinSlab.variable} ${silkscreen.variable} ${bungee.variable} font-inter antialiased bg-white text-slate-900 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+          <div
+          style={{
+            backgroundImage: "url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed"
+          }}
+          >
           <Header />
+          <Hero/>
+          </div>
           {children}
           <Banner />
           <SchemaMarkup />

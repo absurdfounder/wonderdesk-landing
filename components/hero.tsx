@@ -208,12 +208,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className="relative"
-      style={{
-        backgroundImage: "url('https://dazzling-cat.netlify.app/backgroundthing.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-      }}
     >
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-12 pb-12">
           {/* Header section */}
@@ -224,23 +220,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h1 className="h2 mb-8 text-center leading-tight font-comfortaa tracking-loose text-slate-700">
-              SEO-Ready
-              <span className="inline-block decoration-primary relative">
-                <span className="relative z-10">
-                  <motion.span
-                    key={words[index]}
-                    className="font-source-serif-4 h1 font-normal italic text-orange-600 px-4"
-                    initial={{ y: 40, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -40, opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {words[index]}
-                  </motion.span>
-                </span>
-                <span className="bottom-0 absolute bg-accent-pink h-4 md:h-6 md:-bottom-0.5 -inset-x-2 mx-4"></span>
-              </span>
-              in hours, <b className="font-source-serif-4 h1 font-normal italic text-orange-600">not weeks</b>.{" "}
+              Wordpress alternative
+              {" "}
               <span className="font-bungee block font-normal text-gray-800 my-2">
                 powered by 
                 
@@ -419,7 +400,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             <div className="max-w-7xl mx-auto relative">
               <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 gap-8 md:gap-4">
                 {/* Notion Site Column */}
-                <div className="w-full">
+                <div className="w-full bg-white p-4 rounded-md">
                   <div className="">
                     <div className="space-y-4">
                       <motion.div
@@ -447,7 +428,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 </div>
 
                 {/* Super Site Column */}
-                <div className="w-full">
+                <div className="w-full bg-white p-4 rounded-md">
                   <div>
                     <div className="space-y-4">
                       <motion.div
