@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full z-30 transition-all duration-300 ease-in-out sticky top-0 ${!top ? 'bg-white shadow-md' : ''}`}
+      className={`w-full z-30 transition-all duration-300 ease-in-out  ${!top ? 'bg-white shadow-md' : ''}`}
       style={top ? {
         backgroundImage: "url('https://dazzling-cat.netlify.app/bg-gradient.jpg')",
         backgroundSize: "cover",

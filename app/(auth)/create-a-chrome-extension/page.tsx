@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, ChangeEvent } from 'react';
 import { Download, Globe, Chrome } from 'lucide-react';
+import Header from '@/components/ui/header';
 
 // Define the proper types for the manifest.json
 interface ManifestAction {
@@ -521,6 +522,8 @@ body {
   
   // Main render
   return (
+    <section>
+    <Header/>
     <div className="max-w-4xl mx-auto p-5 bg-white rounded-lg shadow my-4">
       <div className="mb-6">
         <div className='grid gap-4 text-center'>
@@ -587,6 +590,7 @@ body {
         </div>
       )}
     </div>
+    </section>
   );
 };
 

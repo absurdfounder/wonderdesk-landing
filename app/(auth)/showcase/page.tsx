@@ -8,6 +8,7 @@ import notionfooterImage from "@/public/images/freedesigner.png";
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import MigrateFrom from "@/public/images/migratefrom.png";
+import Header from "@/components/ui/header";
 
 
 // Define types for the product structure
@@ -374,6 +375,9 @@ function TemplateClientContent() {
 
   return (
     <section id="template-section">
+
+<Header/>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header with improved spacing and typography */}
         <div className="pt-4 pb-20 md:pt-24 md:pb-28">

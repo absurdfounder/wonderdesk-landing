@@ -81,7 +81,7 @@ export default function PageDetail() {
                                 <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
                                     <div className="mt-3 sm:mt-0">
                                     <Link href="/signup" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-full shadow bg-orange-700 sm:w-auto">
-                                        <strong className="mr-1">Get a directory with Notion →</strong>
+                                        <strong className="mr-1">Build site using AI with Notion →</strong>
                                     </Link>
                                     <p className="mt-3 text-sm text-slate-700"><strong>Free</strong> 7 day trial. Free Design Service.</p>
                                     </div>

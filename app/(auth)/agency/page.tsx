@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image'
+import Header from '@/components/ui/header';
 
 
 export const metadata = {
@@ -29,6 +30,7 @@ export const metadata = {
 export default function PageDetail() {
     return (
         <section >
+            <Header/>
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="pt-12 pb-12 md:pt-18 md:pb-20">
 

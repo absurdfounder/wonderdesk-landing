@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image'
+import Header from '@/components/ui/header';
 
 import { _loadFromJson } from '@/app/utils/helper';
 export const metadata = {
@@ -30,6 +31,9 @@ const Integration = async () => {
   const integrations = await _loadFromJson(false);
   return (
     <section >
+
+<Header/>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-12 pb-12 md:pt-18 md:pb-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
