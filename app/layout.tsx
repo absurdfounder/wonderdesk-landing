@@ -97,7 +97,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           <div
 style={{
-  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed"
