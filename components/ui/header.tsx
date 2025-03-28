@@ -38,7 +38,7 @@ export default function Header() {
   }, [dropdownOpen]);
 
   return (
-    <header 
+    <header
       className={`w-full z-30 transition-all duration-300 ease-in-out sticky top-0 ${!top ? 'bg-white shadow-md' : ''}`}
       style={top ? {
         backgroundImage: "url('https://dazzling-cat.netlify.app/bg-gradient.jpg')",
@@ -49,13 +49,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto p-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className='flex items-center justify-between'>
-          <Link href="/" className="shrink-0 mr-4 relative group">
-            <Image src={Logo} alt="Logo" width={260} height={200} className="relative" />
-          </Link>
-          <NavLink href="/showcase" text="Website Examples" />
-              <NavLink href="https://WonderSites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
-              <NavLink href="/pricing" text="Pricing" />
-              </div>
+            <Link href="/" className="shrink-0 mr-4 relative group">
+              <Image src={Logo} alt="Logo" width={260} height={200} className="relative" />
+            </Link>
+            <NavLink href="/showcase" text="Website Examples" />
+            <NavLink href="https://WonderSites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
+            <NavLink href="/pricing" text="Pricing" />
+          </div>
 
 
           <nav className="hidden md:flex md:grow">
@@ -165,8 +165,8 @@ interface DropdownLinkProps {
 
 function DropdownLink({ href, icon: Icon, title, description }: DropdownLinkProps) {
   return (
-    <Link 
-      href={href} 
+    <Link
+      href={href}
       className="flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-orange-50 group"
     >
       <div className="flex-shrink-0 p-2 rounded-full bg-orange-50 group-hover:bg-orange-100 transition-colors">
@@ -188,9 +188,9 @@ interface DemoLinkProps {
 
 function DemoLink({ href, imageSrc, text }: DemoLinkProps) {
   return (
-    <Link 
-      href={href} 
-      target="_blank" 
+    <Link
+      href={href}
+      target="_blank"
       className="flex items-center p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-slate-100 group"
     >
       <div className="flex-shrink-0 overflow-hidden rounded-full border-2 border-transparent group-hover:border-orange-300 transition-all">
@@ -210,11 +210,11 @@ interface NavLinkProps {
 
 function NavLink({ href, text }: NavLinkProps) {
   return (
-      <Link 
-        href={href} 
-        className="font-medium text-slate-900 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
-      >
-        <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
-      </Link>
+    <Link
+      href={href}
+      className="font-medium text-slate-900 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
+    >
+      <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
+    </Link>
   );
 }
