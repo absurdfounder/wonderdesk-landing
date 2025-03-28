@@ -214,7 +214,7 @@ function NavLink({ href, text }: NavLinkProps) {
       href={href}
       className="font-medium text-slate-900 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
     >
-      <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
+      <span className="hover:bg-slate-50 p-2 rounded-md">{text}</span>
     </Link>
   );
 }
