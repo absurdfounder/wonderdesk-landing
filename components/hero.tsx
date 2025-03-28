@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { StarIcon, ArrowUpRight, ArrowRight, Check, ShoppingBag, BookOpen, FileText, FileQuestion, ExternalLink } from "lucide-react";
+
 // Define site bundles directly in the component
 // You can move this to a separate file later if needed
 const siteBundles = [
@@ -45,7 +46,6 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   const words = ["directory", "blog",  "job board", "helpdesk", "documentation"];
   const [index, setIndex] = useState(0);
   const [currentSiteBundle, setCurrentSiteBundle] = useState(siteBundles[0]);
-  const [transitioning, setTransitioning] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -68,19 +68,9 @@ export default function Hero({ onCategorySelect }: HeroProps) {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
       
-      // Start transition animation
-      setTransitioning(true);
-      
-      // After a short delay, change the site bundle
-      setTimeout(() => {
-        const randomIndex = Math.floor(Math.random() * siteBundles.length);
-        setCurrentSiteBundle(siteBundles[randomIndex]);
-        
-        // End transition animation
-        setTimeout(() => {
-          setTransitioning(false);
-        }, 300);
-      }, 300);
+      // Just change the site bundle without animation
+      const randomIndex = Math.floor(Math.random() * siteBundles.length);
+      setCurrentSiteBundle(siteBundles[randomIndex]);
       
     }, 3000); // Changed to 3 seconds for better user experience
     
@@ -226,7 +216,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             </p>
           </motion.div>
 
-          {/* Input Section with Typing Animation - FIXED OVERLAY ISSUE */}
+          {/* Input Section with Typing Animation - Updated textarea opacity */}
           <motion.div
             className="max-w-3xl mx-auto mb-8"
             initial={{ y: 20, opacity: 0 }}
@@ -243,7 +233,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     onKeyPress={handleKeyPress}
                     onClick={() => setIsAnimating(false)}
                     placeholder={isAnimating ? "" : "Ask Wonder to create a ..."}
-                    className="w-full p-5 text-lg text-slate-700 outline-none resize-none min-h-[100px] placeholder:text-slate-400 font-lato border-transparent focus:outline-none focus:ring-0 focus:border-transparent"
+                    className="w-full p-5 text-lg text-slate-700 outline-none resize-none min-h-[100px] placeholder:text-slate-400 font-lato border-transparent focus:outline-none focus:ring-0 focus:border-transparent opacity-75 hover:opacity-100 focus:opacity-100"
                     rows={3}
                   />
 
@@ -355,7 +345,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             ))}
           </motion.div>
 
-          {/* Site transformation visualization */}
+          {/* Site transformation visualization - Removed transition animation */}
           <div className="w-full py-12 overflow-x-hidden">
             <div className="max-w-7xl mx-auto relative">
               <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 gap-8 md:gap-4">
@@ -365,9 +355,6 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     <div className="space-y-4">
                       <motion.div
                         className="relative overflow-hidden rounded-lg"
-                        initial={{ opacity: 1 }}
-                        animate={{ opacity: transitioning ? 0.5 : 1 }}
-                        transition={{ duration: 0.3 }}
                       >
                         <img
                           src={currentSiteBundle.notionImage}
@@ -382,7 +369,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
                 {/* Arrow Column */}
                 <div className="rotate-90 md:rotate-0 flex-shrink-0">
-                  <div className="bg-gray-100 rounded-full p-2">
+                  <div className="bg-gray-800  rounded-full p-2">
                     <ArrowRight className="w-8 h-9 text-orange-400" />
                   </div>
                 </div>
@@ -393,9 +380,6 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     <div className="space-y-4">
                       <motion.div
                         className="relative overflow-hidden rounded-lg"
-                        initial={{ opacity: 1 }}
-                        animate={{ opacity: transitioning ? 0.5 : 1 }}
-                        transition={{ duration: 0.3 }}
                       >
                         <img
                           src={currentSiteBundle.siteImage}
@@ -443,4 +427,4 @@ export default function Hero({ onCategorySelect }: HeroProps) {
       )}
     </motion.section>
   );
-} 
+}
