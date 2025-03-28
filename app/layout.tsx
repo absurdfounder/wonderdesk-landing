@@ -95,17 +95,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${robotoMono.variable} ${sourceSerif4.variable} ${comfortaa.variable} ${josefinSlab.variable} ${silkscreen.variable} ${bungee.variable} font-inter antialiased bg-white text-slate-900 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-          <div
-            style={{
-              backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundAttachment: "fixed"
-            }}
-          >
-            <Header />
-            <Hero />
-          </div>
           {children}
           <Banner />
           <SchemaMarkup />

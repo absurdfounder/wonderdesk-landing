@@ -24,6 +24,7 @@ export const metadata = {
 }
 
 import Hero from '@/components/hero'
+import Header from '@/components/ui/header'
 import Features from '@/components/features'
 import FeaturesBlocks from '@/components/features-blocks'
 import OldWays from '@/components/old-ways'
@@ -38,6 +39,19 @@ import ModalVideo from '@/components/modal-video'
 export default function Home() {
   return (
     <>
+
+          <div
+            style={{
+              backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundAttachment: "fixed"
+            }}
+          >
+            <Header />
+            <Hero />
+          </div>
+
       <ModalVideo
       />
       <Marketplace_Type />

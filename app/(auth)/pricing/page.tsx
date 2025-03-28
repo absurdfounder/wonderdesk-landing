@@ -11,14 +11,6 @@ import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
 import Header from "@/components/ui/header";
 
-// Pricing tiers based on user count
-const pricingMap: Record<number, number> = {
-  10000: 9,
-  50000: 24,
-  100000: 43,
-  1000000: 237,
-};
-
 // Feature interfaces
 interface Feature {
   name: string;
@@ -36,12 +28,21 @@ interface Position {
   left: number;
 }
 
-// Features for Hobby plan (keeping this data for reference)
-const hobbyFeatures: HobbyFeature[] = [
-  { name: "1 website", included: true, description: "Set up one Wonder Site of your choice: Helpdesk, Blog, or Directory.", imageUrl: "/api/placeholder/200/150" },
-  { name: "Custom Domain / SSL", included: false, description: "Use your own domain and secure it with SSL (not included in Hobby plan).", imageUrl: "/api/placeholder/200/150" },
-  // Additional features would be listed here
-];
+// FAQ data structure
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+// Pricing tier interface
+interface PricingTier {
+  name: string;
+  highlight: boolean;
+  monthlyPrice: number;
+  yearlyPrice: number;
+  trafficLimit: string;
+  features: string[];
+}
 
 // Features for Scale/Rocket plan
 const scaleFeatures: Feature[] = [
@@ -60,12 +61,6 @@ const scaleFeatures: Feature[] = [
   { name: "General Search", description: "Implement a powerful, site-wide search feature to help users find content quickly and easily.", imageUrl: "/api/placeholder/200/150" },
   { name: "Remove 'Watermark' badge", description: "Remove the 'Powered by WonderSites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
 ];
-
-// FAQ data structure
-interface FAQ {
-  question: string;
-  answer: string;
-}
 
 const faqs: Record<string, FAQ[]> = {
   Website: [
@@ -228,8 +223,8 @@ const FAQSection: React.FC = () => {
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
             Have a different question? Reach out to our support team by
-            <a 
-              href="mailto:vaibhav@wondersites.co" 
+            <a
+              href="mailto:vaibhav@wondersites.co"
               className="text-orange-600 hover:text-orange-700 hover:underline px-2"
             >
               sending us an email
@@ -237,24 +232,23 @@ const FAQSection: React.FC = () => {
             and we'll get back to you as soon as we can.
           </p>
         </div>
-        
+
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           <div className="flex justify-center p-4 border-b border-slate-200 bg-slate-50">
             {Object.keys(faqs).map((tab) => (
               <button
                 key={tab}
-                className={`px-4 py-2 mx-1 text-sm md:text-base font-medium rounded-full transition-colors ${
-                  activeTab === tab 
-                    ? "bg-orange-100 text-orange-800" 
+                className={`px-4 py-2 mx-1 text-sm md:text-base font-medium rounded-full transition-colors ${activeTab === tab
+                    ? "bg-orange-100 text-orange-800"
                     : "text-slate-600 hover:bg-slate-100"
-                }`}
+                  }`}
                 onClick={() => setActiveTab(tab)}
               >
                 {tab}
               </button>
             ))}
           </div>
-          
+
           <div className="divide-y divide-slate-200">
             {faqs[activeTab].map((faq, index) => (
               <FAQAccordion key={index} {...faq} />
@@ -270,9 +264,6 @@ const FAQSection: React.FC = () => {
 const Pricing: React.FC = () => {
   // State variables
   const [activeTab, setActiveTab] = useState("Yearly");
-  const [selectedUsers, setSelectedUsers] = useState(10000);
-  const [monthlyPrice, setMonthlyPrice] = useState(pricingMap[selectedUsers]);
-  const [yearlyPrice, setYearlyPrice] = useState(0);
   const [popupFeature, setPopupFeature] = useState<Feature | null>(null);
   const [hoveredFeature, setHoveredFeature] = useState<Feature | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<Position>({ top: 0, left: 0 });
@@ -281,18 +272,72 @@ const Pricing: React.FC = () => {
   const [isLifetimeDealVisible, setIsLifetimeDealVisible] = useState(true);
   const [loading, setLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  
+
   const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Define the pricing tiers
+  const pricingTiers: PricingTier[] = [
+    {
+      name: "Personal",
+      highlight: false,
+      monthlyPrice: 9,
+      yearlyPrice: 90,
+      trafficLimit: "10,000",
+      features: [
+        "Unlimited Pages",
+        "All Type of Websites",
+        "Automatic SSL(https)",
+        "Custom domain",
+        "Wonder AI",
+        "AI Terms (Designer & Developer)",
+        "Privacy focused analytics",
+        "Remove \"Made with Wonder\"",
+        "Manual Publishing",
+        "Auto publish everyday"
+      ]
+    },
+    {
+      name: "Business",
+      highlight: true,
+      monthlyPrice: 43,
+      yearlyPrice: 430,
+      trafficLimit: "100,000",
+      features: [
+        "Everything in Personal, Plus",
+        "Sub-directory Domain",
+        "Multi-lingual sites",
+        "Unlimited team members",
+        "Membership sites",
+        "Auto publish every hour"
+      ]
+    },
+    {
+      name: "Enterprise",
+      highlight: false,
+      monthlyPrice: 237,
+      yearlyPrice: 2370,
+      trafficLimit: "1,000,000",
+      features: [
+        "Everything in Business",
+        "Dedicated support",
+        "Custom integrations",
+        "Premium CDN",
+        "Advanced security",
+        "Usage reports",
+        "SLA guarantees"
+      ]
+    }
+  ];
 
   // Check mobile status on mount and resize
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -304,15 +349,6 @@ const Pricing: React.FC = () => {
       setIsLifetimeDealVisible(false);
     }
   }, []);
-
-  // Update pricing when users change
-  useEffect(() => {
-    const newMonthlyPrice = pricingMap[selectedUsers];
-    setMonthlyPrice(newMonthlyPrice);
-    
-    // 40% discount for yearly plan
-    setYearlyPrice(Math.round(newMonthlyPrice * 12 * 0.6));
-  }, [selectedUsers]);
 
   // Countdown timer
   useEffect(() => {
@@ -334,10 +370,6 @@ const Pricing: React.FC = () => {
   // Event handlers
   const handleTabClick = (tabName: string) => {
     setActiveTab(tabName);
-  };
-
-  const handleUserChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedUsers(Number(event.target.value));
   };
 
   const handleFeatureClick = (feature: Feature) => {
@@ -389,18 +421,14 @@ const Pricing: React.FC = () => {
     }
   };
 
-  // Calculate pricing values
-  const effectiveMonthlyRate = Math.round((yearlyPrice / 12) * 100) / 100;
-  const discountPercentage = 40;
-
   return (
     <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
 
-<Header />
+      <Header />
 
       {/* Background grid pattern */}
-      <div 
-        className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none opacity-5 z-0" 
+      <div
+        className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none opacity-5 z-0"
         aria-hidden="true"
       >
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
@@ -425,8 +453,9 @@ const Pricing: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            <span className="text-slate-500 block mb-2 font-normal">Build anything with</span>
+            <span className="text-slate-800 block mb-2 font-bold">Build content-heavy websites </span>
             <div className="flex items-center justify-center gap-4">
+              <span className="text-slate-800">with</span>
               <span className="text-orange-600">Wonder</span>
               <span className="text-slate-900">+</span>
               <span className="text-slate-900">Notion</span>
@@ -436,24 +465,22 @@ const Pricing: React.FC = () => {
           {/* Billing toggle */}
           <div className="inline-flex items-center bg-white rounded-full border border-slate-200 p-1 shadow-sm mb-6 text-lg">
             <button
-              className={`px-6 py-2 font-medium rounded-full transition-all ${
-                activeTab === 'Yearly' 
-                  ? 'bg-slate-600 text-slate-100' 
+              className={`px-6 py-2 font-medium rounded-full transition-all ${activeTab === 'Yearly'
+                  ? 'bg-slate-600 text-slate-100'
                   : 'text-slate-600 hover:text-slate-900'
-              }`}
+                }`}
               onClick={() => handleTabClick('Yearly')}
             >
-              ANNUALLY <span className="text-green-500 font-semibold ml-1">40% OFF</span>
+              Yearly <span className="text-orange-300 font-semibold ml-1">2 months free</span>
             </button>
             <button
-              className={`px-6 py-2 font-medium rounded-full transition-all ${
-                activeTab === 'Monthly' 
-                ? 'bg-slate-600 text-slate-100' 
-                : 'text-slate-600 hover:text-slate-900'
-              }`}
+              className={`px-6 py-2 font-medium rounded-full transition-all ${activeTab === 'Monthly'
+                  ? 'bg-slate-600 text-slate-100'
+                  : 'text-slate-600 hover:text-slate-900'
+                }`}
               onClick={() => handleTabClick('Monthly')}
             >
-              MONTHLY
+              Monthly
             </button>
           </div>
 
@@ -466,228 +493,122 @@ const Pricing: React.FC = () => {
           </div>
         </div>
 
-        {/* Main pricing card */}
-        <div className="max-w-4xl mx-auto mb-20">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-400 transition-all duration-300 hover:shadow-2xl">
-            {/* Card header */}
-            <div className="bg-slate-100 px-8 py-6">
-              <div className="flex flex-col md:flex-row md:items-end justify-between">
-                <div>
-
-                  <h2 className="text-3xl font-bold text-slate-900 py-2">
-                    Unlimited Websites
-                  </h2>
-                  <p className="text-slate-600 mt-1">Everything you need to build and grow</p>
-                </div>
-                
-                <div className="mt-4 md:mt-0 md:text-right">
-                  {activeTab === 'Yearly' ? (
-                    <div>
-                      <div className="flex items-baseline justify-end">
-                        <span className="text-4xl font-bold text-slate-900">
-                          ${yearlyPrice}
-                        </span>
-                        <span className="text-lg text-slate-600 ml-2">/year</span>
-                      </div>
-                      <div className="mt-1 flex items-center justify-end">
-                        <span className="px-2 py-1 bg-green-700 text-green-50 text-xs font-medium rounded-full">
-                          Save ${monthlyPrice * 12 - yearlyPrice}
-                        </span>
-                        <span className="ml-2 text-sm text-slate-500">
-                          (${effectiveMonthlyRate}/mo)
-                        </span>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="flex items-baseline justify-end">
-                      <span className="text-4xl font-bold text-slate-900">
-                        ${monthlyPrice}
-                      </span>
-                      <span className="text-lg text-slate-600 ml-2">/month</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-            
-            {/* Card content */}
-            <div className="p-8 grid">
-              <div className="mb-8">
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Number of Monthly Active Users
-                </label>
-                <select
-                  className="w-full p-3 border border-slate-300 rounded-lg text-base bg-white focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow"
-                  value={selectedUsers}
-                  onChange={handleUserChange}
-                >
-                  <option value="10000">10,000 Users</option>
-                  <option value="50000">50,000 Users</option>
-                  <option value="100000">100,000 Users</option>
-                  <option value="1000000">1 Million Users</option>
-                </select>
-                <p className="mt-2 text-xs text-slate-500">
-                  Transparent pricing based on your actual usage
-                </p>
-              </div>
-              
-              <Link
-              type="button"
-                  href="https://app.wondersites.co"
-                className="flex justify-between w-full py-4 px-6 rounded-lg text-white font-medium text-lg shadow-md bg-orange-600 hover:bg-orange-700 active:bg-orange-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-              >
-                Start a 3-day trial
-
-                <ArrowRight className="h-5 w-5 text-white mt-0.5 mr-3 flex-shrink-0" />
-
-              </Link>
-              
-              <p className="mt-3 text-center text-sm text-slate-500">
-                Prices will increase soon, lock in current rates today
-              </p>
-              
-              {/* Features grid */}
-              <div className="mt-10">
-                <h3 className="flex items-center text-lg font-semibold text-slate-900 mb-6">
-                  <span className="bg-orange-600 w-1 h-6 mr-3 rounded-full"></span>
-                  What's included
-                </h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {scaleFeatures.map((feature, index) => (
-                    <div
-                      key={index}
-                      ref={(el: HTMLDivElement | null) => {
-                        if (featureRefs.current) {
-                          featureRefs.current[index] = el;
-                        }
-                      }}
-                      className="flex items-start group cursor-pointer"
-                      onClick={() => handleFeatureClick(feature)}
-                      onMouseEnter={() => handleFeatureHover(feature, index)}
-                      onMouseLeave={handleFeatureLeave}
-                    >
-                      <Check className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                      <div>
-                        <p className="text-sm font-medium text-slate-900 group-hover:text-orange-600 transition-colors">
-                          {feature.name}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Feature tooltips */}
-        <AnimatePresence>
-          {!isMobile && hoveredFeature && (
-            <FeatureTooltip feature={hoveredFeature} position={tooltipPosition} />
-          )}
-        </AnimatePresence>
-
-        {/* Feature popup */}
-        <AnimatePresence>
-          {popupFeature && (
-            <FeaturePopup feature={popupFeature} onClose={closePopup} />
-          )}
-        </AnimatePresence>
-
-        {/* Lifetime deal banner */}
-        {isLifetimeDealVisible && (
-          <div className="max-w-4xl mx-auto mb-20">
-            <div className="bg-slate-900 rounded-xl overflow-hidden relative">
-              {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600 opacity-10 rounded-full -mr-20 -mt-20"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600 opacity-10 rounded-full -ml-10 -mb-10"></div>
-              
-              <div className="relative p-8 md:p-10">
-                <div className="flex flex-col md:flex-row md:items-center justify-between">
-                  <div className="mb-6 md:mb-0">
-                    <div className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-full mb-3">
-                      Limited Time Offer
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Lifetime Deal
-                    </h3>
-                    <p className="text-slate-300 mb-2">
-                      Get <span className="text-orange-400 font-semibold">unlimited</span> access forever with a one-time payment
-                    </p>
-                    <div className="flex items-center">
-                      <span className="line-through text-slate-400 mr-2">$599</span>
-                      <span className="text-3xl font-bold text-white">$99</span>
-                    </div>
-                    <div className="text-orange-400 text-sm mt-2">
-                      Ending in <span className="font-semibold">{formatTime(countdown)}</span>
-                    </div>
-                  </div>
-                  
-                  <button
-                    className="bg-orange-600 hover:bg-orange-700 text-white text-lg py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-slate-900"
-                    onClick={toggleModal}
-                  >
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Lifetime deal modal */}
-        <AnimatePresence>
-          {isModalOpen && (
+        {/* Pricing Cards */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+          {pricingTiers.map((tier, index) => (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4"
+              key={tier.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className={`relative bg-white rounded-xl shadow-lg border ${tier.highlight
+                  ? 'border-orange-400 shadow-xl transform md:scale-105 z-10'
+                  : 'border-slate-200'
+                } overflow-hidden flex flex-col h-full`}
             >
-              <motion.div
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                className="bg-white p-6 rounded-xl shadow-2xl max-w-md mx-auto relative"
-              >
-                <button
-                  onClick={toggleModal}
-                  className="absolute top-3 right-3 bg-slate-200 hover:bg-slate-300 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+              {tier.highlight && (
+                <div className="bg-orange-500 text-white text-center py-1 text-sm font-medium">
+                  MOST POPULAR
+                </div>
+              )}
+
+              <div className="p-6 flex-grow">
+                <div className="text-center mb-6">
+                  <h3 className="text-lg font-semibold text-slate-700 mb-1">{tier.name}</h3>
+                  <div className="flex items-center justify-center">
+                    <span className="text-4xl font-bold text-slate-900">
+                      ${activeTab === 'Yearly' ? tier.yearlyPrice : tier.monthlyPrice}
+                    </span>
+                    <span className="text-slate-600 ml-1">
+                      {activeTab === 'Yearly' ? '/year' : '/month'}
+                    </span>
+                  </div>
+                  <p className="text-slate-500 text-sm mt-1">
+                    {tier.trafficLimit} users/month
+                  </p>
+                </div>
+
+                <div className="mt-6">
+                  <div className="font-medium text-slate-800 mb-4">What's included:</div>
+                  <ul className="space-y-3">
+                    {tier.features.map((feature, i) => (
+                      <li key={i} className="flex items-start">
+                        <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
+                        <span className="text-slate-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="px-6 pb-6 mt-4">
+                <Link
+                  href="https://app.wondersites.co"
+                  className={`w-full block text-center py-3 px-4 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${tier.highlight
+                      ? 'bg-orange-600 hover:bg-orange-700 text-white focus:ring-orange-500'
+                      : 'bg-slate-100 hover:bg-slate-200 text-slate-800 focus:ring-slate-500'
+                    }`}
                 >
-                  <X size={16} />
-                </button>
-
-                <h2 className="text-2xl font-bold text-slate-900 mt-2 mb-4">Limited Lifetime Deal</h2>
-                <p className="text-slate-600">
-                  $99 for super early birds. <span className="font-medium text-slate-800">Due to high demand, the price will increase to $199 in {formatTime(countdown)}.</span> Secure lifetime access now before prices increase!
-                </p>
-
-                <div className="text-center mt-8">
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                    $99.00
-                  </h3>
-                  <Link
-                    href="https://buy.stripe.com/5kAeV0b6K27w8BG6os"
-                    className="bg-orange-600 text-white text-lg w-full py-3 px-6 rounded-lg block hover:bg-orange-700 transition-colors shadow-md font-medium"
-                  >
-                    Buy Now
-                  </Link>
-                </div>
-                <div className="text-center text-slate-500 mt-6 mb-2">
-                  Supported payment methods
-                </div>
-                <div className="flex justify-center">
-                  <img 
-                    alt="Payment methods" 
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_e9xJ7ce6A2N49hHB1Woit1mj6b3o13Lt3Q1NT-tW&s" 
-                    className="h-12 object-contain" 
-                  />
-                </div>
-              </motion.div>
+                  Start 3-day trial
+                </Link>
+              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
+          ))}
+        </div>
+
+        {/* Expert Services Card */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden"
+          >
+            <div className="p-6">
+              <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="text-center md:text-left mb-6 md:mb-0">
+                  <div className="text-blue-600 font-medium mb-1">Hire An Expert</div>
+                  <div className="flex items-center md:items-start flex-col">
+                    <span className="text-4xl font-bold text-slate-900">$499</span>
+                    <span className="text-slate-600 ml-1">one time</span>
+                  </div>
+                  <p className="text-slate-500 mt-1">
+                    DIFY expert services (w/o license)
+                  </p>
+                </div>
+
+                <div className="space-y-3 md:w-1/2">
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
+                    <span className="text-slate-600">Custom development</span>
+                  </div>
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
+                    <span className="text-slate-600">Custom notion template</span>
+                  </div>
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
+                    <span className="text-slate-600">Custom design</span>
+                  </div>
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
+                    <span className="text-slate-600">Platform migrations</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 text-center md:text-right">
+                <Link
+                  href="https://app.youform.com/forms/r3rvhjv4"
+                  target="_blank"
+                  className="inline-block py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
+                >
+                  Get Custom Quote
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Add-ons Section */}
         <div className="max-w-4xl mx-auto mb-20">
@@ -751,14 +672,14 @@ const Pricing: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-slate-900">
-                        Fetch Kitty - Data Entry AI
+                        Additonal Website
                       </h3>
-                      <p className="text-sm text-slate-600">AI web scraper and publisher</p>
+                      <p className="text-sm text-slate-600">Every plan comes with 5 sites - you can get more.</p>
                     </div>
                   </div>
                   <div className="flex items-baseline">
                     <p className="text-2xl font-semibold text-slate-900">
-                      $20
+                      $2
                     </p>
                     <p className="text-base text-slate-600 ml-1">/mo</p>
                   </div>
@@ -768,8 +689,113 @@ const Pricing: React.FC = () => {
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <FAQSection />
+        {/* Lifetime deal banner */}
+        {isLifetimeDealVisible && (
+          <div className="max-w-4xl mx-auto mb-20">
+            <div className="bg-slate-900 rounded-xl overflow-hidden relative">
+              {/* Background decoration */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600 opacity-10 rounded-full -mr-20 -mt-20"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600 opacity-10 rounded-full -ml-10 -mb-10"></div>
+
+              <div className="relative p-8 md:p-10">
+                <div className="flex flex-col md:flex-row md:items-center justify-between">
+                  <div className="mb-6 md:mb-0">
+                    <div className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-full mb-3">
+                      Limited Time Offer
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Lifetime Deal
+                    </h3>
+                    <p className="text-slate-300 mb-2">
+                      Get <span className="text-orange-400 font-semibold">unlimited</span> access forever with a one-time payment
+                    </p>
+                    <div className="flex items-center">
+                      <span className="line-through text-slate-400 mr-2">$599</span>
+                      <span className="text-3xl font-bold text-white">$99</span>
+                    </div>
+                    <div className="text-orange-400 text-sm mt-2">
+                      Ending in <span className="font-semibold">{formatTime(countdown)}</span>
+                    </div>
+                  </div>
+
+                  <button
+                    className="bg-orange-600 hover:bg-orange-700 text-white text-lg py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-slate-900"
+                    onClick={toggleModal}
+                  >
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Lifetime deal modal */}
+        <AnimatePresence>
+          {isModalOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4"
+            >
+              <motion.div
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.9, y: 20 }}
+                className="bg-white p-6 rounded-xl shadow-2xl max-w-md mx-auto relative"
+              >
+                <button
+                  onClick={toggleModal}
+                  className="absolute top-3 right-3 bg-slate-200 hover:bg-slate-300 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+                >
+                  <X size={16} />
+                </button>
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-2 mb-4">Limited Lifetime Deal</h2>
+                <p className="text-slate-600">
+                  $99 for super early birds. <span className="font-medium text-slate-800">Due to high demand, the price will increase to $199 in {formatTime(countdown)}.</span> Secure lifetime access now before prices increase!
+                </p>
+
+                <div className="text-center mt-8">
+                  <h3 className="text-3xl font-bold text-slate-900 mb-4">
+                    $99.00
+                  </h3>
+                  <Link
+                    href="https://buy.stripe.com/5kAeV0b6K27w8BG6os"
+                    className="bg-orange-600 text-white text-lg w-full py-3 px-6 rounded-lg block hover:bg-orange-700 transition-colors shadow-md font-medium"
+                  >
+                    Buy Now
+                  </Link>
+                </div>
+                <div className="text-center text-slate-500 mt-6 mb-2">
+                  Supported payment methods
+                </div>
+                <div className="flex justify-center">
+                  <img
+                    alt="Payment methods"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_e9xJ7ce6A2N49hHB1Woit1mj6b3o13Lt3Q1NT-tW&s"
+                    className="h-12 object-contain"
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Feature tooltips */}
+        <AnimatePresence>
+          {!isMobile && hoveredFeature && (
+            <FeatureTooltip feature={hoveredFeature} position={tooltipPosition} />
+          )}
+        </AnimatePresence>
+
+        {/* Feature popup */}
+        <AnimatePresence>
+          {popupFeature && (
+            <FeaturePopup feature={popupFeature} onClose={closePopup} />
+          )}
+        </AnimatePresence>
 
         {/* Migration CTA */}
         <div className="max-w-4xl mx-auto my-20">
@@ -803,6 +829,9 @@ const Pricing: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection />
 
         {/* Testimonials and Rating */}
         <div className="mt-20">
