@@ -48,10 +48,15 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto p-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
+          <div className='flex items-center justify-between'>
           <Link href="/" className="shrink-0 mr-4 relative group">
-            <div className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"></div>
             <Image src={Logo} alt="Logo" width={260} height={200} className="relative" />
           </Link>
+          <NavLink href="/showcase" text="Website Examples" />
+              <NavLink href="https://WonderSites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
+              <NavLink href="/pricing" text="Pricing" />
+              </div>
+
 
           <nav className="hidden md:flex md:grow">
             <ul className="flex grow justify-end flex-wrap items-center">
@@ -129,10 +134,6 @@ export default function Header() {
                   )}
                 </AnimatePresence>
               </li>
-              <NavLink href="/showcase" text="Showcase" />
-              <NavLink href="https://WonderSites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
-              <NavLink href="/pricing" text="Pricing" />
-              <NavLink href="https://WonderSites.canny.io" text="Roadmap" />
               <NavLink href="https://app.wondersites.co" text="Login" />
               <li>
                 <Link
@@ -209,13 +210,11 @@ interface NavLinkProps {
 
 function NavLink({ href, text }: NavLinkProps) {
   return (
-    <li>
       <Link 
         href={href} 
         className="font-medium text-slate-900 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
       >
         <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
       </Link>
-    </li>
   );
 }
