@@ -14,34 +14,6 @@ const siteBundles = [
     notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
     siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
     description: "Business Directory"
-  },
-  {
-    id: 2,
-    name: "Job Board",
-    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
-    description: "Job Listings Platform"
-  },
-  {
-    id: 3,
-    name: "Real Estate Listings",
-    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
-    description: "Property Marketplace"
-  },
-  {
-    id: 4,
-    name: "Event Directory",
-    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
-    description: "Event Listing Platform"
-  },
-  {
-    id: 5,
-    name: "Marketplace",
-    notionImage: "https://dazzling-cat.netlify.app/notiondatabase.png",
-    siteImage: "https://dazzling-cat.netlify.app/Wondersite.png",
-    description: "Product Marketplace"
   }
 ];
 
