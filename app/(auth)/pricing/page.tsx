@@ -239,8 +239,8 @@ const FAQSection: React.FC = () => {
               <button
                 key={tab}
                 className={`px-4 py-2 mx-1 text-sm md:text-base font-medium rounded-full transition-colors ${activeTab === tab
-                    ? "bg-orange-100 text-orange-800"
-                    : "text-slate-600 hover:bg-slate-100"
+                  ? "bg-orange-100 text-orange-800"
+                  : "text-slate-600 hover:bg-slate-100"
                   }`}
                 onClick={() => setActiveTab(tab)}
               >
@@ -466,8 +466,8 @@ const Pricing: React.FC = () => {
           <div className="inline-flex items-center bg-white rounded-full border border-slate-200 p-1 shadow-sm mb-6 text-lg">
             <button
               className={`px-6 py-2 font-medium rounded-full transition-all ${activeTab === 'Yearly'
-                  ? 'bg-slate-600 text-slate-100'
-                  : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-slate-600 text-slate-100'
+                : 'text-slate-600 hover:text-slate-900'
                 }`}
               onClick={() => handleTabClick('Yearly')}
             >
@@ -475,8 +475,8 @@ const Pricing: React.FC = () => {
             </button>
             <button
               className={`px-6 py-2 font-medium rounded-full transition-all ${activeTab === 'Monthly'
-                  ? 'bg-slate-600 text-slate-100'
-                  : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-slate-600 text-slate-100'
+                : 'text-slate-600 hover:text-slate-900'
                 }`}
               onClick={() => handleTabClick('Monthly')}
             >
@@ -502,8 +502,8 @@ const Pricing: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className={`relative bg-white rounded-xl shadow-lg border ${tier.highlight
-                  ? 'border-orange-400 shadow-xl transform md:scale-105 z-10'
-                  : 'border-slate-200'
+                ? 'border-orange-400 shadow-xl transform md:scale-105 z-10'
+                : 'border-slate-200'
                 } overflow-hidden flex flex-col h-full`}
             >
               {tier.highlight && (
@@ -545,8 +545,8 @@ const Pricing: React.FC = () => {
                 <Link
                   href="https://app.wondersites.co"
                   className={`w-full block text-center py-3 px-4 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${tier.highlight
-                      ? 'bg-orange-600 hover:bg-orange-700 text-white focus:ring-orange-500'
-                      : 'bg-slate-100 hover:bg-slate-200 text-slate-800 focus:ring-slate-500'
+                    ? 'bg-orange-600 hover:bg-orange-700 text-white focus:ring-orange-500'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-800 focus:ring-slate-500'
                     }`}
                 >
                   Start 3-day trial
