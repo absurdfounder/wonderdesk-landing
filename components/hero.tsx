@@ -220,6 +220,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h1 className="h2 mb-8 text-center leading-tight font-comfortaa tracking-loose text-slate-700">
+            Easy to use
               Wordpress alternative
               {" "}
               <span className="font-bungee block font-normal text-gray-800 my-2">
@@ -261,7 +262,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="relative">
-              <div className="bg-white border border-slate-300 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-orange-300 focus-within:border-orange-300">
+              <div className="bg-white border border-slate-300 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-orange-300 focus-within:border-slate-600">
                 <div className="relative">
                   <textarea
                     ref={inputRef}
@@ -330,25 +331,11 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     </div>
                     
                     <div className="flex items-center">
-                      <button
-                        className="text-slate-900 hover:text-orange-600 transition-colors rounded-md flex items-center justify-center gap-1 px-2 py-1.5 text-sm font-medium hover:bg-slate-100 mr-2"
-                        type="button"
-                        aria-haspopup="dialog"
-                        aria-expanded="false"
-                        data-state="closed"
-                        onClick={() => setShowLoginPopup(true)}
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 -960 960 960" className="shrink-0 h-4 w-4" fill="currentColor">
-                          <path
-                            d="M480.27-80q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34T80-480.5t31.5-155.66 86-126.84 127.34-85.5T480.5-880t155.66 31.5T763-763t85.5 127T880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80m-.27-60q142.38 0 241.19-99.5T820-480v-13q-6 26-27.41 43.5Q771.19-432 742-432h-80q-33 0-56.5-23.5T582-512v-40H422v-80q0-33 23.5-56.5T502-712h40v-22q0-16 13.5-40t30.5-29q-25-8-51.36-12.5Q508.29-820 480-820q-141 0-240.5 98.81T140-480h150q66 0 113 47t47 113v40H330v105q34 17 71.7 26t78.3 9"
-                          ></path>
-                        </svg>
-                        <span>Public</span>
-                      </button>
+
                       <button 
                         id="chatinput-send-message-button" 
                         type="submit" 
-                        className={`flex items-center justify-center rounded-full p-2 ${inputValue.trim() ? 'bg-orange-500 text-white hover:bg-orange-600' : 'bg-slate-200 text-slate-400'} transition-colors duration-150 ease-out`}
+                        className={`flex gap-2 px-2 items-center justify-center rounded-full p-1 ${inputValue.trim() ? 'bg-slate-900 text-white hover:bg-orange-600' : 'bg-slate-200 text-slate-400'} transition-colors duration-150 ease-out`}
                         disabled={!inputValue.trim()}
                         onClick={() => inputValue.trim() && setShowLoginPopup(true)}
                       >
@@ -357,6 +344,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                             d="M450-514v152q0 13 8.5 21.5T480-332t21.5-8.5T510-362v-152l53 53q9 9 21 9t21-9 9-21-9-21L501-607q-9-9-21-9t-21 9L355-503q-9 9-9 21t9 21 21 9 21-9zm30 434q-82 0-155-31.5t-127.5-86-86-127.5T80-480q0-83 31.5-156t86-127T325-848.5 480-880q83 0 156 31.5T763-763t85.5 127T880-480q0 82-31.5 155T763-197.5t-127 86T480-80"
                           ></path>
                         </svg>
+                        Generate
                       </button>
                     </div>
                   </div>
@@ -382,14 +370,14 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
           {/* Features section */}
           <motion.div
-            className="flex flex-col items-center justify-center space-x-2 space-y-1 text-sm opacity-60 sm:flex-row sm:space-y-0 mt-6"
+            className="flex flex-col font-bold items-center justify-center space-x-2 space-y-1 text-sm opacity-60 sm:flex-row sm:space-y-0 mt-6"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             {["7-day trial", "Free Design Service", "Free Data Migration"].map((feature, index) => (
               <div key={index} className="flex items-center justify-start">
-                <Check className="w-4 h-4 mr-2 text-orange-600" />
+                <Check className="w-4 h-4 mr-2 text-slate-900" />
                 {feature}
               </div>
             ))}
@@ -400,7 +388,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             <div className="max-w-7xl mx-auto relative">
               <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 gap-8 md:gap-4">
                 {/* Notion Site Column */}
-                <div className="w-full bg-white p-4 rounded-md">
+                <div className="w-full">
                   <div className="">
                     <div className="space-y-4">
                       <motion.div
@@ -428,7 +416,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 </div>
 
                 {/* Super Site Column */}
-                <div className="w-full bg-white p-4 rounded-md">
+                <div className="w-full">
                   <div>
                     <div className="space-y-4">
                       <motion.div

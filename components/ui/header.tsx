@@ -50,7 +50,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="shrink-0 mr-4 relative group">
             <div className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"></div>
-            <Image src={Logo} alt="Logo" width={200} height={200} className="relative" />
+            <Image src={Logo} alt="Logo" width={260} height={200} className="relative" />
           </Link>
 
           <nav className="hidden md:flex md:grow">

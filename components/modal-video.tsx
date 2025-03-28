@@ -9,7 +9,7 @@ export default function ModalVideo() {
   return (
     <div>
       {/* Video Thumbnail */}
-      <div className="justify-center mb-8 mt-8 max-w-7xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
+      <div className="justify-center mb-8 mt-12 max-w-7xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
         <div className="banner-bottom-wrapper relative">
           <video 
             autoPlay 
