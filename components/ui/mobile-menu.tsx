@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import Link from 'next/link';
+import { ChevronDown } from 'lucide-react';
 
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
@@ -73,21 +74,38 @@ export default function MobileMenu() {
           leaveTo="opacity-0"
         >
           <ul className="px-5 py-8 space-y-4">
+            {/* Website Examples */}
+            <li>
+              <Link href="/showcase" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">
+                Website Examples
+              </Link>
+            </li>
+            
+            {/* Affiliate Link */}
+            <li>
+              <Link href="https://boringsites.lemonsqueezy.com/affiliates" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">
+                Affiliate (50%)
+              </Link>
+            </li>
+
+            {/* Pricing */}
+            <li>
+              <Link href="/pricing" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">
+                Pricing
+              </Link>
+            </li>
+
+            {/* Create a... dropdown */}
             <li>
               <button
-                className="hidden font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2"
+                className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 aria-expanded={dropdownOpen}
               >
-                Create a..
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 20 20" 
-                  fill="currentColor" 
+                Create a...
+                <ChevronDown 
                   className={`w-5 h-5 text-slate-400 transition-transform duration-200 ease-in-out ${dropdownOpen ? 'rotate-180' : ''}`}
-                >
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
-                </svg>
+                />
               </button>
               <Transition
                 show={dropdownOpen}
@@ -114,22 +132,11 @@ export default function MobileMenu() {
                     </li>
                     <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-orange-600">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                      </svg>
-                      <div className="ml-4">
-                        <Link href="/create-a-documentation-notion" className="text-base font-medium text-slate-900">
-                          Documentation
-                        </Link>
-                        <p className="mt-1 text-sm text-slate-500">Get a world-class product documentation with Notion and WonderSites.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-orange-600">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                       </svg>
                       <div className="ml-4">
                         <Link href="/create-a-marketplace-notion" className="text-base font-medium text-slate-900">
-                          Marketplace
+                          Marketplace / Directories
                         </Link>
                         <p className="mt-1 text-sm text-slate-500">Get a self-serving community marketplace that can handle millions in traffic on Notion.</p>
                       </div>
@@ -142,23 +149,16 @@ export default function MobileMenu() {
                         <Link href="/create-a-company-wiki-notion" className="text-base font-medium text-slate-900">
                           Company Wiki
                         </Link>
-                        <p className="mt-1 text-sm text-slate-500">Get a company wiki with protected access and AI to answer queries on top of Notion as a database.</p>
+                        <p className="mt-1 text-sm text-slate-500">Create company wiki protected access and AI to answer queries on top of Notion as a database.</p>
                       </div>
                     </li>
                     <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="url(#grad1)" className="flex-shrink-0 w-6 h-6 text-orange-600">
-                        <defs>
-                          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%"></stop>
-                            <stop offset="50%"></stop>
-                            <stop offset="100%"></stop>
-                          </linearGradient>
-                        </defs>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-orange-600">
                         <path
                           strokeLinecap="round"
                           strokeWidth="2"
                           strokeLinejoin="round"
-                          d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                         ></path>
                       </svg>
                       <div className="ml-4">
@@ -173,26 +173,23 @@ export default function MobileMenu() {
               </Transition>
             </li>
 
+            {/* Login */}
             <li>
-              <Link href="/pricing" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Pricing</Link>
-            </li>
-
-            <li>
-              <Link href="/showcase" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Showcase</Link>
-            </li>
-            
-            <li>
-              <Link href="https://app.wondersites.co" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">Login</Link>
+              <Link href="https://app.wondersites.co" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">
+                Login
+              </Link>
             </li>
             
+            {/* Create Website button */}
             <li className="pt-2">
               <Link 
                 href="https://app.wondersites.co" 
                 target='_blank' 
-                className="btn-sm text-white bg-slate-900 hover:bg-slate-800 w-full flex items-center justify-between px-5 py-3 rounded transition-colors"
+                className="btn-sm text-white bg-slate-900 hover:bg-slate-800 w-full flex items-center justify-between px-5 py-3 rounded-full transition duration-300 ease-in-out group relative overflow-hidden"
               >
-                <span>Create Website</span>
-                <svg className="w-3 h-3 fill-current text-white shrink-0 ml-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                <span className="relative z-10">Create Website</span>
+                <div className="absolute bg-orange-500 w-0 h-full left-0 top-0 group-hover:w-full transition-all duration-300 ease-in-out -z-0"></div>
+                <svg className="w-4 h-4 fill-current text-white shrink-0 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
                 </svg>
               </Link>

@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full z-30 transition-all duration-300 ease-in-out  ${!top ? 'bg-white shadow-md' : ''}`}
+      className={`w-full z-30 transition-all duration-300 ease-in-out ${!top ? 'bg-white shadow-md' : ''}`}
       style={top ? {
         backgroundImage: "url('https://dazzling-cat.netlify.app/bg-gradient.jpg')",
         backgroundSize: "cover",
@@ -48,25 +48,24 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto p-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <div className='flex items-center justify-between'>
+          {/* Logo */}
+          <div className='flex items-center'>
             <Link href="/" className="shrink-0 mr-4 relative group">
               <Image src={Logo} alt="Logo" width={260} height={200} className="relative" />
             </Link>
-            <NavLink href="/showcase" text="Website Examples" />
-            <NavLink href="https://boringsites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
-            <NavLink href="/pricing" text="Pricing" />
           </div>
 
-
+          {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
             <ul className="flex grow justify-end flex-wrap items-center">
-              <li className="hidden relative" ref={dropdownRef}>
+
+            <li className="relative" ref={dropdownRef}>
                 <button
                   className="font-bold text-slate-800 hover:text-orange-600 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   aria-expanded={dropdownOpen}
                 >
-                  <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">Create a..</span>
+                  <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">Create a...</span>
                   <ChevronDown className={`w-5 h-5 ml-1 text-slate-400 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
@@ -134,6 +133,11 @@ export default function Header() {
                   )}
                 </AnimatePresence>
               </li>
+
+              <NavLink href="/showcase" text="Website Examples" />
+              <NavLink href="https://boringsites.lemonsqueezy.com/affiliates" text="Affiliate (50%)" />
+              <NavLink href="/pricing" text="Pricing" />
+              
               <NavLink href="https://app.wondersites.co" text="Login" />
               <li>
                 <Link
@@ -149,6 +153,7 @@ export default function Header() {
             </ul>
           </nav>
 
+          {/* Mobile menu */}
           <MobileMenu />
         </div>
       </div>
@@ -212,9 +217,9 @@ function NavLink({ href, text }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className="font-medium text-slate-900 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
+      className="font-medium text-slate-900 hover:text-orange-600 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
     >
-      <span className="hover:bg-slate-50 p-2 rounded-md">{text}</span>
+      <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
     </Link>
   );
 }
