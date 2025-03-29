@@ -30,7 +30,7 @@ export default function ModalVideo() {
             onClick={() => setModalOpen(true)}
           >
             <img 
-              src="https://dazzling-cat.netlify.app/sticky.webp"
+              src="https://dazzling-cat.netlify.app/sticky.png"
               alt="Play video"
               className="w-full h-auto"
             />
