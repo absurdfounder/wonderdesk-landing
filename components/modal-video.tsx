@@ -11,35 +11,35 @@ export default function ModalVideo() {
       {/* Video Thumbnail */}
       <div className="justify-center mb-8 mt-12 max-w-7xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
 
-      <div className="max-w-3xl mx-auto text-center pt-4 mb-6 sm:mb-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-          Don't vibe code MVP's 
-          <span className="font-source-serif-4 block font-normal text-orange-600">
-            Launch fast on a notion stack.
-          </span>
-        </h1>
-      </div>
-        
+        <div className="max-w-3xl mx-auto text-center pt-4 mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+            Don't vibe code MVP's
+            <span className="font-source-serif-4 block font-normal text-orange-600">
+              Launch fast on a notion stack.
+            </span>
+          </h1>
+        </div>
+
         <div className="banner-bottom-wrapper relative">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             preload="auto"
-            className="w-full mx-auto rounded-2 object-cover border border-4 bg-black p-1" 
-            style={{ borderRadius: '0.3rem', imageRendering: 'auto' }} 
+            className="w-full mx-auto rounded-2 object-cover border border-4 bg-black p-1"
+            style={{ borderRadius: '0.3rem', imageRendering: 'auto' }}
             poster="https://web3summary.com/assets/videos/mainvid.jpg"
           >
             <source src="https://dazzling-cat.netlify.app/Wonder.mp4" type="video/mp4" />
           </video>
 
           {/* Play Button */}
-          <button 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110" 
+          <button
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110"
             onClick={() => setModalOpen(true)}
           >
-            <img 
+            <img
               src="https://dazzling-cat.netlify.app/sticky.png"
               alt="Play video"
               className="w-full h-auto"
@@ -47,7 +47,7 @@ export default function ModalVideo() {
           </button>
         </div>
       </div>
-      
+
       {/* Modal */}
       <Transition show={modalOpen} as={Fragment}>
         <Dialog onClose={() => setModalOpen(false)}>
@@ -75,19 +75,19 @@ export default function ModalVideo() {
           >
             <Dialog.Panel className="max-w-[90vw] w-[1150px] h-auto aspect-video bg-black overflow-hidden">
               {/* Hardcoded YouTube Video */}
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/IKvYliCFwxs?autoplay=1" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerPolicy="strict-origin-when-cross-origin" 
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/IKvYliCFwxs?autoplay=1"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
                 className="w-full h-full"
                 style={{ aspectRatio: '16/9' }}
               ></iframe>
-              
+
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
