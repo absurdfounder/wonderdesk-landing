@@ -18,10 +18,16 @@ export default function OldWays() {
                         Your content <span className="font-serif font-normal text-orange-600">lives inside Notion</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        Your work stays in a place you control and love, while WonderSites handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
+                        Your work stays in a place you control and love, while Wonderhandles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5">
+                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                                style={{
+                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center"                                }}
+                    
+                    >
                     <img 
                         src="https://dazzling-cat.netlify.app/write%20on%20notion.png" 
                         alt="Write on Notion" 
@@ -43,8 +49,13 @@ export default function OldWays() {
                         All you have to do is to write good content that satisfies the needs of your readers. We take care of the rest. Set all the proper meta tags and canonical links, Structured Schema markup for all your posts, Served from the edge to make the blog super fast, Easy controls to override the SEO settings.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5">
-                      <img 
+                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                                style={{
+                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center"                                }}
+                    
+                    >                      <img 
                         src="https://dazzling-cat.netlify.app/performancewebsite.png" 
                         alt="Performance Website" 
                         className="w-full h-auto rounded-lg object-cover"
@@ -62,11 +73,16 @@ export default function OldWays() {
                         Membership for <span className="font-serif font-normal text-orange-600">paid subscribers.</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside WonderSites without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
+                        Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside Wonderwithout code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5">
-                      <img 
+                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                                style={{
+                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center"                                }}
+                    
+                    >                      <img 
                         src="https://dazzling-cat.netlify.app/notion%20to%20website.png" 
                         alt="Notion to Website" 
                         className="w-full h-auto rounded-lg object-cover"
@@ -84,11 +100,16 @@ export default function OldWays() {
                         In-built <span className="font-serif font-normal text-orange-600">analytics</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        See your page views, visitors, referrers, clicks, and much more for all of your websites. WonderSites provides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
+                        See your page views, visitors, referrers, clicks, and much more for all of your websites. Wonderprovides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5">
-                      <img 
+                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                                style={{
+                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center"                                }}
+                    
+                    >                      <img 
                         src="https://dazzling-cat.netlify.app/analyticsseo.png" 
                         alt="Analytics SEO" 
                         className="w-full h-auto rounded-lg object-cover"
@@ -109,8 +130,13 @@ export default function OldWays() {
                         Create AI Agents for support, suggestions, sales, therapy or any other purposes you have in mind. Because it's 2025 and AI is cheap. Make AI do most of work so that you can focus on whats important.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5">
-                      <img 
+                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                                style={{
+                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center"                                }}
+                    
+                    >                      <img 
                         src="https://dazzling-cat.netlify.app/aisupportreco.png" 
                         alt="AI Support" 
                         className="w-full h-auto rounded-lg object-cover"
@@ -128,11 +154,16 @@ export default function OldWays() {
                         Integrates with <span className="font-serif font-normal text-orange-600">your existing apps</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        WonderSites integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to WonderSites? We got you covered.
+                        Wonderintegrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to WonderSites? We got you covered.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5">
-                      <img 
+                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                                style={{
+                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center"                                }}
+                    
+                    >                      <img 
                         src="https://dazzling-cat.netlify.app/integrationsdb.png" 
                         alt="Integrations DB" 
                         className="w-full h-auto rounded-lg object-cover"

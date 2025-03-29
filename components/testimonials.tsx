@@ -85,7 +85,7 @@ export default function Testimonials() {
                 </div>
               </div>
               <blockquote className="text-gray-800 mb-3">
-                "I had a blog and use to struggle with markdown, recompiling, and overthinking. <span className="text-orange-600 font-medium">Now, I just write to @NotionHQ, with my website deployed on @WonderSites showing always pin and proper</span>."
+                "I had a blog and use to struggle with markdown, recompiling, and overthinking. <span className="text-orange-600 font-medium">Now, I just write to @NotionHQ, with my website deployed on @Wondershowing always pin and proper</span>."
               </blockquote>
             </div>
 
@@ -129,7 +129,7 @@ export default function Testimonials() {
                 </div>
               </div>
               <blockquote className="text-gray-800 mb-3">
-                "I've been trying to find a blogging solution that not only is <span className="text-orange-600 font-medium">easy to work with but also is SEO ready</span>, WonderSites is worth every penny."
+                "I've been trying to find a blogging solution that not only is <span className="text-orange-600 font-medium">easy to work with but also is SEO ready</span>, Wonderis worth every penny."
               </blockquote>
             </div>
 
@@ -195,7 +195,7 @@ export default function Testimonials() {
                 </div>
               </div>
               <blockquote className="text-gray-800 mb-3">
-                "I needed <span className="text-orange-600 font-medium">a place for quick documentation and AI support that can help people who come looking for support</span>, WonderSites solved that for me."
+                "I needed <span className="text-orange-600 font-medium">a place for quick documentation and AI support that can help people who come looking for support</span>, Wondersolved that for me."
               </blockquote>
             </div>
           </div>

@@ -64,8 +64,8 @@ export async function generateMetadata(
   }
 
   return {
-    title: `WonderSites vs ${filteredContent.product.name}`,
-    description: `Compare WonderSites to ${filteredContent.product.name}: ${filteredContent.product.description}`,
+    title: `Wondervs ${filteredContent.product.name}`,
+    description: `Compare Wonderto ${filteredContent.product.name}: ${filteredContent.product.description}`,
     openGraph: {
       images: [{ url: filteredContent.product.heroimage }],
     },

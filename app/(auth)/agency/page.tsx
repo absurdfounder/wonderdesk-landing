@@ -4,8 +4,8 @@ import Header from '@/components/ui/header';
 
 
 export const metadata = {
-    title: 'Hire a WonderSites Expert',
-    description: 'Hire WonderSites Agency when your ready to grow beyond we can help setup, design and manage your helpdesk, blog, or even marketplace. Also add custom code to your website deployment to make sure your needs are always met.',
+    title: 'Hire a WonderExpert',
+    description: 'Hire WonderAgency when your ready to grow beyond we can help setup, design and manage your helpdesk, blog, or even marketplace. Also add custom code to your website deployment to make sure your needs are always met.',
     openGraph: {
         images: [
             {
@@ -39,9 +39,9 @@ export default function PageDetail() {
                     <div className="max-w-4xl py-10 mx-auto lg:py-12">
 
                         <div className="text-center">
-                            <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Hire a WonderSites Expert</span> to help you grow beyond the limitations.</h1>
+                            <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Hire a WonderExpert</span> to help you grow beyond the limitations.</h1>
                             <p className="mt-6 leading-7 text-slate-600 sm:text-lg sm:leading-8">
-                                If your ready to grow from a 100 users to 10,000 , We can customize your WonderSites site to match your needs.
+                                If your ready to grow from a 100 users to 10,000 , We can customize your Wondersite to match your needs.
                             </p>
                             <div className="flex items-center justify-center mt-10 gap-x-6">
                                 <Link  href="https://app.youform.com/forms/r3rvhjv4" target="_blank" className="px-6 py-2 text-lg font-semibold text-white rounded-lg gradient-bg-accent bg-slate-800">
@@ -58,7 +58,7 @@ export default function PageDetail() {
                                     EXPERTS CAN HELP
                                 </p>
                                 <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                                    What can WonderSites Experts do for you?
+                                    What can WonderExperts do for you?
                                 </h2>
                                 <p className="mt-6 text-slate-600 sm:text-lg sm:leading-8">
                                     Experts can help with a wide range of design, development, and marketing projects. Helping you reach your business goals as a solo founder or small team.

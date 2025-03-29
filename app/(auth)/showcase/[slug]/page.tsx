@@ -65,7 +65,7 @@ export async function generateMetadata(
     
     if (!content) {
       return {
-        title: 'WonderSites - Error Loading Content',
+        title: 'Wonder- Error Loading Content',
         description: 'Unable to load template content',
       };
     }
@@ -74,8 +74,8 @@ export async function generateMetadata(
 
     if (!filteredContent) {
       return {
-        title: 'WonderSites vs Unknown Template',
-        description: 'Compare WonderSites to an unknown template',
+        title: 'Wondervs Unknown Template',
+        description: 'Compare Wonderto an unknown template',
       };
     }
 
@@ -89,7 +89,7 @@ export async function generateMetadata(
   } catch (error) {
     console.error('Error in generateMetadata:', error);
     return {
-      title: 'WonderSites - Error',
+      title: 'Wonder- Error',
       description: 'An error occurred while loading the content',
     };
   }

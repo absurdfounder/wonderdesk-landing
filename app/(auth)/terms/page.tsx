@@ -215,14 +215,14 @@ export default function PageDetail() {
                             <p className="text-slate-600 my-2">
                                 <span>
                                     <span>
-                                        If you have chosen a monthly term, your WonderSites subscription will continue month-to-month unless and until you cancel or we terminate it. You must cancel your subscription before it renews each month in order to avoid
+                                        If you have chosen a monthly term, your Wondersubscription will continue month-to-month unless and until you cancel or we terminate it. You must cancel your subscription before it renews each month in order to avoid
                                         billing of the next month’s subscription fees. Monthly renewals occur on the month anniversary of your initial purchase date. We will bill the monthly fee to the Payment Method you provide to us during registration or in
                                         your account settings. Subscription fees are fully earned upon payment.
                                     </span>
                                 </span>
                             </p>
                             <p className="text-slate-600 my-2">
-                                <span><span>With a monthly subscription, your license to use WonderSites will be extended monthly, and is valid for one whole month (for example July 14, 2019 until August 14, 2019).</span></span>
+                                <span><span>With a monthly subscription, your license to use Wonderwill be extended monthly, and is valid for one whole month (for example July 14, 2019 until August 14, 2019).</span></span>
                             </p>
                             <h3 className="h4 my-2">
                                 <span><span>YEARLY SUBSCRIPTION</span></span>
@@ -230,7 +230,7 @@ export default function PageDetail() {
                             <p className="text-slate-600 my-2">
                                 <span>
                                     <span>
-                                        If you have chosen a yearly term, your WonderSites subscription will continue year-to-year unless and until you cancel or we terminate it. You must cancel your subscription before it renews each year in order to avoid
+                                        If you have chosen a yearly term, your Wondersubscription will continue year-to-year unless and until you cancel or we terminate it. You must cancel your subscription before it renews each year in order to avoid
                                         billing of the next year’s subscription fees. Yearly renewals occur on the anniversary (month and day) of your initial purchase date. We will bill the yearly membership fee to the Payment Method you provide to us during
                                         registration or in your account settings. Subscription fees are fully earned upon payment.
                                     </span>
@@ -819,7 +819,7 @@ export default function PageDetail() {
                             <ul className="list list-disc my-2">
                                 <li>
                                     <span>
-                                        <b><span>Self-referrals are not allowed (i.e. signing up for WonderSites through your own affiliate link)</span></b>
+                                        <b><span>Self-referrals are not allowed (i.e. signing up for Wonderthrough your own affiliate link)</span></b>
                                     </span>
                                 </li>
 
@@ -859,7 +859,7 @@ export default function PageDetail() {
                             <ul className="list list-disc my-2">
                                 <li>
                                     <span>
-                                        <b><span>Listing WonderSites on discount or offer websites with your code will lead to a suspension of your account.</span></b>
+                                        <b><span>Listing Wonderon discount or offer websites with your code will lead to a suspension of your account.</span></b>
                                     </span>
                                 </li>
 

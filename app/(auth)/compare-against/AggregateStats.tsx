@@ -49,7 +49,7 @@ const AggregateStats: React.FC = () => {
             More gets done with WonderSites
           </h2>
           <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-            Jumpstart your SaaS business with pre-built solutions from WonderSites and our community.
+            Jumpstart your SaaS business with pre-built solutions from Wonderand our community.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ const AggregateStats: React.FC = () => {
         <div className="mt-16 text-center">
           <div className="inline-block bg-white rounded-lg shadow-md p-6 md:p-8">
             <p className="text-lg text-slate-700 mb-4">
-              <span className="font-bold">Join 50+ teams</span> already using WonderSites to simplify their workflow
+              <span className="font-bold">Join 50+ teams</span> already using Wonderto simplify their workflow
             </p>
             <a 
               href="https://app.wondersites.co" 

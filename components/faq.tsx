@@ -19,15 +19,15 @@ const faqs: FAQCategories = {
       answer: "An online marketplace platform is a website (or sometimes a mobile app) that aggregates inventory from multiple suppliers (sellers) in one place. It also lets customers (buyers) engage in transactions with the suppliers. A transaction on a marketplace can mean a product purchase, a calendar booking, a message to request a quote, or anything else that leads to an exchange of value between the customer and the supplier. Airbnb, Uber, eBay, Amazon, and Upwork are examples of popular online marketplaces.",
     },
     {
-      question: "Who is WonderSites for?",
-      answer: "WonderSites is for founders who have a marketplace idea. You and your team may be entrepreneurs looking to build the next marketplace unicorn. Or you might have a great idea for a side project. Perhaps you are an intrapreneur in a bigger organization. Maybe you want to start a non-profit or cooperative marketplace. In each case, WonderSites's online marketplace software is for you.",
+      question: "Who is Wonderfor?",
+      answer: "Wonderis for founders who have a marketplace idea. You and your team may be entrepreneurs looking to build the next marketplace unicorn. Or you might have a great idea for a side project. Perhaps you are an intrapreneur in a bigger organization. Maybe you want to start a non-profit or cooperative marketplace. In each case, WonderSites's online marketplace software is for you.",
     },
     {
-      question: "Does WonderSites work for my idea?",
+      question: "Does Wonderwork for my idea?",
       answer: "If your business idea is an online marketplace for something, you can make it happen with WonderSites's marketplace software. Your platform can be about selling products, renting items, vehicles, or spaces, or selling services. And a host of other things.",
     },
     {
-      question: "How does WonderSites work?",
+      question: "How does Wonderwork?",
       answer: "You start your marketplace project by answering a series of questions. Based on your answers, we'll create a test marketplace website for you. This only takes a few minutes. You can then customize the marketplace to your liking using WonderSites's intuitive no-code marketplace website builder. Once you're happy with your marketplace, you can make it live, connect it to your own custom domain, and start inviting people to use it. You can also customize and extend your marketplace with custom code. Add any unique features or designs with WonderSites's developer platform.",
     },
     {
@@ -36,7 +36,7 @@ const faqs: FAQCategories = {
     },
     {
       question: "Can I use my own design?",
-      answer: "Yes. WonderSites comes with a beautiful design template that is available out of the box. However, you have full freedom to modify or even replace it with your own unique design, thanks to WonderSites's headless approach. WonderSites gives you full control over the user interface of your marketplace. Modifying template design requires custom development with HTML, CSS, and Javascript. You can either develop a new design yourself or hire a WonderSites Expert or another developer to help you.",
+      answer: "Yes. Wondercomes with a beautiful design template that is available out of the box. However, you have full freedom to modify or even replace it with your own unique design, thanks to WonderSites's headless approach. Wondergives you full control over the user interface of your marketplace. Modifying template design requires custom development with HTML, CSS, and Javascript. You can either develop a new design yourself or hire a WonderExpert or another developer to help you.",
     },
     {
       question: "Can I add any features I want?",
@@ -54,11 +54,11 @@ const faqs: FAQCategories = {
   Pricing: [
     {
       question: "How much does it cost to build a marketplace with WonderSites?",
-      answer: "The WonderSites Build plan is $39/month with a 14-day free trial. There are no upfront fees to create an account with WonderSites, and you can build the marketplace yourself. No coding skills are required. Once you're ready to set your marketplace live and invite actual users, you can subscribe to a live plan, which start at $99/month.",
+      answer: "The WonderBuild plan is $39/month with a 14-day free trial. There are no upfront fees to create an account with WonderSites, and you can build the marketplace yourself. No coding skills are required. Once you're ready to set your marketplace live and invite actual users, you can subscribe to a live plan, which start at $99/month.",
     },
     {
       question: "How does free trial work?",
-      answer: "You can start your free 14-day WonderSites trial without any payment commitment. We only ask for payment once you're ready to go live or your trial period has passed. During the trial, you have all Build plan features at your disposal. You have access to a test marketplace, which will be the basis for your eventual live platform.",
+      answer: "You can start your free 14-day Wondertrial without any payment commitment. We only ask for payment once you're ready to go live or your trial period has passed. During the trial, you have all Build plan features at your disposal. You have access to a test marketplace, which will be the basis for your eventual live platform.",
     },
     {
       question: "Are there any additional fees?",
@@ -72,10 +72,10 @@ const faqs: FAQCategories = {
     },
     {
       question: "Can I build a mobile app with WonderSites?",
-      answer: "Yes. WonderSites comes with a responsive marketplace website template that looks great on mobile browsers. You can also build a native mobile app. This requires custom development on top of WonderSites's APIs using the developer platform.",
+      answer: "Yes. Wondercomes with a responsive marketplace website template that looks great on mobile browsers. You can also build a native mobile app. This requires custom development on top of WonderSites's APIs using the developer platform.",
     },
     {
-      question: "Is WonderSites secure?",
+      question: "Is Wondersecure?",
       answer: "Yes. WonderSites's marketplace software has been powering online marketplace businesses for over ten years. Over the years, we've built powerful safeguards against hacking attempts and DDoS attacks and follow best practices to ensure your data is safe.",
     }
   ]

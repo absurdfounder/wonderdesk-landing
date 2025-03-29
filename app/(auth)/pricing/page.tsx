@@ -66,7 +66,7 @@ const faqs: Record<string, FAQ[]> = {
   Website: [
     {
       question: "What is WonderSites?",
-      answer: "WonderSites is the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and WonderSites takes care of the rest. It's as simple as that.",
+      answer: "Wonderis the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and Wondertakes care of the rest. It's as simple as that.",
     },
     {
       question: "Why do I need a knowledge base?",
@@ -74,13 +74,13 @@ const faqs: Record<string, FAQ[]> = {
     },
     {
       question: "Is my data safe with WonderSites?",
-      answer: "WonderSites takes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
+      answer: "Wondertakes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
     },
   ],
   "AI Support Bot": [
     {
       question: "How does the AI Support Bot work?",
-      answer: "The AI Support Bot integrates seamlessly with WonderSites to provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
+      answer: "The AI Support Bot integrates seamlessly with Wonderto provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
     },
     {
       question: "Can I customize the AI Support Bot?",
@@ -94,11 +94,11 @@ const faqs: Record<string, FAQ[]> = {
   Pricing: [
     {
       question: "How does the free 7 day trial work?",
-      answer: "WonderSites offers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
+      answer: "Wonderoffers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
     },
     {
       question: "What are the pricing plans?",
-      answer: "WonderSites offers various pricing plans based on the number of users and features required. Check our pricing page for detailed information on each plan.",
+      answer: "Wonderoffers various pricing plans based on the number of users and features required. Check our pricing page for detailed information on each plan.",
     },
     {
       question: "Are there any additional fees?",
@@ -815,7 +815,7 @@ const Pricing: React.FC = () => {
               <div className="text-center md:text-left md:max-w-lg mb-6 md:mb-0">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
                   Planning to <span className="text-orange-400">migrate</span> to
-                  WonderSites from another platform?
+                  Wonderfrom another platform?
                 </h3>
                 <p className="text-slate-300 text-sm md:text-base">
                   Our expert team will handle the entire migration process for you - completely free of charge.

@@ -51,11 +51,11 @@ export default function Marketplace_Type() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">
-              No matter how unique your marketplace concept, WonderSites can support it.
+              No matter how unique your marketplace concept, Wondercan support it.
               over.
             </h1>
             <p className="text-xl text-slate-600">
-              WonderSites is designed for all types from content curation to
+              Wonderis designed for all types from content curation to
               content creation. Build company blogs, helpdesks, company wiki,
               documentations, and marketplaces.
             </p>
