@@ -25,8 +25,8 @@ export default function FeaturesBlocks() {
             <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
               {/* 1st item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="mb-2 bg-slate-800 rounded-full"
-                  width={150}
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-full"
+                  width={200}
                   height={150}
                   src="/images/feature-aibots.png" />
                 <div>
@@ -37,8 +37,8 @@ export default function FeaturesBlocks() {
 
               {/* 2nd item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="mb-2 bg-slate-800 rounded-full"
-                  width={150}
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-full"
+                  width={200}
                   height={150}
                   src="/images/feature_lovespayment.png" />
                 <div>
@@ -49,8 +49,8 @@ export default function FeaturesBlocks() {
 
               {/* 3rd item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="mb-2 bg-slate-800 rounded-full"
-                  width={150}
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-full"
+                  width={200}
                   height={150}
                   src="/images/feature_handsfree.png" />
                 <div>
@@ -62,9 +62,9 @@ export default function FeaturesBlocks() {
               {/* 4th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
                 <Image alt="image" loading="lazy" decoding="async"
-                  width={150}
+                  width={200}
                   height={150}
-                  className="mb-2 bg-slate-800 rounded-full" src="/images/feature_beautifuldesigns.png" />
+                  className="mb-2 rounded-full" src="/images/feature_beautifuldesigns.png" />
                 <div>
                   <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">UI & UX-Ready</h4>
                   <p className="text-slate-600 text-center w-3/4 m-auto">No need to be a designer.</p>
@@ -73,8 +73,8 @@ export default function FeaturesBlocks() {
 
               {/* 5th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="mb-2 bg-slate-800 rounded-full"
-                  width={150}
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-full"
+                  width={200}
                   height={150}
                   src="/images/feature_customcode.png" />
                 <div>
@@ -88,8 +88,8 @@ export default function FeaturesBlocks() {
 
               {/* 7th item */}
               <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
-                <Image alt="image" loading="lazy" decoding="async" className="mb-2 bg-slate-800 rounded-full"
-                  width={150}
+                <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-full"
+                  width={200}
                   height={150}
                   src="/images/feature_customdomain.png" />
                 <div>

@@ -175,7 +175,7 @@ export default function OldWays() {
                 href="#template-section"
                 className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl border border-white text-white rounded-lg hover:bg-slate-800 transition-colors duration-300 text-center"
               >
-                Sites built on WonderSites
+                Sites built on Wonder
               </Link>
             </div>
           </section>
