@@ -10,6 +10,16 @@ export default function ModalVideo() {
     <div>
       {/* Video Thumbnail */}
       <div className="justify-center mb-8 mt-12 max-w-7xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
+
+      <div className="max-w-3xl mx-auto text-center pt-4 mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          Don't vibe code MVP's 
+          <span className="font-source-serif-4 block font-normal text-orange-600">
+            Launch fast on a notion stack.
+          </span>
+        </h1>
+      </div>
+        
         <div className="banner-bottom-wrapper relative">
           <video 
             autoPlay 

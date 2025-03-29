@@ -212,7 +212,7 @@ export default function MarketplaceType() {
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           No matter how unique your concept,
           <span className="font-source-serif-4 block font-normal text-orange-600">
-            Wondercan support it.
+            Wonder can support it.
           </span>
         </h1>
       </div>
