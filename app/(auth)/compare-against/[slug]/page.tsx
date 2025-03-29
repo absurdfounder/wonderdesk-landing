@@ -101,8 +101,8 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
             <p className="text-lg sm:text-xl text-slate-600">
               {filteredContent.product.description}
             </p>
-            <Link href="app.wondersites.co" className="text-white bg-slate-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
-              Build site using AI
+            <Link href="https://app.wondersites.co" className="text-white bg-slate-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
+              Build sites using AI
             </Link>
           </div>
           <TrustedBy />

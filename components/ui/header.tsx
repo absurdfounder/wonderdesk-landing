@@ -53,7 +53,7 @@ export default function Header() {
               <Image src={Logo} alt="Logo" width={260} height={200} className="relative" />
             </Link>
             <NavLink href="/showcase" text="Website Examples" />
-            <NavLink href="https://WonderSites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
+            <NavLink href="https://boringsites.lemonsqueezy.com/affiliates" text="Affilate(50%)" />
             <NavLink href="/pricing" text="Pricing" />
           </div>
 
