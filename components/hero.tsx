@@ -43,13 +43,13 @@ interface HeroProps {
 
 export default function Hero({ onCategorySelect }: HeroProps) {
   // Original states
-  const words = ["directory", "blog",  "job board", "helpdesk", "documentation"];
+  const words = ["directory", "blog", "job board", "helpdesk", "documentation"];
   const [index, setIndex] = useState(0);
   const [currentSiteBundle, setCurrentSiteBundle] = useState(siteBundles[0]);
   const [inputValue, setInputValue] = useState("");
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
-  
+
   // Typing animation states
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [displayedPhrase, setDisplayedPhrase] = useState("");
@@ -57,7 +57,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   const [typingComplete, setTypingComplete] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
   const [isAnimating, setIsAnimating] = useState(true);
-  
+
   // Controls typing speed
   const typingSpeed = 100; // milliseconds per character
   const deletingSpeed = 50; // milliseconds per character
@@ -67,22 +67,22 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
-      
+
       // Just change the site bundle without animation
       const randomIndex = Math.floor(Math.random() * siteBundles.length);
       setCurrentSiteBundle(siteBundles[randomIndex]);
-      
+
     }, 3000); // Changed to 3 seconds for better user experience
-    
+
     return () => clearInterval(interval);
   }, []);
 
   // Typing animation effect
   useEffect(() => {
     if (!isAnimating) return;
-    
+
     let timeout: NodeJS.Timeout;
-    
+
     if (isTyping) {
       if (displayedPhrase.length < typingPhrases[currentPhraseIndex].length) {
         // Still typing current phrase
@@ -111,16 +111,16 @@ export default function Hero({ onCategorySelect }: HeroProps) {
         }, pauseBeforeNewPhrase);
       }
     }
-    
+
     return () => clearTimeout(timeout);
   }, [displayedPhrase, isTyping, currentPhraseIndex, isAnimating]);
-  
+
   // Blinking cursor effect
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setCursorVisible(prev => !prev);
     }, 500);
-    
+
     return () => clearInterval(cursorInterval);
   }, []);
 
@@ -171,7 +171,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
       transition={{ duration: 0.5 }}
       className="relative"
     >
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-12 pb-12">
           {/* Header section */}
@@ -182,15 +182,15 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h1 className="h2 mb-8 text-center leading-tight font-comfortaa tracking-loose text-slate-700">
-            Easy to use
+              Easy to use
               Wordpress alternative
               {" "}
               <span className="font-bungee block font-normal text-gray-800 my-2">
-                powered by 
-                
+                powered by
+
                 <div className="inline-flex items-center justify-center ml-1 px-4">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="12 0.19 487.619 510.941" className="w-7 h-7 mr-2 sm:w-9 sm:h-9"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934L358.186 335.22V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fillRule="evenodd"></path></svg>
-                <b className="text-gray-800">Notion</b>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="12 0.19 487.619 510.941" className="w-7 h-7 mr-2 sm:w-9 sm:h-9"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934L358.186 335.22V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fillRule="evenodd"></path></svg>
+                  <b className="text-gray-800">Notion</b>
                 </div>
               </span>{" "}
             </h1>
@@ -224,7 +224,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="relative">
-              <div className="bg-white border border-slate-300 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-orange-300 focus-within:border-slate-600">
+              <div className="bg-white border border-slate-300 rounded-xl overflow-hidden opacity-80 hover:opacity-100 focus:opacity-100 acitve:opacity-100 shadow-md hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-orange-300 focus-within:border-slate-600">
                 <div className="relative">
                   <textarea
                     ref={inputRef}
@@ -238,13 +238,12 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   />
 
                   {isAnimating && (
-                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-transparent pointer-events-none p-5">
-                      <div className="text-lg text-slate-400 font-lato">
-                        Ask Wonder to create <span className="text-slate-400">{displayedPhrase}</span>
-                        <span className={`${cursorVisible ? 'opacity-100' : 'opacity-0'} transition-opacity text-orange-500`}>|</span>
-                      </div>
+                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none p-5 flex items-start text-lg text-slate-400 font-lato">
+                      Ask Wonder to create <span className="ml-2">{displayedPhrase}</span>
+                      <span className={`${cursorVisible ? 'opacity-100' : 'opacity-0'} transition-opacity text-orange-500`}>|</span>
                     </div>
                   )}
+
                 </div>
 
                 <div className="border-t border-slate-100 bg-slate-50 p-2 px-3">
@@ -291,12 +290,12 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                         <span>Import</span>
                       </button>
                     </div>
-                    
+
                     <div className="flex items-center">
 
-                      <button 
-                        id="chatinput-send-message-button" 
-                        type="submit" 
+                      <button
+                        id="chatinput-send-message-button"
+                        type="submit"
                         className={`flex gap-2 px-2 items-center justify-center rounded-full p-1 ${inputValue.trim() ? 'bg-slate-900 text-white hover:bg-orange-600' : 'bg-slate-200 text-slate-400'} transition-colors duration-150 ease-out`}
                         disabled={!inputValue.trim()}
                         onClick={() => inputValue.trim() && setShowLoginPopup(true)}
@@ -312,7 +311,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   </div>
                 </div>
               </div>
-              
+
               {/* Suggestion buttons */}
               <div className="flex flex-wrap gap-2 mt-4 justify-center">
                 {suggestionOptions.map((suggestion, idx) => (
@@ -400,7 +399,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
       {/* Login Modal */}
       {showLoginPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-          <motion.div 
+          <motion.div
             className="bg-slate-900 rounded-lg p-8 max-w-md w-full"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -408,7 +407,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           >
             <div className="flex justify-between items-center mb-2">
               <h2 className="text-xl font-bold text-white">Sign in to continue</h2>
-              <button 
+              <button
                 onClick={closeLoginPopup}
                 className="text-gray-500 hover:text-white"
               >

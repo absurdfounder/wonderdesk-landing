@@ -513,26 +513,24 @@ const Pricing: React.FC = () => {
               )}
 
               <div className="p-6 flex-grow">
-                <div className="text-center mb-6">
-                  <h3 className="text-lg font-semibold text-slate-700 mb-1">{tier.name}</h3>
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="flex items-baseline">
-                      <span className="text-4xl font-bold text-slate-900">
+              <div className="text-center mb-6">
+  <h3 className="text-lg font-semibold text-slate-700 mb-1">{tier.name}</h3>
+  <div className="flex items-baseline justify-center">
+    <span className="text-4xl font-bold text-slate-900">
+      ${activeTab === 'Yearly' ? (tier.yearlyPrice / 12).toFixed(2) : tier.monthlyPrice}
+    </span>
+    <span className="text-slate-600 ml-1">/mo</span>
+  </div>
+  {activeTab === 'Yearly' && (
+    <p className="text-slate-500 text-sm mt-1">
+      Billed annually at ${tier.yearlyPrice}
+    </p>
+  )}
+  <p className="text-slate-500 text-sm mt-1">
+    {tier.trafficLimit} users/month
+  </p>
+</div>
 
-                        ${(tier.yearlyPrice / 12).toFixed(2)}
-
-                      </span>
-                      <span className="text-slate-600 ml-1">
-                        {activeTab === 'Yearly' ? '/month' : '/month'}
-                      </span>
-                    </div>
-
-                  </div>
-
-                  <p className="text-slate-500 text-sm mt-1">
-                    {tier.trafficLimit} users/month
-                  </p>
-                </div>
 
                 <div className="mt-6">
                   <div className="font-medium text-slate-800 mb-4">What's included:</div>
