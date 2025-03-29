@@ -21,7 +21,7 @@ export default function OldWays() {
                         Your work stays in a place you control and love, while Wonderhandles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                    <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
                                   backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
                                   backgroundSize: "cover",
@@ -49,7 +49,7 @@ export default function OldWays() {
                         All you have to do is to write good content that satisfies the needs of your readers. We take care of the rest. Set all the proper meta tags and canonical links, Structured Schema markup for all your posts, Served from the edge to make the blog super fast, Easy controls to override the SEO settings.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                    <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
                                   backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
                                   backgroundSize: "cover",
@@ -76,7 +76,7 @@ export default function OldWays() {
                         Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside Wonderwithout code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                    <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
                                   backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
                                   backgroundSize: "cover",
@@ -103,7 +103,7 @@ export default function OldWays() {
                         See your page views, visitors, referrers, clicks, and much more for all of your websites. Wonderprovides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                    <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
                                   backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
                                   backgroundSize: "cover",
@@ -130,7 +130,7 @@ export default function OldWays() {
                         Create AI Agents for support, suggestions, sales, therapy or any other purposes you have in mind. Because it's 2025 and AI is cheap. Make AI do most of work so that you can focus on whats important.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                    <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
                                   backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
                                   backgroundSize: "cover",
@@ -157,7 +157,7 @@ export default function OldWays() {
                         Wonderintegrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to WonderSites? We got you covered.
                       </p>
                     </div>
-                    <div className="w-full p-4 lg:p-6 md:w-3/5 rounded-md mr-4"
+                    <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
                                   backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
                                   backgroundSize: "cover",
