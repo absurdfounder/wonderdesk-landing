@@ -93,7 +93,7 @@ export default function PageDetail() {
                             </div>
                         </div>
 
-      <ModalVideo
+                        <ModalVideo
                         />
 
                     </div>
