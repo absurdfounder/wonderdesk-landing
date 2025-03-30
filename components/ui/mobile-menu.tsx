@@ -58,9 +58,9 @@ export default function MobileMenu() {
         style={{ visibility: mobileNavOpen ? 'visible' : 'hidden', pointerEvents: mobileNavOpen ? 'auto' : 'none' }}
       >
         {/* Background overlay */}
-        <div className={`absolute inset-0 bg-slate-900/30 backdrop-blur-sm transition-opacity ${mobileNavOpen ? 'opacity-100' : 'opacity-0'}`} 
-             onClick={() => setMobileNavOpen(false)}></div>
-             
+        <div className={`absolute inset-0 bg-slate-900/30 backdrop-blur-sm transition-opacity ${mobileNavOpen ? 'opacity-100' : 'opacity-0'}`}
+          onClick={() => setMobileNavOpen(false)}></div>
+
         <Transition
           show={mobileNavOpen}
           as="nav"
@@ -80,7 +80,7 @@ export default function MobileMenu() {
                 Website Examples
               </Link>
             </li>
-            
+
             {/* Affiliate Link */}
             <li>
               <Link href="https://boringsites.lemonsqueezy.com/affiliates" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">
@@ -103,7 +103,7 @@ export default function MobileMenu() {
                 aria-expanded={dropdownOpen}
               >
                 Create a...
-                <ChevronDown 
+                <ChevronDown
                   className={`w-5 h-5 text-slate-400 transition-transform duration-200 ease-in-out ${dropdownOpen ? 'rotate-180' : ''}`}
                 />
               </button>
@@ -179,12 +179,12 @@ export default function MobileMenu() {
                 Login
               </Link>
             </li>
-            
+
             {/* Create Website button */}
             <li className="pt-2">
-              <Link 
-                href="https://app.wondersites.co" 
-                target='_blank' 
+              <Link
+                href="https://app.wondersites.co"
+                target='_blank'
                 className="btn-sm text-white bg-slate-900 hover:bg-slate-800 w-full flex items-center justify-between px-5 py-3 rounded-full transition duration-300 ease-in-out group relative overflow-hidden"
               >
                 <span className="relative z-10">Create Website</span>
