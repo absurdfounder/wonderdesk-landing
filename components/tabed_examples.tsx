@@ -237,19 +237,7 @@ const TabImageHotspots: React.FC = () => {
 
 
       
-      {/* Current Tab Description */}
-      <div className="mt-4 text-center">
-        <h3 className="font-medium text-lg" style={{ color: tabs[activeTab].color }}>
-          {tabs[activeTab].title}
-        </h3>
-        <p className="text-gray-600 mt-1 max-w-2xl mx-auto">
-          {activeTab === 0 && "Comprehensive documentation for all product features and APIs."}
-          {activeTab === 1 && "Get answers to common questions and learn how to use the platform."}
-          {activeTab === 2 && "Latest news, tutorials, and thought leadership from our team."}
-          {activeTab === 3 && "Find and connect with users, teams, and resources across the platform."}
-          {activeTab === 4 && "Connect buyers and sellers in our secure trading environment."}
-        </p>
-      </div>
+
     </div>
   );
 };
