@@ -78,12 +78,12 @@ const TabImageHotspots: React.FC = () => {
   // Auto-rotate tabs every 8 seconds unless user is interacting
   useEffect(() => {
     if (isHoveringHotspot) return;
-    
+
     const interval = setInterval(() => {
       setActiveTab((prev) => (prev + 1) % tabs.length);
       setActiveHotspot(null);
     }, 8000);
-    
+
     return () => clearInterval(interval);
   }, [isHoveringHotspot, tabs.length]);
 
@@ -113,25 +113,24 @@ const TabImageHotspots: React.FC = () => {
 
   return (
     <div className="w-full max-w-5xl mx-auto rounded-xl shadow-lg my-12">
-      
+
       {/* Tab Navigation */}
       <div className="flex flex-wrap justify-center border-b bg-white/50 w-fit m-auto rounded-md">
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`px-4 py-3 font-medium text-sm transition-all duration-300 mx-2 relative overflow-hidden ${
-              activeTab === index 
-                ? 'text-gray-900 font-semibold' 
+            className={`px-4 py-3 font-medium text-sm transition-all duration-300 mx-2 relative overflow-hidden ${activeTab === index
+                ? 'text-gray-900 font-semibold'
                 : 'text-gray-500 hover:text-gray-800'
-            }`}
+              }`}
             onClick={() => changeTab(index)}
-            style={{ 
+            style={{
               borderBottom: activeTab === index ? `3px solid ${tab.color}` : '3px solid transparent'
             }}
           >
             {tab.title}
             {activeTab === index && (
-              <span 
+              <span
                 className="absolute bottom-0 left-0 h-0.5 w-full transform transition-transform duration-300"
                 style={{ backgroundColor: tab.color }}
               ></span>
@@ -142,57 +141,55 @@ const TabImageHotspots: React.FC = () => {
 
       {/* Image with Hotspots Container */}
       <div className="relative w-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl overflow-hidden shadow-inner">
-        
+
         {/* Tab Indicators */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
           {tabs.map((tab, index) => (
             <button
               key={index}
               onClick={() => changeTab(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                activeTab === index ? 'w-6 bg-white' : 'bg-white/50 hover:bg-white/70'
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeTab === index ? 'w-6 bg-white' : 'bg-white/50 hover:bg-white/70'
+                }`}
               style={{ backgroundColor: activeTab === index ? tab.color : undefined }}
             />
           ))}
         </div>
-        
+
         {/* Main Image */}
-        <img 
-          src={tabs[activeTab].image} 
-          alt={`${tabs[activeTab].title} interface`} 
+        <img
+          src={tabs[activeTab].image}
+          alt={`${tabs[activeTab].title} interface`}
           className="w-full h-auto object-cover"
         />
-        
+
         {/* Overlay to create depth */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-        
+
         {/* Hotspots */}
         {tabs[activeTab].hotspots.map((hotspot) => (
-          <div 
+          <div
             key={hotspot.id}
             className="absolute"
-            style={{ 
-              left: `${hotspot.x}%`, 
-              top: `${hotspot.y}%` 
+            style={{
+              left: `${hotspot.x}%`,
+              top: `${hotspot.y}%`
             }}
           >
             {/* Hotspot Button */}
             <button
-              className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 z-10 transform ${
-                activeHotspot === hotspot.id 
-                  ? 'scale-125 shadow-lg' 
+              className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 z-10 transform ${activeHotspot === hotspot.id
+                  ? 'scale-125 shadow-lg'
                   : 'hover:scale-110'
-              }`}
-              style={{ 
-                backgroundColor: activeHotspot === hotspot.id 
+                }`}
+              style={{
+                backgroundColor: activeHotspot === hotspot.id
                   ? tabs[activeTab].color
                   : 'rgba(255, 255, 255, 0.9)',
-                color: activeHotspot === hotspot.id 
+                color: activeHotspot === hotspot.id
                   ? 'white'
                   : tabs[activeTab].color,
-                boxShadow: activeHotspot === hotspot.id 
-                  ? `0 0 0 4px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.2)` 
+                boxShadow: activeHotspot === hotspot.id
+                  ? `0 0 0 4px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.2)`
                   : `0 2px 5px rgba(0, 0, 0, 0.1)`
               }}
               onClick={() => handleHotspotInteraction(hotspot.id)}
@@ -204,21 +201,20 @@ const TabImageHotspots: React.FC = () => {
             >
               <Info size={16} />
             </button>
-            
+
             {/* Hotspot Pulse Animation */}
             <div
-              className={`absolute inset-0 rounded-full animate-ping opacity-70 ${
-                activeHotspot === hotspot.id ? 'hidden' : 'block'
-              }`}
-              style={{ 
+              className={`absolute inset-0 rounded-full animate-ping opacity-70 ${activeHotspot === hotspot.id ? 'hidden' : 'block'
+                }`}
+              style={{
                 backgroundColor: tabs[activeTab].color,
                 animationDuration: '2s'
               }}
             ></div>
-            
+
             {/* Tooltip */}
             {activeHotspot === hotspot.id && (
-              <div 
+              <div
                 className="absolute z-20 w-64 p-4 bg-white rounded-lg shadow-xl text-sm text-gray-700 border-t-4 transform transition-all duration-300 scale-100 opacity-100"
                 style={{
                   borderTopColor: tabs[activeTab].color,
