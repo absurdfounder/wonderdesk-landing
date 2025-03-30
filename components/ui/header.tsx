@@ -104,30 +104,7 @@ export default function Header() {
                             description="Get a beautiful blog for your startup or company with Notion and WonderSites."
                           />
                         </div>
-                        <div className="px-5 py-5 bg-slate-50 sm:px-8 sm:py-8">
-                          <div className="grid grid-cols-2 gap-4">
-                            <DemoLink
-                              href="https://support.wondersites.co/"
-                              imageSrc="https://dazzling-cat.netlify.app/helpdesk.png"
-                              text="Help Center Demo"
-                            />
-                            <DemoLink
-                              href="https://docs.wondersites.co/"
-                              imageSrc="https://dazzling-cat.netlify.app/documentation.png"
-                              text="Directory Demo"
-                            />
-                            <DemoLink
-                              href="https://support.wondersites.co/"
-                              imageSrc="https://dazzling-cat.netlify.app/blog.png"
-                              text="Blog Site Demo"
-                            />
-                            <DemoLink
-                              href="https://docs.wondersites.co/"
-                              imageSrc="https://dazzling-cat.netlify.app/catalogue.png"
-                              text="Marketplace Demo"
-                            />
-                          </div>
-                        </div>
+
                       </div>
                     </motion.div>
                   )}

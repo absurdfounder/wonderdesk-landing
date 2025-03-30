@@ -16,9 +16,9 @@ export default function NotiontoWebsite() {
 
 <div className="max-w-3xl mx-auto text-center pt-4 mb-6 sm:mb-8">
   <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-    Don't vibe code MVP's
+    Manage your website from Notion,
     <span className="font-source-serif-4 block font-normal text-orange-600">
-      Launch fast on a notion stack.
+      have your website updated instantly.
     </span>
   </h1>
 </div>

@@ -54,6 +54,9 @@ export default function Home() {
         <Hero />
       </div>
 
+      <NotiontoWebsite/>
+
+
       <Marketplace_Type />
       {/* 
       <Testimonials />
@@ -69,7 +72,6 @@ export default function Home() {
       <ModalVideo
       />
 
-      <NotiontoWebsite/>
 
       <Newsletter />
     </>

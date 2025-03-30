@@ -145,13 +145,13 @@ const TabImageHotspots: React.FC = () => {
     <div className="w-full max-w-5xl mx-auto rounded-xl shadow-lg my-12">
       
       {/* Tab Navigation */}
-      <div className="flex flex-wrap justify-center border-b bg-white/50 w-fit m-auto rounded-md">
+      <div className="flex flex-wrap justify-center border-b bg-white/50 w-fit m-auto rounded-md p-1">
         {tabs.map((tab, index) => (
           <button
             key={index}
             className={`px-4 py-3 font-medium text-sm transition-all duration-300 mx-2 relative overflow-hidden ${
               activeTab === index 
-                ? 'text-gray-900 font-semibold' 
+                ? 'text-gray-900 font-semibold bg-white rounded-md'
                 : 'text-gray-500 hover:text-gray-800'
             }`}
             onClick={() => {
