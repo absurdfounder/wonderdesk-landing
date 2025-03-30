@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Github } from "lucide-react";
 import TabImageHotspots from "./tabed_examples";
 import ChatInput from "./chatinput";
 // Define site bundles directly in the component
@@ -93,6 +93,31 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           {/* Chat Input Component 
           <ChatInput />
           */}
+
+
+<div className="flex flex-col sm:flex-row gap-4 p-4 items-center m-auto justify-center rounded-lg">
+      <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-800 border border-gray-200 rounded-md text-gray-200 font-medium hover:bg-gray-50 transition-colors">
+        <Github size={24} />
+        <span>Sign up with Notion</span>
+      </button>
+      
+      <button className="flex items-center justify-center py-3 px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-teal-700 transition-colors">
+        <span>Start for free</span>
+        <svg 
+          className="ml-2 w-4 h-4" 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 20 20" 
+          fill="currentColor"
+        >
+          <path 
+            fillRule="evenodd" 
+            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
+            clipRule="evenodd" 
+          />
+        </svg>
+      </button>
+    </div>
+
 
           {/* Features section */}
           <motion.div
