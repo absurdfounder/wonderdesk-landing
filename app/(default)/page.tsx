@@ -2,7 +2,7 @@ export const metadata = {
   metadataBase: new URL('https://wondersites.co'),
   title: 'Wonder: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
   description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
-  openGraph: { 
+  openGraph: {
     images: [
       {
         url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
@@ -35,25 +35,25 @@ import Newsletter from '@/components/newsletter'
 import Marketplace_Type from '@/components/marketplaces_type'
 import FAQ from '@/components/faq'
 import ModalVideo from '@/components/modal-video'
+import NotiontoWebsite from '@/components/notion-to-website'
+
 
 export default function Home() {
   return (
     <>
 
-          <div
-            style={{
-              backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundAttachment: "fixed"
-            }}
-          >
-            <Header />
-            <Hero />
-          </div>
+      <div
+        style={{
+          backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed"
+        }}
+      >
+        <Header />
+        <Hero />
+      </div>
 
-      <ModalVideo
-      />
       <Marketplace_Type />
       {/* 
       <Testimonials />
@@ -65,6 +65,12 @@ export default function Home() {
 
       <FAQ />
       <AboutMe />
+
+      <ModalVideo
+      />
+
+      <NotiontoWebsite/>
+
       <Newsletter />
     </>
   )
