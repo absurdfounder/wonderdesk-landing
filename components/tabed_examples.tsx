@@ -234,10 +234,6 @@ const TabImageHotspots: React.FC = () => {
           </div>
         ))}
       </div>
-
-
-      
-
     </div>
   );
 };
