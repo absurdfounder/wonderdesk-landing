@@ -36,7 +36,7 @@ const faqs: FAQCategories = {
     },
     {
       question: "Can I use my own design?",
-      answer: "Yes. Wondercomes with a beautiful design template that is available out of the box. However, you have full freedom to modify or even replace it with your own unique design, thanks to WonderSites's headless approach. Wondergives you full control over the user interface of your marketplace. Modifying template design requires custom development with HTML, CSS, and Javascript. You can either develop a new design yourself or hire a WonderExpert or another developer to help you.",
+      answer: "Yes. Wondercomes with a beautiful design template that is available out of the box. However, you have full freedom to modify or even replace it with your own unique design, thanks to WonderSites's headless approach. Wondergives you full control over the user interface of your marketplace. Modifying template design requires custom development with HTML, CSS, and Javascript. You can either develop a new design yourself or hire a Wonder Expert or another developer to help you.",
     },
     {
       question: "Can I add any features I want?",

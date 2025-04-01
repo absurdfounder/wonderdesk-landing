@@ -10,6 +10,7 @@ import TemplateLibrary from '../TemplateList';
 import { _loadFromJsonComparison, _transformDataToPostPageView } from '../../../utils/helper';
 import MoveBack from '@/components/MoveBack';
 import Loading from '@/components/Loading';
+import Header from '@/components/ui/header';
 
 interface CallToAction {
   text: string;
@@ -84,6 +85,9 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
 
   return (
     <section >
+
+<Header/>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-24 pb-12 md:pt-20 md:pb-20">
           <div className="max-w-xl mx-auto text-center pb-12 md:pb-20 pt-12">

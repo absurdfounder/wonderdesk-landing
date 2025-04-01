@@ -14,6 +14,8 @@ import Documentation_Type from "@/components/documentation_type";
 
 import Testimonials from "@/components/testimonials";
 
+import Header from "@/components/ui/header";
+
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
@@ -49,6 +51,9 @@ export default function PageDetail() {
 
         <div>
         <section >
+
+<Header/>
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="pt-12 pb-12 md:pt-18 md:pb-20">
                     {/* Page header */}
@@ -117,7 +122,7 @@ export default function PageDetail() {
                 EXPERTS CAN HELP
             </p>
             <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                What can WonderExperts do for you?
+                What can Wonder Experts do for you?
             </h2>
             <p className="mt-6 text-slate-600 sm:text-lg sm:leading-8">
                 Experts can help with a wide range of design, development, and
