@@ -3,7 +3,7 @@ import { Info } from 'lucide-react';
 
 const TabImageHotspots = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [activeHotspot, setActiveHotspot] = useState(null);
+  const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
 
   // Define tabs with their images and hotspots
   const tabs = [
@@ -55,12 +55,12 @@ const TabImageHotspots = () => {
   ];
 
   // Handle hotspot click or hover (legacy logic)
-  const handleHotspotInteraction = (hotspotId) => {
+  const handleHotspotInteraction = (hotspotId: number) => {
     setActiveHotspot(activeHotspot === hotspotId ? null : hotspotId);
   };
 
   // Change active tab and reset hotspot
-  const changeTab = (index) => {
+  const changeTab = (index: number) => {
     setActiveTab(index);
     setActiveHotspot(null);
   };
