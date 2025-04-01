@@ -77,7 +77,7 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
   const slug = params.slug;
   const content = await _loadFromJsonComparison();
   const filteredContent = content.find((item: { id: string }) => item.id === slug) as FilterBySlugType;
-  
+
   if (!filteredContent) {
     return <Loading />;
   }
@@ -86,7 +86,7 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
   return (
     <section >
 
-<Header/>
+      <Header />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-24 pb-12 md:pt-20 md:pb-20">
