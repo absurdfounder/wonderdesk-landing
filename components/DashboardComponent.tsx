@@ -7,7 +7,7 @@ const SimpleAnalyticsDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const videoRef = useRef(null);
-  
+
   const tabs = [
     { id: 'analytics', label: 'Analytics', icon: <Play size={16} /> },
     { id: 'memberships', label: 'Memberships & Paywall', icon: <Play size={16} /> },
@@ -24,12 +24,12 @@ const SimpleAnalyticsDashboard = () => {
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
     setIsVideoLoading(true);
-    
+
     // Simulate video loading time
     setTimeout(() => {
       setIsVideoLoading(false);
     }, 1500);
-    
+
     // Reset and play the video
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
@@ -42,17 +42,17 @@ const SimpleAnalyticsDashboard = () => {
     const timer = setTimeout(() => {
       setIsVideoLoading(false);
     }, 2000);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="bg-gray-800 text-gray-100 p-8 w-full max-w-6xl mx-auto rounded-lg">
 
-<h1 className="h2 mb-4 m-auto text-center">
-                Simplicity meets AI Teams
-                <span className="font-source-serif-4 block font-normal text-orange-600">stop grinding all alone.</span>
-              </h1>
+      <h1 className="h2 mb-4 m-auto text-center">
+        Simplicity meets AI Teams
+        <span className="font-source-serif-4 block font-normal text-orange-600">stop grinding all alone.</span>
+      </h1>
 
       {/* Header */}
       <div className="text-center mb-12 px-4">
@@ -70,10 +70,10 @@ const SimpleAnalyticsDashboard = () => {
             onClick={() => handleTabClick(tab.id)}
             className={`
               flex items-center gap-2 px-4 py-2 rounded-full border 
-              ${tab.special 
-                ? 'bg-red-500 text-white border-red-500' 
-                : activeTab === tab.id 
-                  ? 'bg-orange-600 border-gray-600' 
+              ${tab.special
+                ? 'bg-red-500 text-white border-red-500'
+                : activeTab === tab.id
+                  ? 'bg-orange-600 border-gray-600'
                   : 'bg-transparent border-gray-600 hover:bg-gray-700'
               }
             `}
@@ -93,7 +93,7 @@ const SimpleAnalyticsDashboard = () => {
         ) : (
           <>
             {/* Video placeholder - in a real implementation, you would use actual video sources */}
-            <video 
+            <video
               ref={videoRef}
               className="w-full h-full object-cover"
               loop
@@ -103,12 +103,12 @@ const SimpleAnalyticsDashboard = () => {
               <source src="/api/placeholder/400/320" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            
+
 
           </>
         )}
       </div>
-      
+
 
     </div>
   );
