@@ -47,13 +47,17 @@ export default function Marketplace_Type() {
       ></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-6 md:pt-20">
+        <div className="pt-4 md:pt-4">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">
-              No matter how unique your marketplace concept, Wonder can support it.
-              over.
-            </h1>
+
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          No matter how unique your documentation concept,
+          <span className="font-source-serif-4 block font-normal text-orange-600">
+            Wonder can support it.
+          </span>
+        </h1>
+
             <p className="text-xl text-slate-600">
               Wonder is designed for all types from content curation to
               content creation. Build company blogs, helpdesks, company wiki,

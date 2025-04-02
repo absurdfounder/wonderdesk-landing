@@ -35,7 +35,7 @@ const Integration = async () => {
 <Header/>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="pt-12 pb-12 md:pt-18 md:pb-20">
+        <div className="pt-12 pb-6 md:pt-4 md:pb-6">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h1 className="h3 mb-4">WonderIntegrations</h1>
             <p className="text-xl text-slate-600">Integrate with your stack and extend functionality with powerful integrations built by us and our amazing community.</p>

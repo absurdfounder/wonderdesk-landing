@@ -55,14 +55,14 @@ export default function PageDetail() {
 
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                    <div className="pt-12 pb-12 md:pt-18 md:pb-20">
+                    <div className="pt-12 pb-6 md:pt-4 md:pb-6">
                         {/* Page header */}
 
-                        <div className="max-w-4xl py-10 mx-auto lg:py-12">
+                        <div className="max-w-4xl py-6 mx-auto lg:py-6">
                             <div className="text-center">
 
 
-                                <div className="max-w-screen-xl px-4 mx-auto sm:px-6 mb-20">
+                                <div className="max-w-screen-xl px-4 mx-auto sm:px-6 mb-4">
                                     <div className="text-center px-4 sm:px-6 lg:px-8">
                                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tighter tracking-tighter mb-4 aos-init aos-animate">
                                             Turn

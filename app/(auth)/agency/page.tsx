@@ -32,11 +32,11 @@ export default function PageDetail() {
         <section >
             <Header/>
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <div className="pt-12 pb-12 md:pt-18 md:pb-20">
+                <div className="pt-12 pb-6 md:pt-4 md:pb-6">
 
                     {/* Page header */}
 
-                    <div className="max-w-4xl py-10 mx-auto lg:py-12">
+                    <div className="max-w-4xl py-6 mx-auto lg:py-6">
 
                         <div className="text-center">
                             <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Hire a Wonder Expert</span> to help you grow beyond the limitations.</h1>

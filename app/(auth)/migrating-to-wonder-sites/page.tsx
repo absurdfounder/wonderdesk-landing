@@ -33,11 +33,11 @@ export default function PageDetail() {
             <Header />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <div className="pt-12 pb-12 md:pt-18 md:pb-20">
+                <div className="pt-12 pb-6 md:pt-4 md:pb-6">
 
                     {/* Page header */}
 
-                    <div className="max-w-4xl py-10 mx-auto lg:py-12">
+                    <div className="max-w-4xl py-6 mx-auto lg:py-6">
                         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                             <div className="relative flex items-center justify-center px-3 py-1 text-sm font-semibold leading-6  rounded-full ring-1 ring-orange-700/80 opacity-60  w-fit m-auto mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" className="w-4 h-4 mr-1">
