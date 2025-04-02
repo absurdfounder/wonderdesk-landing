@@ -6,7 +6,7 @@ import { Play } from 'lucide-react';
 const SimpleAnalyticsDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [isVideoLoading, setIsVideoLoading] = useState(true);
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const tabs = [
     { id: 'analytics', label: 'Analytics', icon: <Play size={16} /> },
@@ -21,7 +21,7 @@ const SimpleAnalyticsDashboard = () => {
     { id: 'conversion', label: 'Paywall', icon: <Play size={16} /> }
   ];
 
-  const handleTabClick = (tabId) => {
+  const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
     setIsVideoLoading(true);
 
@@ -47,7 +47,7 @@ const SimpleAnalyticsDashboard = () => {
   }, []);
 
   return (
-    <div className="bg-gray-800 text-gray-100 p-8 w-full max-w-6xl mx-auto rounded-lg">
+    <div className="text-gray-900 p-8 w-full max-w-6xl mx-auto rounded-lg">
 
       <h1 className="h2 mb-4 m-auto text-center">
         Simplicity meets AI Teams
@@ -69,12 +69,12 @@ const SimpleAnalyticsDashboard = () => {
             key={tab.id}
             onClick={() => handleTabClick(tab.id)}
             className={`
-              flex items-center gap-2 px-4 py-2 rounded-full border 
+              flex items-center gap-2 px-4 py-2 rounded-full border-2 font-bold border-orange-300 text-orange-500
               ${tab.special
-                ? 'bg-red-500 text-white border-red-500'
+                ? 'text-orange-900 border-orange-500'
                 : activeTab === tab.id
-                  ? 'bg-orange-600 border-gray-600'
-                  : 'bg-transparent border-gray-600 hover:bg-gray-700'
+                  ? 'bg-orange-600 border-gray-600 text-white'
+                  : 'bg-transparent border-gray-600 hover:bg-gray-200'
               }
             `}
           >
@@ -103,13 +103,9 @@ const SimpleAnalyticsDashboard = () => {
               <source src="/api/placeholder/400/320" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-
-
           </>
         )}
       </div>
-
-
     </div>
   );
 };
