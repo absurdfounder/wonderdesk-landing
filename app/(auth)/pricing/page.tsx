@@ -125,7 +125,7 @@ const FeatureTooltip: React.FC<FeatureTooltipProps> = ({ feature, position }) =>
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.2 }}
-      className="fixed z-50 p-4 bg-white shadow-lg rounded-lg max-w-xs"
+      className="fixed p-4 bg-white shadow-lg rounded-lg max-w-xs"
       style={{ top: adjustedPosition.top, left: adjustedPosition.left }}
     >
       <Image src={feature.imageUrl} alt={feature.name} width={200} height={150} className="mb-2 rounded" />
@@ -146,7 +146,7 @@ const FeaturePopup: React.FC<FeaturePopupProps> = ({ feature, onClose }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
+    className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4"
   >
     <motion.div
       initial={{ scale: 0.9, y: 20 }}
@@ -428,7 +428,7 @@ const Pricing: React.FC = () => {
 
       {/* Background grid pattern */}
       <div
-        className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none opacity-5 z-0"
+        className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none opacity-5"
         aria-hidden="true"
       >
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
@@ -449,7 +449,7 @@ const Pricing: React.FC = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 font-comfortaa">
@@ -502,7 +502,7 @@ const Pricing: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className={`relative bg-white rounded-xl shadow-lg border ${tier.highlight
-                ? 'border-orange-400 shadow-xl transform md:scale-105 z-10'
+                ? 'border-orange-400 shadow-xl transform md:scale-105'
                 : 'border-slate-200'
                 } overflow-hidden flex flex-col h-full`}
             >
@@ -741,7 +741,7 @@ const Pricing: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4"
+              className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 p-4"
             >
               <motion.div
                 initial={{ scale: 0.9, y: 20 }}
