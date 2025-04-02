@@ -3,12 +3,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Play } from 'lucide-react';
 
-const SimpleAnalyticsDashboard = () => {
-  const [activeTab, setActiveTab] = useState('overview');
-  const [isVideoLoading, setIsVideoLoading] = useState(true);
+interface TabItem {
+  id: string;
+  label: string;
+  icon: React.ReactNode;
+  special?: boolean;
+}
+
+const SimpleAnalyticsDashboard: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>('analytics');
+  const [isVideoLoading, setIsVideoLoading] = useState<boolean>(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const tabs = [
+  const tabs: TabItem[] = [
     { id: 'analytics', label: 'Analytics', icon: <Play size={16} /> },
     { id: 'memberships', label: 'Memberships & Paywall', icon: <Play size={16} /> },
     { id: 'content', label: 'Content Manager AI', icon: <Play size={16} /> },
@@ -24,19 +31,18 @@ const SimpleAnalyticsDashboard = () => {
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
     setIsVideoLoading(true);
-  
+
     // Simulate video loading time
     setTimeout(() => {
       setIsVideoLoading(false);
     }, 1500);
-  
+
     // Reset and play the video
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
       videoRef.current.play();
     }
   };
-  
 
   useEffect(() => {
     // Simulate initial video load completing
@@ -49,7 +55,6 @@ const SimpleAnalyticsDashboard = () => {
 
   return (
     <div className="text-gray-900 p-8 w-full max-w-6xl mx-auto rounded-lg">
-
       <h1 className="h2 mb-4 m-auto text-center">
         Simplicity meets AI Teams
         <span className="font-source-serif-4 block font-normal text-orange-600">stop grinding all alone.</span>

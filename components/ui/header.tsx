@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, HelpCircle, BookOpen, ShoppingBag, Lock, ArrowRight, LucideIcon } from 'lucide-react';
+import { ChevronDown, HelpCircle, BookOpen, ShoppingBag, Lock, AlignLeft, ArrowRight, LucideIcon } from 'lucide-react';
 import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
 
@@ -97,6 +97,13 @@ export default function Header() {
                             title="Company Wiki"
                             description="Create company wiki protected access and AI to answer queries on top of Notion as a database."
                           />
+                          <DropdownLink
+                            href="/create-a-documentation-notion"
+                            icon={AlignLeft}
+                            title="Product Docs"
+                            description="Create documentation on top of notion and access AI to answer queries on top of Notion as a database."
+                          />
+
                           <DropdownLink
                             href="/create-a-blog-notion"
                             icon={BookOpen}

@@ -152,6 +152,19 @@ export default function MobileMenu() {
                         <p className="mt-1 text-sm text-slate-500">Create company wiki protected access and AI to answer queries on top of Notion as a database.</p>
                       </div>
                     </li>
+
+                    <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-orange-600">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                      </svg>
+                      <div className="ml-4">
+                        <Link href="/create-a-documentation-notion" className="text-base font-medium text-slate-900">
+                          Company Wiki
+                        </Link>
+                        <p className="mt-1 text-sm text-slate-500">Create product docs like wikis, api dashboards, etc;</p>
+                      </div>
+                    </li>
+
                     <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-orange-600">
                         <path
