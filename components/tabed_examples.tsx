@@ -9,7 +9,7 @@ const TabImageHotspots = () => {
   const tabs = [
     {
       title: 'Product Docs',
-      image: 'https://framerusercontent.com/images/1VVkDoAMZIX2j47fttQXMgCFbQ.svg',
+      image: 'https://dazzling-cat.netlify.app/marketingai.png',
       hotspots: [
         { id: 1, x: 20, y: 30, text: 'Navigation menu - Access all main features from here' },
         { id: 2, x: 50, y: 50, text: 'Activity feed - See recent updates and changes' },
@@ -18,7 +18,7 @@ const TabImageHotspots = () => {
     },
     {
       title: 'Helpdesk',
-      image: 'https://framerusercontent.com/images/1VVkDoAMZIX2j47fttQXMgCFbQ.svg',
+      image: 'https://dazzling-cat.netlify.app/marketingai.png',
       hotspots: [
         { id: 1, x: 30, y: 40, text: 'Create new project button - Start here to begin a new project' },
         { id: 2, x: 60, y: 60, text: 'Project templates - Choose from existing templates to save time' },
@@ -27,7 +27,7 @@ const TabImageHotspots = () => {
     },
     {
       title: 'Blog',
-      image: 'https://framerusercontent.com/images/1VVkDoAMZIX2j47fttQXMgCFbQ.svg',
+      image: 'https://dazzling-cat.netlify.app/airdropswork.png',
       hotspots: [
         { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
         { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
@@ -36,7 +36,7 @@ const TabImageHotspots = () => {
     },
     {
       title: 'Directory',
-      image: 'https://framerusercontent.com/images/1VVkDoAMZIX2j47fttQXMgCFbQ.svg',
+      image: 'https://dazzling-cat.netlify.app/notionbear.png',
       hotspots: [
         { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
         { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
@@ -45,7 +45,7 @@ const TabImageHotspots = () => {
     },
     {
       title: '2-sided Marketplace',
-      image: 'https://framerusercontent.com/images/1VVkDoAMZIX2j47fttQXMgCFbQ.svg',
+      image: 'https://dazzling-cat.netlify.app/remotejobs.png',
       hotspots: [
         { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
         { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
