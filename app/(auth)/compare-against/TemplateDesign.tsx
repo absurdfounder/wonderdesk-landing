@@ -25,7 +25,7 @@ const TemplateDesign = () => {
     {
       title: "World-class",
       highlight: "Performance",
-      description: "Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they'll never close the page for taking too long to load. On average Wondersites perform better than any industry leading website builder. We use NextJs, Vercel and Google Cloud for your websites. You can scale to 100 million monthly active users with this stack.",
+      description: "Pages load instantly anywhere in the world giving your site visitors a pleasant and snappy experience—they'll never close the page for taking too long to load. On average Wonder Sites perform better than any industry leading website builder. We use NextJs, Vercel and Google Cloud for your websites. You can scale to 100 million monthly active users with this stack.",
       image: "https://dazzling-cat.netlify.app/performancewebsite.png",
       alt: "Fast website performance metrics",
       imageFirst: false
