@@ -75,7 +75,7 @@ export async function generateMetadata(
     if (!filteredContent) {
       return {
         title: 'Wondervs Unknown Template',
-        description: 'Compare Wonderto an unknown template',
+        description: 'Compare Wonder to an unknown template',
       };
     }
 

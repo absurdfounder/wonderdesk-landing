@@ -13,7 +13,7 @@ export default function ModalVideo() {
   return (
     <div>
       {/* Video Thumbnail */}
-      <div className="justify-center mb-8 mt-12 max-w-7xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
+      <div className="justify-center mb-8 mt-12 max-w-4xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
 
 
 
@@ -28,7 +28,7 @@ export default function ModalVideo() {
             style={{ borderRadius: '0.3rem', imageRendering: 'auto' }}
             poster="https://web3summary.com/assets/videos/mainvid.jpg"
           >
-            <source src="https://dazzling-cat.netlify.app/Wonder.mp4" type="video/mp4" />
+            <source src="https://dazzling-cat.netlify.app/wonder.mp4" type="video/mp4" />
           </video>
 
           {/* Play Button */}
@@ -75,7 +75,7 @@ export default function ModalVideo() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/IKvYliCFwxs?autoplay=1"
+                src="https://www.youtube.com/embed/MoQ4suV6lvU?autoplay=1"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

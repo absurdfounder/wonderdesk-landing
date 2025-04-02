@@ -83,7 +83,7 @@ export default function Header() {
                             href="/create-a-helpdesk-servicedesk-notion"
                             icon={HelpCircle}
                             title="Help Center"
-                            description="Get a professional self-service help center with Notion and WonderSites"
+                            description="Get a professional self-service help center with Notion and Wonder Sites"
                           />
                           <DropdownLink
                             href="/create-a-marketplace-notion"
@@ -101,7 +101,7 @@ export default function Header() {
                             href="/create-a-blog-notion"
                             icon={BookOpen}
                             title="Blog"
-                            description="Get a beautiful blog for your startup or company with Notion and WonderSites."
+                            description="Get a beautiful blog for your startup or company with Notion and Wonder Sites."
                           />
                         </div>
 

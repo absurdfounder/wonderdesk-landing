@@ -1,4 +1,4 @@
-# Wonder Sites : Simplest builder for all your Wonder needs
+# Wonder  Sites : Simplest builder for all your Wonder  needs
 
 ![Wonder template preview](https://dazzling-cat.netlify.app/Wonderscreenshot.png)
 

@@ -46,7 +46,7 @@ interface PricingTier {
 
 // Features for Scale/Rocket plan
 const scaleFeatures: Feature[] = [
-  { name: "Unlimited Websites", description: "Set up and manage unlimited helpdesks, documentations, directories and blogs on WonderSites.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Unlimited Websites", description: "Set up and manage unlimited helpdesks, documentations, directories and blogs on Wonder Sites.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited Custom Domain / SSL", description: "Use your own domain name and benefit from included SSL encryption for enhanced security.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited articles & collections", description: "Create unlimited articles and collections without any restrictions.", imageUrl: "/api/placeholder/200/150" },
   { name: "Unlimited Analytics", description: "Access comprehensive analytics to gain deep insights into your site's performance and user behavior.", imageUrl: "/api/placeholder/200/150" },
@@ -59,28 +59,28 @@ const scaleFeatures: Feature[] = [
   { name: "Tally Form Connection", description: "Seamlessly connect and use Tally forms within your site for data collection and user interaction.", imageUrl: "/api/placeholder/200/150" },
   { name: "Open AI Assistant", description: "Access an advanced AI assistant to help with content creation, site management, and user engagement.", imageUrl: "/api/placeholder/200/150" },
   { name: "General Search", description: "Implement a powerful, site-wide search feature to help users find content quickly and easily.", imageUrl: "/api/placeholder/200/150" },
-  { name: "Remove 'Watermark' badge", description: "Remove the 'Powered by WonderSites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
+  { name: "Remove 'Watermark' badge", description: "Remove the 'Powered by Wonder Sites' badge for a fully branded, professional appearance.", imageUrl: "/api/placeholder/200/150" },
 ];
 
 const faqs: Record<string, FAQ[]> = {
   Website: [
     {
-      question: "What is WonderSites?",
-      answer: "Wonderis the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and Wondertakes care of the rest. It's as simple as that.",
+      question: "What is Wonder Sites?",
+      answer: "Wonder is the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and Wonder takes care of the rest. It's as simple as that.",
     },
     {
       question: "Why do I need a knowledge base?",
       answer: "Unless you have built a flawless product (congratulations 🤩), your customers will always have questions and they demand immediate help. A knowledge base can provide all the information that users need in one place. It can range from FAQs about your product/service, common issues and their solutions, videos with tutorials on how to do things and more.",
     },
     {
-      question: "Is my data safe with WonderSites?",
+      question: "Is my data safe with Wonder Sites?",
       answer: "Wondertakes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
     },
   ],
   "AI Support Bot": [
     {
       question: "How does the AI Support Bot work?",
-      answer: "The AI Support Bot integrates seamlessly with Wonderto provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
+      answer: "The AI Support Bot integrates seamlessly with Wonder to provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
     },
     {
       question: "Can I customize the AI Support Bot?",
@@ -291,7 +291,7 @@ const Pricing: React.FC = () => {
         "Wonder AI",
         "AI Terms (Designer & Developer)",
         "Privacy focused analytics",
-        "Remove \"Made with Wonder\"",
+        "Remove \"Made with Wonder \"",
         "Manual Publishing",
         "Auto publish everyday"
       ]
@@ -813,7 +813,7 @@ const Pricing: React.FC = () => {
               <div className="text-center md:text-left md:max-w-lg mb-6 md:mb-0">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
                   Planning to <span className="text-orange-400">migrate</span> to
-                  Wonderfrom another platform?
+                  Wonder from another platform?
                 </h3>
                 <p className="text-slate-300 text-sm md:text-base">
                   Our expert team will handle the entire migration process for you - completely free of charge.
