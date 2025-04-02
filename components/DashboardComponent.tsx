@@ -24,18 +24,19 @@ const SimpleAnalyticsDashboard = () => {
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
     setIsVideoLoading(true);
-
+  
     // Simulate video loading time
     setTimeout(() => {
       setIsVideoLoading(false);
     }, 1500);
-
+  
     // Reset and play the video
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
       videoRef.current.play();
     }
   };
+  
 
   useEffect(() => {
     // Simulate initial video load completing
