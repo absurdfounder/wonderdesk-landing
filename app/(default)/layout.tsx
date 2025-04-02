@@ -22,10 +22,25 @@ export default function DefaultLayout({
       duration: 700,
       easing: 'ease-out-cubic',
     })
-  })
+  }, [])
 
   return (
     <PlausibleProvider domain="wondersites.co">
+      {/* Google Analytics Script */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-FKXTBWH4RE"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-FKXTBWH4RE');
+        `}
+      </Script>
+
       <main className="grow">
         {children}
       </main>
