@@ -214,7 +214,7 @@ export default function MarketplaceType() {
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           No matter how unique your concept,
           <span className="font-source-serif-4 block font-normal text-orange-600">
-            Wonder  can support it.
+            Wonder can support it.
           </span>
         </h1>
       </div>
@@ -275,9 +275,9 @@ export default function MarketplaceType() {
         <a
           href="https://app.wondersites.co"
           className="inline-flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded text-sm sm:text-base"
-          aria-label="Learn more about building marketplaces with Wonder Sites"
+          aria-label="Learn more about building marketplaces with WonderSites"
         >
-          Build any kind of Marketplace / Directory with Wonder Sites
+          Build any kind of Marketplace / Directory with WonderSites
           <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
         </a>
       </div>

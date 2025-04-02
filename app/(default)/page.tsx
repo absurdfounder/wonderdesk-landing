@@ -36,6 +36,7 @@ import Marketplace_Type from '@/components/marketplaces_type'
 import FAQ from '@/components/faq'
 import ModalVideo from '@/components/modal-video'
 import NotiontoWebsite from '@/components/notion-to-website'
+import SimpleAnalyticsDashboard from '@/components/SimpleAnalyticsComponent'
 
 
 export default function Home() {
@@ -65,6 +66,8 @@ export default function Home() {
       <OldWays />
 
       <Showcases />
+
+<SimpleAnalyticsDashboard/>
 
       <FAQ />
       <AboutMe />

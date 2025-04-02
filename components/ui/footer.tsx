@@ -62,7 +62,7 @@ export default function Footer() {
             <FooterSection title="Product">
               <ul className="text-sm space-y-2 md:mt-4">
                 <li>
-                  <Link href="https://app.wondersites.co" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Wonder builder</Link>
+                  <Link href="https://app.wondersites.co" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">WonderBuilder</Link>
                 </li>
                 <li>
                   <Link href="/showcase" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Showcase</Link>
@@ -81,7 +81,7 @@ export default function Footer() {
                 </li>
                 {/* Show limited links on mobile */}
                 <li className="md:block">
-                  <Link href="/migrating-to-wonder-sites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Migrate to Wonder Sites</Link>
+                  <Link href="/migrating-to-wonder-sites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Migrate to WonderSites</Link>
                 </li>
                 <li className="md:block">
                   <Link href="/agency" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Hire Experts</Link>

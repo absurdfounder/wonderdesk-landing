@@ -17,7 +17,7 @@ export default function FeaturesBlocks() {
                 <span className="font-source-serif-4 block font-normal text-orange-600">launch faster, go live in minutes.</span>
               </h1>
 
-              <p className="text-xl text-slate-600">We know you have too much on your plate, this is why Wonder  exists to help you set and forget. <span className="font-source-serif-4 font-normal text-orange-600 border-b">Just focus on writing </span>.</p>
+              <p className="text-xl text-slate-600">We know you have too much on your plate, this is why Wonder exists to help you set and forget. <span className="font-source-serif-4 font-normal text-orange-600 border-b">Just focus on writing </span>.</p>
             </div>
 
 

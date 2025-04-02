@@ -47,31 +47,31 @@ const SchemaMarkup = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do I create a website with Wonder  Sites?",
+        "name": "How do I create a website with Wonder Sites?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can create a website using Notion as your CMS and Wonder  Sites to turn it into powerful blog, helpdesk, documentation site, marketplace, or directory in minutes."
+          "text": "You can create a website using Notion as your CMS and Wonder Sites to turn it into powerful blog, helpdesk, documentation site, marketplace, or directory in minutes."
         }
       },
       {
         "@type": "Question",
-        "name": "Is Wonder  Sites SEO-friendly?",
+        "name": "Is Wonder Sites SEO-friendly?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Wonder  Sites creates superfast websites that are SEO-friendly, helping your content rank better in search engines."
+          "text": "Yes, Wonder Sites creates superfast websites that are SEO-friendly, helping your content rank better in search engines."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I create a marketplace with Wonder  Sites?",
+        "name": "Can I create a marketplace with Wonder Sites?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, you can create a marketplace or directory site with Wonder  Sites using Notion as your CMS. It's a no-code solution that lets you build unlimited sites."
+          "text": "Yes, you can create a marketplace or directory site with Wonder Sites using Notion as your CMS. It's a no-code solution that lets you build unlimited sites."
         }
       },
       {
         "@type": "Question",
-        "name": "How fast are websites created with Wonder  Sites?",
+        "name": "How fast are websites created with Wonder Sites?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Wonder Sites using Amazon AWS the websites are superfast and optimized for excellent SEO. You can go from Notion to a live website in minutes using our AI Agents."
@@ -87,7 +87,7 @@ const SchemaMarkup = () => {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Websites Built on Wonder ",
+        "name": "Websites Built on Wonder",
         "item": "https://wondersites.co/showcase"
       },
       {

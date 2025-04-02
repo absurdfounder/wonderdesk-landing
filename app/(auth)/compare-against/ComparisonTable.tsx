@@ -21,9 +21,9 @@ const ComparisonTable = ({ id }: { id: string }) => {
   return (
     <div className="max-w-4xl mx-auto py-16">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">Get so much more with Wonder Sites</h2>
+        <h2 className="text-3xl font-bold mb-4">Get so much more with WonderSites</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Wonder has everything you need, from task tracking to templates to documentation.
+          Wonderhas everything you need, from task tracking to templates to documentation.
           Get comfortable — you won't be leaving all that often.
         </p>
       </div>
@@ -37,14 +37,14 @@ const ComparisonTable = ({ id }: { id: string }) => {
                 {competitorName}
               </th>
               <th className="px-6 py-4 text-center font-semibold text-slate-700 border-b w-1/4 bg-orange-50">
-                Wonder Sites
+                WonderSites
               </th>
             </tr>
           </thead>
           <tbody>
             {libraryItem.comparison_table.map((item: any, index: number) => {
               const competitorHasFeature = item.feature_value[competitorName] || false;
-              const Wonder SitesHasFeature = item.feature_value["WonderSites"] || item.feature_value["Notion"] || false;
+              const WonderSitesHasFeature = item.feature_value["WonderSites"] || item.feature_value["Notion"] || false;
               
               return (
                 <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>

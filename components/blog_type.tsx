@@ -115,7 +115,7 @@ export default function Blog_Type() {
               Unique your blog concept? <span className="font-source-serif-4 block font-normal text-orange-600">Wonder can support it.</span>
             </h1>
             <p className="text-xl text-slate-600">
-              Wonder  is designed for all types from content curation to
+              Wonder is designed for all types from content curation to
               content creation. Build company blogs, helpdesks, company wiki,
               documentations, and marketplaces.
             </p>
