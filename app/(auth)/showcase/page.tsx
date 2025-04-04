@@ -40,7 +40,7 @@ const truncateText = (text: string | undefined, maxLength: number): string => {
 function TemplateClientContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   const [templates, setTemplates] = useState<Template[]>([]);
   const [filteredTemplates, setFilteredTemplates] = useState<Template[]>([]);
   const [allTags, setAllTags] = useState<TagCount[]>([]);
@@ -55,17 +55,17 @@ function TemplateClientContent() {
   const updateUrlParams = (tags: string[]) => {
     // Create a URLSearchParams object
     const params = new URLSearchParams();
-    
+
     // Add tags to URL if there are any selected
     if (tags.length > 0) {
       params.set('tags', tags.join(','));
     }
-    
+
     // Update the URL without refreshing the page
-    const newUrl = tags.length > 0 
-      ? `?${params.toString()}` 
+    const newUrl = tags.length > 0
+      ? `?${params.toString()}`
       : window.location.pathname;
-    
+
     router.push(newUrl, { scroll: false });
   };
 
@@ -74,22 +74,22 @@ function TemplateClientContent() {
     // Only run once
     if (initialized) return;
     setInitialized(true);
-    
+
     if (!searchParams) return;
-    
+
     const tagsParam = searchParams.get('tags');
     if (tagsParam) {
       const urlTags = tagsParam.split(',').map(tag => tag.trim());
       setSelectedTags(urlTags);
     }
-    
+
     const fetchData = async () => {
       try {
         const data = await _loadFromJson() as Template[];
-        
+
         setTemplates(data);
         setFilteredTemplates(data);
-        
+
         // Count tag occurrences
         const tagCounts: Record<string, number> = {};
         data.forEach(template => {
@@ -99,31 +99,31 @@ function TemplateClientContent() {
             });
           }
         });
-        
+
         // Add "free design" tag
         tagCounts["free design"] = (tagCounts["free design"] || 0) + 1;
-        
+
         // Convert to TagCount array and sort
         const tagCountArray: TagCount[] = Object.entries(tagCounts).map(([tag, count]) => ({
           tag,
           count
         }));
-        
+
         // Sort by count (descending) then alphabetically
         tagCountArray.sort((a, b) => {
           if (b.count !== a.count) return b.count - a.count;
           return a.tag.localeCompare(b.tag);
         });
-        
+
         setAllTags(tagCountArray);
-        
+
         // Separate popular tags (more than 1 template) from lesser tags
         const popular = tagCountArray.filter(tc => tc.count > 1);
         const lesser = tagCountArray.filter(tc => tc.count === 1);
-        
+
         setPopularTags(popular);
         setLesserTags(lesser);
-        
+
         // Apply URL filters after getting data
         if (tagsParam) {
           const urlTags = tagsParam.split(',').map(tag => tag.trim());
@@ -131,14 +131,14 @@ function TemplateClientContent() {
           const validUrlTags = urlTags.filter(tag => tagCountArray.some(tc => tc.tag === tag));
           setSelectedTags(validUrlTags);
         }
-        
+
         setIsLoading(false);
       } catch (error) {
         console.error("Error loading templates:", error);
         setIsLoading(false);
       }
     };
-    
+
     fetchData();
   }, [searchParams, initialized]);
 
@@ -160,7 +160,7 @@ function TemplateClientContent() {
     const newSelectedTags = selectedTags.includes(tag)
       ? selectedTags.filter(t => t !== tag)
       : [...selectedTags, tag];
-    
+
     setSelectedTags(newSelectedTags);
     updateUrlParams(newSelectedTags);
   };
@@ -180,10 +180,10 @@ function TemplateClientContent() {
   const renderTemplateItems = () => {
     const rowSize = 3; // Number of templates per row
     const bannerInterval = 6; // Show a banner after every 2 rows (6 cards)
-    
+
     const items = [];
     const filteredTemplatesList = [...filteredTemplates];
-    
+
     for (let i = 0; i < filteredTemplatesList.length; i++) {
       // Add a banner after every 6 templates (2 rows with 3 templates each)
       if (i > 0 && i % bannerInterval === 0) {
@@ -192,95 +192,95 @@ function TemplateClientContent() {
         if ((i / bannerInterval) % 2 === 0) {
           // Add the "Migrate From" banner
           items.push(
-<div key={`migrate-banner-${i}`} className="sm:col-span-2 lg:col-span-3 my-8">
-  <Link
-    href="https://app.youform.com/forms/r3rvhjv4"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block"
-  >
-    <div
-      className="relative bg-slate-900 rounded-2xl px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12 w-full h-auto min-h-[200px]"
-    >
-      {/* Background illustration */}
-      <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
-        <Image alt="Logo" width={400} className="block" src={MigrateFrom} />
-      </div>
-
-      <div className="relative flex flex-col lg:flex-row justify-between items-center py-6">
-        {/* CTA content */}
-        <div className="text-center lg:text-left lg:max-w-xl space-y-6">
-          <h3 className="h3 text-white mb-2">
-            Planning to <b className="text-orange-600">migrate</b> to
-            Wonder  from another platform?
-          </h3>
-
-          {/* CTA form */}
-          <form className="w-full lg:w-auto">
-            <div>
+            <div key={`migrate-banner-${i}`} className="sm:col-span-2 lg:col-span-3 my-8">
               <Link
                 href="https://app.youform.com/forms/r3rvhjv4"
                 target="_blank"
-                className="btn bg-orange-700 hover:bg-orange-700 shadow px-12 inline-block text-slate-900 py-3 rounded-lg transition-colors"
+                rel="noopener noreferrer"
+                className="block"
               >
-                We can do it for you →
+                <div
+                  className="relative bg-slate-900 rounded-2xl px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12 w-full h-auto min-h-[200px]"
+                >
+                  {/* Background illustration */}
+                  <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
+                    <Image alt="Logo" width={400} className="block" src={MigrateFrom} />
+                  </div>
+
+                  <div className="relative flex flex-col lg:flex-row justify-between items-center py-6">
+                    {/* CTA content */}
+                    <div className="text-center lg:text-left lg:max-w-xl space-y-6">
+                      <h3 className="h3 text-white mb-2">
+                        Planning to <b className="text-orange-600">migrate</b> to
+                        Wonder  from another platform?
+                      </h3>
+
+                      {/* CTA form */}
+                      <form className="w-full lg:w-auto">
+                        <div>
+                          <Link
+                            href="https://app.youform.com/forms/r3rvhjv4"
+                            target="_blank"
+                            className="btn bg-orange-700 hover:bg-orange-700 shadow px-12 inline-block text-slate-900 py-3 rounded-lg transition-colors"
+                          >
+                            We can do it for you →
+                          </Link>
+                        </div>
+                        <p className="text-sm text-slate-400 mt-3">Free of charge</p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </Link>
             </div>
-            <p className="text-sm text-slate-400 mt-3">Free of charge</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </Link>
-</div>
           );
         } else {
           // Add the "Free Design Assistance" banner
           items.push(
-<div key={`design-assistance-banner-${i}`} className="sm:col-span-2 lg:col-span-3 my-8">
-  <Link
-    href="https://app.youform.com/forms/design-assistance"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block"
-  >
-    <div
-      className="relative bg-gradient-to-r from-slate-700 to-slate-900 rounded-2xl px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12 w-full h-auto min-h-[200px]"
-    >
-      {/* Background illustration */}
-      <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
-        <Image alt="Designer" width={300} className="block" src={notionfooterImage} />
-      </div>
-
-      <div className="relative flex flex-col lg:flex-row justify-between items-center py-6">
-        {/* CTA content */}
-        <div className="text-center lg:text-left lg:max-w-xl space-y-6">
-          <h3 className="h3 text-white mb-2">
-            Want to get <b className="text-orange-600">free design</b> assistance?
-          </h3>
-
-          {/* CTA form */}
-          <form className="w-full lg:w-auto">
-            <div>
+            <div key={`design-assistance-banner-${i}`} className="sm:col-span-2 lg:col-span-3 my-8">
               <Link
-                href="https://app.youform.com/forms/r3rvhjv4"
+                href="https://app.youform.com/forms/design-assistance"
                 target="_blank"
-                className="btn bg-white hover:bg-slate-100 shadow px-12 inline-block text-orange-600 py-3 rounded-lg transition-colors"
+                rel="noopener noreferrer"
+                className="block"
               >
-                Get started now →
+                <div
+                  className="relative bg-gradient-to-r from-slate-700 to-slate-900 rounded-2xl px-4 md:py-8 md:px-12 shadow-2xl overflow-hidden mt-12 w-full h-auto min-h-[200px]"
+                >
+                  {/* Background illustration */}
+                  <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
+                    <Image alt="Designer" width={300} className="block" src={notionfooterImage} />
+                  </div>
+
+                  <div className="relative flex flex-col lg:flex-row justify-between items-center py-6">
+                    {/* CTA content */}
+                    <div className="text-center lg:text-left lg:max-w-xl space-y-6">
+                      <h3 className="h3 text-white mb-2">
+                        Want to get <b className="text-orange-600">free design</b> assistance?
+                      </h3>
+
+                      {/* CTA form */}
+                      <form className="w-full lg:w-auto">
+                        <div>
+                          <Link
+                            href="https://app.youform.com/forms/r3rvhjv4"
+                            target="_blank"
+                            className="btn bg-white hover:bg-slate-100 shadow px-12 inline-block text-orange-600 py-3 rounded-lg transition-colors"
+                          >
+                            Get started now →
+                          </Link>
+                        </div>
+                        <p className="text-sm text-white mt-3">Professional design help at no cost</p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </Link>
             </div>
-            <p className="text-sm text-white mt-3">Professional design help at no cost</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </Link>
-</div>
           );
         }
       }
-      
+
       // Add the template item
       const template = filteredTemplatesList[i];
       items.push(
@@ -344,13 +344,12 @@ function TemplateClientContent() {
               <div className="flex flex-wrap gap-2 mt-4">
                 {template?.product?.tags && template.product.tags.length > 0 ? (
                   template.product.tags.slice(0, 3).map((tag: string, tagIndex: number) => (
-                    <span 
-                      key={tagIndex} 
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors duration-200 ${
-                        selectedTags.includes(tag)
-                          ? "bg-orange-200 text-orange-800" 
+                    <span
+                      key={tagIndex}
+                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors duration-200 ${selectedTags.includes(tag)
+                          ? "bg-orange-200 text-orange-800"
                           : "bg-slate-100 text-slate-800 hover:bg-slate-200"
-                      }`}
+                        }`}
                     >
                       {tag}
                     </span>
@@ -369,14 +368,14 @@ function TemplateClientContent() {
         </Link>
       );
     }
-    
+
     return items;
   };
 
   return (
     <section id="template-section">
 
-<Header/>
+      <Header />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header with improved spacing and typography */}
@@ -395,59 +394,56 @@ function TemplateClientContent() {
                   {/* Make "free design" always appear first and highlighted */}
                   <button
                     onClick={() => toggleTag("free design")}
-                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                      selectedTags.includes("free design")
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedTags.includes("free design")
                         ? "bg-orange-500 text-white"
                         : "bg-slate-100 text-slate-800 hover:bg-slate-200"
-                    }`}
+                      }`}
                   >
                     free design
                     {selectedTags.includes("free design") && (
                       <span className="ml-1.5">×</span>
                     )}
                   </button>
-                  
+
                   {/* Popular tags (with more than 1 template) */}
                   {popularTags
                     .filter(({ tag }) => tag !== "free design") // Skip "free design" as we already added it
                     .map(({ tag, count }) => (
-                    <button
-                      key={tag}
-                      onClick={() => toggleTag(tag)}
-                      className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                        selectedTags.includes(tag)
-                          ? "bg-orange-500 text-white"
-                          : "bg-slate-100 text-slate-800 hover:bg-slate-200"
-                      }`}
-                    >
-                      {tag} 
-                      {selectedTags.includes(tag) && (
-                        <span className="ml-1.5">×</span>
-                      )}
-                    </button>
-                  ))}
-                  
+                      <button
+                        key={tag}
+                        onClick={() => toggleTag(tag)}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
+                            ? "bg-orange-500 text-white"
+                            : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                          }`}
+                      >
+                        {tag}
+                        {selectedTags.includes(tag) && (
+                          <span className="ml-1.5">×</span>
+                        )}
+                      </button>
+                    ))}
+
                   {/* Lesser tags (with 1 template) - only shown when showAllTags is true */}
                   {showAllTags && lesserTags
                     .filter(({ tag }) => tag !== "free design") // Skip "free design" as we already added it
                     .map(({ tag, count }) => (
-                    <button
-                      key={tag}
-                      onClick={() => toggleTag(tag)}
-                      className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                        selectedTags.includes(tag)
-                          ? "bg-orange-500 text-white"
-                          : "bg-slate-100 text-slate-800 hover:bg-slate-200"
-                      }`}
-                    >
-                      {tag}
-                      {selectedTags.includes(tag) && (
-                        <span className="ml-1.5">×</span>
-                      )}
-                    </button>
-                  ))}
+                      <button
+                        key={tag}
+                        onClick={() => toggleTag(tag)}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
+                            ? "bg-orange-500 text-white"
+                            : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                          }`}
+                      >
+                        {tag}
+                        {selectedTags.includes(tag) && (
+                          <span className="ml-1.5">×</span>
+                        )}
+                      </button>
+                    ))}
                 </div>
-                
+
                 {/* Show/Hide Tags Toggle */}
                 {lesserTags.length > 0 && (
                   <button
@@ -457,7 +453,7 @@ function TemplateClientContent() {
                     {showAllTags ? "Show less" : `Show all (${lesserTags.length} more)`}
                   </button>
                 )}
-                
+
                 <div className="mt-4 flex justify-center items-center gap-3">
                   {selectedTags.length > 0 && (
                     <button

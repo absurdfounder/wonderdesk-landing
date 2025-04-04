@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import TrustedBy from '../compare-against/TrustedBy';
+import Header from '@/components/ui/header';
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -69,9 +70,9 @@ export default function ContactUs() {
       alert('Failed to send message. Please try again.');
     }
   };
-  
 
-  
+
+
 
 
   const renderFormFields = () => {
@@ -159,6 +160,9 @@ export default function ContactUs() {
 
   return (
     <div className="card create-demo mt-12">
+      <Header />
+
+
       <div className="justify-center mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start max-w-7xl border bg-slate-100 rounded-2xl p-8 mb-12">
         <div className="w-full p-4 h-full px-12">
           <h3 className="text-center text-lg font-semibold mt-12 mb-12 opacity-75 w-xl">"Your success is our success. This is why all our services are at cost to cost basis. <u>We only make money when you grow</u> ."</h3>
@@ -170,19 +174,19 @@ export default function ContactUs() {
             <a href="mailto:success@wondersites.co" className="text-orange-700 block">success@wondersites.co</a>
           </div>
           <p className="text-center mt-4 mb-8">Please complete this form, and VP of Success will be in touch with you shortly.</p>
-          <TrustedBy/>
+          <TrustedBy />
 
         </div>
         <div className="w-full border p-4 px-12 rounded-2xl shadow-lg bg-white">
-<iframe 
-  src="https://app.youform.com/forms/r3rvhjv4" 
-  loading="lazy" 
-  width="100%" 
-  height={700} 
-  frameBorder={0} 
-  marginHeight={0} 
-  marginWidth={0}>
-</iframe>
+          <iframe
+            src="https://app.youform.com/forms/r3rvhjv4"
+            loading="lazy"
+            width="100%"
+            height={700}
+            frameBorder={0}
+            marginHeight={0}
+            marginWidth={0}>
+          </iframe>
 
 
 

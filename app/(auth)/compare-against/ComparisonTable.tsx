@@ -45,7 +45,7 @@ const ComparisonTable = ({ id }: { id: string }) => {
             {libraryItem.comparison_table.map((item: any, index: number) => {
               const competitorHasFeature = item.feature_value[competitorName] || false;
               const Wonder SitesHasFeature = item.feature_value["WonderSites"] || item.feature_value["Notion"] || false;
-              
+
               return (
                 <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
                   <td className="px-6 py-4 border-b border-slate-200">
@@ -79,7 +79,7 @@ const ComparisonTable = ({ id }: { id: string }) => {
           </tbody>
         </table>
       </div>
-      
+
       <div className="mt-6 text-center">
         <p className="text-sm text-slate-500">
           * Features may vary based on plan selection and updates

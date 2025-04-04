@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MoveBack from '@/components/MoveBack';
 import Loading from '@/components/Loading';
+import Header from '@/components/ui/header';
 
 // Make the interfaces consistent with the ones in helper.tsx
 interface CallToAction {
@@ -62,7 +63,7 @@ export async function generateMetadata(
   try {
     const slug = params.slug;
     const content = await _loadFromJson();
-    
+
     if (!content) {
       return {
         title: 'Wonder- Error Loading Content',
@@ -95,70 +96,70 @@ export async function generateMetadata(
   }
 }
 
-async function getData(slug: string): Promise<{ 
-  filterBySlug: Template; 
+async function getData(slug: string): Promise<{
+  filterBySlug: Template;
   postPageView: any;
   relatedTemplates: Template[];
 } | null> {
   const content = await _loadFromJson();
   const filteredContent = content.find((item: { id: string }) => item.id === slug) as Template;
-  
+
   if (filteredContent) {
     // Add callToAction if it doesn't exist
     if (!filteredContent.product.callToAction) {
       filteredContent.product.callToAction = filteredContent.product.callToCopy;
     }
-    
+
     const transformedData = _transformDataToPostPageView(filteredContent);
-    
+
     // Find related templates based on type or tags
     let relatedTemplates: Template[] = [];
-    
+
     if (filteredContent.product.tags && filteredContent.product.tags.length > 0) {
       // Find templates with matching tags
       relatedTemplates = content
-        .filter((item: Template) => 
+        .filter((item: Template) =>
           item.id !== slug && // Not the current template
           item.product.tags && // Has tags
-          item.product.tags.some((tag: string) => 
+          item.product.tags.some((tag: string) =>
             filteredContent.product.tags?.includes(tag)
           )
         )
         .slice(0, 3);
     }
-    
+
     // If not enough related templates by tags, add some based on type
     if (relatedTemplates.length < 3) {
       const typeRelated = content
-        .filter((item: Template) => 
+        .filter((item: Template) =>
           item.id !== slug && // Not the current template
           item.product.type === filteredContent.product.type && // Same type
           !relatedTemplates.some(rel => rel.id === item.id) // Not already included
         )
         .slice(0, 3 - relatedTemplates.length);
-      
+
       relatedTemplates = [...relatedTemplates, ...typeRelated];
     }
-    
+
     // If still not enough, just add random ones
     if (relatedTemplates.length < 3) {
       const randomRelated = content
-        .filter((item: Template) => 
+        .filter((item: Template) =>
           item.id !== slug && // Not the current template
           !relatedTemplates.some(rel => rel.id === item.id) // Not already included
         )
         .slice(0, 3 - relatedTemplates.length);
-      
+
       relatedTemplates = [...relatedTemplates, ...randomRelated];
     }
-    
-    return { 
-      filterBySlug: filteredContent, 
+
+    return {
+      filterBySlug: filteredContent,
       postPageView: transformedData,
       relatedTemplates
     };
   }
-  
+
   return null;
 }
 
@@ -173,6 +174,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="">
+
+      <Header />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back navigation */}
         <div className="mb-8">
@@ -194,18 +198,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
               <h1 className="text-4xl font-bold text-slate-900 tracking-tight">{filterBySlug.product.name}</h1>
             </div>
-            
+
             {/* Description */}
             <p className="text-lg text-slate-700 leading-relaxed">
               {filterBySlug.product.description}
             </p>
-            
+
             {/* Tags with improved styling */}
             {filterBySlug.product.tags && filterBySlug.product.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {filterBySlug.product.tags.map((tag, index) => (
-                  <span 
-                    key={index} 
+                  <span
+                    key={index}
                     className="bg-slate-100 text-slate-600 text-xs font-medium px-3 py-1.5 rounded-full"
                   >
                     #{tag}
@@ -213,21 +217,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 ))}
               </div>
             )}
-            
+
             {/* CTAs with improved design */}
             <div className="flex flex-wrap gap-4 pt-2">
-              <Link 
-                href={filterBySlug.product.callToCopy.link} 
-                className="bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-6 rounded-lg inline-flex items-center transition duration-200 shadow-sm" 
-                rel="noopener noreferrer" 
+              <Link
+                href={filterBySlug.product.callToCopy.link}
+                className="bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-6 rounded-lg inline-flex items-center transition duration-200 shadow-sm"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <span>{filterBySlug.product.callToCopy.text}</span>
               </Link>
-              <Link 
-                href={filterBySlug.product.viewDemo.link} 
-                className="bg-white hover:bg-slate-50 text-slate-800 font-medium py-3 px-6 rounded-lg inline-flex items-center border border-slate-200 transition duration-200" 
-                rel="noopener noreferrer" 
+              <Link
+                href={filterBySlug.product.viewDemo.link}
+                className="bg-white hover:bg-slate-50 text-slate-800 font-medium py-3 px-6 rounded-lg inline-flex items-center border border-slate-200 transition duration-200"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <span>{filterBySlug.product.viewDemo.text}</span>
@@ -288,7 +292,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </span>
             Related Templates
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedTemplates.map((template, index) => (
               <Link
@@ -313,21 +317,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
                       {template.product.type}
                     </span>
                   </div>
-                  
+
                   <h3 className="font-bold text-slate-800 group-hover:text-orange-600 transition-colors text-lg mb-2">
                     {template.product.name}
                   </h3>
-                  
+
                   <p className="text-sm text-slate-600 mb-4 flex-grow">
                     {truncateText(template.product.description, 100)}
                   </p>
-                  
+
                   {/* Show up to 3 tags */}
                   {template.product.tags && template.product.tags.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mt-auto">
                       {template.product.tags.slice(0, 3).map((tag, tagIndex) => (
-                        <span 
-                          key={tagIndex} 
+                        <span
+                          key={tagIndex}
                           className="bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-full"
                         >
                           #{tag}
