@@ -44,7 +44,19 @@ const BrowserExtensionWizard: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [showIframePopup, setShowIframePopup] = useState<boolean>(false);
   const [generationComplete, setGenerationComplete] = useState<boolean>(false);
+  const [iframeLoaded, setIframeLoaded] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  
+  // Preload the website in a hidden iframe to warm up cache
+  useEffect(() => {
+    const preloadIframe = document.createElement('iframe');
+    preloadIframe.src = ensureProtocol(websiteUrl);
+    preloadIframe.style.display = 'none';
+    document.body.appendChild(preloadIframe);
+    return () => {
+      document.body.removeChild(preloadIframe);
+    };
+  }, [websiteUrl]);
   
   // Handle icon upload
   const handleIconChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -80,6 +92,8 @@ const BrowserExtensionWizard: React.FC = () => {
       setError('Please enter a URL');
       return;
     }
+    // Reset the iframe load state when opening the popup
+    setIframeLoaded(false);
     setShowIframePopup(true);
   };
   
@@ -523,73 +537,83 @@ body {
   // Main render
   return (
     <section>
-    <Header/>
-    <div className="max-w-4xl mx-auto p-5 bg-white rounded-lg shadow my-4">
-      <div className="mb-6">
-        <div className='grid gap-4 text-center'>
-      <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/main-desktop-browser-logos.png" className='max-w-64 m-auto'/>
-        <h1 className="text-xl font-bold mb-2">Browser Extension Generator</h1>
-        </div>
-        
-        {/* Simple Tab Navigation */}
-        <div className="flex border-b items-center m-auto justify-center">
-          <button 
-            onClick={() => setActiveStep(1)}
-            className={`py-2 px-4 text-sm font-medium border-b-2 ${activeStep === 1 ? 'text-blue-600 border-blue-600' : 'text-gray-500 border-transparent hover:text-gray-700'}`}
-          >
-            Generate Extension
-          </button>
+      <Header/>
+      <div className="max-w-4xl mx-auto p-5 bg-white rounded-lg shadow my-4">
+        <div className="mb-6">
+          <div className='grid gap-4 text-center'>
+            <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/main-desktop-browser-logos.png" className='max-w-64 m-auto' alt="Browser Logos"/>
+            <h1 className="text-xl font-bold mb-2">Browser Extension Generator</h1>
+          </div>
           
-          <button 
-            onClick={() => setActiveStep(2)}
-            className={`py-2 px-4 text-sm font-medium border-b-2 ${activeStep === 2 ? 'text-blue-600 border-blue-600' : 'text-gray-500 border-transparent hover:text-gray-700'}`}
-          >
-            Publish to Store
-          </button>
-        </div>
-      </div>
-      
-      {activeStep === 1 ? renderStep1() : renderStep2()}
-      
-      {/* Test URL popup */}
-      {showIframePopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[80vh] flex flex-col">
-            <div className="p-4 border-b flex justify-between items-center">
-              <h3 className="font-medium">Website Preview</h3>
-              <button 
-                onClick={() => setShowIframePopup(false)}
-                className="text-gray-500 hover:text-gray-700 text-lg"
-              >
-                &times;
-              </button>
-            </div>
+          {/* Simple Tab Navigation */}
+          <div className="flex border-b items-center m-auto justify-center">
+            <button 
+              onClick={() => setActiveStep(1)}
+              className={`py-2 px-4 text-sm font-medium border-b-2 ${activeStep === 1 ? 'text-blue-600 border-blue-600' : 'text-gray-500 border-transparent hover:text-gray-700'}`}
+            >
+              Generate Extension
+            </button>
             
-            <div className="p-4 flex-1 overflow-auto">
-              <p className="mb-3 text-sm">Testing if <strong>{websiteUrl}</strong> works in your extension.</p>
-              
-              <div className="border rounded-md overflow-hidden h-64 bg-gray-100">
-                <iframe
-                  src={ensureProtocol(websiteUrl)}
-                  title="URL preview"
-                  className="w-full h-full border-0"
-                  sandbox="allow-same-origin allow-scripts"
-                />
-              </div>
-            </div>
-            
-            <div className="p-4 border-t flex justify-end">
-              <button
-                onClick={() => setShowIframePopup(false)}
-                className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800"
-              >
-                Close
-              </button>
-            </div>
+            <button 
+              onClick={() => setActiveStep(2)}
+              className={`py-2 px-4 text-sm font-medium border-b-2 ${activeStep === 2 ? 'text-blue-600 border-blue-600' : 'text-gray-500 border-transparent hover:text-gray-700'}`}
+            >
+              Publish to Store
+            </button>
           </div>
         </div>
-      )}
-    </div>
+        
+        {activeStep === 1 ? renderStep1() : renderStep2()}
+        
+        {/* Test URL popup */}
+        {showIframePopup && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[80vh] flex flex-col">
+              <div className="p-4 border-b flex justify-between items-center">
+                <h3 className="font-medium">Website Preview</h3>
+                <button 
+                  onClick={() => setShowIframePopup(false)}
+                  className="text-gray-500 hover:text-gray-700 text-lg"
+                >
+                  &times;
+                </button>
+              </div>
+              
+              <div className="p-4 flex-1 overflow-auto">
+                <p className="mb-3 text-sm">Testing if <strong>{websiteUrl}</strong> works in your extension.</p>
+                
+                <div className="relative border rounded-md overflow-hidden h-64 bg-gray-100">
+                  {!iframeLoaded && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-white">
+                      <svg className="animate-spin h-6 w-6" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                      </svg>
+                    </div>
+                  )}
+                  <iframe
+                    src={ensureProtocol(websiteUrl)}
+                    title="URL preview"
+                    className="w-full h-full border-0"
+                    sandbox="allow-same-origin allow-scripts"
+                    onLoad={() => setIframeLoaded(true)}
+                    style={{ visibility: iframeLoaded ? 'visible' : 'hidden' }}
+                  />
+                </div>
+              </div>
+              
+              <div className="p-4 border-t flex justify-end">
+                <button
+                  onClick={() => setShowIframePopup(false)}
+                  className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 };
