@@ -54,12 +54,12 @@ export default function Marketplace_Type() {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               No matter how unique your documentation concept,
               <span className="font-source-serif-4 block font-normal text-orange-600">
-                Wonder can support it.
+                Wonder  can support it.
               </span>
             </h1>
 
             <p className="text-xl text-slate-600">
-              Wonder is designed for all types from content curation to
+              Wonder  is designed for all types from content curation to
               content creation. Build company blogs, helpdesks, company wiki,
               documentations, and marketplaces.
             </p>

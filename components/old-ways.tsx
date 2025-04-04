@@ -18,7 +18,7 @@ export default function OldWays() {
                         Your content <span className="font-serif font-normal text-orange-600">lives inside Notion</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        Your work stays in a place you control and love, while Wonderhandles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
+                        Your work stays in a place you control and love, while Wonder handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
@@ -73,7 +73,7 @@ export default function OldWays() {
                         Membership for <span className="font-serif font-normal text-orange-600">paid subscribers.</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside Wonderwithout code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
+                        Style the look and feel of your site with no-code themes and designer templates. Everything can be customized inside Wonder  without code to make you proud of the unique site you share with the world. Add custom-code only if you want to.
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
@@ -100,7 +100,7 @@ export default function OldWays() {
                         In-built <span className="font-serif font-normal text-orange-600">analytics</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        See your page views, visitors, referrers, clicks, and much more for all of your websites. Wonderprovides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
+                        See your page views, visitors, referrers, clicks, and much more for all of your websites. Wonder provides Inbuilt analytics for all your sites to help you find out where people are finding your blog, which links people are clicking the most, which of your posts are popular.
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
@@ -154,7 +154,7 @@ export default function OldWays() {
                         Integrates with <span className="font-serif font-normal text-orange-600">your existing apps</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
-                        Wonderintegrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to WonderSites? We got you covered.
+                        Wonder integrates with the tools you already use. Connect to Slack for notifications, embed your live chat widget from Intercom, Hubspot, Crisp and more. Need your app connected to Wonder Sites? We got you covered.
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
@@ -206,7 +206,7 @@ export default function OldWays() {
                 href="#template-section"
                 className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl border border-white text-white rounded-lg hover:bg-slate-800 transition-colors duration-300 text-center"
               >
-                Sites built on Wonder
+                Sites built on Wonder 
               </Link>
             </div>
           </section>

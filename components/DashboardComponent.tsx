@@ -63,7 +63,7 @@ const SimpleAnalyticsDashboard: React.FC = () => {
       {/* Header */}
       <div className="text-center mb-12 px-4">
         <h1 className="text-xl font-medium mb-4 max-w-4xl m-auto">
-          Wonder Sites is a simple Wordpress alternative powered by Notion. Build and Forget about us focus on what is important the services that your business provides.
+          Wonder  Sites is a simple Wordpress alternative powered by Notion. Build and Forget about us focus on what is important the services that your business provides.
         </h1>
         <p className="text-xl">Nothing beats simplicity.</p>
       </div>

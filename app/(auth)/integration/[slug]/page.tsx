@@ -57,14 +57,14 @@ export async function generateMetadata(
 
   if (!filteredContent) {
     return {
-      title: 'Integrate Integration with Wonder Sites',
-      description: 'Connect Wonderto an integration',
+      title: 'Integrate Integration with Wonder  Sites',
+      description: 'Connect Wonder to an integration',
     };
   }
 
   return {
-    title: `Integrate ${filteredContent.product.name} with WonderSites`,
-    description: `Connect Wonderto ${filteredContent.product.name}: ${filteredContent.product.description}`,
+    title: `Integrate ${filteredContent.product.name} with Wonder  Sites`,
+    description: `Connect Wonder  to ${filteredContent.product.name}: ${filteredContent.product.description}`,
     openGraph: {
       images: [{ url: filteredContent.proof.screenshot }],
     },

@@ -127,7 +127,7 @@ export default function MobileMenu() {
                         <Link href="/create-a-helpdesk-servicedesk-notion" className="text-base font-medium text-slate-900">
                           Help Center
                         </Link>
-                        <p className="mt-1 text-sm text-slate-500">Get a professional self-service help center with Notion and WonderSites.</p>
+                        <p className="mt-1 text-sm text-slate-500">Get a professional self-service help center with Notion and Wonder Sites.</p>
                       </div>
                     </li>
                     <li className="flex items-start p-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-100">
@@ -178,7 +178,7 @@ export default function MobileMenu() {
                         <Link href="/create-a-blog-notion" className="text-base font-medium text-slate-900">
                           Blog
                         </Link>
-                        <p className="mt-1 text-sm text-slate-500">Get a beautiful blog for your startup or company with Notion and WonderSites.</p>
+                        <p className="mt-1 text-sm text-slate-500">Get a beautiful blog for your startup or company with Notion and Wonder Sites.</p>
                       </div>
                     </li>
                   </ul>

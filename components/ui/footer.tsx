@@ -81,7 +81,7 @@ export default function Footer() {
                 </li>
                 {/* Show limited links on mobile */}
                 <li className="md:block">
-                  <Link href="/migrating-to-wonder-sites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Migrate to WonderSites</Link>
+                  <Link href="/migrating-to-wonder-sites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Migrate to Wonder Sites</Link>
                 </li>
                 <li className="md:block">
                   <Link href="/agency" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Hire Experts</Link>
