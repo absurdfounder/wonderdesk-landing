@@ -44,7 +44,7 @@ const ComparisonTable = ({ id }: { id: string }) => {
           <tbody>
             {libraryItem.comparison_table.map((item: any, index: number) => {
               const competitorHasFeature = item.feature_value[competitorName] || false;
-              const Wonder SitesHasFeature = item.feature_value["WonderSites"] || item.feature_value["Notion"] || false;
+              const WonderSitesHasFeature = item.feature_value["WonderSites"] || item.feature_value["Notion"] || false;
 
               return (
                 <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
