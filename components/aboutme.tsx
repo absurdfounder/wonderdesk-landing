@@ -12,12 +12,12 @@ export default function AboutMe() {
         </h1>
 
         <div className="flex flex-col md:flex-row items-center justify-center">
-          <div className="w-full md:w-1/3 mb-6 md:mb-0 flex justify-center">
+          <div className="w-full md:w-1/3 mb-6 md:mb-0 flex justify-center rounded-full">
             <Image
               src="https://dazzling-cat.netlify.app/xprofileim.jpg"
               width={300}
               height={452}
-              className="rounded-2xl"
+              className="rounded-full"
               alt="Profile"
             />
           </div>

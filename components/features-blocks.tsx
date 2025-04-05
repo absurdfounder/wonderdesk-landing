@@ -24,7 +24,7 @@ export default function FeaturesBlocks() {
             {/* Items */}
             <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
               {/* 1st item */}
-              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
+              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border bg-white">
                 <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-md"
                   width={200}
                   height={150}
@@ -36,7 +36,7 @@ export default function FeaturesBlocks() {
               </div>
 
               {/* 2nd item */}
-              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
+              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border bg-white">
                 <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-md"
                   width={200}
                   height={150}
@@ -48,7 +48,7 @@ export default function FeaturesBlocks() {
               </div>
 
               {/* 3rd item */}
-              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
+              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border bg-white">
                 <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-md"
                   width={200}
                   height={150}
@@ -60,7 +60,7 @@ export default function FeaturesBlocks() {
               </div>
 
               {/* 4th item */}
-              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
+              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border bg-white">
                 <Image alt="image" loading="lazy" decoding="async"
                   width={200}
                   height={150}
@@ -72,7 +72,7 @@ export default function FeaturesBlocks() {
               </div>
 
               {/* 5th item */}
-              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
+              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border bg-white">
                 <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-md"
                   width={200}
                   height={150}
@@ -87,7 +87,7 @@ export default function FeaturesBlocks() {
 
 
               {/* 7th item */}
-              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
+              <div className="relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border bg-white">
                 <Image alt="image" loading="lazy" decoding="async" className="mb-2 rounded-md"
                   width={200}
                   height={150}

@@ -11,7 +11,7 @@ export default function OldWays() {
               <div className="flex flex-col items-start space-y-6 lg:space-y-8 xl:space-y-10">
                 {/* Your content lives inside Notion */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                <div className="grid md:flex items-center h-full">
+                <div className="grid md:flex items-center h-full bg-white">
                 <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                 <p className="text-sm font-bold uppercase tracking-wide text-orange-600">No Hosting Hassles</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
@@ -39,7 +39,7 @@ export default function OldWays() {
 
                 {/* Optimized for SEO */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid md:flex items-center h-full">
+                  <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Optimized for</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
@@ -66,7 +66,7 @@ export default function OldWays() {
 
                 {/* Easy customization */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid md:flex items-center h-full">
+                  <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Paid Subscribers</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
@@ -93,7 +93,7 @@ export default function OldWays() {
 
                 {/* In-built analytics */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid md:flex items-center h-full">
+                  <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">In-built</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
@@ -120,7 +120,7 @@ export default function OldWays() {
 
                 {/* AI Support */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid md:flex items-center h-full">
+                  <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">AI SUPPORT & SUGGESTIONS</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
@@ -147,7 +147,7 @@ export default function OldWays() {
 
                 {/* Integrations */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                  <div className="grid md:flex items-center h-full">
+                  <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Integrates with</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">

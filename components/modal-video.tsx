@@ -3,67 +3,85 @@
 import { useState, useEffect } from 'react'
 import { Dialog } from '@headlessui/react'
 
-export default function ModalVideo() {
+export default function TellaVideoButton() {
   const [modalOpen, setModalOpen] = useState(false)
 
-  // Log the modal state changes for debugging
+  // Handle scroll lock when modal is open
   useEffect(() => {
-    console.log("modalOpen state:", modalOpen)
+    if (modalOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
   }, [modalOpen])
 
   return (
-    <div>
-      {/* Video Thumbnail */}
-      <div className="justify-center mb-8 mt-12 max-w-4xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
-        <div className="banner-bottom-wrapper relative">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-full mx-auto rounded-2 object-cover border border-4 bg-black p-1"
-            style={{ borderRadius: '0.3rem', imageRendering: 'auto' }}
-            poster="https://web3summary.com/assets/videos/mainvid.jpg"
-          >
-            <source src="https://dazzling-cat.netlify.app/wonder.mp4" type="video/mp4" />
-          </video>
-
-          {/* Play Button */}
-          <button
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-32 md:w-56 lg:w-56 cursor-pointer transition-transform hover:scale-110"
-            onClick={() => {
-              console.log("Play button clicked!")
-              setModalOpen(true)
-            }}
-          >
-            <img
-              src="https://dazzling-cat.netlify.app/sticky.png"
-              alt="Play video"
-              className="w-full h-auto"
-            />
-          </button>
+    <div className="flex justify-center items-center">
+      {/* Main Button Component - Rotated and with hover effect */}
+      <div 
+        className="flex items-center max-w-4xl w-full mx-8 border pl-4 py-4 bg-gray-800 rounded-3xl overflow-hidden transform -rotate-1 transition-all duration-300 hover:rotate-0 hover:shadow-2xl cursor-pointer"
+        onClick={() => setModalOpen(true)}
+      >
+        {/* Left side - Video thumbnail */}
+        <div className="relative w-2/5 border rounded-md">
+          <div className="aspect-w-16 aspect-h-9">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="object-cover w-full h-full"
+            >
+              <source src="https://dazzling-cat.netlify.app/wonder.mp4" type="video/mp4" />
+            </video>
+            {/* Play button overlay */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-white rounded-full p-3 shadow-lg transform transition-transform hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-slate-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Right side - Text content */}
+        <div className="w-3/5 p-6 lg:p-8">
+          <h2 className="text-2xl font-bold text-white mb-2">
+            Make a Wonder Site In Under 60 Seconds! ⚡
+          </h2>
+          <p className="text-lg text-slate-400">
+            Watch the demo
+          </p>
         </div>
       </div>
 
-      {/* Simplified Modal */}
-      {modalOpen && (
-        <Dialog
-          open={modalOpen}
-          onClose={() => {
-            console.log("Modal closed")
-            setModalOpen(false)
-          }}
-          className="fixed inset-0 z-[100000] flex items-center justify-center"
-        >
+      {/* Modal */}
+      <Dialog 
+        open={modalOpen} 
+        onClose={() => setModalOpen(false)}
+        className="fixed inset-0 z-50 overflow-y-auto"
+      >
+        <div className="min-h-screen flex items-center justify-center px-4">
           {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-black bg-opacity-75"
-            onClick={() => setModalOpen(false)}
-          ></div>
+          <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-75" />
 
           {/* Modal Content */}
-          <Dialog.Panel className="relative bg-black w-full max-w-[90vw] lg:max-w-[1150px] aspect-video">
+          <div className="relative bg-black w-full max-w-5xl rounded-lg overflow-hidden z-10">
+            {/* Close button */}
+            <button
+              className="absolute top-3 right-3 bg-black bg-opacity-60 rounded-full p-2 text-white z-20"
+              onClick={() => setModalOpen(false)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <div className="aspect-w-16 aspect-h-9">
             <iframe
               width="100%"
               height="100%"
@@ -76,9 +94,10 @@ export default function ModalVideo() {
               className="w-full h-full"
               style={{ aspectRatio: '16/9' }}
             ></iframe>
-          </Dialog.Panel>
-        </Dialog>
-      )}
+            </div>
+          </div>
+        </div>
+      </Dialog>
     </div>
   )
 }

@@ -53,7 +53,14 @@ export default function Home() {
       >
         <Header />
         <Hero />
+        
       </div>
+
+      <br/>
+      <br/>
+      <ModalVideo
+      />
+
 
       <NotiontoWebsite/>
 
@@ -72,8 +79,7 @@ export default function Home() {
       <FAQ />
       <AboutMe />
 
-      <ModalVideo
-      />
+
 
 <Testimonials/>
 

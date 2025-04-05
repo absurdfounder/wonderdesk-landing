@@ -25,9 +25,9 @@ export default function Newsletter() {
 
           {/* CTA box */}
           <div 
-            className="relative py-10 px-8 md:py-16 md:px-12 overflow-hidden rounded-2xl" 
+            className="relative py-10 px-8 md:py-16 md:px-12 overflow-hidden rounded-2xl my-8 border" 
             style={{
-              backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(https://framerusercontent.com/images/TsqmcduIzaZSBEAV1cs5OACM.jpg)',
+              backgroundImage: 'linear-gradient(rgb(255 255 255), rgb(255 255 255 / 25%)), url(https://framerusercontent.com/images/TsqmcduIzaZSBEAV1cs5OACM.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center'
             }}

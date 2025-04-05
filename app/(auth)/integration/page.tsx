@@ -48,7 +48,7 @@ const Integration = async () => {
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
             {integrations.map((integration: any, index: number) => (
               <Link key={index} href={"/integration/" + integration.id} >
-                <div className="cursor-pointer relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border">
+                <div className="cursor-pointer relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border bg-white">
                   <div className='w-full'>
                     <div className="flex items-center space-x-2 mb-4">
 
@@ -71,7 +71,7 @@ const Integration = async () => {
             ))}
 
             <Link href="https://iframely.com/domains" target='_blank'>
-            <div className="cursor-pointer relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border border-slate-600 border-dashed">
+            <div className="cursor-pointer relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border bg-white border-slate-600 border-dashed">
                 <div className="w-full">
                     <div className="flex items-center space-x-2 mb-4">
                         <div className="w-10 h-10 bg-slate-200 rounded-md" ></div>
