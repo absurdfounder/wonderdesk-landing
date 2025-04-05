@@ -55,14 +55,14 @@ const SimpleAnalyticsDashboard: React.FC = () => {
 
   return (
     <div className="text-gray-900 p-8 w-full max-w-6xl mx-auto rounded-lg">
-      <h1 className="h2 mb-4 m-auto text-center">
+      <h1 className="font-comfortaa h2 mb-4 m-auto text-center">
         Simplicity meets AI Teams
         <span className="font-source-serif-4 block font-normal text-orange-600">stop grinding all alone.</span>
       </h1>
 
       {/* Header */}
       <div className="text-center mb-12 px-4">
-        <h1 className="text-xl font-medium mb-4 max-w-4xl m-auto">
+        <h1 className="font-comfortaa text-xl font-medium mb-4 max-w-4xl m-auto">
           Wonder  Sites is a simple Wordpress alternative powered by Notion. Build and Forget about us focus on what is important the services that your business provides.
         </h1>
         <p className="text-xl">Nothing beats simplicity.</p>

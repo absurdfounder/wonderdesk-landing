@@ -381,7 +381,7 @@ function TemplateClientContent() {
         {/* Page header with improved spacing and typography */}
         <div className="pt-4 pb-20 md:pt-24 md:pb-28">
           <div className="mx-auto text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-4xl mb-6">
+            <h1 className="font-comfortaa text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-4xl mb-6">
               <span className="block">Not Templates,</span>
               <span className="block text-orange-600">Beautiful Businesses</span>
             </h1>

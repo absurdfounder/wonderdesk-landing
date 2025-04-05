@@ -218,9 +218,9 @@ const FAQSection: React.FC = () => {
     <div className="mx-auto mt-20 max-w-4xl">
       <div className="px-4">
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+          <h1 className="font-comfortaa text-2xl md:text-3xl font-bold text-slate-900 mb-3">
             Frequently Asked Questions
-          </h2>
+          </h1>
           <p className="text-slate-600 max-w-2xl mx-auto">
             Have a different question? Reach out to our support team by
             <a
@@ -452,7 +452,7 @@ const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 font-comfortaa">
+          <h1 className="font-comfortaa text-4xl md:text-5xl font-bold tracking-tight mb-6 font-comfortaa">
             <span className="text-slate-800 block mb-2 font-bold">content-heavy websites </span>
             <div className="flex items-center justify-center gap-4">
               <span className="text-slate-800">with</span>

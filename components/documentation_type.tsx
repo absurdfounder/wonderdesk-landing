@@ -51,7 +51,7 @@ export default function Marketplace_Type() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+            <h1 className="font-comfortaa text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               No matter how unique your documentation concept,
               <span className="font-source-serif-4 block font-normal text-orange-600">
                 Wonder  can support it.

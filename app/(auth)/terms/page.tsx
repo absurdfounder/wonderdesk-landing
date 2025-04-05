@@ -36,7 +36,7 @@ export default function PageDetail() {
 
                     <div className="w-full px-8 sm:px-0 py-16 m-auto !prose">
                         <main className="notion">
-                            <h1 className="h1">
+                            <h1 className="font-comfortaa h1">
                                 <span><span>Terms and Conditions</span></span>
                             </h1>
                             <p className="text gray">

@@ -27,7 +27,7 @@ function IntegrationDetail() {
                       <Image  src="https://framerusercontent.com/images/FS1of0gxF0A6UP7GmCpIBKQM.png" unoptimized alt="" width={100} height={100} className="w-full h-full object-contain" />
                     </div>
                     <div className="space-y-2" >
-                      <h1 className="text-2xl font-bold text-slate-800">Arcade</h1>
+                      <h1 className="font-comfortaa text-2xl font-bold text-slate-800">Arcade</h1>
                       <p className="text-md text-slate-600">By Wonder Sites</p>
                     </div>
                   </div>

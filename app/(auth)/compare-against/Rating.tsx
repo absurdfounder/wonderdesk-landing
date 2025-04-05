@@ -6,7 +6,7 @@ const Rating = () => {
     return (
         
         <div className='hidden max-w-3xl mx-auto text-center py-20 pb-12 md:pb-20'>
-        <h1 className="h2 mb-4">Wonder is rated the Best.</h1>
+        <h1 className="h2 mb-4 font-comfortaa">Wonder is rated the Best.</h1>
         <p className="text-xl text-slate-600"> Numbers quantify everything, this is what stands us apart from the competition.</p>
 
 

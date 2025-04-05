@@ -120,7 +120,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 src={filterBySlug.product.logo}
               />
               <div>
-                <h1 className="text-3xl font-bold text-slate-800 mt-8">{filterBySlug.product.name}</h1>
+                <h1 className="font-comfortaa text-3xl font-bold text-slate-800 mt-8">{filterBySlug.product.name}</h1>
                 <p className="text-md text-slate-600">{filterBySlug.product.provider}</p>
               </div>
             </div>
@@ -152,17 +152,17 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="mb-4">
-          <h1 className="text-2xl font-bold text-slate-800">Overview</h1>
+          <h1 className="font-comfortaa text-2xl font-bold text-slate-800">Overview</h1>
           <p className="text-md text-slate-600">{filterBySlug.overview.content}</p>
         </div>
 
         <div className="mb-4">
-          <h1 className="text-2xl font-bold text-slate-800">How it Works</h1>
+          <h1 className="font-comfortaa text-2xl font-bold text-slate-800">How it Works</h1>
           <p className="text-md text-slate-600">{filterBySlug.howItWorks.content}</p>
         </div>
 
         <div className="mb-4">
-          <h1 className="text-2xl font-bold text-slate-800">Configuration</h1>
+          <h1 className="font-comfortaa font-comfortaa text-2xl font-bold text-slate-800">Configuration</h1>
           <p className="text-md text-slate-600">{filterBySlug.configuration.content}</p>
         </div>
       </div>

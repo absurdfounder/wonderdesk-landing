@@ -52,7 +52,7 @@ export default function PageDetail() {
                             </div>
                         </div>
                         <div className="text-center">
-                            <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Migrate</span> your content from another external Website</h1>
+                            <h1 className="font-comfortaa md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Migrate</span> your content from another external Website</h1>
                             <p className="mt-6 leading-7 text-slate-600 sm:text-lg sm:leading-8">
                                 Planning to move your help content from another provider? We can seamlessly import your existing knowledge base from pretty much any platform into our Notion template.
                             </p>
