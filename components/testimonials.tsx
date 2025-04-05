@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Zack Swire",
     handle: "@swire",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/688Eh9PtIW8FyDbcf5H3QvtePBA.jpeg",
     content:
       "If you're a Coach or a Creator, and you'd like to build better websites quickly, check out @WonderSitesCo",
     additionalContent: "I switched from Squarespace & I'm not looking back 🙌",
@@ -25,14 +25,14 @@ const testimonials: Testimonial[] = [
   {
     name: "Dan Rowden",
     handle: "@dr",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/ZPFWVz5iXLUOm3QgC66kg4NxQ30.jpeg",
     content: "Wow @WonderSitesCo is amazing ✨",
     platform: "twitter",
   },
   {
     name: "Laura Evans-Hill",
     handle: "@EvansNifty",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/64FW2f03YxmX7qiS7QezpeGu4.png",
     content:
       "A HUGGGGEEEE shout out to @WonderSitesCo for putting me onto them—my course landing pages have never looked better.",
     platform: "twitter",
@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Alberto Di Risio",
     handle: "albertodirisio",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/B14xyvywVCK3F2McxEUBvZtI.jpeg",
     content:
       "First I downgraded my old site builder to the free plan. Then I stopped using it entirely.",
     additionalContent:
@@ -49,20 +49,20 @@ const testimonials: Testimonial[] = [
   },
   {
     name: "Annie Hwang",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/Y9stNCmCgju1PW4P2VKfoBK4Q.jpeg",
     content:
       "The customization in Wonder is awesome. My product pages always look super fun and match Jemi's brand.",
   },
   {
     name: "Ben Barrett-Forrest",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/VA5C0bceopw0oYN50h8gv6aP4.jpeg",
     content:
       "I was up and running with Wonder in literally 2 minutes. I love how simple it is to launch landing pages. Would highly recommend!",
   },
   {
     name: "Max Haining",
     handle: "@HainingMax",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/N4NgdRImFNTAYSobmVTKVyb4vys.png",
     content:
       "@WonderSitesCo\n\nLike Webflow, but better.\n\nPerfect for...\n- Sharing course previews\n- Product demos\n- Creating sales funnels\n- Teaching your audience",
     platform: "twitter",
@@ -70,21 +70,21 @@ const testimonials: Testimonial[] = [
   {
     name: "Mike Futia",
     handle: "@mikefutia",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/CgcgsYZhqHDIikpyOTQoutkLPM.png",
     content:
       "The best new tool for building:\n\n- Course websites\n- Webinar pages\n- 1-on-1 booking sites\n- Or ANY type of landing page\n\nIs WonderSites.co\n\nIt blows everything else out of the water.",
     platform: "twitter",
   },
   {
     name: "Raffaele Gaito",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/D6HX35QUEaWpRufse6kuiDm3fo.png",
     content:
       "I love Wonder, it's a platform that has incredibly sped up my site creation speed. If I'm growing quickly on YouTube, I owe it also to Wonder.",
   },
   {
     name: "Tom Critchlow",
     handle: "@tomcritchlow",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/Qh9VsRKfvO9HwGpy24f2XjHjY.jpeg",
     content:
       "Wrapping up day 1 of site building for my new course and just so much <3 for @WonderSitesCo\n\n- Impeccable and speedy support (even on a Sunday!)\n- Great templates (recognizing my brand’s vibe instantly!)\n- Putting professional websites within reach (in browser!)",
     platform: "twitter",
@@ -92,7 +92,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Martin Cregut",
     handle: "martin-cregut",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/MkF6kIsOTqaahIQbedhHEcGmM.jpeg",
     content:
       "Wonder c'est Webflow en 100x plus intuitif, 100x plus beau et 100x plus vaste.",
     platform: "linkedin",
@@ -100,38 +100,22 @@ const testimonials: Testimonial[] = [
   {
     name: "Justin Moore",
     handle: "@justinmoorefam",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/r5BRfhG49vqh8JZSzSVI8EnJ2k.jpg",
     content:
       "I just re-launched my entire course site on @WonderSitesCo and holy cow their multi-layout views and custom CSS are soooo sick 🤩",
     platform: "twitter",
   },
   {
-    name: "Bug Artisan",
-    handle: "LeBugArtisan",
-    avatar: "/api/placeholder/40/40",
-    content:
-      "Yesterday I started using @WonderSitesCo and 🤯\n\nIt's so easy to use! I'm definitely a no‑code beginner, and I rarely/never build sites.",
-    platform: "twitter",
-  },
-  {
-    name: "James Devonport",
-    handle: "@jamesdevonport",
-    avatar: "/api/placeholder/40/40",
-    content:
-      "Thank you, love @WonderSitesCo for producing all my tutorial and help pages 💙",
-    platform: "twitter",
-  },
-  {
     name: "Mona",
     handle: "@simondela",
-    avatar: "/api/placeholder/40/40",
+    avatar: "https://framerusercontent.com/images/tjmtGfBi6yjVmhqy5ZLuzQTm6E.png",
     content:
       "One more vote for @WonderSitesCo! Have been using other builders for 3 years now and Wonder just kicks them out of the market imo.",
     platform: "twitter",
   },
 ];
 
-const tabs = ['All', 'Online Course', 'Product Demo', 'Tutorial', 'Squarespace', 'YouTube'] as const;
+const tabs = ['All', 'Product Docs', 'Blog', 'Helpdesk', 'Directory', 'Marketplace'] as const;
 type Tab = typeof tabs[number];
 
 const TestimonialsGrid: FC = () => {
@@ -145,6 +129,7 @@ const TestimonialsGrid: FC = () => {
   return (
     <div className="bg-gray-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">Loved by entrepreneurs</h1>
           <p className="text-xl text-gray-600">
@@ -152,6 +137,7 @@ const TestimonialsGrid: FC = () => {
           </p>
         </header>
 
+        {/* Tabs */}
         <nav className="flex justify-center flex-wrap gap-2 mb-12">
           {tabs.map((tab) => (
             <button
@@ -168,11 +154,15 @@ const TestimonialsGrid: FC = () => {
           ))}
         </nav>
 
-        <section className="flex flex-wrap justify-center gap-6">
+        {/* Multi-column container */}
+        <section
+          className="columns-3 gap-6"
+          style={{ columnGap: '1.5rem', height: '800px', overflowY: 'auto' }}
+        >
           {testimonials.map((t, i) => (
             <article
               key={i}
-              className="bg-white rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-1 p-6 w-[346px] overflow-visible"
+              className="bg-white rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-1 p-6 mb-6 break-inside-avoid"
               style={{ transform: getRandomRotation() }}
             >
               <div className="flex items-center justify-between mb-4">
@@ -198,7 +188,6 @@ const TestimonialsGrid: FC = () => {
                   )}
                 </div>
               </div>
-
               <div className="space-y-3 whitespace-pre-line">
                 <p>{t.content}</p>
                 {t.additionalContent && <p>{t.additionalContent}</p>}
