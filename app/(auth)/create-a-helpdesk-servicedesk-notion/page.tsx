@@ -66,7 +66,7 @@ export default function PageDetail() {
 
 
                                     <div className="text-center px-4 sm:px-6 lg:px-8">
-                                        <h1 className="font-comfortaa text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tighter tracking-tighter mb-4 aos-init aos-animate">
+                                        <h1 className="font-funneldisplay text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tighter tracking-tighter mb-4 aos-init aos-animate">
                                             Turn
                                             <span className="text-3xl sm:text-4xl md:text-5xl relative">
                                                 <span className="inline-flex items-center relative sm:bottom-0 bottom-[-1px] justify-center mx-2">

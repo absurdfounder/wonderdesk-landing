@@ -196,7 +196,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   by <span className="font-medium ml-1">{filterBySlug.product.provider}</span>
                 </span>
               </div>
-              <h1 className="font-comfortaa text-4xl font-bold text-slate-900 tracking-tight">{filterBySlug.product.name}</h1>
+              <h1 className="font-funneldisplay text-4xl font-bold text-slate-900 tracking-tight">{filterBySlug.product.name}</h1>
             </div>
 
             {/* Description */}

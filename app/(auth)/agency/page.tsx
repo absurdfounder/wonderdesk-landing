@@ -39,7 +39,7 @@ export default function PageDetail() {
                     <div className="max-w-4xl py-6 mx-auto lg:py-6">
 
                         <div className="text-center">
-                            <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-comfortaa font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Hire a Wonder  Expert</span> to help you grow beyond the limitations.</h1>
+                            <h1 className="md:text-5xl font-bold tracking-tight text-slate-900 sm:text-4xl font-funneldisplay font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate"><span className="gradient-text-accent">Hire a Wonder  Expert</span> to help you grow beyond the limitations.</h1>
                             <p className="mt-6 leading-7 text-slate-600 sm:text-lg sm:leading-8">
                                 If your ready to grow from a 100 users to 10,000 , We can customize your Wonder  site to match your needs.
                             </p>

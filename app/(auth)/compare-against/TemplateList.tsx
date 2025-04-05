@@ -162,7 +162,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <span className="font-source-serif-4 block font-normal text-orange-600 text-2xl sm:text-3xl lg:text-4xl">
+        <span className=" block font-normal text-orange-600 text-2xl sm:text-3xl lg:text-4xl">
           Beautiful websites
         </span>
         <div className="flex flex-col sm:flex-row items-center justify-center m-auto">

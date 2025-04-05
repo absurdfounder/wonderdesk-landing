@@ -124,7 +124,7 @@ const FAQ: React.FC = () => {
     <div className="mx-auto mt-10">
       <div className="px-4 py-16 mx-auto max-w-7xl sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center sm:max-w-2xl lg:mx-auto">
-          <h1 className="font-comfortaa text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          <h1 className="font-funneldisplay text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Frequently Asked Questions
           </h1>
           <p className="text-base font-normal text-slate-600 mt-4 sm:text-lg">

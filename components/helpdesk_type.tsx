@@ -112,8 +112,8 @@ export default function Helpdesk_Type() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-6 md:pt-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="font-comfortaa h2 mb-4">
-              Unique your helpdesk concept? <span className="font-source-serif-4 block font-normal text-orange-600">Wonder can support it.</span>
+            <h1 className="font-funneldisplay h2 mb-4">
+              Unique your helpdesk concept? <span className=" block font-normal text-orange-600">Wonder can support it.</span>
             </h1>
             <p className="text-xl text-slate-600">
               Wonder  is designed for all types from content curation to

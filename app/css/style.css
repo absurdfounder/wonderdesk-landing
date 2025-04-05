@@ -27,8 +27,13 @@
   font-family: "Source Serif 4", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif !important;
 }
 
+
 .font-comfortaa {
   font-family: var(--font-comfortaa);
+}
+
+.font-funneldisplay {
+  font-family: var(--font-funneldisplay);
 }
 
 .font-josefin-slab {

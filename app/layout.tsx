@@ -56,6 +56,13 @@ const bungee = localFont({
   variable: '--font-bungee'
 })
 
+
+// For Bungee, which is also not available in next/font/google
+const funneldisplay = localFont({
+  src: '../public/fonts/FunnelDisplay-VariableFont_wght.ttf',
+  variable: '--font-funneldisplay'
+})
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -93,7 +100,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${robotoMono.variable} ${sourceSerif4.variable} ${comfortaa.variable} ${josefinSlab.variable} ${silkscreen.variable} ${bungee.variable} bg-gray-50 font-inter antialiased text-slate-900 tracking-tight`}>
+      <body className={`${inter.variable} ${robotoMono.variable} ${sourceSerif4.variable} ${comfortaa.variable} ${josefinSlab.variable} ${silkscreen.variable} ${bungee.variable} ${funneldisplay.variable} bg-gray-50 font-inter antialiased text-slate-900 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}
           <Banner />

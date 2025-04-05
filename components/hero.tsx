@@ -56,7 +56,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h1 className="h1 mb-8 text-center leading-tight font-comfortaa tracking-loose text-slate-700">
+            <h1 className="h1 mb-8 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
               Easy to use
               Wordpress alternative
               {" "}

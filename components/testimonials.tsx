@@ -131,7 +131,7 @@ const TestimonialsGrid: FC = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
-          <h1 className="font-comfortaa text-5xl font-bold mb-4">Loved by entrepreneurs</h1>
+          <h1 className="font-funneldisplay text-5xl font-bold mb-4">Loved by entrepreneurs</h1>
           <p className="text-xl text-gray-600">
             We could toot our horn, but customers do it for us.
           </p>

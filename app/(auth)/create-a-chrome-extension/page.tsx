@@ -542,7 +542,7 @@ body {
         <div className="mb-6">
           <div className='grid gap-4 text-center'>
             <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/main-desktop-browser-logos.png" className='max-w-64 m-auto' alt="Browser Logos"/>
-            <h1 className="font-comfortaa text-xl font-bold mb-2">Browser Extension Generator</h1>
+            <h1 className="font-funneldisplay text-xl font-bold mb-2">Browser Extension Generator</h1>
           </div>
           
           {/* Simple Tab Navigation */}

@@ -12,12 +12,12 @@ export default function FeaturesBlocks() {
           <section className="mt-2">
             {/* Section header */}
             <div className="max-w-3xl mx-auto text-center pt-12 mb-8 ">
-              <h1 className="font-comfortaa h2 mb-4">
+              <h1 className="font-funneldisplay h2 mb-4">
                 Ready for anything,
-                <span className="font-source-serif-4 block font-normal text-orange-600">launch faster, go live in minutes.</span>
+                <span className=" block font-normal text-orange-600">launch faster, go live in minutes.</span>
               </h1>
 
-              <p className="text-xl text-slate-600">We know you have too much on your plate, this is why Wonder  exists to help you set and forget. <span className="font-source-serif-4 font-normal text-orange-600 border-b">Just focus on writing </span>.</p>
+              <p className="text-xl text-slate-600">We know you have too much on your plate, this is why Wonder  exists to help you set and forget. <span className=" font-normal text-orange-600 border-b">Just focus on writing </span>.</p>
             </div>
 
 

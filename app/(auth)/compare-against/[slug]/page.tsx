@@ -99,7 +99,7 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
               loading="eager"
               className="w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-sm rounded-md p-8 mb-8 m-auto"
             />
-            <h1 className="text-4xl font-bold mb-4 font-comfortaa">
+            <h1 className="text-4xl font-bold mb-4 font-funneldisplay">
               Tired of <b>{filteredContent.product.name}</b>? <br /> Say hi to Wonder  Sites
             </h1>
             <p className="text-lg sm:text-xl text-slate-600">
