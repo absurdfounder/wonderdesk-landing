@@ -18,7 +18,7 @@ interface TabButtonProps {
 
 const TabButton: React.FC<TabButtonProps> = ({ tabIndex, icon: Icon, text, currentTab, setTab }) => (
   <button
-    className={`group flex items-center justify-between text-lg p-5 rounded-full border transition duration-300 ease-in-out d hover:shadow-lg text-slate-900 ${
+    className={`group flex items-center justify-between text-lg p-5 rounded-md border transition duration-300 ease-in-out d hover:shadow-lg text-slate-900 ${
       currentTab !== tabIndex ? "bg-slate-100" : "bg-orange-100 text-orange-600"
     }`}
     onClick={() => setTab(tabIndex)}
@@ -69,7 +69,7 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt1, alt2 }) => (
           width={120}
           height={120}
           src={alt1}
-          className="rounded-full w-auto h-8"
+          className="rounded-md w-auto h-8"
           unoptimized
         />{" "}
         and{" "}
@@ -78,7 +78,7 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt1, alt2 }) => (
           width={120}
           height={120}
           src={alt2}
-          className="rounded-full w-auto h-8"
+          className="rounded-md w-auto h-8"
           unoptimized
         />
       </div>

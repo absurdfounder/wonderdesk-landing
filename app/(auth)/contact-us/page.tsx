@@ -167,7 +167,7 @@ export default function ContactUs() {
         <div className="w-full p-4 h-full px-12">
           <h3 className="text-center text-lg font-semibold mt-12 mb-12 opacity-75 w-xl">"Your success is our success. This is why all our services are at cost to cost basis. <u>We only make money when you grow</u> ."</h3>
           <div className="flex justify-center my-4">
-            <img alt="VP of Success" className="rounded-full w-48 h-48 object-cover" src="https://dazzling-cat.netlify.app/image 1469.png" />
+            <img alt="VP of Success" className="rounded-md w-48 h-48 object-cover" src="https://dazzling-cat.netlify.app/image 1469.png" />
           </div>
           <div className="text-center">
             <h3 className="text-xl font-semibold">VP of Success</h3>

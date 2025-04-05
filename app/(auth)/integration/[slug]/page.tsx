@@ -116,7 +116,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 alt="Logo"
                 height={100}
                 width={100}
-                className="rounded-full object-cover w-20 h-20 mt-6 p-2"
+                className="rounded-md object-cover w-20 h-20 mt-6 p-2"
                 src={filterBySlug.product.logo}
               />
               <div>
@@ -131,7 +131,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <div className="flex space-x-2 items-center">
                 <Link
                   href={filterBySlug.product.callToAction.link}
-                  className="bg-slate-900 hover:bg-slate-700 text-white cursor-pointer font-bold py-2 px-4 rounded-full inline-flex items-center"
+                  className="bg-slate-900 hover:bg-slate-700 text-white cursor-pointer font-bold py-2 px-4 rounded-md inline-flex items-center"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

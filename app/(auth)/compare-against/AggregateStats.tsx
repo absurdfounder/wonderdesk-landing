@@ -79,7 +79,7 @@ const AggregateStats: React.FC = () => {
             </p>
             <a 
               href="https://app.wondersites.co" 
-              className="inline-flex items-center justify-center px-6 py-3 bg-slate-900 text-white font-medium rounded-full transition-colors hover:bg-slate-800"
+              className="inline-flex items-center justify-center px-6 py-3 bg-slate-900 text-white font-medium rounded-md transition-colors hover:bg-slate-800"
             >
               Get Started Free
               <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

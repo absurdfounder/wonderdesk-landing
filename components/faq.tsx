@@ -147,7 +147,7 @@ const FAQ: React.FC = () => {
                 key={tab}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 font-semibold text-lg rounded-full m-2 font-roboto-mono ${
+                className={`px-4 py-2 font-semibold text-lg rounded-md m-2 font-roboto-mono ${
                   activeTab === tab 
                     ? "bg-orange-700 text-orange-50" 
                     : "text-slate-700 hover:bg-orange-100"

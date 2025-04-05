@@ -53,22 +53,22 @@ const ComparisonTable = ({ id }: { id: string }) => {
                   </td>
                   <td className="px-6 py-4 text-center border-b border-slate-200">
                     {competitorHasFeature ? (
-                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-100 text-slate-600 rounded-full">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-100 text-slate-600 rounded-md">
                         ✓
                       </span>
                     ) : (
-                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-100 text-slate-400 rounded-full">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-100 text-slate-400 rounded-md">
                         ✕
                       </span>
                     )}
                   </td>
                   <td className="px-6 py-4 text-center border-b border-slate-200 bg-orange-50">
                     {WonderSitesHasFeature ? (
-                      <span className="inline-flex items-center justify-center w-8 h-8 bg-orange-700 text-white rounded-full">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-orange-700 text-white rounded-md">
                         ✓
                       </span>
                     ) : (
-                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-200 text-slate-400 rounded-full">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-slate-200 text-slate-400 rounded-md">
                         ✕
                       </span>
                     )}

@@ -30,7 +30,7 @@ const Loading: React.FC = () => {
                 {spinnerStyle}
             </style>
             <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-                <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+                <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-md" role="status">
                     <span className="visually-hidden">
                     </span>
                 </div>

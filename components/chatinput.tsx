@@ -220,7 +220,7 @@ export default function ChatInput() {
                 <button
                   id="chatinput-send-message-button"
                   type="submit"
-                  className={`flex gap-2 px-2 items-center justify-center rounded-full p-1 ${
+                  className={`flex gap-2 px-2 items-center justify-center rounded-md p-1 ${
                     inputValue.trim()
                       ? "bg-slate-900 text-white hover:bg-orange-600"
                       : "bg-slate-200 text-slate-400"
@@ -252,7 +252,7 @@ export default function ChatInput() {
           {suggestionOptions.map((suggestion, idx) => (
             <motion.button
               key={idx}
-              className="text-sm bg-slate-100 opacity-75 hover:bg-slate-800 hover:opacity-100 text-slate-900 hover:text-white px-3 py-1.5 rounded-full border border-transparent transition-colors"
+              className="text-sm bg-slate-100 opacity-75 hover:bg-slate-800 hover:opacity-100 text-slate-900 hover:text-white px-3 py-1.5 rounded-md border border-transparent transition-colors"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => handleSuggestionClick(suggestion)}

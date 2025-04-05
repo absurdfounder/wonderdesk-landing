@@ -70,7 +70,7 @@ export default function Marketplace_Type() {
               {/* Tabs buttons */}
               <div className="grid gap-4 mb-8 md:mb-0">
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 1 ? "bg-slate-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-lg p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 1 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -86,7 +86,7 @@ export default function Marketplace_Type() {
                   </div>
                 </Link>
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 2 ? "bg-slate-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-lg p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 2 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -103,7 +103,7 @@ export default function Marketplace_Type() {
                 </Link>
 
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 3 ? "bg-slate-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-lg p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 3 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -120,7 +120,7 @@ export default function Marketplace_Type() {
                 </Link>
 
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-full border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 4 ? "bg-slate-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-lg p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 4 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -179,7 +179,7 @@ export default function Marketplace_Type() {
                           width={120}
                           height={120}
                           src={helpdeskrival1}
-                          className="rounded-full w-auto h-8"
+                          className="rounded-md w-auto h-8"
                           unoptimized
                         />{" "}
                         and{" "}
@@ -188,7 +188,7 @@ export default function Marketplace_Type() {
                           height={120}
                           width={120}
                           src={helpdeskrival2}
-                          className="rounded-full w-auto h-8"
+                          className="rounded-md w-auto h-8"
                           unoptimized
                         />
                       </div>
@@ -225,7 +225,7 @@ export default function Marketplace_Type() {
                         <Image
                           alt="Ana"
                           src={blogrival1}
-                          className="rounded-full w-auto h-8"
+                          className="rounded-md w-auto h-8"
                           height={120}
                           width={120}
                           unoptimized
@@ -235,7 +235,7 @@ export default function Marketplace_Type() {
                         <Image
                           alt="Ana"
                           src={blogrival2}
-                          className="rounded-full w-auto h-8"
+                          className="rounded-md w-auto h-8"
                           width={120}
                           height={120}
                           unoptimized
@@ -274,7 +274,7 @@ export default function Marketplace_Type() {
                         <Image
                           alt="Ana"
                           src={marketplacerival1}
-                          className="rounded-full w-auto h-8"
+                          className="rounded-md w-auto h-8"
                           unoptimized
                           width={120}
                           height={120}
@@ -283,7 +283,7 @@ export default function Marketplace_Type() {
                         <Image
                           alt="Ana"
                           src={marketplacerival2}
-                          className="rounded-full w-auto h-8"
+                          className="rounded-md w-auto h-8"
                           height={120}
                           width={120}
                           unoptimized
@@ -322,7 +322,7 @@ export default function Marketplace_Type() {
                         <Image
                           alt="Ana"
                           src={helpdeskrival1}
-                          className="rounded-full w-auto h-8"
+                          className="rounded-md w-auto h-8"
                           height={120}
                           width={120}
                           unoptimized
@@ -331,7 +331,7 @@ export default function Marketplace_Type() {
                         <Image
                           alt="Ana"
                           src={helpdeskrival1}
-                          className="rounded-full w-auto h-8"
+                          className="rounded-md w-auto h-8"
                           width={120}
                           height={120
 

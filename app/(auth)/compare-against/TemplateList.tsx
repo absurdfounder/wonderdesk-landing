@@ -307,7 +307,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
               <motion.button
                 key={tag}
                 onClick={() => toggleTag(tag)}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
                   ? "bg-orange-500 text-white"
                   : "bg-slate-100 text-slate-800 hover:bg-slate-200"
                   }`}
@@ -326,7 +326,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
               <motion.button
                 key={tag}
                 onClick={() => toggleTag(tag)}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
                   ? "bg-orange-500 text-white"
                   : "bg-slate-100 text-slate-800 hover:bg-slate-200"
                   }`}
@@ -406,7 +406,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                           <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-600 transition-colors duration-300" />
                         </Link>
 
-                        <span className="inline-block bg-slate-100 border-slate-200 border-dashed border-2 px-3 py-1 rounded-full text-sm">
+                        <span className="inline-block bg-slate-100 border-slate-200 border-dashed border-2 px-3 py-1 rounded-md text-sm">
                           {template.product.type}
                         </span>
                       </div>
@@ -423,7 +423,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                         {template.product.tags && template.product.tags.slice(0, 2).map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
-                            className={`inline-block px-3 py-1 rounded-full text-sm bg-orange-100 text-orange-800`}
+                            className={`inline-block px-3 py-1 rounded-md text-sm bg-orange-100 text-orange-800`}
                           >
                             {tag}
                           </span>

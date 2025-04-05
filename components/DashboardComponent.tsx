@@ -75,7 +75,7 @@ const SimpleAnalyticsDashboard: React.FC = () => {
             key={tab.id}
             onClick={() => handleTabClick(tab.id)}
             className={`
-              flex items-center gap-2 px-4 py-2 rounded-full border-2 font-bold border-orange-300 text-orange-500
+              flex items-center gap-2 px-4 py-2 rounded-md border-2 font-bold border-orange-300 text-orange-500
               ${tab.special
                 ? 'text-orange-900 border-orange-500'
                 : activeTab === tab.id

@@ -189,7 +189,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {/* Template header */}
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <span className="bg-orange-100 text-orange-700 text-xs font-medium px-3 py-1 rounded-full">
+                <span className="bg-orange-100 text-orange-700 text-xs font-medium px-3 py-1 rounded-md">
                   {filterBySlug.product.type}
                 </span>
                 <span className="text-sm text-slate-600 flex items-center">
@@ -210,7 +210,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 {filterBySlug.product.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="bg-slate-100 text-slate-600 text-xs font-medium px-3 py-1.5 rounded-full"
+                    className="bg-slate-100 text-slate-600 text-xs font-medium px-3 py-1.5 rounded-md"
                   >
                     #{tag}
                   </span>
@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="grid gap-8 mb-16">
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-              <span className="bg-orange-100 text-orange-700 w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">1</span>
+              <span className="bg-orange-100 text-orange-700 w-8 h-8 rounded-md flex items-center justify-center text-sm mr-3">1</span>
               About
             </h2>
             <p className="text-slate-700 leading-relaxed">{filterBySlug.overview.content}</p>
@@ -267,7 +267,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-              <span className="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">2</span>
+              <span className="bg-blue-100 text-blue-700 w-8 h-8 rounded-md flex items-center justify-center text-sm mr-3">2</span>
               Features
             </h2>
             <p className="text-slate-700 leading-relaxed">{filterBySlug.howItWorks.content}</p>
@@ -275,7 +275,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
             <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-              <span className="bg-green-100 text-green-700 w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">3</span>
+              <span className="bg-green-100 text-green-700 w-8 h-8 rounded-md flex items-center justify-center text-sm mr-3">3</span>
               Setup
             </h2>
             <div className="text-slate-700 leading-relaxed whitespace-pre-line">{filterBySlug.configuration.content}</div>
@@ -285,7 +285,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         {/* Related Templates Section with improved cards */}
         <div>
           <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center">
-            <span className="mr-3 bg-slate-100 w-10 h-10 rounded-full flex items-center justify-center">
+            <span className="mr-3 bg-slate-100 w-10 h-10 rounded-md flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-slate-700" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
               </svg>
@@ -313,7 +313,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
                 <div className="p-5 flex-1 flex flex-col">
                   <div className="mb-3">
-                    <span className="bg-orange-50 text-orange-600 text-xs font-medium px-2.5 py-1 rounded-full">
+                    <span className="bg-orange-50 text-orange-600 text-xs font-medium px-2.5 py-1 rounded-md">
                       {template.product.type}
                     </span>
                   </div>
@@ -332,7 +332,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                       {template.product.tags.slice(0, 3).map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-full"
+                          className="bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-md"
                         >
                           #{tag}
                         </span>

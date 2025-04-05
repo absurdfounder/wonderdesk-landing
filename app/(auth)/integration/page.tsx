@@ -62,7 +62,7 @@ const Integration = async () => {
 
                       <span className="text-dark font-bold">{integration?.product?.name}  </span>
                     </div>
-                    <button className="text-white bg-slate-900 rounded-full w-full p-2 mt-4">
+                    <button className="text-white bg-slate-900 rounded-md w-full p-2 mt-4">
                       {integration?.callToCopy?.text || "Integrate"}
                     </button>
                   </div>
@@ -74,10 +74,10 @@ const Integration = async () => {
             <div className="cursor-pointer relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-xl text-center h-full border border-slate-600 border-dashed">
                 <div className="w-full">
                     <div className="flex items-center space-x-2 mb-4">
-                        <div className="w-10 h-10 bg-slate-200 rounded-full" ></div>
+                        <div className="w-10 h-10 bg-slate-200 rounded-md" ></div>
                         <span className="text-dark font-bold">And a lot more..</span>
                     </div>
-                    <button className="border border-slate-200 bg-orange-700 rounded-full w-full p-2 mt-4">Add More...</button>
+                    <button className="border border-slate-200 bg-orange-700 rounded-md w-full p-2 mt-4">Add More...</button>
                 </div>
             </div>
 

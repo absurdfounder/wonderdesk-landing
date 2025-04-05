@@ -1,15 +1,14 @@
 'use client'
 
-
 import React, { useState, useEffect } from 'react'; // Import React hooks
 import Image from 'next/image'; // Import the Image component from Next.js
 import notionfooterImage from '@/public/images/notionfooter.png';
 import Link from 'next/link';
 
 export default function Newsletter() {
-//  const words = ["Helpdesk", "Marketplaces", "Blog", "Company Wiki", "Documentation" ];
-const words = ["Directory", "Marketplaces", "Directory" ];
-const [index, setIndex] = useState(0);
+  //  const words = ["Helpdesk", "Marketplaces", "Blog", "Company Wiki", "Documentation" ];
+  const words = ["Directory", "Marketplaces", "Directory" ];
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -25,38 +24,35 @@ const [index, setIndex] = useState(0);
         <div className="pb-12 md:pb-20">
 
           {/* CTA box */}
-          <div className="relative bg-slate-900 py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden rounded-2xl" 
+          <div 
+            className="relative py-10 px-8 md:py-16 md:px-12 overflow-hidden rounded-2xl" 
+            style={{
+              backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(https://framerusercontent.com/images/TsqmcduIzaZSBEAV1cs5OACM.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center'
+            }}
           >
 
             {/* Background illustration */}
             <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block" >
-
-             
-
-            <Image alt="Logo" 
-              width={400} 
-              className="block" 
-              src={notionfooterImage} />
-
-
-
+              <Image alt="Logo" 
+                width={400} 
+                className="block" 
+                src={notionfooterImage} />
             </div>
 
             <div className="relative flex flex-col lg:flex-row justify-between items-center">
 
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
-                <h3 className="h3 text-white mb-2">Ready to turn your Notion pages into <span className=" -translate-y-full slideUp h-full w-full bg-clip-text text-transparent text-orange-600">{words[index]}</span> ?</h3>
-                <p className="text-xl text-slate-400 mb-4">Join the Wonder AI and discover the easiest way to manage your website.</p>
+                <h3 className="h2 text-slate-800 my-2">Try Wonder</h3>
+                <p className="h4 font-normal text-slate-800 my-2">Join thousands of other founders and creators creating awesome websites the easy way.</p>
 
                 {/* CTA form */}
-                <form className="w-full lg:w-auto">
+                <form className="w-full lg:w-auto mt-4">
                   <div className="flex flex-col sm:flex-row max-w-xs mx-auto sm:max-w-md lg:mx-0">
-                  <Link href="https://app.wondersites.co" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Build site using AI</Link>
+                    <Link href="https://app.wondersites.co" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Build site using AI</Link>
                   </div>
-                  {/* Success message */}
-                  {/* <p className="text-sm text-slate-400 mt-3">Thanks for subscribing!</p> */}
-                  <p className="text-sm text-slate-400 mt-3">Phew! Hassle free life starts here.</p>
                 </form>
               </div>
 

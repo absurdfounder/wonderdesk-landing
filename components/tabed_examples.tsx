@@ -147,7 +147,7 @@ const TabImageHotspots = () => {
       </div>
 
       {/* Image with Hotspots */}
-      <div className="relative w-full bg-gray-100 rounded-lg overflow-hidden mt-4">
+      <div className="relative w-full bg-gray-100 rounded-lg overflow-hidden">
         {tabs.map((tab, index) => (
           <div 
             key={index} 
@@ -188,7 +188,7 @@ const TabImageHotspots = () => {
               >
                 {/* Hotspot Button */}
                 <button
-                  className={`cursor-pointer flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full transition-all duration-300 z-10 ${
+                  className={`cursor-pointer flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-md transition-all duration-300 z-10 ${
                     activeHotspot === hotspot.id 
                       ? 'bg-blue-600 text-white' 
                       : 'bg-blue-100 text-blue-600 hover:bg-blue-200'

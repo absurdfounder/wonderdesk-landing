@@ -21,7 +21,7 @@ function IntegrationDetail() {
               <div className="flex space-y-6" >
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4" >
-                    <div className="w-20 h-20 rounded-full overflow-hidden" >
+                    <div className="w-20 h-20 rounded-md overflow-hidden" >
 
 
                       <Image  src="https://framerusercontent.com/images/FS1of0gxF0A6UP7GmCpIBKQM.png" unoptimized alt="" width={100} height={100} className="w-full h-full object-contain" />
@@ -35,7 +35,7 @@ function IntegrationDetail() {
                     <p>Embed interactive product demos in your documentation and turn all users into power users.</p>
                   </div>
                   <div className="flex space-x-2 items-center" >
-                    <Link href="https://app.wondersites.co/integrations/arcade" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center" rel="noopener noreferrer" target="_blank">
+                    <Link href="https://app.wondersites.co/integrations/arcade" className="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-md inline-flex items-center" rel="noopener noreferrer" target="_blank">
                       <span>Install</span>
                     </Link>
                   </div>

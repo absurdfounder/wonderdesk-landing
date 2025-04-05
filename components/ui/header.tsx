@@ -127,7 +127,7 @@ export default function Header() {
                 <Link
                   href="https://app.wondersites.co" 
                   target='_blank'
-                  className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-full transition duration-150 ease-in-out group overflow-hidden relative"
+                  className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
                 >
                   <span className="relative z-10">Create Website</span>
                   <div className="absolute bg-orange-500 w-0 h-full left-0 top-0 group-hover:w-full transition-all duration-300 ease-in-out -z-0"></div>
@@ -158,7 +158,7 @@ function DropdownLink({ href, icon: Icon, title, description }: DropdownLinkProp
       href={href}
       className="flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-orange-50 group"
     >
-      <div className="flex-shrink-0 p-2 rounded-full bg-orange-50 group-hover:bg-orange-100 transition-colors">
+      <div className="flex-shrink-0 p-2 rounded-md bg-orange-50 group-hover:bg-orange-100 transition-colors">
         <Icon className="w-6 h-6 text-orange-600" />
       </div>
       <div className="ml-4">
@@ -182,8 +182,8 @@ function DemoLink({ href, imageSrc, text }: DemoLinkProps) {
       target="_blank"
       className="flex items-center p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-slate-100 group"
     >
-      <div className="flex-shrink-0 overflow-hidden rounded-full border-2 border-transparent group-hover:border-orange-300 transition-all">
-        <Image src={imageSrc} alt="" width={30} height={30} className="w-6 h-6 rounded-full" />
+      <div className="flex-shrink-0 overflow-hidden rounded-md border-2 border-transparent group-hover:border-orange-300 transition-all">
+        <Image src={imageSrc} alt="" width={30} height={30} className="w-6 h-6 rounded-md" />
       </div>
       <div className="ml-4">
         <p className="text-base font-medium text-slate-900 group-hover:text-orange-600 transition-colors">{text}</p>

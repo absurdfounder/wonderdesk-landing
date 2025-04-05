@@ -39,7 +39,7 @@ export default function PageDetail() {
 
                     <div className="max-w-4xl py-6 mx-auto lg:py-6">
                         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                            <div className="relative flex items-center justify-center px-3 py-1 text-sm font-semibold leading-6  rounded-full ring-1 ring-orange-700/80 opacity-60  w-fit m-auto mb-4">
+                            <div className="relative flex items-center justify-center px-3 py-1 text-sm font-semibold leading-6  rounded-md ring-1 ring-orange-700/80 opacity-60  w-fit m-auto mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" className="w-4 h-4 mr-1">
                                     <path
                                         fill="currentColor"

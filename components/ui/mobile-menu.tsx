@@ -198,7 +198,7 @@ export default function MobileMenu() {
               <Link
                 href="https://app.wondersites.co"
                 target='_blank'
-                className="btn-sm text-white bg-slate-900 hover:bg-slate-800 w-full flex items-center justify-between px-5 py-3 rounded-full transition duration-300 ease-in-out group relative overflow-hidden"
+                className="btn-sm text-white bg-slate-900 hover:bg-slate-800 w-full flex items-center justify-between px-5 py-3 rounded-md transition duration-300 ease-in-out group relative overflow-hidden"
               >
                 <span className="relative z-10">Create Website</span>
                 <div className="absolute bg-orange-500 w-0 h-full left-0 top-0 group-hover:w-full transition-all duration-300 ease-in-out -z-0"></div>

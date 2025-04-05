@@ -71,7 +71,7 @@ export default function Testimonials() {
             <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
               <div className="flex items-center mb-4">
                 <Image
-                  className="rounded-full mr-3"
+                  className="rounded-md mr-3"
                   src="https://d33wubrfki0l68.cloudfront.net/36ee27ca00ba110131c925e463c42c885e523d10/de5f0/assets/images/influencers/corey.png"
                   width={48}
                   height={48}
@@ -93,7 +93,7 @@ export default function Testimonials() {
             <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
               <div className="flex items-center mb-4">
                 <Image
-                  className="rounded-full mr-3"
+                  className="rounded-md mr-3"
                   src="https://d33wubrfki0l68.cloudfront.net/c6f92e1ae2769f7cc13d3ece99c16d591564bf4a/7114a/assets/images/influencers/ayush.png"
                   width={48}
                   height={48}
@@ -115,7 +115,7 @@ export default function Testimonials() {
             <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
               <div className="flex items-center mb-4">
                 <Image
-                  className="rounded-full mr-3"
+                  className="rounded-md mr-3"
                   src="https://cdn.feather.blog/?src=https%3A%2F%2Ffeather.so%2Fimages%2Flanding%2Favatars%2Ftom.png&optimizer=image"
                   width={48}
                   height={48}
@@ -137,7 +137,7 @@ export default function Testimonials() {
             <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
               <div className="flex items-center mb-4">
                 <Image
-                  className="rounded-full mr-3"
+                  className="rounded-md mr-3"
                   src="https://d33wubrfki0l68.cloudfront.net/75af78aa9bf70a1c124768d0b60e37a5cd1bd9b7/11cb5/assets/images/influencers/alex.png"
                   width={48}
                   height={48}
@@ -159,7 +159,7 @@ export default function Testimonials() {
             <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
               <div className="flex items-center mb-4">
                 <Image
-                  className="rounded-full mr-3"
+                  className="rounded-md mr-3"
                   src="https://twitter-avatars.s3.us-east-1.amazonaws.com/avatars/adamwathan"
                   width={48}
                   height={48}
@@ -181,7 +181,7 @@ export default function Testimonials() {
             <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
               <div className="flex items-center mb-4">
                 <Image
-                  className="rounded-full mr-3"
+                  className="rounded-md mr-3"
                   src={TestimonialImage}
                   width={48}
                   height={48}

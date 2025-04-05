@@ -97,7 +97,7 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
               width={150}
               height={300}
               loading="eager"
-              className="w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-sm rounded-full p-8 mb-8 m-auto"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-sm rounded-md p-8 mb-8 m-auto"
             />
             <h1 className="text-4xl font-bold mb-4">
               Tired of <b>{filteredContent.product.name}</b>? <br /> Say hi to Wonder  Sites
@@ -105,7 +105,7 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
             <p className="text-lg sm:text-xl text-slate-600">
               {filteredContent.product.description}
             </p>
-            <Link href="https://app.wondersites.co" className="text-white bg-slate-900 rounded-full w-fit p-2 mt-4 px-4 mt-2 block m-auto">
+            <Link href="https://app.wondersites.co" className="text-white bg-slate-900 rounded-md w-fit p-2 mt-4 px-4 mt-2 block m-auto">
               Build sites using AI
             </Link>
           </div>

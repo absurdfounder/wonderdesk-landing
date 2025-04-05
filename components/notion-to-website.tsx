@@ -16,9 +16,9 @@ export default function NotiontoWebsite() {
 
 <div className="max-w-3xl mx-auto text-center pt-4 mb-6 sm:mb-8">
   <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-    Manage your website from Notion,
+  Update once in Notion,
     <span className="font-source-serif-4 block font-normal text-orange-600">
-      have your website updated instantly.
+    see changes instantly.
     </span>
   </h1>
 </div>
@@ -46,7 +46,7 @@ export default function NotiontoWebsite() {
 
         {/* Arrow Column */}
         <div className="rotate-90 md:rotate-0 flex-shrink-0">
-          <div className="bg-gray-800  rounded-full p-2">
+          <div className="bg-gray-800  rounded-md p-2">
             <ArrowRight className="w-8 h-9 text-orange-400" />
           </div>
         </div>

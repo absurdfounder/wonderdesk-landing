@@ -156,7 +156,7 @@ const FeaturePopup: React.FC<FeaturePopupProps> = ({ feature, onClose }) => (
     >
       <button
         onClick={onClose}
-        className="absolute top-2 right-2 bg-slate-200 hover:bg-slate-300 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+        className="absolute top-2 right-2 bg-slate-200 hover:bg-slate-300 rounded-md w-8 h-8 flex items-center justify-center transition-colors"
       >
         <X size={16} />
       </button>
@@ -238,7 +238,7 @@ const FAQSection: React.FC = () => {
             {Object.keys(faqs).map((tab) => (
               <button
                 key={tab}
-                className={`px-4 py-2 mx-1 text-sm md:text-base font-medium rounded-full transition-colors ${activeTab === tab
+                className={`px-4 py-2 mx-1 text-sm md:text-base font-medium rounded-md transition-colors ${activeTab === tab
                   ? "bg-orange-100 text-orange-800"
                   : "text-slate-600 hover:bg-slate-100"
                   }`}
@@ -463,9 +463,9 @@ const Pricing: React.FC = () => {
           </h1>
 
           {/* Billing toggle */}
-          <div className="inline-flex items-center bg-white rounded-full border border-slate-200 p-1 shadow-sm mb-6 text-lg">
+          <div className="inline-flex items-center bg-white rounded-md border border-slate-200 p-1 shadow-sm mb-6 text-lg">
             <button
-              className={`px-6 py-2 font-medium rounded-full transition-all ${activeTab === 'Yearly'
+              className={`px-6 py-2 font-medium rounded-md transition-all ${activeTab === 'Yearly'
                 ? 'bg-slate-600 text-slate-100'
                 : 'text-slate-600 hover:text-slate-900'
                 }`}
@@ -474,7 +474,7 @@ const Pricing: React.FC = () => {
               Yearly <span className="text-orange-300 font-semibold ml-1">2 months free</span>
             </button>
             <button
-              className={`px-6 py-2 font-medium rounded-full transition-all ${activeTab === 'Monthly'
+              className={`px-6 py-2 font-medium rounded-md transition-all ${activeTab === 'Monthly'
                 ? 'bg-slate-600 text-slate-100'
                 : 'text-slate-600 hover:text-slate-900'
                 }`}
@@ -698,13 +698,13 @@ const Pricing: React.FC = () => {
           <div className="max-w-4xl mx-auto mb-20">
             <div className="bg-slate-900 rounded-xl overflow-hidden relative">
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600 opacity-10 rounded-full -mr-20 -mt-20"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600 opacity-10 rounded-full -ml-10 -mb-10"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600 opacity-10 rounded-md -mr-20 -mt-20"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600 opacity-10 rounded-md -ml-10 -mb-10"></div>
 
               <div className="relative p-8 md:p-10">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <div className="mb-6 md:mb-0">
-                    <div className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-full mb-3">
+                    <div className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-md mb-3">
                       Limited Time Offer
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">
@@ -751,7 +751,7 @@ const Pricing: React.FC = () => {
               >
                 <button
                   onClick={toggleModal}
-                  className="absolute top-3 right-3 bg-slate-200 hover:bg-slate-300 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+                  className="absolute top-3 right-3 bg-slate-200 hover:bg-slate-300 rounded-md w-8 h-8 flex items-center justify-center transition-colors"
                 >
                   <X size={16} />
                 </button>

@@ -304,7 +304,7 @@ function TemplateClientContent() {
 
             <div className="p-6">
               {/* Template type badge with improved styling */}
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+              <span className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
                 {template?.product?.type || "Template"}
               </span>
 
@@ -346,7 +346,7 @@ function TemplateClientContent() {
                   template.product.tags.slice(0, 3).map((tag: string, tagIndex: number) => (
                     <span
                       key={tagIndex}
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors duration-200 ${selectedTags.includes(tag)
+                      className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium transition-colors duration-200 ${selectedTags.includes(tag)
                           ? "bg-orange-200 text-orange-800"
                           : "bg-slate-100 text-slate-800 hover:bg-slate-200"
                         }`}
@@ -355,7 +355,7 @@ function TemplateClientContent() {
                     </span>
                   ))
                 ) : (
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-400">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-100 text-slate-400">
                     No tags available
                   </span>
                 )}
@@ -394,7 +394,7 @@ function TemplateClientContent() {
                   {/* Make "free design" always appear first and highlighted */}
                   <button
                     onClick={() => toggleTag("free design")}
-                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedTags.includes("free design")
+                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes("free design")
                         ? "bg-orange-500 text-white"
                         : "bg-slate-100 text-slate-800 hover:bg-slate-200"
                       }`}
@@ -412,7 +412,7 @@ function TemplateClientContent() {
                       <button
                         key={tag}
                         onClick={() => toggleTag(tag)}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
                             ? "bg-orange-500 text-white"
                             : "bg-slate-100 text-slate-800 hover:bg-slate-200"
                           }`}
@@ -431,7 +431,7 @@ function TemplateClientContent() {
                       <button
                         key={tag}
                         onClick={() => toggleTag(tag)}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
                             ? "bg-orange-500 text-white"
                             : "bg-slate-100 text-slate-800 hover:bg-slate-200"
                           }`}
@@ -480,7 +480,7 @@ function TemplateClientContent() {
           {/* Loading state */}
           {isLoading ? (
             <div className="flex justify-center items-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+              <div className="animate-spin rounded-md h-12 w-12 border-b-2 border-orange-500"></div>
             </div>
           ) : (
             <>
@@ -509,7 +509,7 @@ export default function TemplateClient() {
   return (
     <Suspense fallback={
       <div className="flex justify-center items-center py-20">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-md h-12 w-12 border-b-2 border-orange-500"></div>
       </div>
     }>
       <TemplateClientContent />

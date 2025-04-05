@@ -72,8 +72,8 @@ const TabButton: React.FC<TabButtonProps> = ({ text, isActive, onClick, ariaCont
   <button
     className={`px-3 py-2 sm:px-6 text-sm sm:text-base lg:text-xl font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black whitespace-nowrap ${
       isActive
-        ? 'bg-black text-white shadow-sm rounded-full'
-        : 'text-gray-600 hover:text-gray-900 rounded-full'
+        ? 'bg-black text-white shadow-sm rounded-md'
+        : 'text-gray-600 hover:text-gray-900 rounded-md'
     }`}
     onClick={onClick}
     role="tab"
@@ -222,7 +222,7 @@ export default function MarketplaceType() {
       {/* Tab Navigation */}
       <div className="flex justify-center mb-8 sm:mb-12 overflow-x-auto pb-4 sm:pb-0">
         <div 
-          className="inline-flex bg-gray-100 p-1 rounded-full min-w-0"
+          className="inline-flex bg-gray-100 p-1 rounded-md min-w-0"
           role="tablist"
           aria-label="Marketplace categories"
         >

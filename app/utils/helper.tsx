@@ -138,7 +138,7 @@ export const renderContent = (item: ContentItem, index: number) => {
       return <blockquote key={index} className="italic border-l-4 border-slate-200 pl-4 py-2 my-2">{item.text}</blockquote>;
     case 'code':
       return (
-        <pre key={index} className="bg-slate-100 rounded-full p-3 overflow-auto">
+        <pre key={index} className="bg-slate-100 rounded-md p-3 overflow-auto">
           <code className="text-sm">{item.code}</code>
         </pre>
       );
