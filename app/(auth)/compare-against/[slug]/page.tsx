@@ -65,8 +65,9 @@ export async function generateMetadata(
   }
 
   return {
-    title: `Wonder vs ${filteredContent.product.name}`,
-    description: `Compare Wonder  to ${filteredContent.product.name}: ${filteredContent.product.description}`,
+    title: `The simple, powerful ${filteredContent.product.name} alternative - Wonder vs ${filteredContent.product.name}`,
+    description: `Wonder is the fast, modern ${filteredContent.product.name} alternative built on notion as a CMS, it's focused completely on professional website publishing. You can publish a blog, helpdesk, directory or even a 2-sided marketplace. 
+Compare Wonder  to ${filteredContent.product.name}: ${filteredContent.product.description}`,
     openGraph: {
       images: [{ url: filteredContent.product.heroimage }],
     },
