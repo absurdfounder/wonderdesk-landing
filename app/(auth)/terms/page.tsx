@@ -3,8 +3,11 @@ import Image from 'next/image'
 
 
 export const metadata = {
-    title: 'Migrate to Wonder  Sites',
-    description: 'Migrate your helpdesk, blog, or even marketplace to Wonder  Sites. Start living a hassle free life just SET and FORGET.',
+    title: 'Wonder Sites Terms',
+    description: 'Wonder Sites Terms of Use',
+    alternates: {
+        canonical: "https://wondersites.co/terms",
+      },
     openGraph: {
         images: [
             {

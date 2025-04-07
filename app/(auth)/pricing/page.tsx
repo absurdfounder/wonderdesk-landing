@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Wonder Sites Pricing – Simple, Transparent, and Scalable Plans",
   description:
     "Explore Wonder Sites’ flexible pricing plans. From personal projects to enterprise-scale solutions, unlock unlimited AI-powered websites, custom domains, analytics, SEO tools, and more — all built on Notion. Try free for 7 days!",
+  alternates: {
+    canonical: "https://wondersites.co/pricing",
+  },
   openGraph: {
     images: [
       {

@@ -24,6 +24,9 @@ export const metadata = {
     title: "Get a directory with Notion (no-code and free)",
     description:
         "Build a directory in Notion, with our Notion directory maker. Go live in under a minute.  Build your free Wonder  directory website in a minute!",
+        alternates: {
+            canonical: "https://wondersites.co/create-a-directory-notion",
+          },
     openGraph: {
         images: [
             {

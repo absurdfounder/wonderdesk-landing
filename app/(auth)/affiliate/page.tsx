@@ -5,6 +5,9 @@ import Image from 'next/image'
 export const metadata = {
   title: 'Affiliate Program',
   description: 'Join the Wonder affiliate program to become our partner. Spread the website builder and earn money with us.',
+  alternates: {
+    canonical: "https://wondersites.co/affiliate",
+  },
   openGraph: {
     images: [
         {

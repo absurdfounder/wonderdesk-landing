@@ -24,6 +24,9 @@ export const metadata = {
     title: "Get a company wiki with Notion (no-code and free)",
     description:
         "Build a company wiki in Notion, with our Notion company wiki maker. Go live in under a minute.  Build your free Wonder  company wiki website in a minute!",
+        alternates: {
+            canonical: "https://wondersites.co/create-a-company-wiki-notion",
+          },
     openGraph: {
         images: [
             {

@@ -25,6 +25,9 @@ export const metadata = {
     title: "Get a Marketplace with Notion (no-code and free)",
     description:
         "Build a marketplace in Notion, with our Notion marketplace maker. Go live in under a minute.  Build your free Wonder  marketplace website in a minute!",
+        alternates: {
+            canonical: "https://wondersites.co/create-a-company-wiki-notion",
+          },
     openGraph: {
         images: [
             {

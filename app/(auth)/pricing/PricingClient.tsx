@@ -12,31 +12,6 @@ import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
 import Header from "@/components/ui/header";
 
-// ✅ Metadata for SEO
-export const metadata = {
-    title: "Wonder Sites Pricing – Simple, Transparent, and Scalable Plans",
-    description:
-        "Explore Wonder Sites’ flexible pricing plans. From personal projects to enterprise-scale solutions, unlock unlimited AI-powered websites, custom domains, analytics, SEO tools, and more — all built on Notion. Try free for 7 days!",
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontohelpdesk_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Wonder Sites Pricing Overview",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontohelpdesk_socialshare.png",
-                alt: "Wonder Sites Pricing Overview",
-            },
-        ],
-    },
-};
 
 
 // Feature interfaces

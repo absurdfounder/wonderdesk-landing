@@ -25,6 +25,9 @@ export const metadata = {
     title: "Get a help desk with Notion (no-code and free)",
     description:
         "Build a help desk in Notion, with our Notion help desk maker. Go live in under a minute.  Build your free Wonder  help desk website in a minute!",
+        alternates: {
+            canonical: "https://wondersites.co/create-a-helpdesk-servicedesk-notion",
+          },
     openGraph: {
         images: [
             {

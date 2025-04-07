@@ -25,6 +25,9 @@ export const metadata = {
     title: "Get a documentation with Notion (no-code and free)",
     description:
         "Build a documentation in Notion, with our Notion documentation maker. Go live in under a minute.  Build your free Wonder  documentation website in a minute!",
+        alternates: {
+            canonical: "https://wondersites.co/create-a-documentation-notion",
+          },
     openGraph: {
         images: [
             {

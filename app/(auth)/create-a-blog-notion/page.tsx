@@ -23,6 +23,9 @@ export const metadata = {
     title: "Get a blog with Notion (no-code and free)",
     description:
         "Build a blog in Notion, with our Notion blog maker. Go live in under a minute.  Build your free Wonder  blog website in a minute!",
+        alternates: {
+            canonical: "https://wondersites.co/create-a-blog-notion",
+          },
     openGraph: {
         images: [
             {

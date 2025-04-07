@@ -7,6 +7,9 @@ import { _loadFromJson } from '@/app/utils/helper';
 export const metadata = {
   title: 'Wonder Integrations',
   description: 'Integrate with your stack and extend functionality with powerful integrations built by us and our amazing community.',
+  alternates: {
+    canonical: "https://wondersites.co/integration",
+  },
   openGraph: {
     images: [
         {
