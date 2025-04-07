@@ -1,20 +1,13 @@
 'use client'
-
 import { useEffect } from 'react'
 import PlausibleProvider from 'next-plausible'
 import Script from 'next/script'
-
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-
 import Footer from '@/components/ui/footer'
 import Newsletter from '@/components/newsletter'
 
-export default function DefaultLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function DefaultLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     AOS.init({
       once: true,
@@ -26,12 +19,7 @@ export default function DefaultLayout({
 
   return (
     <PlausibleProvider domain="wondersites.co">
-      {/* Google Analytics Script */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-FKXTBWH4RE"
-        strategy="afterInteractive"
-      />
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FKXTBWH4RE" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -40,7 +28,6 @@ export default function DefaultLayout({
           gtag('config', 'G-FKXTBWH4RE');
         `}
       </Script>
-
       <main className="grow bg-gray-50">
         {children}
       </main>
