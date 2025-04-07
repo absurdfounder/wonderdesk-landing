@@ -12,14 +12,14 @@ interface IntegrationOrTemplate {
 async function loadIntegrations(): Promise<IntegrationOrTemplate[]> {
   try {
     const [integrationsFile, templatesFile, comparison] = await Promise.all([
-      _loadFromJson(false).then((items: any[]): IntegrationOrTemplate[] => 
+      _loadFromJson(false).then((items: any[]): IntegrationOrTemplate[] =>
         items.map(item => ({ ...item, type: 'integration' }))),
-      _loadFromJson().then((items: any[]): IntegrationOrTemplate[] => 
+      _loadFromJson().then((items: any[]): IntegrationOrTemplate[] =>
         items.map(item => ({ ...item, type: 'template' }))),
-      _loadFromJsonComparison().then((items: any[]): IntegrationOrTemplate[] => 
+      _loadFromJsonComparison().then((items: any[]): IntegrationOrTemplate[] =>
         items.map(item => ({ ...item, type: 'compare-against' })))
     ]);
-    
+
     return [...integrationsFile, ...templatesFile, ...comparison];
   } catch (error) {
     console.error("Failed to load integrations", error);
@@ -61,14 +61,14 @@ function generateSiteMap(integrationsOrTemplates: IntegrationOrTemplate[]): stri
     <priority>0.8</priority>
   </url>
   ${integrationsOrTemplates
-    .map(item => `
+      .map(item => `
   <url>
     <loc>${URL}/${encodeURIComponent(item.type)}/${encodeURIComponent(item.id)}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>`
-    ).join('')}
+      ).join('')}
 </urlset>`;
 }
 
@@ -76,7 +76,7 @@ export async function GET(request: NextRequest) {
   try {
     const integrations = await loadIntegrations();
     const sitemap = generateSiteMap(integrations);
-    
+
     return new Response(sitemap, {
       status: 200,
       headers: {
