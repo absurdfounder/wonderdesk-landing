@@ -180,7 +180,7 @@ const FeaturePopup: React.FC<FeaturePopupProps> = ({ feature, onClose }) => (
             initial={{ scale: 0.9, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
-            className="bg-white p-6 md:p-8 rounded-lg shadow-xl w-full max-w-md mx-auto relative"
+            className=" p-6 md:p-8 rounded-lg shadow-xl w-full max-w-md mx-auto relative"
         >
             <button
                 onClick={onClose}
@@ -262,7 +262,7 @@ const FAQSection: React.FC = () => {
                 </div>
 
                 <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-                    <div className="flex justify-center p-4 border-b border-slate-200 bg-slate-50">
+                    <div className="flex justify-center p-4 border-b border-slate-200">
                         {Object.keys(faqs).map((tab) => (
                             <button
                                 key={tab}
@@ -593,7 +593,7 @@ const Pricing: React.FC = () => {
                         <div className="p-6">
                             <div className="flex flex-col md:flex-row justify-between items-center">
                                 <div className="text-center md:text-left mb-6 md:mb-0">
-                                    <div className="text-blue-600 font-medium mb-1">Hire An Expert</div>
+                                    <div className="text-gray-600 font-medium mb-1">Hire An Expert</div>
                                     <div className="flex items-center md:items-start flex-col">
                                         <span className="text-4xl font-bold text-slate-900">$499</span>
                                         <span className="text-slate-600 ml-1">one time</span>
@@ -627,7 +627,7 @@ const Pricing: React.FC = () => {
                                 <Link
                                     href="https://app.youform.com/forms/r3rvhjv4"
                                     target="_blank"
-                                    className="inline-block py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
+                                    className="inline-block py-3 px-6 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors"
                                 >
                                     Get Custom Quote
                                 </Link>

@@ -127,7 +127,7 @@ const TestimonialsGrid: FC = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div className=" py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
@@ -169,7 +169,7 @@ const TestimonialsGrid: FC = () => {
           {testimonials.map((t, i) => (
             <article
               key={i}
-              className="bg-white rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-1 p-6 mb-6 break-inside-avoid"
+              className="bg-white rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-1 p-6 mb-6 break-inside-avoid border"
               style={{ transform: getRandomRotation() }}
             >
               <div className="flex items-center justify-between mb-4">
