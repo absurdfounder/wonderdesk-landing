@@ -267,7 +267,7 @@ function TemplateClientContent() {
                             target="_blank"
                             className="btn bg-white hover:bg-slate-100 shadow px-12 inline-block text-orange-600 py-3 rounded-lg transition-colors"
                           >
-                            Get started now →
+                            Create a free account now →
                           </Link>
                         </div>
                         <p className="text-sm text-white mt-3">Professional design help at no cost</p>
@@ -382,8 +382,8 @@ function TemplateClientContent() {
         <div className="pt-4 pb-20 md:pt-24 md:pb-28">
           <div className="mx-auto text-center">
             <h1 className="font-funneldisplay text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-4xl mb-6">
-              <span className="block">Not Templates,</span>
-              <span className="block text-orange-600">Beautiful Businesses</span>
+              <span className="block">Not Just Templates,</span>
+              <span className="block text-orange-600">we help build Beautiful Businesses</span>
             </h1>
 
 

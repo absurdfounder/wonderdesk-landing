@@ -105,7 +105,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           >
             
             <Link href="https://app.wondersites.co?ref=herolanding" className="flex items-center justify-center py-3 px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto">
-              <span>Get Started</span>
+              <span>Create a free account</span>
               <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </motion.div>
