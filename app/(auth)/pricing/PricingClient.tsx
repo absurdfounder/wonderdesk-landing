@@ -338,22 +338,6 @@ const Pricing: React.FC = () => {
                 "Membership sites",
                 "Auto publish every hour"
             ]
-        },
-        {
-            name: "Enterprise",
-            highlight: false,
-            monthlyPrice: 237,
-            yearlyPrice: 2370,
-            trafficLimit: "1,000,000",
-            features: [
-                "Everything in Business",
-                "Dedicated support",
-                "Custom integrations",
-                "Premium CDN",
-                "Advanced security",
-                "Usage reports",
-                "SLA guarantees"
-            ]
         }
     ];
 
@@ -516,7 +500,7 @@ const Pricing: React.FC = () => {
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+                <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-16">
                     {pricingTiers.map((tier, index) => (
                         <motion.div
                             key={tier.name}
