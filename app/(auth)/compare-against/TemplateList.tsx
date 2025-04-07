@@ -235,7 +235,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
           {isTagMenuOpen && (
             <div className="absolute z-10 w-full mt-1 bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">
               {/* Popular tags first (2+ templates) */}
-              <div className="p-2 bg-slate-50 border-b">
+              <div className="p-2 bg-gray-50 border-b">
                 <p className="text-xs text-slate-500 font-medium">Popular Tags</p>
               </div>
               {popularTags.map(({ tag, count }) => (
@@ -255,7 +255,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
               {/* Show less common tags when expanded */}
               {showAllTags && lesserTags.length > 0 && (
                 <>
-                  <div className="p-2 bg-slate-50 border-b border-t">
+                  <div className="p-2 bg-gray-50 border-b border-t">
                     <p className="text-xs text-slate-500 font-medium">Other Tags</p>
                   </div>
                   {lesserTags.map(({ tag, count }) => (

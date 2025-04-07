@@ -41,7 +41,7 @@ export default function DefaultLayout({
         `}
       </Script>
 
-      <main className="grow">
+      <main className="grow bg-gray-50">
         {children}
       </main>
       <Footer />

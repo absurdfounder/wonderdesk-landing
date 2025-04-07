@@ -230,7 +230,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </Link>
               <Link
                 href={filterBySlug.product.viewDemo.link}
-                className="bg-white hover:bg-slate-50 text-slate-800 font-medium py-3 px-6 rounded-lg inline-flex items-center border border-slate-200 transition duration-200"
+                className="bg-white hover:bg-gray-50 text-slate-800 font-medium py-3 px-6 rounded-lg inline-flex items-center border border-slate-200 transition duration-200"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -300,7 +300,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 key={index}
                 className="group flex flex-col bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition duration-300"
               >
-                <div className=" bg-slate-50 border-b flex justify-center items-center ">
+                <div className=" bg-gray-50 border-b flex justify-center items-center ">
                   <Image
                     className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-110"
                     width={120}

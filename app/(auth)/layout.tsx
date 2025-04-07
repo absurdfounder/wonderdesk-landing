@@ -10,7 +10,7 @@ export default function AuthLayout({
 }) {  
   return (
   <>
-    <main className="grow">
+    <main className="grow bg-gray-50">
 
 {children}
 

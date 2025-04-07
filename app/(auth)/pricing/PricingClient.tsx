@@ -209,7 +209,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ question, answer }) => {
     return (
         <div className="border-b border-slate-200">
             <button
-                className="w-full text-left py-4 px-5 flex justify-between items-center hover:bg-slate-50 transition-colors"
+                className="w-full text-left py-4 px-5 flex justify-between items-center hover:bg-gray-50 transition-colors"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span className="font-medium text-slate-900">{question}</span>
@@ -450,7 +450,7 @@ const Pricing: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
+        <div className="bg-gradient-to-b from-slate-50 min-h-screen">
 
             <Header />
 

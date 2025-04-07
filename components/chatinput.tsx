@@ -149,7 +149,7 @@ export default function ChatInput() {
             )}
           </div>
 
-          <div className="border-t border-slate-100 bg-slate-50 p-2 px-3">
+          <div className="border-t border-slate-100 bg-gray-50 p-2 px-3">
             <div className="flex items-center justify-between flex-wrap">
               <div className="flex gap-2 items-center">
                 <button

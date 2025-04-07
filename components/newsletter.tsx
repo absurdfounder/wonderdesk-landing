@@ -27,7 +27,7 @@ export default function Newsletter() {
           <div 
             className="relative py-10 px-8 md:py-16 md:px-12 overflow-hidden rounded-2xl my-8 border" 
             style={{
-              backgroundImage: 'linear-gradient(rgb(255 255 255), rgb(255 255 255 / 25%)), url(https://framerusercontent.com/images/TsqmcduIzaZSBEAV1cs5OACM.jpg)',
+              backgroundImage: 'linear-gradient(rgb(207 244 255), rgb(106 199 255 / 62%)), url(https://dazzling-cat.netlify.app/backgroundthing.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center'
             }}
@@ -51,7 +51,7 @@ export default function Newsletter() {
                 {/* CTA form */}
                 <form className="w-full lg:w-auto mt-4">
                   <div className="flex flex-col sm:flex-row max-w-xs mx-auto sm:max-w-md lg:mx-0">
-                    <Link href="https://app.wondersites.co" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Build site using AI</Link>
+                    <Link href="https://app.wondersites.co" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" >Create a free account</Link>
                   </div>
                 </form>
               </div>

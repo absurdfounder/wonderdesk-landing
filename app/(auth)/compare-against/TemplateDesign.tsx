@@ -68,7 +68,7 @@ const TemplateDesign = () => {
             >
               {/* Image Section */}
               <div className={`relative mb-10 lg:mb-0 ${feature.imageFirst ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="rounded-2xl overflow-hidden shadow-lg bg-slate-50 p-2">
+                <div className="rounded-2xl overflow-hidden shadow-lg bg-gray-50 p-2">
                   <Image 
                     src={feature.image}
                     alt={feature.alt}

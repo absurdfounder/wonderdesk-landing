@@ -35,7 +35,7 @@ export default function PageDetail() {
                     {/* Page header */}
 
                     <div className="w-full px-8 sm:px-0 py-16 m-auto !prose">
-                        <main className="notion">
+                        <main className="notion bg-gray-50">
                             <h1 className="font-funneldisplay h1">
                                 <span><span>Terms and Conditions</span></span>
                             </h1>

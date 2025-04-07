@@ -31,7 +31,7 @@ const ComparisonTable = ({ id }: { id: string }) => {
       <div className="overflow-hidden shadow-lg rounded-lg border border-slate-200">
         <table className="w-full text-sm bg-white">
           <thead>
-            <tr className="bg-slate-50">
+            <tr className="bg-gray-50">
               <th className="px-6 py-4 text-left font-semibold text-slate-700 border-b">Features</th>
               <th className="px-6 py-4 text-center font-semibold text-slate-700 border-b w-1/4">
                 {competitorName}
@@ -47,7 +47,7 @@ const ComparisonTable = ({ id }: { id: string }) => {
               const WonderSitesHasFeature = item.feature_value["WonderSites"] || item.feature_value["Notion"] || false;
 
               return (
-                <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                   <td className="px-6 py-4 border-b border-slate-200">
                     {item.feature}
                   </td>
