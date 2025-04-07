@@ -200,7 +200,7 @@ export default function MobileMenu() {
                 target='_blank'
                 className="btn-sm text-white bg-slate-900 hover:bg-slate-800 w-full flex items-center justify-between px-5 py-3 rounded-md transition duration-300 ease-in-out group relative overflow-hidden"
               >
-                <span className="relative z-10">Create Website</span>
+                <span className="relative z-10">Create free account</span>
                 <div className="absolute bg-orange-500 w-0 h-full left-0 top-0 group-hover:w-full transition-all duration-300 ease-in-out -z-0"></div>
                 <svg className="w-4 h-4 fill-current text-white shrink-0 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />

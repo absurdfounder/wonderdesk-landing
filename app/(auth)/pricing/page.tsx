@@ -451,9 +451,9 @@ const Pricing: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <h1 className="font-funneldisplay text-4xl md:text-5xl font-bold tracking-tight mb-6 font-funneldisplay">
-            <span className="text-slate-800 block mb-2 font-bold">content-heavy websites </span>
+            <span className="text-slate-800 block mb-2 font-bold">simple pricing, powerful features</span>
             <div className="flex items-center justify-center gap-4">
               <span className="text-slate-800">with</span>
               <span className="text-orange-600 font-bungee">Wonder</span>
@@ -553,7 +553,7 @@ const Pricing: React.FC = () => {
                     : 'bg-slate-100 hover:bg-slate-200 text-slate-800 focus:ring-slate-500'
                     }`}
                 >
-                  Start 3-day trial
+                  Create a free account
                 </Link>
               </div>
             </motion.div>
