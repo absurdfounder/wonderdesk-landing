@@ -11,6 +11,34 @@ import MigrateFrom from "@/public/images/migratefrom.png";
 import Header from "@/components/ui/header";
 
 
+// ✅ Metadata for SEO
+export const metadata = {
+  title: "Websites built on Wonder Sites – Simple to Use - Transparent Pricing",
+  description:
+    "Explore the websites built on Wonder Sites. From personal projects to enterprise-scale solutions, unlock unlimited AI-powered websites, custom domains, analytics, SEO tools, and more — all built on Notion. Try free for 7 days!",
+  openGraph: {
+    images: [
+      {
+        url: "https://dazzling-cat.netlify.app/notiontohelpdesk_socialshare.png",
+        width: 1200,
+        height: 630,
+        alt: "Wonder Sites Showcase",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: "https://dazzling-cat.netlify.app/notiontohelpdesk_socialshare.png",
+        alt: "Wonder Sites Showcase",
+      },
+    ],
+  },
+};
+
+
+
 // Define types for the product structure
 interface Product {
   name?: string;
