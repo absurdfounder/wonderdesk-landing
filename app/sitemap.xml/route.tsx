@@ -15,7 +15,7 @@ async function loadIntegrations(): Promise<IntegrationOrTemplate[]> {
       _loadFromJson(false).then((items: any[]): IntegrationOrTemplate[] =>
         items.map(item => ({ ...item, type: 'integration' }))),
       _loadFromJson().then((items: any[]): IntegrationOrTemplate[] =>
-        items.map(item => ({ ...item, type: 'template' }))),
+        items.map(item => ({ ...item, type: 'showcase' }))),
       _loadFromJsonComparison().then((items: any[]): IntegrationOrTemplate[] =>
         items.map(item => ({ ...item, type: 'compare-against' })))
     ]);
