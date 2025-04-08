@@ -133,7 +133,7 @@ const FAQ: React.FC = () => {
               href="mailto:vaibhav@wondersites.co" 
               className="text-orange-800 hover:text-blue-500 hover:underline px-2"
               target="_blank" rel="noopener"  
-              rel="noopener noreferrer"
+              
             >
               sending us an email.
             </a>

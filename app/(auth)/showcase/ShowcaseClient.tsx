@@ -199,7 +199,7 @@ function TemplateClientContent() {
               <Link
                 href="https://app.youform.com/forms/r3rvhjv4"
                 target="_blank" rel="noopener" 
-                rel="noopener noreferrer"
+                
                 className="block"
               >
                 <div
@@ -244,7 +244,7 @@ function TemplateClientContent() {
               <Link
                 href="https://app.youform.com/forms/design-assistance"
                 target="_blank" rel="noopener" 
-                rel="noopener noreferrer"
+                
                 className="block"
               >
                 <div
