@@ -98,8 +98,8 @@ const TemplateDesign = () => {
                   <Link 
                     href="https://app.wondersites.co" 
                     className="inline-flex items-center px-6 py-3 bg-slate-900 text-white font-medium rounded-md hover:bg-slate-800 transition-colors duration-200 shadow-sm hover:shadow-md"
-                    rel="noopener noreferrer" 
-                    target="_blank" rel="noopener" 
+                    rel="noopener" 
+                    target="_blank" 
                   >
                     <span>Create a free account</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -124,8 +124,8 @@ const TemplateDesign = () => {
             <Link 
               href="https://app.wondersites.co" 
               className="inline-flex items-center px-8 py-4 bg-orange-700 text-white font-medium rounded-md hover:bg-orange-500 transition-colors duration-200 shadow-lg text-lg"
-              rel="noopener noreferrer" 
-              target="_blank" rel="noopener" 
+              rel="noopener" 
+              target="_blank" 
             >
               Create Your Site
             </Link>
