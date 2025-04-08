@@ -8,7 +8,7 @@ export const metadata = {
         url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
         width: 1200,
         height: 630,
-        alt: "Get a Marketplace with Notion",
+        alt: "Notion to Helpdesk , Notion to Directory , Notion to Blog",
       },
     ],
   },
@@ -17,7 +17,7 @@ export const metadata = {
     images: [
       {
         url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
-        alt: "Get a Marketplace with Notion",
+        alt: "Notion to Helpdesk , Notion to Directory , Notion to Blog",
       },
     ],
   },
