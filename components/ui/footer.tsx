@@ -68,10 +68,10 @@ export default function Footer() {
                   <Link href="/showcase" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Showcase</Link>
                 </li>
                 <li>
-                  <Link href="https://wondersites.co/blog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blog</Link>
+                  <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blog</Link>
                 </li>
                 <li>
-                  <Link href="https://wondersites.co/changelog" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Changelog</Link>
+                  <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Changelog</Link>
                 </li>
                 <li>
                   <Link href="/integration" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Integrations</Link>
@@ -92,7 +92,7 @@ export default function Footer() {
 
                 {/* View more button on mobile */}
                 <li className="pt-2 md:hidden">
-                  <Link href="/products" className="text-orange-600 hover:text-orange-800 font-medium">
+                  <Link href="#" className="text-orange-600 hover:text-orange-800 font-medium">
                     View all products →
                   </Link>
                 </li>
@@ -123,7 +123,7 @@ export default function Footer() {
                 </li>
                 {/* View more button on mobile */}
                 <li className="pt-2 md:hidden">
-                  <Link href="/resources" className="text-orange-600 hover:text-orange-800 font-medium">
+                  <Link href="#" className="text-orange-600 hover:text-orange-800 font-medium">
                     View all resources →
                   </Link>
                 </li>

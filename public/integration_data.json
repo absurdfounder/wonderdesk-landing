@@ -56,8 +56,8 @@
       "id": "fathom",
       "product": {
         "logo": "https://framerusercontent.com/images/DA65II8e2dwHkaDz1CqTV7Pra6k.png",
-        "name": "Discord",
-        "provider": "Discord",
+        "name": "fathom",
+        "provider": "fathom",
         "description": "Receive Wonder traffic insights directly in your Fathom dashboard.        ",
         "callToAction": {
           "text": "Install",
