@@ -38,8 +38,28 @@ const SchemaMarkup = () => {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
       "ratingCount": "124"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "7.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://wondersites.co/pricing",
+      "priceValidUntil": "2025-12-31",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "7.00",
+        "priceCurrency": "USD",
+        "referenceQuantity": {
+          "@type": "QuantitativeValue",
+          "value": 1,
+          "unitCode": "MON"  // "MON" is a common code to indicate a monthly period
+        },
+        "description": "$7 per month subscription"
+      }
     }
   };
+  
 
   const faqSchema = {
     "@context": "https://schema.org",
