@@ -68,6 +68,9 @@ export async function generateMetadata(
       return {
         title: 'Wonder- Error Loading Content',
         description: 'Unable to load template content',
+        alternates: {
+          canonical: `https://wondersites.co/showcase/${slug}`,
+        },
       };
     }
 
@@ -77,6 +80,9 @@ export async function generateMetadata(
       return {
         title: 'Wonder vs Unknown Template',
         description: 'Compare Wonder  to an unknown template',
+        alternates: {
+          canonical: `https://wondersites.co/showcase/${slug}`,
+        },
       };
     }
 
@@ -86,12 +92,18 @@ export async function generateMetadata(
       openGraph: {
         images: [{ url: filteredContent.proof.screenshot }],
       },
+      alternates: {
+        canonical: `https://wondersites.co/showcase/${slug}`,
+      },
     };
   } catch (error) {
     console.error('Error in generateMetadata:', error);
     return {
       title: 'Wonder- Error',
       description: 'An error occurred while loading the content',
+      alternates: {
+        canonical: `https://wondersites.co/showcase/${params.slug}`,
+      },
     };
   }
 }
@@ -174,9 +186,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="">
-
       <Header />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back navigation */}
         <div className="mb-8">
@@ -223,7 +233,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <Link
                 href={filterBySlug.product.callToCopy.link}
                 className="bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-6 rounded-lg inline-flex items-center transition duration-200 shadow-sm"
-                rel="noopener noreferrer"
                 target="_blank" rel="noopener" 
               >
                 <span>{filterBySlug.product.callToCopy.text}</span>
@@ -231,7 +240,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <Link
                 href={filterBySlug.product.viewDemo.link}
                 className="bg-white hover:bg-gray-50 text-slate-800 font-medium py-3 px-6 rounded-lg inline-flex items-center border border-slate-200 transition duration-200"
-                rel="noopener noreferrer"
                 target="_blank" rel="noopener" 
               >
                 <span>{filterBySlug.product.viewDemo.text}</span>

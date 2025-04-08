@@ -6,7 +6,7 @@ const URL = "https://wondersites.co";
 
 interface IntegrationOrTemplate {
   id: string;
-  type: 'integration' | 'template' | 'compare-against';
+  type: 'integration' | 'showcase' | 'compare-against';
 }
 
 async function loadIntegrations(): Promise<IntegrationOrTemplate[]> {

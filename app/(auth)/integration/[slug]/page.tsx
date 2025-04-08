@@ -1,9 +1,7 @@
-
-import React from 'react';
 import { Metadata, ResolvingMetadata } from 'next';
-import { _loadFromJson, _transformDataToPostPageView } from '../../../utils/helper';
 import Image from 'next/image';
 import Link from 'next/link';
+import { _loadFromJson, _transformDataToPostPageView } from '../../../utils/helper';
 import MoveBack from '@/components/MoveBack';
 import Loading from '@/components/Loading';
 import Header from '@/components/ui/header';
@@ -60,6 +58,9 @@ export async function generateMetadata(
     return {
       title: 'Integrate Integration with Wonder  Sites',
       description: 'Connect Wonder to an integration',
+      alternates: {
+        canonical: `https://wondersites.co/integration/${slug}`,
+      },
     };
   }
 
@@ -68,6 +69,9 @@ export async function generateMetadata(
     description: `Connect Wonder  to ${filteredContent.product.name}: ${filteredContent.product.description}`,
     openGraph: {
       images: [{ url: filteredContent.proof.screenshot }],
+    },
+    alternates: {
+      canonical: `https://wondersites.co/integration/${slug}`,
     },
   };
 }
@@ -132,7 +136,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <Link
                   href={filterBySlug.product.callToAction.link}
                   className="bg-slate-900 hover:bg-slate-700 text-white cursor-pointer font-bold py-2 px-4 rounded-md inline-flex items-center"
-                  rel="noopener noreferrer"
                   target="_blank" rel="noopener" 
                 >
                   <span>Install</span>

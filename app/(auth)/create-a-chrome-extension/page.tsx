@@ -288,7 +288,7 @@ body {
                 value={websiteUrl}
                 onChange={(e) => setWebsiteUrl(e.target.value)}
                 className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-l-md"
-                placeholder="https://example.com"
+                placeholder="https://app.wondersites.co"
               />
               <button
                 onClick={openIframePopup}

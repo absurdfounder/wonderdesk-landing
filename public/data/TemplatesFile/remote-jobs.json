@@ -42,7 +42,7 @@
       },
       {
         "type": "link",
-        "href": "https://example.com/more-info",
+        "href": "https://app.wondersites.co/more-info",
         "text": "Find out more here"
       },
       {
@@ -78,7 +78,7 @@
       },
       {
         "type": "iframe",
-        "src": "https://example.com/interactive-demo"
+        "src": "https://app.wondersites.co/interactive-demo"
       },
       {
         "type": "heading",

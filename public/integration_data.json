@@ -9,7 +9,7 @@
         "description": "Embed interactive product demos in your documentation and turn all users into power users. ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-arcade-Wonder-Sites"
+          "link": "https://app.wondersites.co/install-arcade-Wonder-Sites"
         }
       },
       "overview": {
@@ -35,7 +35,7 @@
         "description": "Notify a server channel in Discord with real-time events from Wonder Sites.",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -61,7 +61,7 @@
         "description": "Receive Wonder traffic insights directly in your Fathom dashboard.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -87,7 +87,7 @@
         "description": "Embed Figma files and designs directly into Wonder pages.",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -113,7 +113,7 @@
         "description": "A simple Formspree integration to collect user signups directly in your published Wonder sites.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -139,7 +139,7 @@
         "description": "Receive Wonder traffic insights directly in your Google Analytics dashboard.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -165,7 +165,7 @@
         "description": "Add interactive demos & guides to your documentation and boost user adoption.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -191,7 +191,7 @@
         "description": "Plug your Wonder site to your Heap Analytics instance.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -217,7 +217,7 @@
         "description": "Plug your Wonder site to your Hotjar installation.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -243,7 +243,7 @@
         "description": "Add the Intercom chat widget to your published Wonder content        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -269,7 +269,7 @@
         "description": "Embed Jira issues directly in your Wonder documentation. ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -295,7 +295,7 @@
         "description": "Embed Lucid projects directly into Wonder Sites.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -321,7 +321,7 @@
         "description": "Plug your Wonder site to your PostHog installation.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -347,7 +347,7 @@
         "description": "Embed interactive Node.js notebooks in your Wonder documentation.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -373,7 +373,7 @@
         "description": "Embed Sentry issues in your Wonder documentation.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -399,7 +399,7 @@
         "description": "Integrate your Wonder public documentation with your Segment pipeline.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -425,7 +425,7 @@
         "description": "Help users master your product easily by embedding interactive product tours in your documentation.        ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -451,7 +451,7 @@
         "description": "Embed SupaDemo issues directly in your Wonder documentation. ",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
@@ -477,7 +477,7 @@
         "description": "Embed Toucan's customer-facing analytics in your Wonder content.",
         "callToAction": {
           "text": "Install",
-          "link": "https://example.com/install-slack-slack"
+          "link": "https://app.wondersites.co/install-slack-slack"
         }
       },
       "overview": {
