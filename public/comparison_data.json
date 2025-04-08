@@ -621,11 +621,11 @@
     {
       "id": "WonderSites-vs-intercom",
       "product": {
-        "logo": "https://seeklogo.com/images/I/intercom-logo-B222146C9B-seeklogo.com.png",
+        "logo": "https://dazzling-cat.netlify.app/integration_icons/intercom.png",
         "name": "Intercom",
         "provider": "WonderSites",
         "description": "Why Wonder  is a robust alternative to Intercom for customer support and engagement.",
-        "heroimage": "https://seeklogo.com/images/I/intercom-logo-B222146C9B-seeklogo.com.png"
+        "heroimage": "https://dazzling-cat.netlify.app/integration_icons/intercom.png"
       },
       "comparison_table": [
         {
@@ -724,11 +724,11 @@
     {
       "id": "WonderSites-vs-gitbook",
       "product": {
-        "logo": "https://nodesk.co/remote-companies/assets/logos/gitbook.63070d9d5dc2ca7db32f8c580351ab83849a2620947fdc5359784ac27d7a9ed5.jpg",
+        "logo": "https://dazzling-cat.netlify.app/integration_icons/gitbook.jpg",
         "name": "GitBook",
         "provider": "WonderSites",
         "description": "How Wonder  is a versatile alternative to GitBook for documentation and collaboration.",
-        "heroimage": "https://nodesk.co/remote-companies/assets/logos/gitbook.63070d9d5dc2ca7db32f8c580351ab83849a2620947fdc5359784ac27d7a9ed5.jpg"
+        "heroimage": "https://dazzling-cat.netlify.app/integration_icons/gitbook.jpg"
       },
       "comparison_table": [
         {
