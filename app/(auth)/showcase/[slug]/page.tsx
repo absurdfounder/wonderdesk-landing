@@ -224,7 +224,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 href={filterBySlug.product.callToCopy.link}
                 className="bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-6 rounded-lg inline-flex items-center transition duration-200 shadow-sm"
                 rel="noopener noreferrer"
-                target="_blank"
+                target="_blank" rel="noopener" 
               >
                 <span>{filterBySlug.product.callToCopy.text}</span>
               </Link>
@@ -232,7 +232,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 href={filterBySlug.product.viewDemo.link}
                 className="bg-white hover:bg-gray-50 text-slate-800 font-medium py-3 px-6 rounded-lg inline-flex items-center border border-slate-200 transition duration-200"
                 rel="noopener noreferrer"
-                target="_blank"
+                target="_blank" rel="noopener" 
               >
                 <span>{filterBySlug.product.viewDemo.text}</span>
               </Link>

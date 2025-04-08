@@ -35,13 +35,13 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://wondersites.co'),
-  title: 'Wonder: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
+  title: 'Wonder: Notion to Blog, Helpdesk & Directory Sites (NoCode & SEO)',
   description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
   alternates: {
     canonical: 'https://wondersites.co',
   },
   openGraph: {
-    title: 'Wonder: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
+    title: 'Wonder: Notion to Blog, Helpdesk & Directory Sites (NoCode & SEO)',
     description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
     url: 'https://wondersites.co',
     siteName: 'Wonder',
@@ -58,7 +58,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wonder: Notion to Blog, Helpdesk & Marketplace Sites (No-Code & SEO-friendly)',
+    title: 'Wonder: Notion to Blog, Helpdesk & Directory Sites (NoCode & SEO)',
     description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
     images: [
       {

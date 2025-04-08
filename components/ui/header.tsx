@@ -179,7 +179,7 @@ function DemoLink({ href, imageSrc, text }: DemoLinkProps) {
   return (
     <Link
       href={href}
-      target="_blank"
+      target="_blank" rel="noopener" 
       className="flex items-center p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-slate-100 group"
     >
       <div className="flex-shrink-0 overflow-hidden rounded-md border-2 border-transparent group-hover:border-orange-300 transition-all">

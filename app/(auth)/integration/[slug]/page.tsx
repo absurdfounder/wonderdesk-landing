@@ -133,7 +133,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   href={filterBySlug.product.callToAction.link}
                   className="bg-slate-900 hover:bg-slate-700 text-white cursor-pointer font-bold py-2 px-4 rounded-md inline-flex items-center"
                   rel="noopener noreferrer"
-                  target="_blank"
+                  target="_blank" rel="noopener" 
                 >
                   <span>Install</span>
                 </Link>

@@ -398,7 +398,7 @@ body {
         <ol className="space-y-3">
           <li className="pb-3 border-b border-gray-100">
             <p className="font-medium">1. Create a developer account</p>
-            <p className="text-gray-600">Visit the <a href="https://chrome.google.com/webstore/devconsole" target="_blank" className="text-blue-600 hover:underline">Chrome Web Store Developer Dashboard</a></p>
+            <p className="text-gray-600">Visit the <a href="https://chrome.google.com/webstore/devconsole" target="_blank" rel="noopener"  className="text-blue-600 hover:underline">Chrome Web Store Developer Dashboard</a></p>
           </li>
           
           <li className="pb-3 border-b border-gray-100">
@@ -426,7 +426,7 @@ body {
         <ol className="space-y-3">
           <li className="pb-3 border-b border-gray-100">
             <p className="font-medium">1. Create a Microsoft Partner Center account</p>
-            <p className="text-gray-600">Register at <a href="https://partner.microsoft.com/dashboard/microsoftedge/overview" target="_blank" className="text-blue-600 hover:underline">Microsoft Partner Center</a></p>
+            <p className="text-gray-600">Register at <a href="https://partner.microsoft.com/dashboard/microsoftedge/overview" target="_blank" rel="noopener"  className="text-blue-600 hover:underline">Microsoft Partner Center</a></p>
           </li>
           
           <li className="pb-3 border-b border-gray-100">
@@ -451,7 +451,7 @@ body {
         <ol className="space-y-3">
           <li className="pb-3 border-b border-gray-100">
             <p className="font-medium">1. Create an Opera developer account</p>
-            <p className="text-gray-600">Sign up at <a href="https://addons.opera.com/developer/" target="_blank" className="text-blue-600 hover:underline">Opera Add-ons Dashboard</a></p>
+            <p className="text-gray-600">Sign up at <a href="https://addons.opera.com/developer/" target="_blank" rel="noopener"  className="text-blue-600 hover:underline">Opera Add-ons Dashboard</a></p>
           </li>
           
           <li className="pb-3 border-b border-gray-100">
@@ -522,7 +522,7 @@ body {
                activeTab === "edge" ? "https://partner.microsoft.com/dashboard/microsoftedge/overview" :
                activeTab === "opera" ? "https://addons.opera.com/developer/" : 
                "https://chrome.google.com/webstore/devconsole"}
-          target="_blank"
+          target="_blank" rel="noopener" 
           className="block w-full py-3 px-4 bg-black text-white text-center font-medium rounded-md hover:bg-gray-800"
         >
           Go to {activeTab === "chrome" ? "Chrome" : 

@@ -53,7 +53,7 @@ refer to Wonder  Sites, without limits. Join
 
 
           <div className="m-auto text-center"><Link className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center" href="https://boringsites.lemonsqueezy.com/affiliates">Sign Up</Link></div>
-          <Link href="https://WonderSites.tolt.io/" target="_blank" className="block mt-8 text-sm text-orange-600 sm:mt-4 m-auto w-fit">Already partner? Open the affiliate dashboard →</Link>
+          <Link href="https://WonderSites.tolt.io/" target="_blank" rel="noopener"  className="block mt-8 text-sm text-orange-600 sm:mt-4 m-auto w-fit">Already partner? Open the affiliate dashboard →</Link>
 
 
 
@@ -320,7 +320,7 @@ refer to Wonder  Sites, without limits. Join
         <h2 className="h2 font-bold">Start earning cash by referring customers to Wonder Sites</h2>
         <br />
         <p className="mt-4">Quick payouts to Wise, Paypal or your local bank. Premium support and cross-promotions from us.</p>
-        <div className="mt-8"><Link href="https://boringsites.lemonsqueezy.com/affiliates" target="_blank" className="btn text-slate-900 bg-slate-200 hover:bg-slate-600 w-full mb-4 sm:w-auto sm:mb-0">Become our partner</Link></div>
+        <div className="mt-8"><Link href="https://boringsites.lemonsqueezy.com/affiliates" target="_blank" rel="noopener"  className="btn text-slate-900 bg-slate-200 hover:bg-slate-600 w-full mb-4 sm:w-auto sm:mb-0">Become our partner</Link></div>
     </div>
 </div>
 

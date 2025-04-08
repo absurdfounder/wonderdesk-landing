@@ -178,12 +178,12 @@ export default function OldWays() {
           {/* CTA Section */}
           <section className="hidden w-full bg-slate-900 rounded-2xl py-8 sm:py-12 px-4 sm:px-6 mt-12 mb-12">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">
+              <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">
                 This Time, You'll Actually Launch
                 <span className=" block font-normal text-orange-600 mt-2">
                   Skip the Setup Hell
                 </span>
-              </h1>
+              </h2>
               <p className="text-lg sm:text-xl text-slate-300">
                 We know you have too much on your plate.
               </p>

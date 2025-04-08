@@ -55,7 +55,7 @@ export default function PageDetail() {
                                 <span>
                                     <span>These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and&nbsp;Malai Tikka Labs LLC, doing business as Wonder Sites&nbsp;("WonderSites", “</span>
                                     <b><span>we</span></b><span>”, “</span><b><span>us</span></b><span>”, or “</span><b><span>our</span></b><span>”), concerning your access to and use of the&nbsp;</span>
-                                    <Link target="_blank" href="https://www.wondersites.co/" className="link"><span>https://www.wondersites.co</span></Link>
+                                    <Link target="_blank" rel="noopener"  href="https://www.wondersites.co/" className="link"><span>https://www.wondersites.co</span></Link>
                                     <span>
                                         &nbsp;website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). You agree that by accessing the Site, you
                                         have read, understood, and agree to be bound by all of these Terms of Use. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST&nbsp;DISCONTINUE USE
@@ -629,7 +629,7 @@ export default function PageDetail() {
                             </h2>
                             <p className="text-slate-600 my-2">
                                 <span>
-                                    <span>We care about data privacy and security. Please review our Privacy Policy:&nbsp;</span><Link target="_blank" href="https://www.wondersites.co/privacy" className="link"><span>https://www.wondersites.co/privacy</span></Link>
+                                    <span>We care about data privacy and security. Please review our Privacy Policy:&nbsp;</span><Link target="_blank" rel="noopener"  href="https://www.wondersites.co/privacy" className="link"><span>https://www.wondersites.co/privacy</span></Link>
                                     <span>. By using the Site, you agree to be bound by our Privacy Policy, which is incorporated into these Terms of Use.</span>
                                 </span>
                             </p>
@@ -694,7 +694,7 @@ export default function PageDetail() {
                             <p className="text-slate-600 my-2">
                                 <span>
                                     <span>The European Commission provides an online dispute resolution platform, which you can access here:&nbsp;</span>
-                                    <Link target="_blank" href="https://ec.europa.eu/consumers/odr" className="link"><span>https://ec.europa.eu/consumers/odr</span></Link>
+                                    <Link target="_blank" rel="noopener"  href="https://ec.europa.eu/consumers/odr" className="link"><span>https://ec.europa.eu/consumers/odr</span></Link>
                                     <span>. If you would like to bring this subject to our attention, please contact us.</span>
                                 </span>
                             </p>
@@ -815,7 +815,7 @@ export default function PageDetail() {
                             <p className="text-slate-600 my-2">
                                 <span>
                                     <span>There are a few rules about our affiliate program you should know about. No “gotchas” here, just some terms to keep everyone happy. We are using </span>
-                                    <Link target="_blank" href="https://tolt.io" className="link"><span>tolt.io</span></Link>
+                                    <Link target="_blank" rel="noopener"  href="https://tolt.io" className="link"><span>tolt.io</span></Link>
                                     <span> as our affiliate program provider. If you signup for our affiliate program you also agree to their terms and privacy policy. </span>
                                 </span>
                             </p>
@@ -944,7 +944,7 @@ export default function PageDetail() {
                             <p className="text-slate-600 my-2">
                                 <span>
                                     <span>These terms of use were created using&nbsp;</span>
-                                    <Link target="_blank" href="https://termly.io/products/terms-and-conditions-generator/?ftseo" className="link"><span>Termly’s Terms and Conditions Generator</span></Link><span>.</span>
+                                    <Link target="_blank" rel="noopener"  href="https://termly.io/products/terms-and-conditions-generator/?ftseo" className="link"><span>Termly’s Terms and Conditions Generator</span></Link><span>.</span>
                                 </span>
                             </p>
                             <div className="blank">&nbsp;</div>

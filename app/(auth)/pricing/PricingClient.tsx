@@ -221,9 +221,9 @@ const FAQSection: React.FC = () => {
         <div className="mx-auto mt-20 max-w-4xl">
             <div className="px-4">
                 <div className="text-center mb-10">
-                    <h1 className="font-funneldisplay text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                    <h2 className="font-funneldisplay text-2xl md:text-3xl font-bold text-slate-900 mb-3">
                         Frequently Asked Questions
-                    </h1>
+                    </h2>
                     <p className="text-slate-600 max-w-2xl mx-auto">
                         Have a different question? Reach out to our support team by
                         <a
@@ -585,7 +585,7 @@ const Pricing: React.FC = () => {
                             <div className="mt-6 text-center md:text-right">
                                 <Link
                                     href="https://app.youform.com/forms/r3rvhjv4"
-                                    target="_blank"
+                                    target="_blank" rel="noopener" 
                                     className="inline-block py-3 px-6 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors"
                                 >
                                     Get Custom Quote
@@ -804,7 +804,7 @@ const Pricing: React.FC = () => {
                             <div>
                                 <Link
                                     href="https://app.youform.com/forms/r3rvhjv4"
-                                    target="_blank"
+                                    target="_blank" rel="noopener" 
                                     className="bg-white text-slate-900 hover:bg-orange-50 px-8 py-3 rounded-lg inline-flex items-center transition-colors shadow-md font-medium"
                                 >
                                     We'll do it for you <span className="ml-2">→</span>

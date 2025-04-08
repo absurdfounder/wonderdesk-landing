@@ -6,7 +6,7 @@ const Rating = () => {
     return (
         
         <div className='hidden max-w-3xl mx-auto text-center py-20 pb-12 md:pb-20'>
-        <h1 className="h2 mb-4 font-funneldisplay">Wonder is rated the Best.</h1>
+        <h2 className="h2 mb-4 font-funneldisplay">Wonder is rated the Best.</h2>
         <p className="text-xl text-slate-600"> Numbers quantify everything, this is what stands us apart from the competition.</p>
 
 
@@ -16,7 +16,7 @@ const Rating = () => {
           <Link  href={"0"}  className="relative flex flex-col items-center p-6 bg-white rounded-md h-full">
             <div>
               <div >
-                <h1 className="h3 mb-4 text-slate-500">86%</h1>
+                <h3 className="h3 mb-4 text-slate-500">86%</h3>
                 <span className="text-dark font-bold">Ease of Use</span>
               </div>
             </div>
@@ -26,7 +26,7 @@ const Rating = () => {
           <Link href={"0"}  className="relative flex flex-col items-center p-6 bg-white rounded-md h-full">
             <div>
               <div>
-                <h1 className="h3 mb-4 text-slate-500">90%</h1>
+                <h3 className="h3 mb-4 text-slate-500">90%</h3>
                 <span className="text-dark font-bold">Ease of Admin</span>
               </div>
             </div>
@@ -35,7 +35,7 @@ const Rating = () => {
           <Link  href={"0"} className="relative flex flex-col items-center p-6 bg-white rounded-md h-full">
             <div>
               <div>
-                <h1 className="h3 mb-4 text-slate-500">91%</h1>
+                <h3 className="h3 mb-4 text-slate-500">91%</h3>
                 <span className="text-dark font-bold">Meets requirements</span>
               </div>
             </div>
@@ -44,7 +44,7 @@ const Rating = () => {
           <Link  href={"0"} className="relative flex flex-col items-center p-6 bg-white rounded-md h-full">
             <div>
               <div>
-                <h1 className="h3 mb-4 text-slate-500">86%</h1>
+                <h3 className="h3 mb-4 text-slate-500">86%</h3>
                 <span className="text-dark font-bold">Ease of Setup</span>
               </div>
             </div>

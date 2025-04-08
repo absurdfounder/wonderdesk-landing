@@ -198,7 +198,7 @@ function TemplateClientContent() {
             <div key={`migrate-banner-${i}`} className="sm:col-span-2 lg:col-span-3 my-8">
               <Link
                 href="https://app.youform.com/forms/r3rvhjv4"
-                target="_blank"
+                target="_blank" rel="noopener" 
                 rel="noopener noreferrer"
                 className="block"
               >
@@ -223,7 +223,7 @@ function TemplateClientContent() {
                         <div>
                           <Link
                             href="https://app.youform.com/forms/r3rvhjv4"
-                            target="_blank"
+                            target="_blank" rel="noopener" 
                             className="btn bg-orange-700 hover:bg-orange-700 shadow px-12 inline-block text-slate-900 py-3 rounded-lg transition-colors"
                           >
                             We can do it for you →
@@ -243,7 +243,7 @@ function TemplateClientContent() {
             <div key={`design-assistance-banner-${i}`} className="sm:col-span-2 lg:col-span-3 my-8">
               <Link
                 href="https://app.youform.com/forms/design-assistance"
-                target="_blank"
+                target="_blank" rel="noopener" 
                 rel="noopener noreferrer"
                 className="block"
               >
@@ -267,7 +267,7 @@ function TemplateClientContent() {
                         <div>
                           <Link
                             href="https://app.youform.com/forms/r3rvhjv4"
-                            target="_blank"
+                            target="_blank" rel="noopener" 
                             className="btn bg-white hover:bg-slate-100 shadow px-12 inline-block text-orange-600 py-3 rounded-lg transition-colors"
                           >
                             Create a free account now →

@@ -15,12 +15,12 @@ export default function NotiontoWebsite() {
 <div className="justify-center mb-8 mt-12 max-w-7xl m-auto" data-aos="zoom-y-out" data-aos-delay="450">
 
 <div className="max-w-3xl mx-auto text-center pt-4 mb-6 sm:mb-8">
-  <h1 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+  <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
   Update once in Notion,
     <span className=" block font-normal text-orange-600">
     see changes instantly.
     </span>
-  </h1>
+  </h2>
 </div>
   {/* Site transformation visualization - Removed transition animation */}
   <div className="w-full py-12 overflow-x-hidden">

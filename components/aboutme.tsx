@@ -6,10 +6,10 @@ export default function AboutMe() {
   return (
     <section className="relative">
       <div className="px-4 sm:px-6 pt-16 md:pt-20 pb-12 max-w-7xl mx-auto">
-        <h1 className="font-funneldisplay h2 mb-8 text-start">
+        <h2 className="font-funneldisplay h2 mb-8 text-start">
           Hello! 👋<br/>
           My name is Vaibhav.
-        </h1>
+        </h2>
 
         <div className="flex flex-col md:flex-row items-center justify-center">
           <div className="w-full md:w-1/3 mb-6 md:mb-0 flex justify-center rounded-full">
