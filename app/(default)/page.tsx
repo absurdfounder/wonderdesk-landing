@@ -53,16 +53,16 @@ export default function Home() {
       >
         <Header />
         <Hero />
-        
+
       </div>
 
-      <br/>
-      <br/>
+      <br />
+      <br />
       <ModalVideo
       />
 
 
-      <NotiontoWebsite/>
+      <NotiontoWebsite />
 
 
       <Marketplace_Type />
@@ -72,16 +72,17 @@ export default function Home() {
       <FeaturesBlocks />
       <OldWays />
 
+      <SimpleAnalyticsDashboard />
+
       <Showcases />
 
-<SimpleAnalyticsDashboard/>
 
       <FAQ />
       <AboutMe />
 
 
 
-<Testimonials/>
+      <Testimonials />
 
 
       <Newsletter />

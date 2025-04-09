@@ -128,8 +128,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
 
 
-
           <TabImageHotspots />
+
 
 
         </div>

@@ -56,16 +56,16 @@ const SimpleAnalyticsDashboard: React.FC = () => {
   return (
     <div className="text-gray-900 p-8 w-full max-w-6xl mx-auto rounded-lg">
       <h2 className="font-funneldisplay h2 mb-4 m-auto text-center">
-        Simplicity meets AI Teams
-        <span className=" block font-normal text-orange-600">stop grinding all alone.</span>
+      We know your busy.
+        <span className=" block font-normal text-orange-600">experience clutter free dashboard</span>
       </h2>
 
       {/* Header */}
       <div className="text-center mb-12 px-4">
         <p className="font-funneldisplay text-xl font-medium mb-4 max-w-4xl m-auto">
-          Wonder Sites is a simple Wordpress alternative powered by Notion. Build and Forget about us focus on what is important the services that your business provides.
+          Build and Forget about us focus on what is important the services that your business provides.
         </p>
-        <p className="text-xl">Nothing beats simplicity.</p>
+        <p className="text-xl">Come In -- Ask AI -- Get Out </p>
       </div>
 
       {/* Tabs */}
@@ -80,7 +80,7 @@ const SimpleAnalyticsDashboard: React.FC = () => {
                 ? 'text-orange-900 border-orange-500'
                 : activeTab === tab.id
                   ? 'bg-orange-600 border-gray-600 text-white'
-                  : 'bg-transparent border-gray-600 hover:bg-gray-200'
+                  : 'bg-transparent bg-white/50 border-gray-600 hover:bg-white'
               }
             `}
           >
