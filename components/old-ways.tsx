@@ -23,7 +23,7 @@ export default function OldWays() {
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
-                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
                                   backgroundSize: "cover",
                                   backgroundPosition: "center"                                }}
                     
@@ -51,7 +51,7 @@ export default function OldWays() {
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
-                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
                                   backgroundSize: "cover",
                                   backgroundPosition: "center"                                }}
                     
@@ -78,7 +78,7 @@ export default function OldWays() {
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
-                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
                                   backgroundSize: "cover",
                                   backgroundPosition: "center"                                }}
                     
@@ -105,7 +105,7 @@ export default function OldWays() {
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
-                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
                                   backgroundSize: "cover",
                                   backgroundPosition: "center"                                }}
                     
@@ -132,7 +132,7 @@ export default function OldWays() {
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
-                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
                                   backgroundSize: "cover",
                                   backgroundPosition: "center"                                }}
                     
@@ -159,7 +159,7 @@ export default function OldWays() {
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
                                 style={{
-                                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url('https://dazzling-cat.netlify.app/backgroundthing.png')",
+                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
                                   backgroundSize: "cover",
                                   backgroundPosition: "center"                                }}
                     
