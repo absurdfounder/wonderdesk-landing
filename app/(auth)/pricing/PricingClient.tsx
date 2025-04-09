@@ -96,8 +96,8 @@ const faqs: Record<string, FAQ[]> = {
     ],
     Pricing: [
         {
-            question: "How does the free 7 day trial work?",
-            answer: "Wonder offers a 7 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
+            question: "How does the free 3 day trial work?",
+            answer: "Wonder offers a 3 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
         },
         {
             question: "What are the pricing plans?",
