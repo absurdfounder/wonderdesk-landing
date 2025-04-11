@@ -292,7 +292,7 @@ const Pricing: React.FC = () => {
                 "Automatic SSL(https)",
                 "Custom domain",
                 "Wonder AI",
-                "AI Terms (Designer & Developer)",
+                "AI Teams (Designer & Developer)",
                 "Privacy focused analytics",
                 "Remove \"Made with Wonder \"",
                 "Manual Publishing",
