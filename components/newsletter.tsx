@@ -27,7 +27,7 @@ export default function Newsletter() {
           <div 
             className="relative py-10 px-8 md:py-16 md:px-12 overflow-hidden rounded-2xl my-8 border" 
             style={{
-              backgroundImage: 'linear-gradient(rgb(207 244 255), rgb(106 199 255 / 62%)), url(https://dazzling-cat.netlify.app/backgroundthing.png)',
+              backgroundImage: 'linear-gradient(rgb(207 244 255 / 0%), rgb(106 199 255 / 11%)), url(https://dazzling-cat.netlify.app/cloudbackground.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center'
             }}
