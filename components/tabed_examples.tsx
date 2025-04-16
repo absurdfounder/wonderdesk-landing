@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Info } from 'lucide-react';
+import { Info, BarChart3, Users, ArrowDownUp, FolderTree, ShoppingBag } from 'lucide-react';
 
 // Define types for TypeScript
 type Hotspot = {
@@ -13,6 +13,11 @@ type Tab = {
   title: string;
   image: string;
   hotspots: Hotspot[];
+  icon: React.ReactNode;
+  activeColor: string;
+  inactiveColor: string;
+  bgColor: string;
+  textColor: string;
 };
 
 const TabImageHotspots = () => {
@@ -21,11 +26,16 @@ const TabImageHotspots = () => {
   const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
   const [windowWidth, setWindowWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0);
 
-  // Define tabs with their images and hotspots
+  // Define tabs with their images, hotspots, icons and colors
   const tabs: Tab[] = [
     {
       title: 'Product Docs',
       image: 'https://dazzling-cat.netlify.app/marketingai.png',
+      icon: <BarChart3 size={20} />,
+      activeColor: 'bg-purple-100',
+      inactiveColor: 'bg-purple-100',
+      bgColor: 'bg-purple-100',
+      textColor: 'text-purple-800',
       hotspots: [
         { id: 1, x: 20, y: 30, text: 'Navigation menu - Access all main features from here' },
         { id: 2, x: 50, y: 50, text: 'Activity feed - See recent updates and changes' },
@@ -35,6 +45,11 @@ const TabImageHotspots = () => {
     {
       title: 'Helpdesk',
       image: 'https://dazzling-cat.netlify.app/marketingai.png',
+      icon: <Users size={20} />,
+      activeColor: 'bg-blue-100',
+      inactiveColor: 'bg-blue-100',
+      bgColor: 'bg-blue-100',
+      textColor: 'text-blue-800',
       hotspots: [
         { id: 1, x: 30, y: 40, text: 'Create new project button - Start here to begin a new project' },
         { id: 2, x: 60, y: 60, text: 'Project templates - Choose from existing templates to save time' },
@@ -44,6 +59,11 @@ const TabImageHotspots = () => {
     {
       title: 'Blog',
       image: 'https://dazzling-cat.netlify.app/airdropswork.png',
+      icon: <ArrowDownUp size={20} />,
+      activeColor: 'bg-green-100',
+      inactiveColor: 'bg-green-100',
+      bgColor: 'bg-green-100',
+      textColor: 'text-green-800',
       hotspots: [
         { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
         { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
@@ -53,6 +73,11 @@ const TabImageHotspots = () => {
     {
       title: 'Directory',
       image: 'https://dazzling-cat.netlify.app/notionbear.png',
+      icon: <FolderTree size={20} />,
+      activeColor: 'bg-yellow-100',
+      inactiveColor: 'bg-yellow-100',
+      bgColor: 'bg-yellow-100',
+      textColor: 'text-yellow-800',
       hotspots: [
         { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
         { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
@@ -62,6 +87,11 @@ const TabImageHotspots = () => {
     {
       title: '2-sided Marketplace',
       image: 'https://dazzling-cat.netlify.app/remotejobs.png',
+      icon: <ShoppingBag size={20} />,
+      activeColor: 'bg-pink-100',
+      inactiveColor: 'bg-pink-100',
+      bgColor: 'bg-pink-100',
+      textColor: 'text-pink-800',
       hotspots: [
         { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
         { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
@@ -128,91 +158,112 @@ const TabImageHotspots = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto rounded-lg px-2 sm:px-0">
-      {/* Tab Navigation - Scrollable on mobile */}
-      <div className="flex overflow-x-auto border-b bg-white/50 rounded-md w-full sm:w-fit justify-start sm:justify-center m-auto mt-6 p-1 scrollbar-hide">
-        {tabs.map((tab, index) => (
-          <button
-            key={index}
-            className={`px-3 sm:px-4 py-2 font-medium text-sm sm:text-lg whitespace-nowrap transition-colors duration-200 mr-2 ${
-              activeTab === index 
-                ? 'text-gray-900 border-b-2 bg-white rounded-md font-bold' 
-                : 'text-gray-700 hover:text-gray-500'
-            }`}
-            onClick={() => changeTab(index)}
-          >
-            {tab.title}
-          </button>
-        ))}
-      </div>
+    <div className="w-full max-w-5xl mx-auto rounded-lg px-2 sm:px-0">
+      <div className="relative">
+        {/* Tab Navigation - All tabs keep their colors */}
+        <div className="flex m-auto gap-1 w-full justify-center mt-8">
+          {tabs.map((tab, index) => (
+            <button
+              key={index}
+              className={`px-4 py-2 flex items-center gap-2 font-medium text-sm sm:text-base whitespace-nowrap transition-all duration-200 border border-gray-600
+                ${activeTab === index ? tab.activeColor : tab.inactiveColor} 
+                ${tab.textColor}
+                rounded-t-lg border-b-0 relative z-10
+                ${index === 0 ? 'ml-2' : ''}`}
+              onClick={() => changeTab(index)}
+              style={{ marginBottom: '-1px' }} // Ensures tabs connect seamlessly with content
+            >
+              <span className="p-1 rounded-md">
+                {tab.icon}
+              </span>
+              {tab.title}
+            </button>
+          ))}
+        </div>
 
-      {/* Image with Hotspots */}
-      <div className="relative w-full bg-gray-100 rounded-lg overflow-hidden">
-        {tabs.map((tab, index) => (
-          <div 
-            key={index} 
-            className={`${activeTab === index ? 'block' : 'hidden'} relative`}
-          >
-            {/* Loading state */}
-            {!imagesLoaded[index] && (
-              <div className="w-full aspect-video bg-gray-200 animate-pulse flex items-center justify-center">
-                <span className="text-gray-500">Loading...</span>
+        {/* Content Container - Changes background color based on active tab */}
+        <div className={`relative w-full ${tabs[activeTab].bgColor} rounded-b-xl rounded-tr-xl overflow-hidden p-6 shadow-md transition-colors duration-300 border border-gray-600 rounded-md`}>
+          {/* Browser-like window with frame */}
+          <div className="rounded-xl overflow-hidden bg-white shadow-lg border border-gray-200">
+            {/* Browser control dots */}
+            <div className="bg-gray-100 px-4 py-2 border-b border-gray-200">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                <div className="w-3 h-3 rounded-full bg-green-400"></div>
               </div>
-            )}
+            </div>
             
-            {/* Image */}
-            <img 
-              src={tab.image} 
-              alt={`${tab.title} interface`} 
-              className={`w-full h-auto ${imagesLoaded[index] ? 'block' : 'hidden'}`}
-              onLoad={() => {
-                // Backup onload handler in case the pre-loading doesn't work
-                setImagesLoaded(prev => {
-                  const newState = [...prev];
-                  newState[index] = true;
-                  return newState;
-                });
-              }}
-            />
-            
-            {/* Hotspots - Only show if image is loaded */}
-            {imagesLoaded[index] && tab.hotspots.map((hotspot) => (
-              <div 
-                key={hotspot.id}
-                className="absolute"
-                style={{ 
-                  left: `${hotspot.x}%`, 
-                  top: `${hotspot.y}%`,
-                  transform: 'translate(-50%, -50%)' // Center the hotspot on its coordinates
-                }}
-              >
-                {/* Hotspot Button */}
-                <button
-                  className={`cursor-pointer flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-md transition-all duration-300 z-10 ${
-                    activeHotspot === hotspot.id 
-                      ? 'bg-blue-600 text-white' 
-                      : 'bg-blue-100 text-blue-600 hover:bg-blue-200'
-                  }`}
-                  onClick={() => handleHotspotInteraction(hotspot.id)}
-                  onMouseEnter={() => handleHotspotInteraction(hotspot.id)}
-                  onMouseLeave={() => setActiveHotspot(null)}
+            {/* Main content area */}
+            <div className="relative">
+              {tabs.map((tab, index) => (
+                <div 
+                  key={index} 
+                  className={`${activeTab === index ? 'block' : 'hidden'} relative`}
                 >
-                  <Info size={windowWidth < 640 ? 12 : 16} />
-                </button>
-                
-                {/* Tooltip */}
-                {activeHotspot === hotspot.id && (
-                  <div 
-                    className="absolute z-20 w-48 sm:w-64 p-2 sm:p-3 bg-white rounded-lg shadow-lg text-xs sm:text-sm text-gray-700 border border-gray-200 transition-opacity duration-300"
-                    style={calculateTooltipPosition(hotspot.x, hotspot.y)}
-                  >
-                    {hotspot.text}
-                  </div>
-                )}
-              </div>
-            ))}
+                  {/* Loading state */}
+                  {!imagesLoaded[index] && (
+                    <div className="w-full aspect-video bg-gray-200 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500">Loading...</span>
+                    </div>
+                  )}
+                  
+                  {/* Image */}
+                  <img 
+                    src={tab.image} 
+                    alt={`${tab.title} interface`} 
+                    className={`w-full h-auto ${imagesLoaded[index] ? 'block' : 'hidden'}`}
+                    onLoad={() => {
+                      // Backup onload handler in case the pre-loading doesn't work
+                      setImagesLoaded(prev => {
+                        const newState = [...prev];
+                        newState[index] = true;
+                        return newState;
+                      });
+                    }}
+                  />
+                  
+                  {/* Hotspots - Only show if image is loaded */}
+                  {imagesLoaded[index] && tab.hotspots.map((hotspot) => (
+                    <div 
+                      key={hotspot.id}
+                      className="absolute"
+                      style={{ 
+                        left: `${hotspot.x}%`, 
+                        top: `${hotspot.y}%`,
+                        transform: 'translate(-50%, -50%)' // Center the hotspot on its coordinates
+                      }}
+                    >
+                      {/* Hotspot Button */}
+                      <button
+                        className={`cursor-pointer flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full transition-all duration-300 z-10 ${
+                          activeHotspot === hotspot.id 
+                            ? 'bg-blue-600 text-white' 
+                            : 'bg-white text-blue-600 hover:bg-blue-100 shadow-md'
+                        }`}
+                        onClick={() => handleHotspotInteraction(hotspot.id)}
+                        onMouseEnter={() => handleHotspotInteraction(hotspot.id)}
+                        onMouseLeave={() => setActiveHotspot(null)}
+                      >
+                        <Info size={windowWidth < 640 ? 12 : 16} />
+                      </button>
+                      
+                      {/* Tooltip */}
+                      {activeHotspot === hotspot.id && (
+                        <div 
+                          className="absolute z-20 w-48 sm:w-64 p-2 sm:p-3 bg-white rounded-lg shadow-lg text-xs sm:text-sm text-gray-700 border border-gray-200 transition-opacity duration-300"
+                          style={calculateTooltipPosition(hotspot.x, hotspot.y)}
+                        >
+                          {hotspot.text}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
+        </div>
       </div>
 
       {/* Instructions */}

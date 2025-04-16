@@ -26,7 +26,7 @@ export default function TellaVideoButton() {
         onClick={() => setModalOpen(true)}
       >
         {/* Video thumbnail - Full width on mobile, 2/5 width on larger screens */}
-        <div className="relative w-full md:w-2/5 border rounded-md mb-3 md:mb-0">
+        <div className="relative w-full md:w-2/5 border rounded-md mb-3 md:mb-0 overflow-hidden">
           <div className="aspect-w-16 aspect-h-9">
             <video 
               autoPlay 
