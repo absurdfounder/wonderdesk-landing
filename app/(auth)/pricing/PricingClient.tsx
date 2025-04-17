@@ -287,6 +287,7 @@ const Pricing: React.FC = () => {
             yearlyPrice: 90,
             trafficLimit: "10,000",
             features: [
+                "1 Website",
                 "Unlimited Pages",
                 "All Type of Websites",
                 "Automatic SSL(https)",
@@ -294,9 +295,9 @@ const Pricing: React.FC = () => {
                 "Wonder AI",
                 "AI Teams (Designer & Developer)",
                 "Privacy focused analytics",
-                "Remove \"Made with Wonder \"",
+                "No Watermark",
                 "Manual Publishing",
-                "Auto publish everyday"
+                "Auto publish every hour"
             ]
         },
         {
@@ -306,12 +307,13 @@ const Pricing: React.FC = () => {
             yearlyPrice: 430,
             trafficLimit: "100,000",
             features: [
+                "10 Websites",
                 "Everything in Personal, Plus",
                 "Sub-directory Domain",
                 "Multi-lingual sites",
                 "Unlimited team members",
                 "Membership sites",
-                "Auto publish every hour"
+                "Instant Auto Publish"
             ]
         }
     ];
