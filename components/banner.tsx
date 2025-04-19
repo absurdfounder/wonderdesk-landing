@@ -46,24 +46,7 @@ export default function Banner() {
             </div>
           </div>
 
-          {/* Right Badge Banner */}
-          <div className="lg:fixed sm:block bottom-0 right-0 ml-4 w-fit sm:w-fit md:bottom-8  md:right-12 md:w-auto z-50 border border-gray-600 rounded-xl">
-            <div>
-              <a
-                href="https://www.producthunt.com/posts/wonder-1999?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wonder&#0045;1999"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img 
-                  src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=943627&theme=neutral&period=daily&t=1745033935097"
-                  alt="Wonder - Create websites with Notion – Blog, Helpdesk, Marketplace | Product Hunt"
-                  style={{ width: '250px', height: '54px' }}
-                  width="250"
-                  height="54"
-                />
-              </a>
-            </div>
-          </div>
+
         </div>
       )}
     </>
