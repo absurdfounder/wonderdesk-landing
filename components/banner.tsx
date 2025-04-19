@@ -8,15 +8,23 @@ export default function Banner() {
   return (
     <>
       {bannerOpen && (
-        <div className="fixed bottom-0 left-0 ml-4 w-full sm:w-fit md:bottom-8 md:left-12 md:w-auto z-50">
-          <div>
-            <button 
-              type="button" 
-              className="text-sm bg-slate-900 font-bold shadow-lg backdrop-blur-lg rounded-md flex items-center border text-white p-1 px-2 hover:border-slate-600" 
-              tabIndex={0}
-            >
-              <span className="sm:inline text-white">Made with</span>
-              {/* Changed the SVG styling to be more explicit and Safari-friendly */}
+        <div className="w-full">
+          {/* Left Button Banner */}
+          <div className="fixed bottom-0 left-0 ml-4 w-full sm:w-fit md:bottom-8 md:left-12 md:w-auto z-50">
+            <div>
+              <button 
+                type="button" 
+                className="text-sm bg-slate-900 font-bold shadow-lg backdrop-blur-lg rounded-md flex items-center border text-white p-1 px-2 hover:border-slate-600" 
+                tabIndex={0}
+              >
+                <span className="sm:inline text-white">Made with</span>
+                <svg 
+                  viewBox="0 0 1486 450" 
+                  className="h-5 w-auto max-w-[100px] ml-1" 
+                  preserveAspectRatio="xMidYMid meet"
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
               <svg 
                 viewBox="0 0 1486 450" 
                 className="h-5 w-auto max-w-[100px] ml-1" 
@@ -33,7 +41,28 @@ export default function Banner() {
                 <path d="M411.187 104.807C414.503 96.3311 426.497 96.3311 429.813 104.807L437.547 124.579C438.55 127.143 440.566 129.181 443.12 130.21L462.999 138.226C471.346 141.591 471.346 153.409 462.999 156.774L443.12 164.79C440.566 165.819 438.55 167.857 437.547 170.421L429.813 190.193C426.497 198.669 414.503 198.669 411.187 190.193L403.453 170.421C402.45 167.857 400.434 165.819 397.88 164.79L378.001 156.774C369.654 153.409 369.654 141.591 378.001 138.226L397.88 130.21C400.434 129.181 402.45 127.143 403.453 124.579L411.187 104.807Z" fill="#FF7028"/>
                 <path d="M384.23 34.5583C389.172 32.087 394.545 37.0457 392.477 42.1703L387.206 55.231C386.589 56.7622 386.629 58.4802 387.318 59.9807L393.337 73.0852C395.563 77.9313 390.833 83.0558 385.825 81.2247L372.281 76.2734C370.73 75.7064 369.014 75.8036 367.537 76.542L354.94 82.8405C349.997 85.3118 344.625 80.3532 346.693 75.2286L351.963 62.1678C352.581 60.6367 352.541 58.9186 351.852 57.4182L345.833 44.3137C343.607 39.4676 348.336 34.3431 353.345 36.1741L366.889 41.1255C368.44 41.6924 370.156 41.5952 371.632 40.8569L384.23 34.5583Z" fill="#FF7028"/>
               </svg>
-            </button>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Right Badge Banner */}
+          <div className="lg:fixed sm:block bottom-0 right-0 ml-4 w-fit sm:w-fit md:bottom-8  md:right-12 md:w-auto z-50 border border-gray-600 rounded-xl">
+            <div>
+              <a
+                href="https://www.producthunt.com/posts/wonder-1999?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wonder&#0045;1999"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=943627&theme=neutral&period=daily&t=1745033935097"
+                  alt="Wonder - Create websites with Notion – Blog, Helpdesk, Marketplace | Product Hunt"
+                  style={{ width: '250px', height: '54px' }}
+                  width="250"
+                  height="54"
+                />
+              </a>
+            </div>
           </div>
         </div>
       )}
