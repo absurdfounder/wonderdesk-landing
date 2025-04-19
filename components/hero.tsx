@@ -100,13 +100,13 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
 
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row gap-4 mt-8 mb-8 items-center justify-center"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            
+
             <Link href="https://app.wondersites.co?ref=herolanding" className="flex items-center justify-center py-3 px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto">
               <span>Create a free account</span>
               <ArrowRight className="ml-2 w-4 h-4" />
