@@ -84,7 +84,7 @@ export default function TabletMenu() {
             {/* Affiliate Link */}
             <li>
               <Link href="https://wondersites.lemonsqueezy.com/affiliates" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">
-                Affiliate (50%)
+                Affiliate
               </Link>
             </li>
 
