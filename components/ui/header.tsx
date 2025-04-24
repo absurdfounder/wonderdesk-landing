@@ -141,7 +141,7 @@ export default function Header() {
                            style={{ 
                              transform: isHovered ? 'translateY(0)' : 'translateY(100%)' 
                            }}>
-                        Takes 5 mins
+                        Takes 15 mins
                       </div>
                       <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
                     </div>

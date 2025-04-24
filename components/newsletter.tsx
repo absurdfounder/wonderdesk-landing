@@ -121,7 +121,7 @@ export default function Newsletter() {
                     <FlippingButtonLink
                       href="https://app.wondersites.co"
                       initialText="Create a free site"
-                      hoverText="in just 5 mins" // Customize hover text if needed
+                      hoverText="in just 15 mins" // Customize hover text if needed
                       // Removed flex items-center justify-center as base class handles it
                       className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0"
                     />

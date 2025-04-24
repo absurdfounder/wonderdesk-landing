@@ -124,7 +124,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                                         transition: 'transform 0.3s ease-in-out'
                                     }}
                                 >
-                                    in just 5 mins.
+                                    in just 15 mins.
                                 </div>
                             </div>
                             {/* Icon */}

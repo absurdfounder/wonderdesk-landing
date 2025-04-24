@@ -332,7 +332,7 @@ function TemplateClientContent() {
                                                         target="_blank"
                                                         rel="noopener"
                                                         initialText="Create a free site now →"
-                                                        hoverText="in just 5 mins" // Or other text
+                                                        hoverText="in just 15 mins" // Or other text
                                                         className="btn bg-white hover:bg-slate-100 shadow px-12 inline-block text-orange-600 py-3" // Original classes merged with base
                                                     />
                                                  </div>
