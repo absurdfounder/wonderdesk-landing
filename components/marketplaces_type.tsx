@@ -132,97 +132,119 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt, id }) => (
 
 // --- UPDATED Marketplace Types Data ---
 const marketplaceTypes: MarketplaceTypes = {
-  1: [ // Rental
+  1: [ // Product Docs
     {
-      title: "Property rentals",
-      description: "Build a marketplace for renting homes, apartments, or vacation properties.",
-      tag: "property-rental" // Added tag
+      title: "API Documentation",
+      description: "Create comprehensive, interactive API documentation with code examples and testing features.",
+      tag: "api-docs"
     },
     {
-      title: "Equipment rentals",
-      description: "Create a platform for renting tools, machinery, or specialized equipment.",
-      tag: "equipment-rental" // Added tag
+      title: "User Guides",
+      description: "Build detailed product guides with searchable content, images, and step-by-step tutorials.",
+      tag: "user-guides"
     },
     {
-      title: "Vehicle rentals",
-      description: "Develop a marketplace for car, bike, or boat rentals.",
-      tag: "vehicle-rental" // Added tag
+      title: "Developer Hub",
+      description: "Establish a central resource for developers with SDKs, frameworks, and implementation examples.",
+      tag: "dev-hub"
     },
     {
-      title: "Fashion rentals",
-      description: "Enable users to rent designer clothes, accessories, or costumes.",
-      tag: "fashion-rental" // Added tag
+      title: "Knowledge Base",
+      description: "Design a searchable repository of product information, FAQs, and troubleshooting guides.",
+      tag: "knowledge-base"
     }
   ],
-  2: [ // Service
+  2: [ // Helpdesk
     {
-      title: "Professional services",
-      description: "Connect clients with freelancers, consultants, or service providers.",
-      tag: "freelance-pro" // Added tag
+      title: "Customer Support Portal",
+      description: "Create a complete support system with ticket tracking, knowledge base, and live chat integration.",
+      tag: "support-portal"
     },
     {
-      title: "Local services",
-      description: "Build a platform for home services, repairs, or maintenance.",
-      tag: "local-home-service" // Added tag
+      title: "IT Service Desk",
+      description: "Build an internal helpdesk for IT services with request management and asset tracking.",
+      tag: "it-service-desk"
     },
     {
-      title: "Educational services",
-      description: "Create a marketplace for tutors, instructors, or online courses.",
-      tag: "tutoring-online" // Added tag
+      title: "Community Forum",
+      description: "Develop a community-driven support platform where users can ask questions and share solutions.",
+      tag: "community-forum"
     },
     {
-      title: "Wellness services",
-      description: "Connect users with health, fitness, or wellness professionals.",
-      tag: "health-wellness" // Added tag
+      title: "AI-Powered Support",
+      description: "Implement an intelligent support system with chatbots and automated ticket routing.",
+      tag: "ai-support"
     }
   ],
-  3: [ // Product
+  3: [ // Blog
     {
-      title: "Handmade goods",
-      description: "Build a marketplace for artisans and craftspeople to sell their creations.",
-      tag: "handmade-crafts" // Added tag
+      title: "Company News Blog",
+      description: "Share company updates, product announcements, and industry insights with your audience.",
+      tag: "company-blog"
     },
     {
-      title: "Digital products",
-      description: "Create a platform for selling digital downloads, software, or art.",
-      tag: "digital-goods" // Added tag
+      title: "Multi-Author Publication",
+      description: "Create a professional publication platform with contributor profiles and content categories.",
+      tag: "multi-author"
     },
     {
-      title: "Vintage items",
-      description: "Connect collectors and sellers of antiques and vintage goods.",
-      tag: "vintage-antique" // Added tag
+      title: "Content Marketing Hub",
+      description: "Develop a comprehensive content marketing platform with SEO features and lead generation tools.",
+      tag: "content-marketing"
     },
     {
-      title: "Local products",
-      description: "Enable local businesses to sell their products online.",
-      tag: "local-shop" // Added tag
+      title: "Technical Blog",
+      description: "Build a specialized blog for technical tutorials, case studies, and developer resources.",
+      tag: "tech-blog"
     }
   ],
-  4: [ // Directories (Content Updated)
+  4: [ // Marketplace
+    {
+      title: "SaaS Marketplace",
+      description: "Create a platform for discovering, comparing, and purchasing software-as-a-service products.",
+      tag: "saas-marketplace"
+    },
+    {
+      title: "Digital Downloads",
+      description: "Build a marketplace for selling digital products like templates, e-books, and creative assets.",
+      tag: "digital-downloads"
+    },
+    {
+      title: "Service Provider Network",
+      description: "Connect customers with professional service providers through a searchable marketplace.",
+      tag: "service-marketplace"
+    },
+    {
+      title: "Subscription Marketplace",
+      description: "Develop a platform for subscription-based products with recurring billing and member access.",
+      tag: "subscription-marketplace"
+    }
+  ],
+  5: [ // Directories
     {
       title: "Business Directory",
-      description: "Create a searchable directory of local or industry-specific businesses.",
-      tag: "business-directory" // Updated content + tag
+      description: "Create a searchable directory of local or industry-specific businesses with verified listings.",
+      tag: "business-directory"
     },
     {
-      title: "Event Listings",
-      description: "Build a platform to list and promote upcoming events, workshops, or concerts.",
-      tag: "event-listing" // Updated content + tag
+      title: "Professional Network",
+      description: "Build a directory of professionals with detailed profiles, credentials, and contact information.",
+      tag: "professional-network"
     },
     {
-      title: "Classified Ads",
-      description: "Develop a site for users to post classified advertisements for goods or services.",
-      tag: "classified-ads" // Updated content + tag
+      title: "Resource Directory",
+      description: "Develop a curated collection of tools, services, and resources for a specific industry or audience.",
+      tag: "resource-directory"
     },
     {
-      title: "Member Directory",
-      description: "Enable organizations to create private or public directories of their members.",
-      tag: "member-directory" // Updated content + tag
+      title: "Location-Based Directory",
+      description: "Create a map-based directory featuring businesses, attractions, or services in specific locations.",
+      tag: "location-directory"
     }
   ]
 };
 
-// Tab Data (Defines the Tabs themselves - No changes needed)
+// Tab Data (Defines the Tabs themselves)
 const tabData: TabItem[] = [
   { text: "Product Docs", image: helpdeskImage, alt: "Product documentation interface example" },
   { text: "Helpdesk", image: helpdeskImage, alt: "Helpdesk interface demonstration" },
@@ -232,12 +254,12 @@ const tabData: TabItem[] = [
 ];
 
 
-// --- Main Component - MarketplaceType --- (Passes tag prop)
+// --- Main Component - MarketplaceType ---
 export default function MarketplaceType() {
   const [activeTab, setActiveTab] = useState(1);
 
-  // Logic to map activeTab (1-5) to dataKey (1-4) remains the same
-  const dataKey = activeTab === 5 ? 4 : activeTab;
+  // Get the correct data key based on the active tab
+  const dataKey = activeTab;
 
   const currentTabText = tabData[activeTab - 1]?.text || 'Selected Category';
 
@@ -284,20 +306,19 @@ export default function MarketplaceType() {
           role="region"
           aria-label={`${currentTabText} options`}
         >
-          {/* --- UPDATED: Pass 'tag' prop --- */}
           {marketplaceTypes[dataKey] ? (
             marketplaceTypes[dataKey].map((item, index) => (
               <MarketplaceCard
-                key={item.tag} // Use tag as key assuming it's unique within the category
+                key={item.tag}
                 index={index}
                 title={item.title}
                 description={item.description}
-                tag={item.tag} // Pass the tag prop
+                tag={item.tag}
               />
             ))
           ) : (
              <div className="col-span-full text-center text-gray-500 py-8">
-              <p>Marketplace examples are not available for this category.</p>
+              <p>Examples are not available for this category.</p>
              </div>
           )}
         </div>
@@ -318,12 +339,12 @@ export default function MarketplaceType() {
 
       {/* Call to Action Section */}
       <div className="mt-8 sm:mt-12 text-center">
-        <a // Changed to <a> as it leads off-site or to a general page
-          href="https://app.wondersites.co" // Use appropriate URL
+        <a
+          href="https://app.wondersites.co"
           className="inline-flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded text-sm sm:text-base font-medium"
-          aria-label="Learn more about building marketplaces with Wonder Sites"
+          aria-label="Learn more about building with Wonder Sites"
         >
-          Build any kind of Marketplace / Directory with Wonder Sites
+          Build any kind of solution with Wonder Sites
           <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
         </a>
       </div>
