@@ -65,7 +65,7 @@ export default function TabletMenu() {
           show={tabletNavOpen}
           as="nav"
           id="tablet-nav"
-          className="absolute top-16 z-20 left-0 w-full max-h-[85vh] overflow-y-auto bg-white shadow-lg rounded-b-lg"
+          className="absolute bottom-0 z-50 left-0 w-full max-h-[85vh] overflow-y-auto bg-white shadow-lg rounded-md p-4"
           enter="transition ease-out duration-200 transform"
           enterFrom="opacity-0 -translate-y-2"
           enterTo="opacity-100 translate-y-0"

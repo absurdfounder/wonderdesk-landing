@@ -10,7 +10,7 @@ export default function Banner() {
       {bannerOpen && (
         <div className="w-full">
           {/* Left Button Banner */}
-          <div className="fixed bottom-0 left-0 ml-4 w-full sm:w-fit md:bottom-8 md:left-12 md:w-auto z-50">
+          <div className="fixed bottom-0 left-0 ml-4 w-full sm:w-fit md:bottom-8 md:left-12 md:w-auto z-40">
             <div>
               <button
                 type="button"
