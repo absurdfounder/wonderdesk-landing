@@ -12,8 +12,6 @@ import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
 import Header from "@/components/ui/header";
 
-
-
 // Feature interfaces
 interface Feature {
     name: string;
@@ -66,49 +64,92 @@ const scaleFeatures: Feature[] = [
 ];
 
 const faqs: Record<string, FAQ[]> = {
-    Website: [
-        {
-            question: "What is Wonder  Sites?",
-            answer: "Wonder is the perfect tool for creating your knowledge base in the shortest possible time. It is powered by the best content management system in the world: Notion. You write your help articles in Notion and Wonder  takes care of the rest. It's as simple as that.",
-        },
-        {
-            question: "Why do I need a knowledge base?",
-            answer: "Unless you have built a flawless product (congratulations 🤩), your customers will always have questions and they demand immediate help. A knowledge base can provide all the information that users need in one place. It can range from FAQs about your product/service, common issues and their solutions, videos with tutorials on how to do things and more.",
-        },
-        {
-            question: "Is my data safe with Wonder  Sites?",
-            answer: "Wondertakes your privacy seriously and follows best practices to ensure that the confidentiality of personal information and customer data is protected and maintained. We do not disclose or share your data with outside parties. All your knowledge base content is hosted in your own Notion workspace.",
-        },
-    ],
-    "AI Support Bot": [
-        {
-            question: "How does the AI Support Bot work?",
-            answer: "The AI Support Bot integrates seamlessly with Wonder  to provide real-time assistance to your users, leveraging AI to answer common questions and provide guidance based on your knowledge base content.",
-        },
-        {
-            question: "Can I customize the AI Support Bot?",
-            answer: "Yes, you can customize the AI Support Bot to align with your brand's voice and style. Adjust the responses, add personalized greetings, and more to Get a cohesive user experience.",
-        },
-        {
-            question: "Does the AI Support Bot support multiple languages?",
-            answer: "The AI Support Bot supports multiple languages, allowing you to cater to a global audience and provide support in the preferred language of your users.",
-        },
-    ],
     Pricing: [
-        {
-            question: "How does the free 3 day trial work?",
-            answer: "Wonder offers a 3 day free trial to help you explore. Free Design Service. There's zero cost to get in the product and set things up. Within the trial period you will be able to use all available features. After the trial is over, you can choose to subscribe to one of our offered subscription plans.",
-        },
-        {
-            question: "What are the pricing plans?",
-            answer: "Wonder offers various pricing plans based on the number of users and features required. Check our pricing page for detailed information on each plan.",
-        },
-        {
-            question: "Are there any additional fees?",
-            answer: "Pricing is exclusive of taxes and additional local tax may be collected depending on your region. Some add-ons and advanced features might incur additional costs.",
-        },
+      {
+        question: "How does the free 3-day trial work?",
+        answer: "Wonder offers a 3-day free trial to help you explore everything we offer. There’s zero cost to get started, and during the trial you’ll have full access to all features. After the trial, you can choose a subscription plan to continue.",
+      },
+      {
+        question: "What are the pricing plans?",
+        answer: "Wonder offers flexible pricing plans based on your needs. Plans vary based on usage and feature access. You can view full details on our pricing page.",
+      },
+      {
+        question: "Are there any additional fees?",
+        answer: "Pricing is exclusive of taxes. Some add-ons and advanced features may have additional costs, which are clearly outlined when applicable.",
+      },
+      {
+        question: "Do I need to enter my credit card to start the trial?",
+        answer: "No. You can start your free trial without providing payment details. Payment is only required when you're ready to upgrade.",
+      },
+      {
+        question: "What happens after my free trial ends?",
+        answer: "Once your trial ends, you’ll be asked to choose a subscription plan. If you don't upgrade, your site will be paused, but your content will remain saved.",
+      },
+      {
+        question: "Can I cancel or switch plans anytime?",
+        answer: "Yes, you can upgrade, downgrade, or cancel your plan at any time from your dashboard. Changes will take effect in your next billing cycle.",
+      },
+      {
+        question: "Are there discounts for students, startups, or nonprofits?",
+        answer: "Yes! We offer special discounts. Please contact support@wondersites.co with proof of eligibility to apply.",
+      },
+      {
+        question: "Do you offer custom pricing for agencies or enterprises?",
+        answer: "Yes, we offer custom plans tailored for agencies and larger teams managing multiple websites. Contact us for details.",
+      },
+      {
+        question: "Can I switch from monthly to annual billing?",
+        answer: "Absolutely. You can switch to annual billing anytime and enjoy a discounted rate compared to monthly payments.",
+      },
+      {
+        question: "Will my site go offline if my payment fails?",
+        answer: "We’ll notify you if there’s an issue with your payment and provide a grace period to update your billing info. Your site won't be taken down immediately.",
+      },
     ],
-};
+    Features: [
+      {
+        question: "What is Wondersites?",
+        answer: "Wondersites is a powerful no-code website builder that turns your Notion pages into beautiful, functional websites—perfect for blogs, documentation, directories, and more.",
+      },
+      {
+        question: "What types of websites can I build?",
+        answer: "You can create blogs, help centers, knowledge bases, directories, marketing pages, and even marketplaces—all powered by Notion.",
+      },
+      {
+        question: "Do I need to know how to code?",
+        answer: "No! Wondersites is built for non-technical users. You can build a complete site using Notion and our tools—no coding required.",
+      },
+      {
+        question: "Can I use my own custom domain?",
+        answer: "Yes, Wondersites lets you connect your own custom domain to your site for a branded experience.",
+      },
+      {
+        question: "Is my content synced with Notion?",
+        answer: "Yes. Any changes you make in Notion will be automatically reflected on your live site. It’s always up to date.",
+      },
+      {
+        question: "Does Wondersites support SEO?",
+        answer: "Absolutely. Wondersites offers built-in SEO tools like meta tags, custom URLs, fast loading speeds, and mobile-friendly design.",
+      },
+      {
+        question: "Can I customize my site's design?",
+        answer: "Yes. Choose from pre-built themes, adjust layout settings, or add custom CSS and code to make your site truly yours.",
+      },
+      {
+        question: "Is Wondersites mobile-friendly?",
+        answer: "Yes. Every Wondersite is fully responsive, meaning it looks great on desktops, tablets, and mobile devices.",
+      },
+      {
+        question: "Can I track analytics?",
+        answer: "Yes. Wondersites includes built-in privacy-friendly analytics, and you can also connect external tools like Google Analytics.",
+      },
+      {
+        question: "Is it secure?",
+        answer: "Wondersites follows best practices in security including HTTPS, secure Notion access, and regular data protection protocols.",
+      }
+    ]
+  };
+  
 
 // Feature Tooltip Component
 interface FeatureTooltipProps {
@@ -128,7 +169,7 @@ const FeatureTooltip: React.FC<FeatureTooltipProps> = ({ feature, position }) =>
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="fixed p-4 bg-white shadow-lg rounded-lg max-w-xs"
+            className="fixed p-4 bg-white shadow-lg rounded-lg max-w-xs z-50" // Added z-index
             style={{ top: adjustedPosition.top, left: adjustedPosition.left }}
         >
             <Image src={feature.imageUrl} alt={feature.name} width={200} height={150} className="mb-2 rounded" />
@@ -149,17 +190,19 @@ const FeaturePopup: React.FC<FeaturePopupProps> = ({ feature, onClose }) => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4"
+        className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 z-50" // Added z-index
+        onClick={onClose} // Close on overlay click
     >
         <motion.div
             initial={{ scale: 0.9, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
-            className=" p-6 md:p-8 rounded-lg shadow-xl w-full max-w-md mx-auto relative"
+            className="bg-white p-6 md:p-8 rounded-lg shadow-xl w-full max-w-md mx-auto relative"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
         >
             <button
                 onClick={onClose}
-                className="absolute top-2 right-2 bg-slate-200 hover:bg-slate-300 rounded-md w-8 h-8 flex items-center justify-center transition-colors"
+                className="absolute top-2 right-2 bg-slate-200 hover:bg-slate-300 rounded-md w-8 h-8 flex items-center justify-center transition-colors z-10" // Ensure button is clickable
             >
                 <X size={16} />
             </button>
@@ -215,7 +258,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ question, answer }) => {
 
 // FAQ Section Component
 const FAQSection: React.FC = () => {
-    const [activeTab, setActiveTab] = useState("Website");
+    const [activeTab, setActiveTab] = useState("Pricing");
 
     return (
         <div className="mx-auto mt-20 max-w-4xl">
@@ -262,6 +305,61 @@ const FAQSection: React.FC = () => {
         </div>
     );
 };
+
+
+// --- NEW: Reusable Flipping Button Component ---
+interface FlippingButtonLinkProps {
+    href: string;
+    initialText: string;
+    hoverText: string;
+    className?: string; // To pass the dynamic styles for highlight/non-highlight
+}
+
+const FlippingButtonLink: React.FC<FlippingButtonLinkProps> = ({
+    href,
+    initialText,
+    hoverText,
+    className = '', // Default to empty string
+}) => {
+    const [isHovered, setIsHovered] = useState<boolean>(false);
+
+    // Base classes for the link structure and behavior
+    const baseClasses = "flex items-center justify-center py-3 px-4 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 w-full relative";
+
+    return (
+        <Link
+            href={href}
+            className={`${baseClasses} ${className}`} // Combine base and passed classes
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            {/* Container for the flipping text - adjust height (e.g., h-5) if needed */}
+            <div className="relative overflow-hidden h-5">
+                {/* Initial Text */}
+                <div
+                    style={{
+                        transform: isHovered ? 'translateY(-100%)' : 'translateY(0)',
+                        transition: 'transform 0.3s ease-in-out',
+                    }}
+                >
+                    {initialText}
+                </div>
+                {/* Hover Text */}
+                <div
+                    className="absolute top-0 left-0 w-full text-center" // Center text
+                    style={{
+                        transform: isHovered ? 'translateY(0)' : 'translateY(100%)',
+                        transition: 'transform 0.3s ease-in-out',
+                    }}
+                >
+                    {hoverText}
+                </div>
+            </div>
+            {/* Icon could be added here if needed, e.g., <ArrowRight className="w-4 h-4 ml-2 flex-shrink-0" /> */}
+        </Link>
+    );
+};
+// --- End of FlippingButtonLink Component ---
 
 // Main Pricing Component
 const Pricing: React.FC = () => {
@@ -333,7 +431,7 @@ const Pricing: React.FC = () => {
     // Check if lifetime deal should be visible
     useEffect(() => {
         const today = new Date();
-        const endDate = new Date("2024-06-30");
+        const endDate = new Date("2024-06-30"); // Using the specific date from original code
         if (today > endDate) {
             setIsLifetimeDealVisible(false);
         }
@@ -529,15 +627,17 @@ const Pricing: React.FC = () => {
                             </div>
 
                             <div className="px-6 pb-6 mt-4">
-                                <Link
+                                {/* --- UPDATED TO USE FlippingButtonLink --- */}
+                                <FlippingButtonLink
                                     href="https://app.wondersites.co"
-                                    className={`w-full block text-center py-3 px-4 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${tier.highlight
+                                    initialText="Create a free site"
+                                    hoverText="in under 5 mins" // Customize hover text if needed
+                                    className={tier.highlight
                                         ? 'bg-orange-600 hover:bg-orange-700 text-white focus:ring-orange-500'
                                         : 'bg-slate-100 hover:bg-slate-200 text-slate-800 focus:ring-slate-500'
-                                        }`}
-                                >
-                                    Create a free account
-                                </Link>
+                                        }
+                                />
+                                {/* --- END OF UPDATE --- */}
                             </div>
                         </motion.div>
                     ))}
@@ -587,7 +687,7 @@ const Pricing: React.FC = () => {
                             <div className="mt-6 text-center md:text-right">
                                 <Link
                                     href="https://app.youform.com/forms/r3rvhjv4"
-                                    target="_blank" rel="noopener" 
+                                    target="_blank" rel="noopener"
                                     className="inline-block py-3 px-6 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors"
                                 >
                                     Get Custom Quote
@@ -650,7 +750,7 @@ const Pricing: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Fetch Kitty Add-on */}
+                            {/* Additional Website Add-on (Corrected from Fetch Kitty based on text) */}
                             <div className="p-6">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                     <div className="flex items-center gap-4">
@@ -659,7 +759,7 @@ const Pricing: React.FC = () => {
                                         </div>
                                         <div>
                                             <h3 className="text-lg font-semibold text-slate-900">
-                                                Additonal Website
+                                                Additional Website
                                             </h3>
                                             <p className="text-sm text-slate-600">Every plan comes with 5 sites - you can get more.</p>
                                         </div>
@@ -678,7 +778,7 @@ const Pricing: React.FC = () => {
 
                 {/* Lifetime deal banner */}
                 {isLifetimeDealVisible && (
-                    <div className="max-w-4xl mx-auto mb-20">
+                    <div className="hidden max-w-4xl mx-auto mb-20">
                         <div className="bg-slate-900 rounded-xl overflow-hidden relative">
                             {/* Background decoration */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600 opacity-10 rounded-md -mr-20 -mt-20"></div>
@@ -724,17 +824,19 @@ const Pricing: React.FC = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 p-4"
+                            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 p-4 z-50" // Added z-index
+                            onClick={toggleModal} // Close on overlay click
                         >
                             <motion.div
                                 initial={{ scale: 0.9, y: 20 }}
                                 animate={{ scale: 1, y: 0 }}
                                 exit={{ scale: 0.9, y: 20 }}
                                 className="bg-white p-6 rounded-xl shadow-2xl max-w-md mx-auto relative"
+                                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
                             >
                                 <button
                                     onClick={toggleModal}
-                                    className="absolute top-3 right-3 bg-slate-200 hover:bg-slate-300 rounded-md w-8 h-8 flex items-center justify-center transition-colors"
+                                    className="absolute top-3 right-3 bg-slate-200 hover:bg-slate-300 rounded-md w-8 h-8 flex items-center justify-center transition-colors z-10" // Ensure button is clickable
                                 >
                                     <X size={16} />
                                 </button>
@@ -806,7 +908,7 @@ const Pricing: React.FC = () => {
                             <div>
                                 <Link
                                     href="https://app.youform.com/forms/r3rvhjv4"
-                                    target="_blank" rel="noopener" 
+                                    target="_blank" rel="noopener"
                                     className="bg-white text-slate-900 hover:bg-orange-50 px-8 py-3 rounded-lg inline-flex items-center transition-colors shadow-md font-medium"
                                 >
                                     We'll do it for you <span className="ml-2">→</span>
