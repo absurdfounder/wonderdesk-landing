@@ -46,7 +46,9 @@ export default function Footer() {
           {/* Company info - Always visible */}
           <div className="mb-8 md:mb-0">
             <Link href={"/"} className="inline-block mb-4">
-              <Image src={Logo} loading='eager' alt="Logo" width={160} height={160} className="w-auto h-auto max-w-[160px]" />
+            <div className='flex gap-2'>
+              <Image src={Logo} loading='eager' alt="Logo" width={160} height={160} className="w-auto h-fit m-auto max-w-[160px]" />
+              </div>
             </Link>
             <p className="text-sm text-slate-600 mb-4">Wonder is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder" className='text-orange-600 hover:underline'>@absurdfounder</Link>.</p>
             <p className='mb-3 text-xs text-slate-400'>Wonder is the biggest admirer of Notion™ , no-relation, just admiration.</p>
@@ -161,11 +163,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200">
           {/* Copyrights note */}
           <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1">
-            &copy; Boring Sites LLC. All rights reserved.
+            &copy; Boring Sites LLC. All rights reserved.              
           </div>
 
           {/* Social links */}
           <ul className="flex flex-wrap mb-4 md:mb-0 order-1 md:order-2 gap-3">
+          <img width="199" height="35" src="https://buildform.ai/wp-content/uploads/2024/09/Frame-2147225210.svg" className="attachment-large size-large wp-image-928" alt=""/>
+
+
             <li>
               <Link href="https://twitter.com/absurdfounder" className="flex justify-center items-center text-slate-600 hover:text-slate-900 bg-white hover:bg-white-100 rounded-md shadow transition duration-150 ease-in-out border px-3 py-1 md:px-4 md:py-1 text-sm" aria-label="Twitter">
                 <svg className="w-5 h-5 md:w-6 md:h-6 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
