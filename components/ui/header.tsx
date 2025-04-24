@@ -117,7 +117,7 @@ export default function Header() {
               </li>
 
               <NavLink href="/showcase" text="Website Examples" />
-              <NavLink href="https://wondersites.lemonsqueezy.com/affiliates" text="Affiliate (50%)" />
+              <NavLink href="https://wondersites.lemonsqueezy.com/affiliates" text="Affiliate" />
               <NavLink href="/pricing" text="Pricing" />
               
               <NavLink href="https://app.wondersites.co" text="Login" />
