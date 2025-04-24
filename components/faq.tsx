@@ -15,71 +15,84 @@ type FAQCategories = {
 const faqs: FAQCategories = {
   Website: [
     {
-      question: "What is an online marketplace?",
-      answer: "An online marketplace platform is a website (or sometimes a mobile app) that aggregates inventory from multiple suppliers (sellers) in one place. It also lets customers (buyers) engage in transactions with the suppliers. A transaction on a marketplace can mean a product purchase, a calendar booking, a message to request a quote, or anything else that leads to an exchange of value between the customer and the supplier. Airbnb, Uber, eBay, Amazon, and Upwork are examples of popular online marketplaces.",
+      question: "What is Wondersites?",
+      answer: "Wondersites is an all-in-one, no-code website builder that transforms your Notion pages into fully functional, professional websites. It supports blogs, help centers, directories, landing pages, and more, all without writing a single line of code.",
     },
     {
-      question: "Who is Wonder  for?",
-      answer: "Wonderis for founders who have a marketplace idea. You and your team may be entrepreneurs looking to build the next marketplace unicorn. Or you might have a great idea for a side project. Perhaps you are an intrapreneur in a bigger organization. Maybe you want to start a non-profit or cooperative marketplace. In each case, Wonder Sites's online marketplace software is for you.",
+      question: "Can I use my own domain with Wondersites?",
+      answer: "Yes. Wondersites allows you to connect a custom domain to your website, making your site look more professional and aligned with your brand.",
     },
     {
-      question: "Does Wonder  work for my idea?",
-      answer: "If your business idea is an online marketplace for something, you can make it happen with Wonder Sites's marketplace software. Your platform can be about selling products, renting items, vehicles, or spaces, or selling services. And a host of other things.",
+      question: "What types of websites can I build with Wondersites?",
+      answer: "You can build a variety of websites including blogs, directories, help centers, landing pages, and marketplaces using Notion as your CMS.",
     },
     {
-      question: "How does Wonder  work?",
-      answer: "You start your marketplace project by answering a series of questions. Based on your answers, we'll create a test marketplace website for you. This only takes a few minutes. You can then customize the marketplace to your liking using Wonder Sites's intuitive no-code marketplace website builder. Once you're happy with your marketplace, you can make it live, connect it to your own custom domain, and start inviting people to use it. You can also customize and extend your marketplace with custom code. Add any unique features or designs with Wonder Sites's developer platform.",
+      question: "Is SEO optimization available?",
+      answer: "Yes, Wondersites includes built-in SEO tools to ensure your website is optimized for search engines including fast loading speeds and metadata customization.",
     },
     {
-      question: "Is it easy to create a marketplace with Wonder Sites?",
-      answer: "Yes. With Wonder Sites's online marketplace builder, you can have a fully functional marketplace up and running in minutes. Customizing it to match your unique concept usually takes no more than a day. You don't need any coding skills. Comprehensive text and video tutorials will guide you through the setup process.",
+      question: "How does Wondersites handle content updates from Notion?",
+      answer: "Your site syncs with Notion, meaning any updates you make in Notion will reflect on your live website in real-time.",
     },
     {
-      question: "Can I use my own design?",
-      answer: "Yes. Wonder comes with a beautiful design template that is available out of the box. However, you have full freedom to modify or even replace it with your own unique design, thanks to Wonder Sites's headless approach. Wonder gives you full control over the user interface of your marketplace. Modifying template design requires custom development with HTML, CSS, and Javascript. You can either develop a new design yourself or hire a Wonder  Expert or another developer to help you.",
+      question: "Can I add custom code?",
+      answer: "Yes. For users who want advanced control, Wondersites supports adding custom code to enhance functionality or design.",
     },
     {
-      question: "Can I add any features I want?",
-      answer: "Yes. Wonder Sites's developer platform allows you to customize and extend your marketplace platform infinitely. You can add any features, integrate any third-party services, or change your design and workflows. Making these changes requires custom development with HTML, CSS, and Javascript.",
+      question: "Is Wondersites suitable for non-technical users?",
+      answer: "Absolutely. Wondersites is designed to be user-friendly and doesn't require any technical knowledge. It's perfect for creators, startups, and businesses.",
     },
     {
-      question: "What should I do if I need help?",
-      answer: "If you need help setting up your marketplace platform, Wonder Sites's free email support is available seven days a week. Just send us a message at hello@wondersites.co, and we'll get back to you in no time.",
+      question: "Can I track website analytics?",
+      answer: "Yes. Wondersites comes with privacy-focused analytics, letting you monitor visitor activity without compromising data privacy.",
     },
     {
-      question: "Do I need to hire someone to build my marketplace?",
-      answer: "No. You can build your marketplace yourself. No coding skills are required to create a marketplace with Wonder Sites. However, if you need a specific unique feature that is not available in Wonder Sites's marketplace builder out of the box, and you're not a developer, you might need to hire a developer to build the feature for you.",
-    }
+      question: "Can I build a help center or documentation site?",
+      answer: "Yes. You can build a professional help center similar to HelpKit.so, powered entirely by Notion pages and customizable through Wondersites.",
+    },
+    {
+      question: "Can I create a membership or subscription-based website?",
+      answer: "Yes, Wondersites supports gated content and user-level access, enabling you to build membership-based sites with ease.",
+    },
   ],
   Pricing: [
     {
-      question: "How much does it cost to build a marketplace with Wonder Sites?",
-      answer: "The Wonder Build plan is $39/month with a 14-day free trial. There are no upfront fees to create an account with Wonder Sites, and you can build the marketplace yourself. No coding skills are required. Once you're ready to set your marketplace live and invite actual users, you can subscribe to a live plan, which start at $99/month.",
+      question: "Does Wondersites offer a free trial?",
+      answer: "Yes, there’s a 7-day free trial to explore all premium features before choosing a subscription plan.",
     },
     {
-      question: "How does free trial work?",
-      answer: "You can start your free 14-day Wonder trial without any payment commitment. We only ask for payment once you're ready to go live or your trial period has passed. During the trial, you have all Build plan features at your disposal. You have access to a test marketplace, which will be the basis for your eventual live platform.",
+      question: "What are the pricing plans?",
+      answer: "Wondersites starts at $7.50/month (billed annually). The plan includes one website, custom domain support, analytics, and AI tools.",
     },
     {
-      question: "Are there any additional fees?",
-      answer: "Pricing is exclusive of taxes and additional local tax may be collected depending on your region. Some add-ons and advanced features might incur additional costs.",
+      question: "Are there any additional charges?",
+      answer: "Some advanced features or integrations may carry additional charges, but core functionality is included in your subscription.",
     }
   ],
   Technical: [
     {
-      question: "How do I host my Wonder Sites-powered marketplace?",
-      answer: "You don't need to install or host anything to launch a marketplace with Wonder Sites. Wonder Sites's cloud hosting infrastructure takes care of hosting for you. You can either connect your own domain to your marketplace or use a default domain, [your-marketplace].mywondersites.co.",
+      question: "Do I need to host my site separately?",
+      answer: "No. Hosting is managed entirely by Wondersites. You don’t need to worry about servers or technical setup.",
     },
     {
-      question: "Can I build a mobile app with Wonder Sites?",
-      answer: "Yes. Wonder comes with a responsive marketplace website template that looks great on mobile browsers. You can also build a native mobile app. This requires custom development on top of Wonder Sites's APIs using the developer platform.",
+      question: "Is Wondersites optimized for speed?",
+      answer: "Yes. All Wondersites are optimized for performance and speed to ensure a seamless browsing experience and better SEO.",
     },
     {
-      question: "Is Wonder secure?",
-      answer: "Yes. Wonder Sites's marketplace software has been powering online marketplace businesses for over ten years. Over the years, we've built powerful safeguards against hacking attempts and DDoS attacks and follow best practices to ensure your data is safe.",
+      question: "Can I integrate third-party tools?",
+      answer: "Yes. You can integrate various third-party services like email tools, analytics, and chat widgets to extend your site's functionality.",
+    },
+    {
+      question: "Is Wondersites secure?",
+      answer: "Yes. Wondersites follows best practices for web security, including HTTPS and data protection protocols.",
+    },
+    {
+      question: "Does Wondersites support mobile optimization?",
+      answer: "Yes. Every site built with Wondersites is fully responsive and looks great on all devices.",
     }
   ]
 };
+
 
 interface FAQAccordionProps {
   question: string;

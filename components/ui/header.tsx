@@ -12,6 +12,7 @@ import TabletMenu from './tablet-menu';
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
@@ -125,10 +126,26 @@ export default function Header() {
                   href="https://app.wondersites.co" 
                   target='_blank'
                   className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                 >
-                  <span className="relative z-10">Create free account</span>
-                  <div className="absolute bg-orange-500 w-0 h-full left-0 top-0 group-hover:w-full transition-all duration-300 ease-in-out -z-0"></div>
-                  <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
+                  <div className="relative z-10 overflow-hidden w-full">
+                    <div className="flex items-center justify-between">
+                      <div className="transition-transform duration-300 transform" 
+                           style={{ 
+                             transform: isHovered ? 'translateY(-100%)' : 'translateY(0)' 
+                           }}>
+                        Create free site
+                      </div>
+                      <div className="transition-transform duration-300 transform absolute top-0 left-0" 
+                           style={{ 
+                             transform: isHovered ? 'translateY(0)' : 'translateY(100%)' 
+                           }}>
+                        Takes 5 mins
+                      </div>
+                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </Link>
               </li>
             </ul>
