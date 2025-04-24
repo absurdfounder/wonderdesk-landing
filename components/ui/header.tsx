@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle, BookOpen, ShoppingBag, Lock, AlignLeft, ArrowRight, LucideIcon } from 'lucide-react';
 import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
+import TabletMenu from './tablet-menu';
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
@@ -40,9 +41,7 @@ export default function Header() {
   return (
     <header
       className={`w-full z-30 transition-all duration-300 ease-in-out ${!top ? 'bg-white shadow-md' : ''}`}
-      style={top ? {
-
-      } : {}}
+      style={top ? {} : {}}
     >
       <div className="max-w-7xl mx-auto p-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -53,8 +52,8 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop navigation */}
-          <nav className="hidden md:flex md:grow">
+          {/* Desktop navigation - visible only on large screens */}
+          <nav className="hidden lg:flex lg:grow">
             <ul className="flex grow justify-end flex-wrap items-center">
 
             <li className="relative" ref={dropdownRef}>
@@ -135,7 +134,10 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Mobile menu */}
+          {/* Tablet Menu - visible only on medium screens */}
+          <TabletMenu />
+
+          {/* Mobile menu - visible only on small screens */}
           <MobileMenu />
         </div>
       </div>
