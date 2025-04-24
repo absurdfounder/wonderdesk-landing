@@ -3,13 +3,15 @@
 import { useState } from 'react'
 
 const languages = [
-  { code: 'en', label: 'English' },
-  { code: 'fr', label: 'Français' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'es', label: 'Español' },
-  { code: 'hi', label: 'हिन्दी' },
-  { code: 'ar', label: 'العربية' },
-  { code: 'zh-CN', label: '中文' },
+  { code: 'en', label: 'English', flag: 'us' },
+  { code: 'ko', label: '한국어', flag: 'kr' },
+  { code: 'hi', label: 'हिन्दी', flag: 'in' },
+  { code: 'fr', label: 'Français', flag: 'fr' },
+  { code: 'pt', label: 'Português', flag: 'br' },
+  { code: 'de', label: 'Deutsch', flag: 'de' },
+  { code: 'es', label: 'Español', flag: 'es' },
+  { code: 'ar', label: 'العربية', flag: 'sa' },
+  { code: 'zh-CN', label: '中文', flag: 'cn' },
 ]
 
 export default function LanguageSwitcher() {
@@ -32,13 +34,18 @@ export default function LanguageSwitcher() {
         </button>
 
         {open && (
-          <ul className="absolute right-0 mt-2 w-40 bg-white border border-slate-200 rounded-lg shadow-lg overflow-hidden z-50">
+          <ul className="absolute right-0 mt-2 w-48 bg-white border border-slate-200 rounded-lg shadow-lg overflow-hidden z-50">
             {languages.map((lang) => (
               <li key={lang.code}>
                 <button
                   onClick={() => handleLanguageChange(lang.code)}
-                  className="w-full px-4 py-2 text-left text-sm hover:bg-slate-100 transition-colors"
+                  className="flex items-center gap-2 w-full px-4 py-2 text-left text-sm hover:bg-slate-100 transition-colors"
                 >
+                  <img
+                    src={`https://flagcdn.com/w40/${lang.flag}.png`}
+                    alt={`${lang.label} flag`}
+                    className="w-5 h-4 rounded-sm object-cover"
+                  />
                   {lang.label}
                 </button>
               </li>
