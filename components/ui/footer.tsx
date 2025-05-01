@@ -162,9 +162,13 @@ export default function Footer() {
         {/* Bottom area */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200">
           {/* Copyrights note */}
-          <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1">
-            &copy; Boring Sites LLC. All rights reserved.              
+          <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1 flex xs:grid gap-4">
+            &copy; Boring Sites LLC. All rights reserved.  <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
+             
           </div>
+
+
 
           {/* Social links */}
           <ul className="flex flex-wrap mb-4 md:mb-0 order-1 md:order-2 gap-3">

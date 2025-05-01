@@ -47,7 +47,7 @@ export default function TermsOfServicePage() { // Renamed component
                     {/* Page header */}
                     <div className="pb-8">
                         <h1 className="text-3xl md:text-4xl font-extrabold mb-4">Terms of Service</h1>
-                        <p className="text-gray-600"><strong>Last Updated:</strong> [Insert Date - e.g., May 2, 2025]</p>
+                        <p className="text-gray-600"><strong>Last Updated:</strong> May 2, 2025</p>
                     </div>
 
                     {/* Terms Content Start */}
