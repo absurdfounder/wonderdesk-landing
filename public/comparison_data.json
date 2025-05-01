@@ -2059,15 +2059,1244 @@
           }
         }
       ]
-    }           
-  
+    },
+    {
+      "id": "WonderSites-vs-featurebase",
+      "product": {
+        "logo": "https://assets-global.website-files.com/636a6b7f852f1016a4cef701/654e1ac65847e3d9b2a24f03_nav-logomark.svg",
+        "name": "FeatureBase",
+        "provider": "WonderSites",
+        "description": "WonderSites as a comprehensive site builder versus FeatureBase's dedicated feedback and changelog tools.",
+        "heroimage": "https://assets-global.website-files.com/636a6b7f852f1016a4cef701/654e1ac65847e3d9b2a24f03_nav-logomark.svg"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-freshdesk",
+      "product": {
+        "logo": "https://cdn.icon-icons.com/icons2/2699/PNG/512/freshdesk_logo_icon_168401.png",
+        "name": "Freshdesk",
+        "provider": "WonderSites",
+        "description": "Comparing WonderSites' integrated tools with Freshdesk's specialized customer support platform.",
+        "heroimage": "https://cdn.icon-icons.com/icons2/2699/PNG/512/freshdesk_logo_icon_168401.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-readme",
+      "product": {
+        "logo": "https://readmeio-homepage.fly.dev/images/logo.svg",
+        "name": "ReadMe",
+        "provider": "WonderSites",
+        "description": "WonderSites for general documentation versus ReadMe's focus on interactive API documentation.",
+        "heroimage": "https://readmeio-homepage.fly.dev/images/logo.svg"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-beehiiv",
+      "product": {
+        "logo": "https://www.beehiiv.com/beehiiv-logo-dark.svg",
+        "name": "Beehiiv",
+        "provider": "WonderSites",
+        "description": "How WonderSites provides broader website capabilities compared to Beehiiv's newsletter and publishing focus.",
+        "heroimage": "https://www.beehiiv.com/beehiiv-logo-dark.svg"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-softr",
+      "product": {
+        "logo": "https://www.softr.io/l/logo-softr-dark.svg",
+        "name": "Softr",
+        "provider": "WonderSites",
+        "description": "Comparing WonderSites with Softr's capabilities for building directories, client portals, and internal tools.",
+        "heroimage": "https://www.softr.io/l/logo-softr-dark.svg"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-canny",
+      "product": {
+        "logo": "https://canny.io/images/canny-logo.svg",
+        "name": "Canny",
+        "provider": "WonderSites",
+        "description": "How WonderSites provides a broader platform compared to Canny's focused user feedback and roadmap tools.",
+        "heroimage": "https://canny.io/images/canny-logo.svg"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-notion-sites",
+      "product": {
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
+        "name": "Notion Sites",
+        "provider": "WonderSites",
+        "description": "Comparing WonderSites' dedicated features against Notion Sites for publishing simple websites directly from Notion.",
+        "heroimage": "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-glide",
+      "product": {
+        "logo": "https://storage.googleapis.com/glideapps-downloads/logos/glide-logo-dark-padding.png",
+        "name": "Glide",
+        "provider": "WonderSites",
+        "description": "WonderSites for comprehensive websites compared to Glide for building mobile-first apps from data.",
+        "heroimage": "https://storage.googleapis.com/glideapps-downloads/logos/glide-logo-dark-padding.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-convertkit",
+      "product": {
+        "logo": "https://cdn.icon-icons.com/icons2/2699/PNG/512/convertkit_logo_icon_169103.png",
+        "name": "ConvertKit",
+        "provider": "WonderSites",
+        "description": "WonderSites as a full website solution versus ConvertKit's focus on email marketing and creator landing pages.",
+        "heroimage": "https://cdn.icon-icons.com/icons2/2699/PNG/512/convertkit_logo_icon_169103.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-gorgias",
+      "product": {
+        "logo": "https://assets-global.website-files.com/626a589154cc6a67a116751e/6272a7a41862c2a55c1a424c_Logo%20Lockup%20Primary%20-%20Dark.svg",
+        "name": "Gorgias",
+        "provider": "WonderSites",
+        "description": "Comparing WonderSites' broad features against Gorgias' specialized helpdesk tailored for e-commerce businesses.",
+        "heroimage": "https://assets-global.website-files.com/626a589154cc6a67a116751e/6272a7a41862c2a55c1a424c_Logo%20Lockup%20Primary%20-%20Dark.svg"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-woocommerce",
+      "product": {
+        "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/woocommerce_black_logo_icon_147111.png",
+        "name": "WooCommerce",
+        "provider": "WonderSites",
+        "description": "WonderSites as an all-in-one platform versus WooCommerce's e-commerce capabilities within WordPress.",
+        "heroimage": "https://cdn.icon-icons.com/icons2/2428/PNG/512/woocommerce_black_logo_icon_147111.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "WonderSites-vs-slab",
+      "product": {
+        "logo": "https://pbs.twimg.com/profile_images/1305576116867895296/qprB4e-C_400x400.png",
+        "name": "Slab",
+        "provider": "WonderSites",
+        "description": "WonderSites for diverse web needs versus Slab's dedicated focus on team knowledge bases and wikis.",
+        "heroimage": "https://pbs.twimg.com/profile_images/1305576116867895296/qprB4e-C_400x400.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": false
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    }
+    
   ]
 }
-
-
-
-
-
-
-
 
