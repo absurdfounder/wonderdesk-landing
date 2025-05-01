@@ -8,6 +8,7 @@ import { ChevronDown, HelpCircle, BookOpen, ShoppingBag, Lock, AlignLeft, ArrowR
 import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
 import TabletMenu from './tablet-menu';
+import TranslateButton from './TranslateButton';
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
@@ -42,7 +43,6 @@ export default function Header() {
   return (
     <header
       className={`w-full z-30 transition-all duration-300 ease-in-out ${!top ? 'bg-white shadow-md' : ''}`}
-      style={top ? {} : {}}
     >
       <div className="max-w-7xl mx-auto p-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -53,11 +53,10 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop navigation - visible only on large screens */}
+          {/* Desktop navigation */}
           <nav className="hidden lg:flex lg:grow">
             <ul className="flex grow justify-end flex-wrap items-center">
-
-            <li className="relative" ref={dropdownRef}>
+              <li className="relative" ref={dropdownRef}>
                 <button
                   className="font-bold text-slate-800 hover:text-orange-600 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -101,7 +100,6 @@ export default function Header() {
                             title="Product Docs"
                             description="Create documentation on top of notion and access AI to answer queries on top of Notion as a database."
                           />
-
                           <DropdownLink
                             href="/create-a-blog-notion"
                             icon={BookOpen}
@@ -109,7 +107,6 @@ export default function Header() {
                             description="Get a beautiful blog for your startup or company with Notion and Wonder Sites."
                           />
                         </div>
-
                       </div>
                     </motion.div>
                   )}
@@ -119,11 +116,16 @@ export default function Header() {
               <NavLink href="/showcase" text="Website Examples" />
               <NavLink href="https://wondersites.lemonsqueezy.com/affiliates" text="Affiliate" />
               <NavLink href="/pricing" text="Pricing" />
-              
               <NavLink href="https://app.wondersites.co" text="Login" />
+
+              {/* LanguageSwitcher component */}
+              <li className="px-2">
+                <TranslateButton/>
+              </li>
+
               <li>
                 <Link
-                  href="https://app.wondersites.co" 
+                  href="https://app.wondersites.co"
                   target='_blank'
                   className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
                   onMouseEnter={() => setIsHovered(true)}
@@ -131,16 +133,16 @@ export default function Header() {
                 >
                   <div className="relative z-10 overflow-hidden w-full">
                     <div className="flex items-center justify-between">
-                      <div className="transition-transform duration-300 transform" 
-                           style={{ 
-                             transform: isHovered ? 'translateY(-100%)' : 'translateY(0)' 
-                           }}>
+                      <div className="transition-transform duration-300 transform"
+                        style={{
+                          transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
+                        }}>
                         Create free site
                       </div>
-                      <div className="transition-transform duration-300 transform absolute top-0 left-0" 
-                           style={{ 
-                             transform: isHovered ? 'translateY(0)' : 'translateY(100%)' 
-                           }}>
+                      <div className="transition-transform duration-300 transform absolute top-0 left-0"
+                        style={{
+                          transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
+                        }}>
                         Takes 15 mins
                       </div>
                       <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
@@ -151,10 +153,10 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Tablet Menu - visible only on medium screens */}
+          {/* Tablet menu */}
           <TabletMenu />
 
-          {/* Mobile menu - visible only on small screens */}
+          {/* Mobile menu */}
           <MobileMenu />
         </div>
       </div>
@@ -181,29 +183,6 @@ function DropdownLink({ href, icon: Icon, title, description }: DropdownLinkProp
       <div className="ml-4">
         <p className="text-base font-medium text-slate-900 group-hover:text-orange-600 transition-colors">{title}</p>
         <p className="mt-1 text-sm text-slate-500">{description}</p>
-      </div>
-    </Link>
-  );
-}
-
-interface DemoLinkProps {
-  href: string;
-  imageSrc: string;
-  text: string;
-}
-
-function DemoLink({ href, imageSrc, text }: DemoLinkProps) {
-  return (
-    <Link
-      href={href}
-      target="_blank" rel="noopener" 
-      className="flex items-center p-3 -m-3 transition duration-150 ease-in-out rounded-md hover:bg-slate-100 group"
-    >
-      <div className="flex-shrink-0 overflow-hidden rounded-md border-2 border-transparent group-hover:border-orange-300 transition-all">
-        <Image src={imageSrc} alt="" width={30} height={30} className="w-6 h-6 rounded-md" />
-      </div>
-      <div className="ml-4">
-        <p className="text-base font-medium text-slate-900 group-hover:text-orange-600 transition-colors">{text}</p>
       </div>
     </Link>
   );
