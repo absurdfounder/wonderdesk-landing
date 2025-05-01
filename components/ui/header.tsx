@@ -9,11 +9,13 @@ import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
 import TabletMenu from './tablet-menu';
 import TranslateButton from './TranslateButton';
+import { getCalApi } from "@calcom/embed-react";
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isBookHovered, setIsBookHovered] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
@@ -39,6 +41,14 @@ export default function Header() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [dropdownOpen]);
+
+  // Initialize Cal.com booking widget
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({"namespace":"setup-call"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, []);
 
   return (
     <header
@@ -114,7 +124,6 @@ export default function Header() {
               </li>
 
               <NavLink href="/showcase" text="Website Examples" />
-              <NavLink href="https://wondersites.lemonsqueezy.com/affiliates" text="Affiliate" />
               <NavLink href="/pricing" text="Pricing" />
               <NavLink href="https://app.wondersites.co" text="Login" />
 
@@ -149,6 +158,25 @@ export default function Header() {
                     </div>
                   </div>
                 </Link>
+              </li>
+
+              <li>
+                <button
+                  data-cal-namespace="setup-call"
+                  data-cal-link="wondersites/setup-call"
+                  data-cal-config='{"layout":"month_view"}'
+                  className="btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
+                  onMouseEnter={() => setIsBookHovered(true)}
+                  onMouseLeave={() => setIsBookHovered(false)}
+                >
+                  <div className="relative z-10 overflow-hidden w-full">
+                    <div className="flex items-center justify-between">
+
+                        Book a Demo
+                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </button>
               </li>
             </ul>
           </nav>
