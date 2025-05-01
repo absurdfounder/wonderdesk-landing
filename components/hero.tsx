@@ -26,8 +26,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
     // Initialize Cal.com booking widget - moved inside the component
     useEffect(() => {
         (async function () {
-            const cal = await getCalApi({"namespace":"setup-call"});
-            cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+            const cal = await getCalApi({ "namespace": "setup-call" });
+            cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
         })();
     }, []);
 
@@ -143,21 +143,21 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                         </Link>
 
                         <button
-                  data-cal-namespace="setup-call"
-                  data-cal-link="wondersites/setup-call"
-                  data-cal-config='{"layout":"month_view"}'
-                  className="btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
-                  onMouseEnter={() => setIsBookHovered(true)}
-                  onMouseLeave={() => setIsBookHovered(false)}
-                >
-                  <div className="relative z-10 overflow-hidden w-full py-0.5">
-                    <div className="flex items-center justify-between">
+                            data-cal-namespace="setup-call"
+                            data-cal-link="wondersites/setup-call"
+                            data-cal-config='{"layout":"month_view"}'
+                            className="btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
+                            onMouseEnter={() => setIsBookHovered(true)}
+                            onMouseLeave={() => setIsBookHovered(false)}
+                        >
+                            <div className="relative z-10 overflow-hidden w-full py-0.5">
+                                <div className="flex items-center justify-between">
 
-                        Book a Demo
-                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </button>
+                                    Book a Demo
+                                    <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </div>
+                        </button>
 
 
                         {/* -------------------- */}

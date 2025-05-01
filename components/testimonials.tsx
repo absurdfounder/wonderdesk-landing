@@ -1,6 +1,6 @@
 "use client"
 
-import React, { FC, useState, CSSProperties } from 'react';
+import React, { FC, useState, useEffect, CSSProperties } from 'react';
 import { Twitter, Linkedin } from 'lucide-react';
 
 interface Testimonial {
@@ -10,8 +10,10 @@ interface Testimonial {
   content: string;
   additionalContent?: string;
   platform?: 'twitter' | 'linkedin';
+  category: string[];
 }
 
+// Updated testimonials with categories
 const testimonials: Testimonial[] = [
   {
     name: "Zack Swire",
@@ -21,6 +23,7 @@ const testimonials: Testimonial[] = [
       "If you're a Coach or a Creator, and you'd like to build better websites quickly, check out @WonderSitesCo",
     additionalContent: "I switched from Squarespace & I'm not looking back 🙌",
     platform: "twitter",
+    category: ["All", "Blog", "Directory"]
   },
   {
     name: "Dan Rowden",
@@ -28,6 +31,7 @@ const testimonials: Testimonial[] = [
     avatar: "https://framerusercontent.com/images/ZPFWVz5iXLUOm3QgC66kg4NxQ30.jpeg",
     content: "Wow @WonderSitesCo is amazing ✨",
     platform: "twitter",
+    category: ["All", "Product Docs", "Directory"]
   },
   {
     name: "Laura Evans-Hill",
@@ -36,6 +40,7 @@ const testimonials: Testimonial[] = [
     content:
       "A HUGGGGEEEE shout out to @WonderSitesCo for putting me onto them—my course landing pages have never looked better.",
     platform: "twitter",
+    category: ["All", "Helpdesk", "Blog"]
   },
   {
     name: "Alberto Di Risio",
@@ -46,18 +51,21 @@ const testimonials: Testimonial[] = [
     additionalContent:
       "What am I using now?\n\nThis thing called Wonder (wondersites.co) 🎉\n\nAfter trying it for half an hour I upgraded to a paid plan—and I really really like it.",
     platform: "linkedin",
+    category: ["All", "Product Docs", "Marketplace"]
   },
   {
     name: "Annie Hwang",
     avatar: "https://framerusercontent.com/images/Y9stNCmCgju1PW4P2VKfoBK4Q.jpeg",
     content:
       "The customization in Wonder is awesome. My product pages always look super fun and match Jemi's brand.",
+    category: ["All", "Product Docs", "Blog"]
   },
   {
     name: "Ben Barrett-Forrest",
     avatar: "https://framerusercontent.com/images/VA5C0bceopw0oYN50h8gv6aP4.jpeg",
     content:
       "I was up and running with Wonder in literally 2 minutes. I love how simple it is to launch landing pages. Would highly recommend!",
+    category: ["All", "Helpdesk", "Directory"]
   },
   {
     name: "Max Haining",
@@ -66,6 +74,7 @@ const testimonials: Testimonial[] = [
     content:
       "@WonderSitesCo\n\nLike Webflow, but better.\n\nPerfect for...\n- Sharing course previews\n- Product demos\n- Creating sales funnels\n- Teaching your audience",
     platform: "twitter",
+    category: ["All", "Product Docs", "Marketplace"]
   },
   {
     name: "Mike Futia",
@@ -74,20 +83,23 @@ const testimonials: Testimonial[] = [
     content:
       "The best new tool for building:\n\n- Course websites\n- Webinar pages\n- 1-on-1 booking sites\n- Or ANY type of landing page\n\nIs WonderSites.co\n\nIt blows everything else out of the water.",
     platform: "twitter",
+    category: ["All", "Blog", "Directory"]
   },
   {
     name: "Raffaele Gaito",
     avatar: "https://framerusercontent.com/images/D6HX35QUEaWpRufse6kuiDm3fo.png",
     content:
       "I love Wonder, it's a platform that has incredibly sped up my site creation speed. If I'm growing quickly on YouTube, I owe it also to Wonder.",
+    category: ["All", "Helpdesk", "Marketplace"]
   },
   {
     name: "Tom Critchlow",
     handle: "@tomcritchlow",
     avatar: "https://framerusercontent.com/images/Qh9VsRKfvO9HwGpy24f2XjHjY.jpeg",
     content:
-      "Wrapping up day 1 of site building for my new course and just so much <3 for @WonderSitesCo\n\n- Impeccable and speedy support (even on a Sunday!)\n- Great templates (recognizing my brand’s vibe instantly!)\n- Putting professional websites within reach (in browser!)",
+      "Wrapping up day 1 of site building for my new course and just so much <3 for @WonderSitesCo\n\n- Impeccable and speedy support (even on a Sunday!)\n- Great templates (recognizing my brand's vibe instantly!)\n- Putting professional websites within reach (in browser!)",
     platform: "twitter",
+    category: ["All", "Product Docs", "Helpdesk"]
   },
   {
     name: "Martin Cregut",
@@ -96,6 +108,7 @@ const testimonials: Testimonial[] = [
     content:
       "Wonder c'est Webflow en 100x plus intuitif, 100x plus beau et 100x plus vaste.",
     platform: "linkedin",
+    category: ["All", "Blog", "Marketplace"]
   },
   {
     name: "Justin Moore",
@@ -104,6 +117,7 @@ const testimonials: Testimonial[] = [
     content:
       "I just re-launched my entire course site on @WonderSitesCo and holy cow their multi-layout views and custom CSS are soooo sick 🤩",
     platform: "twitter",
+    category: ["All", "Directory", "Marketplace"]
   },
   {
     name: "Mona",
@@ -112,6 +126,7 @@ const testimonials: Testimonial[] = [
     content:
       "One more vote for @WonderSitesCo! Have been using other builders for 3 years now and Wonder just kicks them out of the market imo.",
     platform: "twitter",
+    category: ["All", "Helpdesk", "Product Docs"]
   },
 ];
 
@@ -120,6 +135,26 @@ type Tab = typeof tabs[number];
 
 const TestimonialsGrid: FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('All');
+  const [displayedTestimonials, setDisplayedTestimonials] = useState<Testimonial[]>([]);
+
+  // Function to shuffle array - Fisher-Yates algorithm
+  const shuffleArray = (array: Testimonial[]) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
+
+  // Update displayed testimonials when tab changes
+  useEffect(() => {
+    const filteredTestimonials = testimonials.filter(t => 
+      t.category.includes(activeTab)
+    );
+    // Shuffle and limit to maximum 9 testimonials
+    setDisplayedTestimonials(shuffleArray(filteredTestimonials).slice(0, 9));
+  }, [activeTab]);
 
   const getRandomRotation = (): CSSProperties['transform'] => {
     const deg = Math.random() * 4 - 2;
@@ -127,11 +162,11 @@ const TestimonialsGrid: FC = () => {
   };
 
   return (
-    <div className=" py-16 px-4">
+    <div className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">
-          <h2 className="font-funneldisplay text-5xl font-bold mb-4">Loved by entrepreneurs</h2>
+          <h2 className="text-5xl font-bold mb-4">Loved by entrepreneurs</h2>
           <p className="text-xl text-gray-600">
             We could toot our horn, but customers do it for us.
           </p>
@@ -154,22 +189,12 @@ const TestimonialsGrid: FC = () => {
           ))}
         </nav>
 
-        {/* Multi-column container */}
-        <section
-          className="
-            columns-1 
-            sm:columns-2 
-            lg:columns-3 
-            gap-6 
-            sm:max-h-[600px] 
-            lg:max-h-[800px] 
-            overflow-y-auto
-          "
-        >
-          {testimonials.map((t, i) => (
+        {/* Testimonials grid */}
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayedTestimonials.map((t, i) => (
             <article
-              key={i}
-              className="bg-white rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-1 p-6 mb-6 break-inside-avoid border"
+              key={`${activeTab}-${i}`}
+              className="bg-white rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-1 p-6 break-inside-avoid border"
               style={{ transform: getRandomRotation() }}
             >
               <div className="flex items-center justify-between mb-4">
