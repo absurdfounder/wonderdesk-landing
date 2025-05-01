@@ -127,10 +127,7 @@ export default function Header() {
               <NavLink href="/pricing" text="Pricing" />
               <NavLink href="https://app.wondersites.co" text="Login" />
 
-              {/* LanguageSwitcher component */}
-              <li className="px-2">
-                <TranslateButton/>
-              </li>
+
 
               <li>
                 <Link
@@ -178,6 +175,12 @@ export default function Header() {
                   </div>
                 </button>
               </li>
+
+              {/* LanguageSwitcher component */}
+              <li className="px-5">
+                <TranslateButton/>
+              </li>
+
             </ul>
           </nav>
 
@@ -225,7 +228,7 @@ function NavLink({ href, text }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className="font-medium text-slate-900 hover:text-orange-600 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
+      className="font-medium text-slate-900 hover:text-orange-600 px-4 py-3 flex items-center transition duration-150 ease-in-out relative group"
     >
       <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
     </Link>
