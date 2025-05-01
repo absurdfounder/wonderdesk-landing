@@ -46,24 +46,24 @@ export default function Footer() {
           {/* Company info - Always visible */}
           <div className="mb-8 md:mb-0">
             <Link href={"/"} className="inline-block mb-4">
-            <div className='flex gap-2'>
-              <Image src={Logo} loading='eager' alt="Logo" width={160} height={160} className="w-auto h-fit m-auto max-w-[160px]" />
+              <div className='flex gap-2'>
+                <Image src={Logo} loading='eager' alt="Logo" width={160} height={160} className="w-auto h-fit m-auto max-w-[160px]" />
               </div>
             </Link>
             <p className="text-sm text-slate-600 mb-4">Wonder is an easy-to-use website builder for busy founders. Lead by <Link href="https://twitter.com/absurdfounder" className='text-orange-600 hover:underline'>@absurdfounder</Link>.</p>
             <p className='mb-3 text-xs text-slate-400'>Wonder is the biggest admirer of Notion™ , no-relation, just admiration.</p>
-<div className="text-xs md:text-sm text-slate-600 mb-8">
+            <div className="text-xs md:text-sm text-slate-600 mb-8">
               <Link href="/terms" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Terms</Link> · <Link href="/privacy" className="text-slate-600 hover:text-slate-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
             </div>
           </div>
 
           {/* Footer link sections - Collapsible on mobile */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
 
             {/* Product section */}
             <FooterSection title="Product">
               <ul className="text-sm space-y-2 md:mt-4">
-                 {/* --- NO CHANGES IN THIS SECTION --- */}
+                {/* --- NO CHANGES IN THIS SECTION --- */}
                 <li>
                   <Link href="https://app.wondersites.co" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">WonderBuilder</Link>
                 </li>
@@ -96,9 +96,45 @@ export default function Footer() {
                     View all products →
                   </Link>
                 </li>
-                 {/* --- END NO CHANGES --- */}
+                {/* --- END NO CHANGES --- */}
               </ul>
             </FooterSection>
+
+
+{/* Sites by Bear section */}
+<FooterSection title="Features">
+
+  {/* Additional features from WonderSites */}
+  <ul className="text-sm space-y-2 mt-4">
+    <li>
+      <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Notion Integrations</Link>
+    </li>
+    <li>
+      <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blazing Fast Code</Link>
+    </li>
+    <li>
+      <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">AI-Agents</Link>
+    </li>
+    <li>
+      <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Analytics</Link>
+    </li>
+    <li>
+      <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">SEO Ready</Link>
+    </li>
+    <li>
+      <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Custom Domains</Link>
+    </li>
+    <li>
+      <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Payment Integration</Link>
+    </li>
+    <li>
+      <Link href="#" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Forms - Tally Forms</Link>
+    </li>
+
+  </ul>
+</FooterSection>
+
+
 
             {/* Resources section - ONLY hrefs updated */}
             <FooterSection title="Resources">
@@ -108,105 +144,102 @@ export default function Footer() {
                   <Link href="/compare-against/WonderSites-vs-wix" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Wix</Link>
                 </li>
                 <li>
-                   {/* Updated href */}
+                  {/* Updated href */}
                   <Link href="/compare-against/WonderSites-vs-webflow" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Webflow</Link>
                 </li>
                 <li>
-                   {/* Updated href */}
+                  {/* Updated href */}
                   <Link href="/compare-against/WonderSites-vs-wordpress" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with WordPress</Link>
                 </li>
                 <li>
-                   {/* Updated href */}
+                  {/* Updated href */}
                   <Link href="/compare-against/WonderSites-vs-squarespace" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Squarespace</Link>
                 </li>
                 <li>
-                   {/* Updated href */}
+                  {/* Updated href */}
                   <Link href="/compare-against/WonderSites-vs-zendesk" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Zendesk</Link>
                 </li>
                 {/* Show limited links on mobile */}
                 <li className="md:block">
-                   {/* Updated href */}
+                  {/* Updated href */}
                   <Link href="/compare-against/WonderSites-vs-ghost" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Ghost</Link>
                 </li>
                 {/* --- Add static links for the remaining IDs from your JSON --- */}
                 <li className="md:block">
                   <Link href="/compare-against/WonderSites-vs-shopify" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Shopify</Link> {/* Assuming text, update if needed */}
                 </li>
-                 <li className="md:block">
-                   <Link href="/compare-against/WonderSites-vs-intercom" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Intercom</Link> {/* Assuming text, update if needed */}
-                 </li>
-                  <li className="md:block">
-                    <Link href="/compare-against/WonderSites-vs-gitbook" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with GitBook</Link> {/* Assuming text, update if needed */}
-                  </li>
-                   <li className="md:block">
-                     <Link href="/compare-against/WonderSites-vs-framer" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Framer</Link> {/* Assuming text, update if needed */}
-                   </li>
-                    <li className="md:block">
-                      <Link href="/compare-against/WonderSites-vs-joomla" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Joomla</Link> {/* Assuming text, update if needed */}
-                    </li>
-                     <li className="md:block">
-                       <Link href="/compare-against/WonderSites-vs-medium" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Medium</Link> {/* Assuming text, update if needed */}
-                     </li>
-                      <li className="md:block">
-                        <Link href="/compare-against/WonderSites-vs-confluence" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Confluence</Link> {/* Assuming text, update if needed */}
-                      </li>
-                       <li className="md:block">
-                         <Link href="/compare-against/WonderSites-vs-super" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Super.so</Link> {/* Assuming text, update if needed */}
-                       </li>
-                        <li className="md:block">
-                          <Link href="/compare-against/WonderSites-vs-carrd" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Carrd</Link> {/* Assuming text, update if needed */}
-                        </li>
-                         <li className="md:block">
-                           <Link href="/compare-against/WonderSites-vs-bubble" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Bubble</Link> {/* Assuming text, update if needed */}
-                         </li>
-                          <li className="md:block">
-                            <Link href="/compare-against/WonderSites-vs-bigcommerce" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with BigCommerce</Link> {/* Assuming text, update if needed */}
-                          </li>
-                           <li className="md:block">
-                             <Link href="/compare-against/WonderSites-vs-helpscout" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Help Scout</Link> {/* Assuming text, update if needed */}
-                           </li>
-                            <li className="md:block">
-                              <Link href="/compare-against/WonderSites-vs-substack" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Substack</Link> {/* Assuming text, update if needed */}
-                            </li>
-                             <li className="md:block">
-                               <Link href="/compare-against/WonderSites-vs-duda" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Duda</Link> {/* Assuming text, update if needed */}
-                             </li>
-                              <li className="md:block">
-                                <Link href="/compare-against/WonderSites-vs-featurebase" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with FeatureBase</Link> {/* Assuming text, update if needed */}
-                              </li>
-                               <li className="md:block">
-                                 <Link href="/compare-against/WonderSites-vs-freshdesk" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Freshdesk</Link> {/* Assuming text, update if needed */}
-                               </li>
-                                <li className="md:block">
-                                  <Link href="/compare-against/WonderSites-vs-readme" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with ReadMe</Link> {/* Assuming text, update if needed */}
-                                </li>
-                                 <li className="md:block">
-                                   <Link href="/compare-against/WonderSites-vs-beehiiv" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Beehiiv</Link> {/* Assuming text, update if needed */}
-                                 </li>
-                                  <li className="md:block">
-                                    <Link href="/compare-against/WonderSites-vs-softr" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Softr</Link> {/* Assuming text, update if needed */}
-                                  </li>
-                                   <li className="md:block">
-                                     <Link href="/compare-against/WonderSites-vs-canny" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Canny</Link> {/* Assuming text, update if needed */}
-                                   </li>
-                                    <li className="md:block">
-                                      <Link href="/compare-against/WonderSites-vs-notion-sites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Notion Sites</Link> {/* Assuming text, update if needed */}
-                                    </li>
-                                     <li className="md:block">
-                                       <Link href="/compare-against/WonderSites-vs-glide" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Glide</Link> {/* Assuming text, update if needed */}
-                                     </li>
-                                      <li className="md:block">
-                                        <Link href="/compare-against/WonderSites-vs-convertkit" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with ConvertKit</Link> {/* Assuming text, update if needed */}
-                                      </li>
-                                       <li className="md:block">
-                                         <Link href="/compare-against/WonderSites-vs-gorgias" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Gorgias</Link> {/* Assuming text, update if needed */}
-                                       </li>
-                                        <li className="md:block">
-                                          <Link href="/compare-against/WonderSites-vs-woocommerce" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with WooCommerce</Link> {/* Assuming text, update if needed */}
-                                        </li>
-                                         <li className="md:block">
-                                           <Link href="/compare-against/WonderSites-vs-slab" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Slab</Link> {/* Assuming text, update if needed */}
-                                         </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-intercom" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Intercom</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-gitbook" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with GitBook</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-framer" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Framer</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-joomla" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Joomla</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-medium" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Medium</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-confluence" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Confluence</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-super" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Super.so</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-carrd" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Carrd</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-bubble" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Bubble</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-bigcommerce" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with BigCommerce</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-helpscout" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Help Scout</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-substack" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Substack</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-duda" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Duda</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-featurebase" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with FeatureBase</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-freshdesk" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Freshdesk</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-beehiiv" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Beehiiv</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-softr" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Softr</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-canny" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Canny</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-notion-sites" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Notion Sites</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-glide" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Glide</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-convertkit" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with ConvertKit</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-gorgias" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Gorgias</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-woocommerce" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with WooCommerce</Link> {/* Assuming text, update if needed */}
+                </li>
+                <li className="md:block">
+                  <Link href="/compare-against/WonderSites-vs-slab" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Compare with Slab</Link> {/* Assuming text, update if needed */}
+                </li>
                 {/* --- End of added static links --- */}
 
                 {/* View more button on mobile (kept original structure) */}
@@ -226,22 +259,22 @@ export default function Footer() {
                   <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blockchain Grants</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Airdrops Work</Link>
+                  <Link href="https://airdrops.work.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Airdrops Work</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Solo Story</Link>
+                  <Link href="https://solostory.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Solo Story</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Funded Startups</Link>
+                  <Link href="https://fundedstartups.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Funded Startups</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Remote Desk</Link>
+                  <Link href="https://remotedesk.work?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Remote Desk</Link>
                 </li>
                 <li>
-                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Agency marketplace</Link>
+                  <Link href="https://aijobs24.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">AI Jobs</Link>
                 </li>
               </ul>
-               {/* --- END NO CHANGES --- */}
+              {/* --- END NO CHANGES --- */}
             </FooterSection>
 
           </div>
@@ -259,7 +292,7 @@ export default function Footer() {
 
           {/* Social links */}
           <ul className="flex flex-wrap mb-4 md:mb-0 order-1 md:order-2 gap-3">
-          <img width="199" height="35" src="https://buildform.ai/wp-content/uploads/2024/09/Frame-2147225210.svg" className="attachment-large size-large wp-image-928" alt=""/>
+            <img width="199" height="35" src="https://buildform.ai/wp-content/uploads/2024/09/Frame-2147225210.svg" className="attachment-large size-large wp-image-928" alt="" />
 
 
             <li>
@@ -280,7 +313,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-         {/* --- END NO CHANGES --- */}
+        {/* --- END NO CHANGES --- */}
 
       </div>
     </footer>
