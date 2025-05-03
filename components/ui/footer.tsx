@@ -252,27 +252,64 @@ export default function Footer() {
             </FooterSection>
 
             {/* Sites by Bear section */}
-            <FooterSection title="Sites by Bear 🐻">
+            <FooterSection title="Create Sites">
               {/* --- NO CHANGES IN THIS SECTION --- */}
               <ul className="text-sm space-y-2 md:mt-4">
-                <li>
-                  <Link href="https://blockchaingrants.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Blockchain Grants</Link>
-                </li>
-                <li>
-                  <Link href="https://airdrops.work.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Airdrops Work</Link>
-                </li>
-                <li>
-                  <Link href="https://solostory.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Solo Story</Link>
-                </li>
-                <li>
-                  <Link href="https://fundedstartups.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Funded Startups</Link>
-                </li>
-                <li>
-                  <Link href="https://remotedesk.work?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Remote Desk</Link>
-                </li>
-                <li>
-                  <Link href="https://aijobs24.org?ref=Wonder" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">AI Jobs</Link>
-                </li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-make-a-website-like-youtube" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I make a website like YouTube</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-amazon" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like Amazon</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-apple" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like Apple</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-youtube" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like YouTube</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-facebook" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like Facebook</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-omegle" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like Omegle</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-w3schools" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like W3Schools</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-indiamart" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like IndiaMart</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-wikipedia" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like Wikipedia</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-9jaflaver" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like 9jaflaver</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-application" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like application</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-airbnb" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like Airbnb</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-awwwards" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like Awwwards</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-alibaba" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like Alibaba</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-apkpure" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like APKPure</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-as-app" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website as app</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-ebay" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like eBay</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-etsy" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Etsy</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-create-a-website-on-my-own" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I create a website on my own</Link></li>
+                <li><Link href="https://wondersites.co/blog/can-i-create-a-website-on-my-own" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">Can I create a website on my own</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-for-beginners" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website for beginners</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-create-website-for-free" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I create website for free</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-create-my-own-website-for-free" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I create my own website for free</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-a-pro" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like a pro</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-make-website-for-my-business" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I make website for my business</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-instagram" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like Instagram</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-instagram" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Instagram</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-indeed" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Indeed</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-imdb" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like IMDB</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-justdial" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Justdial</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-jumia" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Jumia</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-jiji" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Jiji</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-website-like-quora" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create website like Quora</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-khan-academy" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Khan Academy</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-at-home" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website at home</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-whatsapp" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like WhatsApp</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-create-a-site-on-sharepoint" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I create a site on SharePoint</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-create-a-website-on-my-phone" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I create a website on my phone</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-create-a-website-on-google" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I create a website on Google</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-your-own-online-website" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make your own online website</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-vistaprint" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like Vistaprint</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-vinted" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Vinted</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-a-website-like-wikipedia" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make a website like Wikipedia</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-youtube" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like YouTube</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-zomato" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like Zomato</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-make-website-like-zoro" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to make website like Zoro</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-zillow" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Zillow</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-zoom" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Zoom</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-much-does-it-cost-to-build-an-interactive-website" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How much does it cost to build an interactive website</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-zomato" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Zomato</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-do-i-create-zoom-meeting-link" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How do I create Zoom meeting link</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-craigslist" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Craigslist</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-angies-list" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Angie's list</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-product-hunt" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Product Hunt</Link></li>
+                <li><Link href="https://wondersites.co/blog/how-to-create-a-website-like-fiverr" className="text-slate-600 hover:text-slate-900 transition duration-150 ease-in-out">How to create a website like Fiverr</Link></li>
               </ul>
               {/* --- END NO CHANGES --- */}
             </FooterSection>

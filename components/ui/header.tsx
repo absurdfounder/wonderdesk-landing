@@ -128,33 +128,9 @@ export default function Header() {
               <NavLink href="https://app.wondersites.co" text="Login" />
 
 
-
-              <li>
-                <Link
-                  href="https://app.wondersites.co"
-                  target='_blank'
-                  className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                >
-                  <div className="relative z-10 overflow-hidden w-full">
-                    <div className="flex items-center justify-between">
-                      <div className="transition-transform duration-300 transform"
-                        style={{
-                          transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
-                        }}>
-                        Create free site
-                      </div>
-                      <div className="transition-transform duration-300 transform absolute top-0 left-0"
-                        style={{
-                          transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
-                        }}>
-                        Takes 15 mins
-                      </div>
-                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
+              {/* LanguageSwitcher component */}
+              <li className="px-5">
+                <TranslateButton/>
               </li>
 
               <li>
@@ -176,10 +152,36 @@ export default function Header() {
                 </button>
               </li>
 
-              {/* LanguageSwitcher component */}
-              <li className="px-5">
-                <TranslateButton/>
+              <li>
+                <Link
+                  href="https://app.wondersites.co"
+                  target='_blank'
+                  className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <div className="relative z-10 overflow-hidden w-full">
+                    <div className="flex items-center justify-between">
+                      <div className="transition-transform duration-300 transform"
+                        style={{
+                          transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
+                        }}>
+                        Create a free site
+                      </div>
+                      <div className="transition-transform duration-300 transform absolute top-0 left-0"
+                        style={{
+                          transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
+                        }}>
+                        Takes 15 mins
+                      </div>
+                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
               </li>
+
+
+
 
             </ul>
           </nav>
