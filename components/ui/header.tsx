@@ -130,6 +130,7 @@ export default function Header() {
               <NavLink href="/pricing" text="Pricing" />
 
 
+              <NavLink href="https://app.wondersites.co" text="Login" />
 
 
               <li>
@@ -150,6 +151,9 @@ export default function Header() {
                   </div>
                 </button>
               </li>
+
+
+
 
               <li>
                 <Link
