@@ -68,15 +68,15 @@ export default function Header() {
 
           {/* Desktop navigation */}
           <nav className="hidden lg:flex lg:grow">
-            <ul className="flex gap-4 items-center whitespace-nowrap justify-end w-full">
+            <ul className="flex gap-4 items-center justify-end w-full">
               <li className="relative" ref={dropdownRef}>
                 <button
                   className="font-bold text-slate-800 hover:text-orange-600 py-3 flex items-center transition duration-150 ease-in-out relative group"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   aria-expanded={dropdownOpen}
                 >
-                  <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">Create a...</span>
-                  <ChevronDown className={`w-5 h-5 ml-1 text-slate-400 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+                  <span className="relative overflow-hidden text-ellipsis max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">Create a...</span>
+                  <ChevronDown className={`w-5 h-5 ml-1 text-slate-400 transition-transform duration-200 flex-shrink-0 ${dropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
                   {dropdownOpen && (
@@ -126,12 +126,9 @@ export default function Header() {
                 </AnimatePresence>
               </li>
 
-              <NavLink href="/showcase" text="Website Examples" />
+              <NavLink href="/showcase" text="Examples" />
               <NavLink href="/pricing" text="Pricing" />
-
-
               <NavLink href="https://app.wondersites.co" text="Login" />
-
 
               <li>
                 <button
@@ -144,16 +141,12 @@ export default function Header() {
                 >
                   <div className="relative z-10 overflow-hidden w-full">
                     <div className="flex items-center justify-between">
-
-                      Book a Demo
-                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
+                      <span className="truncate max-w-[120px]">Book a Demo</span>
+                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform flex-shrink-0" />
                     </div>
                   </div>
                 </button>
               </li>
-
-
-
 
               <li>
                 <Link
@@ -165,27 +158,23 @@ export default function Header() {
                 >
                   <div className="relative z-10 overflow-hidden w-full">
                     <div className="flex items-center justify-between">
-                      <div className="transition-transform duration-300 transform"
+                      <div className="transition-transform duration-300 transform truncate max-w-[120px]"
                         style={{
                           transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
                         }}>
                         Create a free site
                       </div>
-                      <div className="transition-transform duration-300 transform absolute top-0 left-0"
+                      <div className="transition-transform duration-300 transform absolute top-0 left-0 truncate max-w-[120px]"
                         style={{
                           transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
                         }}>
                         Takes 15 mins
                       </div>
-                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform flex-shrink-0" />
                     </div>
                   </div>
                 </Link>
               </li>
-
-
-
-
             </ul>
           </nav>
 
@@ -217,8 +206,8 @@ function DropdownLink({ href, icon: Icon, title, description }: DropdownLinkProp
         <Icon className="w-6 h-6 text-orange-600" />
       </div>
       <div className="ml-4">
-        <p className="text-base font-medium text-slate-900 group-hover:text-orange-600 transition-colors">{title}</p>
-        <p className="mt-1 text-sm text-slate-500">{description}</p>
+        <p className="text-base font-medium text-slate-900 group-hover:text-orange-600 transition-colors truncate max-w-[300px]">{title}</p>
+        <p className="mt-1 text-sm text-slate-500 line-clamp-2">{description}</p>
       </div>
     </Link>
   );
@@ -235,7 +224,7 @@ function NavLink({ href, text }: NavLinkProps) {
       href={href}
       className="font-medium text-slate-900 hover:text-orange-600 px-1 py-3 flex items-center transition duration-150 ease-in-out relative group"
     >
-      <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
+      <span className="relative truncate max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
     </Link>
   );
 }
