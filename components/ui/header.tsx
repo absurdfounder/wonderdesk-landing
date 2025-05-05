@@ -45,8 +45,8 @@ export default function Header() {
   // Initialize Cal.com booking widget
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({"namespace":"setup-call"});
-      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      const cal = await getCalApi({ "namespace": "setup-call" });
+      cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
     })();
   }, []);
 
@@ -61,14 +61,17 @@ export default function Header() {
             <Link href="/" className="shrink-0 mr-4 relative group">
               <Image src={Logo} alt="Logo" width={260} height={200} className="relative" />
             </Link>
+
+            <TranslateButton />
+
           </div>
 
           {/* Desktop navigation */}
           <nav className="hidden lg:flex lg:grow">
-            <ul className="flex grow justify-end flex-wrap items-center">
+            <ul className="flex gap-4 items-center whitespace-nowrap justify-end w-full">
               <li className="relative" ref={dropdownRef}>
                 <button
-                  className="font-bold text-slate-800 hover:text-orange-600 px-5 py-3 flex items-center transition duration-150 ease-in-out relative group"
+                  className="font-bold text-slate-800 hover:text-orange-600 py-3 flex items-center transition duration-150 ease-in-out relative group"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   aria-expanded={dropdownOpen}
                 >
@@ -85,7 +88,7 @@ export default function Header() {
                       className="absolute z-50 w-screen max-w-lg px-2 transform -translate-x-1/2 left-1/4 mt-3 sm:px-0"
                     >
                       <div className="overflow-hidden rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 bg-white">
-                        <div className="relative grid gap-6 px-5 py-6 sm:gap-8 sm:p-8">
+                        <div className="relative grid gap-6 px-1 py-6 sm:gap-8 sm:p-8">
                           <DropdownLink
                             href="/create-a-helpdesk-servicedesk-notion"
                             icon={HelpCircle}
@@ -125,14 +128,9 @@ export default function Header() {
 
               <NavLink href="/showcase" text="Website Examples" />
               <NavLink href="/pricing" text="Pricing" />
-              <NavLink href="https://app.wondersites.co" text="Login" />
 
 
-              {/* LanguageSwitcher component */}
-              <li className="px-5">
-                <TranslateButton/>
 
-              </li>
 
               <li>
                 <button
@@ -146,7 +144,7 @@ export default function Header() {
                   <div className="relative z-10 overflow-hidden w-full">
                     <div className="flex items-center justify-between">
 
-                        Book a Demo
+                      Book a Demo
                       <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -231,7 +229,7 @@ function NavLink({ href, text }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className="font-medium text-slate-900 hover:text-orange-600 px-4 py-3 flex items-center transition duration-150 ease-in-out relative group"
+      className="font-medium text-slate-900 hover:text-orange-600 px-1 py-3 flex items-center transition duration-150 ease-in-out relative group"
     >
       <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
     </Link>
