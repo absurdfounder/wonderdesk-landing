@@ -3,6 +3,7 @@ import './css/style.css'
 
 import { Inter, Roboto_Mono, Source_Serif_4, Comfortaa, Josefin_Slab } from 'next/font/google'
 import localFont from 'next/font/local'
+import Script from 'next/script'
 
 import Banner from '@/components/banner'
 import SchemaMarkup from '@/components/SchemaMarkup'
@@ -86,6 +87,39 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="canonical" href={canonicalUrl} />
+        {/* Google Translate Script */}
+        <Script 
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" 
+          strategy="afterInteractive" 
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  autoDisplay: false,
+                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+              }
+            `,
+          }}
+        />
+        {/* Add style to hide Google Translate bar */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .VIpgJd-ZVi9od-ORHb-OEVmcd, 
+            .VIpgJd-ZVi9od-aZ2wEe-wOHMyf, 
+            .goog-te-banner-frame, 
+            .skiptranslate {
+              display: none !important; 
+              visibility: hidden !important;
+            }
+            body {
+              top: 0 !important;
+            }
+          `,
+        }} />
       </head>
       <body className={`${inter.variable} ${robotoMono.variable} ${sourceSerif4.variable} ${comfortaa.variable} ${josefinSlab.variable} ${silkscreen.variable} ${bungee.variable} ${funneldisplay.variable} bg-gray-50 font-inter antialiased text-slate-900 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
@@ -93,7 +127,9 @@ export default function RootLayout({
           <Banner />
           <SchemaMarkup />
         </div>
+        {/* Hidden Google Translate Element */}
+        <div id="google_translate_element" className="hidden"></div>
       </body>
     </html>
   )
-} 
+}
