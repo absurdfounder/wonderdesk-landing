@@ -56,7 +56,7 @@ export default function Header() {
       <div className="w-full bg-[#00d945] text-black text-center py-2 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-center flex-wrap gap-4">
           <div className="flex items-center">
-            <span className="font-medium">We launched $WONDER on</span>
+            <span className="font-medium">We launched <b className='bg-green-600 p-1 px-4 text-white rounded-md mx-1'>$WONDER</b> on</span>
             <svg 
               width="20" 
               height="20" 
