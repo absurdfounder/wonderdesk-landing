@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect, lazy, Suspense } from 'react';
@@ -21,7 +20,7 @@ const ProductHuntBadge = () => (
        className="group justify-center grid mb-8 w-full" 
        title="View Wonder Sites on Product Hunt">
       <Image 
-        src="/producthunt-badge.svg" // Move SVG to static file
+        src="https://dazzling-cat.netlify.app/producthunt.svg" // Using the provided URL
         width={192}
         height={37}
         alt="Product Hunt Badge"
@@ -33,8 +32,8 @@ const ProductHuntBadge = () => (
 
 const NotionLogo = () => (
   <div className="w-14 h-14 mr-2 flex items-center justify-center rounded">
-    <Image 
-      src="/notion-logo.svg" // Move SVG to static file
+          <Image 
+      src="https://dazzling-cat.netlify.app/notionicon.svg" // Using the provided URL
       width={48}
       height={48}
       alt="Notion Logo"
@@ -60,19 +59,10 @@ interface HeroProps {
 }
 
 export default function Hero({ onCategorySelect }: HeroProps) {
-  // Simplified state management - only what's necessary for initial render
-  const [index, setIndex] = useState(0); // For rotating words
+  // Simplified state - removed index since we no longer need rotating words
   const [isHovered, setIsHovered] = useState(false);
   
-  const words = ["directory", "blog", "job board", "helpdesk", "documentation"];
-
-  // Rotating words effect - unchanged but isolated
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [words.length]);
+  // Removed words array and rotation effect since they're no longer needed
 
   // Defer Cal.com widget loading to well after initial render
   useEffect(() => {
@@ -128,15 +118,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   <b className="text-gray-800">Notion Database</b>
                 </div>
               </span>{" "}
-              {/* Rotating word animation - simplified to render immediately with minimal animation */}
-              <motion.span
-                key={words[index]}
-                initial={{ opacity: 0.8 }}
-                animate={{ opacity: 1 }}
-                className="text-orange-600 inline-block"
-              >
-                {words[index]}
-              </motion.span>
+              {/* Removed the rotating words animation as requested */}
             </h1>
 
             <p className="text-xl text-slate-900 mb-8 font-lato max-w-2xl m-auto">
