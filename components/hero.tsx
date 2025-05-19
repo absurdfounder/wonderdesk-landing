@@ -172,7 +172,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               data-cal-namespace="setup-call"
               data-cal-link="wondersites/setup-call"
               data-cal-config='{"layout":"month_view"}'
-              className="btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group"
+              className="btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-3 flex items-center justify-between px-4 py-2.5 rounded-md transition duration-150 ease-in-out group"
             >
               <div className="flex items-center justify-between w-full">
                 Book a Demo

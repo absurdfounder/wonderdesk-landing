@@ -825,6 +825,110 @@
       ]
     },
     {
+      "id": "WonderSites-vs-docusaurus",
+      "product": {
+        "logo": "https://static-00.iconduck.com/assets.00/docusaurus-icon-2048x1741-ditzh04o.png",
+        "name": "Docusaurus",
+        "provider": "WonderSites",
+        "description": "How Wonder  is a versatile alternative to GitBook for documentation and collaboration.",
+        "heroimage": "https://static-00.iconduck.com/assets.00/docusaurus-icon-2048x1741-ditzh04o.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        }
+      ]
+    },
+
+    {
       "id": "WonderSites-vs-framer",
       "product": {
         "logo": "https://pbs.twimg.com/profile_images/1469296240991125519/xpZr8yYS_400x400.jpg",
