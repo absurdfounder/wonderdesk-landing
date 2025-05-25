@@ -18,7 +18,7 @@ const BelieveLandingPage = () => {
   const baseUrl = 'https://believe.app';
 
   return (
-    <div className="bg-gray-50 flex flex-col items-center bg-white min-h-screen">
+    <div className=" flex flex-col items-center min-h-screen">
 
 
 
