@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import ModalVideo from "@/components/modal-video";
 import VideoThumb from "@/public/images/hero-image.png";
@@ -18,7 +16,11 @@ import Header from "@/components/ui/header";
 import Aos from "aos";
 import 'aos/dist/aos.css'
 
-// Believe Landing Page Component
+// Client Component for Believe Landing Page
+"use client";
+
+import { useState, useEffect } from "react";
+
 const BelieveLandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [qrModalOpen, setQrModalOpen] = useState(false);
@@ -291,6 +293,7 @@ const BelieveLandingPage = () => {
   );
 };
 
+// Server Component for the main page
 export const metadata = {
     title: "Get a blog with Notion (no-code and free)",
     description:
