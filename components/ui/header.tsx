@@ -53,7 +53,7 @@ export default function Header() {
   return (
     <>
       {/* Top Banner */}
-      <div className="w-full bg-[#00d945] text-black text-center py-2 px-4">
+      <div className="w-full  text-black text-center py-2 px-4 bg-green-400">
         <div className="max-w-7xl mx-auto flex items-center justify-center flex-wrap gap-4">
           <div className="flex items-center">
             <span className="font-medium">We launched <b className='bg-green-600 p-1 px-4 text-white rounded-md mx-1'>$WONDER</b> on</span>
@@ -86,6 +86,16 @@ export default function Header() {
             className="bg-white text-black font-medium px-4 py-1 rounded-md hover:bg-opacity-90 transition-all duration-200 flex items-center"
           >
             View it on Believe
+            <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
+          </a>
+
+                    <a 
+            href="https://dexscreener.com/solana/GEKjZKJZgQTCbi9evTW2GmhyamH3sq6Lid9dQMWqEcCY" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="bg-white text-black font-medium px-4 py-1 rounded-md hover:bg-opacity-90 transition-all duration-200 flex items-center"
+          >
+            DEX
             <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
