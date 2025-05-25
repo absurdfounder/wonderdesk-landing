@@ -137,18 +137,9 @@ export default function PageDetail() {
       </div>
 
 
-
-
-
-
-
             <FeaturesBlocks />
 
-
-
             <Testimonials />
-
-
 
         </div>
 
