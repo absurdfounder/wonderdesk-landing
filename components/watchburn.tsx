@@ -374,7 +374,6 @@ const WondersitesDashboard: React.FC = () => {
 
   const navItems = [
     { id: 'overview', label: '✨ Wondersites', emoji: '✨' },
-    { id: 'WONDERburn', label: '🔥 WONDER Burn', emoji: '🔥' },
     { id: 'solana', label: '💜 Solana Eco', emoji: '💜' },
   ];
 
@@ -385,7 +384,7 @@ const WondersitesDashboard: React.FC = () => {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="sticky top-0 left-0 right-0 "
+        className="sticky top-0 left-0 right-0 bg-white rounded-md my-4 px-4 shadow-md"
       >
         <div className="max-w-screen-xl mx-auto">
           <div className="flex items-center justify-between h-16 md:h-20">
@@ -433,73 +432,48 @@ const WondersitesDashboard: React.FC = () => {
       </motion.header>
 
       {/* --- MAIN CONTENT --- */}
-      <main>
-        {/* Wondersites Overview Section */}
-        <motion.section
-          id="overview"
-          className="max-w-screen-xl mx-auto"
-          variants={sectionVariants} initial="hidden" animate="visible"
-        >
-          
-          <motion.div variants={cardVariants} ref={shareableRef} className="bg-white p-6 md:p-8 rounded-xl shadow-xl border border-slate-200/70 mb-10 md:mb-12">
-            <div className="text-center mb-6">
-              <h3 className="text-xl md:text-2xl font-semibold text-orange-600 mb-1 flex items-center justify-center">
-                <Flame className="w-6 h-6 mr-2"/>$WONDER Burned
-              </h3>
-              <p className="text-4xl md:text-5xl font-bold text-slate-800">
-                {formatNumber(wondersitesMetrics.totalBurned, 0)} 
-              </p>
-              <p className="text-md text-slate-500 mt-1">
-                (wondersitesMetrics.totalBurned * wondersitesMetrics.wonderPrice, 0, true) USD Value
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
-              <InfoPill label="$WONDER/min" value={wondersitesMetrics.burnRate.toFixed(0)} icon={Flame} colorClasses={{text:'text-orange-700', bg:'bg-orange-50', border:'border-orange-200', icon:'text-orange-500'}} />
-              <InfoPill label="Supply Burned (Percentage)" value={`${((wondersitesMetrics.totalBurned / wondersitesMetrics.totalSupply) * 100).toFixed(2)}%`} icon={Layers} colorClasses={{text:'text-rose-700', bg:'bg-rose-50', border:'border-rose-200', icon:'text-rose-500'}} />
-              <InfoPill label="Annual Deflation" value={`-${(((wondersitesMetrics.burnRate * 60 * 24 * 365) / wondersitesMetrics.circulatingSupply) * 100).toFixed(2)}%`} icon={TrendingDown} colorClasses={{text:'text-amber-700', bg:'bg-amber-50', border:'border-amber-200', icon:'text-amber-500'}} />
-            </div>
-          </motion.div>
+      <main className='space-y-8'>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-            <StatCard item={{ icon: TrendingUp, label: '$WONDER Price', value: `$${wondersitesMetrics.wonderPrice.toFixed(4)}`, iconColorClass:'text-emerald-600', bgColorClass:'bg-emerald-50/70', trend:"+0.5% 24h" }} />
-            <StatCard item={{ icon: BarChart3, label: 'Market Cap', value: formatNumber(wondersitesMetrics.marketCap, 0, true), subText: `${formatNumber(wondersitesMetrics.circulatingSupply)} Circ.`, iconColorClass:'text-sky-600', bgColorClass:'bg-sky-50/70' }} />
-            <StatCard item={{ icon: Globe, label: 'Websites Created', value: wondersitesMetrics.websitesCreated.toLocaleString(), iconColorClass:'text-indigo-600', bgColorClass:'bg-indigo-50/70' }} />
-            <StatCard item={{ icon: Users, label: 'Total Users', value: wondersitesMetrics.totalUsers.toLocaleString(), iconColorClass:'text-violet-600', bgColorClass:'bg-violet-50/70' }} />
-          </div>
-        </motion.section>
 
         {/* WONDER Burn Section */}
         <motion.section
-          id="WONDERburn"
+          id="overview"
           className=" max-w-screen-xl mx-auto"
           variants={sectionVariants} initial="hidden" animate="visible"
         >
-          <SectionTitle emoji="🔥" title={<><span className="text-yellow-500">WONDER</span> Burn Insights</>} subtitle="Tracking Binance Coin's deflationary measures and burn mechanisms." />
 
           <motion.div variants={cardVariants} className="bg-white p-6 md:p-8 rounded-xl shadow-xl border border-slate-200/70 mb-8">
             <h3 className="text-xl md:text-2xl font-semibold text-slate-700 mb-4 flex items-center">
               <Zap className="w-6 h-6 mr-2.5 text-yellow-500" />Real-Time Burn
             </h3>
-            <p className="text-sm text-slate-500 mb-5">A fixed ratio of gas fees collected on BSC is burned in each block. Ratio decided by BSC validators.</p>
+            <p className="text-sm text-slate-500 mb-5">Wonder Tokens are burned on use of the platform, from signup to website traffic as the users grow on the platform $wonder is burned. Incentivizing us to grow the platform and reflecting the returns on the price of the wonder token. </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="bg-slate-50/80 p-4 rounded-lg border border-slate-200/80">
                 <p className="text-xs text-slate-500 mb-0.5">Burned in last 7 days</p>
-                <p className="text-2xl font-bold text-yellow-600">{formatNumber(WONDERRealTimeBurn.last7DaysWONDER, 2)} WONDER</p>
+                <p className="text-2xl font-bold text-yellow-600">{formatNumber(WONDERRealTimeBurn.last7DaysWONDER, 2)} <span className='opacity-50 font-normal'>WONDER</span></p>
                 <p className="text-sm text-slate-500">{formatNumber(WONDERRealTimeBurn.last7DaysUSD, 2, true)}</p>
               </div>
               <div className="bg-slate-50/80 p-4 rounded-lg border border-slate-200/80">
                 <p className="text-xs text-slate-500 mb-0.5">Total Burned</p>
-                <p className="text-2xl font-bold text-yellow-600">{formatNumber(WONDERRealTimeBurn.totalBurnedWONDER, 2)} WONDER</p>
+                <p className="text-2xl font-bold text-yellow-600">{formatNumber(WONDERRealTimeBurn.totalBurnedWONDER, 2)} <span className='opacity-50 font-normal'>WONDER</span></p>
                 <p className="text-sm text-slate-500">{formatNumber(WONDERRealTimeBurn.totalBurnedUSD, 2, true)}</p>
               </div>
             </div>
           </motion.div>
 
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 my-4">
+            <StatCard item={{ icon: TrendingUp, label: '$WONDER Price', value: `$${wondersitesMetrics.wonderPrice.toFixed(4)}`, iconColorClass:'text-emerald-600', bgColorClass:'bg-emerald-50/70', trend:"+0.5% 24h" }} />
+            <StatCard item={{ icon: BarChart3, label: 'Market Cap', value: formatNumber(wondersitesMetrics.marketCap, 0, true), subText: `${formatNumber(wondersitesMetrics.circulatingSupply)} Circ.`, iconColorClass:'text-sky-600', bgColorClass:'bg-sky-50/70' }} />
+            <StatCard item={{ icon: Globe, label: 'Websites Created', value: wondersitesMetrics.websitesCreated.toLocaleString(), iconColorClass:'text-indigo-600', bgColorClass:'bg-indigo-50/70' }} />
+            <StatCard item={{ icon: Users, label: 'Total Holders', value: wondersitesMetrics.totalUsers.toLocaleString(), iconColorClass:'text-violet-600', bgColorClass:'bg-violet-50/70' }} />
+          </div>
+
           <motion.div variants={cardVariants} className="bg-white p-6 md:p-8 rounded-xl shadow-xl border border-slate-200/70 mb-8">
             <h3 className="text-xl md:text-2xl font-semibold text-slate-700 mb-4 flex items-center">
-              <CalendarDays className="w-6 h-6 mr-2.5 text-sky-500" />Quarterly Auto-Burn
+              <CalendarDays className="w-6 h-6 mr-2.5 text-sky-500" /> Monthly Auto-Burn
             </h3>
-            <p className="text-sm text-slate-500 mb-5">Auto-Burn adjusts based on WONDER price and blocks produced per quarter, following a quarterly schedule.</p>
+            <p className="text-sm text-slate-500 mb-5">Auto-Burn adjusts based on WONDER price and blocks produced per month, following a monthly schedule.</p>
             <div className="space-y-5">
               {WONDERQuarterlyBurns.map(burn => (
                 <motion.div key={burn.id} variants={listItemVariants} className="p-4 border border-slate-200/80 rounded-lg bg-slate-50/80 hover:bg-slate-100/70 transition-colors">
@@ -515,12 +489,12 @@ const WondersitesDashboard: React.FC = () => {
                 </motion.div>
               ))}
             </div>
-             <p className="text-xs text-slate-400 mt-4">Note: K is a constant price anchor (initially 1000), modifiable via BEP. <a href="#" className="text-sky-600 hover:underline">Learn more</a>.</p>
+             <p className="text-xs text-slate-400 mt-4">Note: K is a constant price anchor (initially 1000), modifiable via WONDER. <a href="#" className="text-sky-600 hover:underline">Learn more</a>.</p>
           </motion.div>
           
           <motion.div variants={cardVariants} className="bg-white p-6 md:p-8 rounded-xl shadow-xl border border-slate-200/70 mb-8">
             <h3 className="text-xl md:text-2xl font-semibold text-slate-700 mb-4 flex items-center">
-                <List className="w-6 h-6 mr-2.5 text-emerald-500"/>Real-Time Burn History <span className="text-xs ml-2 text-slate-400">(Recent 5)</span>
+                <List className="w-6 h-6 mr-2.5 text-emerald-500"/> Real-Time Burn History <span className="text-xs ml-2 text-slate-400">(Recent 5)</span>
             </h3>
             <div className="overflow-x-auto rounded-lg border border-slate-200/80">
                 <table className="min-w-full text-sm">
@@ -552,12 +526,12 @@ const WondersitesDashboard: React.FC = () => {
                     className="inline-flex items-center text-sm text-sky-600 hover:text-sky-700 font-medium group"
                     whileHover={{ gap: "6px" }}
                 >
-                    View all on BscScan <ExternalLink className="w-3.5 h-3.5 ml-1 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    View all on SolScan <ExternalLink className="w-3.5 h-3.5 ml-1 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </motion.a>
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+          <div className="grid gap-5 md:gap-6">
             <ExpandableSection
               id="what-is-WONDER" title="What is WONDER?" icon={Briefcase}
               isOpen={expandedWONDERSection === 'what-is-WONDER'} onToggle={setExpandedWONDERSection}
@@ -579,8 +553,8 @@ const WondersitesDashboard: React.FC = () => {
           className="max-w-screen-xl mx-auto"
           variants={sectionVariants} initial="hidden" animate="visible"
         >
-          <SectionTitle emoji="💜" title={<><span className="text-purple-600">Solana</span> Ecosystem</>} subtitle="Key real-time (simulated) metrics from the Solana network." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          <SectionTitle emoji="💜" title={<><span className="text-purple-600">Solana</span> Ecosystem</>} subtitle="Key real-time metrics from the Solana network." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 my-4">
             <StatCard item={{ icon: Zap, label: 'Avg. Gas Fee (SOL)', value: formatSolValue(solanaStats.avgGasFee), subText: `~${formatNumber(solanaStats.avgGasFee * solanaStats.solPrice, 5, true)}`, iconColorClass:'text-emerald-600', bgColorClass:'bg-emerald-50/70' }} />
             <StatCard item={{ icon: Activity, label: 'Transactions (TPS)', value: solanaStats.tps.toLocaleString(), subText: "Network Throughput", iconColorClass:'text-sky-600', bgColorClass:'bg-sky-50/70' }} />
             <StatCard item={{ icon: Server, label: 'Active Validators', value: solanaStats.activeValidators.toLocaleString(), subText: "Network Security", iconColorClass:'text-fuchsia-600', bgColorClass:'bg-fuchsia-50/70' }} />
