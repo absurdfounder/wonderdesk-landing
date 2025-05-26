@@ -88,7 +88,7 @@ export default function PageDetail() {
                                             watch the  <img src="https://media1.giphy.com/media/26BRt5hkD6hLzTl3q/200w.gif?cid=6c09b952dvny52hb3olq7nti3a99q5xto0e8m088nulfadxs&ep=v1_stickers_search&rid=200w.gif&ct=s" className='w-16'/>  <span className="text-3xl sm:text-4xl md:text-7xl gradient-text-accent"> burn</span>
                                         </h1>
                                         <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
-                                            Wonder token powers are <b>burned with every action</b> signup, website creation, or every when they get traffic on their website, scarecity rises as wonder grows.
+                                            Wonder token is <b>burned with every action</b> signup, website creation, or every when they get traffic on their website, scarecity rises as wonder grows.
                                         </p>
                                         <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
                                             <div className="mt-3 sm:mt-0">
