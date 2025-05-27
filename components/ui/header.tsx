@@ -53,17 +53,19 @@ export default function Header() {
   return (
     <>
       {/* Top Banner */}
-      <div className="w-full  text-black text-center py-2 px-4 bg-green-400">
-        <div className="max-w-7xl mx-auto flex items-center justify-center flex-wrap gap-4">
-          <div className="flex items-center">
-            <span className="font-medium">We launched <b className='bg-green-600 p-1 px-4 text-white rounded-md mx-1'>$WONDER</b> on</span>
+      <div className="w-full text-black text-center py-2 sm:py-2 px-2 sm:px-4 bg-green-400">
+        <div className="max-w-7xl mx-auto flex items-center justify-center flex-col sm:flex-row flex-wrap gap-2 sm:gap-4">
+          <div className="flex items-center flex-wrap justify-center gap-1 sm:gap-0">
+            <span className="font-medium text-sm sm:text-base">We launched</span>
+            <b className='bg-green-600 p-1 px-2 sm:px-4 text-white rounded-md mx-1 text-sm sm:text-base'>$WONDER</b>
+            <span className="font-medium text-sm sm:text-base">on</span>
             <svg 
-              width="20" 
-              height="20" 
+              width="16" 
+              height="16" 
               viewBox="0 0 256 300" 
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
-              className="mx-2"
+              className="mx-1 sm:mx-2 sm:w-5 sm:h-5"
             >
               <g clipPath="url(#clip0_106_4829)">
                 <path 
@@ -77,27 +79,29 @@ export default function Header() {
                 </clipPath>
               </defs>
             </svg>
-            <span className="font-medium">Believe.</span>
+            <span className="font-medium text-sm sm:text-base">Believe.</span>
           </div>
-          <a 
-            href="https://believe.app/coin/GEKjZKJZgQTCbi9evTW2GmhyamH3sq6Lid9dQMWqEcCY" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="bg-white text-black font-medium px-4 py-1 rounded-md hover:bg-opacity-90 transition-all duration-200 flex items-center"
-          >
-            View it on Believe
-            <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
-          </a>
+          <div className="flex gap-2 sm:gap-4">
+            <a 
+              href="https://believe.app/coin/GEKjZKJZgQTCbi9evTW2GmhyamH3sq6Lid9dQMWqEcCY" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-white text-black font-medium px-3 sm:px-4 py-1 rounded-md hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center text-sm sm:text-base group"
+            >
+              View it on Believe
+              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
+            </a>
 
-                    <a 
-            href="https://dexscreener.com/solana/GEKjZKJZgQTCbi9evTW2GmhyamH3sq6Lid9dQMWqEcCY" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="bg-white text-black font-medium px-4 py-1 rounded-md hover:bg-opacity-90 transition-all duration-200 flex items-center"
-          >
-            DEX
-            <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
-          </a>
+            <a 
+              href="https://dexscreener.com/solana/GEKjZKJZgQTCbi9evTW2GmhyamH3sq6Lid9dQMWqEcCY" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-white text-black font-medium px-3 sm:px-4 py-1 rounded-md hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center text-sm sm:text-base group"
+            >
+              DEX
+              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -105,16 +109,22 @@ export default function Header() {
       <header
         className={`w-full z-30 transition-all duration-300 ease-in-out ${!top ? 'bg-white shadow-md' : ''}`}
       >
-        <div className="max-w-7xl mx-auto p-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="max-w-7xl mx-auto p-3 sm:p-4 sm:px-6">
+          <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
             {/* Logo */}
             <div className='flex items-center'>
-              <Link href="/" className="shrink-0 mr-4 relative group">
-                <Image src={Logo} alt="Logo" width={260} height={200} className="relative" />
+              <Link href="/" className="shrink-0 mr-2 sm:mr-4 relative group">
+                <Image 
+                  src={Logo} 
+                  alt="Logo" 
+                  width={260} 
+                  height={200} 
+                  className="relative w-40 h-auto sm:w-44 md:w-52 lg:w-64" 
+                  priority
+                />
               </Link>
 
               <TranslateButton />
-
             </div>
 
             {/* Desktop navigation */}
@@ -230,10 +240,14 @@ export default function Header() {
             </nav>
 
             {/* Tablet menu */}
-            <TabletMenu />
+            <div className="hidden md:block lg:hidden">
+              <TabletMenu />
+            </div>
 
             {/* Mobile menu */}
-            <MobileMenu />
+            <div className="block md:hidden">
+              <MobileMenu />
+            </div>
           </div>
         </div>
       </header>
