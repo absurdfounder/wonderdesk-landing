@@ -245,6 +245,7 @@ export default function PrivacyPolicyPage() { // Renamed component for clarity
 
         </div>
       </div>
+      
     </section>
   );
 }
