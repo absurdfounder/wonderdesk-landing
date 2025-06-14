@@ -12,6 +12,70 @@ import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
 import Header from "@/components/ui/header";
 
+// --- NEW: Exit Intent Popup Component ---
+interface ExitIntentPopupProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
+
+const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ isOpen, onClose }) => {
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 flex items-center justify-start bg-black bg-opacity-70 p-4 z-50"
+                    onClick={onClose} // Close on overlay click
+                >
+                    <motion.div
+                        initial={{ scale: 0.9, y: 20 }}
+                        animate={{ scale: 1, y: 0 }}
+                        exit={{ scale: 0.9, y: 20 }}
+                        className="bg-white p-8 rounded-xl shadow-2xl max-w-lg mx-auto relative"
+                        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+                    >
+                        <button
+                            onClick={onClose}
+                            className="absolute top-3 right-3 bg-slate-200 hover:bg-slate-300 rounded-md w-8 h-8 flex items-center justify-center transition-colors z-10"
+                        >
+                            <X size={16} />
+                        </button>
+
+
+
+
+
+                        <span className="text-lg font-bold bg-orange-600 text-white rounded-full p-2 px-4">Psst.</span>
+
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-3">
+                            Before you go...
+                        </h2>
+                        <p className="text-slate-600 mb-6 max-w-md mx-auto">
+                            Did we mention that the trial is free, you can signup in seconds, and no credit card is required? Give us a try, we'd love to show you what Bannerbear can do!
+                        </p>
+
+
+                        <Link
+                            href="https://app.wondersites.co" // Make sure this is the correct link for the discounted offer
+                            className="bg-orange-600 text-white text-lg w-fit py-3 px-6 rounded-lg block hover:bg-orange-700 transition-colors shadow-lg font-medium"
+                            onClick={() => {
+                                // You might want to track this conversion
+                                onClose();
+                            }}
+                        >
+                            OK Lets get started
+                        </Link>
+                    </motion.div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+    );
+};
+// --- END of Exit Intent Popup Component ---
+
+
 // Feature interfaces
 interface Feature {
     name: string;
@@ -373,6 +437,9 @@ const Pricing: React.FC = () => {
     const [isLifetimeDealVisible, setIsLifetimeDealVisible] = useState(true);
     const [loading, setLoading] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    // --- NEW: State for Exit Intent Popup ---
+    const [showExitPopup, setShowExitPopup] = useState(false);
+    const exitIntentShown = useRef(false); // Ref to ensure it only fires once
 
     const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -415,6 +482,27 @@ const Pricing: React.FC = () => {
             ]
         }
     ];
+
+    // --- NEW: useEffect for Exit Intent ---
+    useEffect(() => {
+        const handleMouseLeave = (e: MouseEvent) => {
+            // If the mouse is at the top of the viewport and the popup hasn't been shown yet
+            if (e.clientY <= 0 && !exitIntentShown.current) {
+                // Any other modals are closed
+                if (!isModalOpen && !popupFeature) {
+                    setShowExitPopup(true);
+                    exitIntentShown.current = true; // Mark as shown
+                }
+            }
+        };
+
+        document.addEventListener("mouseout", handleMouseLeave);
+
+        return () => {
+            document.removeEventListener("mouseout", handleMouseLeave);
+        };
+    }, [isModalOpen, popupFeature]); // Re-run if other modals open/close
+
 
     // Check mobile status on mount and resize
     useEffect(() => {
@@ -510,6 +598,8 @@ const Pricing: React.FC = () => {
 
     return (
         <div className="bg-gradient-to-b from-slate-50 min-h-screen">
+            {/* --- NEW: Render the Exit Intent Popup --- */}
+            <ExitIntentPopup isOpen={showExitPopup} onClose={() => setShowExitPopup(false)} />
 
             <Header />
 
