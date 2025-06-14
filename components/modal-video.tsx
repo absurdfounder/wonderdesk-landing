@@ -22,7 +22,7 @@ export default function TellaVideoButton() {
     <div className="flex justify-center items-center w-full px-4 py-6">
       {/* Main Button Component - Rotated and with hover effect */}
       <div 
-        className="flex flex-col md:flex-row items-center max-w-4xl w-full mx-auto border pl-2 md:pl-4 py-3 md:py-4 bg-gray-800 rounded-2xl md:rounded-3xl overflow-hidden transform -rotate-1 transition-all duration-300 hover:rotate-0 hover:shadow-2xl cursor-pointer"
+        className="flex flex-col md:flex-row items-center max-w-4xl w-full mx-auto border pl-2 md:pl-4 py-3 md:py-4 bg-gray-800 rounded-2xl md:rounded-3xl overflow-hidden transform -rotate-1 transition-all duration-300 hover:rotate-0 hover:shadow-2xl cursor-pointer p-4"
         onClick={() => setModalOpen(true)}
       >
         {/* Video thumbnail - Full width on mobile, 2/5 width on larger screens */}
