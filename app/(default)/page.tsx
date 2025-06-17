@@ -37,12 +37,12 @@ import FAQ from '@/components/faq'
 import ModalVideo from '@/components/modal-video'
 import NotiontoWebsite from '@/components/notion-to-website'
 import SimpleAnalyticsDashboard from '@/components/DashboardComponent'
-
+import FloatingScrollIndicator from '@/components/FloatingScrollIndicator'
 
 export default function Home() {
   return (
     <>
-
+      <FloatingScrollIndicator />
       <div
         style={{
           backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
@@ -53,38 +53,22 @@ export default function Home() {
       >
         <Header />
         <Hero />
-
       </div>
-
       <br />
       <br />
-      <ModalVideo
-      />
-
-
+      <ModalVideo />
       <NotiontoWebsite />
-
-
       <Marketplace_Type />
       {/* 
       <Testimonials />
       */}
       <FeaturesBlocks />
       <OldWays />
-
       <SimpleAnalyticsDashboard />
-
       <Showcases />
-
-
       <FAQ />
       <AboutMe />
-
-
-
       <Testimonials />
-
-
     </>
   )
 }
