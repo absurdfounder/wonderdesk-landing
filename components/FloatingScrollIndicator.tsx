@@ -5,17 +5,24 @@ import React, { useState, useEffect } from 'react';
 
 const FloatingScrollIndicator: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [showScrollbar, setShowScrollbar] = useState<boolean>(false);
 
   const handleScroll = (): void => {
     const scrollTop = window.pageYOffset;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
     setScrollPosition(scrollPercent);
+
+    // Hide scrollbar in hero section (first ~100vh)
+    const heroHeight = window.innerHeight;
+    setShowScrollbar(scrollTop > heroHeight * 0.8); // Show after 80% of hero section
   };
 
   const handleIndicatorClick = (index: number): void => {
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const targetPosition = (index / 19) * docHeight; // 19 because we have 20 lines (0-19)
+    const heroHeight = window.innerHeight;
+    // Start from after hero section and divide remaining space
+    const targetPosition = heroHeight + ((index / 19) * (docHeight - heroHeight));
     window.scrollTo({
       top: targetPosition,
       behavior: 'smooth'
@@ -31,15 +38,18 @@ const FloatingScrollIndicator: React.FC = () => {
     };
   }, []);
 
+  // Don't render on mobile or if not past hero section
+  if (!showScrollbar) return null;
+
   return (
-    <div className="fixed left-4 top-1/2 transform -translate-y-1/2 w-12 bg-gray-900/80 backdrop-blur-sm rounded-full flex flex-col items-center py-8 z-50 border border-gray-700/30">
+    <div className="hidden lg:block fixed left-4 top-1/2 transform -translate-y-1/2 w-12 rounded-full flex flex-col items-center py-8 z-50">
       {/* Scroll indicator lines */}
-      <div className="space-y-1 w-8 flex flex-col items-center">
+      <div className="space-y-2 w-10 flex flex-col items-center">
         {[...Array(20)].map((_, i: number) => {
           const distanceFromActive: number = Math.abs(i - scrollPosition * 19);
-          const isCenter: boolean = distanceFromActive < 0.5;
-          const isAdjacent: boolean = distanceFromActive >= 0.5 && distanceFromActive < 1.5;
-          const isActive: boolean = distanceFromActive < 1.5;
+          const isCenter: boolean = distanceFromActive < 1;
+          const isAdjacent: boolean = distanceFromActive >= 1 && distanceFromActive < 2.5;
+          const isActive: boolean = distanceFromActive < 2.5;
           
           let width: string = '16px'; // default width
           if (isCenter) {
@@ -51,12 +61,12 @@ const FloatingScrollIndicator: React.FC = () => {
           return (
             <div
               key={i}
-              className={`h-0.5 rounded-full transition-all duration-200 cursor-pointer hover:opacity-100 ${
-                isActive ? 'bg-white' : 'bg-gray-600 hover:bg-gray-400'
+              className={`h-1 rounded-full transition-all duration-300 cursor-pointer hover:opacity-100 select-none ${
+                isActive ? 'bg-gray-500' : 'bg-gray-300 hover:bg-gray-500'
               }`}
               style={{
                 width: width,
-                opacity: isActive ? 1 : 0.3
+                opacity: isActive ? 1 : 0.4
               }}
               onClick={(): void => handleIndicatorClick(i)}
             />
