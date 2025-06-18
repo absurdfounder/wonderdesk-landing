@@ -62,7 +62,7 @@ const faqs: FAQCategories = {
     },
     {
       question: "What are the pricing plans?",
-      answer: "Wondersites starts at $7.50/month (billed annually). The plan includes one website, custom domain support, analytics, and AI tools.",
+      answer: "Wondersites starts at $9/month (billed annually). The plan includes one website, custom domain support, analytics, and AI tools.",
     },
     {
       question: "Are there any additional charges?",

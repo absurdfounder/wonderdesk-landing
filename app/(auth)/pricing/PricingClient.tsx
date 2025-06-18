@@ -448,8 +448,8 @@ const Pricing: React.FC = () => {
         {
             name: "Personal",
             highlight: false,
-            monthlyPrice: 9,
-            yearlyPrice: 90,
+            monthlyPrice: 18,
+            yearlyPrice: 108,
             trafficLimit: "10,000",
             features: [
                 "1 Website",
@@ -468,8 +468,8 @@ const Pricing: React.FC = () => {
         {
             name: "Business",
             highlight: true,
-            monthlyPrice: 43,
-            yearlyPrice: 430,
+            monthlyPrice: 86,
+            yearlyPrice: 516,
             trafficLimit: "100,000",
             features: [
                 "10 Websites",
@@ -635,16 +635,7 @@ const Pricing: React.FC = () => {
 
                     {/* Billing toggle */}
                     <div className="inline-flex items-center bg-white rounded-md border border-slate-200 p-1 shadow-sm mb-6 text-lg">
-                        <button
-                            className={`px-6 py-2 font-medium rounded-md transition-all ${activeTab === 'Yearly'
-                                ? 'bg-slate-600 text-slate-100'
-                                : 'text-slate-600 hover:text-slate-900'
-                                }`}
-                            onClick={() => handleTabClick('Yearly')}
-                        >
-                            Yearly <span className="text-orange-300 font-semibold ml-1">2 months free</span>
-                        </button>
-                        <button
+                                                <button
                             className={`px-6 py-2 font-medium rounded-md transition-all ${activeTab === 'Monthly'
                                 ? 'bg-slate-600 text-slate-100'
                                 : 'text-slate-600 hover:text-slate-900'
@@ -652,6 +643,15 @@ const Pricing: React.FC = () => {
                             onClick={() => handleTabClick('Monthly')}
                         >
                             Monthly
+                        </button>
+                        <button
+                            className={`px-6 py-2 font-medium rounded-md transition-all ${activeTab === 'Yearly'
+                                ? 'bg-slate-600 text-slate-100'
+                                : 'text-slate-600 hover:text-slate-900'
+                                }`}
+                            onClick={() => handleTabClick('Yearly')}
+                        >
+                            Yearly <span className="text-orange-300 font-semibold ml-1">50% off</span>
                         </button>
                     </div>
 
