@@ -780,7 +780,7 @@ const Pricing: React.FC = () => {
                                     target="_blank" rel="noopener"
                                     className="inline-block py-3 px-6 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors"
                                 >
-                                    Get Custom Quote
+                                    Get Complementary 
                                 </Link>
                             </div>
                         </div>
