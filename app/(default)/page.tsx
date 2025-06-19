@@ -38,6 +38,7 @@ import ModalVideo from '@/components/modal-video'
 import NotiontoWebsite from '@/components/notion-to-website'
 import SimpleAnalyticsDashboard from '@/components/DashboardComponent'
 import FloatingScrollIndicator from '@/components/FloatingScrollIndicator'
+import WonderComparison from '@/components/comparision'
 
 export default function Home() {
   return (
@@ -53,6 +54,9 @@ export default function Home() {
       >
         <Header />
         <Hero />
+        {/** 
+        <WonderComparison/>
+        */}
       </div>
       <br />
       <br />
