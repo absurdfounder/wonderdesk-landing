@@ -61,8 +61,8 @@ const FloatingScrollIndicator: React.FC = () => {
           return (
             <div
               key={i}
-              className={`h-1 rounded-full transition-all duration-300 cursor-pointer hover:opacity-100 select-none ${
-                isActive ? 'bg-gray-500' : 'bg-gray-300 hover:bg-gray-500'
+              className={`h-1 rounded-full transition-all duration-300 cursor-pointer hover:opacity-100 select-none opacity-50 ${
+                isActive ? 'bg-gray-800' : 'bg-gray-400 hover:bg-gray-500'
               }`}
               style={{
                 width: width,

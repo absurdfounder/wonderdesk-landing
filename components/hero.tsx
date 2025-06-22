@@ -112,7 +112,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             <ProductHuntBadge />
 
             <h1 className="text-2xl xs:text-3xl sm:text-4xl md:h1 mb-2 sm:mb-2 md:mb-2 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
-              Easy to use Wordpress alternative using
+              SEO-Ready Content sites using just a 
               {" "}
               <span className="font-bungee block font-normal text-gray-800 my-1 sm:my-2">
                 <div className="inline-flex items-center justify-center ml-0 sm:ml-1 px-2 sm:px-4 flex-wrap sm:flex-nowrap">

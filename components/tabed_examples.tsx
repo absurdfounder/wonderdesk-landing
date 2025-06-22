@@ -94,7 +94,7 @@ const TabImageHotspots = () => {
       ]
     },
     {
-      title: '2-sided Marketplace',
+      title: 'Changelogs',
       image: 'https://dazzling-cat.netlify.app/remotejobs.png',
       icon: <ShoppingBag size={isMobile ? 16 : 20} />,
       activeColor: 'bg-pink-100',

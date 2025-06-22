@@ -112,9 +112,9 @@ export default function Header() {
                               description="Get a self serving community marketplace that can handle millions in traffic on Notion."
                             />
                             <DropdownLink
-                              href="/create-a-company-wiki-notion"
+                              href="/create-a-changelog-notion"
                               icon={Lock}
-                              title="Company Wiki"
+                              title="Changelogs"
                               description="Create company wiki protected access and AI to answer queries on top of Notion as a database."
                             />
                             <DropdownLink

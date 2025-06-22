@@ -71,7 +71,6 @@ export default function Home() {
       <SimpleAnalyticsDashboard />
       <Showcases />
       <FAQ />
-      <AboutMe />
       <Testimonials />
     </>
   )
