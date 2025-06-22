@@ -95,14 +95,14 @@ export default function MobileMenu() {
               </Link>
             </li>
 
-            {/* Create a... dropdown */}
+            {/* Build dropdown */}
             <li>
               <button
                 className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 aria-expanded={dropdownOpen}
               >
-                Create a...
+                Build
                 <ChevronDown
                   className={`w-5 h-5 text-slate-400 transition-transform duration-200 ease-in-out ${dropdownOpen ? 'rotate-180' : ''}`}
                 />

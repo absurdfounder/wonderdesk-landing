@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 
-import ModalVideo from "@/components/modal-video";
+import ModalVideo from "@/components/full-modal-video";
 import VideoThumb from "@/public/images/hero-image.png";
 
 import Link from "next/link";
@@ -54,7 +54,12 @@ export default function PageDetail() {
     return (
 
         <div>
-            <section >
+            <section                 style={{
+                    backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundAttachment: "fixed"
+                }}>
 
                 <Header />
 
@@ -85,7 +90,7 @@ export default function PageDetail() {
                                             professional <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">knowledge base</span>
                                         </h1>
                                         <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
-                                            Wonder  is the perfect tool for creating your knowledge bases powered by Notion. You write your articles in Notion and Wonder  takes care of the rest. It's as simple as that.
+                                            Your support inbox is flooded with customers who want to self-serve, not spend hours talking to an agent.  But your help center is constantly out of date and your customers can’t find what they’re looking for. With Wonder, never again.
                                         </p>
                                         <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
                                             <div className="mt-3 sm:mt-0">

@@ -85,7 +85,7 @@ export default function Header() {
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     aria-expanded={dropdownOpen}
                   >
-                    <span className="relative overflow-hidden text-ellipsis max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">Create a...</span>
+                    <span className="relative overflow-hidden text-ellipsis max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">Build</span>
                     <ChevronDown className={`w-5 h-5 ml-1 text-slate-400 transition-transform duration-200 flex-shrink-0 ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
