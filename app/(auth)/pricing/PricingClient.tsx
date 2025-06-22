@@ -733,59 +733,7 @@ const Pricing: React.FC = () => {
                     ))}
                 </div>
 
-                {/* Expert Services Card */}
-                <div className="max-w-3xl mx-auto mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden"
-                    >
-                        <div className="p-6">
-                            <div className="flex flex-col md:flex-row justify-between items-center">
-                                <div className="text-center md:text-left mb-6 md:mb-0">
-                                    <div className="text-gray-600 font-medium mb-1">Hire An Expert</div>
-                                    <div className="flex items-center md:items-start flex-col">
-                                        <span className="text-4xl font-bold text-slate-900">$499</span>
-                                        <span className="text-slate-600 ml-1">one time</span>
-                                    </div>
-                                    <p className="text-slate-500 mt-1">
-                                        DIFY expert services (w/o license)
-                                    </p>
-                                </div>
 
-                                <div className="space-y-3 md:w-1/2">
-                                    <div className="flex items-start">
-                                        <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
-                                        <span className="text-slate-600">Custom development</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
-                                        <span className="text-slate-600">Custom notion template</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
-                                        <span className="text-slate-600">Custom design</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
-                                        <span className="text-slate-600">Platform migrations</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="mt-6 text-center md:text-right">
-                                <Link
-                                    href="https://app.youform.com/forms/r3rvhjv4"
-                                    target="_blank" rel="noopener"
-                                    className="inline-block py-3 px-6 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors"
-                                >
-                                    Get Complementary 
-                                </Link>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
 
                 {/* Add-ons Section */}
                 <div className="max-w-4xl mx-auto mb-20">
@@ -991,8 +939,7 @@ const Pricing: React.FC = () => {
                                     Wonder from another platform?
                                 </h3>
                                 <p className="text-slate-300 text-sm md:text-base">
-                                    Our expert team will handle the entire migration process for you - completely free of charge.
-                                    We'll ensure a smooth transition with zero downtime.
+                                    Our expert team will handle the entire migration process for you - completely free of charge. - Zero Downtime.
                                 </p>
                             </div>
                             <div>
@@ -1003,7 +950,7 @@ const Pricing: React.FC = () => {
                                 >
                                     We'll do it for you <span className="ml-2">→</span>
                                 </Link>
-                                <p className="text-xs text-slate-400 mt-2 text-center">Free of charge</p>
+                                <p className="text-sm text-slate-100 mt-2 text-center">Free of charge</p>
                             </div>
                         </div>
                     </div>
