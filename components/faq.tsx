@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, HelpCircle, BookOpen, ShoppingBag, Lock, AlignLeft, ArrowRight, LucideIcon } from 'lucide-react';
+
 
 interface FAQ {
   question: string;
@@ -103,14 +105,14 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b-2">
+    <div className="border p-2 rounded-md bg-white">
       <button
         className="w-full text-left p-4 flex justify-between items-center"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="font-semibold text-slate-900 text-lg">{question}</span>
         <span className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}>
-          ▼
+          <ChevronDown />
         </span>
       </button>
       <AnimatePresence>
