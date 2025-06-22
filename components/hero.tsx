@@ -111,7 +111,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 grid">
             <ProductHuntBadge />
 
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:h1 mb-2 sm:mb-2 md:mb-2 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:h1 mb-2 sm:mb-2 md:mb-2 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
               SEO-Ready Content sites using just a 
               {" "}
               <span className="font-bungee block font-normal text-gray-800 my-1 sm:my-2">
