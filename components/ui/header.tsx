@@ -68,7 +68,7 @@ export default function Header() {
                   alt="Logo" 
                   width={260} 
                   height={200} 
-                  className="relative w-40 h-auto sm:w-44 md:w-52 lg:w-64" 
+                  className="relative w-32 h-auto sm:w-44 md:w-32 lg:w-40" 
                   priority
                 />
               </Link>
