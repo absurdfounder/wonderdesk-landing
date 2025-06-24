@@ -103,31 +103,31 @@ export default function Header() {
                               href="/create-a-helpdesk-servicedesk-notion"
                               icon={HelpCircle}
                               title="Help Center"
-                              description="Get a professional self-service help center with Notion and Wonder Sites"
+                              description="Get a professional automated help center connected with Notion or Github."
                             />
                             <DropdownLink
                               href="/create-a-marketplace-notion"
                               icon={ShoppingBag}
                               title="Marketplace / Directories"
-                              description="Get a self serving community marketplace that can handle millions in traffic on Notion."
+                              description="Get a self serving community directory or marketplace that can handle millions in traffic."
                             />
                             <DropdownLink
                               href="/create-a-changelog-notion"
                               icon={Lock}
                               title="Changelogs"
-                              description="Create company wiki protected access and AI to answer queries on top of Notion as a database."
+                              description="Create automated changelogs connected to your Github or Notion account."
                             />
                             <DropdownLink
                               href="/create-a-documentation-notion"
                               icon={AlignLeft}
                               title="Product Docs"
-                              description="Create documentation on top of notion and access AI to answer queries on top of Notion as a database."
+                              description="Create automated product docs on top of notion or github with integrated AI Agents."
                             />
                             <DropdownLink
                               href="/create-a-blog-notion"
                               icon={BookOpen}
                               title="Blog"
-                              description="Get a beautiful blog for your startup or company with Notion and Wonder Sites."
+                              description="Get a beautiful blog automated for your startup or company connected to Notion."
                             />
                           </div>
                         </div>
