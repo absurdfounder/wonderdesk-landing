@@ -25,9 +25,9 @@ export const metadata = {
     title: "Get a Marketplace with Notion (no-code and free)",
     description:
         "Build a marketplace in Notion, with our Notion marketplace maker. Go live in under a minute.  Build your free Wonder  marketplace website in a minute!",
-        alternates: {
-            canonical: "https://wondersites.co/create-a-company-wiki-notion",
-          },
+    alternates: {
+        canonical: "https://wondersites.co/create-a-company-wiki-notion",
+    },
     openGraph: {
         images: [
             {
@@ -53,12 +53,12 @@ export default function PageDetail() {
     return (
 
         <div>
-            <section                 style={{
-                    backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundAttachment: "fixed"
-                }}>
+            <section style={{
+                backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed"
+            }}>
                 <Header />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="pt-12 pb-6 md:pt-4 md:pb-6">
@@ -113,18 +113,11 @@ export default function PageDetail() {
                 </div>
             </section>
 
-
             <Marketplace_Type />
-
 
             <FeaturesBlocks />
 
-
-
-
             <Testimonials />
-
-
 
         </div>
 

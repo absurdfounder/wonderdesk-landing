@@ -126,7 +126,7 @@ export default function PageDetail() {
             <Helpdesk_Type />
 
 
-<HowtoHelpdesk/>
+            <HowtoHelpdesk />
 
             <FeaturesBlocks />
 
