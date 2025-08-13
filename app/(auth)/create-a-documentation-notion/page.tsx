@@ -20,6 +20,7 @@ import OldWays from "@/components/old-ways";
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import HowtoDocs from "@/components/how-to-product-docs";
 
 
 export const metadata = {
@@ -120,7 +121,7 @@ export default function PageDetail() {
             <Documentation_Type />
 
 
-<OldWays/>
+<HowtoDocs/>
 
 
             <FeaturesBlocks />

@@ -21,6 +21,7 @@ import OldWays from "@/components/old-ways";
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import CompanyWiki_Type from "@/components/companywiki_type";
+import HowtoChangelog from "@/components/how-to-changelog";
 
 
 export const metadata = {
@@ -124,7 +125,7 @@ export default function PageDetail() {
             <CompanyWiki_Type />
 
 
-            <OldWays />
+            <HowtoChangelog />
 
 
             <FeaturesBlocks />

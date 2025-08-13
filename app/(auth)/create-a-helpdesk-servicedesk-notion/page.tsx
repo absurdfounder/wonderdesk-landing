@@ -21,6 +21,7 @@ import OldWays from "@/components/old-ways";
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import HowtoHelpdesk from "@/components/how-to-helpdesk";
 
 
 export const metadata = {
@@ -125,7 +126,7 @@ export default function PageDetail() {
             <Helpdesk_Type />
 
 
-<OldWays/>
+<HowtoHelpdesk/>
 
             <FeaturesBlocks />
 

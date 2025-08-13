@@ -19,6 +19,7 @@ import OldWays from "@/components/old-ways";
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import HowtoBlog from "@/components/how-to-blog";
 
 
 export const metadata = {
@@ -117,7 +118,7 @@ export default function PageDetail() {
 
             <Blog_Type />
 
-            <OldWays />
+            <HowtoBlog />
 
 
             <FeaturesBlocks />

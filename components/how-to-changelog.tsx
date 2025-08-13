@@ -1,11 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function OldWays() {
+export default function HowtoChangelog() {
   return (
     <section className="relative w-full">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div>
+
+          {/* CTA Section */}
+          <section className=" w-full rounded-2xl py-8 sm:py-12 px-4 sm:px-6 mt-12 mb-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-black">
+                We built the first help center
+                <span className=" block font-normal text-orange-600 mt-2">
+                  that never goes out of date
+                </span>
+              </h2>
+              <p className="text-lg sm:text-xl text-slate-600">
+                Wonder automatically keeps your help center up to date by listening to your team communicate about your product. Here's how it works…
+              </p>
+            </div>
+
+            <img
+              src="https://dazzling-cat.netlify.app/marketingai.png"
+              alt="Launch illustration"
+              className="w-full h-auto mx-auto my-8 border rounded-2xl shadow-md"
+            />
+
+          </section>
+
+
           <section className=" rounded-3xl">
             <div className="container mx-auto">
               <div className="flex flex-col items-start space-y-6 lg:space-y-8 xl:space-y-10">
@@ -182,7 +206,7 @@ export default function OldWays() {
           </section>
 
           {/* CTA Section */}
-          <section className="hidden w-full bg-slate-900 rounded-2xl py-8 sm:py-12 px-4 sm:px-6 mt-12 mb-12">
+          <section className=" w-full bg-slate-900 rounded-2xl py-8 sm:py-12 px-4 sm:px-6 mt-12 mb-12">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">
                 This Time, You'll Actually Launch
