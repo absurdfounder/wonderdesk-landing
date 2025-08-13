@@ -143,7 +143,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             </h1>
 
             <p className="text-base sm:text-md md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-2xl m-auto px-2 sm:px-0 leading-relaxed" style={{ textWrap: 'balance' }}>
-              <span className="text-slate-900">Power your content from <b>Notion or Github</b> in minutes - setup </span>{" "}
+              <span className="text-slate-900">Turn your <b>Notion or Github</b> into Content Sites in minutes - setup </span>{" "}
               <span className="inline-flex flex-wrap gap-x-1 gap-y-1 justify-center items-center">
                 {["Listings", "SEO", "Custom Domains", "Memberships"].map((category, idx) => (
                   <React.Fragment key={category}>
