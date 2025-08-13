@@ -8,7 +8,7 @@ export default function HowtoChangelog() {
         <div>
 
           {/* CTA Section */}
-          <section className=" w-full rounded-2xl py-8 sm:py-12 px-4 sm:px-6 mt-12 mb-12">
+          <section className=" w-full rounded-2xl py-8 sm:py-12 px-1 sm:px-2 mt-12 mb-12">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-black">
                 We built the first changelog
