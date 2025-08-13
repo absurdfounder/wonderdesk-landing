@@ -7,63 +7,137 @@ interface TabItem {
   id: string;
   label: string;
   icon: React.ReactNode;
+  videoSrc?: string;
   special?: boolean;
 }
 
 const SimpleAnalyticsDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('analytics');
   const [isVideoLoading, setIsVideoLoading] = useState<boolean>(true);
+  const [videoError, setVideoError] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const tabs: TabItem[] = [
-    { id: 'analytics', label: 'Analytics', icon: <Play size={16} /> },
-    { id: 'memberships', label: 'Memberships & Paywall', icon: <Play size={16} /> },
-    { id: 'content', label: 'Content Manager AI', icon: <Play size={16} /> },
-    { id: 'forms', label: 'Forms', icon: <Play size={16} /> },
-    { id: 'seo', label: 'SEO', icon: <Play size={16} /> },
-    { id: 'integrations', label: 'Integrations', icon: <Play size={16} /> },
-    { id: 'branding', label: 'Designer AI', icon: <Play size={16} /> },
-    { id: 'component_generator', label: 'Developer AI', icon: <Play size={16} /> },
-    { id: 'wonderai', label: 'AI Agents', icon: <Play size={16} /> },
-    { id: 'conversion', label: 'Paywall', icon: <Play size={16} /> }
+    { 
+      id: 'analytics', 
+      label: 'Analytics', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'memberships', 
+      label: 'Memberships & Paywall', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'content', 
+      label: 'Content Manager AI', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'forms', 
+      label: 'Forms', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'seo', 
+      label: 'SEO', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'integrations', 
+      label: 'Integrations', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'branding', 
+      label: 'Designer AI', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'component_generator', 
+      label: 'Developer AI', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'wonderai', 
+      label: 'AI Agents', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    },
+    { 
+      id: 'conversion', 
+      label: 'Paywall', 
+      icon: <Play size={16} />,
+      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+    }
   ];
+
+  const getCurrentVideoSrc = () => {
+    const currentTab = tabs.find(tab => tab.id === activeTab);
+    return currentTab?.videoSrc || 'https://your-domain.com/videos/default-demo.mp4';
+  };
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
     setIsVideoLoading(true);
+    setVideoError(false);
 
     // Simulate video loading time
     setTimeout(() => {
       setIsVideoLoading(false);
-    }, 1500);
-
-    // Reset and play the video
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
-    }
+    }, 800);
   };
+
+  const handleVideoError = () => {
+    setVideoError(true);
+    setIsVideoLoading(false);
+  };
+
+  const handleVideoLoad = () => {
+    setVideoError(false);
+    setIsVideoLoading(false);
+  };
+
+  useEffect(() => {
+    // Reset and play the video when the tab changes
+    if (videoRef.current && !isVideoLoading) {
+      videoRef.current.load(); // Reload the video with new source
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {
+        // Handle autoplay restrictions
+        console.log('Autoplay prevented');
+      });
+    }
+  }, [activeTab, isVideoLoading]);
 
   useEffect(() => {
     // Simulate initial video load completing
     const timer = setTimeout(() => {
       setIsVideoLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="text-gray-900 p-8 w-full max-w-6xl mx-auto rounded-lg">
-      <h2 className="font-funneldisplay h2 mb-4 m-auto text-center">
-      We know your busy.
-        <span className=" block font-normal text-orange-600">experience clutter free dashboard</span>
+      <h2 className="font-bold text-3xl mb-4 m-auto text-center">
+        We know you're busy.
+        <span className="block font-normal text-orange-600">Experience clutter-free dashboard</span>
       </h2>
 
       {/* Header */}
       <div className="text-center mb-12 px-4">
-        <p className="font-funneldisplay text-xl font-medium mb-4 max-w-4xl m-auto">
-          Build and Forget about us focus on what is important the services that your business provides.
+        <p className="text-xl font-medium mb-4 max-w-4xl m-auto">
+          Build and forget about us. Focus on what's important: the services that your business provides.
         </p>
       </div>
 
@@ -74,12 +148,12 @@ const SimpleAnalyticsDashboard: React.FC = () => {
             key={tab.id}
             onClick={() => handleTabClick(tab.id)}
             className={`
-              flex items-center gap-2 px-4 py-2 rounded-md border-2 font-bold border-orange-300 text-orange-500
+              flex items-center gap-2 px-4 py-2 rounded-md border-2 font-bold border-orange-300 text-orange-500 transition-all duration-200
               ${tab.special
                 ? 'text-orange-900 border-orange-500'
                 : activeTab === tab.id
-                  ? 'bg-orange-600 border-gray-600 text-white'
-                  : 'bg-transparent bg-white/50 border-gray-600 hover:bg-white'
+                  ? 'bg-orange-600 border-orange-600 text-white shadow-lg'
+                  : 'bg-white/50 hover:bg-white hover:shadow-md'
               }
             `}
           >
@@ -90,27 +164,49 @@ const SimpleAnalyticsDashboard: React.FC = () => {
       </div>
 
       {/* Chart/Video Section */}
-      <div className="relative w-full h-96 bg-slate-900/70 rounded-lg overflow-hidden">
+      <div className="relative w-full bg-slate-900/70 rounded-lg overflow-hidden shadow-lg">
         {isVideoLoading ? (
-          <div className="absolute inset-0 flex items-center justify-center bg-orange-600 text-white text-xl font-medium">
-            Loading {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Data...
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-orange-600 to-orange-700 text-white text-xl font-medium">
+            <div className="flex items-center gap-3">
+              <div className="animate-spin rounded-full h-6 w-6 border-2 border-white border-t-transparent"></div>
+              Loading {tabs.find(t => t.id === activeTab)?.label} Demo...
+            </div>
+          </div>
+        ) : videoError ? (
+          <div className="absolute inset-0 flex items-center justify-center bg-red-600 text-white text-center p-8">
+            <div>
+              <h3 className="text-xl font-bold mb-2">Video Unavailable</h3>
+              <p className="text-sm opacity-90">
+                Unable to load the {tabs.find(t => t.id === activeTab)?.label} demo video.
+                <br />Please check your internet connection.
+              </p>
+            </div>
           </div>
         ) : (
-          <>
-            {/* Video placeholder - in a real implementation, you would use actual video sources */}
+          <div className="relative w-full h-full">
             <video
               ref={videoRef}
               className="w-full h-full object-cover"
               loop
               muted
               playsInline
+              controls={false}
+              onError={handleVideoError}
+              onLoadedData={handleVideoLoad}
+              onCanPlay={handleVideoLoad}
             >
-              <source src="/api/placeholder/400/320" type="video/mp4" />
+              <source src={getCurrentVideoSrc()} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </>
+            
+            {/* Video overlay with tab info */}
+            <div className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-md backdrop-blur-sm">
+              {tabs.find(t => t.id === activeTab)?.label} Demo
+            </div>
+          </div>
         )}
       </div>
+
     </div>
   );
 };
