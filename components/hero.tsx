@@ -47,7 +47,7 @@ const NotionLogo = () => (
 // Lightweight Features component
 const Features = React.memo(() => (
   <div className="flex flex-col font-bold items-center justify-center space-y-2 sm:space-y-1 text-xs sm:text-sm opacity-60 sm:flex-row sm:space-x-2 sm:space-y-0 mt-4 sm:mt-6 px-4">
-    {["7-day trial", "Free Design Service", "Free Data Migration"].map((feature, index) => (
+    {["Github", "Notion", "Free Data Migration"].map((feature, index) => (
       <div key={index} className="flex items-center justify-start">
         <Check className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-slate-900 flex-shrink-0" />
         <span className="text-center sm:text-left">{feature}</span>

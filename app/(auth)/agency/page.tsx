@@ -55,19 +55,6 @@ export default function PageDetail() {
                     </div>
 
                     <section className="mb-20">
-                        <div className="px-6 pt-5 pb-10 bg-white lg:px-8">
-                            <div className="max-w-4xl mx-auto text-center">
-                                <p className="text-base font-semibold leading-7 text-orange-600">
-                                    EXPERTS CAN HELP
-                                </p>
-                                <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                                    What can Wonder  Experts do for you?
-                                </h2>
-                                <p className="mt-6 text-slate-600 sm:text-lg sm:leading-8">
-                                    Experts can help with a wide range of design, development, and marketing projects. Helping you reach your business goals as a solo founder or small team.
-                                </p>
-                            </div>
-                        </div>
 
 
                         <div className="max-w-7xl  container mx-auto">
