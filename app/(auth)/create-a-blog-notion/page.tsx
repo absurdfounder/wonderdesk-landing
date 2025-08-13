@@ -81,10 +81,10 @@ export default function PageDetail() {
                                                         ></path>
                                                     </svg>
                                                 </span>
-                                                Notion into a
+                                                Notion into an
                                             </span>
                                             <br className="block" />
-                                            beautiful <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">blog</span>
+                                            automated <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">blog</span>
                                         </h1>
                                         <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
                                             Your support inbox is flooded with customers who want to self-serve, not spend hours talking to an agent.  But your help center is constantly out of date and your customers can’t find what they’re looking for. With Wonder, never again.
@@ -94,7 +94,7 @@ export default function PageDetail() {
                                                 <Link href="/signup" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-md shadow bg-orange-700 sm:w-auto">
                                                     <strong className="mr-1">Get a blog with Notion →</strong>
                                                 </Link>
-                                                <p className="mt-3 text-sm text-slate-700"><strong>Free</strong> 3 day trial. Free Design Service.</p>
+                                                <p className="mt-3 text-sm text-slate-700"><strong>Works with</strong> 3 day trial. Free Design Serviec.</p>
                                             </div>
                                         </div>
                                     </div>

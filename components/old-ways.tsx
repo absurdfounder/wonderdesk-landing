@@ -6,7 +6,7 @@ export default function OldWays() {
     <section className="relative w-full">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div>
-          <section className="bg-white">
+          <section className=" rounded-3xl">
             <div className="container mx-auto">
               <div className="flex flex-col items-start space-y-6 lg:space-y-8 xl:space-y-10">
                 {/* Your content lives inside Notion */}
