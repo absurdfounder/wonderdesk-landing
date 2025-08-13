@@ -28,7 +28,7 @@ const SimpleAnalyticsDashboard: React.FC = () => {
       id: 'memberships', 
       label: 'Memberships & Paywall', 
       icon: <Play size={16} />,
-      videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
+      videoSrc: 'https://dazzling-cat.netlify.app/memberships-shot.mp4'
     },
     { 
       id: 'content', 
