@@ -65,7 +65,6 @@ const SimpleAnalyticsDashboard: React.FC = () => {
         <p className="font-funneldisplay text-xl font-medium mb-4 max-w-4xl m-auto">
           Build and Forget about us focus on what is important the services that your business provides.
         </p>
-        <p className="text-xl">Come In -- Ask AI -- Get Out </p>
       </div>
 
       {/* Tabs */}

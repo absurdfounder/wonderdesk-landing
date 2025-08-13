@@ -106,17 +106,12 @@ export default function Header() {
                               description="Get a professional automated help center connected with Notion or Github."
                             />
                             <DropdownLink
-                              href="/create-a-marketplace-notion"
-                              icon={ShoppingBag}
-                              title="Marketplace / Directories"
-                              description="Get a self serving community directory or marketplace that can handle millions in traffic."
+                              href="/create-a-blog-notion"
+                              icon={BookOpen}
+                              title="Blog"
+                              description="Get a beautiful blog automated for your startup or company connected to Notion."
                             />
-                            <DropdownLink
-                              href="/create-a-changelog-notion"
-                              icon={Lock}
-                              title="Changelogs"
-                              description="Create automated changelogs connected to your Github or Notion account."
-                            />
+
                             <DropdownLink
                               href="/create-a-documentation-notion"
                               icon={AlignLeft}
@@ -124,11 +119,20 @@ export default function Header() {
                               description="Create automated product docs on top of notion or github with integrated AI Agents."
                             />
                             <DropdownLink
-                              href="/create-a-blog-notion"
-                              icon={BookOpen}
-                              title="Blog"
-                              description="Get a beautiful blog automated for your startup or company connected to Notion."
+                              href="/create-a-changelog-notion"
+                              icon={Lock}
+                              title="Changelogs"
+                              description="Create automated changelogs connected to your Github or Notion account."
                             />
+
+                            <DropdownLink
+                              href="/create-a-marketplace-notion"
+                              icon={ShoppingBag}
+                              title="Marketplace / Directories"
+                              description="Get a self serving community directory or marketplace that can handle millions in traffic."
+                            />
+
+
                           </div>
                         </div>
                       </motion.div>
