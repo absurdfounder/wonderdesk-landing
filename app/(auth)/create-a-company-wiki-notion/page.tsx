@@ -80,7 +80,7 @@ export default function PageDetail() {
                                                         ></path>
                                                     </svg>
                                                 </span>
-                                                Github into a
+                                                Github into an
                                             </span>
                                             <br className="block" />
                                             automated <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">company wikipedia</span>

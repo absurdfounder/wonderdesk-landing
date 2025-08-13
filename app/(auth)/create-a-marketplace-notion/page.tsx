@@ -81,7 +81,7 @@ export default function PageDetail() {
                                                         ></path>
                                                     </svg>
                                                 </span>
-                                                Notion into a
+                                                Notion into an
                                             </span>
                                             <br className="block" />
                                             multi-sided <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">marketplace.</span>
