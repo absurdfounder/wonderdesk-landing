@@ -11,9 +11,9 @@ export default function HowtoHelpdesk() {
           <section className=" w-full rounded-2xl py-8 sm:py-12 px-4 sm:px-6 mt-12 mb-12">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-black">
-                We built the first changelog
+                We built the first helpdesk
                 <span className=" block font-normal text-orange-600 mt-2">
-                  that writes itself.
+                  that writes itself from support chats.
                 </span>
               </h2>
               <p className="text-lg sm:text-xl text-slate-600">

@@ -13,7 +13,7 @@ export default function HowtoChangelog() {
               <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-black">
                 We built the first changelog
                 <span className=" block font-normal text-orange-600 mt-2">
-                  that writes itself.
+                  that writes itself from github.
                 </span>
               </h2>
               <p className="text-lg sm:text-xl text-slate-600">
