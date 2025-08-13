@@ -331,7 +331,7 @@ function TemplateClientContent() {
                                                         href="https://app.youform.com/forms/design-assistance" // Keep href for potential direct click
                                                         target="_blank"
                                                         rel="noopener"
-                                                        initialText="Create a free site now →"
+                                                        initialText="Get started - free now →"
                                                         hoverText="in just 15 mins" // Or other text
                                                         className="btn bg-white hover:bg-slate-100 shadow px-12 inline-block text-orange-600 py-3" // Original classes merged with base
                                                     />

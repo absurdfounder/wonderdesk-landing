@@ -720,7 +720,7 @@ const Pricing: React.FC = () => {
                                 {/* --- UPDATED TO USE FlippingButtonLink --- */}
                                 <FlippingButtonLink
                                     href="https://app.wondersites.co"
-                                    initialText="Create a free site"
+                                    initialText="Get started - free"
                                     hoverText="in under 15 mins" // Customize hover text if needed
                                     className={tier.highlight
                                         ? 'bg-orange-600 hover:bg-orange-700 text-white focus:ring-orange-500'

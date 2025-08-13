@@ -126,9 +126,9 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             </h1>
 
             <p className="text-base sm:text-md md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-2xl m-auto px-2 sm:px-0 leading-relaxed" style={{ textWrap: 'balance' }}>
-              <span className="text-slate-900"><b>Build Production-ready</b> apps in minutes - setup </span>{" "}
+              <span className="text-slate-900">Power your content from <b>Notion or Github</b> in minutes - setup </span>{" "}
               <span className="inline-flex flex-wrap gap-x-1 gap-y-1 justify-center items-center">
-                {["Listings", "SEO", "Custom Domains", "Payments"].map((category, idx) => (
+                {["Listings", "SEO", "Custom Domains", "Memberships"].map((category, idx) => (
                   <React.Fragment key={category}>
                     {idx > 0 && <span className="hidden sm:inline">, </span>}
                     <button
@@ -161,7 +161,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
                   }}
                 >
-                  Create a free site
+                  Get started - free
                 </div>
                 <div
                   className="absolute top-0 left-0 w-full text-center transition-transform duration-150 whitespace-nowrap"
@@ -172,7 +172,6 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   in just 15 mins.
                 </div>
               </div>
-              <ArrowRight className="w-4 h-4 flex-shrink-0" />
             </Link>
 
             <button
