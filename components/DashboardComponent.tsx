@@ -32,7 +32,7 @@ const SimpleAnalyticsDashboard: React.FC = () => {
     },
     { 
       id: 'content', 
-      label: 'Content Manager AI', 
+      label: 'Content AI', 
       icon: <Play size={16} />,
       videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
     },
