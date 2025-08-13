@@ -15,6 +15,8 @@ import Directory_Type from "@/components/directory_type";
 import Testimonials from "@/components/testimonials";
 import Header from "@/components/ui/header";
 
+import OldWays from "@/components/old-ways";
+
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
@@ -118,6 +120,9 @@ export default function PageDetail() {
 
 
             <Directory_Type />
+
+
+<OldWays/>
 
 
             <FeaturesBlocks />

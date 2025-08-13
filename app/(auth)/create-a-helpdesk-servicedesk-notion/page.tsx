@@ -16,6 +16,8 @@ import Testimonials from "@/components/testimonials";
 
 import Header from "@/components/ui/header";
 
+import OldWays from "@/components/old-ways";
+
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
@@ -25,9 +27,9 @@ export const metadata = {
     title: "Get a help desk with Notion (no-code and free)",
     description:
         "Build a help desk in Notion, with our Notion help desk maker. Go live in under a minute.  Build your free Wonder  help desk website in a minute!",
-        alternates: {
-            canonical: "https://wondersites.co/create-a-helpdesk-servicedesk-notion",
-          },
+    alternates: {
+        canonical: "https://wondersites.co/create-a-helpdesk-servicedesk-notion",
+    },
     openGraph: {
         images: [
             {
@@ -53,12 +55,12 @@ export default function PageDetail() {
     return (
 
         <div >
-            <section                 style={{
-                    backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundAttachment: "fixed"
-                }}>
+            <section style={{
+                backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed"
+            }}>
 
                 <Header />
 
@@ -122,6 +124,8 @@ export default function PageDetail() {
 
             <Helpdesk_Type />
 
+
+<OldWays/>
 
             <FeaturesBlocks />
 

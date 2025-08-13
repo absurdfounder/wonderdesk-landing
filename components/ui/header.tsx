@@ -172,7 +172,7 @@ export default function Header() {
                           style={{
                             transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
                           }}>
-                          Get started - free
+                          Create a Site 
                         </div>
                         <div className="transition-transform duration-300 transform absolute top-0 left-0 truncate max-w-[120px]"
                           style={{

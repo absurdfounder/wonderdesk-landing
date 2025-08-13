@@ -15,6 +15,8 @@ import Directory_Type from "@/components/directory_type";
 import Testimonials from "@/components/testimonials";
 import Header from "@/components/ui/header";
 
+import OldWays from "@/components/old-ways";
+
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
@@ -25,9 +27,9 @@ export const metadata = {
     title: "Get a directory with Notion (no-code and free)",
     description:
         "Build a directory in Notion, with our Notion directory maker. Go live in under a minute.  Build your free Wonder  directory website in a minute!",
-        alternates: {
-            canonical: "https://wondersites.co/create-a-directory-notion",
-          },
+    alternates: {
+        canonical: "https://wondersites.co/create-a-directory-notion",
+    },
     openGraph: {
         images: [
             {
@@ -53,12 +55,12 @@ export default function PageDetail() {
     return (
 
         <div>
-            <section                 style={{
-                    backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundAttachment: "fixed"
-                }}>
+            <section style={{
+                backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed"
+            }}>
 
                 <Header />
 
@@ -92,7 +94,7 @@ export default function PageDetail() {
                                         <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
                                             Your support inbox is flooded with customers who want to self-serve, not spend hours talking to an agent.  But your help center is constantly out of date and your customers can’t find what they’re looking for. With Wonder, never again.
                                         </p>
-                                        
+
                                         <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
                                             <div className="mt-3 sm:mt-0">
                                                 <Link href="/signup" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-md shadow bg-orange-700 sm:w-auto">
@@ -122,16 +124,10 @@ export default function PageDetail() {
             <CompanyWiki_Type />
 
 
+            <OldWays />
+
+
             <FeaturesBlocks />
-
-
-
-            <section className="mb-20">
-
-
-
-
-            </section>
 
 
             <Testimonials />

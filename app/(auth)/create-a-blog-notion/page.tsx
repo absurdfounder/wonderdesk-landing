@@ -14,6 +14,8 @@ import Blog_Type from "@/components/blog_type";
 import Testimonials from "@/components/testimonials";
 import Header from "@/components/ui/header";
 
+import OldWays from "@/components/old-ways";
+
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
@@ -23,9 +25,9 @@ export const metadata = {
     title: "Get a blog with Notion (no-code and free)",
     description:
         "Build a blog in Notion, with our Notion blog maker. Go live in under a minute.  Build your free Wonder  blog website in a minute!",
-        alternates: {
-            canonical: "https://wondersites.co/create-a-blog-notion",
-          },
+    alternates: {
+        canonical: "https://wondersites.co/create-a-blog-notion",
+    },
     openGraph: {
         images: [
             {
@@ -51,12 +53,12 @@ export default function PageDetail() {
     return (
 
         <div>
-            <section                 style={{
-                    backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundAttachment: "fixed"
-                }}>
+            <section style={{
+                backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.png)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed"
+            }}>
 
                 <Header />
 
@@ -114,6 +116,8 @@ export default function PageDetail() {
 
 
             <Blog_Type />
+
+            <OldWays />
 
 
             <FeaturesBlocks />

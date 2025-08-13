@@ -11,9 +11,9 @@ export default function OldWays() {
               <div className="flex flex-col items-start space-y-6 lg:space-y-8 xl:space-y-10">
                 {/* Your content lives inside Notion */}
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
-                <div className="grid md:flex items-center h-full bg-white">
-                <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
-                <p className="text-sm font-bold uppercase tracking-wide text-orange-600">No Hosting Hassles</p>
+                  <div className="grid md:flex items-center h-full bg-white">
+                    <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
+                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600">No Hosting Hassles</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Your content <span className="font-serif font-normal text-orange-600">lives inside Notion</span>
                       </h3>
@@ -22,15 +22,16 @@ export default function OldWays() {
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
-                                style={{
-                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center"                                }}
-                    
+                      style={{
+                        background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                      }}
+
                     >
-                    <img 
-                        src="https://dazzling-cat.netlify.app/write%20on%20notion.png" 
-                        alt="Write on Notion" 
+                      <img
+                        src="https://dazzling-cat.netlify.app/write%20on%20notion.png"
+                        alt="Write on Notion"
                         className="w-full h-auto rounded-lg object-cover"
                       />
                     </div>
@@ -50,14 +51,15 @@ export default function OldWays() {
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
-                                style={{
-                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center"                                }}
-                    
-                    >                      <img 
-                        src="https://dazzling-cat.netlify.app/performancewebsite.png" 
-                        alt="Performance Website" 
+                      style={{
+                        background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                      }}
+
+                    >                      <img
+                        src="https://dazzling-cat.netlify.app/performancewebsite.png"
+                        alt="Performance Website"
                         className="w-full h-auto rounded-lg object-cover"
                       />
                     </div>
@@ -77,14 +79,15 @@ export default function OldWays() {
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
-                                style={{
-                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center"                                }}
-                    
-                    >                      <img 
-                        src="https://dazzling-cat.netlify.app/notion%20to%20website.png" 
-                        alt="Notion to Website" 
+                      style={{
+                        background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                      }}
+
+                    >                      <img
+                        src="https://dazzling-cat.netlify.app/notion%20to%20website.png"
+                        alt="Notion to Website"
                         className="w-full h-auto rounded-lg object-cover"
                       />
                     </div>
@@ -104,14 +107,15 @@ export default function OldWays() {
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
-                                style={{
-                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center"                                }}
-                    
-                    >                      <img 
-                        src="https://dazzling-cat.netlify.app/analyticsseo.png" 
-                        alt="Analytics SEO" 
+                      style={{
+                        background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                      }}
+
+                    >                      <img
+                        src="https://dazzling-cat.netlify.app/analyticsseo.png"
+                        alt="Analytics SEO"
                         className="w-full h-auto rounded-lg object-cover"
                       />
                     </div>
@@ -131,14 +135,15 @@ export default function OldWays() {
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
-                                style={{
-                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center"                                }}
-                    
-                    >                      <img 
-                        src="https://dazzling-cat.netlify.app/aisupportreco.png" 
-                        alt="AI Support" 
+                      style={{
+                        background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                      }}
+
+                    >                      <img
+                        src="https://dazzling-cat.netlify.app/aisupportreco.png"
+                        alt="AI Support"
                         className="w-full h-auto rounded-lg object-cover"
                       />
                     </div>
@@ -158,14 +163,15 @@ export default function OldWays() {
                       </p>
                     </div>
                     <div className="w-full px-4 pt-6 md:w-3/5 rounded-md mr-4"
-                                style={{
-                                  background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center"                                }}
-                    
-                    >                      <img 
-                        src="https://dazzling-cat.netlify.app/integrationsdb.png" 
-                        alt="Integrations DB" 
+                      style={{
+                        background: "linear-gradient(45deg, #ececec5e, #b1b1b11a)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                      }}
+
+                    >                      <img
+                        src="https://dazzling-cat.netlify.app/integrationsdb.png"
+                        alt="Integrations DB"
                         className="w-full h-auto rounded-lg object-cover"
                       />
                     </div>
@@ -189,24 +195,24 @@ export default function OldWays() {
               </p>
             </div>
 
-            <img 
+            <img
               src="https://dazzling-cat.netlify.app/marry.png"
-              alt="Launch illustration" 
+              alt="Launch illustration"
               className="max-w-2xl w-full h-auto mx-auto my-8"
             />
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-xl mx-auto px-4">
-              <Link 
+              <Link
                 href="https://app.wondersites.co"
                 className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl bg-orange-700 text-black rounded-lg hover:bg-orange-700 transition-colors duration-300 text-center"
               >
                 Start from 98% Ready
               </Link>
-              <Link 
+              <Link
                 href="#template-section"
                 className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl border border-white text-white rounded-lg hover:bg-slate-800 transition-colors duration-300 text-center"
               >
-                Sites built on Wonder 
+                Sites built on Wonder
               </Link>
             </div>
           </section>
