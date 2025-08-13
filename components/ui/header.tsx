@@ -63,12 +63,12 @@ export default function Header() {
             {/* Logo */}
             <div className='flex items-center'>
               <Link href="/" className="shrink-0 mr-2 sm:mr-4 relative group">
-                <Image 
-                  src={Logo} 
-                  alt="Logo" 
-                  width={260} 
-                  height={200} 
-                  className="relative w-32 h-auto sm:w-44 md:w-32 lg:w-40" 
+                <Image
+                  src={Logo}
+                  alt="Logo"
+                  width={260}
+                  height={200}
+                  className="relative w-32 h-auto sm:w-44 md:w-32 lg:w-40"
                   priority
                 />
               </Link>
@@ -176,7 +176,7 @@ export default function Header() {
                           style={{
                             transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
                           }}>
-                          Create a Site 
+                          Create a Site
                         </div>
                         <div className="transition-transform duration-300 transform absolute top-0 left-0 truncate max-w-[120px]"
                           style={{
