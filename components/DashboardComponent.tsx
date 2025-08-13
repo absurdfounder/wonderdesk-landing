@@ -56,13 +56,13 @@ const SimpleAnalyticsDashboard: React.FC = () => {
     },
     { 
       id: 'branding', 
-      label: 'Designer AI', 
+      label: 'Editor', 
       icon: <Play size={16} />,
       videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
     },
     { 
       id: 'component_generator', 
-      label: 'Developer AI', 
+      label: 'Code Generator', 
       icon: <Play size={16} />,
       videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
     },
@@ -73,8 +73,8 @@ const SimpleAnalyticsDashboard: React.FC = () => {
       videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
     },
     { 
-      id: 'conversion', 
-      label: 'Paywall', 
+      id: 'widgets', 
+      label: 'Widgets', 
       icon: <Play size={16} />,
       videoSrc: 'https://dazzling-cat.netlify.app/analytics-shot.mp4'
     }
