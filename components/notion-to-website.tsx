@@ -49,13 +49,13 @@ export default function FeaturesBlocks() {
             >
               <div className={`w-8 h-8 border-2 font-bold rounded flex items-center justify-center transition-colors duration-500 ${
                 index === highlightedIndex 
-                  ? 'bg-green-50 border-green-500' 
+                  ? 'bg-blue-50 border-blue-500' 
                   : 'bg-white border-gray-300'
               }`}>
                 <svg width="22" height="22" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 8l3 3 7-7"
-                    stroke={index === highlightedIndex ? '#10b981' : 'transparent'}
+                    stroke={index === highlightedIndex ? '#2889ffff' : 'transparent'}
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
