@@ -129,91 +129,91 @@ const scaleFeatures: Feature[] = [
 
 const faqs: Record<string, FAQ[]> = {
     Pricing: [
-      {
-        question: "How does the free 3-day trial work?",
-        answer: "Wonder offers a 3-day free trial to help you explore everything we offer. There’s zero cost to get started, and during the trial you’ll have full access to all features. After the trial, you can choose a subscription plan to continue.",
-      },
-      {
-        question: "What are the pricing plans?",
-        answer: "Wonder offers flexible pricing plans based on your needs. Plans vary based on usage and feature access. You can view full details on our pricing page.",
-      },
-      {
-        question: "Are there any additional fees?",
-        answer: "Pricing is exclusive of taxes. Some add-ons and advanced features may have additional costs, which are clearly outlined when applicable.",
-      },
-      {
-        question: "Do I need to enter my credit card to start the trial?",
-        answer: "No. You can start your free trial without providing payment details. Payment is only required when you're ready to upgrade.",
-      },
-      {
-        question: "What happens after my free trial ends?",
-        answer: "Once your trial ends, you’ll be asked to choose a subscription plan. If you don't upgrade, your site will be paused, but your content will remain saved.",
-      },
-      {
-        question: "Can I cancel or switch plans anytime?",
-        answer: "Yes, you can upgrade, downgrade, or cancel your plan at any time from your dashboard. Changes will take effect in your next billing cycle.",
-      },
-      {
-        question: "Are there discounts for students, startups, or nonprofits?",
-        answer: "Yes! We offer special discounts. Please contact support@wondersites.co with proof of eligibility to apply.",
-      },
-      {
-        question: "Do you offer custom pricing for agencies or enterprises?",
-        answer: "Yes, we offer custom plans tailored for agencies and larger teams managing multiple websites. Contact us for details.",
-      },
-      {
-        question: "Can I switch from monthly to annual billing?",
-        answer: "Absolutely. You can switch to annual billing anytime and enjoy a discounted rate compared to monthly payments.",
-      },
-      {
-        question: "Will my site go offline if my payment fails?",
-        answer: "We’ll notify you if there’s an issue with your payment and provide a grace period to update your billing info. Your site won't be taken down immediately.",
-      },
+        {
+            question: "How does the free 3-day trial work?",
+            answer: "Wonder offers a 3-day free trial to help you explore everything we offer. There’s zero cost to get started, and during the trial you’ll have full access to all features. After the trial, you can choose a subscription plan to continue.",
+        },
+        {
+            question: "What are the pricing plans?",
+            answer: "Wonder offers flexible pricing plans based on your needs. Plans vary based on usage and feature access. You can view full details on our pricing page.",
+        },
+        {
+            question: "Are there any additional fees?",
+            answer: "Pricing is exclusive of taxes. Some add-ons and advanced features may have additional costs, which are clearly outlined when applicable.",
+        },
+        {
+            question: "Do I need to enter my credit card to start the trial?",
+            answer: "No. You can start your free trial without providing payment details. Payment is only required when you're ready to upgrade.",
+        },
+        {
+            question: "What happens after my free trial ends?",
+            answer: "Once your trial ends, you’ll be asked to choose a subscription plan. If you don't upgrade, your site will be paused, but your content will remain saved.",
+        },
+        {
+            question: "Can I cancel or switch plans anytime?",
+            answer: "Yes, you can upgrade, downgrade, or cancel your plan at any time from your dashboard. Changes will take effect in your next billing cycle.",
+        },
+        {
+            question: "Are there discounts for students, startups, or nonprofits?",
+            answer: "Yes! We offer special discounts. Please contact support@wondersites.co with proof of eligibility to apply.",
+        },
+        {
+            question: "Do you offer custom pricing for agencies or enterprises?",
+            answer: "Yes, we offer custom plans tailored for agencies and larger teams managing multiple websites. Contact us for details.",
+        },
+        {
+            question: "Can I switch from monthly to annual billing?",
+            answer: "Absolutely. You can switch to annual billing anytime and enjoy a discounted rate compared to monthly payments.",
+        },
+        {
+            question: "Will my site go offline if my payment fails?",
+            answer: "We’ll notify you if there’s an issue with your payment and provide a grace period to update your billing info. Your site won't be taken down immediately.",
+        },
     ],
     Features: [
-      {
-        question: "What is Wondersites?",
-        answer: "Wondersites is a powerful no-code website builder that turns your Notion pages into beautiful, functional websites—perfect for blogs, documentation, directories, and more.",
-      },
-      {
-        question: "What types of websites can I build?",
-        answer: "You can create blogs, help centers, knowledge bases, directories, marketing pages, and even marketplaces—all powered by Notion.",
-      },
-      {
-        question: "Do I need to know how to code?",
-        answer: "No! Wondersites is built for non-technical users. You can build a complete site using Notion and our tools—no coding required.",
-      },
-      {
-        question: "Can I use my own custom domain?",
-        answer: "Yes, Wondersites lets you connect your own custom domain to your site for a branded experience.",
-      },
-      {
-        question: "Is my content synced with Notion?",
-        answer: "Yes. Any changes you make in Notion will be automatically reflected on your live site. It’s always up to date.",
-      },
-      {
-        question: "Does Wondersites support SEO?",
-        answer: "Absolutely. Wondersites offers built-in SEO tools like meta tags, custom URLs, fast loading speeds, and mobile-friendly design.",
-      },
-      {
-        question: "Can I customize my site's design?",
-        answer: "Yes. Choose from pre-built themes, adjust layout settings, or add custom CSS and code to make your site truly yours.",
-      },
-      {
-        question: "Is Wondersites mobile-friendly?",
-        answer: "Yes. Every Wondersite is fully responsive, meaning it looks great on desktops, tablets, and mobile devices.",
-      },
-      {
-        question: "Can I track analytics?",
-        answer: "Yes. Wondersites includes built-in privacy-friendly analytics, and you can also connect external tools like Google Analytics.",
-      },
-      {
-        question: "Is it secure?",
-        answer: "Wondersites follows best practices in security including HTTPS, secure Notion access, and regular data protection protocols.",
-      }
+        {
+            question: "What is Wondersites?",
+            answer: "Wondersites is a powerful no-code website builder that turns your Notion pages into beautiful, functional websites—perfect for blogs, documentation, directories, and more.",
+        },
+        {
+            question: "What types of websites can I build?",
+            answer: "You can create blogs, help centers, knowledge bases, directories, marketing pages, and even marketplaces—all powered by Notion.",
+        },
+        {
+            question: "Do I need to know how to code?",
+            answer: "No! Wondersites is built for non-technical users. You can build a complete site using Notion and our tools—no coding required.",
+        },
+        {
+            question: "Can I use my own custom domain?",
+            answer: "Yes, Wondersites lets you connect your own custom domain to your site for a branded experience.",
+        },
+        {
+            question: "Is my content synced with Notion?",
+            answer: "Yes. Any changes you make in Notion will be automatically reflected on your live site. It’s always up to date.",
+        },
+        {
+            question: "Does Wondersites support SEO?",
+            answer: "Absolutely. Wondersites offers built-in SEO tools like meta tags, custom URLs, fast loading speeds, and mobile-friendly design.",
+        },
+        {
+            question: "Can I customize my site's design?",
+            answer: "Yes. Choose from pre-built themes, adjust layout settings, or add custom CSS and code to make your site truly yours.",
+        },
+        {
+            question: "Is Wondersites mobile-friendly?",
+            answer: "Yes. Every Wondersite is fully responsive, meaning it looks great on desktops, tablets, and mobile devices.",
+        },
+        {
+            question: "Can I track analytics?",
+            answer: "Yes. Wondersites includes built-in privacy-friendly analytics, and you can also connect external tools like Google Analytics.",
+        },
+        {
+            question: "Is it secure?",
+            answer: "Wondersites follows best practices in security including HTTPS, secure Notion access, and regular data protection protocols.",
+        }
     ]
-  };
-  
+};
+
 
 // Feature Tooltip Component
 interface FeatureTooltipProps {
@@ -627,15 +627,15 @@ const Pricing: React.FC = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative">
-            <div className="mb-8">
-                <div className="text-center max-w-4xl mx-auto mb-16">
-                    <h1 className="font-funneldisplay text-4xl md:text-5xl tracking-tight mb-6">
-                        <span className="text-slate-800 block mb-2">
-                            Hire <img src="/favicon.ico" className="inline-block w-12 h-12 rounded-md align-middle mx-1"/> Wonder at your company
-                        </span>
-                    </h1>
+                <div className="mb-8">
+                    <div className="text-center max-w-4xl mx-auto mb-16">
+                        <h1 className="font-funneldisplay text-4xl md:text-5xl tracking-tight mb-6">
+                            <span className="text-slate-800 block mb-2">
+                                Hire <img src="/favicon.ico" className="inline-block w-12 h-12 rounded-md align-middle mx-1" /> Wonder at your company
+                            </span>
+                        </h1>
+                    </div>
                 </div>
-            </div>
 
                 {/* Pricing Cards */}
                 <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-16">
@@ -698,7 +698,7 @@ const Pricing: React.FC = () => {
                                     className={tier.highlight
                                         ? 'bg-orange-600 hover:bg-orange-700 text-white focus:ring-orange-500'
                                         : 'bg-slate-100 hover:bg-slate-200 text-slate-800 focus:ring-slate-500'
-                                        }
+                                    }
                                 />
                                 {/* --- END OF UPDATE --- */}
                             </div>
