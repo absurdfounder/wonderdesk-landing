@@ -62,8 +62,8 @@ export default function Home() {
       <br />
       <ModalVideo />
       <NotiontoWebsite />
-      <Marketplace_Type />
       {/* 
+      <Marketplace_Type />
       <Testimonials />
       */}
       <FeaturesBlocks />
