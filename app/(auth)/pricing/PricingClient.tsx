@@ -627,42 +627,15 @@ const Pricing: React.FC = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative">
-                {/* Header */}
+            <div className="mb-8">
                 <div className="text-center max-w-4xl mx-auto mb-16">
-                    <h1 className="font-funneldisplay text-4xl md:text-5xl font-bold tracking-tight mb-6 font-funneldisplay">
-                        <span className="text-slate-800 block mb-2 font-bold">simple pricing, powerful features</span>
-                    </h1>
-
-                    {/* Billing toggle */}
-                    <div className="inline-flex items-center bg-white rounded-md border border-slate-200 p-1 shadow-sm mb-6 text-lg">
-                                                <button
-                            className={`px-6 py-2 font-medium rounded-md transition-all ${activeTab === 'Monthly'
-                                ? 'bg-slate-600 text-slate-100'
-                                : 'text-slate-600 hover:text-slate-900'
-                                }`}
-                            onClick={() => handleTabClick('Monthly')}
-                        >
-                            Monthly
-                        </button>
-                        <button
-                            className={`px-6 py-2 font-medium rounded-md transition-all ${activeTab === 'Yearly'
-                                ? 'bg-slate-600 text-slate-100'
-                                : 'text-slate-600 hover:text-slate-900'
-                                }`}
-                            onClick={() => handleTabClick('Yearly')}
-                        >
-                            Yearly <span className="text-orange-300 font-semibold ml-1">50% off</span>
-                        </button>
-                    </div>
-
-                    <div className="flex items-center justify-center text-sm text-slate-700">
-                        <Lock className="w-4 h-4 text-orange-600 mr-2" />
-                        <span>
-                            <span className="font-medium">Pricing is locked for early users</span>
-                            {' '}- secure your price now
+                    <h1 className="font-funneldisplay text-4xl md:text-5xl font-bold tracking-tight mb-6">
+                        <span className="text-slate-800 block mb-2 font-bold">
+                            Hire <img src="/favicon.ico" className="inline-block w-12 h-12 rounded-md align-middle mx-1"/> Wonder at your company
                         </span>
-                    </div>
+                    </h1>
                 </div>
+            </div>
 
                 {/* Pricing Cards */}
                 <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-16">
@@ -678,7 +651,7 @@ const Pricing: React.FC = () => {
                                 } overflow-hidden flex flex-col h-full`}
                         >
                             {tier.highlight && (
-                                <div className="bg-orange-500 text-white text-center py-1 text-sm font-medium">
+                                <div className="bg-orange-300 text-black text-center py-1 text-sm font-medium">
                                     MOST POPULAR
                                 </div>
                             )}

@@ -33,7 +33,7 @@ export default function FeaturesBlocks() {
       }} />
       
       <div className="max-w-4xl w-full text-left">
-        <h1 className="text-4xl font-light text-gray-500 leading-relaxed mb-6">
+        <h1 className="text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose">
           The platform with an {' '}
           <span className="font-medium text-gray-900">AI agent</span>
           {' '}that keeps your
