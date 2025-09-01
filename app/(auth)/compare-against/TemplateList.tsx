@@ -423,7 +423,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                         {template.product.tags && template.product.tags.slice(0, 2).map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
-                            className={`inline-block px-3 py-1 rounded-md text-sm bg-orange-100 text-orange-800`}
+                            className={`inline-block px-3 py-1 rounded-md text-sm bg-slate-100 text-slate-800`}
                           >
                             {tag}
                           </span>

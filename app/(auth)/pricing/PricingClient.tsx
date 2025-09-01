@@ -629,8 +629,8 @@ const Pricing: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative">
             <div className="mb-8">
                 <div className="text-center max-w-4xl mx-auto mb-16">
-                    <h1 className="font-funneldisplay text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                        <span className="text-slate-800 block mb-2 font-bold">
+                    <h1 className="font-funneldisplay text-4xl md:text-5xl tracking-tight mb-6">
+                        <span className="text-slate-800 block mb-2">
                             Hire <img src="/favicon.ico" className="inline-block w-12 h-12 rounded-md align-middle mx-1"/> Wonder at your company
                         </span>
                     </h1>
