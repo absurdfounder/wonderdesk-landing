@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Github, PlayIcon } from 'lucide-react';
+import { ArrowRight, Github } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image'; // Use Next.js Image for optimization
 
@@ -198,8 +198,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               className="text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
             >
               <div className="flex items-center justify-center w-full">
-                <span>What is Wonder ?</span>
-                <PlayIcon className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                <span>Book a Demo</span>
+                <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
               </div>
             </button>
           </div>
