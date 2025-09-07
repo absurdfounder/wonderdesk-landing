@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 export default function FeaturesBlocks() {
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const features = [
-    'Helpdesk update from support tickets', 
-    'Blogs write & publish automatically', 
-    'Changelogs sync from GitHub releases'
+    'Helpdesk update ← support tickets', 
+    'Blogs published ← using SEO Keywords', 
+    'Changelogs sync ← GitHub releases'
   ];
 
   useEffect(() => {
