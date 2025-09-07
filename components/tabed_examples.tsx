@@ -34,21 +34,6 @@ const TabImageHotspots = () => {
 
   const tabs: Tab[] = [
     {
-      title: 'Product Docs',
-      image: 'https://dazzling-cat.netlify.app/marketingai.png',
-      icon: <BarChart3 size={isMobile ? 16 : 20} />,
-      activeColor: 'bg-purple-100',
-      inactiveColor: 'bg-purple-50',
-      bgColor: 'bg-purple-100',
-      textColor: 'text-purple-800',
-      borderColor: 'border-purple-500',
-      hotspots: [
-        { id: 1, x: 20, y: 30, text: 'Navigation menu - Access all main features from here' },
-        { id: 2, x: 50, y: 50, text: 'Activity feed - See recent updates and changes' },
-        { id: 3, x: 80, y: 20, text: 'User profile settings and notifications' }
-      ]
-    },
-    {
       title: 'Helpdesk',
       image: 'https://dazzling-cat.netlify.app/marketingai.png',
       icon: <Users size={isMobile ? 16 : 20} />,
@@ -79,9 +64,9 @@ const TabImageHotspots = () => {
       ]
     },
     {
-      title: 'Directory',
-      image: 'https://dazzling-cat.netlify.app/notionbear.png',
-      icon: <FolderTree size={isMobile ? 16 : 20} />,
+      title: 'Product Docs',
+      image: 'https://dazzling-cat.netlify.app/marketingai.png',
+      icon: <BarChart3 size={isMobile ? 16 : 20} />,
       activeColor: 'bg-yellow-100',
       inactiveColor: 'bg-yellow-50',
       bgColor: 'bg-yellow-100',

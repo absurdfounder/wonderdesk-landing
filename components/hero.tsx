@@ -143,9 +143,9 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             </h1>
 
             <p className="text-base sm:text-md md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-2xl m-auto px-2 sm:px-0 leading-relaxed" style={{ textWrap: 'balance' }}>
-              <span className="text-slate-900">Turn your <b>Notion or Github</b> into Content Sites in minutes - setup </span>{" "}
+              <span className="text-slate-900">Wonder's AI agents turn your <b>Notion & Github</b> into self-updating </span>{" "}
               <span className="inline-flex flex-wrap gap-x-1 gap-y-1 justify-center items-center">
-                {["Listings", "SEO", "Custom Domains", "Memberships"].map((category, idx) => (
+                {["Blogs", "Helpdesks", "Technical Docs", "Changelogs"].map((category, idx) => (
                   <React.Fragment key={category}>
                     {idx > 0 && <span className="hidden sm:inline">, </span>}
                     <button
@@ -159,7 +159,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 ))}
               </span>
               {" "}
-              <span className="block sm:inline mt-1 sm:mt-0">– without any technical skills.</span>
+              <span className="block sm:inline mt-1 sm:mt-0">– 100% automated.</span>
             </p>
           </div>
 
@@ -178,7 +178,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
                   }}
                 >
-                  Get started - free
+                  Get Started for free
                 </div>
                 <div
                   className="absolute top-0 left-0 w-full text-center transition-transform duration-150 whitespace-nowrap"
