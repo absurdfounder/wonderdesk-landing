@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 export default function FeaturesBlocks() {
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const features = [
-    'Helpdesk up-to date', 
-    'Blog run on auto-pilot', 
-    'Change logs always fresh'
+    'Helpdesk update from support tickets', 
+    'Blogs write & publish automatically', 
+    'Changelogs sync from GitHub releases'
   ];
 
   useEffect(() => {
@@ -34,9 +34,9 @@ export default function FeaturesBlocks() {
       
       <div className="max-w-4xl w-full text-left">
         <h1 className="text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose">
-          The platform with an {' '}
+          Wonder {' '}
           <span className="font-medium text-gray-900">AI agent</span>
-          {' '}that keeps your
+          {' '} solves these
         </h1>
         
         <div className="space-y-4 mb-8">
@@ -79,7 +79,7 @@ export default function FeaturesBlocks() {
         </div>
         
         <p className="text-4xl font-light text-gray-500">
-          Setup <span className="font-medium text-black">content automations</span> using AI Agents.
+          Set it once. Forget it forever.
         </p>
       </div>
     </div>
