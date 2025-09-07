@@ -46,8 +46,8 @@ export default function TellaVideoButton() {
               </video>
               {/* Play button overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-white rounded-full p-2 md:p-3 shadow-lg transform transition-transform hover:scale-110">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-10 md:w-10 text-slate-600" viewBox="0 0 20 20" fill="currentColor">
+                <div className="flex items-center justify-center rounded-xl bg-neutral-300/30 px-4 py-3 text-lg font-semibold text-gray-600 shadow-xl ring-4 shadow-gray-800/30 ring-gray-400/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-10 md:w-10 text-blue-700" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                   </svg>
                 </div>

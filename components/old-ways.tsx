@@ -13,7 +13,7 @@ export default function OldWays() {
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
                   <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
-                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600">No Hosting Hassles</p>
+                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600 font-silkscreen">No Hosting Hassles</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Your content <span className="font-serif font-normal text-orange-600">lives inside Notion</span>
                       </h3>
@@ -42,7 +42,7 @@ export default function OldWays() {
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
                   <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
-                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Optimized for</p>
+                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600 font-silkscreen">Optimized for</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Perfected for <span className="font-serif font-normal text-orange-600">SEO</span>
                       </h3>
@@ -70,7 +70,7 @@ export default function OldWays() {
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
                   <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
-                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Paid Subscribers</p>
+                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600 font-silkscreen">Paid Subscribers</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Membership for <span className="font-serif font-normal text-orange-600">paid subscribers.</span>
                       </h3>
@@ -98,7 +98,7 @@ export default function OldWays() {
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
                   <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
-                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600">In-built</p>
+                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600 font-silkscreen">In-built</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         In-built <span className="font-serif font-normal text-orange-600">analytics</span>
                       </h3>
@@ -126,7 +126,7 @@ export default function OldWays() {
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
                   <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
-                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600">AI SUPPORT & SUGGESTIONS</p>
+                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600 font-silkscreen">AI SUPPORT & SUGGESTIONS</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Create AI Agents <span className="font-serif font-normal text-orange-600">over your content.</span>
                       </h3>
@@ -154,7 +154,7 @@ export default function OldWays() {
                 <div className="bg-white rounded-3xl xl:sticky xl:top-20 border h-[600px] overflow-hidden w-full">
                   <div className="grid md:flex items-center h-full bg-white">
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
-                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600">Integrates with</p>
+                      <p className="text-sm font-bold uppercase tracking-wide text-orange-600 font-silkscreen">Integrates with</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
                         Integrates with <span className="font-serif font-normal text-orange-600">your existing apps</span>
                       </h3>

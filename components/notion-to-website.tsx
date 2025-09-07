@@ -33,7 +33,10 @@ export default function FeaturesBlocks() {
       }} />
       
       <div className="max-w-4xl w-full text-left">
-        <h1 className="text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose">
+
+<span className='font-silkscreen text-blue-600 mb-4'>why wonder ?</span>
+
+        <h1 className="text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose mt-4">
           Wonder {' '}
           <span className="font-medium text-gray-900">AI agent</span>
           {' '} solves these
