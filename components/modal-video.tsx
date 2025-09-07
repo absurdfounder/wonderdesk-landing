@@ -51,7 +51,7 @@ export default function TellaVideoButton() {
         {/* Text content - Full width on mobile, 3/5 width on larger screens */}
         <div className="w-full md:w-3/5 p-3 md:p-6 lg:p-8 text-center md:text-left">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 md:mb-2">
-            Make a Wonder Site In Under 60 Seconds! ⚡
+            What is Wonder ⚡
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-slate-400">
             Watch the demo
