@@ -163,9 +163,9 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
         transition={{ duration: 0.5 }}
       >
         <span className=" block font-normal text-orange-600 text-2xl sm:text-3xl lg:text-4xl">
-          Beautiful websites
+          Beautiful self-updating sites
         </span>
-        <div className="flex flex-col sm:flex-row items-center justify-center m-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center m-auto border border-slate-300 w-fit pl-5 rounded-md bg-slate-50">
           <span className="mr-2 font-normal text-xl sm:text-2xl lg:text-3xl">made with</span>
           <svg width="300" height="100" viewBox="0 0 1087 195" className="h-16 w-auto px-2 py-0" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M419.444 85.4519C429.004 65.7472 441.527 51.1583 453.394 43.1809C465.726 34.8909 474.381 35.3753 479.007 38.2588C483.634 41.1425 488.63 49.1664 489.058 65.409C489.471 81.0394 485.309 100.839 475.748 120.544C466.188 140.248 453.665 154.837 441.799 162.814C429.467 171.104 420.813 170.62 416.186 167.737C411.56 164.853 406.563 156.829 406.134 140.586C405.722 124.956 409.884 105.156 419.444 85.4519Z" stroke="#0F0F0F" stroke-width="29"/>
