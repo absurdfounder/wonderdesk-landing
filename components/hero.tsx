@@ -128,8 +128,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 grid">
             <ProductHuntBadge />
 
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:h1 mb-2 sm:mb-2 md:mb-2 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
-              Your content stays fresh on <span className='text-blue-600'>auto-pilot</span>.
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl max-w-4xl m-auto md:h1 mb-2 sm:mb-2 md:mb-2 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
+              AI Agent that runs your <b>blog</b> & <b>helpdesk</b> on <span style={{ color: '#009fbc' }}>auto-pilot</span>.
               {" "}
               <span className="hidden font-bungee block font-normal text-gray-800 my-1 sm:my-2">
                 <div className="inline-flex items-center justify-center ml-0 sm:ml-1 px-2 sm:px-4 flex-wrap sm:flex-nowrap">
@@ -142,12 +142,12 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               {/* Removed the rotating words animation as requested */}
             </h1>
 
-            <p className="text-base sm:text-md md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-2xl m-auto px-2 sm:px-0 leading-relaxed" style={{ textWrap: 'balance' }}>
-              <span className="text-slate-900">Wonder's AI agents turn your <b>Notion & Github</b> into self-updating </span>{" "}
+            <p className="text-base sm:text-md md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-3xl m-auto px-2 sm:px-0 leading-relaxed opacity-75" style={{ textWrap: 'balance' }}>
+              <span className="text-slate-900">Turn your <b>Notion & Github Repos</b> into self-updating </span>
               <span className="inline-flex flex-wrap gap-x-1 gap-y-1 justify-center items-center">
-                {["Blogs", "Helpdesks", "Technical Docs", "Changelogs"].map((category, idx) => (
+                {["Blogs", "Helpdesk", "API Docs", "Changelog"].map((category, idx) => (
                   <React.Fragment key={category}>
-                    {idx > 0 && <span className="hidden sm:inline">, </span>}
+                    {idx > 0 && <span className="hidden sm:inline opacity-50">, </span>}
                     <button
                       className="text-slate-800 border-b border-orange-600 hover:text-orange-500 cursor-pointer font-bold transition-colors duration-200 px-1 py-0.5 sm:px-0 sm:py-0"
                       onClick={() => handleCategoryClick(category)}
@@ -159,7 +159,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 ))}
               </span>
               {" "}
-              <span className="block sm:inline mt-1 sm:mt-0">– 100% automated.</span>
+              <span className="block sm:inline mt-1 sm:mt-0">– run marketing & support on auto-pilot.</span>
             </p>
           </div>
 
