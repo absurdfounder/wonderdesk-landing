@@ -60,7 +60,7 @@ export default function Home() {
         */}
       </div>
 
-      <section className="px-4 py-6 md:px-6 md:py-10 border-b">
+      <section className="px-4 py-6 md:px-6 md:py-10 border-b bg-white">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-center">
             <span className="mt-1 text-base font-medium text-balance text-gray-400 md:text-left">

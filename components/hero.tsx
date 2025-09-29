@@ -167,7 +167,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 ))}
               </span>
               {" "}
-              <span className="block sm:inline mt-1 sm:mt-0">– run marketing & support on auto-pilot.</span>
+              <span className="block sm:inline mt-1 sm:mt-0">– run marketing & support while you sleep.</span>
             </p>
           </div>
 
