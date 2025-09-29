@@ -53,7 +53,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ isOpen, onClose }) =>
                             Before you go...
                         </h2>
                         <p className="text-slate-600 mb-6 max-w-md mx-auto">
-                            Did we mention that the trial is free, you can signup in seconds, and no credit card is required? Give us a try, we'd love to show you what Bannerbear can do!
+                            Did we mention that the trial is free, you can signup in seconds, and no credit card is required? Give us a try, we'd love to show you what Wonder can do!
                         </p>
 
 
@@ -638,7 +638,7 @@ const Pricing: React.FC = () => {
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <h1 className="font-funneldisplay text-4xl md:text-5xl tracking-tight mb-6">
                             <span className="text-slate-800 block mb-2">
-                                Hire <img src="/favicon.ico" className="inline-block w-12 h-12 rounded-md align-middle mx-1" /> Wonder at your company
+                                Setup <img src="/favicon.ico" className="inline-block w-12 h-12 rounded-md align-middle mx-1" /> Wonder at your company
                             </span>
                         </h1>
                     </div>

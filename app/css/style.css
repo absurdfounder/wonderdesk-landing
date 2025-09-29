@@ -109,7 +109,7 @@
 }
 
 .gradient-text-accent {
-  background-image: linear-gradient(-60deg, #f73, #fa5, #e89d13);
+  background-image: linear-gradient(-60deg, #009fbc, #03b2d1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

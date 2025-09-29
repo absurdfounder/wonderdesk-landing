@@ -55,7 +55,7 @@ export default function PageDetail() {
 
         <div>
             <section 
-                    style={{
+        style={{
           backgroundImage: "linear-gradient(rgb(255 255 255 / 59%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",

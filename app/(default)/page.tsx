@@ -54,11 +54,6 @@ export default function Home() {
       >
         <Header />
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
 
         <Hero />
