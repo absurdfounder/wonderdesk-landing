@@ -15,7 +15,7 @@ export default function OldWays() {
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600 font-silkscreen">No Hosting Hassles</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
-                        Your content <span className="font-serif font-normal text-orange-600">lives inside Notion</span>
+                        Your content <span className="font-serif font-normal text-orange-600">lives inside Notion or Github</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
                         Your work stays in a place you control and love, while Wonder handles the technical parts of publishing it to your website. This means you can focus on what's actually important to you: creating content and building your brand without worrying about configurations, plugins, downtime, performance, or security.

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function FeaturesBlocks() {
   const [highlightedIndex, setHighlightedIndex] = useState(0);
@@ -8,6 +9,20 @@ export default function FeaturesBlocks() {
     'Helpdesk update ← support tickets', 
     'Blogs published ← using SEO Keywords', 
     'Changelogs sync ← GitHub releases'
+  ];
+
+  const serviceIcons = [
+    [
+      { name: 'Intercom', src: 'https://cdn.simpleicons.org/intercom/0081FB' },
+      { name: 'GitHub', src: 'https://cdn.simpleicons.org/github/181717' }
+    ],
+    [
+      { name: 'Ahrefs', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5vaywdFuG5z6bXCerIOhhQbX6oMilV-ypnvkGJkrqeHO5x_D9uXIROTpXKTRHQLXGB_s&usqp=CAU' },
+      { name: 'Notion', src: 'https://cdn.simpleicons.org/notion/000000' }
+    ],
+    [
+      { name: 'GitHub', src: 'https://cdn.simpleicons.org/github/181717' }
+    ]
   ];
 
   useEffect(() => {
@@ -33,8 +48,7 @@ export default function FeaturesBlocks() {
       }} />
       
       <div className="max-w-4xl w-full text-left">
-
-<span className='font-silkscreen text-blue-600 mb-4'>why wonder ?</span>
+        <span className='font-silkscreen text-blue-600 mb-4'>why wonder ?</span>
 
         <h1 className="text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose mt-4">
           Wonder {' '}
@@ -46,14 +60,14 @@ export default function FeaturesBlocks() {
           {features.map((feature, index) => (
             <div
               key={feature}
-              className={`flex items-center space-x-4 transition-opacity duration-700 ${
+              className={`flex items-center space-x-4 transition-opacity duration-700 relative ${
                 index === highlightedIndex ? 'opacity-100' : 'opacity-50'
               }`}
             >
               <div className={`w-8 h-8 border-2 font-bold rounded flex items-center justify-center transition-colors duration-500 ${
                 index === highlightedIndex 
                   ? 'bg-blue-50 border-blue-500' 
-                  : 'bg-white border-gray-300'
+                  : ' border-gray-300'
               }`}>
                 <svg width="22" height="22" viewBox="0 0 16 16" fill="none">
                   <path
@@ -70,6 +84,7 @@ export default function FeaturesBlocks() {
                   />
                 </svg>
               </div>
+              
               <span className={`text-4xl transition-colors duration-500 ${
                 index === highlightedIndex 
                   ? 'text-gray-900 font-medium' 
@@ -77,6 +92,32 @@ export default function FeaturesBlocks() {
               }`}>
                 {feature}
               </span>
+
+              <div className="flex gap-2 absolute left-full ml-6">
+                <AnimatePresence mode="wait">
+                  {index === highlightedIndex && serviceIcons[index].map((service, idx) => (
+                    <motion.div
+                      key={`${index}-${idx}`}
+                      initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+                      animate={{ opacity: 1, scale: 1, rotate: 70 }}
+                      exit={{ opacity: 0, scale: 0.5, rotate: 0 }}
+                      transition={{ 
+                        duration: 0.5,
+                        delay: idx * 0.1,
+                        ease: "easeOut"
+                      }}
+                      className=" w-16 h-16 rounded-lg flex items-center justify-center p-3"
+                    >
+                      <img 
+                        src={service.src} 
+                        alt={service.name}
+                        className="w-full h-full object-contain"
+                        style={{ transform: 'rotate(-70deg)' }}
+                      />
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
             </div>
           ))}
         </div>
