@@ -35,7 +35,7 @@ export default function FeaturesBlocks() {
   }, [features.length]);
 
   return (
-    <div className="bg-gray-50 min-h-screen flex items-center justify-center p-6">
+    <div className="bg-gray-50 md:min-h-screen flex items-center justify-center p-6 py-12 md:py-6">
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes draw-check {
@@ -48,29 +48,29 @@ export default function FeaturesBlocks() {
         `
       }} />
       
-      <div className="max-w-4xl w-full text-left">
-        <span className='font-silkscreen text-blue-600 mb-4'>why wonder ?</span>
+      <div className="max-w-6xl w-full text-left">
+        <span className='font-silkscreen text-blue-600 mb-4 text-xs sm:text-sm'>why wonder ?</span>
 
-        <h1 className="text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose mt-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose mt-4">
           Wonder {' '}
           <span className="font-medium text-gray-900">AI agent</span>
           {' '} solves these
         </h1>
         
-        <div className="space-y-4 mb-8">
+        <div className="space-y-6 sm:space-y-4 mb-8">
           {features.map((feature, index) => (
             <div
               key={feature}
-              className={`flex items-center space-x-4 transition-opacity duration-700 relative ${
+              className={`flex flex-wrap md:flex-nowrap items-center gap-3 sm:gap-4 transition-opacity duration-700 ${
                 index === highlightedIndex ? 'opacity-100' : 'opacity-50'
               }`}
             >
-              <div className={`w-8 h-8 border-2 font-bold rounded flex items-center justify-center transition-colors duration-500 ${
+              <div className={`w-6 h-6 sm:w-8 sm:h-8 border-2 font-bold rounded flex items-center justify-center flex-shrink-0 transition-colors duration-500 ${
                 index === highlightedIndex 
                   ? 'bg-blue-50 border-blue-500' 
                   : ' border-gray-300'
               }`}>
-                <svg width="22" height="22" viewBox="0 0 16 16" fill="none">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 8l3 3 7-7"
                     stroke={index === highlightedIndex ? '#2889ffff' : 'transparent'}
@@ -86,7 +86,7 @@ export default function FeaturesBlocks() {
                 </svg>
               </div>
               
-              <span className={`text-4xl transition-colors duration-500 ${
+              <span className={`text-xl sm:text-3xl md:text-3xl lg:text-4xl transition-colors duration-500 ${
                 index === highlightedIndex 
                   ? 'text-gray-900 font-medium' 
                   : 'text-gray-500'
@@ -94,7 +94,7 @@ export default function FeaturesBlocks() {
                 {feature}
               </span>
 
-              <div className="flex gap-2 absolute left-full ml-6">
+              <div className="hidden md:flex gap-2 items-center">
                 <AnimatePresence mode="wait">
                   {index === highlightedIndex && serviceIcons[index].map((service, idx) => (
                     <motion.div
@@ -107,7 +107,7 @@ export default function FeaturesBlocks() {
                         delay: idx * 0.1,
                         ease: "easeOut"
                       }}
-                      className=" w-16 h-16 rounded-lg flex items-center justify-center p-3"
+                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center p-2 sm:p-3"
                     >
                       <img 
                         src={service.src} 
@@ -123,7 +123,7 @@ export default function FeaturesBlocks() {
           ))}
         </div>
         
-        <p className="text-4xl font-light text-gray-500">
+        <p className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-500">
           Set it. Forget it.
         </p>
       </div>
