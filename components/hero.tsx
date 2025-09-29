@@ -123,6 +123,14 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   return (
     <section className="relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
         <div className="pt-6 sm:pt-8 md:pt-12 pb-8 sm:pb-10 md:pb-12">
           {/* Critical path content - always render immediately */}
           <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 grid">
@@ -230,6 +238,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           </div>
         </div>
       </div>
+      
     </section>
   );
 }

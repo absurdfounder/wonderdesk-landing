@@ -377,14 +377,11 @@ const TabImageHotspots = () => {
         </div>
       </div>
 
-      {/* Responsive Help Text */}
-      <div className={`mt-3 sm:mt-4 text-center text-gray-900 flex items-center justify-center gap-1
-        ${isExtraSmall ? 'text-xs' : 'text-xs sm:text-sm'}
-      `}>
-        <span>{isMobile ? 'Tap' : 'Hover over or click'} the</span>
-        <Info size={isExtraSmall ? 12 : 14} className="inline mx-1" />
-        <span>icons to see more information</span>
-      </div>
+
+
+
+
+
     </div>
   );
 };

@@ -56,7 +56,7 @@ export default function Header() {
 
       {/* Main Header */}
       <header
-        className={`w-full z-30 transition-all duration-300 ease-in-out ${!top ? 'bg-white shadow-md' : ''}`}
+        className={`w-full z-30 transition-all duration-300 ease-in-out w-full fixed top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 md:px-6 ${!top ? 'bg-none shadow-md' : ''}`}
       >
         <div className="max-w-7xl mx-auto p-3 sm:p-4 sm:px-6">
           <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
@@ -149,7 +149,7 @@ export default function Header() {
                     data-cal-namespace="setup-call"
                     data-cal-link="set-meeting/setup-call"
                     data-cal-config='{"layout":"month_view"}'
-                    className="btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
+                    className="hidden btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
                     onMouseEnter={() => setIsBookHovered(true)}
                     onMouseLeave={() => setIsBookHovered(false)}
                   >
@@ -172,13 +172,13 @@ export default function Header() {
                   >
                     <div className="relative z-10 overflow-hidden w-full">
                       <div className="flex items-center justify-between">
-                        <div className="transition-transform duration-300 transform truncate max-w-[120px]"
+                        <div className="transition-transform duration-300 transform truncate max-w-[150px]"
                           style={{
                             transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
                           }}>
-                          Setup
+                          Get Started
                         </div>
-                        <div className="transition-transform duration-300 transform absolute top-0 left-0 truncate max-w-[120px]"
+                        <div className="transition-transform duration-300 transform absolute top-0 left-0 truncate max-w-[150px]"
                           style={{
                             transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
                           }}>

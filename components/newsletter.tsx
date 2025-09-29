@@ -109,10 +109,14 @@ export default function Newsletter() {
 
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
-                <h3 className="h2 text-slate-800 my-2">Try Wonder</h3>
-                {/* Original rotating text logic (commented out in user code, kept commented) */}
-                {/* <h3 className="h2 text-slate-800 my-2">Make <span className="text-orange-400">{words[index]}</span> Sites</h3> */}
-                <p className="h4 font-normal text-slate-800 my-2">Join thousands of other founders and creators creating awesome websites the easy way.</p>
+<h3 className="h2 text-slate-800 my-2">
+  Still writing content? automate it today.
+</h3>
+{/* Original rotating text logic (kept for reference) */} 
+{/* <h3 className="h2 text-slate-800 my-2">Build <span className="text-orange-400">{words[index]}</span> Sites</h3> */}
+<p className="h5 font-normal text-slate-800 my-2">
+  Outdated posts are wasting time, money and affecting your reputation. Let Wonder run your Helpdesk & Blog on pure automations.
+</p>
 
                 {/* CTA form */}
                 <form className="w-full lg:w-auto mt-4">

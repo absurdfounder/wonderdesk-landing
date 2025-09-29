@@ -82,7 +82,7 @@ export default function FeaturesBlocks() {
         </div>
         
         <p className="text-4xl font-light text-gray-500">
-          Set it once. Forget it forever.
+          Set it. Forget it.
         </p>
       </div>
     </div>
