@@ -14,6 +14,7 @@ export default function FeaturesBlocks() {
   const serviceIcons = [
     [
       { name: 'Intercom', src: 'https://cdn.simpleicons.org/intercom/0081FB' },
+      { name: 'Crisp', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUV-x8v0lniCpZjePGZkYY9W6eWWlX5ri03g&s' },
       { name: 'GitHub', src: 'https://cdn.simpleicons.org/github/181717' }
     ],
     [
