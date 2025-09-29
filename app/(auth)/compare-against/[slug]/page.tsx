@@ -89,6 +89,14 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
   return (
     <section >
       <Header />
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-24 pb-12 md:pt-20 md:pb-20">
           <div className="max-w-xl mx-auto text-center pb-12 md:pb-20 pt-12">

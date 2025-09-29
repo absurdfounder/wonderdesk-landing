@@ -70,6 +70,11 @@ export default function PageDetail() {
 
                     <Header />
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 
                     <div className="max-w-7xl mx-auto px-4 sm:px-6">

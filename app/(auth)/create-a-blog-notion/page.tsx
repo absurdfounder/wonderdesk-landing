@@ -54,14 +54,24 @@ export default function PageDetail() {
     return (
 
         <div>
-            <section style={{
-                backgroundImage: "linear-gradient(rgb(255 255 255 / 0%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundAttachment: "fixed"
-            }}>
+            <section 
+                    style={{
+          backgroundImage: "linear-gradient(rgb(255 255 255 / 59%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed"
+        }}
+            >
 
                 <Header />
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="pt-12 pb-6 md:pt-4 md:pb-6">

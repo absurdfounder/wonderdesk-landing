@@ -603,6 +603,13 @@ const Pricing: React.FC = () => {
 
             <Header />
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
             {/* Background grid pattern */}
             <div
                 className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none opacity-5"

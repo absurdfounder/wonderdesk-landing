@@ -187,6 +187,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="">
       <Header />
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back navigation */}
         <div className="mb-8">
