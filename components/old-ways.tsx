@@ -128,7 +128,7 @@ export default function OldWays() {
                     <div className="p-6 sm:p-8 lg:p-10 md:w-2/5 w-full">
                       <p className="text-sm font-bold uppercase tracking-wide text-orange-600 font-silkscreen">AI SUPPORT & SUGGESTIONS</p>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-2 sm:mt-4">
-                        Create AI Agents <span className="font-serif font-normal text-orange-600">over your content.</span>
+                        Intelligent assistance <span className="font-serif font-normal text-orange-600">for your users.</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-700 mt-4">
                         Create AI Agents for support, suggestions, sales, therapy or any other purposes you have in mind. Because it's 2025 and AI is cheap. Make AI do most of work so that you can focus on whats important.

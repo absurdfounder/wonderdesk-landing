@@ -129,7 +129,7 @@ const SimpleAnalyticsDashboard: React.FC = () => {
 
   return (
     <div className="text-gray-900 p-8 w-full max-w-6xl mx-auto rounded-lg">
-      <h2 className="font-bold text-3xl mb-4 m-auto text-center">
+      <h2 className="font-bold text-3xl mb-4 m-auto text-center mt-8">
         We know you're busy.
         <span className="block font-normal text-orange-600">Experience clutter-free dashboard</span>
       </h2>

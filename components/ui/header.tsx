@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, HelpCircle, BookOpen, ShoppingBag, Lock, AlignLeft, ArrowRight, LucideIcon } from 'lucide-react';
+import { ChevronDown, HelpCircle, BookOpen, Lock, AlignLeft, ArrowRight } from 'lucide-react';
 import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
 import TabletMenu from './tablet-menu';
@@ -52,8 +52,6 @@ export default function Header() {
 
   return (
     <>
-
-
       {/* Main Header */}
       <header
         className={`w-full z-30 transition-all duration-300 ease-in-out w-full fixed top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 md:px-6 ${!top ? 'bg-none shadow-md' : ''}`}
@@ -81,11 +79,11 @@ export default function Header() {
               <ul className="flex gap-4 items-center justify-end w-full">
                 <li className="relative" ref={dropdownRef}>
                   <button
-                    className="font-bold text-slate-800 hover:text-orange-600 py-3 flex items-center transition duration-150 ease-in-out relative group"
+                    className="font-bold text-slate-800 hover:text-[#009fbc] py-3 flex items-center transition duration-150 ease-in-out relative group"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     aria-expanded={dropdownOpen}
                   >
-                    <span className="relative overflow-hidden text-ellipsis max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">Build</span>
+                    <span className="relative overflow-hidden text-ellipsis max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#009fbc] group-hover:after:w-full after:transition-all after:duration-300">Build</span>
                     <ChevronDown className={`w-5 h-5 ml-1 text-slate-400 transition-transform duration-200 flex-shrink-0 ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
@@ -124,14 +122,6 @@ export default function Header() {
                               title="Changelogs"
                               description="Create automated changelogs connected to your Github or Notion account."
                             />
-
-                            <DropdownLink
-                              href="/create-a-marketplace-notion"
-                              icon={ShoppingBag}
-                              title="Marketplace / Directories"
-                              description="Get a self serving community directory or marketplace that can handle millions in traffic."
-                            />
-
 
                           </div>
                         </div>
@@ -210,7 +200,7 @@ export default function Header() {
 
 interface DropdownLinkProps {
   href: string;
-  icon: LucideIcon;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
 }
@@ -219,13 +209,13 @@ function DropdownLink({ href, icon: Icon, title, description }: DropdownLinkProp
   return (
     <Link
       href={href}
-      className="flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-orange-50 group"
+      className="flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-[#009fbc]/10 group"
     >
-      <div className="flex-shrink-0 p-2 rounded-md bg-orange-50 group-hover:bg-orange-100 transition-colors">
-        <Icon className="w-6 h-6 text-orange-600" />
+      <div className="flex-shrink-0 p-2 rounded-md bg-[#009fbc]/10 group-hover:bg-[#009fbc]/20 transition-colors">
+        <Icon className="w-6 h-6 text-[#009fbc]" />
       </div>
       <div className="ml-4">
-        <p className="text-base font-medium text-slate-900 group-hover:text-orange-600 transition-colors truncate max-w-[300px]">{title}</p>
+        <p className="text-base font-medium text-slate-900 group-hover:text-[#009fbc] transition-colors truncate max-w-[300px] w-full">{title} <span className=' font-thinner w-full justify-end' style={{ color: '#009fbc' }} >automated</span></p>
         <p className="mt-1 text-sm text-slate-500 line-clamp-2">{description}</p>
       </div>
     </Link>
@@ -241,9 +231,9 @@ function NavLink({ href, text }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className="font-medium text-slate-900 hover:text-orange-600 px-1 py-3 flex items-center transition duration-150 ease-in-out relative group"
+      className="font-medium text-slate-900 hover:text-[#009fbc] px-1 py-3 flex items-center transition duration-150 ease-in-out relative group"
     >
-      <span className="relative truncate max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
+      <span className="relative truncate max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#009fbc] group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
     </Link>
   );
 }
