@@ -80,7 +80,7 @@ export default function PageDetail() {
                                 <div className="max-w-screen-xl px-4 mx-auto sm:px-6 mb-4">
                                     <div className="text-center">
                                         <h1 className="font-funneldisplay text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tighter tracking-tighter mb-4 aos-init aos-animate">
-                                            Turn
+                                          
                                             <span className="text-3xl sm:text-4xl md:text-5xl relative">
                                                 <span className="inline-flex items-center relative sm:bottom-0 bottom-[-1px] justify-center mx-2">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="12 0.19 487.619 510.941" className="w-6 h-6 sm:w-9 sm:h-9">
@@ -93,7 +93,7 @@ export default function PageDetail() {
                                                 Github into an
                                             </span>
                                             <br className="block" />
-                                            automated <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">company wikipedia</span>
+                                             <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">company wikipedia</span>  up-to-date.
                                         </h1>
                                         <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
                                             Your support inbox is flooded with customers who want to self-serve, not spend hours talking to an agent.  But your help center is constantly out of date and your customers can’t find what they’re looking for. With Wonder, never again.
