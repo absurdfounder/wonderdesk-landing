@@ -3,6 +3,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+type SocialProvider = 'google' | 'discord' | 'telegram' | 'github' | 'twitch' | 'steam' | 'farcaster' | 'line' | 'x' | 'tiktok' | 'facebook' | 'apple';
+
+type Wallet = 'metamask' | 'rainbow' | 'rabby' | 'okx' | 'bitget' | 'zerion' | 'coinbaseWallet' | 'trustWallet' | 'binance' | 'safepal';
+
 export default function PageDetail() {
     const [showWallets, setShowWallets] = useState(false);
     const [showBuilder, setShowBuilder] = useState(false);
@@ -57,11 +61,11 @@ export default function PageDetail() {
         setShowBuilder(false);
     };
 
-    const toggleSocialProvider = (provider) => {
+    const toggleSocialProvider = (provider: SocialProvider) => {
         setSocialProviders(prev => ({ ...prev, [provider]: !prev[provider] }));
     };
 
-    const toggleWallet = (wallet) => {
+    const toggleWallet = (wallet: Wallet) => {
         setWallets(prev => ({ ...prev, [wallet]: !prev[wallet] }));
     };
 
@@ -412,8 +416,8 @@ export default function PageDetail() {
                                                     <label key={key} className="flex items-center gap-2 text-sm cursor-pointer">
                                                         <input
                                                             type="checkbox"
-                                                            checked={socialProviders[key]}
-                                                            onChange={() => toggleSocialProvider(key)}
+                                                            checked={socialProviders[key as SocialProvider]}
+                                                            onChange={() => toggleSocialProvider(key as SocialProvider)}
                                                             className="w-4 h-4 rounded border-slate-300 text-slate-700 focus:ring-slate-700"
                                                         />
                                                         <span className="text-slate-700">{label}</span>
@@ -498,8 +502,8 @@ export default function PageDetail() {
                                                             <span className="text-slate-700 text-xs">{label}</span>
                                                             <input
                                                                 type="checkbox"
-                                                                checked={wallets[key]}
-                                                                onChange={() => toggleWallet(key)}
+                                                                checked={wallets[key as Wallet]}
+                                                                onChange={() => toggleWallet(key as Wallet)}
                                                                 className="w-4 h-4 rounded border-slate-300 text-slate-700 focus:ring-slate-700"
                                                             />
                                                         </div>
@@ -626,7 +630,7 @@ export default function PageDetail() {
                                                             )}
                                                             {socialProviders.x && (
                                                                 <button className="aspect-square flex items-center justify-center border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
-                                                                    <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                                                    <svg className="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
                                                                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                                                     </svg>
                                                                 </button>
@@ -752,11 +756,11 @@ export default function PageDetail() {
                                                 </>
                                             )}
 
-                                <div className="text-sm text-slate-400 font-medium">
-                                    <p className="text-sm text-slate-400 font-medium  w-full flex justify-center filter grayscale">Powered by
-                                        <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-5 opacity-75" />
-                                    </p>
-                                </div>
+                                            <div className="text-sm text-slate-400 font-medium">
+                                                <p className="text-sm text-slate-400 font-medium  w-full flex justify-center filter grayscale">Powered by
+                                                    <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-5 opacity-75" />
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 )}
