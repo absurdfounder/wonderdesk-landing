@@ -318,16 +318,7 @@ export default function AuthLanding() {
                             {/* Left Panel */}
                             <div className="w-1/3 border-r border-slate-200 overflow-y-auto p-6">
                                 <div className="mb-6">
-                                    <button
-                                        onClick={() => setConfigExpanded(!configExpanded)}
-                                        className="w-full flex items-center justify-between mb-4 text-left"
-                                    >
-                                        <div className="flex items-center gap-2">
-                                            <Wallet className="w-5 h-5" />
-                                            <span className="font-semibold text-slate-900">Configuration</span>
-                                        </div>
-                                        <ChevronDown className={`w-5 h-5 transition-transform ${configExpanded ? 'rotate-180' : ''}`} />
-                                    </button>
+
 
                                     {configExpanded && (
                                         <div className="space-y-4">
@@ -365,8 +356,8 @@ export default function AuthLanding() {
 
                                             <div className="pb-3 border-b border-slate-200">
                                                 <p className="text-sm font-semibold text-slate-900 mb-3">Auth Methods</p>
-                                                <div className="space-y-2">
-                                                    <label className="flex items-center gap-2 text-sm cursor-pointer p-2 rounded hover:bg-slate-50">
+                                                <div className="space-y-2 grid gap-2 animate-slideDown grid-cols-2">
+                                                    <label className="flex items-center gap-2 text-sm cursor-pointer p-4 rounded hover:bg-slate-50 border border-slate-200 mt-2 ">
                                                         <div className="relative">
                                                             <input type="checkbox" checked={showEmail} onChange={() => setShowEmail(!showEmail)} className="w-4 h-4 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute" />
                                                             <div className={`w-4 h-4 rounded border flex items-center justify-center ${showEmail ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
@@ -376,7 +367,7 @@ export default function AuthLanding() {
                                                         <Mail className="w-4 h-4 text-slate-600" />
                                                         <span className="text-slate-700">Email</span>
                                                     </label>
-                                                    <label className="flex items-center gap-2 text-sm cursor-pointer p-2 rounded hover:bg-slate-50">
+                                                    <label className="flex items-center gap-2 text-sm cursor-pointer p-4 rounded hover:bg-slate-50 border border-slate-200 mt-2 ">
                                                         <div className="relative">
                                                             <input type="checkbox" checked={showPhone} onChange={() => setShowPhone(!showPhone)} className="w-4 h-4 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute" />
                                                             <div className={`w-4 h-4 rounded border flex items-center justify-center ${showPhone ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
@@ -386,7 +377,7 @@ export default function AuthLanding() {
                                                         <Phone className="w-4 h-4 text-slate-600" />
                                                         <span className="text-slate-700">Phone</span>
                                                     </label>
-                                                    <label className="flex items-center gap-2 text-sm cursor-pointer p-2 rounded hover:bg-slate-50">
+                                                    <label className="flex items-center gap-2 text-sm cursor-pointer p-4 rounded hover:bg-slate-50 border border-slate-200 mt-2 ">
                                                         <div className="relative">
                                                             <input type="checkbox" checked={showPasskey} onChange={() => setShowPasskey(!showPasskey)} className="w-4 h-4 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute" />
                                                             <div className={`w-4 h-4 rounded border flex items-center justify-center ${showPasskey ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
@@ -396,7 +387,7 @@ export default function AuthLanding() {
                                                         <Key className="w-4 h-4 text-slate-600" />
                                                         <span className="text-slate-700">Passkey</span>
                                                     </label>
-                                                    <label className="flex items-center gap-2 text-sm cursor-pointer p-2 rounded hover:bg-slate-50">
+                                                    <label className="flex items-center gap-2 text-sm cursor-pointer p-4 rounded hover:bg-slate-50 border border-slate-200 mt-2 ">
                                                         <div className="relative">
                                                             <input type="checkbox" checked={showWallet} onChange={() => setShowWallet(!showWallet)} className="w-4 h-4 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute" />
                                                             <div className={`w-4 h-4 rounded border flex items-center justify-center ${showWallet ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
@@ -404,7 +395,7 @@ export default function AuthLanding() {
                                                             </div>
                                                         </div>
                                                         <Wallet className="w-4 h-4 text-slate-600" />
-                                                        <span className="text-slate-700">Wallet Connect</span>
+                                                        <span className="text-slate-700">Wallet Login</span>
                                                     </label>
                                                 </div>
                                             </div>
