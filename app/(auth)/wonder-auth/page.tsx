@@ -4,17 +4,16 @@ import React, { useState } from "react";
 import { X, Wallet, ChevronDown, ArrowLeft, Mail, Phone, Key, Check } from "lucide-react";
 
 type SocialProvider = 'google' | 'discord' | 'telegram' | 'github' | 'twitch' | 'steam' | 'farcaster' | 'line' | 'x' | 'tiktok' | 'facebook' | 'apple';
-type WalletType = 'metamask' | 'rainbow' | 'rabby' | 'okx' | 'bitget' | 'zerion' | 'coinbaseWallet' | 'trustWallet' | 'binance' | 'safepal';
+type WalletType = 'metamask' | 'rainbow' | 'rabby' | 'okx' | 'zerion' | 'coinbaseWallet' | 'trustWallet' | 'binance' | 'safepal';
 
 const walletLogos: Record<string, string> = {
     metamask: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg',
     rainbow: 'https://avatars.githubusercontent.com/u/48327834?s=280&v=4',
     rabby: 'https://rabby.io/assets/images/logo-128.png',
-    okx: 'https://static.okx.com/cdn/assets/imgs/221/58A8C15272447111.png',
-    coinbaseWallet: 'https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/d9cf2dc5a6d209d30104c1f61ae9ad99/Consumer_Wordmark.svg',
-    zerion: 'https://avatars.githubusercontent.com/u/35093772?s=200&v=4',
+    okx: 'https://play-lh.googleusercontent.com/N00SbjLJJrhg4hbdnkk3Llk2oedNNgCU29DvR9cpep7Lr0VkzvBkmLqajWNgFb0d7IOO=w240-h480-rw',
+    coinbaseWallet: 'https://raw.githubusercontent.com/gist/taycaldwell/2291907115c0bb5589bc346661435007/raw/280eafdc84cb80ed0c60e36b4d0c563f6dca6b3e/cbw.svg',
+    zerion: 'https://play-lh.googleusercontent.com/lxl3CQLYmbY7kHtMn3ehz06ebEIIxYOETf8hlWPNW6L3ZPxuhSrnIq-4k5T89gd4gA',
     trustWallet: 'https://trustwallet.com/assets/images/media/assets/TWT.png',
-    bitget: 'https://img.bitgetimg.com/multiLang/web/7dd8c7f239bc36329789e4d51f39ff97.png',
 };
 
 const walletNames: Record<string, string> = {
@@ -25,7 +24,6 @@ const walletNames: Record<string, string> = {
     coinbaseWallet: 'Coinbase Wallet',
     zerion: 'Zerion',
     trustWallet: 'Trust Wallet',
-    bitget: 'Bitget Wallet',
 };
 
 export default function AuthLanding() {
@@ -56,7 +54,6 @@ export default function AuthLanding() {
         rainbow: true,
         rabby: true,
         okx: true,
-        bitget: false,
         zerion: true,
         coinbaseWallet: true,
         trustWallet: true,
@@ -419,11 +416,10 @@ export default function AuthLanding() {
                                                         metamask: { name: 'MetaMask', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg' },
                                                         rainbow: { name: 'Rainbow', logo: 'https://avatars.githubusercontent.com/u/48327834?s=280&v=4' },
                                                         rabby: { name: 'Rabby', logo: 'https://rabby.io/assets/images/logo-128.png' },
-                                                        okx: { name: 'OKX', logo: 'https://static.okx.com/cdn/assets/imgs/221/58A8C15272447111.png' },
-                                                        zerion: { name: 'Zerion', logo: 'https://avatars.githubusercontent.com/u/35093772?s=200&v=4' },
-                                                        coinbaseWallet: { name: 'Coinbase', logo: 'https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/d9cf2dc5a6d209d30104c1f61ae9ad99/Consumer_Wordmark.svg' },
+                                                        okx: { name: 'OKX', logo: 'https://play-lh.googleusercontent.com/N00SbjLJJrhg4hbdnkk3Llk2oedNNgCU29DvR9cpep7Lr0VkzvBkmLqajWNgFb0d7IOO=w240-h480-rw' },
+                                                        zerion: { name: 'Zerion', logo: 'https://play-lh.googleusercontent.com/lxl3CQLYmbY7kHtMn3ehz06ebEIIxYOETf8hlWPNW6L3ZPxuhSrnIq-4k5T89gd4gA' },
+                                                        coinbaseWallet: { name: 'Coinbase', logo: 'https://raw.githubusercontent.com/gist/taycaldwell/2291907115c0bb5589bc346661435007/raw/280eafdc84cb80ed0c60e36b4d0c563f6dca6b3e/cbw.svg' },
                                                         trustWallet: { name: 'Trust', logo: 'https://trustwallet.com/assets/images/media/assets/TWT.png' },
-                                                        bitget: { name: 'Bitget', logo: 'https://img.bitgetimg.com/multiLang/web/7dd8c7f239bc36329789e4d51f39ff97.png' },
                                                     }).map(([key, { name, logo }]) => (
                                                         <div key={key} className="flex items-center justify-between text-sm p-2 bg-slate-50 rounded hover:bg-slate-100">
                                                             <div className="flex items-center gap-2">
@@ -459,7 +455,7 @@ export default function AuthLanding() {
                                 </div>
 
                                 {activeTab === 'modal' && (
-                                    <div className="flex items-center justify-center min-h-[600px] mt-6">
+                                    <div className="flex items-center justify-center min-h-[600px] mt-12">
                                         <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-8 w-full max-w-md relative">
 
                                             <div className="flex gap-4 justify-between mb-4">
@@ -487,7 +483,7 @@ export default function AuthLanding() {
 
 
                                             {!previewShowWallets ? (
-                                                <div className="space-y-4">
+                                                <div className="space-y-4 ">
                                                     {getSocialIconGridProviders().length > 0 && (
                                                         getSocialIconGridProviders().length === 1 ? (
                                                             <div className="animate-slideDown">
@@ -680,7 +676,7 @@ export default function AuthLanding() {
                                 {activeTab === 'button' && (
                                     <div className="flex items-center justify-center min-h-[600px]">
                                         <button className="px-8 py-4 bg-slate-700 text-white rounded-xl font-semibold text-lg hover:bg-slate-900 transition-colors shadow-lg">
-                                            Sign in with WonderAuth
+                                            Sign in with Wonder
                                         </button>
                                     </div>
                                 )}
