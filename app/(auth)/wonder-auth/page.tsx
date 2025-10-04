@@ -89,7 +89,7 @@ export default function AuthLanding() {
     };
 
     return (
-        <div 
+        <div
             className="min-h-screen flex flex-col"
             style={{
                 backgroundImage: "linear-gradient(rgb(255 255 255 / 59%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
@@ -163,7 +163,7 @@ export default function AuthLanding() {
                                 Stop building auth from scratch. Add social logins, magic links, passkeys, and 2FA to your app in minutes. Secure, scalable, and developer-friendly.
                             </p>
                             <div className="flex flex-col gap-3">
-                                <button 
+                                <button
                                     onClick={() => setShowBuilder(true)}
                                     className="inline-flex items-center justify-center px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-md shadow bg-slate-700 hover:bg-slate-900 w-fit cursor-pointer"
                                 >
@@ -292,7 +292,7 @@ export default function AuthLanding() {
 
                                     <div className="text-center">
                                         <p className="text-xs text-slate-400 font-medium flex items-center justify-center gap-1 filter grayscale">
-                                            Powered by
+                                            Protected by
                                             <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-4 opacity-75" alt="WonderAuth" />
                                         </p>
                                     </div>
@@ -306,7 +306,7 @@ export default function AuthLanding() {
             {/* Builder Modal */}
             {showBuilder && (
                 <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
-                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl h-[90vh] flex flex-col animate-slideUp">
+                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl h-full flex flex-col animate-slideUp">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
                             <h2 className="text-2xl font-bold text-slate-900">Auth Builder</h2>
                             <button
@@ -338,14 +338,14 @@ export default function AuthLanding() {
                                                 <p className="text-sm font-semibold text-slate-900 mb-3">Social Providers</p>
                                                 <div className="grid grid-cols-2 gap-2">
                                                     {Object.entries({
-                                                        google: { name: 'Google', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg> },
-                                                        discord: { name: 'Discord', icon: <svg className="w-4 h-4 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/></svg> },
-                                                        telegram: { name: 'Telegram', icon: <svg className="w-4 h-4 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> },
-                                                        github: { name: 'Github', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> },
-                                                        x: { name: 'X', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> },
-                                                        facebook: { name: 'Facebook', icon: <svg className="w-4 h-4 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> },
-                                                        apple: { name: 'Apple', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg> },
-                                                        farcaster: { name: 'Farcaster', icon: <svg className="w-4 h-4 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z"/></svg> },
+                                                        google: { name: 'Google', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" /></svg> },
+                                                        discord: { name: 'Discord', icon: <svg className="w-4 h-4 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" /></svg> },
+                                                        telegram: { name: 'Telegram', icon: <svg className="w-4 h-4 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg> },
+                                                        github: { name: 'Github', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg> },
+                                                        x: { name: 'X', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg> },
+                                                        facebook: { name: 'Facebook', icon: <svg className="w-4 h-4 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg> },
+                                                        apple: { name: 'Apple', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg> },
+                                                        farcaster: { name: 'Farcaster', icon: <svg className="w-4 h-4 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" /></svg> },
                                                     }).map(([key, { name, icon }]) => (
                                                         <label key={key} className="flex items-center gap-2 text-sm cursor-pointer p-2 rounded hover:bg-slate-50">
                                                             <div className="relative">
@@ -459,21 +459,32 @@ export default function AuthLanding() {
                                 </div>
 
                                 {activeTab === 'modal' && (
-                                    <div className="flex items-center justify-center min-h-[600px]">
+                                    <div className="flex items-center justify-center min-h-[600px] mt-6">
                                         <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-8 w-full max-w-md relative">
-                                            {previewShowWallets && (
-                                                <button onClick={() => setPreviewShowWallets(false)} className="absolute top-6 left-6 text-slate-400 hover:text-slate-600 transition-colors">
-                                                    <ArrowLeft className="w-6 h-6" />
+
+                                            <div className="flex gap-4 justify-between mb-4">
+
+
+                                                <div className="flex gap-4">
+
+                                                    {previewShowWallets && (
+                                                        <button onClick={() => setPreviewShowWallets(false)} className=" top-6 left-6 text-slate-400 hover:text-slate-600 transition-colors">
+                                                            <ArrowLeft className="w-6 h-6" />
+                                                        </button>
+                                                    )}
+
+                                                    <div>
+                                                        <h4 className="text-2xl font-bold text-slate-900">Sign in</h4>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <button className="text-slate-400 hover:text-slate-600 transition-colors">
+                                                    <X className="w-6 h-6" />
                                                 </button>
-                                            )}
-
-                                            <button className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition-colors">
-                                                <X className="w-6 h-6" />
-                                            </button>
-
-                                            <div className="mb-8">
-                                                <h4 className="text-2xl font-bold text-slate-900">Sign in</h4>
                                             </div>
+
 
                                             {!previewShowWallets ? (
                                                 <div className="space-y-4">
@@ -514,11 +525,10 @@ export default function AuthLanding() {
                                                                 )}
                                                             </div>
                                                         ) : (
-                                                            <div className={`grid gap-3 animate-slideDown ${
-                                                                getSocialIconGridProviders().length === 2 ? 'grid-cols-2' :
+                                                            <div className={`grid gap-3 animate-slideDown ${getSocialIconGridProviders().length === 2 ? 'grid-cols-2' :
                                                                 getSocialIconGridProviders().length === 3 ? 'grid-cols-3' :
-                                                                'grid-cols-4'
-                                                            }`}>
+                                                                    'grid-cols-4'
+                                                                }`}>
                                                                 {socialProviders.google && (
                                                                     <button className="aspect-square flex items-center justify-center bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all animate-slideDown">
                                                                         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -639,10 +649,10 @@ export default function AuthLanding() {
                                                     <div className="space-y-2 mb-6">
                                                         {getEnabledWalletsList().map(([key, _]) => (
                                                             <button key={key} className="w-full flex items-center gap-4 px-5 py-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
-                                                                <img 
-                                                                    src={walletLogos[key]} 
-                                                                    alt={walletNames[key]} 
-                                                                    className="w-12 h-12 rounded-xl object-contain" 
+                                                                <img
+                                                                    src={walletLogos[key]}
+                                                                    alt={walletNames[key]}
+                                                                    className="w-12 h-12 rounded-xl object-contain"
                                                                     onError={(e) => { e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48"%3E%3Crect fill="%23ddd" width="48" height="48"/%3E%3C/svg%3E' }}
                                                                 />
                                                                 <span className="text-lg font-semibold text-slate-900">{walletNames[key]}</span>
@@ -659,7 +669,7 @@ export default function AuthLanding() {
 
                                             <div className="text-center mt-6">
                                                 <p className="text-sm text-slate-400 font-medium flex items-center justify-center gap-1 filter grayscale">
-                                                    Powered by
+                                                    Protected by
                                                     <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-5 opacity-75" alt="WonderAuth" />
                                                 </p>
                                             </div>
@@ -678,7 +688,7 @@ export default function AuthLanding() {
                                 {activeTab === 'code' && (
                                     <div className="bg-slate-900 rounded-xl p-6 text-slate-100 font-mono text-sm overflow-x-auto">
                                         <pre className="whitespace-pre-wrap">
-{`import { WonderAuth } from '@wonder/auth';
+                                            {`import { WonderAuth } from '@wonder/auth';
 
 export default function App() {
   return (
