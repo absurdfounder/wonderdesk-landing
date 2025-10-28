@@ -142,9 +142,153 @@ export default function AuthLanding() {
                 </div>
             </nav>
 
+
+
+            {/* SANCTUM LANDING PAGE SECTION - WHITE THEME */}
+            {/* ============================================ */}
+
+            <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 mt-24">
+                {/* Hero Section */}
+                <div className="flex flex-col items-center text-center gap-6 pb-16">
+                    <a
+                        href="https://sanctum.so/quarterly"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50 transition-all shadow-sm"
+                    >
+                        <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
+                        <span>Q3 2025 Sanctum Quarterly • Read now</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="text-gray-400 group-hover:translate-x-1 transition-all"
+                        >
+                            <path
+                                d="M5 12h14M13 5l7 7-7 7"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </a>
+
+                    <h1 className="max-w-2xl text-[32px] sm:text-[52px] font-semibold tracking-tight text-gray-900 leading-tight">
+                        The <span className="text-emerald-500">infrastructure</span> behind
+                        Solana’s biggest names.
+                    </h1>
+                    <p className="max-w-lg text-gray-600 text-lg">
+                       Stop building auth from scratch. Add social logins, magic links, passkeys, and 2FA to your app in minutes. Secure, scalable, and developer-friendly.
+                    </p>
+                </div>
+
+                {/* Product Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* SOL Liquid Staking */}
+                    <a
+                        href="https://sanctum.so/app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
+                    >
+                        <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
+                            <img
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstake.02ab1725.png&w=1080&q=100"
+                                alt="SOL Liquid Staking"
+                                className="object-contain w-full h-full group-hover:scale-110 transition-all"
+                            />
+                            <div className="absolute top-4 right-4 bg-white/90 text-emerald-600 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
+                                8.94% APY
+                            </div>
+                        </div>
+                        <h3 className="text-gray-900 text-lg font-medium mb-1">
+                            SOL Liquid Staking
+                        </h3>
+                        <p className="text-gray-600 text-sm">
+                            Earn the best yields on your SOL, powered by Sanctum’s liquidity engine.
+                        </p>
+                    </a>
+
+                    {/* Staking as a Service */}
+                    <a
+                        href="https://sanctum.so/staking-as-a-service"
+                        className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
+                    >
+                        <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
+                            <img
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstaas.02e02f99.png&w=1080&q=100"
+                                alt="Staking-as-a-Service"
+                                className="object-contain w-full h-full group-hover:scale-110 transition-all"
+                            />
+                            <div className="absolute top-4 right-4 bg-white/90 text-blue-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
+                                $5M+ Partner Revenue
+                            </div>
+                        </div>
+                        <h3 className="text-gray-900 text-lg font-medium mb-1">
+                            Staking-as-a-Service
+                        </h3>
+                        <p className="text-gray-600 text-sm">
+                            Launch your staking solution with Sanctum’s infrastructure and earn as
+                            others stake SOL with you.
+                        </p>
+                    </a>
+                </div>
+
+                {/* Gateway & Ironforge */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <a
+                        href="https://sanctum.so/gateway"
+                        className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
+                    >
+                        <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
+                            <img
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgateway.cfa8d4db.png&w=1080&q=100"
+                                alt="Gateway"
+                                className="object-contain w-full h-full group-hover:scale-110 transition-all"
+                            />
+                            <div className="absolute top-4 right-4 bg-white/90 text-purple-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
+                                350k+ tx delivered
+                            </div>
+                        </div>
+                        <h3 className="text-gray-900 text-lg font-medium mb-1">Gateway</h3>
+                        <p className="text-gray-600 text-sm">
+                            Send Solana transactions faster and more reliably.
+                        </p>
+                    </a>
+
+                    <a
+                        href="https://sanctum.so/ironforge"
+                        className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
+                    >
+                        <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
+                            <img
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fironforge.8a0b6ffe.png&w=1080&q=100"
+                                alt="Ironforge"
+                                className="object-contain w-full h-full group-hover:scale-110 transition-all"
+                            />
+                            <div className="absolute top-4 right-4 bg-white/90 text-orange-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
+                                300M+ daily requests
+                            </div>
+                        </div>
+                        <h3 className="text-gray-900 text-lg font-medium mb-1">Ironforge</h3>
+                        <p className="text-gray-600 text-sm">
+                            The complete Web3 DevOps platform for Solana builders.
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+<div className="my-12">
+
             {/* Main Content */}
             <div className="flex-1 flex items-center overflow-hidden">
-                <div className="max-w-7xl mx-auto px-6 w-full">
+                <div className="max-w-6xl mx-auto px-6 w-full">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left - Headline */}
                         <div>
@@ -700,6 +844,63 @@ export default function App() {
                     </div>
                 </div>
             )}
+
+</div>
+
+
+
+
+            {/* $CLOUD SECTION - WHITE THEME */}
+            <div className="relative z-10 flex flex-col overflow-hidden bg-gray-900 rounded-xl pb-[100px] px-6 pt-16 sm:pt-20 sm:pb-20 sm:px-12 gap-10 border border-gray-200 max-w-6xl w-full m-auto my-8">
+                {/* Text Content */}
+                <div className="z-10 flex flex-col gap-4">
+                    <h3 className="text-3xl sm:text-4xl font-semibold text-gray-200 leading-snug">$CLOUD</h3>
+                    <p className="text-gray-300 text-base sm:max-w-md md:max-w-2xl">
+                        Sanctum is building ethical, user-first crypto. <strong>CLOUD</strong> is our community
+                        token to prove that crypto can and will be better.
+                    </p>
+                </div>
+
+                {/* Button */}
+                <a
+                    href="https://sanctum.so/cloud"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 hover:text-gray-900 transition-all px-5 py-2.5 rounded-md text-sm font-medium active:scale-[0.97] shadow-sm w-fit"
+                >
+                    Learn more
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="text-current"
+                    >
+                        <path
+                            d="M20,12.75 L4,12.75 Q3.689,12.75 3.47,12.53 Q3.25,12.31 3.25,12 Q3.25,11.689 3.47,11.469 Q3.689,11.25 4,11.25 L20,11.25 Q20.311,11.25 20.53,11.469 Q20.75,11.689 20.75,12 Q20.75,12.31 20.53,12.53 Q20.311,12.75 20,12.75 Z"
+                            fill="currentColor"
+                        ></path>
+                        <path
+                            d="M14.556,16.396 Q19.25,12.939 19.25,12 Q19.25,11.061 14.555,7.604 Q14.305,7.42 14.259,7.113 Q14.212,6.805 14.396,6.555 Q14.581,6.305 14.888,6.258 Q15.195,6.212 15.445,6.396 Q20.75,10.303 20.75,12 Q20.75,13.697 15.445,17.604 Q15.195,17.788 14.888,17.742 Q14.581,17.695 14.396,17.445 Q14.212,17.195 14.259,16.887 Q14.305,16.58 14.556,16.396 Z"
+                            fill="currentColor"
+                        ></path>
+                    </svg>
+                </a>
+
+                {/* Background Images */}
+                <img
+                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-img.01017a3e.png&w=750&q=100"
+                    alt="$CLOUD"
+                    className="absolute bottom-[-45px] right-[80px] sm:bottom-[-42px] sm:right-[130px] w-[123px] sm:w-[170px] rotate-[10.7deg] opacity-90"
+                />
+                <img
+                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-stamp.ad2e9cf5.png&w=1080&q=100"
+                    alt="$CLOUD Stamp"
+                    className="absolute bottom-[-50px] right-[-30px] sm:bottom-[-48px] sm:right-[-25px] w-[160px] sm:w-[220px] rotate-[-11.8deg] opacity-90"
+                />
+            </div>
+
+
+
         </div>
     );
 }
