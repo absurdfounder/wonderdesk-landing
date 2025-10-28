@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Wallet, ChevronDown, ArrowLeft, Mail, Phone, Key, Check } from "lucide-react";
-
+import { X, Wallet, ChevronDown, ArrowLeft,ArrowRight, Mail, Phone, Key, Check } from "lucide-react";
+import Link from "next/link";
 type SocialProvider = 'google' | 'discord' | 'telegram' | 'github' | 'twitch' | 'steam' | 'farcaster' | 'line' | 'x' | 'tiktok' | 'facebook' | 'apple';
 type WalletType = 'metamask' | 'rainbow' | 'rabby' | 'okx' | 'zerion' | 'coinbaseWallet' | 'trustWallet' | 'binance' | 'safepal';
 
@@ -86,8 +86,10 @@ export default function AuthLanding() {
     };
 
     return (
+        
+        <div>
         <div
-            className="min-h-screen flex flex-col"
+            className="min-h-screen flex flex-col pb-12"
             style={{
                 backgroundImage: "linear-gradient(rgb(255 255 255 / 59%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
                 backgroundSize: "cover",
@@ -157,7 +159,7 @@ export default function AuthLanding() {
                         className="group flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50 transition-all shadow-sm"
                     >
                         <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
-                        <span>Q3 2025 Sanctum Quarterly • Read now</span>
+                        <span>$WONDER Tokenomics • Read now</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -183,7 +185,41 @@ export default function AuthLanding() {
                     <p className="max-w-lg text-gray-600 text-lg">
                        Stop building auth from scratch. Add social logins, magic links, passkeys, and 2FA to your app in minutes. Secure, scalable, and developer-friendly.
                     </p>
+
+          {/* CTA Buttons - simplified animations for immediate rendering */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 sm:mb-2 items-center justify-center px-4 sm:px-0">
+            <Link
+              href="https://app.wondersites.co?ref=herolanding"
+              className="flex items-center justify-center py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto"
+
+            >
+              <div className="relative overflow-hidden mr-2 h-5 sm:h-5">
+                <div
+                  className="transition-transform duration-150 whitespace-nowrap"
+
+                >
+                  Get Started for free
                 </div>
+
+              </div>
+            </Link>
+
+            <button
+              data-cal-namespace="setup-call"
+              data-cal-link="set-meeting/setup-call"
+              data-cal-config='{"layout":"month_view"}'
+              className="text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
+            >
+              <div className="flex items-center justify-center w-full">
+                <span>Book a Demo</span>
+                <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+              </div>
+            </button>
+          </div>
+                </div>
+
+
+
 
                 {/* Product Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -219,7 +255,7 @@ export default function AuthLanding() {
                     >
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
-                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstaas.02e02f99.png&w=1080&q=100"
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsaas.5cd56fc1.png&w=3840&q=100&dpl=dpl_D9QZYgVvfe3sFucRdcFaasQw8RD7"
                                 alt="Staking-as-a-Service"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
@@ -245,7 +281,7 @@ export default function AuthLanding() {
                     >
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
-                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgateway.cfa8d4db.png&w=1080&q=100"
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgateway.9129298e.png&w=3840&q=100&dpl=dpl_D9QZYgVvfe3sFucRdcFaasQw8RD7"
                                 alt="Gateway"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
@@ -265,7 +301,7 @@ export default function AuthLanding() {
                     >
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
-                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fironforge.8a0b6ffe.png&w=1080&q=100"
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fironforge.724f361c.png&w=3840&q=100&dpl=dpl_D9QZYgVvfe3sFucRdcFaasQw8RD7"
                                 alt="Ironforge"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
@@ -284,21 +320,26 @@ export default function AuthLanding() {
 
 
 
-<div className="my-12">
+
+
+        </div>
+
+
+<div>
 
             {/* Main Content */}
-            <div className="flex-1 flex items-center overflow-hidden">
+            <div className="flex-1 flex items-center overflow-hidden bg-gray-900 py-8">
                 <div className="max-w-6xl mx-auto px-6 w-full">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left - Headline */}
                         <div>
                             <h1 className="font-funneldisplay text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-tighter tracking-tighter mb-4">
-                                <span className="text-4xl sm:text-5xl gradient-text-accent" style={{
+                               Customize your <span className="text-4xl sm:text-5xl gradient-text-accent" style={{
                                     background: 'linear-gradient(to right, rgb(5, 132, 155), rgb(18, 179, 208))',
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
                                     backgroundClip: 'text'
-                                }}>Web3</span> Auth That Doesn't Drain Your Treasury.
+                                }}>Auth</span>
                             </h1>
                             <p className="text-base text-slate-500 sm:text-lg md:text-lg mb-6 max-w-xl">
                                 Stop building auth from scratch. Add social logins, magic links, passkeys, and 2FA to your app in minutes. Secure, scalable, and developer-friendly.
@@ -899,8 +940,7 @@ export default function App() {
                 />
             </div>
 
+</div>
 
-
-        </div>
     );
 }
