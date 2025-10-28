@@ -149,7 +149,7 @@ export default function AuthLanding() {
             {/* SANCTUM LANDING PAGE SECTION - WHITE THEME */}
             {/* ============================================ */}
 
-            <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 mt-24">
+            <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 mt-12">
                 {/* Hero Section */}
                 <div className="flex flex-col items-center text-center gap-6 pb-16">
                     <a
@@ -198,7 +198,7 @@ export default function AuthLanding() {
                   className="transition-transform duration-150 whitespace-nowrap"
 
                 >
-                  Get Started for free
+                  Setup in 15 mins
                 </div>
 
               </div>
@@ -211,7 +211,7 @@ export default function AuthLanding() {
               className="text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
             >
               <div className="flex items-center justify-center w-full">
-                <span>Book a Demo</span>
+                <span>Try a Demo</span>
                 <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
               </div>
             </button>
