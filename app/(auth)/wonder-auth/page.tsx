@@ -151,7 +151,7 @@ export default function AuthLanding() {
                 {/* Hero Section */}
                 <div className="flex flex-col items-center text-center gap-6 pb-16">
                     <a
-                        href="https://wondersites.co/quarterly"
+                        href="https://sanctum.so/quarterly"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50 transition-all shadow-sm"
@@ -189,14 +189,14 @@ export default function AuthLanding() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* SOL Liquid Staking */}
                     <a
-                        href="https://wondersites.co/app"
+                        href="https://sanctum.so/app"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
                     >
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
-                                src="https://wondersites.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstake.02ab1725.png&w=1080&q=100"
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstake.02ab1725.png&w=1080&q=100"
                                 alt="SOL Liquid Staking"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
@@ -214,12 +214,12 @@ export default function AuthLanding() {
 
                     {/* Staking as a Service */}
                     <a
-                        href="https://wondersites.co/staking-as-a-service"
+                        href="https://sanctum.so/staking-as-a-service"
                         className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
                     >
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
-                                src="https://wondersites.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstaas.02e02f99.png&w=1080&q=100"
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstaas.02e02f99.png&w=1080&q=100"
                                 alt="Staking-as-a-Service"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
@@ -240,12 +240,12 @@ export default function AuthLanding() {
                 {/* Gateway & Ironforge */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                     <a
-                        href="https://wondersites.co/gateway"
+                        href="https://sanctum.so/gateway"
                         className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
                     >
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
-                                src="https://wondersites.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgateway.cfa8d4db.png&w=1080&q=100"
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgateway.cfa8d4db.png&w=1080&q=100"
                                 alt="Gateway"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
@@ -260,12 +260,12 @@ export default function AuthLanding() {
                     </a>
 
                     <a
-                        href="https://wondersites.co/ironforge"
+                        href="https://sanctum.so/ironforge"
                         className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
                     >
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
-                                src="https://wondersites.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fironforge.8a0b6ffe.png&w=1080&q=100"
+                                src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fironforge.8a0b6ffe.png&w=1080&q=100"
                                 alt="Ironforge"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
@@ -863,7 +863,7 @@ export default function App() {
 
                 {/* Button */}
                 <a
-                    href="https://wondersites.co/cloud"
+                    href="https://sanctum.so/cloud"
                     className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 hover:text-gray-900 transition-all px-5 py-2.5 rounded-md text-sm font-medium active:scale-[0.97] shadow-sm w-fit"
                 >
                     Learn more
@@ -888,12 +888,12 @@ export default function App() {
 
                 {/* Background Images */}
                 <img
-                    src="https://wondersites.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-img.01017a3e.png&w=750&q=100"
+                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-img.01017a3e.png&w=750&q=100"
                     alt="$CLOUD"
                     className="absolute bottom-[-45px] right-[80px] sm:bottom-[-42px] sm:right-[130px] w-[123px] sm:w-[170px] rotate-[10.7deg] opacity-90"
                 />
                 <img
-                    src="https://wondersites.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-stamp.ad2e9cf5.png&w=1080&q=100"
+                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-stamp.ad2e9cf5.png&w=1080&q=100"
                     alt="$CLOUD Stamp"
                     className="absolute bottom-[-50px] right-[-30px] sm:bottom-[-48px] sm:right-[-25px] w-[160px] sm:w-[220px] rotate-[-11.8deg] opacity-90"
                 />
