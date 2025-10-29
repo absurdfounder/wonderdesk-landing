@@ -136,8 +136,8 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 grid">
             <ProductHuntBadge />
 
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl max-w-4xl m-auto md:h1 mb-2 sm:mb-2 md:mb-2 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
-              AI Agent that runs your <b>blog</b> & <b>helpdesk</b> on <span style={{ color: '#009fbc' }}>auto-pilot</span>.
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl max-w-3xl m-auto md:h1 mb-2 sm:mb-2 md:mb-2 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
+              The <b>blog</b> & <b>help center</b> that runs on <span style={{ color: '#009fbc' }}>auto-pilot</span>.
               {" "}
               <span className="hidden font-bungee block font-normal text-gray-800 my-1 sm:my-2">
                 <div className="inline-flex items-center justify-center ml-0 sm:ml-1 px-2 sm:px-4 flex-wrap sm:flex-nowrap">
@@ -151,7 +151,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
             </h1>
 
             <p className="text-base sm:text-md md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-3xl m-auto px-2 sm:px-0 leading-relaxed opacity-75" style={{ textWrap: 'balance' }}>
-              <span className="text-slate-900">Turn your <b>Notion & Github Repos</b> into self-updating </span>
+              <span className="text-slate-900">Wonder is beautiful. Turns your <b>Notion & Github Repos</b> into a self-updating </span>
               <span className="inline-flex flex-wrap gap-x-1 gap-y-1 justify-center items-center">
                 {["Blogs", "Helpdesk", "API Docs", "Changelog"].map((category, idx) => (
                   <React.Fragment key={category}>
@@ -167,7 +167,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 ))}
               </span>
               {" "}
-              <span className="block sm:inline mt-1 sm:mt-0">– run marketing & support while you sleep.</span>
+              <span className="block sm:inline mt-1 sm:mt-0">.</span>
             </p>
           </div>
 
