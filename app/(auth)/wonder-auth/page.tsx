@@ -159,7 +159,7 @@ export default function AuthLanding() {
                         className="group flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50 transition-all shadow-sm"
                     >
                         <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
-                        <span>$WONDER Tokenomics • Read now</span>
+                        <span>Open Sourcing - Soon</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -178,9 +178,8 @@ export default function AuthLanding() {
                         </svg>
                     </a>
 
-                    <h1 className="max-w-2xl text-[32px] sm:text-[52px] font-semibold tracking-tight text-gray-900 leading-tight">
-                        The <span className="text-emerald-500">infrastructure</span> behind
-                        Solana’s biggest names.
+                    <h1 className="max-w-4xl text-[32px] sm:text-[52px] font-semibold tracking-tight text-gray-900 leading-tight">
+                        <span className="text-emerald-500">Better than Privy</span> <span className=" block">Global Wallets, Half the Price</span>
                     </h1>
                     <p className="max-w-lg text-gray-600 text-lg">
                        Stop building auth from scratch. Add social logins, magic links, passkeys, and 2FA to your app in minutes. Secure, scalable, and developer-friendly.
