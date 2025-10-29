@@ -181,7 +181,7 @@ export default function AuthLanding() {
                     <h1 className="max-w-4xl text-[32px] sm:text-[52px] font-semibold tracking-tight text-gray-900 leading-tight">
                         <span className="text-emerald-500">Better than Privy</span> <span className=" block">Global Wallets, Half the Price</span>
                     </h1>
-                    <p className="max-w-lg text-gray-600 text-lg">
+                    <p className="max-w-2xl text-gray-600 text-lg">
                        Stop building auth from scratch. Add social logins, magic links, passkeys, and 2FA to your app in minutes. Secure, scalable, and developer-friendly.
                     </p>
 
@@ -232,7 +232,7 @@ export default function AuthLanding() {
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
                                 src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstake.02ab1725.png&w=1080&q=100"
-                                alt="SOL Liquid Staking"
+                                alt="Global Wallets"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
                             <div className="absolute top-4 right-4 bg-white/90 text-emerald-600 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
@@ -240,10 +240,10 @@ export default function AuthLanding() {
                             </div>
                         </div>
                         <h3 className="text-gray-900 text-lg font-medium mb-1">
-                            SOL Liquid Staking
+                            Global Wallets
                         </h3>
                         <p className="text-gray-600 text-sm">
-                            Earn the best yields on your SOL, powered by Sanctum’s liquidity engine.
+                            One Wallet across all the Wonder Auth integrated ecosytem.
                         </p>
                     </a>
 
@@ -255,7 +255,7 @@ export default function AuthLanding() {
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
                                 src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsaas.5cd56fc1.png&w=3840&q=100&dpl=dpl_D9QZYgVvfe3sFucRdcFaasQw8RD7"
-                                alt="Staking-as-a-Service"
+                                alt="Embedded Wallet"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
                             <div className="absolute top-4 right-4 bg-white/90 text-blue-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
@@ -263,11 +263,10 @@ export default function AuthLanding() {
                             </div>
                         </div>
                         <h3 className="text-gray-900 text-lg font-medium mb-1">
-                            Staking-as-a-Service
+                            Embedded Wallet
                         </h3>
                         <p className="text-gray-600 text-sm">
-                            Launch your staking solution with Sanctum’s infrastructure and earn as
-                            others stake SOL with you.
+                            when a user logs in via Privy, you can provision a wallet behind the scenes.
                         </p>
                     </a>
                 </div>
@@ -288,7 +287,7 @@ export default function AuthLanding() {
                                 350k+ tx delivered
                             </div>
                         </div>
-                        <h3 className="text-gray-900 text-lg font-medium mb-1">Gateway</h3>
+                        <h3 className="text-gray-900 text-lg font-medium mb-1">Deposit & Withdrawls </h3>
                         <p className="text-gray-600 text-sm">
                             Send Solana transactions faster and more reliably.
                         </p>
@@ -301,16 +300,16 @@ export default function AuthLanding() {
                         <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                             <img
                                 src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fironforge.724f361c.png&w=3840&q=100&dpl=dpl_D9QZYgVvfe3sFucRdcFaasQw8RD7"
-                                alt="Ironforge"
+                                alt="Ironforge Security"
                                 className="object-contain w-full h-full group-hover:scale-110 transition-all"
                             />
                             <div className="absolute top-4 right-4 bg-white/90 text-orange-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
                                 300M+ daily requests
                             </div>
                         </div>
-                        <h3 className="text-gray-900 text-lg font-medium mb-1">Ironforge</h3>
+                        <h3 className="text-gray-900 text-lg font-medium mb-1">Ironforge Security</h3>
                         <p className="text-gray-600 text-sm">
-                            The complete Web3 DevOps platform for Solana builders.
+                            Everything encrypted. 
                         </p>
                     </a>
                 </div>
