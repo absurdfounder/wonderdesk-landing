@@ -43,9 +43,7 @@ const TabImageHotspots = () => {
       textColor: 'text-blue-800',
       borderColor: 'border-blue-500',
       hotspots: [
-        { id: 1, x: 30, y: 40, text: 'Create new project button - Start here to begin a new project' },
-        { id: 2, x: 60, y: 60, text: 'Project templates - Choose from existing templates to save time' },
-        { id: 3, x: 75, y: 25, text: 'Import options - Bring in existing projects from other systems' }
+
       ]
     },
     {
@@ -58,9 +56,7 @@ const TabImageHotspots = () => {
       textColor: 'text-green-800',
       borderColor: 'border-green-500',
       hotspots: [
-        { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
-        { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
-        { id: 3, x: 85, y: 40, text: 'Version history - Access previous versions of your document' }
+
       ]
     },
     {
@@ -73,9 +69,7 @@ const TabImageHotspots = () => {
       textColor: 'text-yellow-800',
       borderColor: 'border-yellow-500',
       hotspots: [
-        { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
-        { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
-        { id: 3, x: 85, y: 40, text: 'Version history - Access previous versions of your document' }
+
       ]
     },
     {
@@ -88,9 +82,7 @@ const TabImageHotspots = () => {
       textColor: 'text-pink-800',
       borderColor: 'border-pink-500',
       hotspots: [
-        { id: 1, x: 25, y: 20, text: 'Formatting toolbar - Style your content with these tools' },
-        { id: 2, x: 50, y: 70, text: 'Collaboration panel - See who else is editing and their changes' },
-        { id: 3, x: 85, y: 40, text: 'Version history - Access previous versions of your document' }
+
       ]
     }
   ];
