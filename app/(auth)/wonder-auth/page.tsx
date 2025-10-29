@@ -149,7 +149,7 @@ export default function AuthLanding() {
 
 
 
-                {/* SANCTUM LANDING PAGE SECTION - WHITE THEME */}
+                {/* Wonder LANDING PAGE SECTION - WHITE THEME */}
                 {/* ============================================ */}
 
                 <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 mt-12">
@@ -195,7 +195,7 @@ export default function AuthLanding() {
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 sm:mb-2 items-center justify-center px-4 sm:px-0">
                             <div
                                 onClick={() => setShowBuilder(true)}
-                                className="flex items-center justify-center py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto"
+                                className="flex items-center justify-center py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto cursor-pointer"
 
                             >
                                 <div className="relative overflow-hidden mr-2 h-5 sm:h-5">
@@ -331,7 +331,7 @@ export default function AuthLanding() {
                 <div className="z-10 flex flex-col gap-4">
                     <h3 className="text-3xl sm:text-4xl font-semibold text-gray-200 leading-snug">$WONDER</h3>
                     <p className="text-gray-300 text-base sm:max-w-md md:max-w-2xl">
-                        Sanctum is building ethical, user-first crypto. <strong>WONDER</strong> is our community
+                        Wonder is building ethical, user-first crypto. <strong>WONDER</strong> is our community
                         token to prove that crypto can and will be better.
                     </p>
                 </div>
@@ -383,214 +383,239 @@ export default function AuthLanding() {
             <div>
 
 
-                {/* Builder Modal */}
+                {/* Builder Modal - REDESIGNED */}
                 {showBuilder && (
-                    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
-                        <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl h-full flex flex-col animate-slideUp">
-                            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
-                                <h2 className="text-2xl font-bold text-slate-900">Auth Builder</h2>
+                    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
+                        <div 
+                            className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] flex flex-col animate-slideUp"
+                            style={{
+                                backgroundImage: "linear-gradient(rgb(255 255 255 / 95%), rgba(255, 255, 255, 0.98)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        >
+                            {/* Header */}
+                            <div className="flex items-center justify-between px-8 py-6 border-b border-gray-200/50">
+                                <div className="flex items-center gap-3">
+                                    <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-7" alt="WonderAuth" />
+                                    <div className="h-6 w-px bg-gray-300"></div>
+                                    <h2 className="text-xl font-semibold text-gray-900 opacity-50">Builder</h2>
+                                </div>
                                 <button
                                     onClick={() => setShowBuilder(false)}
-                                    className="text-slate-400 hover:text-slate-600 transition-colors"
+                                    className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-lg"
                                 >
-                                    <X className="w-6 h-6" />
+                                    <X className="w-5 h-5" />
                                 </button>
                             </div>
 
                             <div className="flex-1 flex overflow-hidden">
-                                {/* Left Panel */}
-                                <div className="w-1/3 border-r border-slate-200 overflow-y-auto p-6">
-                                    <div className="mb-6">
-
-
-                                        {configExpanded && (
-                                            <div className="space-y-4">
-                                                <div className="pb-3 border-b border-slate-200">
-                                                    <p className="text-sm font-semibold text-slate-900 mb-3">Social Providers</p>
-                                                    <div className="grid grid-cols-2 gap-2">
-                                                        {Object.entries({
-                                                            google: { name: 'Google', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" /></svg> },
-                                                            discord: { name: 'Discord', icon: <svg className="w-6 h-6 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" /></svg> },
-                                                            telegram: { name: 'Telegram', icon: <svg className="w-6 h-6 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg> },
-                                                            github: { name: 'Github', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg> },
-                                                            x: { name: 'X', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg> },
-                                                            facebook: { name: 'Facebook', icon: <svg className="w-6 h-6 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg> },
-                                                            apple: { name: 'Apple', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg> },
-                                                            farcaster: { name: 'Farcaster', icon: <svg className="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" /></svg> },
-                                                        }).map(([key, { name, icon }]) => (
-                                                            <label key={key} className="flex items-center gap-2 text-sm cursor-pointer p-2 rounded hover:bg-slate-50 border p-4">
-                                                                <div className="relative">
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        checked={socialProviders[key as SocialProvider]}
-                                                                        onChange={() => toggleSocialProvider(key as SocialProvider)}
-                                                                        className="w-6 h-6 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute"
-                                                                    />
-                                                                    <div className={`w-6 h-6 rounded border flex items-center justify-center ${socialProviders[key as SocialProvider] ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
-                                                                        {socialProviders[key as SocialProvider] && <Check className="w-3 h-3 text-white" />}
-                                                                    </div>
-                                                                </div>
-                                                                {icon}
-                                                                <span className="text-slate-700">{name}</span>
-                                                            </label>
-                                                        ))}
-                                                    </div>
+                                {/* Left Panel - Configuration */}
+                                <div className="w-1/3 border-r border-gray-200/50 overflow-y-auto p-6 backdrop-blur-sm bg-slate-50">
+                                    <div className="space-y-6">
+                                        {/* Social Providers */}
+                                        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                            <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                                <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                                                    <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
                                                 </div>
-
-                                                <div className="pb-3 border-b border-slate-200">
-                                                    <p className="text-sm font-semibold text-slate-900 mb-3">Auth Methods</p>
-                                                    <div className="space-y-2 grid gap-2 animate-slideDown grid-cols-2">
-                                                        <label className="flex items-center gap-2 text-sm cursor-pointer p-4 rounded hover:bg-slate-50 border border-slate-200 mt-2 ">
-                                                            <div className="relative">
-                                                                <input type="checkbox" checked={showEmail} onChange={() => setShowEmail(!showEmail)} className="w-6 h-6 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute" />
-                                                                <div className={`w-6 h-6 rounded border flex items-center justify-center ${showEmail ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
-                                                                    {showEmail && <Check className="w-3 h-3 text-white" />}
-                                                                </div>
+                                                Social Providers
+                                            </h3>
+                                            <div className="grid grid-cols-2 gap-2">
+                                                {Object.entries({
+                                                    google: { name: 'Google', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" /></svg> },
+                                                    discord: { name: 'Discord', icon: <svg className="w-5 h-5 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" /></svg> },
+                                                    telegram: { name: 'Telegram', icon: <svg className="w-5 h-5 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg> },
+                                                    github: { name: 'Github', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg> },
+                                                    x: { name: 'X', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg> },
+                                                    facebook: { name: 'Facebook', icon: <svg className="w-5 h-5 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg> },
+                                                    apple: { name: 'Apple', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg> },
+                                                    farcaster: { name: 'Farcaster', icon: <svg className="w-5 h-5 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" /></svg> },
+                                                }).map(([key, { name, icon }]) => (
+                                                    <label key={key} className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                        <div className="relative flex-shrink-0">
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={socialProviders[key as SocialProvider]}
+                                                                onChange={() => toggleSocialProvider(key as SocialProvider)}
+                                                                className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
+                                                            />
+                                                            <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${socialProviders[key as SocialProvider] ? 'bg-gray-600 border-gray-600' : 'border-gray-300 bg-white'}`}>
+                                                                {socialProviders[key as SocialProvider] && <Check className="w-3 h-3 text-white" />}
                                                             </div>
-                                                            <Mail className="w-6 h-6 text-slate-600" />
-                                                            <span className="text-slate-700">Email</span>
-                                                        </label>
-                                                        <label className="flex items-center gap-2 text-sm cursor-pointer p-4 rounded hover:bg-slate-50 border border-slate-200 mt-2 ">
-                                                            <div className="relative">
-                                                                <input type="checkbox" checked={showPhone} onChange={() => setShowPhone(!showPhone)} className="w-6 h-6 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute" />
-                                                                <div className={`w-6 h-6 rounded border flex items-center justify-center ${showPhone ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
-                                                                    {showPhone && <Check className="w-3 h-3 text-white" />}
-                                                                </div>
-                                                            </div>
-                                                            <Phone className="w-6 h-6 text-slate-600" />
-                                                            <span className="text-slate-700">Phone</span>
-                                                        </label>
-                                                        <label className="flex items-center gap-2 text-sm cursor-pointer p-4 rounded hover:bg-slate-50 border border-slate-200 mt-2 ">
-                                                            <div className="relative">
-                                                                <input type="checkbox" checked={showPasskey} onChange={() => setShowPasskey(!showPasskey)} className="w-6 h-6 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute" />
-                                                                <div className={`w-6 h-6 rounded border flex items-center justify-center ${showPasskey ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
-                                                                    {showPasskey && <Check className="w-3 h-3 text-white" />}
-                                                                </div>
-                                                            </div>
-                                                            <Key className="w-6 h-6 text-slate-600" />
-                                                            <span className="text-slate-700">Passkey</span>
-                                                        </label>
-                                                        <label className="flex items-center gap-2 text-sm cursor-pointer p-4 rounded hover:bg-slate-50 border border-slate-200 mt-2 ">
-                                                            <div className="relative">
-                                                                <input type="checkbox" checked={showWallet} onChange={() => setShowWallet(!showWallet)} className="w-6 h-6 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute" />
-                                                                <div className={`w-6 h-6 rounded border flex items-center justify-center ${showWallet ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
-                                                                    {showWallet && <Check className="w-3 h-3 text-white" />}
-                                                                </div>
-                                                            </div>
-                                                            <Wallet className="w-6 h-6 text-slate-600" />
-                                                            <span className="text-slate-700">Wallet Login</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <p className="text-sm font-semibold text-slate-900 mb-3">Wallets</p>
-                                                    <div className="grid grid-cols-2 gap-2">
-                                                        {Object.entries({
-                                                            metamask: { name: 'MetaMask', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg' },
-                                                            rainbow: { name: 'Rainbow', logo: 'https://avatars.githubusercontent.com/u/48327834?s=280&v=4' },
-                                                            rabby: { name: 'Rabby', logo: 'https://rabby.io/assets/images/logo-128.png' },
-                                                            okx: { name: 'OKX', logo: 'https://play-lh.googleusercontent.com/N00SbjLJJrhg4hbdnkk3Llk2oedNNgCU29DvR9cpep7Lr0VkzvBkmLqajWNgFb0d7IOO=w240-h480-rw' },
-                                                            zerion: { name: 'Zerion', logo: 'https://play-lh.googleusercontent.com/lxl3CQLYmbY7kHtMn3ehz06ebEIIxYOETf8hlWPNW6L3ZPxuhSrnIq-4k5T89gd4gA' },
-                                                            coinbaseWallet: { name: 'Coinbase', logo: 'https://raw.githubusercontent.com/gist/taycaldwell/2291907115c0bb5589bc346661435007/raw/280eafdc84cb80ed0c60e36b4d0c563f6dca6b3e/cbw.svg' },
-                                                            trustWallet: { name: 'Trust', logo: 'https://trustwallet.com/assets/images/media/assets/TWT.png' },
-                                                        }).map(([key, { name, logo }]) => (
-                                                            <div key={key} className="flex items-center justify-between text-sm p-2 rounded hover:bg-slate-100 border p-4">
-                                                                <div className="flex items-center gap-2">
-                                                                    <img src={logo} alt={name} className="w-6 h-6 rounded object-contain" onError={(e) => { e.currentTarget.style.display = 'none' }} />
-                                                                    <span className="text-slate-700 text-xs">{name}</span>
-                                                                </div>
-                                                                <div className="relative">
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        checked={wallets[key as WalletType]}
-                                                                        onChange={() => toggleWallet(key as WalletType)}
-                                                                        className="w-6 h-6 rounded border-slate-300 text-slate-700 focus:ring-slate-700 opacity-0 absolute"
-                                                                    />
-                                                                    <div className={`w-6 h-6 rounded border flex items-center justify-center ${wallets[key as WalletType] ? 'bg-slate-700 border-slate-700' : 'border-slate-300'}`}>
-                                                                        {wallets[key as WalletType] && <Check className="w-3 h-3 text-white" />}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                            {icon}
+                                                            <span className="text-gray-700 truncate">{name}</span>
+                                                        </div>
+                                                    </label>
+                                                ))}
                                             </div>
-                                        )}
+                                        </div>
+
+                                        {/* Auth Methods */}
+                                        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                            <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                                <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                                                    <Key className="w-4 h-4 text-blue-600" />
+                                                </div>
+                                                Auth Methods
+                                            </h3>
+                                            <div className="grid grid-cols-2 gap-2">
+                                                <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                    <div className="relative flex-shrink-0">
+                                                        <input type="checkbox" checked={showEmail} onChange={() => setShowEmail(!showEmail)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
+                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showEmail ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                            {showEmail && <Check className="w-3 h-3 text-white" />}
+                                                        </div>
+                                                    </div>
+                                                    <Mail className="w-4 h-4 text-gray-600 flex-shrink-0" />
+                                                    <span className="text-gray-700 truncate">Email</span>
+                                                </label>
+                                                <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                    <div className="relative flex-shrink-0">
+                                                        <input type="checkbox" checked={showPhone} onChange={() => setShowPhone(!showPhone)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
+                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showPhone ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                            {showPhone && <Check className="w-3 h-3 text-white" />}
+                                                        </div>
+                                                    </div>
+                                                    <Phone className="w-4 h-4 text-gray-600 flex-shrink-0" />
+                                                    <span className="text-gray-700 truncate">Phone</span>
+                                                </label>
+                                                <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                    <div className="relative flex-shrink-0">
+                                                        <input type="checkbox" checked={showPasskey} onChange={() => setShowPasskey(!showPasskey)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
+                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showPasskey ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                            {showPasskey && <Check className="w-3 h-3 text-white" />}
+                                                        </div>
+                                                    </div>
+                                                    <Key className="w-4 h-4 text-gray-600 flex-shrink-0" />
+                                                    <span className="text-gray-700 truncate">Passkey</span>
+                                                </label>
+                                                <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                    <div className="relative flex-shrink-0">
+                                                        <input type="checkbox" checked={showWallet} onChange={() => setShowWallet(!showWallet)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
+                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showWallet ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                            {showWallet && <Check className="w-3 h-3 text-white" />}
+                                                        </div>
+                                                    </div>
+                                                    <Wallet className="w-4 h-4 text-gray-600 flex-shrink-0" />
+                                                    <span className="text-gray-700 truncate">Wallet</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        {/* Wallets */}
+                                        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                            <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                                <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+                                                    <Wallet className="w-4 h-4 text-purple-600" />
+                                                </div>
+                                                Wallets
+                                            </h3>
+                                            <div className="grid grid-cols-2 gap-2">
+                                                {Object.entries({
+                                                    metamask: { name: 'MetaMask', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg' },
+                                                    rainbow: { name: 'Rainbow', logo: 'https://avatars.githubusercontent.com/u/48327834?s=280&v=4' },
+                                                    rabby: { name: 'Rabby', logo: 'https://rabby.io/assets/images/logo-128.png' },
+                                                    okx: { name: 'OKX', logo: 'https://play-lh.googleusercontent.com/N00SbjLJJrhg4hbdnkk3Llk2oedNNgCU29DvR9cpep7Lr0VkzvBkmLqajWNgFb0d7IOO=w240-h480-rw' },
+                                                    zerion: { name: 'Zerion', logo: 'https://play-lh.googleusercontent.com/lxl3CQLYmbY7kHtMn3ehz06ebEIIxYOETf8hlWPNW6L3ZPxuhSrnIq-4k5T89gd4gA' },
+                                                    coinbaseWallet: { name: 'Coinbase', logo: 'https://raw.githubusercontent.com/gist/taycaldwell/2291907115c0bb5589bc346661435007/raw/280eafdc84cb80ed0c60e36b4d0c563f6dca6b3e/cbw.svg' },
+                                                    trustWallet: { name: 'Trust', logo: 'https://trustwallet.com/assets/images/media/assets/TWT.png' },
+                                                }).map(([key, { name, logo }]) => (
+                                                    <div key={key} className="flex items-center justify-between text-sm p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                        <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                            <img src={logo} alt={name} className="w-5 h-5 rounded object-contain flex-shrink-0" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+                                                            <span className="text-gray-700 text-xs truncate">{name}</span>
+                                                        </div>
+                                                        <div className="relative flex-shrink-0">
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={wallets[key as WalletType]}
+                                                                onChange={() => toggleWallet(key as WalletType)}
+                                                                className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
+                                                            />
+                                                            <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${wallets[key as WalletType] ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                                {wallets[key as WalletType] && <Check className="w-3 h-3 text-white" />}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* Right Panel - Preview */}
-                                <div className="flex-1 bg-slate-50 p-6 overflow-y-auto">
-                                    <div className=" bg-slate-200 p-2 rounded-lg w-fit mb-4">
-                                        <button onClick={() => setActiveTab('modal')} className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeTab === 'modal' ? 'bg-white text-slate-900 shadow' : 'text-slate-600 hover:text-slate-900'}`}>Modal</button>
-                                        <button onClick={() => setActiveTab('button')} className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeTab === 'button' ? 'bg-white text-slate-900 shadow' : 'text-slate-600 hover:text-slate-900'}`}>Button</button>
-                                        <button onClick={() => setActiveTab('code')} className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeTab === 'code' ? 'bg-white text-slate-900 shadow' : 'text-slate-600 hover:text-slate-900'}`}>Code</button>
+                                <div className="flex-1 overflow-y-auto p-8 bg-slate-100">
+
+                                    <div className="flex justify-between">
+                                    <div className="bg-gray-100 p-1.5 rounded-xl w-fit mb-6 shadow-sm">
+                                        <button onClick={() => setActiveTab('modal')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'modal' ? 'bg-slate-100 text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Modal</button>
+                                        <button onClick={() => setActiveTab('button')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'button' ? 'bg-slate-100  text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Button</button>
+                                        <button onClick={() => setActiveTab('code')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'code' ? 'bg-slate-100  text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Code</button>
+                                    </div>
+
+                                    <button className="bg-slate-900 text-white h-fit p-3 rounded-lg">Deploy Auth</button>
                                     </div>
 
                                     {activeTab === 'modal' && (
-                                        <div className="flex items-center justify-center min-h-[600px] mt-12">
-                                            <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-8 w-full max-w-md relative">
+                                        <div className="flex items-center justify-center min-h-[600px]">
+                                            <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 w-full max-w-md relative">
 
-                                                <div className="flex gap-4 justify-between mb-4">
-
-
-                                                    <div className="flex gap-4">
-
+                                                <div className="flex gap-4 justify-between mb-6">
+                                                    <div className="flex gap-4 items-center">
                                                         {previewShowWallets && (
-                                                            <button onClick={() => setPreviewShowWallets(false)} className=" top-6 left-6 text-slate-400 hover:text-slate-600 transition-colors">
+                                                            <button onClick={() => setPreviewShowWallets(false)} className="text-gray-400 hover:text-gray-600 transition-colors">
                                                                 <ArrowLeft className="w-6 h-6" />
                                                             </button>
                                                         )}
-
                                                         <div>
-                                                            <h4 className="text-2xl font-bold text-slate-900">Sign in</h4>
+                                                            <h4 className="text-2xl font-bold text-gray-900">Sign in</h4>
                                                         </div>
                                                     </div>
-
-
-
-                                                    <button className="text-slate-400 hover:text-slate-600 transition-colors">
+                                                    <button className="text-gray-400 hover:text-gray-600 transition-colors">
                                                         <X className="w-6 h-6" />
                                                     </button>
                                                 </div>
 
-
                                                 {!previewShowWallets ? (
-                                                    <div className="space-y-4 ">
+                                                    <div className="space-y-4">
                                                         {getSocialIconGridProviders().length > 0 && (
                                                             getSocialIconGridProviders().length === 1 ? (
                                                                 <div className="animate-slideDown">
                                                                     {socialProviders.google && (
-                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                                                                                 <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
                                                                             </svg>
-                                                                            <span className="font-medium text-slate-700 text-sm">Google</span>
+                                                                            <span className="font-medium text-gray-700 text-sm">Google</span>
                                                                         </button>
                                                                     )}
                                                                     {socialProviders.discord && (
-                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                             <svg className="w-5 h-5 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor">
                                                                                 <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
                                                                             </svg>
-                                                                            <span className="font-medium text-slate-700 text-sm">Discord</span>
+                                                                            <span className="font-medium text-gray-700 text-sm">Discord</span>
                                                                         </button>
                                                                     )}
                                                                     {socialProviders.telegram && (
-                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                             <svg className="w-5 h-5 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor">
                                                                                 <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                                                                             </svg>
-                                                                            <span className="font-medium text-slate-700 text-sm">Telegram</span>
+                                                                            <span className="font-medium text-gray-700 text-sm">Telegram</span>
                                                                         </button>
                                                                     )}
                                                                     {socialProviders.x && (
-                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                             <svg className="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
                                                                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                                                             </svg>
-                                                                            <span className="font-medium text-slate-700 text-sm">X</span>
+                                                                            <span className="font-medium text-gray-700 text-sm">X</span>
                                                                         </button>
                                                                     )}
                                                                 </div>
@@ -600,28 +625,28 @@ export default function AuthLanding() {
                                                                         'grid-cols-4'
                                                                     }`}>
                                                                     {socialProviders.google && (
-                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all animate-slideDown">
+                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
                                                                             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                                                                                 <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
                                                                             </svg>
                                                                         </button>
                                                                     )}
                                                                     {socialProviders.discord && (
-                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                             <svg className="w-6 h-6 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor">
                                                                                 <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
                                                                             </svg>
                                                                         </button>
                                                                     )}
                                                                     {socialProviders.telegram && (
-                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                             <svg className="w-6 h-6 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor">
                                                                                 <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                                                                             </svg>
                                                                         </button>
                                                                     )}
                                                                     {socialProviders.x && (
-                                                                        <button className="aspect-square flex items-center justify-center border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                        <button className="aspect-square flex items-center justify-center border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                             <svg className="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
                                                                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                                                             </svg>
@@ -634,60 +659,60 @@ export default function AuthLanding() {
                                                         {getSocialButtonProviders().length > 0 && (
                                                             <div className={`grid ${getSocialButtonProviders().length === 1 ? 'grid-cols-1' : 'grid-cols-2'} gap-3 animate-slideDown`}>
                                                                 {socialProviders.farcaster && (
-                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all animate-slideDown">
+                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
                                                                         <svg className="w-5 h-5 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
                                                                             <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" />
                                                                         </svg>
-                                                                        <span className="font-medium text-slate-700 text-sm">Farcaster</span>
+                                                                        <span className="font-medium text-gray-700 text-sm">Farcaster</span>
                                                                     </button>
                                                                 )}
                                                                 {socialProviders.apple && (
-                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                                                                             <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
                                                                         </svg>
-                                                                        <span className="font-medium text-slate-700 text-sm">Apple</span>
+                                                                        <span className="font-medium text-gray-700 text-sm">Apple</span>
                                                                     </button>
                                                                 )}
                                                                 {socialProviders.github && (
-                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                                                                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                                                                         </svg>
-                                                                        <span className="font-medium text-slate-700 text-sm">GitHub</span>
+                                                                        <span className="font-medium text-gray-700 text-sm">GitHub</span>
                                                                     </button>
                                                                 )}
                                                                 {socialProviders.facebook && (
-                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                         <svg className="w-5 h-5 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor">
                                                                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                                                         </svg>
-                                                                        <span className="font-medium text-slate-700 text-sm">Facebook</span>
+                                                                        <span className="font-medium text-gray-700 text-sm">Facebook</span>
                                                                     </button>
                                                                 )}
                                                             </div>
                                                         )}
 
                                                         {showEmail && (
-                                                            <button className="w-full flex items-center justify-between px-5 py-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all animate-slideDown">
-                                                                <span className="text-slate-500 font-medium">Email address</span>
-                                                                <svg className="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <button className="w-full flex items-center justify-between px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
+                                                                <span className="text-gray-500 font-medium">Email address</span>
+                                                                <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                                                 </svg>
                                                             </button>
                                                         )}
 
                                                         {showPhone && (
-                                                            <button className="w-full flex items-center gap-3 px-5 py-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all animate-slideDown">
+                                                            <button className="w-full flex items-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
                                                                 <Phone className="w-5 h-5 text-blue-600" />
-                                                                <span className="text-slate-700 font-medium">Phone number</span>
+                                                                <span className="text-gray-700 font-medium">Phone number</span>
                                                             </button>
                                                         )}
 
                                                         {showPasskey && (
-                                                            <button className="w-full flex items-center gap-3 px-5 py-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all animate-slideDown">
+                                                            <button className="w-full flex items-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
                                                                 <Key className="w-5 h-5 text-blue-600" />
-                                                                <span className="text-slate-700 font-medium">Passkey</span>
+                                                                <span className="text-gray-700 font-medium">Passkey</span>
                                                             </button>
                                                         )}
 
@@ -696,20 +721,20 @@ export default function AuthLanding() {
                                                                 {(showEmail || showPhone || showPasskey || getSocialIconGridProviders().length > 0 || getSocialButtonProviders().length > 0) && (
                                                                     <div className="relative">
                                                                         <div className="absolute inset-0 flex items-center">
-                                                                            <div className="w-full border-t border-slate-200"></div>
+                                                                            <div className="w-full border-t border-gray-200"></div>
                                                                         </div>
                                                                         <div className="relative flex justify-center">
-                                                                            <span className="px-4 bg-white text-slate-400 text-sm font-medium">OR</span>
+                                                                            <span className="px-4 bg-white text-gray-400 text-sm font-medium">OR</span>
                                                                         </div>
                                                                     </div>
                                                                 )}
 
                                                                 <button
                                                                     onClick={() => setPreviewShowWallets(true)}
-                                                                    className="w-full flex items-center justify-center gap-3 px-5 py-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all"
+                                                                    className="w-full flex items-center justify-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all"
                                                                 >
                                                                     <Wallet className="w-5 h-5 text-blue-600" />
-                                                                    <span className="text-slate-700 font-medium">Connect a Wallet</span>
+                                                                    <span className="text-gray-700 font-medium">Connect a Wallet</span>
                                                                 </button>
                                                             </>
                                                         )}
@@ -718,27 +743,27 @@ export default function AuthLanding() {
                                                     <>
                                                         <div className="space-y-2 mb-6">
                                                             {getEnabledWalletsList().map(([key, _]) => (
-                                                                <button key={key} className="w-full flex items-center gap-4 px-5 py-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+                                                                <button key={key} className="w-full flex items-center gap-4 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
                                                                     <img
                                                                         src={walletLogos[key]}
                                                                         alt={walletNames[key]}
                                                                         className="w-12 h-12 rounded-xl object-contain"
                                                                         onError={(e) => { e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48"%3E%3Crect fill="%23ddd" width="48" height="48"/%3E%3C/svg%3E' }}
                                                                     />
-                                                                    <span className="text-lg font-semibold text-slate-900">{walletNames[key]}</span>
+                                                                    <span className="text-lg font-semibold text-gray-900">{walletNames[key]}</span>
                                                                 </button>
                                                             ))}
                                                         </div>
 
                                                         <div className="flex items-center justify-between text-sm mb-4">
-                                                            <span className="text-slate-500">New to wallets?</span>
+                                                            <span className="text-gray-500">New to wallets?</span>
                                                             <a href="#" className="text-blue-600 font-semibold hover:text-blue-700">Get started</a>
                                                         </div>
                                                     </>
                                                 )}
 
                                                 <div className="text-center mt-6">
-                                                    <p className="text-sm text-slate-400 font-medium flex items-center justify-center gap-1 filter grayscale">
+                                                    <p className="text-sm text-gray-400 font-medium flex items-center justify-center gap-1 filter grayscale">
                                                         Protected by
                                                         <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-5 opacity-75" alt="WonderAuth" />
                                                     </p>
@@ -749,14 +774,14 @@ export default function AuthLanding() {
 
                                     {activeTab === 'button' && (
                                         <div className="flex items-center justify-center min-h-[600px]">
-                                            <button className="px-8 py-4 bg-slate-700 text-white rounded-xl font-semibold text-lg hover:bg-slate-900 transition-colors shadow-lg">
+                                            <button className="px-8 py-4 bg-emerald-600 text-white rounded-xl font-semibold text-lg hover:bg-emerald-700 transition-colors shadow-lg">
                                                 Sign in with Wonder
                                             </button>
                                         </div>
                                     )}
 
                                     {activeTab === 'code' && (
-                                        <div className="bg-slate-900 rounded-xl p-6 text-slate-100 font-mono text-sm overflow-x-auto">
+                                        <div className="bg-gray-900 rounded-xl p-6 text-gray-100 font-mono text-sm overflow-x-auto shadow-lg">
                                             <pre className="whitespace-pre-wrap">
                                                 {`import { WonderAuth } from '@wonder/auth';
 
@@ -782,18 +807,8 @@ export default function App() {
                             </div>
                         </div>
                     </div>
-                    
                 )}
-
-
-
             </div>
-
-
-
-
-
         </div>
-
     );
 }
