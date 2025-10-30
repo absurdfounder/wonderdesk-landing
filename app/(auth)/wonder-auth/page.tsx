@@ -237,7 +237,7 @@ export default function AuthLanding() {
                         >
                             <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                                 <img
-                                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstake.02ab1725.png&w=1080&q=100"
+                                    src="https://dazzling-cat.netlify.app/globalwallets.png"
                                     alt="Global Wallets"
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
@@ -260,7 +260,7 @@ export default function AuthLanding() {
                         >
                             <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                                 <img
-                                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsaas.5cd56fc1.png&w=3840&q=100&dpl=dpl_D9QZYgVvfe3sFucRdcFaasQw8RD7"
+                                    src="https://dazzling-cat.netlify.app/embeddedwallets.png"
                                     alt="Embedded Wallet"
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
@@ -285,7 +285,7 @@ export default function AuthLanding() {
                         >
                             <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                                 <img
-                                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgateway.9129298e.png&w=3840&q=100&dpl=dpl_D9QZYgVvfe3sFucRdcFaasQw8RD7"
+                                    src="https://dazzling-cat.netlify.app/depositwithdrawl.png"
                                     alt="Gateway"
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
@@ -305,7 +305,7 @@ export default function AuthLanding() {
                         >
                             <div className="relative h-56 rounded-lg overflow-hidden border border-gray-200 mb-4">
                                 <img
-                                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fironforge.724f361c.png&w=3840&q=100&dpl=dpl_D9QZYgVvfe3sFucRdcFaasQw8RD7"
+                                    src="https://dazzling-cat.netlify.app/ironforge.png"
                                     alt="Ironforge Security"
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
