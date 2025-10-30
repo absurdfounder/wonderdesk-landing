@@ -242,7 +242,7 @@ export default function AuthLanding() {
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
                                 <div className="absolute top-4 right-4 bg-white/90 text-emerald-600 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
-                                    8.94% APY
+                                    All Ecosystem
                                 </div>
                             </div>
                             <h3 className="text-gray-900 text-lg font-medium mb-1">
@@ -265,7 +265,7 @@ export default function AuthLanding() {
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
                                 <div className="absolute top-4 right-4 bg-white/90 text-blue-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
-                                    $5M+ Partner Revenue
+                                    Coinbase x402
                                 </div>
                             </div>
                             <h3 className="text-gray-900 text-lg font-medium mb-1">
@@ -290,12 +290,12 @@ export default function AuthLanding() {
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
                                 <div className="absolute top-4 right-4 bg-white/90 text-purple-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
-                                    350k+ tx delivered
+                                    Defi 
                                 </div>
                             </div>
                             <h3 className="text-gray-900 text-lg font-medium mb-1">Deposit & Withdrawls </h3>
                             <p className="text-gray-600 text-sm">
-                                Send Solana transactions faster and more reliably.
+                                Onboard Web3 with defi integrations
                             </p>
                         </a>
 
@@ -310,7 +310,7 @@ export default function AuthLanding() {
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
                                 <div className="absolute top-4 right-4 bg-white/90 text-orange-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
-                                    300M+ daily requests
+                                    Degens Defend Encryption
                                 </div>
                             </div>
                             <h3 className="text-gray-900 text-lg font-medium mb-1">Ironforge Security</h3>
