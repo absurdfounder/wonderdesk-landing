@@ -325,7 +325,7 @@ export default function AuthLanding() {
 
 
             {/* $WONDER SECTION - WHITE THEME */}
-            <div className="relative z-10 flex flex-col overflow-hidden bg-gray-900 rounded-xl pb-[100px] px-6 pt-16 sm:pt-20 sm:pb-20 sm:px-12 gap-10 border border-gray-200 max-w-6xl w-full m-auto my-8">
+            <div className="hidden relative z-10 flex flex-col overflow-hidden bg-gray-900 rounded-xl pb-[100px] px-6 pt-16 sm:pt-20 sm:pb-20 sm:px-12 gap-10 border border-gray-200 max-w-6xl w-full m-auto my-8">
                 {/* Text Content */}
                 <div className="z-10 flex flex-col gap-4">
                     <h3 className="text-3xl sm:text-4xl font-semibold text-gray-200 leading-snug">$WONDER</h3>
