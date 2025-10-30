@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Wallet, ChevronDown, ArrowLeft, ArrowRight, Mail, Phone, Key, Check } from "lucide-react";
+import { X, Wallet, ChevronDown, ArrowLeft, ArrowRight, Mail, Phone, Key, Check, Loader2, AlertCircle, CheckCircle } from "lucide-react";
 import Link from "next/link";
+
 type SocialProvider = 'google' | 'discord' | 'telegram' | 'github' | 'twitch' | 'steam' | 'farcaster' | 'line' | 'x' | 'tiktok' | 'facebook' | 'apple';
 type WalletType = 'metamask' | 'rainbow' | 'rabby' | 'okx' | 'zerion' | 'coinbaseWallet' | 'trustWallet' | 'binance' | 'safepal';
 
@@ -26,12 +27,28 @@ const walletNames: Record<string, string> = {
     trustWallet: 'Trust Wallet',
 };
 
+const GoogleIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+    </svg>
+);
 
-
+const FacebookIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2" />
+    </svg>
+);
 
 export default function AuthLanding() {
     const [showWallets, setShowWallets] = useState(false);
     const [showBuilder, setShowBuilder] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [authError, setAuthError] = useState('');
+    const [authSuccess, setAuthSuccess] = useState('');
+    const [authStep, setAuthStep] = useState('main');
 
     const [socialProviders, setSocialProviders] = useState({
         google: true,
@@ -67,6 +84,7 @@ export default function AuthLanding() {
     const [activeTab, setActiveTab] = useState('modal');
     const [configExpanded, setConfigExpanded] = useState(true);
     const [previewShowWallets, setPreviewShowWallets] = useState(false);
+    const [customLogo, setCustomLogo] = useState('https://dazzling-cat.netlify.app/astralogo.png');
 
     const toggleSocialProvider = (provider: SocialProvider) => {
         setSocialProviders(prev => ({ ...prev, [provider]: !prev[provider] }));
@@ -89,7 +107,6 @@ export default function AuthLanding() {
     };
 
     return (
-
         <div>
             <div
                 className="min-h-screen flex flex-col pb-12"
@@ -134,6 +151,7 @@ export default function AuthLanding() {
                     animation: slideDown 0.2s ease-out;
                 }
             `}</style>
+
                 {/* Navbar */}
                 <nav className="bg-white/80 backdrop-blur-md py-3 px-6 mt-4">
                     <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -142,18 +160,13 @@ export default function AuthLanding() {
                         </div>
                         <div className="flex items-center gap-3">
                             <button className="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm">Sign in</button>
-                            <button className="px-4 py-2 bg-slate-700 text-white rounded-lg font-medium hover:bg-slate-800 transition-colors shadow-sm text-sm">Get Started</button>
+                            <button className="px-4 py-2 bg-slate-700 text-white rounded-lg font-medium hover:bg-slate-800 transition-colors shadow-sm text-sm">Start Building</button>
                         </div>
                     </div>
                 </nav>
 
-
-
-                {/* Wonder LANDING PAGE SECTION - WHITE THEME */}
-                {/* ============================================ */}
-
+                {/* Hero Section */}
                 <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 mt-12">
-                    {/* Hero Section */}
                     <div className="flex flex-col items-center text-center gap-6 pb-16">
                         <a
                             href="https://wondersites.co/quarterly"
@@ -188,25 +201,15 @@ export default function AuthLanding() {
                             Stop building auth from scratch. Add social logins, magic links, passkeys, and 2FA to your app in minutes. Secure, scalable, and developer-friendly.
                         </p>
 
-
-
-
-                        {/* CTA Buttons - simplified animations for immediate rendering */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 sm:mb-2 items-center justify-center px-4 sm:px-0">
                             <div
                                 onClick={() => setShowBuilder(true)}
                                 className="flex items-center justify-center py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto cursor-pointer"
-
                             >
                                 <div className="relative overflow-hidden mr-2 h-5 sm:h-5">
-                                    <div
-                                        className="transition-transform duration-150 whitespace-nowrap"
-
-                                    >
+                                    <div className="transition-transform duration-150 whitespace-nowrap">
                                         Setup in 15 mins
                                     </div>
-
-
                                 </div>
                             </div>
 
@@ -223,12 +226,8 @@ export default function AuthLanding() {
                         </div>
                     </div>
 
-
-
-
                     {/* Product Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* SOL Liquid Staking */}
                         <a
                             href="https://wondersites.co/app"
                             target="_blank"
@@ -253,7 +252,6 @@ export default function AuthLanding() {
                             </p>
                         </a>
 
-                        {/* Staking as a Service */}
                         <a
                             href="https://wondersites.co/staking-as-a-service"
                             className="group block rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-all p-5 hover:shadow-md"
@@ -320,469 +318,392 @@ export default function AuthLanding() {
                         </a>
                     </div>
                 </div>
-
-
-
-
-                {/* $WONDER SECTION - WHITE THEME */}
-                <div className="hidden relative z-10 flex flex-col overflow-hidden bg-gray-900 rounded-xl pb-[100px] px-6 pt-16 sm:pt-20 sm:pb-20 sm:px-12 gap-10 border border-gray-200 max-w-6xl w-full m-auto my-8">
-                    {/* Text Content */}
-                    <div className="z-10 flex flex-col gap-4">
-                        <h3 className="text-3xl sm:text-4xl font-semibold text-gray-200 leading-snug">$WONDER</h3>
-                        <p className="text-gray-300 text-base sm:max-w-md md:max-w-2xl">
-                            Wonder is building ethical, user-first crypto. <strong>WONDER</strong> is our community
-                            token to prove that crypto can and will be better.
-                        </p>
-                    </div>
-
-                    {/* Button */}
-                    <a
-                        href="https://wondersites.co/cloud"
-                        className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 hover:text-gray-900 transition-all px-5 py-2.5 rounded-md text-sm font-medium active:scale-[0.97] shadow-sm w-fit"
-                    >
-                        $WONDER Tokenomics
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            className="text-current"
-                        >
-                            <path
-                                d="M20,12.75 L4,12.75 Q3.689,12.75 3.47,12.53 Q3.25,12.31 3.25,12 Q3.25,11.689 3.47,11.469 Q3.689,11.25 4,11.25 L20,11.25 Q20.311,11.25 20.53,11.469 Q20.75,11.689 20.75,12 Q20.75,12.31 20.53,12.53 Q20.311,12.75 20,12.75 Z"
-                                fill="currentColor"
-                            ></path>
-                            <path
-                                d="M14.556,16.396 Q19.25,12.939 19.25,12 Q19.25,11.061 14.555,7.604 Q14.305,7.42 14.259,7.113 Q14.212,6.805 14.396,6.555 Q14.581,6.305 14.888,6.258 Q15.195,6.212 15.445,6.396 Q20.75,10.303 20.75,12 Q20.75,13.697 15.445,17.604 Q15.195,17.788 14.888,17.742 Q14.581,17.695 14.396,17.445 Q14.212,17.195 14.259,16.887 Q14.305,16.58 14.556,16.396 Z"
-                                fill="currentColor"
-                            ></path>
-                        </svg>
-                    </a>
-
-                    {/* Background Images */}
-                    <img
-                        src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-img.01017a3e.png&w=750&q=100"
-                        alt="$WONDER"
-                        className="absolute bottom-[-45px] right-[80px] sm:bottom-[-42px] sm:right-[130px] w-[123px] sm:w-[170px] rotate-[10.7deg] opacity-90"
-                    />
-                    <img
-                        src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-stamp.ad2e9cf5.png&w=1080&q=100"
-                        alt="$WONDER Stamp"
-                        className="absolute bottom-[-50px] right-[-30px] sm:bottom-[-48px] sm:right-[-25px] w-[160px] sm:w-[220px] rotate-[-11.8deg] opacity-90"
-                    />
-                </div>
-
-
             </div>
 
-
-
-
-            <div>
-
-
-                {/* Builder Modal - REDESIGNED */}
-                {showBuilder && (
-                    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
-                        <div
-                            className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] flex flex-col animate-slideUp"
-                            style={{
-                                backgroundImage: "linear-gradient(rgb(255 255 255 / 95%), rgba(255, 255, 255, 0.98)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
-                                backgroundSize: "cover",
-                                backgroundPosition: "center",
-                            }}
-                        >
-                            {/* Header */}
-                            <div className="flex items-center justify-between px-8 py-6 border-b border-gray-200/50">
-                                <div className="flex items-center gap-3">
-                                    <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-7" alt="WonderAuth" />
-                                    <div className="h-6 w-px bg-gray-300"></div>
-                                    <h2 className="text-xl font-semibold text-gray-900 opacity-50">Builder</h2>
-                                </div>
-                                <button
-                                    onClick={() => setShowBuilder(false)}
-                                    className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-lg"
-                                >
-                                    <X className="w-5 h-5" />
-                                </button>
+            {/* Builder Modal - REDESIGNED WITH DARK THEME FROM FIRST FILE */}
+            {showBuilder && (
+                <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
+                    <div
+                        className="bg-slate-50 rounded-3xl shadow-2xl w-full max-w-7xl max-h-[90vh] flex flex-col border border-gray-200"
+                    >
+                        {/* Header */}
+                        <div className="flex items-center justify-between px-8 py-6 border-b border-gray-200">
+                            <div className="flex items-center gap-3">
+                                <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-7" alt="WonderAuth" />
+                                <div className="h-6 w-px bg-gray-300"></div>
+                                <h2 className="text-xl font-semibold text-gray-900">Builder</h2>
                             </div>
+                            <button
+                                onClick={() => setShowBuilder(false)}
+                                className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-lg"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+                        </div>
 
-                            <div className="flex-1 flex overflow-hidden">
-                                {/* Left Panel - Configuration */}
-                                <div className="w-1/3 border-r border-gray-200/50 overflow-y-auto p-6 backdrop-blur-sm bg-slate-50">
-                                    <div className="space-y-6">
-                                        {/* Social Providers */}
-                                        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
-                                            <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                                <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
-                                                    <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                                    </svg>
-                                                </div>
-                                                Social Providers
-                                            </h3>
-                                            <div className="grid grid-cols-2 gap-2">
-                                                {Object.entries({
-                                                    google: { name: 'Google', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" /></svg> },
-                                                    discord: { name: 'Discord', icon: <svg className="w-5 h-5 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" /></svg> },
-                                                    telegram: { name: 'Telegram', icon: <svg className="w-5 h-5 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg> },
-                                                    github: { name: 'Github', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg> },
-                                                    x: { name: 'X', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg> },
-                                                    facebook: { name: 'Facebook', icon: <svg className="w-5 h-5 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg> },
-                                                    apple: { name: 'Apple', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg> },
-                                                    farcaster: { name: 'Farcaster', icon: <svg className="w-5 h-5 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" /></svg> },
-                                                }).map(([key, { name, icon }]) => (
-                                                    <label key={key} className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
-                                                        <div className="relative flex-shrink-0">
-                                                            <input
-                                                                type="checkbox"
-                                                                checked={socialProviders[key as SocialProvider]}
-                                                                onChange={() => toggleSocialProvider(key as SocialProvider)}
-                                                                className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
-                                                            />
-                                                            <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${socialProviders[key as SocialProvider] ? 'bg-gray-600 border-gray-600' : 'border-gray-300 bg-white'}`}>
-                                                                {socialProviders[key as SocialProvider] && <Check className="w-3 h-3 text-white" />}
-                                                            </div>
-                                                        </div>
-                                                        <div className="flex items-center gap-2 flex-1 min-w-0">
-                                                            {icon}
-                                                            <span className="text-gray-700 truncate">{name}</span>
-                                                        </div>
-                                                    </label>
-                                                ))}
+                        <div className="flex-1 flex overflow-hidden">
+                            {/* Left Panel - Configuration */}
+                            <div className="w-1/3 border-r border-gray-200 overflow-y-auto p-6 bg-white">
+                                <div className="space-y-6">
+
+
+                                    {/* Logo Customization */}
+                                    <div className="bg-white backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                        <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center">
+                                                <svg className="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                </svg>
                                             </div>
-                                        </div>
-
-                                        {/* Auth Methods */}
-                                        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
-                                            <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                                <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
-                                                    <Key className="w-4 h-4 text-blue-600" />
+                                            Custom Logo
+                                        </h3>
+                                        
+                                        <div className="space-y-4">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-16 h-16 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center overflow-hidden">
+                                                    <img 
+                                                        src={customLogo} 
+                                                        alt="Logo Preview" 
+                                                        className="w-full h-full object-contain p-2"
+                                                        onError={(e) => {
+                                                            e.currentTarget.src = 'https://dazzling-cat.netlify.app/astralogo.png';
+                                                        }}
+                                                    />
                                                 </div>
-                                                Auth Methods
-                                            </h3>
-                                            <div className="grid grid-cols-2 gap-2">
-                                                <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
-                                                    <div className="relative flex-shrink-0">
-                                                        <input type="checkbox" checked={showEmail} onChange={() => setShowEmail(!showEmail)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
-                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showEmail ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
-                                                            {showEmail && <Check className="w-3 h-3 text-white" />}
-                                                        </div>
-                                                    </div>
-                                                    <Mail className="w-4 h-4 text-gray-600 flex-shrink-0" />
-                                                    <span className="text-gray-700 truncate">Email</span>
-                                                </label>
-                                                <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
-                                                    <div className="relative flex-shrink-0">
-                                                        <input type="checkbox" checked={showPhone} onChange={() => setShowPhone(!showPhone)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
-                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showPhone ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
-                                                            {showPhone && <Check className="w-3 h-3 text-white" />}
-                                                        </div>
-                                                    </div>
-                                                    <Phone className="w-4 h-4 text-gray-600 flex-shrink-0" />
-                                                    <span className="text-gray-700 truncate">Phone</span>
-                                                </label>
-                                                <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
-                                                    <div className="relative flex-shrink-0">
-                                                        <input type="checkbox" checked={showPasskey} onChange={() => setShowPasskey(!showPasskey)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
-                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showPasskey ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
-                                                            {showPasskey && <Check className="w-3 h-3 text-white" />}
-                                                        </div>
-                                                    </div>
-                                                    <Key className="w-4 h-4 text-gray-600 flex-shrink-0" />
-                                                    <span className="text-gray-700 truncate">Passkey</span>
-                                                </label>
-                                                <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
-                                                    <div className="relative flex-shrink-0">
-                                                        <input type="checkbox" checked={showWallet} onChange={() => setShowWallet(!showWallet)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
-                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showWallet ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
-                                                            {showWallet && <Check className="w-3 h-3 text-white" />}
-                                                        </div>
-                                                    </div>
-                                                    <Wallet className="w-4 h-4 text-gray-600 flex-shrink-0" />
-                                                    <span className="text-gray-700 truncate">Wallet</span>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        {/* Wallets */}
-                                        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
-                                            <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                                <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
-                                                    <Wallet className="w-4 h-4 text-purple-600" />
-                                                </div>
-                                                Wallets
-                                            </h3>
-                                            <div className="grid grid-cols-2 gap-2">
-                                                {Object.entries({
-                                                    metamask: { name: 'MetaMask', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg' },
-                                                    rainbow: { name: 'Rainbow', logo: 'https://avatars.githubusercontent.com/u/48327834?s=280&v=4' },
-                                                    rabby: { name: 'Rabby', logo: 'https://rabby.io/assets/images/logo-128.png' },
-                                                    okx: { name: 'OKX', logo: 'https://play-lh.googleusercontent.com/N00SbjLJJrhg4hbdnkk3Llk2oedNNgCU29DvR9cpep7Lr0VkzvBkmLqajWNgFb0d7IOO=w240-h480-rw' },
-                                                    zerion: { name: 'Zerion', logo: 'https://play-lh.googleusercontent.com/lxl3CQLYmbY7kHtMn3ehz06ebEIIxYOETf8hlWPNW6L3ZPxuhSrnIq-4k5T89gd4gA' },
-                                                    coinbaseWallet: { name: 'Coinbase', logo: 'https://raw.githubusercontent.com/gist/taycaldwell/2291907115c0bb5589bc346661435007/raw/280eafdc84cb80ed0c60e36b4d0c563f6dca6b3e/cbw.svg' },
-                                                    trustWallet: { name: 'Trust', logo: 'https://trustwallet.com/assets/images/media/assets/TWT.png' },
-                                                }).map(([key, { name, logo }]) => (
-                                                    <div key={key} className="flex items-center justify-between text-sm p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
-                                                        <div className="flex items-center gap-2 flex-1 min-w-0">
-                                                            <img src={logo} alt={name} className="w-5 h-5 rounded object-contain flex-shrink-0" onError={(e) => { e.currentTarget.style.display = 'none' }} />
-                                                            <span className="text-gray-700 text-xs truncate">{name}</span>
-                                                        </div>
-                                                        <div className="relative flex-shrink-0">
-                                                            <input
-                                                                type="checkbox"
-                                                                checked={wallets[key as WalletType]}
-                                                                onChange={() => toggleWallet(key as WalletType)}
-                                                                className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
-                                                            />
-                                                            <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${wallets[key as WalletType] ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
-                                                                {wallets[key as WalletType] && <Check className="w-3 h-3 text-white" />}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Right Panel - Preview */}
-                                <div className="flex-1 overflow-y-auto p-8 bg-slate-100">
-
-                                    <div className="flex justify-between">
-                                        <div className="bg-gray-100 p-1.5 rounded-xl w-fit mb-6 shadow-sm">
-                                            <button onClick={() => setActiveTab('modal')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'modal' ? 'bg-slate-100 text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Modal</button>
-                                            <button onClick={() => setActiveTab('button')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'button' ? 'bg-slate-100  text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Button</button>
-                                            <button onClick={() => setActiveTab('code')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'code' ? 'bg-slate-100  text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Code</button>
-                                        </div>
-
-                                        <button className="bg-slate-900 text-white h-fit p-3 rounded-lg">Deploy Auth</button>
-                                    </div>
-
-                                    {activeTab === 'modal' && (
-                                        <div className="flex items-center justify-center min-h-[600px]">
-                                            <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 w-full max-w-md relative">
-
-                                                <div className="flex gap-4 justify-between mb-6">
-                                                    <div className="flex gap-4 items-center">
-                                                        {previewShowWallets && (
-                                                            <button onClick={() => setPreviewShowWallets(false)} className="text-gray-400 hover:text-gray-600 transition-colors">
-                                                                <ArrowLeft className="w-6 h-6" />
-                                                            </button>
-                                                        )}
-                                                        <div>
-                                                            <h4 className="text-2xl font-bold text-gray-900">Sign in</h4>
-                                                        </div>
-                                                    </div>
-                                                    <button className="text-gray-400 hover:text-gray-600 transition-colors">
-                                                        <X className="w-6 h-6" />
-                                                    </button>
-                                                </div>
-
-                                                {!previewShowWallets ? (
-                                                    <div className="space-y-4">
-                                                        {getSocialIconGridProviders().length > 0 && (
-                                                            getSocialIconGridProviders().length === 1 ? (
-                                                                <div className="animate-slideDown">
-                                                                    {socialProviders.google && (
-                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                                                                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
-                                                                            </svg>
-                                                                            <span className="font-medium text-gray-700 text-sm">Google</span>
-                                                                        </button>
-                                                                    )}
-                                                                    {socialProviders.discord && (
-                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                            <svg className="w-5 h-5 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor">
-                                                                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
-                                                                            </svg>
-                                                                            <span className="font-medium text-gray-700 text-sm">Discord</span>
-                                                                        </button>
-                                                                    )}
-                                                                    {socialProviders.telegram && (
-                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                            <svg className="w-5 h-5 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor">
-                                                                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-                                                                            </svg>
-                                                                            <span className="font-medium text-gray-700 text-sm">Telegram</span>
-                                                                        </button>
-                                                                    )}
-                                                                    {socialProviders.x && (
-                                                                        <button className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                            <svg className="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                                                            </svg>
-                                                                            <span className="font-medium text-gray-700 text-sm">X</span>
-                                                                        </button>
-                                                                    )}
-                                                                </div>
-                                                            ) : (
-                                                                <div className={`grid gap-3 animate-slideDown ${getSocialIconGridProviders().length === 2 ? 'grid-cols-2' :
-                                                                    getSocialIconGridProviders().length === 3 ? 'grid-cols-3' :
-                                                                        'grid-cols-4'
-                                                                    }`}>
-                                                                    {socialProviders.google && (
-                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
-                                                                            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                                                                                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
-                                                                            </svg>
-                                                                        </button>
-                                                                    )}
-                                                                    {socialProviders.discord && (
-                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                            <svg className="w-6 h-6 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor">
-                                                                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
-                                                                            </svg>
-                                                                        </button>
-                                                                    )}
-                                                                    {socialProviders.telegram && (
-                                                                        <button className="aspect-square flex items-center justify-center bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                            <svg className="w-6 h-6 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor">
-                                                                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-                                                                            </svg>
-                                                                        </button>
-                                                                    )}
-                                                                    {socialProviders.x && (
-                                                                        <button className="aspect-square flex items-center justify-center border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                            <svg className="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                                                            </svg>
-                                                                        </button>
-                                                                    )}
-                                                                </div>
-                                                            )
-                                                        )}
-
-                                                        {getSocialButtonProviders().length > 0 && (
-                                                            <div className={`grid ${getSocialButtonProviders().length === 1 ? 'grid-cols-1' : 'grid-cols-2'} gap-3 animate-slideDown`}>
-                                                                {socialProviders.farcaster && (
-                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
-                                                                        <svg className="w-5 h-5 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
-                                                                            <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" />
-                                                                        </svg>
-                                                                        <span className="font-medium text-gray-700 text-sm">Farcaster</span>
-                                                                    </button>
-                                                                )}
-                                                                {socialProviders.apple && (
-                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                                                            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                                                                        </svg>
-                                                                        <span className="font-medium text-gray-700 text-sm">Apple</span>
-                                                                    </button>
-                                                                )}
-                                                                {socialProviders.github && (
-                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                                                        </svg>
-                                                                        <span className="font-medium text-gray-700 text-sm">GitHub</span>
-                                                                    </button>
-                                                                )}
-                                                                {socialProviders.facebook && (
-                                                                    <button className="flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                        <svg className="w-5 h-5 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor">
-                                                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                                                        </svg>
-                                                                        <span className="font-medium text-gray-700 text-sm">Facebook</span>
-                                                                    </button>
-                                                                )}
-                                                            </div>
-                                                        )}
-
-                                                        {showEmail && (
-                                                            <button className="w-full flex items-center justify-between px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
-                                                                <span className="text-gray-500 font-medium">Email address</span>
-                                                                <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                                                </svg>
-                                                            </button>
-                                                        )}
-
-                                                        {showPhone && (
-                                                            <button className="w-full flex items-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
-                                                                <Phone className="w-5 h-5 text-blue-600" />
-                                                                <span className="text-gray-700 font-medium">Phone number</span>
-                                                            </button>
-                                                        )}
-
-                                                        {showPasskey && (
-                                                            <button className="w-full flex items-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all animate-slideDown">
-                                                                <Key className="w-5 h-5 text-blue-600" />
-                                                                <span className="text-gray-700 font-medium">Passkey</span>
-                                                            </button>
-                                                        )}
-
-                                                        {showWallet && getEnabledWalletsList().length > 0 && (
-                                                            <>
-                                                                {(showEmail || showPhone || showPasskey || getSocialIconGridProviders().length > 0 || getSocialButtonProviders().length > 0) && (
-                                                                    <div className="relative">
-                                                                        <div className="absolute inset-0 flex items-center">
-                                                                            <div className="w-full border-t border-gray-200"></div>
-                                                                        </div>
-                                                                        <div className="relative flex justify-center">
-                                                                            <span className="px-4 bg-white text-gray-400 text-sm font-medium">OR</span>
-                                                                        </div>
-                                                                    </div>
-                                                                )}
-
-                                                                <button
-                                                                    onClick={() => setPreviewShowWallets(true)}
-                                                                    className="w-full flex items-center justify-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all"
-                                                                >
-                                                                    <Wallet className="w-5 h-5 text-blue-600" />
-                                                                    <span className="text-gray-700 font-medium">Connect a Wallet</span>
-                                                                </button>
-                                                            </>
-                                                        )}
-                                                    </div>
-                                                ) : (
-                                                    <>
-                                                        <div className="space-y-2 mb-6">
-                                                            {getEnabledWalletsList().map(([key, _]) => (
-                                                                <button key={key} className="w-full flex items-center gap-4 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all">
-                                                                    <img
-                                                                        src={walletLogos[key]}
-                                                                        alt={walletNames[key]}
-                                                                        className="w-12 h-12 rounded-xl object-contain"
-                                                                        onError={(e) => { e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48"%3E%3Crect fill="%23ddd" width="48" height="48"/%3E%3C/svg%3E' }}
-                                                                    />
-                                                                    <span className="text-lg font-semibold text-gray-900">{walletNames[key]}</span>
-                                                                </button>
-                                                            ))}
-                                                        </div>
-
-                                                        <div className="flex items-center justify-between text-sm mb-4">
-                                                            <span className="text-gray-500">New to wallets?</span>
-                                                            <a href="#" className="text-blue-600 font-semibold hover:text-blue-700">Get started</a>
-                                                        </div>
-                                                    </>
-                                                )}
-
-                                                <div className="text-center mt-6">
-                                                    <p className="text-sm text-gray-400 font-medium flex items-center justify-center gap-1 filter grayscale">
-                                                        Protected by
-                                                        <img src="https://dazzling-cat.netlify.app/wonderauth.png" className="h-5 opacity-75" alt="WonderAuth" />
-                                                    </p>
+                                                <div className="flex-1">
+                                                    <p className="text-xs text-gray-500 mb-2">Logo URL</p>
+                                                    <input
+                                                        type="text"
+                                                        value={customLogo}
+                                                        onChange={(e) => setCustomLogo(e.target.value)}
+                                                        placeholder="Enter image URL"
+                                                        className="w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-gray-400 transition-colors"
+                                                    />
                                                 </div>
                                             </div>
-                                        </div>
-                                    )}
-
-                                    {activeTab === 'button' && (
-                                        <div className="flex items-center justify-center min-h-[600px]">
-                                            <button className="px-8 py-4 bg-emerald-600 text-white rounded-xl font-semibold text-lg hover:bg-emerald-700 transition-colors shadow-lg">
-                                                Sign in with Wonder
+                                            
+                                            <button
+                                                onClick={() => setCustomLogo('https://dazzling-cat.netlify.app/astralogo.png')}
+                                                className="w-full py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg text-gray-700 text-sm font-medium transition-all"
+                                            >
+                                                Reset to Default
                                             </button>
                                         </div>
-                                    )}
+                                    </div>
 
-                                    {activeTab === 'code' && (
-                                        <div className="bg-gray-900 rounded-xl p-6 text-gray-100 font-mono text-sm overflow-x-auto shadow-lg">
-                                            <pre className="whitespace-pre-wrap">
-                                                {`import { WonderAuth } from '@wonder/auth';
+                                    {/* Social Providers */}
+                                    <div className="bg-white backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                        <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                                                <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                </svg>
+                                            </div>
+                                            Social Providers
+                                        </h3>
+                                        <div className="grid grid-cols-2 gap-2">
+                                            {Object.entries({
+                                                google: { name: 'Google', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" /></svg> },
+                                                discord: { name: 'Discord', icon: <svg className="w-5 h-5 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" /></svg> },
+                                                telegram: { name: 'Telegram', icon: <svg className="w-5 h-5 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg> },
+                                                github: { name: 'Github', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg> },
+                                                x: { name: 'X', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg> },
+                                                facebook: { name: 'Facebook', icon: <svg className="w-5 h-5 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg> },
+                                                apple: { name: 'Apple', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg> },
+                                                farcaster: { name: 'Farcaster', icon: <svg className="w-5 h-5 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" /></svg> },
+                                            }).map(([key, { name, icon }]) => (
+                                                <label key={key} className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                    <div className="relative flex-shrink-0">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={socialProviders[key as SocialProvider]}
+                                                            onChange={() => toggleSocialProvider(key as SocialProvider)}
+                                                            className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
+                                                        />
+                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${socialProviders[key as SocialProvider] ? 'bg-gray-600 border-gray-600' : 'border-gray-300 bg-white'}`}>
+                                                            {socialProviders[key as SocialProvider] && <Check className="w-3 h-3 text-white" />}
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                        {icon}
+                                                        <span className="text-gray-700 truncate">{name}</span>
+                                                    </div>
+                                                </label>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Auth Methods */}
+                                    <div className="bg-white backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                        <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                                                <Key className="w-4 h-4 text-blue-600" />
+                                            </div>
+                                            Auth Methods
+                                        </h3>
+                                        <div className="grid grid-cols-2 gap-2">
+                                            <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                <div className="relative flex-shrink-0">
+                                                    <input type="checkbox" checked={showEmail} onChange={() => setShowEmail(!showEmail)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
+                                                    <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showEmail ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                        {showEmail && <Check className="w-3 h-3 text-white" />}
+                                                    </div>
+                                                </div>
+                                                <Mail className="w-4 h-4 text-gray-600 flex-shrink-0" />
+                                                <span className="text-gray-700 truncate">Email</span>
+                                            </label>
+                                            <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                <div className="relative flex-shrink-0">
+                                                    <input type="checkbox" checked={showPhone} onChange={() => setShowPhone(!showPhone)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
+                                                    <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showPhone ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                        {showPhone && <Check className="w-3 h-3 text-white" />}
+                                                    </div>
+                                                </div>
+                                                <Phone className="w-4 h-4 text-gray-600 flex-shrink-0" />
+                                                <span className="text-gray-700 truncate">Phone</span>
+                                            </label>
+                                            <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                <div className="relative flex-shrink-0">
+                                                    <input type="checkbox" checked={showPasskey} onChange={() => setShowPasskey(!showPasskey)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
+                                                    <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showPasskey ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                        {showPasskey && <Check className="w-3 h-3 text-white" />}
+                                                    </div>
+                                                </div>
+                                                <Key className="w-4 h-4 text-gray-600 flex-shrink-0" />
+                                                <span className="text-gray-700 truncate">Passkey</span>
+                                            </label>
+                                            <label className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                <div className="relative flex-shrink-0">
+                                                    <input type="checkbox" checked={showWallet} onChange={() => setShowWallet(!showWallet)} className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute" />
+                                                    <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showWallet ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                        {showWallet && <Check className="w-3 h-3 text-white" />}
+                                                    </div>
+                                                </div>
+                                                <Wallet className="w-4 h-4 text-gray-600 flex-shrink-0" />
+                                                <span className="text-gray-700 truncate">Wallet</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    {/* Wallets */}
+                                    <div className="bg-white backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                        <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+                                                <Wallet className="w-4 h-4 text-purple-600" />
+                                            </div>
+                                            Wallets
+                                        </h3>
+                                        <div className="grid grid-cols-2 gap-2">
+                                            {Object.entries({
+                                                metamask: { name: 'MetaMask', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg' },
+                                                rainbow: { name: 'Rainbow', logo: 'https://avatars.githubusercontent.com/u/48327834?s=280&v=4' },
+                                                rabby: { name: 'Rabby', logo: 'https://rabby.io/assets/images/logo-128.png' },
+                                                okx: { name: 'OKX', logo: 'https://play-lh.googleusercontent.com/N00SbjLJJrhg4hbdnkk3Llk2oedNNgCU29DvR9cpep7Lr0VkzvBkmLqajWNgFb0d7IOO=w240-h480-rw' },
+                                                zerion: { name: 'Zerion', logo: 'https://play-lh.googleusercontent.com/lxl3CQLYmbY7kHtMn3ehz06ebEIIxYOETf8hlWPNW6L3ZPxuhSrnIq-4k5T89gd4gA' },
+                                                coinbaseWallet: { name: 'Coinbase', logo: 'https://raw.githubusercontent.com/gist/taycaldwell/2291907115c0bb5589bc346661435007/raw/280eafdc84cb80ed0c60e36b4d0c563f6dca6b3e/cbw.svg' },
+                                                trustWallet: { name: 'Trust', logo: 'https://trustwallet.com/assets/images/media/assets/TWT.png' },
+                                            }).map(([key, { name, logo }]) => (
+                                                <div key={key} className="flex items-center justify-between text-sm p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
+                                                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                        <img src={logo} alt={name} className="w-5 h-5 rounded object-contain flex-shrink-0" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+                                                        <span className="text-gray-700 text-xs truncate">{name}</span>
+                                                    </div>
+                                                    <div className="relative flex-shrink-0">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={wallets[key as WalletType]}
+                                                            onChange={() => toggleWallet(key as WalletType)}
+                                                            className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
+                                                        />
+                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${wallets[key as WalletType] ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                            {wallets[key as WalletType] && <Check className="w-3 h-3 text-white" />}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            {/* Right Panel - Preview with Dark Modal */}
+                            <div className="flex-1 overflow-y-auto p-8 bg-slate-50 relative">
+                                <div className="flex justify-between relative mb-6">
+                                    <div className="bg-gray-100 p-1.5 rounded-xl w-fit shadow-sm">
+                                        <button onClick={() => setActiveTab('modal')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'modal' ? 'bg-white text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Modal</button>
+                                        <button onClick={() => setActiveTab('button')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'button' ? 'bg-white text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Button</button>
+                                        <button onClick={() => setActiveTab('code')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'code' ? 'bg-white text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Code</button>
+                                    </div>
+
+                                    <button className="bg-slate-900 text-white h-fit px-6 py-3 rounded-lg font-bold hover:shadow-lg hover:shadow-[#e0a984]/50 transition-all">
+                                        Deploy Auth
+                                    </button>
+                                </div>
+
+                                {activeTab === 'modal' && (
+                                    <div className="flex items-center justify-center min-h-[600px]">
+                                        <div className="bg-gradient-to-br from-black to-[#1a1a1a] rounded-3xl shadow-2xl border border-[#e0a984]/30 p-8 w-full max-w-md relative animate-slideUp">
+                                            <button
+                                                onClick={() => setPreviewShowWallets(false)}
+                                                className="absolute top-6 right-6 w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+                                            >
+                                                <X size={20} className="text-white/80" />
+                                            </button>
+
+                                            {!previewShowWallets ? (
+                                                <>
+                                                    <div className="text-center mb-8">
+                                                        <div className="w-32 mx-auto mb-6 flex items-center justify-center">
+                                                            <img 
+                                                                src={customLogo} 
+                                                                alt="Logo" 
+                                                                className="max-w-full h-auto"
+                                                                onError={(e) => {
+                                                                    e.currentTarget.src = 'https://dazzling-cat.netlify.app/astralogo.png';
+                                                                }}
+                                                            />
+                                                        </div>
+                                                        <p className="text-white/60">Choose your authentication method</p>
+                                                    </div>
+
+                                                    {/* Status Messages */}
+                                                    {authError && (
+                                                        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 animate-slideDown">
+                                                            <AlertCircle size={18} className="text-red-400" />
+                                                            <p className="text-sm text-red-400">{authError}</p>
+                                                        </div>
+                                                    )}
+                                                    {authSuccess && (
+                                                        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-2xl flex items-center gap-3 animate-slideDown">
+                                                            <CheckCircle size={18} className="text-green-400" />
+                                                            <p className="text-sm text-green-400">{authSuccess}</p>
+                                                        </div>
+                                                    )}
+
+                                                    <div className="flex flex-col gap-3">
+                                                        {socialProviders.google && (
+                                                            <button
+                                                                disabled={loading}
+                                                                className="w-full py-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl font-semibold flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                                                            >
+                                                                {loading ? <Loader2 size={20} className="animate-spin text-white" /> : <GoogleIcon />}
+                                                                <span className="text-white">Continue with Google</span>
+                                                            </button>
+                                                        )}
+
+                                                        {socialProviders.facebook && (
+                                                            <button
+                                                                disabled={loading}
+                                                                className="w-full py-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl font-semibold flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                                                            >
+                                                                {loading ? <Loader2 size={20} className="animate-spin text-white" /> : <FacebookIcon />}
+                                                                <span className="text-white">Continue with Facebook</span>
+                                                            </button>
+                                                        )}
+
+                                                        <div className="flex items-center gap-4 my-6">
+                                                            <div className="flex-1 h-px bg-[#e0a984]/20" />
+                                                            <span className="text-sm text-white/40">OR</span>
+                                                            <div className="flex-1 h-px bg-[#e0a984]/20" />
+                                                        </div>
+
+                                                        {showWallet && (
+                                                            <button
+                                                                onClick={() => setPreviewShowWallets(true)}
+                                                                disabled={loading}
+                                                                className="w-full py-4 bg-gradient-to-r from-[#e0a984] to-[#e0a984] text-black rounded-2xl font-bold flex items-center justify-center gap-2.5 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:shadow-lg hover:shadow-[#e0a984]/50"
+                                                            >
+                                                                <Wallet size={20} />
+                                                                Connect Wallet
+                                                            </button>
+                                                        )}
+
+                                                        <button
+                                                            disabled={loading}
+                                                            className="w-full py-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all text-white"
+                                                        >
+                                                            Guest Login
+                                                        </button>
+                                                    </div>
+
+                                                    <div className="mt-8 p-4 rounded-2xl text-center">
+                                                        <p className="text-sm text-slate-400 font-medium flex items-center justify-center gap-1">
+                                                            Protected by
+                                                            <img
+                                                                src="https://dazzling-cat.netlify.app/wonderauth.png"
+                                                                className="h-5 opacity-75 brightness-[7.75] filter grayscale"
+                                                                alt="WonderAuth"
+                                                            />
+                                                        </p>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div className="mb-6 flex items-center gap-3">
+                                                        <button
+                                                            onClick={() => setPreviewShowWallets(false)}
+                                                            className="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+                                                        >
+                                                            <ArrowRight size={18} className="rotate-180 text-white" />
+                                                        </button>
+                                                        <h2 className="text-2xl font-bold text-white">Connect Wallet</h2>
+                                                    </div>
+
+                                                    <div className="mb-5">
+                                                        <h3 className="text-xs font-semibold text-white/50 mb-3 uppercase tracking-wide flex items-center gap-2">
+                                                            <img
+                                                                src="https://cdn-icons-png.flaticon.com/512/14446/14446160.png"
+                                                                alt="Ethereum"
+                                                                className="w-4 h-4"
+                                                            />
+                                                            Ethereum Wallets
+                                                        </h3>
+                                                        {wallets.metamask && (
+                                                            <button className="w-full p-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl mb-3 flex items-center gap-3 transition-all">
+                                                                <img
+                                                                    src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
+                                                                    alt="MetaMask"
+                                                                    className="w-10 h-10 rounded-xl"
+                                                                />
+                                                                <div className="flex-1 text-left">
+                                                                    <div className="font-semibold text-white">MetaMask</div>
+                                                                    <div className="text-sm text-white/60">Popular Ethereum wallet</div>
+                                                                </div>
+                                                                <ArrowRight size={20} className="text-[#e0a984]" />
+                                                            </button>
+                                                        )}
+                                                    </div>
+
+                                                    <div className="mt-5 p-4 rounded-2xl text-center">
+                                                        <p className="text-sm text-slate-400 font-medium flex items-center justify-center gap-1">
+                                                            Protected by
+                                                            <img
+                                                                src="https://dazzling-cat.netlify.app/wonderauth.png"
+                                                                className="h-5 opacity-75 brightness-[7.75] filter grayscale"
+                                                                alt="WonderAuth"
+                                                            />
+                                                        </p>
+                                                    </div>
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {activeTab === 'button' && (
+                                    <div className="flex items-center justify-center min-h-[600px] bg-white rounded-xl border border-gray-200">
+                                        <button className="px-8 py-4 bg-gradient-to-r from-[#e0a984] to-[#e0a984] text-black rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-[#e0a984]/50 transition-all">
+                                            Sign in with Wonder
+                                        </button>
+                                    </div>
+                                )}
+
+                                {activeTab === 'code' && (
+                                    <div className="bg-gray-900 rounded-xl p-6 text-gray-100 font-mono text-sm overflow-x-auto shadow-lg border border-gray-200">
+                                        <pre className="whitespace-pre-wrap text-white/90">
+                                            {`import { WonderAuth } from '@wonder/auth';
 
 export default function App() {
   return (
@@ -799,15 +720,14 @@ export default function App() {
     />
   );
 }`}
-                                            </pre>
-                                        </div>
-                                    )}
-                                </div>
+                                        </pre>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
-                )}
-            </div>
+                </div>
+            )}
         </div>
     );
 }
