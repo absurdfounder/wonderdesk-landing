@@ -5,7 +5,7 @@ import { X, Wallet, ChevronDown, ArrowLeft, ArrowRight, Mail, Phone, Key, Check,
 import Link from "next/link";
 
 type SocialProvider = 'google' | 'discord' | 'telegram' | 'github' | 'twitch' | 'steam' | 'farcaster' | 'line' | 'x' | 'tiktok' | 'facebook' | 'apple';
-type WalletType = 'metamask' | 'rainbow' | 'rabby' | 'okx' | 'zerion' | 'coinbaseWallet' | 'trustWallet' | 'binance' | 'safepal';
+type WalletType = 'metamask' | 'rainbow' | 'rabby' | 'okx' | 'bagpack' | 'coinbaseWallet' | 'trustWallet' | 'phantom' | 'safepal';
 
 const walletLogos: Record<string, string> = {
     metamask: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg',
@@ -13,8 +13,10 @@ const walletLogos: Record<string, string> = {
     rabby: 'https://rabby.io/assets/images/logo-128.png',
     okx: 'https://play-lh.googleusercontent.com/N00SbjLJJrhg4hbdnkk3Llk2oedNNgCU29DvR9cpep7Lr0VkzvBkmLqajWNgFb0d7IOO=w240-h480-rw',
     coinbaseWallet: 'https://raw.githubusercontent.com/gist/taycaldwell/2291907115c0bb5589bc346661435007/raw/280eafdc84cb80ed0c60e36b4d0c563f6dca6b3e/cbw.svg',
-    zerion: 'https://play-lh.googleusercontent.com/lxl3CQLYmbY7kHtMn3ehz06ebEIIxYOETf8hlWPNW6L3ZPxuhSrnIq-4k5T89gd4gA',
+    bagpack: 'https://cdn.prod.website-files.com/66830ad123bea7f626bcf58f/67ab351cf66d6cd9bad4340f_Standalone_Icon_Red%20(1).png',
     trustWallet: 'https://trustwallet.com/assets/images/media/assets/TWT.png',
+    phantom: 'https://cimg.co/wp-content/uploads/2025/08/19125824/1755608303-phantom-wallet-logo.png',
+    safepal: 'https://s2.coinmarketcap.com/static/img/coins/200x200/8119.png',
 };
 
 const walletNames: Record<string, string> = {
@@ -22,9 +24,11 @@ const walletNames: Record<string, string> = {
     rainbow: 'Rainbow',
     rabby: 'Rabby',
     okx: 'OKX Wallet',
-    coinbaseWallet: 'Coinbase Wallet',
-    zerion: 'Zerion',
+    coinbaseWallet: 'Coinbase',
+    bagpack: 'Bagpack',
     trustWallet: 'Trust Wallet',
+    phantom: 'Phantom',
+    safepal: 'SafePal',
 };
 
 const GoogleIcon = () => (
@@ -42,6 +46,42 @@ const FacebookIcon = () => (
     </svg>
 );
 
+const DiscordIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" fill="#5865F2" />
+    </svg>
+);
+
+const TelegramIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="#0088cc" />
+    </svg>
+);
+
+const GithubIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+    </svg>
+);
+
+const XIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+);
+
+const AppleIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+    </svg>
+);
+
+const FarcasterIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" />
+    </svg>
+);
+
 export default function AuthLanding() {
     const [showWallets, setShowWallets] = useState(false);
     const [showBuilder, setShowBuilder] = useState(false);
@@ -53,13 +93,13 @@ export default function AuthLanding() {
     const [socialProviders, setSocialProviders] = useState({
         google: true,
         discord: true,
-        telegram: true,
+        telegram: false,
         github: false,
         twitch: false,
         steam: false,
-        farcaster: true,
+        farcaster: false,
         line: false,
-        x: true,
+        x: false,
         tiktok: false,
         facebook: false,
         apple: false,
@@ -68,16 +108,18 @@ export default function AuthLanding() {
     const [showPhone, setShowPhone] = useState(true);
     const [showPasskey, setShowPasskey] = useState(true);
     const [showWallet, setShowWallet] = useState(true);
+    const [showGuestMode, setShowGuestMode] = useState(true);
+    const [enableGasless, setEnableGasless] = useState(true);
 
     const [wallets, setWallets] = useState({
         metamask: true,
         rainbow: true,
         rabby: true,
         okx: true,
-        zerion: true,
+        bagpack: true,
         coinbaseWallet: true,
         trustWallet: true,
-        binance: false,
+        phantom: false,
         safepal: false,
     });
 
@@ -87,23 +129,55 @@ export default function AuthLanding() {
     const [customLogo, setCustomLogo] = useState('https://dazzling-cat.netlify.app/astralogo.png');
 
     const toggleSocialProvider = (provider: SocialProvider) => {
-        setSocialProviders(prev => ({ ...prev, [provider]: !prev[provider] }));
+        setSocialProviders(prev => {
+            const currentEnabled = Object.values(prev).filter(v => v).length;
+            const isCurrentlyEnabled = prev[provider];
+
+            // If trying to enable and already at max 2, don't allow
+            if (!isCurrentlyEnabled && currentEnabled >= 2) {
+                return prev;
+            }
+
+            return { ...prev, [provider]: !prev[provider] };
+        });
+    };
+
+    const getEnabledSocialCount = () => {
+        return Object.values(socialProviders).filter(v => v).length;
     };
 
     const toggleWallet = (wallet: WalletType) => {
         setWallets(prev => ({ ...prev, [wallet]: !prev[wallet] }));
     };
 
-    const getEnabledWalletsList = () => {
-        return Object.entries(wallets).filter(([_, enabled]) => enabled);
+    const getEnabledWallets = () => {
+        return Object.entries(wallets)
+            .filter(([_, enabled]) => enabled)
+            .map(([key]) => key as WalletType);
     };
 
-    const getSocialIconGridProviders = () => {
-        return ['google', 'discord', 'telegram', 'x'].filter(key => socialProviders[key as SocialProvider]);
+    const getEnabledSocialProviders = () => {
+        return Object.entries(socialProviders)
+            .filter(([_, enabled]) => enabled)
+            .map(([key]) => key as SocialProvider);
     };
 
-    const getSocialButtonProviders = () => {
-        return ['farcaster', 'apple', 'github', 'facebook'].filter(key => socialProviders[key as SocialProvider]);
+    const getSocialIcon = (provider: SocialProvider) => {
+        const icons: Record<SocialProvider, JSX.Element> = {
+            google: <GoogleIcon />,
+            facebook: <FacebookIcon />,
+            discord: <DiscordIcon />,
+            telegram: <TelegramIcon />,
+            github: <GithubIcon />,
+            x: <XIcon />,
+            apple: <AppleIcon />,
+            farcaster: <FarcasterIcon />,
+            twitch: <svg className="w-5 h-5 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" /></svg>,
+            steam: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-4.6 0-8.45-3.08-9.64-7.27l3.83 1.58a2.84 2.84 0 0 0 2.78 2.27c1.56 0 2.83-1.27 2.83-2.83v-.13l3.4-2.43h.08c2.08 0 3.77-1.69 3.77-3.77s-1.69-3.77-3.77-3.77-3.78 1.69-3.78 3.77v.05l-2.37 3.46-.16-.01c-.59 0-1.14.18-1.59.49L2 11.2C2.43 6.05 6.73 2 12 2M8.28 17.17c.8.33 1.72-.04 2.05-.84.33-.8-.05-1.71-.83-2.04l-1.28-.53c.49-.18 1.04-.19 1.56.03.53.21.94.62 1.15 1.15.22.52.22 1.1 0 1.62-.43 1.08-1.7 1.6-2.78 1.15l1.13.46M15.4 9.13c1.44 0 2.61-1.17 2.61-2.61s-1.17-2.61-2.61-2.61-2.61 1.17-2.61 2.61 1.17 2.61 2.61 2.61m-1.86-2.61c0-1.03.84-1.86 1.86-1.86s1.86.83 1.86 1.86-.84 1.87-1.86 1.87-1.86-.84-1.86-1.87z" /></svg>,
+            line: <svg className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" /></svg>,
+            tiktok: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" /></svg>,
+        };
+        return icons[provider] || null;
     };
 
     return (
@@ -320,12 +394,10 @@ export default function AuthLanding() {
                 </div>
             </div>
 
-            {/* Builder Modal - REDESIGNED WITH DARK THEME FROM FIRST FILE */}
+            {/* Builder Modal */}
             {showBuilder && (
                 <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
-                    <div
-                        className="bg-slate-50 rounded-3xl shadow-2xl w-full max-w-7xl max-h-[90vh] flex flex-col border border-gray-200"
-                    >
+                    <div className="bg-slate-50 rounded-3xl shadow-2xl w-full max-w-7xl max-h-[90vh] flex flex-col border border-gray-200">
                         {/* Header */}
                         <div className="flex items-center justify-between px-8 py-6 border-b border-gray-200">
                             <div className="flex items-center gap-3">
@@ -345,8 +417,6 @@ export default function AuthLanding() {
                             {/* Left Panel - Configuration */}
                             <div className="w-1/3 border-r border-gray-200 overflow-y-auto p-6 bg-white">
                                 <div className="space-y-6">
-
-
                                     {/* Logo Customization */}
                                     <div className="bg-white backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
                                         <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
@@ -357,13 +427,13 @@ export default function AuthLanding() {
                                             </div>
                                             Custom Logo
                                         </h3>
-                                        
+
                                         <div className="space-y-4">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-16 h-16 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center overflow-hidden">
-                                                    <img 
-                                                        src={customLogo} 
-                                                        alt="Logo Preview" 
+                                                    <img
+                                                        src={customLogo}
+                                                        alt="Logo Preview"
                                                         className="w-full h-full object-contain p-2"
                                                         onError={(e) => {
                                                             e.currentTarget.src = 'https://dazzling-cat.netlify.app/astralogo.png';
@@ -381,7 +451,7 @@ export default function AuthLanding() {
                                                     />
                                                 </div>
                                             </div>
-                                            
+
                                             <button
                                                 onClick={() => setCustomLogo('https://dazzling-cat.netlify.app/astralogo.png')}
                                                 className="w-full py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg text-gray-700 text-sm font-medium transition-all"
@@ -393,7 +463,7 @@ export default function AuthLanding() {
 
                                     {/* Social Providers */}
                                     <div className="bg-white backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
-                                        <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                        <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-2">
                                             <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
                                                 <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -401,35 +471,49 @@ export default function AuthLanding() {
                                             </div>
                                             Social Providers
                                         </h3>
+                                        <p className="text-xs text-gray-500 mb-4">
+                                            Select up to 2 providers ({getEnabledSocialCount()}/2 selected)
+                                        </p>
                                         <div className="grid grid-cols-2 gap-2">
                                             {Object.entries({
-                                                google: { name: 'Google', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" /></svg> },
-                                                discord: { name: 'Discord', icon: <svg className="w-5 h-5 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" /></svg> },
-                                                telegram: { name: 'Telegram', icon: <svg className="w-5 h-5 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg> },
-                                                github: { name: 'Github', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg> },
-                                                x: { name: 'X', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg> },
-                                                facebook: { name: 'Facebook', icon: <svg className="w-5 h-5 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg> },
-                                                apple: { name: 'Apple', icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg> },
-                                                farcaster: { name: 'Farcaster', icon: <svg className="w-5 h-5 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" /></svg> },
-                                            }).map(([key, { name, icon }]) => (
-                                                <label key={key} className="flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
-                                                    <div className="relative flex-shrink-0">
-                                                        <input
-                                                            type="checkbox"
-                                                            checked={socialProviders[key as SocialProvider]}
-                                                            onChange={() => toggleSocialProvider(key as SocialProvider)}
-                                                            className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
-                                                        />
-                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${socialProviders[key as SocialProvider] ? 'bg-gray-600 border-gray-600' : 'border-gray-300 bg-white'}`}>
-                                                            {socialProviders[key as SocialProvider] && <Check className="w-3 h-3 text-white" />}
+                                                google: 'Google',
+                                                discord: 'Discord',
+                                                telegram: 'Telegram',
+                                                github: 'Github',
+                                                x: 'X',
+                                                facebook: 'Facebook',
+                                                apple: 'Apple',
+                                                farcaster: 'Farcaster',
+                                            }).map(([key, name]) => {
+                                                const isEnabled = socialProviders[key as SocialProvider];
+                                                const isDisabled = !isEnabled && getEnabledSocialCount() >= 2;
+
+                                                return (
+                                                    <label
+                                                        key={key}
+                                                        className={`flex items-center gap-2 text-sm cursor-pointer p-3 rounded-lg border border-gray-200 bg-white transition-all ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'
+                                                            }`}
+                                                    >
+                                                        <div className="relative flex-shrink-0">
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={isEnabled}
+                                                                onChange={() => toggleSocialProvider(key as SocialProvider)}
+                                                                disabled={isDisabled}
+                                                                className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
+                                                            />
+                                                            <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${isEnabled ? 'bg-gray-600 border-gray-600' : 'border-gray-300 bg-white'
+                                                                }`}>
+                                                                {isEnabled && <Check className="w-3 h-3 text-white" />}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="flex items-center gap-2 flex-1 min-w-0">
-                                                        {icon}
-                                                        <span className="text-gray-700 truncate">{name}</span>
-                                                    </div>
-                                                </label>
-                                            ))}
+                                                        <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                            {getSocialIcon(key as SocialProvider)}
+                                                            <span className="text-gray-700 truncate">{name}</span>
+                                                        </div>
+                                                    </label>
+                                                );
+                                            })}
                                         </div>
                                     </div>
 
@@ -494,18 +578,15 @@ export default function AuthLanding() {
                                             Wallets
                                         </h3>
                                         <div className="grid grid-cols-2 gap-2">
-                                            {Object.entries({
-                                                metamask: { name: 'MetaMask', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg' },
-                                                rainbow: { name: 'Rainbow', logo: 'https://avatars.githubusercontent.com/u/48327834?s=280&v=4' },
-                                                rabby: { name: 'Rabby', logo: 'https://rabby.io/assets/images/logo-128.png' },
-                                                okx: { name: 'OKX', logo: 'https://play-lh.googleusercontent.com/N00SbjLJJrhg4hbdnkk3Llk2oedNNgCU29DvR9cpep7Lr0VkzvBkmLqajWNgFb0d7IOO=w240-h480-rw' },
-                                                zerion: { name: 'Zerion', logo: 'https://play-lh.googleusercontent.com/lxl3CQLYmbY7kHtMn3ehz06ebEIIxYOETf8hlWPNW6L3ZPxuhSrnIq-4k5T89gd4gA' },
-                                                coinbaseWallet: { name: 'Coinbase', logo: 'https://raw.githubusercontent.com/gist/taycaldwell/2291907115c0bb5589bc346661435007/raw/280eafdc84cb80ed0c60e36b4d0c563f6dca6b3e/cbw.svg' },
-                                                trustWallet: { name: 'Trust', logo: 'https://trustwallet.com/assets/images/media/assets/TWT.png' },
-                                            }).map(([key, { name, logo }]) => (
+                                            {Object.entries(walletNames).map(([key, name]) => (
                                                 <div key={key} className="flex items-center justify-between text-sm p-3 rounded-lg hover:bg-gray-50 border border-gray-200 bg-white transition-all">
                                                     <div className="flex items-center gap-2 flex-1 min-w-0">
-                                                        <img src={logo} alt={name} className="w-5 h-5 rounded object-contain flex-shrink-0" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+                                                        <img
+                                                            src={walletLogos[key]}
+                                                            alt={name}
+                                                            className="w-5 h-5 rounded object-contain flex-shrink-0"
+                                                            onError={(e) => { e.currentTarget.style.display = 'none' }}
+                                                        />
                                                         <span className="text-gray-700 text-xs truncate">{name}</span>
                                                     </div>
                                                     <div className="relative flex-shrink-0">
@@ -524,17 +605,79 @@ export default function AuthLanding() {
                                         </div>
                                     </div>
 
+                                    {/* Guest Mode */}
+                                    <div className="bg-white backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
+                                                    <svg className="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-sm font-semibold text-gray-900">Guest Mode</h3>
+                                                    <p className="text-xs text-gray-500">Allow users to continue without auth</p>
+                                                </div>
+                                            </div>
+                                            <div className="relative flex-shrink-0">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={showGuestMode}
+                                                    onChange={() => setShowGuestMode(!showGuestMode)}
+                                                    className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
+                                                />
+                                                <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${showGuestMode ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                    {showGuestMode && <Check className="w-3 h-3 text-white" />}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    {/* Gasless Transactions */}
+                                    <div className="bg-white backdrop-blur-sm rounded-xl border border-gray-200 p-5 shadow-sm">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
+                                                    <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-sm font-semibold text-gray-900">Gasless Transactions</h3>
+                                                    <p className="text-xs text-gray-500">Enable x402 gasless transactions</p>
+                                                </div>
+                                            </div>
+                                            <div className="relative flex-shrink-0">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={enableGasless}
+                                                    onChange={() => setEnableGasless(!enableGasless)}
+                                                    className="w-5 h-5 rounded border-gray-300 text-gray-600 focus:ring-gray-500 opacity-0 absolute"
+                                                />
+                                                <div className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${enableGasless ? 'bg-gray-600 border-gray-600' : 'border-gray-300'}`}>
+                                                    {enableGasless && <Check className="w-3 h-3 text-white" />}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Right Panel - Preview with Dark Modal */}
-                            <div className="flex-1 overflow-y-auto p-8 bg-slate-50 relative">
-                                <div className="flex justify-between relative mb-6">
-                                    <div className="bg-gray-100 p-1.5 rounded-xl w-fit shadow-sm">
-                                        <button onClick={() => setActiveTab('modal')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'modal' ? 'bg-white text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Modal</button>
-                                        <button onClick={() => setActiveTab('button')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'button' ? 'bg-white text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Button</button>
-                                        <button onClick={() => setActiveTab('code')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'code' ? 'bg-white text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Code</button>
+                            {/* Right Panel - Preview */}
+                            <div className="flex-1 overflow-y-auto bg-slate-50 relative">
+
+                                <div className="flex justify-between w-full bg-orange-100 text-orange-900 items-center p-2 px-6 m-auto mb-4">
+                                    Checkout the live demo
+                                    <button className="bg-orange-600 text-white h-fit px-2 py-1 rounded-lg font-bold hover:shadow-lg hover:shadow-[#e0a984]/50 transition-all">
+                                        Try Live
+                                    </button>
+                                </div>
+
+                                <div className="flex justify-between relative mb-6 px-6">
+                                    <div className="bg-white p-1.5 rounded-xl w-fit shadow-sm">
+                                        <button onClick={() => setActiveTab('modal')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'modal' ? 'bg-slate-100 text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Modal</button>
+                                        <button onClick={() => setActiveTab('button')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'button' ? 'bg-slate-100 text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Button</button>
+                                        <button onClick={() => setActiveTab('code')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'code' ? 'bg-slate-100 text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Code</button>
                                     </div>
 
                                     <button className="bg-slate-900 text-white h-fit px-6 py-3 rounded-lg font-bold hover:shadow-lg hover:shadow-[#e0a984]/50 transition-all">
@@ -556,9 +699,9 @@ export default function AuthLanding() {
                                                 <>
                                                     <div className="text-center mb-8">
                                                         <div className="w-32 mx-auto mb-6 flex items-center justify-center">
-                                                            <img 
-                                                                src={customLogo} 
-                                                                alt="Logo" 
+                                                            <img
+                                                                src={customLogo}
+                                                                alt="Logo"
                                                                 className="max-w-full h-auto"
                                                                 onError={(e) => {
                                                                     e.currentTarget.src = 'https://dazzling-cat.netlify.app/astralogo.png';
@@ -568,46 +711,25 @@ export default function AuthLanding() {
                                                         <p className="text-white/60">Choose your authentication method</p>
                                                     </div>
 
-                                                    {/* Status Messages */}
-                                                    {authError && (
-                                                        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 animate-slideDown">
-                                                            <AlertCircle size={18} className="text-red-400" />
-                                                            <p className="text-sm text-red-400">{authError}</p>
-                                                        </div>
-                                                    )}
-                                                    {authSuccess && (
-                                                        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-2xl flex items-center gap-3 animate-slideDown">
-                                                            <CheckCircle size={18} className="text-green-400" />
-                                                            <p className="text-sm text-green-400">{authSuccess}</p>
-                                                        </div>
-                                                    )}
-
                                                     <div className="flex flex-col gap-3">
-                                                        {socialProviders.google && (
+                                                        {getEnabledSocialProviders().slice(0, 2).map((provider) => (
                                                             <button
+                                                                key={provider}
                                                                 disabled={loading}
                                                                 className="w-full py-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl font-semibold flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                                                             >
-                                                                {loading ? <Loader2 size={20} className="animate-spin text-white" /> : <GoogleIcon />}
-                                                                <span className="text-white">Continue with Google</span>
+                                                                {loading ? <Loader2 size={20} className="animate-spin text-white" /> : getSocialIcon(provider)}
+                                                                <span className="text-white">Continue with {provider.charAt(0).toUpperCase() + provider.slice(1)}</span>
                                                             </button>
-                                                        )}
+                                                        ))}
 
-                                                        {socialProviders.facebook && (
-                                                            <button
-                                                                disabled={loading}
-                                                                className="w-full py-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl font-semibold flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-                                                            >
-                                                                {loading ? <Loader2 size={20} className="animate-spin text-white" /> : <FacebookIcon />}
-                                                                <span className="text-white">Continue with Facebook</span>
-                                                            </button>
+                                                        {(getEnabledSocialProviders().length > 0 || showWallet) && (
+                                                            <div className="flex items-center gap-4 my-6">
+                                                                <div className="flex-1 h-px bg-[#e0a984]/20" />
+                                                                <span className="text-sm text-white/40">OR</span>
+                                                                <div className="flex-1 h-px bg-[#e0a984]/20" />
+                                                            </div>
                                                         )}
-
-                                                        <div className="flex items-center gap-4 my-6">
-                                                            <div className="flex-1 h-px bg-[#e0a984]/20" />
-                                                            <span className="text-sm text-white/40">OR</span>
-                                                            <div className="flex-1 h-px bg-[#e0a984]/20" />
-                                                        </div>
 
                                                         {showWallet && (
                                                             <button
@@ -620,12 +742,14 @@ export default function AuthLanding() {
                                                             </button>
                                                         )}
 
-                                                        <button
-                                                            disabled={loading}
-                                                            className="w-full py-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all text-white"
-                                                        >
-                                                            Guest Login
-                                                        </button>
+                                                        {showGuestMode && (
+                                                            <button
+                                                                disabled={loading}
+                                                                className="w-full py-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all text-white"
+                                                            >
+                                                                Guest Mode
+                                                            </button>
+                                                        )}
                                                     </div>
 
                                                     <div className="mt-8 p-4 rounded-2xl text-center">
@@ -646,7 +770,7 @@ export default function AuthLanding() {
                                                             onClick={() => setPreviewShowWallets(false)}
                                                             className="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                                                         >
-                                                            <ArrowRight size={18} className="rotate-180 text-white" />
+                                                            <ArrowLeft size={18} className="text-white" />
                                                         </button>
                                                         <h2 className="text-2xl font-bold text-white">Connect Wallet</h2>
                                                     </div>
@@ -658,22 +782,26 @@ export default function AuthLanding() {
                                                                 alt="Ethereum"
                                                                 className="w-4 h-4"
                                                             />
-                                                            Ethereum Wallets
+                                                            Available Wallets
                                                         </h3>
-                                                        {wallets.metamask && (
-                                                            <button className="w-full p-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl mb-3 flex items-center gap-3 transition-all">
+                                                        {getEnabledWallets().map((walletKey) => (
+                                                            <button
+                                                                key={walletKey}
+                                                                className="w-full p-4 bg-white/5 hover:bg-white/10 border border-[#e0a984]/20 hover:border-[#e0a984]/40 rounded-2xl mb-3 flex items-center gap-3 transition-all"
+                                                            >
                                                                 <img
-                                                                    src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
-                                                                    alt="MetaMask"
-                                                                    className="w-10 h-10 rounded-xl"
+                                                                    src={walletLogos[walletKey]}
+                                                                    alt={walletNames[walletKey]}
+                                                                    className="w-10 h-10 rounded-xl object-contain"
+                                                                    onError={(e) => { e.currentTarget.style.display = 'none' }}
                                                                 />
                                                                 <div className="flex-1 text-left">
-                                                                    <div className="font-semibold text-white">MetaMask</div>
-                                                                    <div className="text-sm text-white/60">Popular Ethereum wallet</div>
+                                                                    <div className="font-semibold text-white">{walletNames[walletKey]}</div>
+                                                                    <div className="text-sm text-white/60">Connect to continue</div>
                                                                 </div>
                                                                 <ArrowRight size={20} className="text-[#e0a984]" />
                                                             </button>
-                                                        )}
+                                                        ))}
                                                     </div>
 
                                                     <div className="mt-5 p-4 rounded-2xl text-center">
@@ -693,15 +821,15 @@ export default function AuthLanding() {
                                 )}
 
                                 {activeTab === 'button' && (
-                                    <div className="flex items-center justify-center min-h-[600px] bg-white rounded-xl border border-gray-200">
+                                    <div className="flex items-center justify-center min-h-[600px] bg-white rounded-xl border border-gray-200 m-4">
                                         <button className="px-8 py-4 bg-gradient-to-r from-[#e0a984] to-[#e0a984] text-black rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-[#e0a984]/50 transition-all">
-                                            Sign in with Wonder
+                                            Login with Wonder
                                         </button>
                                     </div>
                                 )}
 
                                 {activeTab === 'code' && (
-                                    <div className="bg-gray-900 rounded-xl p-6 text-gray-100 font-mono text-sm overflow-x-auto shadow-lg border border-gray-200">
+                                    <div className="bg-gray-900 rounded-xl p-6 text-gray-100 font-mono text-sm overflow-x-auto shadow-lg border border-gray-200 m-6">
                                         <pre className="whitespace-pre-wrap text-white/90">
                                             {`import { WonderAuth } from '@wonder/auth';
 
@@ -709,13 +837,18 @@ export default function App() {
   return (
     <WonderAuth
       config={{
+        logo: "${customLogo}",
         providers: {
-          social: [${Object.entries(socialProviders).filter(([_, v]) => v).map(([k]) => `"${k}"`).join(', ')}],
+          social: [${getEnabledSocialProviders().map(p => `"${p}"`).join(', ')}],
           email: ${showEmail},
           phone: ${showPhone},
           passkey: ${showPasskey},
         },
-        wallets: [${Object.entries(wallets).filter(([_, v]) => v).map(([k]) => `"${k}"`).join(', ')}],
+        wallets: [${getEnabledWallets().map(w => `"${w}"`).join(', ')}],
+        features: {
+          guestMode: ${showGuestMode},
+          gaslessTransactions: ${enableGasless},
+        },
       }}
     />
   );
@@ -723,6 +856,10 @@ export default function App() {
                                         </pre>
                                     </div>
                                 )}
+
+
+
+
                             </div>
                         </div>
                     </div>
