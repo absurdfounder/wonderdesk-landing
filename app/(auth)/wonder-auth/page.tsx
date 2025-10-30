@@ -211,7 +211,7 @@ export default function AuthLanding() {
                             </div>
 
                             <Link
-                                href="https://wonder-auth-demo.netlify.app/" 
+                                href="https://wonder-auth-demo.netlify.app/"
                                 target="_blank"
                                 className="text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
                             >
@@ -290,7 +290,7 @@ export default function AuthLanding() {
                                     className="object-contain w-full h-full group-hover:scale-110 transition-all"
                                 />
                                 <div className="absolute top-4 right-4 bg-white/90 text-purple-500 text-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm">
-                                    Defi 
+                                    Defi
                                 </div>
                             </div>
                             <h3 className="text-gray-900 text-lg font-medium mb-1">Deposit & Withdrawls </h3>
@@ -324,54 +324,54 @@ export default function AuthLanding() {
 
 
 
-            {/* $WONDER SECTION - WHITE THEME */}
-            <div className="hidden relative z-10 flex flex-col overflow-hidden bg-gray-900 rounded-xl pb-[100px] px-6 pt-16 sm:pt-20 sm:pb-20 sm:px-12 gap-10 border border-gray-200 max-w-6xl w-full m-auto my-8">
-                {/* Text Content */}
-                <div className="z-10 flex flex-col gap-4">
-                    <h3 className="text-3xl sm:text-4xl font-semibold text-gray-200 leading-snug">$WONDER</h3>
-                    <p className="text-gray-300 text-base sm:max-w-md md:max-w-2xl">
-                        Wonder is building ethical, user-first crypto. <strong>WONDER</strong> is our community
-                        token to prove that crypto can and will be better.
-                    </p>
-                </div>
+                {/* $WONDER SECTION - WHITE THEME */}
+                <div className="hidden relative z-10 flex flex-col overflow-hidden bg-gray-900 rounded-xl pb-[100px] px-6 pt-16 sm:pt-20 sm:pb-20 sm:px-12 gap-10 border border-gray-200 max-w-6xl w-full m-auto my-8">
+                    {/* Text Content */}
+                    <div className="z-10 flex flex-col gap-4">
+                        <h3 className="text-3xl sm:text-4xl font-semibold text-gray-200 leading-snug">$WONDER</h3>
+                        <p className="text-gray-300 text-base sm:max-w-md md:max-w-2xl">
+                            Wonder is building ethical, user-first crypto. <strong>WONDER</strong> is our community
+                            token to prove that crypto can and will be better.
+                        </p>
+                    </div>
 
-                {/* Button */}
-                <a
-                    href="https://wondersites.co/cloud"
-                    className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 hover:text-gray-900 transition-all px-5 py-2.5 rounded-md text-sm font-medium active:scale-[0.97] shadow-sm w-fit"
-                >
-                    $WONDER Tokenomics
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className="text-current"
+                    {/* Button */}
+                    <a
+                        href="https://wondersites.co/cloud"
+                        className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 hover:text-gray-900 transition-all px-5 py-2.5 rounded-md text-sm font-medium active:scale-[0.97] shadow-sm w-fit"
                     >
-                        <path
-                            d="M20,12.75 L4,12.75 Q3.689,12.75 3.47,12.53 Q3.25,12.31 3.25,12 Q3.25,11.689 3.47,11.469 Q3.689,11.25 4,11.25 L20,11.25 Q20.311,11.25 20.53,11.469 Q20.75,11.689 20.75,12 Q20.75,12.31 20.53,12.53 Q20.311,12.75 20,12.75 Z"
-                            fill="currentColor"
-                        ></path>
-                        <path
-                            d="M14.556,16.396 Q19.25,12.939 19.25,12 Q19.25,11.061 14.555,7.604 Q14.305,7.42 14.259,7.113 Q14.212,6.805 14.396,6.555 Q14.581,6.305 14.888,6.258 Q15.195,6.212 15.445,6.396 Q20.75,10.303 20.75,12 Q20.75,13.697 15.445,17.604 Q15.195,17.788 14.888,17.742 Q14.581,17.695 14.396,17.445 Q14.212,17.195 14.259,16.887 Q14.305,16.58 14.556,16.396 Z"
-                            fill="currentColor"
-                        ></path>
-                    </svg>
-                </a>
+                        $WONDER Tokenomics
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="text-current"
+                        >
+                            <path
+                                d="M20,12.75 L4,12.75 Q3.689,12.75 3.47,12.53 Q3.25,12.31 3.25,12 Q3.25,11.689 3.47,11.469 Q3.689,11.25 4,11.25 L20,11.25 Q20.311,11.25 20.53,11.469 Q20.75,11.689 20.75,12 Q20.75,12.31 20.53,12.53 Q20.311,12.75 20,12.75 Z"
+                                fill="currentColor"
+                            ></path>
+                            <path
+                                d="M14.556,16.396 Q19.25,12.939 19.25,12 Q19.25,11.061 14.555,7.604 Q14.305,7.42 14.259,7.113 Q14.212,6.805 14.396,6.555 Q14.581,6.305 14.888,6.258 Q15.195,6.212 15.445,6.396 Q20.75,10.303 20.75,12 Q20.75,13.697 15.445,17.604 Q15.195,17.788 14.888,17.742 Q14.581,17.695 14.396,17.445 Q14.212,17.195 14.259,16.887 Q14.305,16.58 14.556,16.396 Z"
+                                fill="currentColor"
+                            ></path>
+                        </svg>
+                    </a>
 
-                {/* Background Images */}
-                <img
-                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-img.01017a3e.png&w=750&q=100"
-                    alt="$WONDER"
-                    className="absolute bottom-[-45px] right-[80px] sm:bottom-[-42px] sm:right-[130px] w-[123px] sm:w-[170px] rotate-[10.7deg] opacity-90"
-                />
-                <img
-                    src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-stamp.ad2e9cf5.png&w=1080&q=100"
-                    alt="$WONDER Stamp"
-                    className="absolute bottom-[-50px] right-[-30px] sm:bottom-[-48px] sm:right-[-25px] w-[160px] sm:w-[220px] rotate-[-11.8deg] opacity-90"
-                />
-            </div>
+                    {/* Background Images */}
+                    <img
+                        src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-img.01017a3e.png&w=750&q=100"
+                        alt="$WONDER"
+                        className="absolute bottom-[-45px] right-[80px] sm:bottom-[-42px] sm:right-[130px] w-[123px] sm:w-[170px] rotate-[10.7deg] opacity-90"
+                    />
+                    <img
+                        src="https://sanctum.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcloud-stamp.ad2e9cf5.png&w=1080&q=100"
+                        alt="$WONDER Stamp"
+                        className="absolute bottom-[-50px] right-[-30px] sm:bottom-[-48px] sm:right-[-25px] w-[160px] sm:w-[220px] rotate-[-11.8deg] opacity-90"
+                    />
+                </div>
 
 
             </div>
@@ -385,7 +385,7 @@ export default function AuthLanding() {
                 {/* Builder Modal - REDESIGNED */}
                 {showBuilder && (
                     <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
-                        <div 
+                        <div
                             className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] flex flex-col animate-slideUp"
                             style={{
                                 backgroundImage: "linear-gradient(rgb(255 255 255 / 95%), rgba(255, 255, 255, 0.98)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
@@ -551,13 +551,13 @@ export default function AuthLanding() {
                                 <div className="flex-1 overflow-y-auto p-8 bg-slate-100">
 
                                     <div className="flex justify-between">
-                                    <div className="bg-gray-100 p-1.5 rounded-xl w-fit mb-6 shadow-sm">
-                                        <button onClick={() => setActiveTab('modal')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'modal' ? 'bg-slate-100 text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Modal</button>
-                                        <button onClick={() => setActiveTab('button')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'button' ? 'bg-slate-100  text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Button</button>
-                                        <button onClick={() => setActiveTab('code')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'code' ? 'bg-slate-100  text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Code</button>
-                                    </div>
+                                        <div className="bg-gray-100 p-1.5 rounded-xl w-fit mb-6 shadow-sm">
+                                            <button onClick={() => setActiveTab('modal')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'modal' ? 'bg-slate-100 text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Modal</button>
+                                            <button onClick={() => setActiveTab('button')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'button' ? 'bg-slate-100  text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Button</button>
+                                            <button onClick={() => setActiveTab('code')} className={`px-5 py-2.5 rounded-lg font-medium transition-all ${activeTab === 'code' ? 'bg-slate-100  text-gray-900 shadow' : 'text-gray-600 hover:text-gray-900'}`}>Code</button>
+                                        </div>
 
-                                    <button className="bg-slate-900 text-white h-fit p-3 rounded-lg">Deploy Auth</button>
+                                        <button className="bg-slate-900 text-white h-fit p-3 rounded-lg">Deploy Auth</button>
                                     </div>
 
                                     {activeTab === 'modal' && (
