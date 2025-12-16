@@ -37,7 +37,7 @@ const BrowserExtensionWizard: React.FC = () => {
   const [name, setName] = useState<string>('Wonder Sites Extension');
   const [description, setDescription] = useState<string>('Easily create a chrome extension..');
   const [version, setVersion] = useState<string>('1.0');
-  const [websiteUrl, setWebsiteUrl] = useState<string>('https://wondersites.co');
+  const [websiteUrl, setWebsiteUrl] = useState<string>('https://wonderdesk.ai');
   const [icon, setIcon] = useState<File | null>(null);
   const [iconPreview, setIconPreview] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
@@ -288,7 +288,7 @@ body {
                 value={websiteUrl}
                 onChange={(e) => setWebsiteUrl(e.target.value)}
                 className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-l-md"
-                placeholder="https://app.wondersites.co"
+                placeholder="https://app.wonderdesk.ai"
               />
               <button
                 onClick={openIframePopup}

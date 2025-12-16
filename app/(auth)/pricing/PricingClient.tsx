@@ -58,7 +58,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ isOpen, onClose }) =>
 
 
                         <Link
-                            href="https://app.wondersites.co" // Make sure this is the correct link for the discounted offer
+                            href="https://app.wonderdesk.ai" // Make sure this is the correct link for the discounted offer
                             className="bg-orange-600 text-white text-lg w-fit py-3 px-6 rounded-lg block hover:bg-orange-700 transition-colors shadow-lg font-medium"
                             onClick={() => {
                                 // You might want to track this conversion
@@ -155,7 +155,7 @@ const faqs: Record<string, FAQ[]> = {
         },
         {
             question: "Are there discounts for students, startups, or nonprofits?",
-            answer: "Yes! We offer special discounts. Please contact support@wondersites.co with proof of eligibility to apply.",
+            answer: "Yes! We offer special discounts. Please contact support@wonderdesk.ai with proof of eligibility to apply.",
         },
         {
             question: "Do you offer custom pricing for agencies or enterprises?",
@@ -334,7 +334,7 @@ const FAQSection: React.FC = () => {
                     <p className="text-slate-600 max-w-2xl mx-auto">
                         Have a different question? Reach out to our support team by
                         <a
-                            href="mailto:vaibhav@wondersites.co"
+                            href="mailto:vaibhav@wonderdesk.ai"
                             className="text-orange-600 hover:text-orange-700 hover:underline px-2"
                         >
                             sending us an email
@@ -699,7 +699,7 @@ const Pricing: React.FC = () => {
                             <div className="px-6 pb-6 mt-4">
                                 {/* --- UPDATED TO USE FlippingButtonLink --- */}
                                 <FlippingButtonLink
-                                    href="https://app.wondersites.co"
+                                    href="https://app.wonderdesk.ai"
                                     initialText="Get started - free"
                                     hoverText="in under 15 mins" // Customize hover text if needed
                                     className={tier.highlight

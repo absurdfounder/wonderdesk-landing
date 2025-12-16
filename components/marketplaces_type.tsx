@@ -340,7 +340,7 @@ export default function MarketplaceType() {
       {/* Call to Action Section */}
       <div className="mt-8 sm:mt-12 text-center">
         <a
-          href="https://app.wondersites.co"
+          href="https://app.wonderdesk.ai"
           className="inline-flex items-center text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded text-sm sm:text-base font-medium"
           aria-label="Learn more about building with Wonder Sites"
         >

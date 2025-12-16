@@ -72,7 +72,7 @@ Compare Wonder  to ${filteredContent.product.name}: ${filteredContent.product.de
       images: [{ url: filteredContent.product.heroimage }],
     },
     alternates: {
-      canonical: `https://wondersites.co/compare-against/${slug}`,
+      canonical: `https://wonderdesk.ai/compare-against/${slug}`,
     },
   };
 }
@@ -114,7 +114,7 @@ export default async function ComparisonAgainst({ params }: { params: { slug: st
             <p className="text-lg sm:text-xl text-slate-600">
               {filteredContent.product.description}
             </p>
-            <Link href="https://app.wondersites.co" className="text-white bg-slate-900 rounded-md w-fit p-2 mt-4 px-4 mt-2 block m-auto">
+            <Link href="https://app.wonderdesk.ai" className="text-white bg-slate-900 rounded-md w-fit p-2 mt-4 px-4 mt-2 block m-auto">
               Build sites using AI
             </Link>
           </div>

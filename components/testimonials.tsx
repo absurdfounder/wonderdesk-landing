@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
     content:
       "First I downgraded my old site builder to the free plan. Then I stopped using it entirely.",
     additionalContent:
-      "What am I using now?\n\nThis thing called Wonder (wondersites.co) 🎉\n\nAfter trying it for half an hour I upgraded to a paid plan—and I really really like it.",
+      "What am I using now?\n\nThis thing called Wonder (wonderdesk.ai) 🎉\n\nAfter trying it for half an hour I upgraded to a paid plan—and I really really like it.",
     platform: "linkedin",
     category: ["All", "Product Docs", "Marketplace"]
   },
@@ -81,7 +81,7 @@ const testimonials: Testimonial[] = [
     handle: "@mikefutia",
     avatar: "https://framerusercontent.com/images/CgcgsYZhqHDIikpyOTQoutkLPM.png",
     content:
-      "The best new tool for building:\n\n- Course websites\n- Webinar pages\n- 1-on-1 booking sites\n- Or ANY type of landing page\n\nIs WonderSites.co\n\nIt blows everything else out of the water.",
+      "The best new tool for building:\n\n- Course websites\n- Webinar pages\n- 1-on-1 booking sites\n- Or ANY type of landing page\n\nIs wonderdesk.ai\n\nIt blows everything else out of the water.",
     platform: "twitter",
     category: ["All", "Blog", "Directory"]
   },

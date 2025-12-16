@@ -78,7 +78,7 @@ const AggregateStats: React.FC = () => {
               <span className="font-bold">Join 50+ teams</span> already using Wonder  to simplify their workflow
             </p>
             <a 
-              href="https://app.wondersites.co" 
+              href="https://app.wonderdesk.ai" 
               className="inline-flex items-center justify-center px-6 py-3 bg-slate-900 text-white font-medium rounded-md transition-colors hover:bg-slate-800"
             >
               Create a free account

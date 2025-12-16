@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 export const metadata = {
   title: 'Wonder Sites Privacy Policy', // Slightly more descriptive title
-  description: 'Privacy Policy for Wonder Sites (wondersites.co)', // Slightly more descriptive
+  description: 'Privacy Policy for Wonder Sites (wonderdesk.ai)', // Slightly more descriptive
   alternates: {
-    canonical: "https://wondersites.co/privacy",
+    canonical: "https://wonderdesk.ai/privacy",
   },
   openGraph: {
     title: 'Wonder Sites Privacy Policy', // Consistent title
     description: 'How Wonder Sites handles your personal information.', // Specific OG description
-    url: "https://wondersites.co/privacy", // Add URL
+    url: "https://wonderdesk.ai/privacy", // Add URL
     siteName: 'Wonder Sites', // Add site name
     images: [
         {
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() { // Renamed component for clarity
 
             {/* Sections */}
             <h2 id="overview">Overview</h2>
-            <p>This Privacy Policy describes how Wonder Sites ("we," "us," or "our") collects, uses, and shares your personal information when you visit or use the services provided through <code>https://wondersites.co</code> (the “Service” or “Site”). This policy applies to users of the Wonder Sites platform. Please note that websites created <em>by our users</em> using the Wonder Sites service are governed by the privacy policies of those individual site owners.</p>
+            <p>This Privacy Policy describes how Wonder Sites ("we," "us," or "our") collects, uses, and shares your personal information when you visit or use the services provided through <code>https://wonderdesk.ai</code> (the “Service” or “Site”). This policy applies to users of the Wonder Sites platform. Please note that websites created <em>by our users</em> using the Wonder Sites service are governed by the privacy policies of those individual site owners.</p>
 
             <hr className="my-8" />
 
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() { // Renamed component for clarity
                 <strong>Information Collected Automatically:</strong>
                 <ul className="list-disc list-inside ml-5 mt-1 space-y-1">
                   <li><strong>Device Information:</strong> When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies installed on your device.</li>
-                  <li><strong>Usage Information:</strong> As you navigate and interact with the Service (our website <code>wondersites.co</code>, not the sites you build), we collect information about how you use the Service, such as the pages you view, features you use, and actions you take. We refer to this automatically-collected information collectively with device details as “Usage & Device Information.”</li>
+                  <li><strong>Usage Information:</strong> As you navigate and interact with the Service (our website <code>wonderdesk.ai</code>, not the sites you build), we collect information about how you use the Service, such as the pages you view, features you use, and actions you take. We refer to this automatically-collected information collectively with device details as “Usage & Device Information.”</li>
                 </ul>
               </li>
             </ol>
@@ -158,7 +158,7 @@ export default function PrivacyPolicyPage() { // Renamed component for clarity
             <hr className="my-8" />
 
              <h2 id="behavioral-advertising">Behavioral Advertising</h2>
-            <p>As described above, we may use your Personal Information (primarily Usage & Device Information collected on <code>wondersites.co</code>) to provide you with targeted advertisements or marketing communications we believe may be of interest to you. For more information about how targeted advertising works, visit the Network Advertising Initiative’s (“NAI”) educational page: <a href="http://www.networkadvertising.org/understanding-online-advertising/how-does-it-work" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">http://www.networkadvertising.org/understanding-online-advertising/how-does-it-work</a>.</p>
+            <p>As described above, we may use your Personal Information (primarily Usage & Device Information collected on <code>wonderdesk.ai</code>) to provide you with targeted advertisements or marketing communications we believe may be of interest to you. For more information about how targeted advertising works, visit the Network Advertising Initiative’s (“NAI”) educational page: <a href="http://www.networkadvertising.org/understanding-online-advertising/how-does-it-work" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">http://www.networkadvertising.org/understanding-online-advertising/how-does-it-work</a>.</p>
             <p>We might share information about your use of our Site and your interaction with our ads on other websites with advertising partners, sometimes through cookies or similar technologies (subject to your consent where required). <em>[Review if this section accurately reflects your practices]</em></p>
             <p>You can opt out of targeted advertising using these links:</p>
             <ul className="list-disc list-inside space-y-1 mb-4">
@@ -238,7 +238,7 @@ export default function PrivacyPolicyPage() { // Renamed component for clarity
               <li><strong>Email:</strong> <a href="mailto:querykitty@gmail.com" className="text-blue-600 hover:underline">querykitty@gmail.com</a></li>
               <li><strong>Mailing Address:</strong> Boring Sites LLC , Delaware</li>
             </ul>
-            <p>Please identify Wonder Sites as the data controller for the Personal Information collected through the <code>wondersites.co</code> service in your communication where relevant (e.g., for GDPR requests).</p>
+            <p>Please identify Wonder Sites as the data controller for the Personal Information collected through the <code>wonderdesk.ai</code> service in your communication where relevant (e.g., for GDPR requests).</p>
 
           </div>
           {/* Privacy Policy Content End */}

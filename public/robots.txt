@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /private
 Allow: /
 
-Sitemap: https://wondersites.co/sitemap.xml
+Sitemap: https://wonderdesk.ai/sitemap.xml

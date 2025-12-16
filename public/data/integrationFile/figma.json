@@ -3,7 +3,7 @@
   "subtitle": "By Wonder Sites",
   "description": "Embed interactive product demos in your documentation and turn all users into power users.",
   "image": "https://framerusercontent.com/images/FS1of0gxF0A6UP7GmCpIBKQM.png",
-  "link": "https://app.wondersites.co/integrations/arcade",
+  "link": "https://app.wonderdesk.ai/integrations/arcade",
   "secondaryImage": "https://framerusercontent.com/images/JwSD9igebl5YjP1p0XBssmuRU4.png",
   "sections": [
     {
@@ -42,7 +42,7 @@
     },
     {
       "type": "link",
-      "href": "https://app.wondersites.co/more-info",
+      "href": "https://app.wonderdesk.ai/more-info",
       "text": "Find out more here"
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "type": "iframe",
-      "src": "https://app.wondersites.co/interactive-demo"
+      "src": "https://app.wonderdesk.ai/interactive-demo"
     },
     {
       "type": "heading",

@@ -296,7 +296,7 @@ export default function ChatInput() {
             </p>
             <a
               type="button"
-              href="https://app.wondersites.co"
+              href="https://app.wonderdesk.ai"
               className="w-full bg-white hover:bg-gray-100 text-slate-900 py-3 rounded block text-center"
             >
               Sign up for free

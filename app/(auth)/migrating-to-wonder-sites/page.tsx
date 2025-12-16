@@ -6,7 +6,7 @@ export const metadata = {
     title: 'Migrate to Wonder  Sites',
     description: 'Migrate your helpdesk, blog, or even marketplace to Wonder  Sites. Start living a hassle free life just SET and FORGET.',
     alternates: {
-        canonical: "https://wondersites.co/migrating-to-wonder-sites",
+        canonical: "https://wonderdesk.ai/migrating-to-wonder-sites",
       },
     openGraph: {
         images: [

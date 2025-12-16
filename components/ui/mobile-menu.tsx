@@ -191,7 +191,7 @@ export default function MobileMenu() {
 
             {/* Login */}
             <li>
-              <Link href="https://app.wondersites.co" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">
+              <Link href="https://app.wonderdesk.ai" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2">
                 Login
               </Link>
             </li>
@@ -199,7 +199,7 @@ export default function MobileMenu() {
             {/* Create Website button */}
             <li className="pt-2">
               <Link
-                href="https://app.wondersites.co"
+                href="https://app.wonderdesk.ai"
                 target='_blank'
                 className="btn-sm text-white bg-slate-900 hover:bg-slate-800 w-full flex items-center justify-between px-5 py-3 rounded-md transition duration-300 ease-in-out group relative overflow-hidden"
               >

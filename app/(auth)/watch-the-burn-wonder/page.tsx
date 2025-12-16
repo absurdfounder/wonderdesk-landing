@@ -26,7 +26,7 @@ export const metadata = {
     description:
         "Build a blog in Notion, with our Notion blog maker. Go live in under a minute.  Build your free Wonder  blog website in a minute!",
     alternates: {
-        canonical: "https://wondersites.co/create-a-blog-notion",
+        canonical: "https://wonderdesk.ai/create-a-blog-notion",
     },
     openGraph: {
         images: [

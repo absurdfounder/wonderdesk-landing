@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 export const metadata = {
     title: 'Wonder Sites Terms of Service', // More specific title
-    description: 'Terms of Service for using Wonder Sites (wondersites.co)', // More specific description
+    description: 'Terms of Service for using Wonder Sites (wonderdesk.ai)', // More specific description
     alternates: {
-        canonical: "https://wondersites.co/terms",
+        canonical: "https://wonderdesk.ai/terms",
       },
     openGraph: {
         title: 'Wonder Sites Terms of Service', // Consistent title
         description: 'Read the terms governing your use of the Wonder Sites platform.', // Specific OG description
-        url: "https://wondersites.co/terms", // Add URL
+        url: "https://wonderdesk.ai/terms", // Add URL
         siteName: 'Wonder Sites', // Add site name
         images: [
             {
@@ -92,7 +92,7 @@ export default function TermsOfServicePage() { // Renamed component
 
                         {/* --- Overview --- */}
                         <h2 id="overview">Overview</h2>
-                        <p>This website and service (<code>https://wondersites.co</code>) is operated by Wonder Sites ([Boring Sites LLC] "we", "us", "our"). Wonder Sites offers this platform, including all information, tools, and services available from this site (the "Service") to you, the user ("you"), conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.</p>
+                        <p>This website and service (<code>https://wonderdesk.ai</code>) is operated by Wonder Sites ([Boring Sites LLC] "we", "us", "our"). Wonder Sites offers this platform, including all information, tools, and services available from this site (the "Service") to you, the user ("you"), conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.</p>
                         <p>By visiting our site and/or using our Service (e.g., creating an account, building a site, purchasing a subscription), you engage in our Service and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and policies referenced herein and/or available by hyperlink (such as our Privacy Policy). These Terms apply to all users of the Site and Service, including browsers, customers, and contributors of content or feedback.</p>
                         <p>Please read these Terms carefully before accessing or using our Service. By accessing or using any part of the Service, you agree to be bound by these Terms. If you do not agree to all the terms, then you may not access the website or use any Service. If these Terms are considered an offer, acceptance is expressly limited to these Terms.</p>
                         <p>Any new features or tools added to the current Service shall also be subject to these Terms. You can review the most current version of the Terms at any time on this page. We reserve the right to update, change, or replace any part of these Terms by posting updates/changes to our website. It is your responsibility to check this page periodically. Your continued use of or access to the Service following the posting of changes constitutes acceptance of those changes.</p>
@@ -120,7 +120,7 @@ export default function TermsOfServicePage() { // Renamed component
 
                         {/* --- 3. Accuracy, Completeness and Timeliness of Information (on Wonder Sites) --- */}
                         <h2 id="info-accuracy">3. Accuracy, Completeness and Timeliness of Information (on Wonder Sites)</h2>
-                        <p>We are not responsible if information made available <em>on the Wonder Sites website (<code>wondersites.co</code>)</em> itself (e.g., marketing materials, documentation) is not accurate, complete, or current. This material is for general information only and should not be the sole basis for decisions without consulting primary sources. Any reliance on the material on <em>this</em> site is at your own risk. This section does not apply to the content of websites <em>you</em> create using the Service.</p>
+                        <p>We are not responsible if information made available <em>on the Wonder Sites website (<code>wonderdesk.ai</code>)</em> itself (e.g., marketing materials, documentation) is not accurate, complete, or current. This material is for general information only and should not be the sole basis for decisions without consulting primary sources. Any reliance on the material on <em>this</em> site is at your own risk. This section does not apply to the content of websites <em>you</em> create using the Service.</p>
                         <p>Our site may contain historical information provided for reference only. We reserve the right to modify the contents of <em>our</em> site at any time, but have no obligation to update any information. You agree it is your responsibility to monitor changes to <em>our</em> site.</p>
 
                         <hr className="my-8" />
@@ -163,7 +163,7 @@ export default function TermsOfServicePage() { // Renamed component
                         {/* --- 8. Third-Party Links and Services (including Notion) --- */}
                         <h2 id="third-party">8. Third-Party Links and Services (including Notion)</h2>
                         <p>Certain content or services available via our Service may include materials or links from third-parties. Our Service relies heavily on the availability and functionality of Notion and its API.</p>
-                        <p>Third-party links on <em>this</em> site (<code>wondersites.co</code>) may direct you to websites not affiliated with us. We are not responsible for examining or evaluating the content or accuracy and do not warrant liability for third-party materials or websites linked <em>from our site</em>.</p>
+                        <p>Third-party links on <em>this</em> site (<code>wonderdesk.ai</code>) may direct you to websites not affiliated with us. We are not responsible for examining or evaluating the content or accuracy and do not warrant liability for third-party materials or websites linked <em>from our site</em>.</p>
                         <p>We are not liable for harm or damages related to transactions made in connection with third-party websites. Review third-party policies carefully. Complaints regarding third-party products should be directed to the third-party.</p>
                         <p>Furthermore, Wonder Sites is not responsible for the content, functionality, or privacy practices of third-party services or code that <em>you</em> choose to embed or link to on the websites <em>you create</em> using our Service. You are responsible for ensuring any third-party integrations you add to your site comply with applicable laws and terms.</p>
                         <p>Your use of Notion is governed by Notion's own Terms of Service and Privacy Policy. We are not responsible for Notion's service availability, data handling practices, or changes to their API that may affect our Service.</p>

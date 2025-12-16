@@ -6,10 +6,10 @@ const SchemaMarkup = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Wonder Sites",
-    "url": "https://wondersites.co/",
+    "url": "https://wonderdesk.ai/",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://wondersites.co/search?q={search_term_string}",
+      "target": "https://wonderdesk.ai/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -18,7 +18,7 @@ const SchemaMarkup = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Wonder Sites",
-    "url": "https://wondersites.co",
+    "url": "https://wonderdesk.ai",
     "logo": "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
     "sameAs": [
       "https://twitter.com/WonderSites",
@@ -44,7 +44,7 @@ const SchemaMarkup = () => {
       "price": "7.00",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "url": "https://wondersites.co/pricing",
+      "url": "https://wonderdesk.ai/pricing",
       "priceValidUntil": "2025-12-31",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
@@ -108,25 +108,25 @@ const SchemaMarkup = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Websites Built on Wonder ",
-        "item": "https://wondersites.co/showcase"
+        "item": "https://wonderdesk.ai/showcase"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Pricing",
-        "item": "https://wondersites.co/pricing"
+        "item": "https://wonderdesk.ai/pricing"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Integrations",
-        "item": "https://wondersites.co/integrations"
+        "item": "https://wonderdesk.ai/integrations"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Wonder App",
-        "item": "https://app.wondersites.co"
+        "item": "https://app.wonderdesk.ai"
       }
     ]
   };

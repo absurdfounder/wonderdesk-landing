@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Affiliate Program',
   description: 'Join the Wonder affiliate program to become our partner. Spread the website builder and earn money with us.',
   alternates: {
-    canonical: "https://wondersites.co/affiliate",
+    canonical: "https://wonderdesk.ai/affiliate",
   },
   openGraph: {
     images: [
@@ -223,7 +223,7 @@ refer to Wonder  Sites, without limits. Join
                 </li>
               </ul>
               <div className="text-center mt-8">
-                <Link href="https://partner.wondersites.co/" target="_self" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center">Start to earn money</Link>
+                <Link href="https://partner.wonderdesk.ai/" target="_self" className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0 flex items-center justify-center">Start to earn money</Link>
               </div>
             </div>
           </div>

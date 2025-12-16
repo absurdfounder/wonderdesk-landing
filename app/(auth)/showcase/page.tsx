@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Explore the websites built on Wonder Sites. From personal projects to enterprise-scale solutions, unlock unlimited AI-powered websites, custom domains, analytics, SEO tools, and more — all built on Notion. Try free for 3 days!",
     alternates: {
-      canonical: "https://wondersites.co/showcase",
+      canonical: "https://wonderdesk.ai/showcase",
     },
   openGraph: {
     images: [

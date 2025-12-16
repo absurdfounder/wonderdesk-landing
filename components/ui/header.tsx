@@ -132,7 +132,7 @@ export default function Header() {
 
                 <NavLink href="/showcase" text="Examples" />
                 <NavLink href="/pricing" text="Pricing" />
-                <NavLink href="https://app.wondersites.co" text="Login" />
+                <NavLink href="https://app.wonderdesk.ai" text="Login" />
 
                 <li>
                   <button
@@ -154,7 +154,7 @@ export default function Header() {
 
                 <li>
                   <Link
-                    href="https://app.wondersites.co"
+                    href="https://app.wonderdesk.ai"
                     target='_blank'
                     className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
                     onMouseEnter={() => setIsHovered(true)}

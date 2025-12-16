@@ -174,7 +174,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           {/* CTA Buttons - simplified animations for immediate rendering */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 sm:mb-2 items-center justify-center px-4 sm:px-0">
             <Link
-              href="https://app.wondersites.co?ref=herolanding"
+              href="https://app.wonderdesk.ai?ref=herolanding"
               className="flex items-center justify-center py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
