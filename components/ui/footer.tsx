@@ -56,44 +56,25 @@ export default function Footer() {
             <p className='mb-3 text-xs text-slate-400'>Wonder is the biggest admirer of Notion™ , no-relation, just admiration.</p>
 
 
-          <div className="flex gap-2 sm:gap-4 my-4">
-            <a 
-              href="https://believe.app/coin/GEKjZKJZgQTCbi9evTW2GmhyamH3sq6Lid9dQMWqEcCY" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-green-600 text-white font-medium px-3 sm:px-4 py-2 rounded-md hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center text-sm sm:text-base group"
-            >
+<div className="flex gap-2 sm:gap-4 my-4">
+  <a
+    href="https://bags.fm/FpTvUc2MuoeegL8Tw1QjY8wwBACv7sg5u7gN3yG2BAGS"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-zinc-900 text-green-500 border border-green-500/20 font-medium px-3 sm:px-4 py-2 rounded-md hover:bg-black hover:border-green-500 transition-all duration-300 flex items-center justify-center text-sm sm:text-base group"
+  >
+    View <b className="px-2">$WONDER</b> on
+    
+    <img 
+      src="https://bags.fm/assets/images/bags-icon.png" 
+      alt="Bags Logo"
+      className="mx-1 sm:mx-2 w-5 h-5 sm:w-6 sm:h-6 object-contain"
+    />
 
-
-              View <b className="px-2">$WONDER</b> on 
-              
-              
-                          <svg 
-              width="16" 
-              height="16" 
-              viewBox="0 0 256 300" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="mx-1 sm:mx-2 sm:w-5 sm:h-5"
-            >
-              <g clipPath="url(#clip0_106_4829)">
-                <path 
-                  fill="#ffffff" 
-                  d="M96.5403 1.10644C102.321 -1.89617 109.364 1.49336 110.627 7.88551L127.509 93.3285C128.819 99.9537 121.234 104.675 115.87 100.574L111.235 97.0292C104.245 91.6846 96.9687 86.7575 89.4446 82.2667L47.4096 174.235C43.8612 181.998 42.0246 190.435 42.0246 198.971C42.0246 231.827 68.6505 258.462 101.495 258.462H169.041C193.998 258.462 214.229 238.223 214.229 213.258C214.229 188.293 193.998 168.055 169.041 168.055H132.401C120.935 168.055 111.639 158.756 111.639 147.286C111.639 135.816 120.935 126.517 132.401 126.517H138.489C138.495 126.517 138.502 126.517 138.508 126.517H172.705C188.219 126.517 200.795 113.936 200.795 98.4174C200.795 82.8985 188.219 70.318 172.705 70.318H169.041C157.574 70.318 148.279 61.0193 148.279 49.5488C148.279 38.0783 157.574 28.7798 169.041 28.7798H172.705C211.152 28.7798 242.319 59.9576 242.319 98.4174C242.319 116.756 235.233 133.439 223.65 145.875C243.238 161.779 255.754 186.057 255.754 213.258C255.754 261.165 216.931 300 169.041 300H101.495C45.7171 300 0.5 254.768 0.5 198.971C0.5 184.475 3.61895 170.147 9.64502 156.963L52.0004 64.2935C44.3864 61.4541 36.6123 59.0156 28.7089 56.9929L20.6653 54.9343C14.1471 53.2661 13.1335 44.4287 19.1047 41.3272L96.5403 1.10644Z"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_106_4829">
-                  <rect width="255.254" height="300" fill="#ffffff" transform="translate(0.5)" />
-                </clipPath>
-              </defs>
-            </svg>
-              
-              Believe
-              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
-            </a>
-
-          </div>
+    Bags
+    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
+  </a>
+</div>
 
 
           <div className="flex gap-2 sm:gap-4 my-4">
