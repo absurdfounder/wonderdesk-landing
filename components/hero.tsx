@@ -1,13 +1,12 @@
 'use client';
 
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Github } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image'; // Use Next.js Image for optimization
 
-// Lazy load the TabImageHotspots component
-const TabImageHotspots = lazy(() => import('./tabbed_examples'));
+import HeroArticleDemo from './HeroArticleDemo';
 
 // Defer non-critical Cal.com widget import
 const getCalApiImport = () => import("@calcom/embed-react").then(mod => mod.getCalApi);
@@ -131,9 +130,9 @@ export default function Hero({ onCategorySelect }: HeroProps) {
         <br />
 
 
-        <div className="pt-6 sm:pt-8 md:pt-12 pb-8 sm:pb-10 md:pb-12">
+        <div className="pt-6 sm:pt-10 md:pt-12 pb-12 sm:pb-16 md:pb-20">
           {/* Left (text) + Right (tab sector) on lg; stacked on smaller screens */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-10 xl:gap-12">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-14 xl:gap-20">
             {/* Left: text content */}
             <div className="flex-1 lg:max-w-[48%] text-center lg:text-left">
               <div className="px-2 sm:px-4 md:px-6 lg:px-0">
@@ -222,24 +221,9 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               </div>
             </div>
 
-            {/* Right: tab sector (TabImageHotspots) */}
-            <div className="flex-1 lg:max-w-[52%] w-full mt-8 lg:mt-0 px-2 sm:px-0">
-              <Suspense fallback={
-                <div className="w-full max-w-4xl mx-auto lg:mx-0 space-y-4 sm:space-y-6 py-6 sm:py-8">
-                  <div className="flex flex-wrap sm:flex-nowrap space-x-2 sm:space-x-4 justify-center lg:justify-start gap-y-2 sm:gap-y-0">
-                    <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-200 rounded text-sm">Feature 1</div>
-                    <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-300 rounded font-medium text-sm">Feature 2</div>
-                    <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-200 rounded text-sm">Feature 3</div>
-                  </div>
-                  <div className="flex justify-center lg:justify-start">
-                    <div className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-full bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
-                      <span className="text-gray-500 text-sm sm:text-base">Loading preview...</span>
-                    </div>
-                  </div>
-                </div>
-              }>
-                <TabImageHotspots />
-              </Suspense>
+            {/* Right: interactive article demo */}
+            <div className="flex-1 lg:max-w-[52%] w-full mt-10 lg:mt-0 lg:pl-4">
+              <HeroArticleDemo />
             </div>
           </div>
         </div>

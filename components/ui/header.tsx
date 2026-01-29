@@ -54,7 +54,7 @@ export default function Header() {
     <>
       {/* Main Header */}
       <header
-        className={`w-full z-30 transition-all duration-300 ease-in-out w-full fixed top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 md:px-6 ${!top ? 'bg-none shadow-md' : ''}`}
+        className={`w-full z-30 transition-all duration-300 ease-in-out w-full fixed top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 md:px-6 ${!top ? 'bg-none' : ''}`}
       >
         <div className="max-w-7xl mx-auto py-2 px-4 sm:py-2.5 sm:px-6">
           <div className="flex items-center justify-between h-11 sm:h-12 md:h-12">

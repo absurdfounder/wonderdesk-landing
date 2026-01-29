@@ -28,6 +28,8 @@ import Header from '@/components/ui/header'
 import Features from '@/components/features'
 import FeaturesBlocks from '@/components/FeaturesBlocks'
 import HowItWorksSection from '@/components/HowItWorksSection'
+import AIAgentSection from '@/components/AIAgentSection'
+import CustomerStorySection from '@/components/CustomerStorySection'
 import OldWays from '@/components/OldWays'
 import Testimonials from '@/components/testimonials'
 import AboutMe from '@/components/AboutMe'
@@ -106,17 +108,19 @@ export default function Home() {
 
       <NotionToWebsite />
       {/* 
-      <ModalVideo />
       <MarketplaceType />
       <Testimonials />
+            <ModalVideo />
       */}
+
       <HowItWorksSection />
+      <AIAgentSection />
+      <CustomerStorySection />
       <FeaturesBlocks />
       <OldWays />
       <SimpleAnalyticsDashboard />
       <Showcases />
       <FAQ />
-      <Testimonials />
     </>
   )
 }
