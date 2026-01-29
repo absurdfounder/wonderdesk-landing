@@ -4,20 +4,20 @@ const sectionXPadding = "px-4 sm:px-6 lg:px-8";
 
 const blocks = [
   {
-    title: "Connect a custom domain or subfolder",
-    body: "to Wonder and make your help center feel like part of your main website.",
+    title: "Use your own domain or a subpath",
+    body: "so your help site feels like a natural part of your main site.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
     alt: "Custom domain",
   },
   {
-    title: "SEO optimized out of the box",
-    body: "so your customers can find answers on Google, ChatGPT and more.",
+    title: "Built for search from day one",
+    body: "so people discover your content on Google, ChatGPT, and other platforms.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
     alt: "SEO",
   },
   {
-    title: "Articles load in milliseconds",
-    body: "so your page rankings improve and your customers find answers faster.",
+    title: "Lightning-fast article delivery",
+    body: "boosting search rankings and helping customers get answers in no time.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
     alt: "Performance",
   }
@@ -30,11 +30,10 @@ export default function FeaturesBlocks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-12">
         <div className=" text-start">
           <h2 className="font-funneldisplay h2 mb-4">
-          Get discovered by humans and AI chatbots
+          Be found by real users and AI assistants
           </h2>
           <p className="text-xl text-slate-600">
-            We know you have too much on your plate, this is why Wonder exists to help you setup{" "}
-            <span className="font-normal text-orange-600 border-b">marketing and support on automation</span>.
+            Busy teams need a simpler way to run marketing and support. Wonder automates both so you can focus on what matters.
           </p>
         </div>
       </div>
