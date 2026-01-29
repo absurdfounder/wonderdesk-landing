@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ModalVideo from "@/components/modal-video";
+import ModalVideo from "@/components/ModalVideo";
 
 export default function AboutMe() {
   return (

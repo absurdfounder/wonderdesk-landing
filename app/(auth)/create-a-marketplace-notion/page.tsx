@@ -1,16 +1,15 @@
 
 import React, { useState, useEffect } from "react";
 
-import ModalVideo from "@/components/full-modal-video";
+import ModalVideo from "@/components/FullModalVideo";
 import VideoThumb from "@/public/images/hero-image.png";
 
 import Link from "next/link";
 import Image from "next/image";
 
 import TrustedBy from "../compare-against/TrustedBy";
-import FeaturesBlocks from "@/components/features-blocks";
-
-import Marketplace_Type from "@/components/marketplaces_type";
+import FeaturesBlocks from "@/components/FeaturesBlocks";
+import MarketplaceType from "@/components/MarketplaceType";
 
 import Testimonials from "@/components/testimonials";
 
@@ -116,7 +115,7 @@ export default function PageDetail() {
                 </div>
             </section>
 
-            <Marketplace_Type />
+            <MarketplaceType />
 
             <FeaturesBlocks />
 

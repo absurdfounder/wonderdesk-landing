@@ -1,19 +1,19 @@
 
 import React, { useState, useEffect } from "react";
 
-import ModalVideo from "@/components/modal-video";
+import ModalVideo from "@/components/ModalVideo";
 import VideoThumb from "@/public/images/hero-image.png";
 
 import Link from "next/link";
 import Image from "next/image";
 
 import TrustedBy from "../compare-against/TrustedBy";
-import FeaturesBlocks from "@/components/features-blocks";
-import Blog_Type from "@/components/blog_type";
+import FeaturesBlocks from "@/components/FeaturesBlocks";
+import BlogType from "@/components/BlogType";
 
 import Testimonials from "@/components/testimonials";
 import Header from "@/components/ui/header";
-import BelieveLandingPage from "@/components/token-page";
+import TokenPage from "@/components/TokenPage";
 import WondersitesDashboard from "@/components/watchburn";
 
 

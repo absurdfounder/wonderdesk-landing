@@ -1,16 +1,15 @@
 
 import React, { useState, useEffect } from "react";
 
-import ModalVideo from "@/components/full-modal-video";
+import ModalVideo from "@/components/FullModalVideo";
 import VideoThumb from "@/public/images/hero-image.png";
 
 import Link from "next/link";
 import Image from "next/image";
 
 import TrustedBy from "../compare-against/TrustedBy";
-import FeaturesBlocks from "@/components/features-blocks";
-
-import CompanyWiki_Type from "@/components/companywiki_type";
+import FeaturesBlocks from "@/components/FeaturesBlocks";
+import CompanyWikiType from "@/components/CompanyWikiType";
 
 import Testimonials from "@/components/testimonials";
 import Header from "@/components/ui/header";
@@ -121,7 +120,7 @@ export default function PageDetail() {
             </section>
 
 
-            <CompanyWiki_Type />
+            <CompanyWikiType />
 
 
             <FeaturesBlocks />

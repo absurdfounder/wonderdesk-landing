@@ -167,7 +167,7 @@ const TranslateButton = () => {
       </button>
       
       {dropdownOpen && (
-        <div className="absolute right-0 mt-2 w-64 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 max-h-[28rem] overflow-y-auto notranslate mt-5" translate="no">
+        <div className="absolute right-0 top-full mt-2 w-64 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 max-h-[28rem] overflow-y-auto notranslate" translate="no">
           <div className="py-1">
             <div className="px-4 py-2 text-xs text-gray-500 border-b border-gray-100 flex justify-between items-center">
               <span>Select language</span>

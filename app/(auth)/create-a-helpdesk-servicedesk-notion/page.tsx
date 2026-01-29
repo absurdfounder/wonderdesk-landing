@@ -1,27 +1,26 @@
 
 import React, { useState, useEffect } from "react";
 
-import ModalVideo from "@/components/full-modal-video";
+import ModalVideo from "@/components/FullModalVideo";
 import VideoThumb from "@/public/images/hero-image.png";
 
 import Link from "next/link";
 import Image from "next/image";
 
 import TrustedBy from "../compare-against/TrustedBy";
-import FeaturesBlocks from "@/components/features-blocks";
-
-import Helpdesk_Type from "@/components/helpdesk_type";
+import FeaturesBlocks from "@/components/FeaturesBlocks";
+import HelpdeskType from "@/components/HelpdeskType";
 
 import Testimonials from "@/components/testimonials";
 
 import Header from "@/components/ui/header";
 
-import OldWays from "@/components/old-ways";
+import OldWays from "@/components/OldWays";
 
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
-import HowtoHelpdesk from "@/components/how-to-helpdesk";
+import HowToHelpdesk from "@/components/HowToHelpdesk";
 
 
 export const metadata = {
@@ -126,10 +125,10 @@ export default function PageDetail() {
             </section>
 
 
-            <Helpdesk_Type />
+            <HelpdeskType />
 
 
-            <HowtoHelpdesk />
+            <HowToHelpdesk />
 
             <FeaturesBlocks />
 

@@ -26,19 +26,20 @@ export const metadata = {
 import Hero from '@/components/hero'
 import Header from '@/components/ui/header'
 import Features from '@/components/features'
-import FeaturesBlocks from '@/components/features-blocks'
-import OldWays from '@/components/old-ways'
+import FeaturesBlocks from '@/components/FeaturesBlocks'
+import HowItWorksSection from '@/components/HowItWorksSection'
+import OldWays from '@/components/OldWays'
 import Testimonials from '@/components/testimonials'
-import AboutMe from '@/components/aboutme'
+import AboutMe from '@/components/AboutMe'
 import Showcases from '@/components/showcase'
 import Newsletter from '@/components/newsletter'
-import Marketplace_Type from '@/components/marketplaces_type'
+import MarketplaceType from '@/components/MarketplaceType'
 import FAQ from '@/components/faq'
-import ModalVideo from '@/components/modal-video'
-import NotiontoWebsite from '@/components/notion-to-website'
+import ModalVideo from '@/components/ModalVideo'
+import NotionToWebsite from '@/components/NotionToWebsite'
 import SimpleAnalyticsDashboard from '@/components/DashboardComponent'
 import FloatingScrollIndicator from '@/components/FloatingScrollIndicator'
-import WonderComparison from '@/components/comparision'
+import WonderComparison from '@/components/comparison'
 
 export default function Home() {
   return (
@@ -103,12 +104,13 @@ export default function Home() {
         </div>
       </section>
 
-      <NotiontoWebsite />
+      <NotionToWebsite />
       {/* 
       <ModalVideo />
-      <Marketplace_Type />
+      <MarketplaceType />
       <Testimonials />
       */}
+      <HowItWorksSection />
       <FeaturesBlocks />
       <OldWays />
       <SimpleAnalyticsDashboard />

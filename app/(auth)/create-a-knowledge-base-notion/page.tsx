@@ -1,16 +1,15 @@
 
 import React, { useState, useEffect } from "react";
 
-import ModalVideo from "@/components/full-modal-video";
+import ModalVideo from "@/components/FullModalVideo";
 import VideoThumb from "@/public/images/hero-image.png";
 
 import Link from "next/link";
 import Image from "next/image";
 
 import TrustedBy from "../compare-against/TrustedBy";
-import FeaturesBlocks from "@/components/features-blocks";
-
-import Directory_Type from "@/components/knowledgebase_type";
+import FeaturesBlocks from "@/components/FeaturesBlocks";
+import KnowledgeBaseType from "@/components/KnowledgeBaseType";
 
 
 import Testimonials from "@/components/testimonials";
@@ -120,7 +119,7 @@ export default function PageDetail() {
             </section>
 
 
-            <Directory_Type />
+            <KnowledgeBaseType />
 
 
             <FeaturesBlocks />

@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, Loader, Users, MessageSquare, FileText, FolderGit2, DatabaseIcon, Gift, Lock, ArrowBigRight, ArrowRight } from 'lucide-react';
+import { Check, X, Loader, Users, MessageSquare, FileText, FolderGit2, DatabaseIcon, Gift, Lock, ArrowBigRight, ArrowRight, Sparkles, HelpCircle, Globe, Headphones } from 'lucide-react';
 import confetti from "canvas-confetti";
 import MigrateFrom from "@/public/images/migratefrom.png";
 import Testimonials from "@/components/testimonials";
@@ -108,6 +108,88 @@ interface PricingTier {
     trafficLimit: string;
     features: string[];
 }
+
+// Comparison table: cell is either check (true), cross (false), or text
+type ComparisonCell = boolean | { text: string; sub?: string };
+
+interface ComparisonRow {
+    feature: string;
+    personal: ComparisonCell;
+    business: ComparisonCell;
+}
+
+interface ComparisonCategory {
+    title: string;
+    icon: React.ComponentType<{ className?: string }>;
+    iconColor: string;
+    rows: ComparisonRow[];
+}
+
+// Comparison table data (Personal vs Business)
+const comparisonCategories: ComparisonCategory[] = [
+    {
+        title: "AI Features",
+        icon: Sparkles,
+        iconColor: "text-violet-500",
+        rows: [
+            { feature: "Wonder AI", personal: true, business: true },
+            { feature: "AI Teams (Designer & Developer)", personal: true, business: true },
+        ],
+    },
+    {
+        title: "Sites & Publishing",
+        icon: FileText,
+        iconColor: "text-blue-500",
+        rows: [
+            { feature: "Websites", personal: { text: "1" }, business: { text: "10" } },
+            { feature: "Unlimited pages", personal: true, business: true },
+            { feature: "All types of websites", personal: true, business: true },
+            { feature: "Manual publishing", personal: true, business: true },
+            { feature: "Auto publish every hour", personal: true, business: true },
+            { feature: "Instant auto publish", personal: false, business: true },
+        ],
+    },
+    {
+        title: "Help Center & Docs",
+        icon: HelpCircle,
+        iconColor: "text-slate-600",
+        rows: [
+            { feature: "Public help center", personal: true, business: true },
+            { feature: "Custom branding", personal: true, business: true },
+            { feature: "Automatic SSL (HTTPS)", personal: true, business: true },
+            { feature: "Custom domain", personal: true, business: true },
+            { feature: "Sub-directory domain", personal: false, business: true },
+            { feature: "Multi-lingual sites", personal: false, business: true },
+        ],
+    },
+    {
+        title: "Team & Collaboration",
+        icon: Users,
+        iconColor: "text-emerald-500",
+        rows: [
+            { feature: "Team members", personal: { text: "Limited" }, business: { text: "Unlimited" } },
+            { feature: "Membership sites", personal: false, business: true },
+        ],
+    },
+    {
+        title: "Hosting & Limits",
+        icon: Globe,
+        iconColor: "text-cyan-500",
+        rows: [
+            { feature: "Traffic (users/month)", personal: { text: "10,000" }, business: { text: "100,000" } },
+            { feature: "No watermark", personal: true, business: true },
+            { feature: "Privacy-focused analytics", personal: true, business: true },
+        ],
+    },
+    {
+        title: "Support",
+        icon: Headphones,
+        iconColor: "text-amber-500",
+        rows: [
+            { feature: "Email support", personal: true, business: true },
+        ],
+    },
+];
 
 // Features for Scale/Rocket plan
 const scaleFeatures: Feature[] = [
@@ -428,7 +510,7 @@ const FlippingButtonLink: React.FC<FlippingButtonLinkProps> = ({
 // Main Pricing Component
 const Pricing: React.FC = () => {
     // State variables
-    const [activeTab, setActiveTab] = useState("Yearly");
+    const [activeTab, setActiveTab] = useState("Monthly");
     const [popupFeature, setPopupFeature] = useState<Feature | null>(null);
     const [hoveredFeature, setHoveredFeature] = useState<Feature | null>(null);
     const [tooltipPosition, setTooltipPosition] = useState<Position>({ top: 0, left: 0 });
@@ -638,7 +720,7 @@ const Pricing: React.FC = () => {
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <h1 className="font-funneldisplay text-4xl md:text-5xl tracking-tight mb-6">
                             <span className="text-slate-800 block mb-2">
-                                Setup <img src="/favicon.ico" className="inline-block w-12 h-12 rounded-md align-middle mx-1" /> Wonder at your company
+                                Setup <img src="https://dazzling-cat.netlify.app/wonderbadge.png" className="inline-block w-12 h-12 rounded-md align-middle mx-1" /> Wonder at your company
                             </span>
                         </h1>
                     </div>
@@ -713,7 +795,110 @@ const Pricing: React.FC = () => {
                     ))}
                 </div>
 
-
+                {/* Comparison Table (desktop) */}
+                <div className="hidden lg:block mb-20">
+                    <h4 className="text-2xl font-bold text-slate-900 text-center mb-8">
+                        Compare plans
+                    </h4>
+                    <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                        {/* Sticky header */}
+                        <div className="sticky top-16 z-10 border border-slate-200 bg-white/95 backdrop-blur-sm">
+                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 py-4">
+                                <div className="font-medium text-slate-600">Features</div>
+                                <div className="text-center font-medium text-slate-600">Personal</div>
+                                <div className="text-center font-medium text-slate-900">Business</div>
+                            </div>
+                        </div>
+                        <div className="divide-y divide-slate-100">
+                            {comparisonCategories.map((category) => {
+                                const Icon = category.icon;
+                                return (
+                                    <div key={category.title}>
+                                        <div className="border-b border-slate-100 bg-slate-50/50">
+                                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 py-4">
+                                                <h3 className={`flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500 ${category.iconColor}`}>
+                                                    <Icon className="w-[18px] h-[18px]" />
+                                                    {category.title}
+                                                </h3>
+                                                <div />
+                                                <div />
+                                            </div>
+                                        </div>
+                                        {category.rows.map((row) => (
+                                            <div key={row.feature} className="border-b border-slate-100">
+                                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 items-center py-3">
+                                                    <div className="text-slate-700 text-sm">{row.feature}</div>
+                                                    <div className="flex justify-center">
+                                                        {typeof row.personal === "boolean" ? (
+                                                            row.personal ? (
+                                                                <Check className="w-5 h-5 text-green-600 shrink-0" strokeWidth={1.5} />
+                                                            ) : (
+                                                                <X className="w-5 h-5 text-slate-300 shrink-0" strokeWidth={1.5} />
+                                                            )
+                                                        ) : (
+                                                            <div className="flex flex-col text-center items-center">
+                                                                <span className="text-slate-700 text-sm">{row.personal.text}</span>
+                                                                {row.personal.sub && <span className="text-slate-500 text-xs">{row.personal.sub}</span>}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                    <div className="flex justify-center">
+                                                        {typeof row.business === "boolean" ? (
+                                                            row.business ? (
+                                                                <Check className="w-5 h-5 text-green-600 shrink-0" strokeWidth={1.5} />
+                                                            ) : (
+                                                                <X className="w-5 h-5 text-slate-300 shrink-0" strokeWidth={1.5} />
+                                                            )
+                                                        ) : (
+                                                            <div className="flex flex-col text-center items-center">
+                                                                <span className="text-slate-700 text-sm">{row.business.text}</span>
+                                                                {row.business.sub && <span className="text-slate-500 text-xs">{row.business.sub}</span>}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                );
+                            })}
+                            {/* Monthly price row */}
+                            <div className="border-b border-slate-100">
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 items-center py-3">
+                                    <div className="font-medium text-sm text-slate-900">Monthly price</div>
+                                    <div className="flex justify-center">
+                                        <span className="text-sm text-slate-900">$18/mo</span>
+                                    </div>
+                                    <div className="flex justify-center">
+                                        <span className="text-sm text-slate-900">$86/mo</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* CTA row */}
+                            <div className="border-b border-slate-200 bg-slate-50/30">
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 py-6">
+                                    <div />
+                                    <div className="flex justify-center px-4">
+                                        <Link
+                                            href="https://app.wonderdesk.ai"
+                                            className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 transition-colors"
+                                        >
+                                            Start free trial
+                                        </Link>
+                                    </div>
+                                    <div className="flex justify-center px-4">
+                                        <Link
+                                            href="https://app.wonderdesk.ai"
+                                            className="inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 transition-colors"
+                                        >
+                                            Start free trial
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Add-ons Section */}
                 <div className="max-w-4xl mx-auto mb-20">

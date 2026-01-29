@@ -56,8 +56,8 @@ export default function Header() {
       <header
         className={`w-full z-30 transition-all duration-300 ease-in-out w-full fixed top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 md:px-6 ${!top ? 'bg-none shadow-md' : ''}`}
       >
-        <div className="max-w-7xl mx-auto p-3 sm:p-4 sm:px-6">
-          <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
+        <div className="max-w-7xl mx-auto py-2 px-4 sm:py-2.5 sm:px-6">
+          <div className="flex items-center justify-between h-11 sm:h-12 md:h-12">
             {/* Logo */}
             <div className='flex items-center'>
               <Link href="/" className="shrink-0 mr-2 sm:mr-4 relative group">
@@ -66,7 +66,7 @@ export default function Header() {
                   alt="Logo"
                   width={260}
                   height={200}
-                  className="relative w-56 h-auto sm:w-64 md:w-76 lg:w-56"
+                  className="relative w-44 h-auto sm:w-52 md:w-56 lg:w-48"
                   priority
                 />
               </Link>
@@ -76,15 +76,15 @@ export default function Header() {
 
             {/* Desktop navigation */}
             <nav className="hidden lg:flex lg:grow">
-              <ul className="flex gap-4 items-center justify-end w-full">
+              <ul className="flex gap-2 sm:gap-3 items-center justify-end w-full">
                 <li className="relative" ref={dropdownRef}>
                   <button
-                    className="font-bold text-slate-800 hover:text-[#009fbc] py-3 flex items-center transition duration-150 ease-in-out relative group"
+                    className="font-bold text-slate-800 hover:text-[#009fbc] py-2 flex items-center transition duration-150 ease-in-out relative group text-base"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     aria-expanded={dropdownOpen}
                   >
-                    <span className="relative overflow-hidden text-ellipsis max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#009fbc] group-hover:after:w-full after:transition-all after:duration-300">Build</span>
-                    <ChevronDown className={`w-5 h-5 ml-1 text-slate-400 transition-transform duration-200 flex-shrink-0 ${dropdownOpen ? 'rotate-180' : ''}`} />
+                    <span className="relative overflow-hidden text-ellipsis max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#009fbc] group-hover:after:w-full after:transition-all after:duration-300">Features</span>
+                    <ChevronDown className={`w-4 h-4 ml-1 text-slate-400 transition-transform duration-200 flex-shrink-0 ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
                     {dropdownOpen && (
@@ -93,7 +93,7 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.1 }}
-                        className="absolute z-50 w-screen max-w-lg px-2 transform -translate-x-1/2 left-1/4 mt-3 sm:px-0"
+                        className="absolute left-0 z-50 w-screen max-w-lg px-2 mt-3 sm:px-0"
                       >
                         <div className="overflow-hidden rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 bg-white">
                           <div className="relative grid gap-6 px-1 py-6 sm:gap-8 sm:p-8">
@@ -139,7 +139,7 @@ export default function Header() {
                     data-cal-namespace="setup-call"
                     data-cal-link="set-meeting/setup-call"
                     data-cal-config='{"layout":"month_view"}'
-                    className=" btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
+                    className="btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-2 flex items-center justify-between px-3 py-1.5 rounded-md transition duration-150 ease-in-out group overflow-hidden relative text-base"
                     onMouseEnter={() => setIsBookHovered(true)}
                     onMouseLeave={() => setIsBookHovered(false)}
                   >
@@ -156,7 +156,7 @@ export default function Header() {
                   <Link
                     href="https://app.wonderdesk.ai"
                     target='_blank'
-                    className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-3 flex items-center justify-between px-4 py-2 rounded-md transition duration-150 ease-in-out group overflow-hidden relative"
+                    className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-2 flex items-center justify-between px-3 py-1.5 rounded-md transition duration-150 ease-in-out group overflow-hidden relative text-base"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
@@ -231,7 +231,7 @@ function NavLink({ href, text }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className="font-medium text-slate-900 hover:text-[#009fbc] px-1 py-3 flex items-center transition duration-150 ease-in-out relative group"
+      className="font-medium text-slate-900 hover:text-[#009fbc] px-1 py-2 flex items-center transition duration-150 ease-in-out relative group text-base"
     >
       <span className="relative truncate max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#009fbc] group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
     </Link>

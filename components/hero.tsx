@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image'; // Use Next.js Image for optimization
 
 // Lazy load the TabImageHotspots component
-const TabImageHotspots = lazy(() => import('./tabed_examples'));
+const TabImageHotspots = lazy(() => import('./tabbed_examples'));
 
 // Defer non-critical Cal.com widget import
 const getCalApiImport = () => import("@calcom/embed-react").then(mod => mod.getCalApi);
@@ -132,109 +132,115 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
 
         <div className="pt-6 sm:pt-8 md:pt-12 pb-8 sm:pb-10 md:pb-12">
-          {/* Critical path content - always render immediately */}
-          <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 grid">
-            <ProductHuntBadge />
-
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl max-w-3xl m-auto md:h1 mb-2 sm:mb-2 md:mb-2 text-center leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
-              The <b>blog</b> & <b>help center</b> that <span style={{ color: '#009fbc' }}>updates automatically</span>.
-              {" "}
-              <span className="hidden font-bungee block font-normal text-gray-800 my-1 sm:my-2">
-                <div className="inline-flex items-center justify-center ml-0 sm:ml-1 px-2 sm:px-4 flex-wrap sm:flex-nowrap">
-                  <div className="hidden md:block">
-                    <NotionLogo />
-                  </div>
-                  <b className="text-gray-800 text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Notion Database</b>
+          {/* Left (text) + Right (tab sector) on lg; stacked on smaller screens */}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-10 xl:gap-12">
+            {/* Left: text content */}
+            <div className="flex-1 lg:max-w-[48%] text-center lg:text-left">
+              <div className="px-2 sm:px-4 md:px-6 lg:px-0">
+                <div className="lg:flex lg:justify-start">
+                  <ProductHuntBadge />
                 </div>
-              </span>{" "}
-              {/* Removed the rotating words animation as requested */}
-            </h1>
 
-            <p className="text-base sm:text-md md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-3xl m-auto px-2 sm:px-0 leading-relaxed opacity-75" style={{ textWrap: 'balance' }}>
-              <span className="text-slate-900">Wonder is beautiful. Turns your <b>Notion & Github Repos</b> into a self-updating </span>
-              <span className="inline-flex flex-wrap gap-x-1 gap-y-1 justify-center items-center">
-                {["Blogs", "Helpdesk", "API Docs", "Changelog"].map((category, idx) => (
-                  <React.Fragment key={category}>
-                    {idx > 0 && <span className="hidden sm:inline opacity-50">, </span>}
-                    <button
-                      className="text-slate-800 border-b border-orange-600 hover:text-orange-500 cursor-pointer font-bold transition-colors duration-200 px-1 py-0.5 sm:px-0 sm:py-0"
-                      onClick={() => handleCategoryClick(category)}
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl max-w-3xl lg:max-w-none m-auto lg:m-0 mb-2 sm:mb-2 md:mb-2 leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
+                  The <b>blog</b> & <b>help center</b> that <span style={{ color: '#009fbc' }}>updates automatically</span>.
+                  {" "}
+                  <span className="hidden font-bungee block font-normal text-gray-800 my-1 sm:my-2">
+                    <div className="inline-flex items-center justify-center lg:justify-start ml-0 sm:ml-1 px-2 sm:px-4 flex-wrap sm:flex-nowrap">
+                      <div className="hidden md:block">
+                        <NotionLogo />
+                      </div>
+                      <b className="text-gray-800 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">Notion Database</b>
+                    </div>
+                  </span>{" "}
+                </h1>
+
+                <p className="text-sm sm:text-base md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-3xl m-auto lg:m-0 px-2 sm:px-0 lg:px-0 leading-relaxed opacity-75" style={{ textWrap: 'balance' }}>
+                  <span className="text-slate-900">Wonder is beautiful. Turns your <b>Notion & Github Repos</b> into a self-updating </span>
+                  <span className="inline-flex flex-wrap gap-x-1 gap-y-1 justify-center lg:justify-start items-center">
+                    {["Blogs", "Helpdesk", "API Docs", "Changelog"].map((category, idx) => (
+                      <React.Fragment key={category}>
+                        {idx > 0 && <span className="hidden sm:inline opacity-50">, </span>}
+                        <button
+                          className="text-slate-800 border-b border-orange-600 hover:text-orange-500 cursor-pointer font-bold transition-colors duration-200 px-1 py-0.5 sm:px-0 sm:py-0"
+                          onClick={() => handleCategoryClick(category)}
+                        >
+                          {category}
+                        </button>
+                        {idx < 3 && <span className="sm:hidden">,</span>}
+                      </React.Fragment>
+                    ))}
+                  </span>
+                  {" "}
+                  <span className="block sm:inline mt-1 sm:mt-0">.</span>
+                </p>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 sm:mb-2 items-center justify-center lg:justify-start px-4 sm:px-0 lg:px-0">
+                <Link
+                  href="https://app.wonderdesk.ai?ref=herolanding"
+                  className="flex items-center justify-center py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <div className="relative overflow-hidden mr-2 h-5 sm:h-5">
+                    <div
+                      className="transition-transform duration-150 whitespace-nowrap"
+                      style={{
+                        transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
+                      }}
                     >
-                      {category}
-                    </button>
-                    {idx < 3 && <span className="sm:hidden">,</span>}
-                  </React.Fragment>
-                ))}
-              </span>
-              {" "}
-              <span className="block sm:inline mt-1 sm:mt-0">.</span>
-            </p>
-          </div>
+                      Get Started for free
+                    </div>
+                    <div
+                      className="absolute top-0 left-0 w-full text-center transition-transform duration-150 whitespace-nowrap"
+                      style={{
+                        transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
+                      }}
+                    >
+                      in just 15 mins.
+                    </div>
+                  </div>
+                </Link>
 
-          {/* CTA Buttons - simplified animations for immediate rendering */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 sm:mb-2 items-center justify-center px-4 sm:px-0">
-            <Link
-              href="https://app.wonderdesk.ai?ref=herolanding"
-              className="flex items-center justify-center py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div className="relative overflow-hidden mr-2 h-5 sm:h-5">
-                <div
-                  className="transition-transform duration-150 whitespace-nowrap"
-                  style={{
-                    transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
-                  }}
+                <button
+                  data-cal-namespace="setup-call"
+                  data-cal-link="set-meeting/setup-call"
+                  data-cal-config='{"layout":"month_view"}'
+                  className="text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
                 >
-                  Get Started for free
-                </div>
-                <div
-                  className="absolute top-0 left-0 w-full text-center transition-transform duration-150 whitespace-nowrap"
-                  style={{
-                    transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
-                  }}
-                >
-                  in just 15 mins.
-                </div>
+                  <div className="flex items-center justify-center w-full">
+                    <span>Book a Demo</span>
+                    <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </button>
               </div>
-            </Link>
 
-            <button
-              data-cal-namespace="setup-call"
-              data-cal-link="set-meeting/setup-call"
-              data-cal-config='{"layout":"month_view"}'
-              className="text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
-            >
-              <div className="flex items-center justify-center w-full">
-                <span>Book a Demo</span>
-                <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+              {/* Features - Works with (align left on desktop) */}
+              <div className="flex justify-center lg:justify-start">
+                <Features />
               </div>
-            </button>
-          </div>
+            </div>
 
-          {/* Features section - immediate rendering with proper icons */}
-          <Features />
-
-          {/* Deferred loading TabImageHotspots with improved fallback */}
-          <div className="mt-8 sm:mt-10 md:mt-12 px-2 sm:px-0">
-            <Suspense fallback={
-              <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6 py-6 sm:py-8">
-                {/* Static placeholder instead of animated skeleton */}
-                <div className="flex flex-wrap sm:flex-nowrap space-x-2 sm:space-x-4 justify-center gap-y-2 sm:gap-y-0">
-                  <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-200 rounded text-sm">Feature 1</div>
-                  <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-300 rounded font-medium text-sm">Feature 2</div>
-                  <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-200 rounded text-sm">Feature 3</div>
-                </div>
-                {/* Static image placeholder */}
-                <div className="flex justify-center">
-                  <div className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
-                    <span className="text-gray-500 text-sm sm:text-base">Loading preview...</span>
+            {/* Right: tab sector (TabImageHotspots) */}
+            <div className="flex-1 lg:max-w-[52%] w-full mt-8 lg:mt-0 px-2 sm:px-0">
+              <Suspense fallback={
+                <div className="w-full max-w-4xl mx-auto lg:mx-0 space-y-4 sm:space-y-6 py-6 sm:py-8">
+                  <div className="flex flex-wrap sm:flex-nowrap space-x-2 sm:space-x-4 justify-center lg:justify-start gap-y-2 sm:gap-y-0">
+                    <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-200 rounded text-sm">Feature 1</div>
+                    <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-300 rounded font-medium text-sm">Feature 2</div>
+                    <div className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-200 rounded text-sm">Feature 3</div>
+                  </div>
+                  <div className="flex justify-center lg:justify-start">
+                    <div className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-full bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
+                      <span className="text-gray-500 text-sm sm:text-base">Loading preview...</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            }>
-              <TabImageHotspots />
-            </Suspense>
+              }>
+                <TabImageHotspots />
+              </Suspense>
+            </div>
           </div>
         </div>
       </div>

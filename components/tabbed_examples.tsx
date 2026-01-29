@@ -199,7 +199,7 @@ const TabImageHotspots = () => {
   const isMedium = windowWidth < 1024;
 
   return (
-    <div className="w-full max-w-5xl mx-auto rounded-lg px-1 sm:px-2 md:px-4">
+    <div className="w-full max-w-7xl rounded-lg px-1 sm:px-2 md:px-4">
       {/* Inline style for ::before pseudo-element */}
       <style>{`
         .active-tab::before {
@@ -227,7 +227,7 @@ const TabImageHotspots = () => {
         onMouseLeave={() => setIsComponentHovered(false)}
       >
         {/* Responsive Tab Navigation */}
-        <div className={`flex m-auto ${isExtraSmall ? 'gap-0.5' : 'gap-1'} w-full justify-center mt-4 sm:mt-6 md:mt-8 overflow-hidden`}>
+        <div className={`flex m-auto ${isExtraSmall ? 'gap-0.5' : 'gap-1'} w-full  mt-4 sm:mt-6 md:mt-8 overflow-hidden`}>
           {tabs.map((tab, index) => (
             <button
               key={index}
