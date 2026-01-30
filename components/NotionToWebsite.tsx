@@ -35,7 +35,7 @@ export default function FeaturesBlocks() {
   }, [features.length]);
 
   return (
-    <div className=" flex my-12 items-center justify-center p-6 py-12 md:py-6">
+    <div className="flex my-12 items-start justify-start p-6 py-12 md:py-6 max-w-7xl m-auto">
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes draw-check {
@@ -48,13 +48,13 @@ export default function FeaturesBlocks() {
         `
       }} />
       
-      <div className="max-w-6xl w-full text-left">
-        <span className='font-silkscreen text-blue-600 mb-4 text-xs sm:text-lg'>what's wonder ?</span>
+      <div className="max-w-6xl w-full text-left px-4 sm:px-6">
+        <span className='font-silkscreen text-blue-600 mb-2 sm:mb-4 text-xs sm:text-sm md:text-base lg:text-lg block'>what's wonder ?</span>
 
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose mt-4">
-          Wonder           <img src="https://dazzling-cat.netlify.app/wonderbadge.png" className="inline-block w-12 h-12 rounded-md align-middle mx-1" />          {' '} 
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-500 leading-relaxed mb-4 sm:mb-6 leading-tight font-funneldisplay tracking-loose mt-2 sm:mt-4">
+          Wonder <img src="https://dazzling-cat.netlify.app/wonderbadge.png" className="inline-block w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-md align-middle mx-1" />{' '}
           <span className="font-medium text-gray-900">AI agent</span>
-          {' '} solves these
+          {' '}solves these
         </h1>
         
         <div className="space-y-6 sm:space-y-4 mb-8">
@@ -86,7 +86,7 @@ export default function FeaturesBlocks() {
                 </svg>
               </div>
               
-              <span className={`text-xl sm:text-3xl md:text-3xl lg:text-4xl transition-colors duration-500 ${
+              <span className={`text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl transition-colors duration-500 break-words ${
                 index === highlightedIndex 
                   ? 'text-gray-900 font-medium' 
                   : 'text-gray-500'
@@ -123,7 +123,7 @@ export default function FeaturesBlocks() {
           ))}
         </div>
         
-        <p className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-500">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-500 mt-4 sm:mt-6">
           Set it. Forget it.
         </p>
       </div>

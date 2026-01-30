@@ -144,19 +144,19 @@ export default function Hero({ onCategorySelect }: HeroProps) {
           {/* Left (text) + Right (tab sector) on lg; stacked on smaller screens */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-4 xl:gap-6">
             {/* Left: text content */}
-            <div className="flex-1 lg:max-w-[48%] text-center lg:text-left">
+            <div className="flex-1 lg:max-w-[48%] text-left">
               <div className="px-2 sm:px-4 md:px-6 lg:px-0">
-                <div className="lg:flex lg:justify-start">
+                <div className="flex justify-start">
                   <ProductHuntBadge />
                 </div>
 
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl max-w-3xl lg:max-w-none m-auto lg:m-0 mb-2 sm:mb-2 md:mb-2 leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
-                  <div className="block opacity-50">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl max-w-3xl lg:max-w-none mb-2 sm:mb-2 md:mb-2 leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
+                  <div className="block opacity-50 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                     <span className="reveal reveal__hello-1">Hello,</span>{" "}
                     <span className="reveal reveal__hello-2">I&apos;m</span>{" "}
                     <span className="reveal reveal__hello-3">Wonder.</span>
                   </div>
-                  <span className="block reveal reveal__usp">
+                  <span className="block reveal reveal__usp mt-1 sm:mt-2">
                     Automated way to keep your <b>blog</b> & <b>help center</b> <span style={{ color: '#009fbc' }}>up to date.</span>
                   </span>
                 </h1>
@@ -167,10 +167,10 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 sm:mb-2 items-center justify-center lg:justify-start px-4 sm:px-0 lg:px-0">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 sm:mb-2 items-start justify-start px-4 sm:px-0 lg:px-0">
                 <Link
                   href="https://app.wonderdesk.ai?ref=herolanding"
-                  className="flex items-center justify-center py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto"
+                  className="flex items-center justify-start py-3 sm:py-3 px-6 sm:px-6 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto relative text-sm sm:text-base min-h-[48px] sm:min-h-auto"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
@@ -198,9 +198,9 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   data-cal-namespace="setup-call"
                   data-cal-link="set-meeting/setup-call"
                   data-cal-config='{"layout":"month_view"}'
-                  className="text-black border border-gray-600 bg-white hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
+                  className="text-black border border-gray-600 bg-white hover:bg-slate-800 hover:text-white flex items-center justify-start px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
                 >
-                  <div className="flex items-center justify-center w-full">
+                  <div className="flex items-center justify-start w-full">
                     <span>Book a Demo</span>
                     <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -208,7 +208,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               </div>
 
               {/* Features - Works with (align left on desktop) */}
-              <div className="flex justify-center lg:justify-start mt-6">
+              <div className="flex justify-start mt-6">
                 <Features />
               </div>
             </div>

@@ -50,7 +50,7 @@ export default function Marketplace_Type() {
         <div className="pt-6 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-          <h1 className="font-funneldisplay h2 mb-4">
+          <h1 className="font-funneldisplay text-2xl sm:text-3xl md:text-4xl mb-4 text-slate-800">
               Unique your knowledge base concept? <span className=" block font-normal text-orange-600">Wonder can support it.</span>
             </h1>
             <p className="text-xl text-slate-600">
@@ -70,7 +70,7 @@ export default function Marketplace_Type() {
               {/* Tabs buttons */}
               <div className="grid gap-4 mb-8 md:mb-0">
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 1 ? "bg-slate-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-base sm:text-lg p-4 sm:p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 1 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -86,7 +86,7 @@ export default function Marketplace_Type() {
                   </div>
                 </Link>
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 2 ? "bg-slate-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-base sm:text-lg p-4 sm:p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 2 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -103,7 +103,7 @@ export default function Marketplace_Type() {
                 </Link>
 
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 3 ? "bg-slate-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-base sm:text-lg p-4 sm:p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 3 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -120,7 +120,7 @@ export default function Marketplace_Type() {
                 </Link>
 
                 <Link href="#"
-                  className={`flex items-center text-lg p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 4 ? "bg-slate-100" : "bg-orange-800 text-white"
+                  className={`flex items-center text-base sm:text-lg p-4 sm:p-5 rounded-md border transition duration-300 ease-in-out border border-dashed shadow-md border-slate-600 hover:shadow-lg text-slate-900 ${tab !== 4 ? "bg-slate-100" : "bg-orange-800 text-white"
                     }`}
 
                   onClick={(e) => {
@@ -217,7 +217,7 @@ export default function Marketplace_Type() {
                         src={blogImage}
                         unoptimized
                         width={500}
-                        height="462"
+                        height={462}
                         alt="Features bg"
                       />
                       <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
@@ -269,21 +269,21 @@ export default function Marketplace_Type() {
                         unoptimized
                         alt="Features bg"
                       />
-                      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
-                        A simpler alternative to{" "}
+                      <div className="flex flex-wrap gap-2 justify-center items-center mt-4 text-sm sm:text-base md:text-xl text-slate-900 px-2">
+                        <span>A simpler alternative to</span>
                         <Image
                           alt="Ana"
                           src={marketplacerival1}
-                          className="rounded-md w-auto h-8"
+                          className="rounded-md w-auto h-6 sm:h-8"
                           unoptimized
                           width={120}
                           height={120}
-                        />{" "}
-                        and{" "}
+                        />
+                        <span>and</span>
                         <Image
                           alt="Ana"
                           src={marketplacerival2}
-                          className="rounded-md w-auto h-8"
+                          className="rounded-md w-auto h-6 sm:h-8"
                           height={120}
                           width={120}
                           unoptimized
@@ -311,32 +311,30 @@ export default function Marketplace_Type() {
                     <div className="relative inline-flex flex-col">
                       <Image
                         className="md:max-w-none mx-auto rounded-2xl border border-2 border-slate-600 shadow-lg"
-                        src={"/path/to/your/fourth-tab-image.gif"} // Update this path
+                        src={marketplaceImage}
                         width={500}
                         height={462}
                         unoptimized
                         alt="Fourth tab gif"
                       />
-                      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
-                        A simpler alternative to{" "}
+                      <div className="flex flex-wrap gap-2 justify-center items-center mt-4 text-sm sm:text-base md:text-xl text-slate-900 px-2">
+                        <span>A simpler alternative to</span>
                         <Image
                           alt="Ana"
                           src={helpdeskrival1}
-                          className="rounded-md w-auto h-8"
+                          className="rounded-md w-auto h-6 sm:h-8"
                           height={120}
                           width={120}
                           unoptimized
-                        />{" "}
-                        and{" "}
+                        />
+                        <span>and</span>
                         <Image
                           alt="Ana"
-                          src={helpdeskrival1}
-                          className="rounded-md w-auto h-8"
+                          src={helpdeskrival2}
+                          className="rounded-md w-auto h-6 sm:h-8"
                           width={120}
-                          height={120
-
-                          }
-
+                          height={120}
+                          unoptimized
                         />
                       </div>
                     </div>

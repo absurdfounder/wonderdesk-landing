@@ -185,7 +185,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const { filterBySlug, postPageView, relatedTemplates } = data;
 
   return (
-    <div className="">
+    <div>
       <Header />
 
 <br/>

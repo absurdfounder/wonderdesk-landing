@@ -42,7 +42,7 @@ export default function PageDetail() {
       </div>
 
           <div className="max-w-3xl mx-auto text-center pb-4">
-            <h1 className="h2 mb-4 font-funneldisplay">Earn <b className="text-orange-600">$972 per month</b>* promoting an award-winning notion backed web app builder</h1>
+            <h1 className="font-funneldisplay text-2xl sm:text-3xl md:text-4xl mb-4 text-slate-800">Earn <b className="text-orange-600">$972 per month</b>* promoting an award-winning notion backed web app builder</h1>
             <p className="px-2 mt-6 leading-7 text-slate-600 sm:px-0 sm:text-lg sm:leading-8">
         Earn <b>30% recurring commissions</b> for every paying customer you
 refer to Wonder  Sites, without limits. Join

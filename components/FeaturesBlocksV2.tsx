@@ -28,8 +28,8 @@ export default function FeaturesBlocks() {
     <section className="relative py-12 md:py-16">
       {/* Section header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-12">
-        <div className=" text-start">
-          <h2 className="font-funneldisplay h2 mb-4">
+        <div className="text-start">
+          <h2 className="font-funneldisplay text-2xl sm:text-3xl md:text-4xl mb-4 text-slate-800">
           Optimize
           </h2>
           <p className="text-xl text-slate-600 mb-2">

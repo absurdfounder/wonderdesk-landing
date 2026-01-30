@@ -155,37 +155,30 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
   };
 
   return (
-    <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' id="template-section" 
-    >
+    <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' id="template-section">
+      <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-8'>
+        <div className="flex-1">
+          <motion.h2
+            className="text-start mb-4 font-funneldisplay text-2xl sm:text-3xl md:text-4xl text-slate-800"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Beautifully crafted.
+          </motion.h2>
 
+          <motion.p
+            className="text-base sm:text-lg lg:text-xl text-slate-600 mb-4 sm:mb-8 text-start"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Browse through examples of live Notion websites, built with Wonder  Sites.
+          </motion.p>
+        </div>
 
-      <div className='flex items-center justify-between'>
-
-<div>
-<motion.h2
-        className="text-start mb-4 space-y-2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <span className=" block font-normal text-orange-600 text-2xl sm:text-3xl lg:text-4xl">
-        Beautifully crafted.
-        </span>
-      </motion.h2>
-
-      <motion.p
-        className="text-base sm:text-lg lg:text-xl text-slate-600 mb-8 text-start"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Browse through examples of live Notion websites, built with Wonder  Sites.
-      </motion.p>
-
-</div>
-
-      <Link
-          className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl border border-slate-900 text-slate-800 rounded-lg hover:bg-slate-800 hover:text-white transition-colors duration-300 text-center"
+        <Link
+          className="w-full sm:w-auto px-6 py-3 text-base sm:text-lg lg:text-xl border border-slate-900 text-slate-800 rounded-lg hover:bg-slate-800 hover:text-white transition-colors duration-300 text-center whitespace-nowrap"
           href="/showcase"
         >
           Explore all Showcases 
@@ -280,7 +273,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
         </div>
 
         {/* Desktop tag filters */}
-        <div className="">
+        <div className="hidden sm:block">
           <div className="flex flex-wrap justify-start gap-2 mb-2 max-w-3xl">
             {/* Popular tags (2+ templates) */}
             {popularTags.map(({ tag, count }) => (
@@ -378,21 +371,21 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                     </div>
                     <div className="p-4 text-start">
 
-                      <div className='flex justify-between'>
-                        <Link href={"/showcase/" + template.id} className="group flex gap-2 items-center">
-                          <span className="text-start font-bold group-hover:text-orange-600 transition-colors duration-300">
+                      <div className='flex flex-col sm:flex-row justify-between gap-2 sm:gap-4'>
+                        <Link href={"/showcase/" + template.id} className="group flex gap-2 items-center flex-1 min-w-0">
+                          <span className="text-start font-bold group-hover:text-orange-600 transition-colors duration-300 truncate">
                             {template.product.name}
                           </span>
-                          <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-600 transition-colors duration-300" />
+                          <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-600 transition-colors duration-300 flex-shrink-0" />
                         </Link>
 
-                        <span className="inline-block bg-slate-100 border-slate-200 border-dashed border-2 px-3 py-1 rounded-md text-sm">
+                        <span className="inline-block bg-slate-100 border-slate-200 border-dashed border-2 px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm whitespace-nowrap self-start sm:self-auto">
                           {template.product.type}
                         </span>
                       </div>
 
-                      <p className="text-sm text-slate-400 mt-2 mb-3">
-                        {truncateText(template.product.description, 76)}
+                      <p className="text-xs sm:text-sm text-slate-400 mt-2 mb-3 line-clamp-2">
+                        {template.product.description}
                       </p>
 
                       {/* Type and tags */}
@@ -403,7 +396,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
                         {template.product.tags && template.product.tags.slice(0, 2).map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
-                            className={`inline-block px-3 py-1 rounded-md text-sm bg-slate-100 text-slate-800`}
+                            className={`inline-block px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm bg-slate-100 text-slate-800`}
                           >
                             {tag}
                           </span>

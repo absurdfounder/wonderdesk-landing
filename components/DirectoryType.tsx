@@ -24,7 +24,7 @@ interface TabButtonProps {
 
 const TabButton: React.FC<TabButtonProps> = ({ tabIndex, text, currentTab, setTab }) => (
   <button
-    className={`group flex items-center justify-between text-lg p-5 rounded-md border transition duration-300 ease-in-out d hover:shadow-lg text-slate-900 ${
+    className={`group flex items-center justify-between text-base sm:text-lg p-4 sm:p-5 rounded-md border transition duration-300 ease-in-out hover:shadow-lg text-slate-900 ${
       currentTab !== tabIndex ? "bg-slate-100" : "bg-orange-100 text-orange-600"
     }`}
     onClick={() => setTab(tabIndex)}
@@ -67,23 +67,23 @@ const TabContent: React.FC<TabContentProps> = ({ show, image, alt1, alt2 }) => (
         height={462}
         alt="Features bg"
       />
-      <div className="flex gap-2 justify-center mt-4 text-xl text-slate-900">
-        A simpler alternative to{" "}
+      <div className="flex flex-wrap gap-2 justify-center items-center mt-4 text-sm sm:text-base md:text-xl text-slate-900 px-2">
+        <span>A simpler alternative to</span>
         <Image
           alt="Alternative 1"
           width={120}
           height={120}
           src={alt1}
-          className="rounded-md w-auto h-8"
+          className="rounded-md w-auto h-6 sm:h-8"
           unoptimized
-        />{" "}
-        and{" "}
+        />
+        <span>and</span>
         <Image
           alt="Alternative 2"
           width={120}
           height={120}
           src={alt2}
-          className="rounded-md w-auto h-8"
+          className="rounded-md w-auto h-6 sm:h-8"
           unoptimized
         />
       </div>
@@ -111,7 +111,7 @@ export default function Directory_Type() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-6 md:pt-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="font-funneldisplay h2 mb-4">
+            <h1 className="font-funneldisplay text-2xl sm:text-3xl md:text-4xl mb-4 text-slate-800">
               Unique your directory concept? <span className=" block font-normal text-orange-600">Wonder can support it.</span>
             </h1>
             <p className="text-xl text-slate-600">
