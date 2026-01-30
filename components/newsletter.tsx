@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react'; // Import React hooks
 import Image from 'next/image'; // Import the Image component from Next.js
-import notionfooterImage from '@/public/images/notionfooter.png';
 import Link from 'next/link';
 
 // --- Reusable Flipping Button Component ---
@@ -91,18 +90,19 @@ export default function Newsletter() {
           <div
             className="relative py-10 px-8 md:py-16 md:px-12 overflow-hidden rounded-2xl my-8 border"
             style={{
-              backgroundImage: 'linear-gradient(rgb(207 244 255 / 0%), rgb(106 199 255 / 11%)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)',
+              backgroundImage: 'linear-gradient(rgb(255 255 255 / 87%), rgb(187 229 255 / 76%)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center center'
             }}
           >
 
             {/* Background illustration */}
-            <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block" >
+            <div className="absolute right-0 pointer-events-none hidden lg:block" >
               <Image alt="Logo"
-                width={400}
+                width={600}
+                height={600}
                 className="block"
-                src={notionfooterImage} />
+                src="https://dazzling-cat.netlify.app/wonderdesktop.png" />
             </div>
 
             <div className="relative flex flex-col lg:flex-row justify-between items-center">
@@ -110,7 +110,7 @@ export default function Newsletter() {
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
                 <h3 className="h2 text-slate-800 my-2">
-                  Still writing content? <span style={{ color: '#009fbc' }}>automate it today</span>.
+                  Stop living at your desk all day <span style={{ color: '#009fbc' }}>automate it </span>.
                 </h3>
                 {/* Original rotating text logic (kept for reference) */}
                 {/* <h3 className="h2 text-slate-800 my-2">Build <span className="text-orange-400">{words[index]}</span> Sites</h3> */}

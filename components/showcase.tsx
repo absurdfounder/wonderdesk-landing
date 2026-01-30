@@ -7,7 +7,7 @@ export default function showcases() {
   return (
 
 
-    <section className="relative"
+    <section className="relative border"
     
     style={{
       backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.6) 0.7px, transparent 0.7px)',

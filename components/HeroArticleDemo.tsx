@@ -421,7 +421,7 @@ export default function HeroArticleDemo() {
                         className="mx-auto w-full max-w-2xl overflow-hidden rounded-2xl bg-stone-200/40 p-1.5 ring-2 ring-black/10 backdrop-blur-lg"
                       >
                         <motion.div
-                          className="flex items-center gap-3 rounded-t-xl border-b border-neutral-200 bg-white px-5 py-3.5"
+                          className="flex items-center gap-3 rounded-t-xl border border-neutral-200 bg-white px-5 py-3.5"
                           initial={{ opacity: 0, y: -4 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3 }}

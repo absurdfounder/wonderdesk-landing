@@ -6,7 +6,7 @@ const sectionXPadding = 'px-4 sm:px-6 lg:px-8';
 
 export default function CustomerStorySection() {
   return (
-    <section className="border-b border-neutral-200 bg-white">
+    <section className="border border-neutral-200 bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center lg:grid-cols-2">
       <div className={`${sectionXPadding} flex flex-col gap-6 py-12`}>
         <div className="font-silkscreen text-xl text-blue-600">Customer Story</div>
