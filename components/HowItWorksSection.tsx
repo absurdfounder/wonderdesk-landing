@@ -8,7 +8,15 @@ const TabImageHotspots = lazy(() => import('./tabbed_examples'));
 
 export default function HowItWorksSection() {
   return (
-    <section className="border-b border-neutral-200 bg-slate-200">
+    <section 
+      className="border border-neutral-200 relative"
+      style={{
+        backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.6) 0.7px, transparent 0.7px)',
+        backgroundSize: '10px 10px',
+        backgroundColor: 'rgb(255, 255, 255)',
+        backgroundPosition: '0px 0px'
+      }}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:gap-12">
           {/* Text content on top */}

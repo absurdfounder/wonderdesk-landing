@@ -35,7 +35,7 @@ export default function FeaturesBlocks() {
   }, [features.length]);
 
   return (
-    <div className="bg-gray-50 md:min-h-screen flex items-center justify-center p-6 py-12 md:py-6">
+    <div className="bg-white md:min-h-screen flex items-center justify-center p-6 py-12 md:py-6">
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes draw-check {
