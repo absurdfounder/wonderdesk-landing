@@ -121,7 +121,10 @@ export default function HeroArticleDemo() {
 
   useEffect(() => {
     if (step !== 'input' || isPaused) return;
-    const t = setTimeout(() => setStep('processing'), 5000);
+    // Wait for typing to complete + buffer time
+    const typingDuration = fullPromptText.length * TYPING_INTERVAL_MS;
+    const bufferTime = 800; // Time to show completed text before transitioning
+    const t = setTimeout(() => setStep('processing'), typingDuration + bufferTime);
     return () => clearTimeout(t);
   }, [step, isPaused]);
 
@@ -278,7 +281,7 @@ export default function HeroArticleDemo() {
             >
               <div className="relative flex items-center justify-center h-full p-8 sm:p-4 lg:p-6">
                 <div className="w-full max-w-5xl">
-                  <AnimatePresence mode="wait" initial={false}>
+                  <AnimatePresence mode="wait">
                     {/* Step 1: Input card */}
                     {step === 'input' && (
                       <motion.div
