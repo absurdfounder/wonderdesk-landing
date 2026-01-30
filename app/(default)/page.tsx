@@ -70,7 +70,7 @@ export default function Home() {
       </div>
 
       <section className="px-4 py-6 md:px-6 md:py-10 border-b bg-white">
-        <div className="mx-auto max-w-5xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-center">
             <span className="mt-1 text-base font-medium text-balance text-gray-400 md:text-left">
               Trusted by leading product-led companies
@@ -109,24 +109,31 @@ export default function Home() {
         </div>
       </section>
 
+
+
       <NotionToWebsite />
+      
       {/* 
       <MarketplaceType />
       <Testimonials />
             <ModalVideo />
-      */}
+      <AIAgentSection />
+
+      <OldWays />
+            <CustomerStorySection />
+
+
+*/}
+            <ModalVideo />
+
+            <FeaturesBlocks />
+            <OldWays />
 
       <HowItWorksSection />
-      <AIAgentSection />
-      <CustomerStorySection />
-      <FeaturesBlocks />
-      <OldWays />
       <SimpleAnalyticsDashboard />
-      <FeaturesBlocksV2 />
       <GetStartedSection />
       <CustomerStorySection2 />
       <Showcases />
-      <FAQ />
     </>
   )
 }

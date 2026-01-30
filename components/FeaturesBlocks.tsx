@@ -25,12 +25,12 @@ const blocks = [
 
 export default function FeaturesBlocks() {
   return (
-    <section className="relative py-12 md:py-16">
+    <section className="relative py-12 md:py-16 bg-white">
       {/* Section header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-12">
         <div className=" text-start">
-          <h2 className="font-funneldisplay h2 mb-4">
-          Be found by real users and AI assistants
+          <h2 className="font-funneldisplay h2 mb-4 font-normal">
+          Get discovered by <b>Users</b> and <b>AI assistants</b>           
           </h2>
           <p className="text-xl text-slate-600">
             Busy teams need a simpler way to run marketing and support. Wonder automates both so you can focus on what matters.
@@ -38,13 +38,13 @@ export default function FeaturesBlocks() {
         </div>
       </div>
 
-      {/* 3-column grid with dividers - max-w-7xl */}
+      {/* 3-column grid with cards - max-w-7xl */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 divide-y divide-slate-200 lg:grid-cols-3 lg:divide-y-0 lg:divide-x">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {blocks.map((block) => (
           <section
             key={block.title}
-            className="flex flex-col"
+            className="flex flex-col rounded-xl border border-neutral-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
             <div className={sectionXPadding}>
               <div className="grid items-start gap-8 md:grid-cols-1 md:gap-12">

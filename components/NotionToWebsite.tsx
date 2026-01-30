@@ -35,7 +35,7 @@ export default function FeaturesBlocks() {
   }, [features.length]);
 
   return (
-    <div className="bg-white md:min-h-screen flex items-center justify-center p-6 py-12 md:py-6">
+    <div className=" flex my-12 items-center justify-center p-6 py-12 md:py-6">
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes draw-check {
@@ -49,7 +49,7 @@ export default function FeaturesBlocks() {
       }} />
       
       <div className="max-w-6xl w-full text-left">
-        <span className='font-silkscreen text-blue-600 mb-4 text-xs sm:text-lg'>why wonder ?</span>
+        <span className='font-silkscreen text-blue-600 mb-4 text-xs sm:text-lg'>what's wonder ?</span>
 
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-500 leading-relaxed mb-6 leading-tight font-funneldisplay tracking-loose mt-4">
           Wonder           <img src="https://dazzling-cat.netlify.app/wonderbadge.png" className="inline-block w-12 h-12 rounded-md align-middle mx-1" />          {' '} 

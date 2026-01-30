@@ -23,10 +23,10 @@ export default function HowItWorksSection() {
           <div className="pt-12 pb-4 sm:pt-20 text-center lg:text-left">
             <span className="font-silkscreen text-blue-600 mb-4 text-xs sm:text-lg">How it works</span>
             <h2 className="mt-4 font-funneldisplay font-display text-balance text-2xl sm:text-3xl md:text-4xl text-slate-800">
-              See how it works.
+            One home for your product knowledge
             </h2>
             <p className="body-text mt-6 max-w-4xl text-base text-slate-600 leading-relaxed">
-            Your current help center, blog, changelog, and documentation is a constant struggle to maintain. Wonder gives you a fully customizable, SEO-optimized help center that our AI agent, Fern, automatically keeps in sync with your product.
+            Your current help center, blog, changelog, and documentation is a constant struggle to maintain. Wonder gives you a fully customizable, SEO-optimized help center that our AI agent, Wonder, automatically keeps in sync with your product.
 
             </p>
             <div className="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
@@ -35,10 +35,10 @@ export default function HowItWorksSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative flex rounded-[10px] p-0.5 duration-200 hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-b from-slate-900 to-slate-950 text-white"
-                aria-label="Create Your Help Center"
+                aria-label="Create Your Product Knowledge Base"
               >
                 <span className="flex h-full w-full items-center justify-center gap-2 rounded-[8px] border border-slate-700/80 bg-gradient-to-b from-slate-900 to-slate-900 px-6 py-3 text-base font-bold">
-                  Create Your Help Center
+                  Deploy Wonder
                 </span>
               </Link>
               <Link

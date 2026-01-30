@@ -106,7 +106,7 @@ export default function Features() {
     >
       
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pt-6 md:pt-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="font-funneldisplay h2 mb-4">
