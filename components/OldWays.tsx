@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function OldWays() {
   return (
     <section className="relative w-full">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           <section className=" rounded-3xl">
             <div className="container mx-auto">

@@ -46,7 +46,7 @@ export default function FeaturesBlocks() {
             key={block.title}
             className="flex flex-col"
           >
-            <div className={`mx-auto w-full max-w-7xl ${sectionXPadding}`}>
+            <div className={sectionXPadding}>
               <div className="grid items-start gap-8 md:grid-cols-1 md:gap-12">
                 <div className="md:order-1 pt-12 pb-12">
                   <p className="body-text mt-6 max-w-4xl text-base text-slate-700">

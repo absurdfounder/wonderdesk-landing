@@ -31,6 +31,8 @@ import FeaturesBlocksV2 from '@/components/FeaturesBlocksV2'
 import HowItWorksSection from '@/components/HowItWorksSection'
 import AIAgentSection from '@/components/AIAgentSection'
 import CustomerStorySection from '@/components/CustomerStorySection'
+import CustomerStorySection2 from '@/components/CustomerStorySection2'
+import GetStartedSection from '@/components/GetStartedSection'
 import OldWays from '@/components/OldWays'
 import Testimonials from '@/components/testimonials'
 import AboutMe from '@/components/AboutMe'
@@ -121,6 +123,8 @@ export default function Home() {
       <OldWays />
       <SimpleAnalyticsDashboard />
       <FeaturesBlocksV2 />
+      <GetStartedSection />
+      <CustomerStorySection2 />
       <Showcases />
       <FAQ />
     </>

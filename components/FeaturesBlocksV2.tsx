@@ -4,22 +4,22 @@ const sectionXPadding = "px-4 sm:px-6 lg:px-8";
 
 const blocks = [
   {
-    title: "Use your own domain or a subpath",
-    body: "so your help site feels like a natural part of your main site.",
+    title: "Advanced analytics",
+    body: "show you how your customers are using your help center, what articles are performing well, and where there's room for improvement.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
-    alt: "Custom domain",
+    alt: "Analytics",
   },
   {
-    title: "Built for search from day one",
-    body: "so people discover your content on Google, ChatGPT, and other platforms.",
+    title: "World-class editor",
+    body: "helps you create and edit content faster than any other platform.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
-    alt: "SEO",
+    alt: "Editor",
   },
   {
-    title: "Lightning-fast article delivery",
-    body: "boosting search rankings and helping customers get answers in no time.",
+    title: "Customer feedback",
+    body: "collect positive and negative feedback from your customers, and use them to improve your help center over time.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
-    alt: "Performance",
+    alt: "Feedback",
   }
 ];
 
@@ -30,10 +30,13 @@ export default function FeaturesBlocks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-12">
         <div className=" text-start">
           <h2 className="font-funneldisplay h2 mb-4">
-          Be found by real users and AI assistants
+          Optimize
           </h2>
-          <p className="text-xl text-slate-600">
-            Busy teams need a simpler way to run marketing and support. Wonder automates both so you can focus on what matters.
+          <p className="text-xl text-slate-600 mb-2">
+            Continuously improve your help center
+          </p>
+          <p className="text-lg text-slate-600">
+            Wonder gives you the tools you need to optimize your help center and improve customer satisfaction.
           </p>
         </div>
       </div>
@@ -46,7 +49,7 @@ export default function FeaturesBlocks() {
             key={block.title}
             className="flex flex-col"
           >
-            <div className={`mx-auto w-full max-w-7xl ${sectionXPadding}`}>
+            <div className={sectionXPadding}>
               <div className="grid items-start gap-8 md:grid-cols-1 md:gap-12">
                 <div className="md:order-1 pt-12 pb-12">
                   <p className="body-text mt-6 max-w-4xl text-base text-slate-700">

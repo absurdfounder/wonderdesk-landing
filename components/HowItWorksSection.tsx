@@ -23,7 +23,7 @@ export default function HowItWorksSection() {
           <div className="pt-12 pb-4 sm:pt-20 text-center lg:text-left">
             <span className="font-silkscreen text-blue-600 mb-4 text-xs sm:text-lg">How it works</span>
             <h2 className="mt-4 font-funneldisplay font-display text-balance text-2xl sm:text-3xl md:text-4xl text-slate-800">
-              Beautifully crafted.
+              See how it works.
             </h2>
             <p className="body-text mt-6 max-w-4xl text-base text-slate-600 leading-relaxed">
             Your current help center, blog, changelog, and documentation is a constant struggle to maintain. Wonder gives you a fully customizable, SEO-optimized help center that our AI agent, Fern, automatically keeps in sync with your product.

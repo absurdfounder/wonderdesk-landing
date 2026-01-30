@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const sectionXPadding = 'px-4 sm:px-6 lg:px-8';
 
-export default function CustomerStorySection() {
+export default function CustomerStorySection2() {
   return (
     <section 
       className="border border-neutral-200 bg-white"
@@ -17,19 +17,18 @@ export default function CustomerStorySection() {
       <div className={`${sectionXPadding} flex flex-col gap-6 py-12`}>
         <div className="font-silkscreen text-xl text-blue-600">Customer Story</div>
         <blockquote className="font-funneldisplay text-2xl font-medium text-neutral-800 lg:text-3xl pr-4">
-          &ldquo;I do in 5 minutes what used to take one hour. I think it easily saves me 20h a
-          month.&rdquo;
+          &ldquo;We&apos;re saving at least 20 hours/mo which frees me up to work on more impactful tasks.&rdquo;
         </blockquote>
         <div className="flex flex-col gap-1">
-          <div className="font-medium text-neutral-800">Tristan Roth</div>
-          <div className="text-sm text-neutral-500">Founder, ISMS Copilot</div>
+          <div className="font-medium text-neutral-800">Emmet Cooke</div>
+          <div className="text-sm text-neutral-500">Founder, Pixelflow</div>
         </div>
       </div>
       <div className="relative overflow-hidden bg-stone-100">
         <div className="relative aspect-[5/3]">
           <Image
-            src="https://cdn.senja.io/public/avatar/f25a441d-39c2-40ca-af8c-c58d68cc8cbf_tristan%20roth%20portrait%20-%20Copie.jpg"
-            alt="Tristan Roth"
+            src="https://pbs.twimg.com/profile_images/1773282762708881408/RzahtNBz_400x400.jpg"
+            alt="Emmet Cooke"
             fill
             className="object-cover"
             style={{

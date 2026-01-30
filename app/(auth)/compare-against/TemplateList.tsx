@@ -169,7 +169,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
         transition={{ duration: 0.5 }}
       >
         <span className=" block font-normal text-orange-600 text-2xl sm:text-3xl lg:text-4xl">
-        Docs never looked so good.
+        Beautifully crafted.
         </span>
       </motion.h2>
 
