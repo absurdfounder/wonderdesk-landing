@@ -59,7 +59,7 @@ export default function AIAgentSection() {
       <div className={`${sectionXPadding} mx-auto max-w-7xl`}>
         {/* Headline section */}
         <div className="pt-12 pb-8 sm:pt-20 sm:pb-10">
-          <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 sm:text-sm">
+          <span className="font-silkscreen text-blue-600 mb-4 text-xs sm:text-lg">
             Just ask Wonder
           </span>
           <h2 className="mt-4 max-w-2xl font-funneldisplay text-2xl font-bold leading-tight text-neutral-800 text-balance sm:text-3xl">
@@ -105,14 +105,8 @@ export default function AIAgentSection() {
             <div className="bg-white">
               <div className="space-y-6 p-6">
                 {/* User message */}
-                <div
-                  className={`flex items-start gap-4 transition-all duration-700 ease-out ${
-                    visibleMessages.includes(0)
-                      ? 'translate-y-0 opacity-100'
-                      : 'translate-y-4 opacity-0'
-                  }`}
-                >
-                  <div className="relative mt-0.5 h-12 w-12 shrink-0 overflow-hidden rounded-full bg-neutral-200">
+                <div className="flex items-start gap-4">
+                  <div className="relative mt-0.5 h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-neutral-200">
                     <Image
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop"
                       alt="Alex"
@@ -137,15 +131,9 @@ export default function AIAgentSection() {
                 </div>
 
                 {/* Agent reply 1 */}
-                <div
-                  className={`flex items-start gap-4 transition-all duration-700 ease-out ${
-                    visibleMessages.includes(1)
-                      ? 'translate-y-0 opacity-100'
-                      : 'translate-y-4 opacity-0'
-                  }`}
-                >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-emerald-500 text-lg font-semibold text-white">
-                    W
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-blue-500 text-lg font-semibold text-white">
+                    <img src='https://dazzling-cat.netlify.app/wonderbadge.png' alt='Wonder' width={48} height={48} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-3">
@@ -159,15 +147,9 @@ export default function AIAgentSection() {
                 </div>
 
                 {/* Agent reply 2 with CTA and draft cards */}
-                <div
-                  className={`flex items-start gap-4 transition-all duration-700 ease-out ${
-                    visibleMessages.includes(2)
-                      ? 'translate-y-0 opacity-100'
-                      : 'translate-y-4 opacity-0'
-                  }`}
-                >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-emerald-500 text-lg font-semibold text-white">
-                    W
+                <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-blue-500 text-lg font-semibold text-white">
+                    <img src='https://dazzling-cat.netlify.app/wonderbadge.png' alt='Wonder' width={48} height={48} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-3">

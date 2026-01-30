@@ -27,7 +27,7 @@ import {
 export default function Footer() {
   return (
     <footer className="border-neutral-200 px-4 md:px-6">
-      <div className="mx-auto max-w-6xl py-8 md:py-12">
+      <div className="mx-auto max-w-7xl py-8 md:py-12">
         <div className="flex flex-col gap-8 md:flex-row md:gap-12">
           {/* Brand Section */}
           <div className="md:w-64">
@@ -35,14 +35,12 @@ export default function Footer() {
               <Image
                 src={Logo}
                 alt="Wonder Sites"
-                width={29}
-                height={29}
+                width={169}
                 className="rounded-lg"
               />
-              <span className="text-lg font-semibold text-neutral-800">Wonder Sites</span>
             </div>
             <p className="mt-2 text-sm text-neutral-500">
-              The easiest way to build beautiful websites from Notion.
+            The AI agent that keeps your help center, blog, changelog, and documentation up to date.
             </p>
             <ul className="mt-3 space-y-1">
               <li>
@@ -165,7 +163,7 @@ export default function Footer() {
                       className="flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-neutral-800"
                       href="/integration"
                     >
-                      <Plug className="h-4 w-4 text-emerald-500" />
+                      <Plug className="h-4 w-4 text-blue-500" />
                       Integrations
                     </Link>
                   </li>
@@ -305,15 +303,7 @@ export default function Footer() {
                       Changelog
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      className="flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="#"
-                    >
-                      <Heart className="h-4 w-4 text-rose-500" />
-                      Wall of Love
-                    </Link>
-                  </li>
+
                 </ul>
               </div>
             </div>

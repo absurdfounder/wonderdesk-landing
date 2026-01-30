@@ -96,7 +96,7 @@ const listItemVariants = {
 
 // --- REUSABLE UI COMPONENTS ---
 const SectionTitle = ({ emoji, title, subtitle, className = '' }) => (
-  <div className={`text-center mb-10 md:mb-14 ${className}`}>
+  <div className={`text-start mb-10 md:mb-14 ${className}`}>
     <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
       {emoji && <span className="mr-2">{emoji}</span>}{title}
     </h2>
@@ -119,7 +119,7 @@ const StatCard = ({ item, className = '' }) => (
       {item.value}
     </p>
     {item.trend && (
-      <p className={`text-xs font-medium mt-1 ${item.trend.startsWith('+') ? 'text-emerald-500' : 'text-red-500'}`}>
+      <p className={`text-xs font-medium mt-1 ${item.trend.startsWith('+') ? 'text-blue-500' : 'text-red-500'}`}>
         {item.trend}
       </p>
     )}
@@ -620,8 +620,8 @@ const fetchAllData = async () => {
               icon: TrendingUp, 
               label: '$WONDER Price', 
               value: `$${tokenData.wonderPrice.toFixed(6)}`, 
-              iconColorClass:'text-emerald-600', 
-              bgColorClass:'bg-emerald-50/70', 
+              iconColorClass:'text-blue-600', 
+              bgColorClass:'bg-blue-50/70', 
               trend: tokenData.priceChange24h ? `${tokenData.priceChange24h > 0 ? '+' : ''}${tokenData.priceChange24h.toFixed(2)}% 24h` : undefined,
               subText: `${tokenData.wonderPriceSOL.toFixed(8)} SOL`
             }} />
@@ -679,7 +679,7 @@ const fetchAllData = async () => {
           {/* Real-Time Burn History */}
           <motion.div variants={cardVariants} className="bg-white p-6 md:p-8 rounded-xl shadow-xl border border-slate-200/70 mb-8">
             <h3 className="text-xl md:text-2xl font-semibold text-slate-700 mb-4 flex items-center">
-              <List className="w-6 h-6 mr-2.5 text-emerald-500"/> Real-Time Burn History 
+              <List className="w-6 h-6 mr-2.5 text-blue-500"/> Real-Time Burn History 
               <span className="text-xs ml-2 text-slate-400">(Recent {burnData.recentBurns.length})</span>
             </h3>
             
@@ -778,8 +778,8 @@ const fetchAllData = async () => {
              label: 'Avg. Gas Fee (SOL)', 
              value: formatSolValue(solanaStats.avgGasFee), 
              subText: `~${formatNumber(solanaStats.avgGasFee * solanaStats.solPrice, 5, true)}`, 
-             iconColorClass:'text-emerald-600', 
-             bgColorClass:'bg-emerald-50/70' 
+             iconColorClass:'text-blue-600', 
+             bgColorClass:'bg-blue-50/70' 
            }} />
            
            <StatCard item={{ 

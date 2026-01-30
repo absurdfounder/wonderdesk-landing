@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Github } from 'lucide-react';
+import { ArrowRight, Github, Sparkles, FileImage, Smile } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image'; // Use Next.js Image for optimization
 
@@ -50,25 +50,35 @@ const NotionIcon = () => (
   </svg>
 );
 
-// Lightweight Features component with proper icons
+
+// Features component with Lucide icons
 const Features = React.memo(() => {
   const features = [
-    { name: "Github", icon: <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" /> },
-    { name: "Notion", icon: <NotionIcon /> }
+    { 
+      name: "Our AI agent writes your help docs", 
+      icon: <Sparkles className="w-5 h-5 text-lime-500" />
+    },
+    { 
+      name: "takes annotated screenshots for you", 
+      icon: <FileImage className="w-5 h-5 text-sky-500" />
+    },
+    { 
+      name: "and responds to your customers while you sleep", 
+      icon: <Smile className="w-5 h-5 text-amber-500" />
+    }
   ];
 
   return (
-    <div className="flex flex-col font-bold items-center justify-center space-y-2 sm:space-y-1 text-xs sm:text-sm opacity-60 sm:flex-row sm:space-x-4 sm:space-y-0 mt-4 sm:mt-6">
-      <span className="text-slate-900">Works with</span>
-      <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-4 items-center">
-        {features.map((feature, index) => (
-          <div key={index} className="flex items-center justify-center">
-            {feature.icon}
-            <span className="text-center sm:text-left text-slate-900">{feature.name} as a Database</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <ul className="flex flex-col gap-3">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-center gap-2">
+          {feature.icon}
+          <span className="underline cursor-pointer decoration-dashed underline-offset-4 decoration-neutral-200">
+            {feature.name}
+          </span>
+        </li>
+      ))}
+    </ul>
   );
 });
 
@@ -130,7 +140,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
         <br />
 
 
-        <div className="pt-6 sm:pt-10 md:pt-12 pb-12 sm:pb-16 md:pb-20">
+        <div className="pt-2 sm:pt-1 md:pt-2 pb-12 sm:pb-16 md:pb-20">
           {/* Left (text) + Right (tab sector) on lg; stacked on smaller screens */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-4 xl:gap-6">
             {/* Left: text content */}
@@ -147,9 +157,11 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     <span className="reveal reveal__hello-3">Wonder.</span>
                   </div>
                   <span className="block reveal reveal__usp">
-                    Simplest way to keep your <b>blog</b> & <b>help center</b> <span style={{ color: '#009fbc' }}>up to date.</span>
+                    Automated way to keep your <b>blog</b> & <b>help center</b> <span style={{ color: '#009fbc' }}>up to date.</span>
                   </span>
                 </h1>
+
+
 
 
               </div>
@@ -186,7 +198,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   data-cal-namespace="setup-call"
                   data-cal-link="set-meeting/setup-call"
                   data-cal-config='{"layout":"month_view"}'
-                  className="text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
+                  className="text-black border border-gray-600 bg-white hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
                 >
                   <div className="flex items-center justify-center w-full">
                     <span>Book a Demo</span>
@@ -196,7 +208,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
               </div>
 
               {/* Features - Works with (align left on desktop) */}
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start mt-6">
                 <Features />
               </div>
             </div>

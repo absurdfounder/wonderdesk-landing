@@ -8,18 +8,18 @@ const TabImageHotspots = lazy(() => import('./tabbed_examples'));
 
 export default function HowItWorksSection() {
   return (
-    <section className="border-b border-neutral-200 bg-white">
+    <section className="border-b border-neutral-200 bg-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:gap-12">
           {/* Text content on top */}
           <div className="pt-12 pb-4 sm:pt-20 text-center lg:text-left">
             <span className="font-silkscreen text-blue-600 mb-4 text-xs sm:text-lg">How it works</span>
             <h2 className="mt-4 font-funneldisplay font-display text-balance text-2xl sm:text-3xl md:text-4xl text-slate-800">
-              A help center that grows with you.
+              Beautifully crafted.
             </h2>
             <p className="body-text mt-6 max-w-4xl text-base text-slate-600 leading-relaxed">
-              Keeping a help center up to date is time-consuming. With Wonder, you get a flexible,
-              search-friendly help site that automatically reflects your Notion content.
+            Your current help center, blog, changelog, and documentation is a constant struggle to maintain. Wonder gives you a fully customizable, SEO-optimized help center that our AI agent, Fern, automatically keeps in sync with your product.
+
             </p>
             <div className="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
               <Link
