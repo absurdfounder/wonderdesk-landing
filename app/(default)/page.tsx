@@ -49,7 +49,7 @@ export default function Home() {
       <FloatingScrollIndicator />
       <div
         style={{
-          backgroundImage: "linear-gradient(rgb(255 255 255 / 59%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/cloudbackground.webp)",
+          backgroundImage: "linear-gradient(rgb(254 254 255), rgb(255 255 255 / 89%), rgb(255 255 255 / 48%)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"

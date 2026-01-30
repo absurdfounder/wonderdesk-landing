@@ -130,7 +130,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
         <br />
 
 
-        <div className="pt-6 sm:pt-10 md:pt-12 pb-12 sm:pb-16 md:pb-20">
+        <div className="pt-2 sm:pt-1 md:pt-2 pb-12 sm:pb-16 md:pb-20">
           {/* Left (text) + Right (tab sector) on lg; stacked on smaller screens */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-4 xl:gap-6">
             {/* Left: text content */}
@@ -147,7 +147,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     <span className="reveal reveal__hello-3">Wonder.</span>
                   </div>
                   <span className="block reveal reveal__usp">
-                    Simplest way to keep your <b>blog</b> & <b>help center</b> <span style={{ color: '#009fbc' }}>up to date.</span>
+                    Automated way to keep your <b>blog</b> & <b>help center</b> <span style={{ color: '#009fbc' }}>up to date.</span>
                   </span>
                 </h1>
 

@@ -4,7 +4,21 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, HelpCircle, BookOpen, Lock, AlignLeft, ArrowRight } from 'lucide-react';
+import { 
+  ChevronDown, 
+  ArrowRight, 
+  Sparkles, 
+  Camera, 
+  MessageCircle, 
+  Code, 
+  Globe, 
+  Lock, 
+  Zap, 
+  Chrome,
+  Bot,
+  BookOpen,
+  ScrollText
+} from 'lucide-react';
 import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
 import TabletMenu from './tablet-menu';
@@ -33,12 +47,20 @@ export default function Header() {
       }
     };
 
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && dropdownOpen) {
+        setDropdownOpen(false);
+      }
+    };
+
     if (dropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleEscapeKey);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscapeKey);
     };
   }, [dropdownOpen]);
 
@@ -92,37 +114,124 @@ export default function Header() {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.1 }}
-                        className="absolute left-0 z-50 w-screen max-w-lg px-2 mt-3 sm:px-0"
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="absolute left-0 top-full mt-2 z-50"
                       >
-                        <div className="overflow-hidden rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 bg-white">
-                          <div className="relative grid gap-6 px-1 py-6 sm:gap-8 sm:p-8">
-                            <DropdownLink
-                              href="/create-a-helpdesk-servicedesk-notion"
-                              icon={HelpCircle}
-                              title="Help Center"
-                              description="Get a professional automated help center connected with Notion or Github."
-                            />
-                            <DropdownLink
-                              href="/create-a-blog-notion"
-                              icon={BookOpen}
-                              title="Blog"
-                              description="Get a beautiful blog automated for your startup or company connected to Notion."
-                            />
-
-                            <DropdownLink
-                              href="/create-a-documentation-notion"
-                              icon={AlignLeft}
-                              title="Product Docs"
-                              description="Create automated product docs on top of notion or github with integrated AI Agents."
-                            />
-                            <DropdownLink
-                              href="/create-a-changelog-notion"
-                              icon={Lock}
-                              title="Changelogs"
-                              description="Create automated changelogs connected to your Github or Notion account."
-                            />
-
+                        <div className="overflow-hidden rounded-lg shadow-xl ring-1 ring-black/5 bg-white">
+                          <div className="p-6 w-[640px]">
+                            <h3 className="mb-4 text-xs font-semibold tracking-wider text-neutral-400 uppercase">
+                              Features
+                            </h3>
+                            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                              <DropdownLink
+                                href="/features/ai-help-center"
+                                iconColor="text-sky-500"
+                                bgColor="bg-sky-50"
+                                icon={Sparkles}
+                                title="Help Center"
+                                description="Self-updating knowledge base"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/features/ai-documentation-agent"
+                                iconColor="text-amber-500"
+                                bgColor="bg-amber-50"
+                                icon={Bot}
+                                title="AI agent"
+                                description="AI that writes your docs"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/features/automated-screenshots-for-docs"
+                                iconColor="text-orange-500"
+                                bgColor="bg-orange-50"
+                                icon={Camera}
+                                title="Automated screenshots"
+                                description="Screenshots that stay current"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/features/self-service-help-widget"
+                                iconColor="text-rose-500"
+                                bgColor="bg-rose-50"
+                                icon={MessageCircle}
+                                title="Self-service widget"
+                                description="Embed help in your product"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/create-a-blog-notion"
+                                iconColor="text-blue-500"
+                                bgColor="bg-blue-50"
+                                icon={BookOpen}
+                                title="Blog"
+                                description="Beautiful automated blog"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/create-a-changelog-notion"
+                                iconColor="text-indigo-500"
+                                bgColor="bg-indigo-50"
+                                icon={ScrollText}
+                                title="Changelog"
+                                description="Automated product updates"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/features/code-to-docs"
+                                iconColor="text-violet-500"
+                                bgColor="bg-violet-50"
+                                icon={Code}
+                                title="Code to help docs"
+                                description="Sync docs with your code"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/features/multilingual-knowledge-base"
+                                iconColor="text-teal-500"
+                                bgColor="bg-teal-50"
+                                icon={Globe}
+                                title="Multilingual"
+                                description="Translate your help center"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/features/internal-knowledge-base"
+                                iconColor="text-stone-500"
+                                bgColor="bg-stone-50"
+                                icon={Lock}
+                                title="Internal knowledge base"
+                                description="Private docs with login required"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/features/generative-ai-customer-service"
+                                iconColor="text-lime-600"
+                                bgColor="bg-lime-50"
+                                icon={Sparkles}
+                                title="AI answers"
+                                description="Help desk chatbot for support"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/integrations"
+                                iconColor="text-emerald-500"
+                                bgColor="bg-emerald-50"
+                                icon={Zap}
+                                title="Integrations"
+                                description="Connect your favorite tools"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                              <DropdownLink
+                                href="/features/chrome-extension-for-documentation"
+                                iconColor="text-amber-700"
+                                bgColor="bg-amber-50/50"
+                                icon={Chrome}
+                                title="Chrome extension"
+                                description="Update docs from any tab"
+                                onClick={() => setDropdownOpen(false)}
+                              />
+                            </div>
                           </div>
                         </div>
                       </motion.div>
@@ -201,22 +310,30 @@ export default function Header() {
 interface DropdownLinkProps {
   href: string;
   icon: React.ComponentType<{ className?: string }>;
+  iconColor: string;
+  bgColor: string;
   title: string;
   description: string;
+  onClick?: () => void;
 }
 
-function DropdownLink({ href, icon: Icon, title, description }: DropdownLinkProps) {
+function DropdownLink({ href, icon: Icon, iconColor, bgColor, title, description, onClick }: DropdownLinkProps) {
   return (
     <Link
       href={href}
-      className="flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-[#009fbc]/10 group"
+      onClick={onClick}
+      className="flex items-center gap-3 rounded-lg px-3 py-3 transition-all duration-200 hover:bg-neutral-50 group"
     >
-      <div className="flex-shrink-0 p-2 rounded-md bg-[#009fbc]/10 group-hover:bg-[#009fbc]/20 transition-colors">
-        <Icon className="w-6 h-6 text-[#009fbc]" />
+      <div className={`flex-shrink-0 ${iconColor} ${bgColor} transition-all duration-200 group-hover:scale-110 p-2.5 rounded-lg`}>
+        <Icon className="w-[18px] h-[18px]" strokeWidth={2} />
       </div>
-      <div className="ml-4">
-        <p className="text-base font-medium text-slate-900 group-hover:text-[#009fbc] transition-colors truncate max-w-[300px] w-full">{title} <span className=' font-thinner w-full justify-end' style={{ color: '#009fbc' }} >automated</span></p>
-        <p className="mt-1 text-sm text-slate-500 line-clamp-2">{description}</p>
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-medium text-neutral-800 group-hover:text-[#009fbc] transition-colors duration-200 mb-0.5">
+          {title}
+        </p>
+        <p className="text-xs text-neutral-500 leading-snug">
+          {description}
+        </p>
       </div>
     </Link>
   );
