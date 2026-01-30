@@ -163,7 +163,7 @@ export default function Footer() {
                       className="flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-neutral-800"
                       href="/integration"
                     >
-                      <Plug className="h-4 w-4 text-emerald-500" />
+                      <Plug className="h-4 w-4 text-blue-500" />
                       Integrations
                     </Link>
                   </li>

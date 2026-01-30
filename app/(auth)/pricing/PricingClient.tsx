@@ -165,7 +165,7 @@ const comparisonCategories: ComparisonCategory[] = [
     {
         title: "Team & Collaboration",
         icon: Users,
-        iconColor: "text-emerald-500",
+        iconColor: "text-blue-500",
         rows: [
             { feature: "Team members", personal: { text: "Limited" }, business: { text: "Unlimited" } },
             { feature: "Membership sites", personal: false, business: true },

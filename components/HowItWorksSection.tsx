@@ -8,7 +8,7 @@ const TabImageHotspots = lazy(() => import('./tabbed_examples'));
 
 export default function HowItWorksSection() {
   return (
-    <section className="border-b border-neutral-200 bg-white">
+    <section className="border-b border-neutral-200 bg-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:gap-12">
           {/* Text content on top */}

@@ -293,7 +293,7 @@ export default function HeroArticleDemo() {
                           initial="hidden"
                           animate="visible"
                         >
-                          <motion.div variants={itemVariants} className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-emerald-500">
+                          <motion.div variants={itemVariants} className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-blue-500">
                             <img src="https://dazzling-cat.netlify.app/wonderbadge.png" alt="Wonder" className="h-full w-full object-contain" />
                           </motion.div>
                           <motion.div variants={itemVariants} className="min-w-0 flex-1">
@@ -427,7 +427,7 @@ export default function HeroArticleDemo() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded bg-emerald-500">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded bg-blue-500">
                             <img src="https://dazzling-cat.netlify.app/wonderbadge.png" alt="Wonder" className="h-full w-full object-contain" />
                           </div>
                           <div className="min-w-0 flex-1">

@@ -215,8 +215,8 @@ export default function Header() {
                               />
                               <DropdownLink
                                 href="/integrations"
-                                iconColor="text-emerald-500"
-                                bgColor="bg-emerald-50"
+                                iconColor="text-blue-500"
+                                bgColor="bg-blue-50"
                                 icon={Zap}
                                 title="Integrations"
                                 description="Connect your favorite tools"
