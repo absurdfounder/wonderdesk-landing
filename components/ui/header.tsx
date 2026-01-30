@@ -248,14 +248,13 @@ export default function Header() {
                     data-cal-namespace="setup-call"
                     data-cal-link="set-meeting/setup-call"
                     data-cal-config='{"layout":"month_view"}'
-                    className="btn-sm text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white ml-2 flex items-center justify-between px-3 py-1.5 rounded-md transition duration-150 ease-in-out group overflow-hidden relative text-base"
+                    className="btn-sm text-black border border-gray-200 bg-white hover:bg-slate-800 hover:text-white ml-2 flex items-center justify-between px-3 py-1.5 rounded-md transition duration-150 ease-in-out group overflow-hidden relative text-base"
                     onMouseEnter={() => setIsBookHovered(true)}
                     onMouseLeave={() => setIsBookHovered(false)}
                   >
                     <div className="relative z-10 overflow-hidden w-full">
                       <div className="flex items-center justify-between">
-                        <span className="truncate max-w-[120px]">Get a Demo</span>
-                        <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                        <span className="truncate max-w-[120px]">Sign In</span>
                       </div>
                     </div>
                   </button>
@@ -275,7 +274,7 @@ export default function Header() {
                           style={{
                             transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
                           }}>
-                          Get Started
+                          Get Started for free
                         </div>
                         <div className="transition-transform duration-300 transform absolute top-0 left-0 truncate max-w-[150px]"
                           style={{

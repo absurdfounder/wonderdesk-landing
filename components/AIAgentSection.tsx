@@ -46,7 +46,7 @@ export default function AIAgentSection() {
               <div className="space-y-6 p-6">
                 {/* User message */}
                 <div className="flex items-start gap-4">
-                  <div className="relative mt-0.5 h-12 w-12 shrink-0 overflow-hidden rounded-full bg-neutral-200">
+                  <div className="relative mt-0.5 h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-neutral-200">
                     <Image
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop"
                       alt="Alex"
@@ -72,8 +72,8 @@ export default function AIAgentSection() {
 
                 {/* Agent reply 1 */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-emerald-500 text-lg font-semibold text-white">
-                    W
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-emerald-500 text-lg font-semibold text-white">
+                    <img src='https://dazzling-cat.netlify.app/wonderbadge.png' alt='Wonder' width={48} height={48} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-3">
@@ -88,8 +88,8 @@ export default function AIAgentSection() {
 
                 {/* Agent reply 2 with CTA and draft cards */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-emerald-500 text-lg font-semibold text-white">
-                    W
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-emerald-500 text-lg font-semibold text-white">
+                    <img src='https://dazzling-cat.netlify.app/wonderbadge.png' alt='Wonder' width={48} height={48} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-3">

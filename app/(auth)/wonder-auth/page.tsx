@@ -290,7 +290,7 @@ export default function AuthLanding() {
                             <Link
                                 href="https://wonder-auth-demo.netlify.app/"
                                 target="_blank"
-                                className="text-black border border-gray-600 bg-slate-100 hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
+                                className="text-black border border-gray-600 bg-white hover:bg-slate-800 hover:text-white flex items-center justify-center px-4 py-2.5 sm:py-2.5 rounded-md transition duration-150 ease-in-out group w-full sm:w-auto text-sm sm:text-base min-h-[48px] sm:min-h-auto sm:ml-0"
                             >
                                 <div className="flex items-center justify-center w-full">
                                     <span>Try a Demo</span>
