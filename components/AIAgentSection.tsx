@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 const sectionXPadding = 'px-4 sm:px-6 lg:px-8';
 
@@ -23,6 +24,36 @@ const draftArticles = [
 ];
 
 export default function AIAgentSection() {
+  const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated.current) {
+            hasAnimated.current = true;
+            // Stagger the animations
+            const delays = [0, 800, 1600];
+            delays.forEach((delay, index) => {
+              setTimeout(() => {
+                setVisibleMessages((prev) => [...prev, index]);
+              }, delay);
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="bg-white">
       <div className={`${sectionXPadding} mx-auto max-w-7xl`}>
@@ -40,12 +71,47 @@ export default function AIAgentSection() {
           </p>
         </div>
 
-        {/* Chat card under the headline */}
-        <div className="max-w-4xl pb-12 sm:pb-16">
+        {/* Browser window wrapper */}
+        <div className="max-w-4xl pb-12 sm:pb-16" ref={sectionRef}>
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 shadow-2xl">
+            {/* Browser chrome / toolbar */}
+            <div className="flex items-center gap-2 border-b border-neutral-200 bg-neutral-100 px-4 py-3">
+              {/* Traffic lights */}
+              <div className="flex items-center gap-1.5">
+                <span className="h-3 w-3 rounded-full bg-red-400" />
+                <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                <span className="h-3 w-3 rounded-full bg-green-400" />
+              </div>
+              {/* URL bar */}
+              <div className="ml-4 flex flex-1 items-center gap-2 rounded-md bg-white px-3 py-1.5 text-sm text-neutral-500 shadow-inner ring-1 ring-neutral-200">
+                <svg
+                  className="h-4 w-4 text-neutral-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3zm0 0c0 1.657 1.343 3 3 3s3-1.343 3-3-1.343-3-3-3-3 1.343-3 3zm0 0v9"
+                  />
+                </svg>
+                <span className="truncate">app.wonderdesk.ai/chat</span>
+              </div>
+            </div>
+
+            {/* Chat content */}
             <div className="bg-white">
               <div className="space-y-6 p-6">
                 {/* User message */}
-                <div className="flex items-start gap-4">
+                <div
+                  className={`flex items-start gap-4 transition-all duration-700 ease-out ${
+                    visibleMessages.includes(0)
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-4 opacity-0'
+                  }`}
+                >
                   <div className="relative mt-0.5 h-12 w-12 shrink-0 overflow-hidden rounded-full bg-neutral-200">
                     <Image
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop"
@@ -71,7 +137,13 @@ export default function AIAgentSection() {
                 </div>
 
                 {/* Agent reply 1 */}
-                <div className="flex items-start gap-4">
+                <div
+                  className={`flex items-start gap-4 transition-all duration-700 ease-out ${
+                    visibleMessages.includes(1)
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-4 opacity-0'
+                  }`}
+                >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-emerald-500 text-lg font-semibold text-white">
                     W
                   </div>
@@ -87,7 +159,13 @@ export default function AIAgentSection() {
                 </div>
 
                 {/* Agent reply 2 with CTA and draft cards */}
-                <div className="flex items-start gap-4">
+                <div
+                  className={`flex items-start gap-4 transition-all duration-700 ease-out ${
+                    visibleMessages.includes(2)
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-4 opacity-0'
+                  }`}
+                >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-emerald-500 text-lg font-semibold text-white">
                     W
                   </div>
@@ -110,11 +188,20 @@ export default function AIAgentSection() {
                       </button>
                     </div>
                     {/* Draft article cards */}
-                    <div className="mt-4 grid grid-cols-3 gap-3">
-                      {draftArticles.map((article) => (
+                    <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                      {draftArticles.map((article, index) => (
                         <div
                           key={article.title}
-                          className="flex cursor-pointer flex-col gap-2 rounded-xl bg-gradient-to-b from-white to-neutral-50 p-4 pb-3 text-left shadow-sm ring-1 ring-neutral-200"
+                          className={`flex cursor-pointer flex-col gap-2 rounded-xl bg-gradient-to-b from-white to-neutral-50 p-4 pb-3 text-left shadow-sm ring-1 ring-neutral-200 transition-all duration-500 ease-out ${
+                            visibleMessages.includes(2)
+                              ? 'translate-y-0 opacity-100'
+                              : 'translate-y-4 opacity-0'
+                          }`}
+                          style={{
+                            transitionDelay: visibleMessages.includes(2)
+                              ? `${index * 150}ms`
+                              : '0ms',
+                          }}
                         >
                           <div className="flex items-center gap-2">
                             <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700">
@@ -135,6 +222,7 @@ export default function AIAgentSection() {
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </section>
