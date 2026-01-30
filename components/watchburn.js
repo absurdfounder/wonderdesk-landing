@@ -96,7 +96,7 @@ const listItemVariants = {
 
 // --- REUSABLE UI COMPONENTS ---
 const SectionTitle = ({ emoji, title, subtitle, className = '' }) => (
-  <div className={`text-center mb-10 md:mb-14 ${className}`}>
+  <div className={`text-start mb-10 md:mb-14 ${className}`}>
     <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
       {emoji && <span className="mr-2">{emoji}</span>}{title}
     </h2>

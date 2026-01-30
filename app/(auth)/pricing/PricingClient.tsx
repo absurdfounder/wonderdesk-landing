@@ -407,13 +407,13 @@ const FAQSection: React.FC = () => {
     const [activeTab, setActiveTab] = useState("Pricing");
 
     return (
-        <div className="mx-auto mt-20 max-w-4xl">
+        <div className="mt-20 max-w-7xl">
             <div className="px-4">
-                <div className="text-center mb-10">
+                <div className="text-start mb-10">
                     <h2 className="font-funneldisplay text-2xl md:text-3xl font-bold text-slate-900 mb-3">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto">
+                    <p className="text-slate-600 max-w-2xl">
                         Have a different question? Reach out to our support team by
                         <a
                             href="mailto:vaibhav@wonderdesk.ai"
@@ -679,7 +679,7 @@ const Pricing: React.FC = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-slate-50 min-h-screen">
+        <div className="bg-slate-50 min-h-screen">
             {/* --- NEW: Render the Exit Intent Popup --- */}
             <ExitIntentPopup isOpen={showExitPopup} onClose={() => setShowExitPopup(false)} />
 
@@ -692,42 +692,27 @@ const Pricing: React.FC = () => {
 <br/>
 
 
-            {/* Background grid pattern */}
-            <div
-                className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none opacity-5"
-                aria-hidden="true"
-            >
-                <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <pattern
-                            id="grid-pattern"
-                            width="32"
-                            height="32"
-                            patternUnits="userSpaceOnUse"
-                            x="50%"
-                            y="100%"
-                            patternTransform="translate(0 -1)"
-                        >
-                            <path d="M0 32V.5H32" fill="none" stroke="currentColor"></path>
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
-                </svg>
-            </div>
+
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative">
                 <div className="mb-8">
-                    <div className="text-center max-w-4xl mx-auto mb-16">
+                    <div className="text-start mb-16">
                         <h1 className="font-funneldisplay text-4xl md:text-5xl tracking-tight mb-6">
                             <span className="text-slate-800 block mb-2">
                                 Setup <img src="https://dazzling-cat.netlify.app/wonderbadge.png" className="inline-block w-12 h-12 rounded-md align-middle mx-1" /> Wonder at your company
                             </span>
                         </h1>
+                        <p className="body-text max-w-2xl">
+
+                        Never write another help article.
+                        Wonder customers save 20 hours a month on support and docs on average. Get started today with a 7-day free trial. No credit card required.
+                        </p>
+
                     </div>
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-16">
+                <div className="grid md:grid-cols-2 gap-6 max-w-7xl mb-16">
                     {pricingTiers.map((tier, index) => (
                         <motion.div
                             key={tier.name}
@@ -797,7 +782,7 @@ const Pricing: React.FC = () => {
 
                 {/* Comparison Table (desktop) */}
                 <div className="hidden lg:block mb-20">
-                    <h4 className="text-2xl font-bold text-slate-900 text-center mb-8">
+                    <h4 className="text-2xl font-bold text-slate-900 text-start mb-8">
                         Compare plans
                     </h4>
                     <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
@@ -900,125 +885,8 @@ const Pricing: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Add-ons Section */}
-                <div className="max-w-4xl mx-auto mb-20">
-                    <h4 className="text-2xl font-bold text-slate-900 text-center mb-8">
-                        Enhance Your Experience with Add-ons
-                    </h4>
-                    <div className="bg-white shadow-md rounded-xl overflow-hidden border border-slate-200">
-                        <div className="divide-y divide-slate-200">
-                            {/* SubDirectory Add-on */}
-                            <div className="p-6">
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                    <div className="flex items-center gap-4">
-                                        <div className="bg-orange-100 p-3 rounded-lg">
-                                            <FolderGit2 className="h-6 w-6 text-orange-600" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-slate-900">
-                                                SubDirectory
-                                            </h3>
-                                            <p className="text-sm text-slate-600">yourdomain.com/blog</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-baseline">
-                                        <p className="text-2xl font-semibold text-slate-900">
-                                            $10
-                                        </p>
-                                        <p className="text-base text-slate-600 ml-1">/mo</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            {/* Collaboration Seats Add-on */}
-                            <div className="p-6">
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                    <div className="flex items-center gap-4">
-                                        <div className="bg-orange-100 p-3 rounded-lg">
-                                            <Users className="h-6 w-6 text-orange-600" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-slate-900">
-                                                Collaboration Seats
-                                            </h3>
-                                            <p className="text-sm text-slate-600">Account access for team members</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-baseline">
-                                        <p className="text-2xl font-semibold text-slate-900">
-                                            $5
-                                        </p>
-                                        <p className="text-base text-slate-600 ml-1">user/mo</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            {/* Additional Website Add-on (Corrected from Fetch Kitty based on text) */}
-                            <div className="p-6">
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                    <div className="flex items-center gap-4">
-                                        <div className="bg-orange-100 p-3 rounded-lg">
-                                            <DatabaseIcon className="h-6 w-6 text-orange-600" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-slate-900">
-                                                Additional Website
-                                            </h3>
-                                            <p className="text-sm text-slate-600">Every plan comes with 5 sites - you can get more.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-baseline">
-                                        <p className="text-2xl font-semibold text-slate-900">
-                                            $2
-                                        </p>
-                                        <p className="text-base text-slate-600 ml-1">/mo</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Lifetime deal banner */}
-                {isLifetimeDealVisible && (
-                    <div className="hidden max-w-4xl mx-auto mb-20">
-                        <div className="bg-slate-900 rounded-xl overflow-hidden relative">
-                            {/* Background decoration */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600 opacity-10 rounded-md -mr-20 -mt-20"></div>
-                            <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600 opacity-10 rounded-md -ml-10 -mb-10"></div>
-
-                            <div className="relative p-8 md:p-10">
-                                <div className="flex flex-col md:flex-row md:items-center justify-between">
-                                    <div className="mb-6 md:mb-0">
-                                        <div className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-md mb-3">
-                                            Limited Time Offer
-                                        </div>
-                                        <h3 className="text-2xl font-bold text-white mb-2">
-                                            Lifetime Deal
-                                        </h3>
-                                        <p className="text-slate-300 mb-2">
-                                            Get <span className="text-orange-400 font-semibold">unlimited</span> access forever with a one-time payment
-                                        </p>
-                                        <div className="flex items-center">
-                                            <span className="line-through text-slate-400 mr-2">$599</span>
-                                            <span className="text-3xl font-bold text-white">$99</span>
-                                        </div>
-                                        <div className="text-orange-400 text-sm mt-2">
-                                            Ending in <span className="font-semibold">{formatTime(countdown)}</span>
-                                        </div>
-                                    </div>
-
-                                    <button
-                                        className="bg-orange-600 hover:bg-orange-700 text-white text-lg py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-slate-900"
-                                        onClick={toggleModal}
-                                    >
-                                        Buy Now
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )}
 
                 {/* Lifetime deal modal */}
                 <AnimatePresence>
@@ -1089,37 +957,7 @@ const Pricing: React.FC = () => {
                     )}
                 </AnimatePresence>
 
-                {/* Migration CTA */}
-                <div className="max-w-4xl mx-auto my-20">
-                    <div className="relative bg-gradient-to-r from-slate-900 to-slate-800 rounded-xl py-8 px-6 md:px-12 shadow-lg overflow-hidden">
-                        {/* Background illustration - hidden on mobile */}
-                        <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block opacity-20">
-                            <Image alt="Migrate From" width={300} height={300} src={MigrateFrom} />
-                        </div>
 
-                        <div className="relative flex flex-col md:flex-row justify-between items-center">
-                            <div className="text-center md:text-left md:max-w-lg mb-6 md:mb-0">
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
-                                    Planning to <span className="text-orange-400">migrate</span> to
-                                    Wonder from another platform?
-                                </h3>
-                                <p className="text-slate-300 text-sm md:text-base">
-                                    Our expert team will handle the entire migration process for you - completely free of charge. - Zero Downtime.
-                                </p>
-                            </div>
-                            <div>
-                                <Link
-                                    href="https://app.youform.com/forms/r3rvhjv4"
-                                    target="_blank" rel="noopener"
-                                    className="bg-white text-slate-900 hover:bg-orange-50 px-8 py-3 rounded-lg inline-flex items-center transition-colors shadow-md font-medium"
-                                >
-                                    We'll do it for you <span className="ml-2">→</span>
-                                </Link>
-                                <p className="text-sm text-slate-100 mt-2 text-center">Free of charge</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 {/* FAQ Section */}
                 <FAQSection />
