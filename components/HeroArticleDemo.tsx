@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { 
@@ -60,6 +60,7 @@ const fullPromptText =
 const TYPING_INTERVAL_MS = 58;
 const CURSOR_BLINK_MS = 530;
 const AUTO_RESTART_DELAY = 5000;
+const AUTO_PUBLISH_DELAY = 1000; // Delay before auto-publishing
 
 export default function HeroArticleDemo() {
   const [step, setStep] = useState<Step>('input');
@@ -69,10 +70,21 @@ export default function HeroArticleDemo() {
   const [published, setPublished] = useState(false);
   const [restartProgress, setRestartProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const publishButtonRef = useRef<HTMLButtonElement>(null);
 
-  const fireConfetti = useCallback(() => {
+  const fireConfetti = useCallback((buttonElement?: HTMLElement) => {
     const count = 80;
-    const defaults = { origin: { y: 0.7 }, zIndex: 9999 };
+    let origin = { x: 0.5, y: 0.7 };
+    
+    if (buttonElement) {
+      const rect = buttonElement.getBoundingClientRect();
+      origin = {
+        x: (rect.left + rect.width / 2) / window.innerWidth,
+        y: (rect.top + rect.height / 2) / window.innerHeight
+      };
+    }
+    
+    const defaults = { origin, zIndex: 9999 };
     function fire(particleRatio: number, opts: confetti.Options) {
       confetti({ ...defaults, ...opts, particleCount: Math.floor(count * particleRatio) });
     }
@@ -125,6 +137,16 @@ export default function HeroArticleDemo() {
     return () => clearTimeout(t);
   }, [step, processingIndex, isPaused]);
 
+  // Auto-publish effect
+  useEffect(() => {
+    if (step === 'article' && !published && !isPaused) {
+      const timer = setTimeout(() => {
+        handlePublish();
+      }, AUTO_PUBLISH_DELAY);
+      return () => clearTimeout(timer);
+    }
+  }, [step, published, isPaused]);
+
   useEffect(() => {
     if (step !== 'article' || !published || isPaused) {
       setRestartProgress(0);
@@ -156,7 +178,11 @@ export default function HeroArticleDemo() {
 
   const handlePublish = () => {
     setPublished(true);
-    fireConfetti();
+    if (publishButtonRef.current) {
+      fireConfetti(publishButtonRef.current);
+    } else {
+      fireConfetti();
+    }
   };
 
   const togglePause = () => {
@@ -416,6 +442,7 @@ export default function HeroArticleDemo() {
                             </span>
                           ) : (
                             <motion.button
+                              ref={publishButtonRef}
                               type="button"
                               onClick={handlePublish}
                               className="relative flex cursor-pointer items-center gap-2 rounded-[10px] border border-neutral-300 bg-white p-0.5 font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50 hover:border-neutral-400"
