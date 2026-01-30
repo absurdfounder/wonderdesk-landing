@@ -415,7 +415,7 @@ function TemplateClientContent() {
                                             key={tagIndex}
                                             className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium transition-colors duration-200 ${selectedTags.includes(tag)
                                                 ? "bg-orange-200 text-orange-800"
-                                                : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                                                : "bg-slate-200 text-slate-600 hover:bg-slate-200"
                                                 }`}
                                         >
                                             {tag}
@@ -471,7 +471,7 @@ function TemplateClientContent() {
                                         onClick={() => toggleTag("free design")}
                                         className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes("free design")
                                             ? "bg-orange-500 text-white"
-                                            : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                                            : "bg-slate-200 text-slate-600 hover:bg-slate-200"
                                             }`}
                                     >
                                         free design
@@ -489,7 +489,7 @@ function TemplateClientContent() {
                                                 onClick={() => toggleTag(tag)}
                                                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
                                                     ? "bg-orange-500 text-white"
-                                                    : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                                                    : "bg-slate-200 text-slate-600 hover:bg-slate-200"
                                                     }`}
                                             >
                                                 {tag}
@@ -508,7 +508,7 @@ function TemplateClientContent() {
                                                 onClick={() => toggleTag(tag)}
                                                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
                                                     ? "bg-orange-500 text-white"
-                                                    : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                                                    : "bg-slate-200 text-slate-600 hover:bg-slate-200"
                                                     }`}
                                             >
                                                 {tag}
