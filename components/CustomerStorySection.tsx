@@ -10,7 +10,7 @@ export default function CustomerStorySection() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center lg:grid-cols-2">
       <div className={`${sectionXPadding} flex flex-col gap-6 py-12`}>
         <div className="font-silkscreen text-xl text-blue-600">Customer Story</div>
-        <blockquote className="font-funneldisplay text-3xl font-medium text-neutral-800 lg:text-4xl">
+        <blockquote className="font-funneldisplay text-xl font-medium text-neutral-800 lg:text-4xl">
           &ldquo;I do in 5 minutes what used to take one hour. I think it easily saves me 20h a
           month.&rdquo;
         </blockquote>

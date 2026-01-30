@@ -27,6 +27,7 @@ import Hero from '@/components/hero'
 import Header from '@/components/ui/header'
 import Features from '@/components/features'
 import FeaturesBlocks from '@/components/FeaturesBlocks'
+import FeaturesBlocksV2 from '@/components/FeaturesBlocksV2'
 import HowItWorksSection from '@/components/HowItWorksSection'
 import AIAgentSection from '@/components/AIAgentSection'
 import CustomerStorySection from '@/components/CustomerStorySection'
@@ -119,6 +120,7 @@ export default function Home() {
       <FeaturesBlocks />
       <OldWays />
       <SimpleAnalyticsDashboard />
+      <FeaturesBlocksV2 />
       <Showcases />
       <FAQ />
     </>

@@ -72,7 +72,7 @@ export default function AIAgentSection() {
         </div>
 
         {/* Browser window wrapper */}
-        <div className="max-w-4xl pb-12 sm:pb-16" ref={sectionRef}>
+        <div className="max-w-7xl pb-12 sm:pb-16" ref={sectionRef}>
           <div className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 shadow-2xl">
             {/* Browser chrome / toolbar */}
             <div className="flex items-center gap-2 border-b border-neutral-200 bg-neutral-100 px-4 py-3">

@@ -72,17 +72,15 @@ export default function HeroArticleDemo() {
   const [isPaused, setIsPaused] = useState(false);
   const publishButtonRef = useRef<HTMLButtonElement>(null);
 
-  const fireConfetti = useCallback((buttonElement?: HTMLElement) => {
-    const count = 80;
-    let origin = { x: 0.5, y: 0.7 };
+  const fireConfetti = useCallback((buttonElement: HTMLElement) => {
+    if (!buttonElement) return;
     
-    if (buttonElement) {
-      const rect = buttonElement.getBoundingClientRect();
-      origin = {
-        x: (rect.left + rect.width / 2) / window.innerWidth,
-        y: (rect.top + rect.height / 2) / window.innerHeight
-      };
-    }
+    const count = 80;
+    const rect = buttonElement.getBoundingClientRect();
+    const origin = {
+      x: (rect.left + rect.width / 2) / window.innerWidth,
+      y: (rect.top + rect.height / 2) / window.innerHeight
+    };
     
     const defaults = { origin, zIndex: 9999 };
     function fire(particleRatio: number, opts: confetti.Options) {
@@ -178,11 +176,12 @@ export default function HeroArticleDemo() {
 
   const handlePublish = () => {
     setPublished(true);
-    if (publishButtonRef.current) {
-      fireConfetti(publishButtonRef.current);
-    } else {
-      fireConfetti();
-    }
+    // Wait a tick to ensure button ref is available, then fire confetti from button
+    setTimeout(() => {
+      if (publishButtonRef.current) {
+        fireConfetti(publishButtonRef.current);
+      }
+    }, 0);
   };
 
   const togglePause = () => {
