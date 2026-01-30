@@ -240,7 +240,7 @@ export default function AuthLanding() {
                 </nav>
 
                 {/* Hero Section */}
-                <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 mt-12">
+                <div className="mx-auto w-full max-w-6xl px-1 sm:px-1 mt-12">
                     <div className="flex flex-col items-center text-center gap-6 pb-16">
                         <a
                             href="https://wonderdesk.ai/quarterly"

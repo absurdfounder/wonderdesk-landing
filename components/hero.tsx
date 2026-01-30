@@ -58,7 +58,7 @@ const Features = React.memo(() => {
   ];
 
   return (
-    <div className="flex flex-col font-bold items-center justify-center space-y-2 sm:space-y-1 text-xs sm:text-sm opacity-60 sm:flex-row sm:space-x-4 sm:space-y-0 mt-4 sm:mt-6 px-4">
+    <div className="flex flex-col font-bold items-center justify-center space-y-2 sm:space-y-1 text-xs sm:text-sm opacity-60 sm:flex-row sm:space-x-4 sm:space-y-0 mt-4 sm:mt-6">
       <span className="text-slate-900">Works with</span>
       <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-4 items-center">
         {features.map((feature, index) => (
@@ -132,7 +132,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
         <div className="pt-6 sm:pt-10 md:pt-12 pb-12 sm:pb-16 md:pb-20">
           {/* Left (text) + Right (tab sector) on lg; stacked on smaller screens */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-14 xl:gap-20">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-4 xl:gap-6">
             {/* Left: text content */}
             <div className="flex-1 lg:max-w-[48%] text-center lg:text-left">
               <div className="px-2 sm:px-4 md:px-6 lg:px-0">
@@ -141,37 +141,17 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                 </div>
 
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl max-w-3xl lg:max-w-none m-auto lg:m-0 mb-2 sm:mb-2 md:mb-2 leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
-                  The <b>blog</b> & <b>help center</b> that <span style={{ color: '#009fbc' }}>updates automatically</span>.
-                  {" "}
-                  <span className="hidden font-bungee block font-normal text-gray-800 my-1 sm:my-2">
-                    <div className="inline-flex items-center justify-center lg:justify-start ml-0 sm:ml-1 px-2 sm:px-4 flex-wrap sm:flex-nowrap">
-                      <div className="hidden md:block">
-                        <NotionLogo />
-                      </div>
-                      <b className="text-gray-800 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">Notion Database</b>
-                    </div>
-                  </span>{" "}
+                  <div className="block opacity-50">
+                    <span className="reveal reveal__hello-1">Hello,</span>{" "}
+                    <span className="reveal reveal__hello-2">I&apos;m</span>{" "}
+                    <span className="reveal reveal__hello-3">Wonder.</span>
+                  </div>
+                  <span className="block reveal reveal__usp">
+                    Simplest way to keep your <b>blog</b> & <b>help center</b> <span style={{ color: '#009fbc' }}>up to date.</span>
+                  </span>
                 </h1>
 
-                <p className="text-sm sm:text-base md:text-lg text-slate-900 mb-2 sm:mb-2 font-lato max-w-3xl m-auto lg:m-0 px-2 sm:px-0 lg:px-0 leading-relaxed opacity-75" style={{ textWrap: 'balance' }}>
-                  <span className="text-slate-900">Wonder is beautiful. Turns your <b>Notion & Github Repos</b> into a self-updating </span>
-                  <span className="inline-flex flex-wrap gap-x-1 gap-y-1 justify-center lg:justify-start items-center">
-                    {["Blogs", "Helpdesk", "API Docs", "Changelog"].map((category, idx) => (
-                      <React.Fragment key={category}>
-                        {idx > 0 && <span className="hidden sm:inline opacity-50">, </span>}
-                        <button
-                          className="text-slate-800 border-b border-orange-600 hover:text-orange-500 cursor-pointer font-bold transition-colors duration-200 px-1 py-0.5 sm:px-0 sm:py-0"
-                          onClick={() => handleCategoryClick(category)}
-                        >
-                          {category}
-                        </button>
-                        {idx < 3 && <span className="sm:hidden">,</span>}
-                      </React.Fragment>
-                    ))}
-                  </span>
-                  {" "}
-                  <span className="block sm:inline mt-1 sm:mt-0">.</span>
-                </p>
+
               </div>
 
               {/* CTA Buttons */}

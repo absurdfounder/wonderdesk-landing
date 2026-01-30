@@ -122,14 +122,14 @@ export default function HeroArticleDemo() {
 
   return (
     <motion.div
-      className="relative w-full overflow-hidden py-10 sm:py-12 lg:py-16"
-      style={{ minHeight: 420, height: 'min(560px, 80vh)' }}
+      className="relative w-full py-10 sm:py-12 lg:py-16"
+      style={{ minHeight: 420}}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col overflow-hidden rounded-t-2xl shadow-2xl px-1 pt-1 shadow-black/50 border border-neutral-200 bg-stone-50/70 backdrop-blur-sm shadow-stone-950/10">
+      <div className="mx-auto w-full max-w-6xl px-1 sm:px-1">
+        <div className="flex flex-col  rounded-t-2xl shadow-2xl px-1 pt-1 shadow-black/50 border border-neutral-200 bg-stone-50/70 backdrop-blur-sm shadow-stone-950/10">
           {/* Desktop title bar: traffic lights, URL, theme toggles */}
           <div className="relative hidden h-0 md:flex md:h-10 shrink-0 items-center gap-6 px-4 md:py-2">
             <div className="flex gap-1.5">
@@ -158,13 +158,13 @@ export default function HeroArticleDemo() {
                   <path d="M1 4v6h6" />
                   <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
                 </svg>
-                Restart
+                
               </button>
             </div>
           </div>
           {/* Browser content area - rectangular with generous whitespace */}
-          <div className="relative overflow-hidden rounded-b-2xl rounded-t-xl border-x border-t border-neutral-200 bg-white/95 min-h-[400px] sm:min-h-[460px] lg:min-h-[500px]">
-            <div className="relative flex min-h-[400px] sm:min-h-[460px] lg:min-h-[500px] items-center justify-center p-8 sm:p-4 lg:p-6">
+          <div className="relative  rounded-b-2xl rounded-t-xl border-x border-t border-neutral-200 bg-slate-200">
+            <div className="relative flex items-center justify-center p-8 sm:p-4 lg:p-6">
               <div className="w-full max-w-5xl space-y-6">
                 <AnimatePresence mode="wait" initial={false}>
             {/* Step 1: Input card */}
@@ -342,7 +342,7 @@ export default function HeroArticleDemo() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="flex h-4 w-4 shrink-0 items-center justify-center overflow-hidden rounded bg-emerald-500">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded bg-emerald-500">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="https://dazzling-cat.netlify.app/wonderbadge.png" alt="Wonder" className="h-full w-full object-contain" />
                   </div>

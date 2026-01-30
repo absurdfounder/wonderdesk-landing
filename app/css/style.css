@@ -148,6 +148,45 @@
   100% { opacity: 0.6; }
 }
 
+/* Reveal headline utilities (Fernand-style) */
+.u--subtle {
+  opacity: 0.92;
+}
+.u--block {
+  display: block;
+}
+.u--iblock {
+  display: inline-block;
+}
+.m--hide {
+  display: none;
+}
+@media (min-width: 768px) {
+  .m--hide {
+    display: block;
+  }
+}
+
+@keyframes revealIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: revealIn 0.6s ease forwards;
+}
+.reveal__hello-1 { animation-delay: 0.05s; }
+.reveal__hello-2 { animation-delay: 0.2s; }
+.reveal__hello-3 { animation-delay: 0.35s; }
+.reveal__usp { animation-delay: 0.5s; }
+
 .loading-shimmer {
   animation: shimmer 1.5s ease-in-out infinite;
 }
