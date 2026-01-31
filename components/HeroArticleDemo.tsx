@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { 
   Search, 
-  Github, 
   Camera, 
   FileEdit, 
   Link2, 
@@ -33,34 +32,13 @@ const processingSteps = [
   { icon: 'writing', label: 'Writing...', shimmer: true },
 ];
 
-const stepTransition = {
-  initial: { opacity: 0, scale: 0.96, y: 12 },
-  animate: { opacity: 1, scale: 1, y: 0 },
-  exit: { opacity: 0, scale: 0.98, y: -8 },
-  transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
-};
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: (i = 0) => ({
-    opacity: 1,
-    transition: { staggerChildren: 0.06, delayChildren: i * 0.1 },
-  }),
-  exit: { opacity: 0, transition: { duration: 0.2 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -8 },
-  visible: { opacity: 1, x: 0 },
-};
-
 const fullPromptText =
   'Write help articles from our Notion docs and GitHub repo. Use our support tickets and Intercom for common questions.';
 
 const TYPING_INTERVAL_MS = 58;
 const CURSOR_BLINK_MS = 530;
 const AUTO_RESTART_DELAY = 5000;
-const AUTO_PUBLISH_DELAY = 1000; // Delay before auto-publishing
+const AUTO_PUBLISH_DELAY = 1000;
 
 export default function HeroArticleDemo() {
   const [step, setStep] = useState<Step>('input');
@@ -71,6 +49,13 @@ export default function HeroArticleDemo() {
   const [restartProgress, setRestartProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const publishButtonRef = useRef<HTMLButtonElement>(null);
+  
+  // Track mounted state to prevent updates after unmount
+  const mountedRef = useRef(true);
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => { mountedRef.current = false; };
+  }, []);
 
   const fireConfetti = useCallback((buttonElement: HTMLElement) => {
     if (!buttonElement) return;
@@ -93,13 +78,35 @@ export default function HeroArticleDemo() {
     fire(0.1, { spread: 120, startVelocity: 45 });
   }, []);
 
+  const handlePublish = useCallback(() => {
+    setPublished(true);
+    setTimeout(() => {
+      if (publishButtonRef.current) {
+        fireConfetti(publishButtonRef.current);
+      }
+    }, 0);
+  }, [fireConfetti]);
+
+  const handleReplay = useCallback(() => {
+    setPublished(false);
+    setRestartProgress(0);
+    setProcessingIndex(0);
+    setTypedLength(0);
+    setIsPaused(false);
+    setStep('input');
+  }, []);
+
+  const togglePause = useCallback(() => {
+    setIsPaused(p => !p);
+  }, []);
+
+  // Typing effect
   useEffect(() => {
     if (step !== 'input' || isPaused) return;
     setTypedLength(0);
-    let cancelled = false;
     let index = 0;
     const id = setInterval(() => {
-      if (cancelled) return;
+      if (!mountedRef.current) return;
       index += 1;
       if (index > fullPromptText.length) {
         clearInterval(id);
@@ -107,47 +114,59 @@ export default function HeroArticleDemo() {
       }
       setTypedLength(index);
     }, TYPING_INTERVAL_MS);
-    return () => {
-      cancelled = true;
-      clearInterval(id);
-    };
-  }, [step, isPaused]);
-
-  useEffect(() => {
-    if (step !== 'input' || isPaused) return;
-    const id = setInterval(() => setCursorVisible((v) => !v), CURSOR_BLINK_MS);
     return () => clearInterval(id);
   }, [step, isPaused]);
 
+  // Cursor blink
   useEffect(() => {
     if (step !== 'input' || isPaused) return;
-    // Wait for typing to complete + buffer time
+    const id = setInterval(() => {
+      if (mountedRef.current) setCursorVisible((v) => !v);
+    }, CURSOR_BLINK_MS);
+    return () => clearInterval(id);
+  }, [step, isPaused]);
+
+  // Transition from input to processing
+  useEffect(() => {
+    if (step !== 'input' || isPaused) return;
     const typingDuration = fullPromptText.length * TYPING_INTERVAL_MS;
-    const bufferTime = 800; // Time to show completed text before transitioning
-    const t = setTimeout(() => setStep('processing'), typingDuration + bufferTime);
+    const bufferTime = 800;
+    const t = setTimeout(() => {
+      if (mountedRef.current) {
+        setProcessingIndex(0);
+        setStep('processing');
+      }
+    }, typingDuration + bufferTime);
     return () => clearTimeout(t);
   }, [step, isPaused]);
 
+  // Processing steps progression
   useEffect(() => {
     if (step !== 'processing' || isPaused) return;
-    if (processingIndex < processingSteps.length) {
-      const t = setTimeout(() => setProcessingIndex((i) => i + 1), 1100);
+    
+    if (processingIndex < processingSteps.length - 1) {
+      const t = setTimeout(() => {
+        if (mountedRef.current) setProcessingIndex((i) => i + 1);
+      }, 1100);
+      return () => clearTimeout(t);
+    } else {
+      const t = setTimeout(() => {
+        if (mountedRef.current) setStep('article');
+      }, 2000);
       return () => clearTimeout(t);
     }
-    const t = setTimeout(() => setStep('article'), 3500);
-    return () => clearTimeout(t);
   }, [step, processingIndex, isPaused]);
 
   // Auto-publish effect
   useEffect(() => {
-    if (step === 'article' && !published && !isPaused) {
-      const timer = setTimeout(() => {
-        handlePublish();
-      }, AUTO_PUBLISH_DELAY);
-      return () => clearTimeout(timer);
-    }
-  }, [step, published, isPaused]);
+    if (step !== 'article' || published || isPaused) return;
+    const timer = setTimeout(() => {
+      if (mountedRef.current) handlePublish();
+    }, AUTO_PUBLISH_DELAY);
+    return () => clearTimeout(timer);
+  }, [step, published, isPaused, handlePublish]);
 
+  // Auto-restart countdown
   useEffect(() => {
     if (step !== 'article' || !published || isPaused) {
       setRestartProgress(0);
@@ -155,41 +174,24 @@ export default function HeroArticleDemo() {
     }
     
     const startTime = Date.now();
-    const interval = setInterval(() => {
+    let animationId: number;
+    
+    const animate = () => {
+      if (!mountedRef.current) return;
       const elapsed = Date.now() - startTime;
       const progress = Math.min((elapsed / AUTO_RESTART_DELAY) * 100, 100);
       setRestartProgress(progress);
       
       if (progress >= 100) {
-        clearInterval(interval);
         handleReplay();
+      } else {
+        animationId = requestAnimationFrame(animate);
       }
-    }, 16);
-
-    return () => clearInterval(interval);
-  }, [step, published, isPaused]);
-
-  const handleReplay = () => {
-    setStep('input');
-    setProcessingIndex(0);
-    setPublished(false);
-    setRestartProgress(0);
-    setIsPaused(false);
-  };
-
-  const handlePublish = () => {
-    setPublished(true);
-    // Wait a tick to ensure button ref is available, then fire confetti from button
-    setTimeout(() => {
-      if (publishButtonRef.current) {
-        fireConfetti(publishButtonRef.current);
-      }
-    }, 0);
-  };
-
-  const togglePause = () => {
-    setIsPaused(!isPaused);
-  };
+    };
+    
+    animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
+  }, [step, published, isPaused, handleReplay]);
 
   return (
     <>
@@ -211,14 +213,9 @@ export default function HeroArticleDemo() {
           background-clip: text;
         }
       `}</style>
-      <motion.div
-        className="relative w-full pb-10 sm:pb-12 lg:by-16"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="relative w-full pb-10 sm:pb-12 lg:pb-16">
         <div className="mx-auto w-full max-w-6xl px-1 sm:px-1">
-          <div className=" flex flex-col rounded-2xl shadow-2xl px-1 py-1 shadow-black/50 border border-neutral-200 bg-stone-50/70 backdrop-blur-sm">
+          <div className="flex flex-col rounded-2xl shadow-2xl px-1 py-1 shadow-black/50 border border-neutral-200 bg-stone-50/70 backdrop-blur-sm">
             {/* Desktop title bar */}
             <div className="relative hidden md:flex h-10 shrink-0 items-center gap-6 px-4 py-2">
               <div className="flex gap-1.5">
@@ -257,11 +254,9 @@ export default function HeroArticleDemo() {
                 </div>
                 {published && restartProgress > 0 && !isPaused && (
                   <div className="w-full h-0.5 bg-neutral-200 rounded-full overflow-hidden">
-                    <motion.div
+                    <div
                       className="h-full bg-gray-600"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${restartProgress}%` }}
-                      transition={{ duration: 0.016, ease: 'linear' }}
+                      style={{ width: `${restartProgress}%` }}
                     />
                   </div>
                 )}
@@ -276,7 +271,6 @@ export default function HeroArticleDemo() {
                 backgroundImage: "linear-gradient(rgb(255 255 255 / 59%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                backgroundAttachment: "fixed"
               }}
             >
               <div className="relative flex items-center justify-center h-full p-8 sm:p-4 lg:p-6">
@@ -284,25 +278,18 @@ export default function HeroArticleDemo() {
                   <AnimatePresence mode="wait">
                     {/* Step 1: Input card */}
                     {step === 'input' && (
-                      <motion.div
+                      <div
                         key="input"
-                        {...stepTransition}
                         className="mx-auto w-full max-w-5xl overflow-hidden rounded-2xl bg-black/30 p-1.5 ring-2 ring-white/10 backdrop-blur-lg"
                       >
-                        <motion.div
-                          className="flex items-center gap-3 px-5 py-3.5"
-                          variants={containerVariants}
-                          initial="hidden"
-                          animate="visible"
-                        >
-                          <motion.div variants={itemVariants} className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-blue-500">
+                        <div className="flex items-center gap-3 px-5 py-3.5">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-blue-500">
                             <img src="https://dazzling-cat.netlify.app/wonderbadge.png" alt="Wonder" className="h-full w-full object-contain" />
-                          </motion.div>
-                          <motion.div variants={itemVariants} className="min-w-0 flex-1">
+                          </div>
+                          <div className="min-w-0 flex-1">
                             <h3 className="text-left text-base font-medium text-neutral-100">What can I help with?</h3>
-                          </motion.div>
-                          <motion.button
-                            variants={itemVariants}
+                          </div>
+                          <button
                             type="button"
                             className="ml-auto flex cursor-pointer items-center rounded-lg border border-dashed border-neutral-400/50 py-1 pl-2 pr-1 bg-black/50"
                           >
@@ -316,14 +303,9 @@ export default function HeroArticleDemo() {
                             <div className="-ml-1 flex size-5 items-center justify-center rounded bg-neutral-100 ring ring-gray-200/20">
                               <Plus className="text-gray-400" size={14} strokeWidth={1.5} />
                             </div>
-                          </motion.button>
-                        </motion.div>
-                        <motion.div
-                          className="rounded-xl bg-white"
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.2, duration: 0.3 }}
-                        >
+                          </button>
+                        </div>
+                        <div className="rounded-xl bg-white">
                           <div
                             className="w-full border-none bg-transparent px-6 py-5 text-base text-neutral-700 leading-relaxed"
                             style={{ height: '140px', overflow: 'hidden' }}
@@ -337,12 +319,7 @@ export default function HeroArticleDemo() {
                               aria-hidden
                             />
                           </div>
-                          <motion.div
-                            className="flex justify-between border-t border-neutral-200 px-6 pt-5 pb-6"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.35 }}
-                          >
+                          <div className="flex justify-between border-t border-neutral-200 px-6 pt-5 pb-6">
                             <div className="flex items-center gap-2">
                               <button type="button" disabled className="inline-flex size-10 cursor-not-allowed items-center justify-center rounded-full bg-neutral-200 text-neutral-600 opacity-50" aria-label="Attach">
                                 <Paperclip size={20} strokeWidth={1.5} />
@@ -350,7 +327,10 @@ export default function HeroArticleDemo() {
                             </div>
                             <motion.button
                               type="button"
-                              onClick={() => setStep('processing')}
+                              onClick={() => {
+                                setProcessingIndex(0);
+                                setStep('processing');
+                              }}
                               className="relative flex cursor-pointer items-center gap-2 rounded-[10px] border border-white bg-orange-300 p-0.5 font-bold ring-2 ring-black/8 text-gray-600"
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
@@ -360,75 +340,69 @@ export default function HeroArticleDemo() {
                                 Write my docs / try it!
                               </span>
                             </motion.button>
-                          </motion.div>
-                        </motion.div>
-                      </motion.div>
+                          </div>
+                        </div>
+                      </div>
                     )}
 
-                    {/* Step 2: Processing */}
+                    {/* Step 2: Processing - fixed to show items reliably */}
                     {step === 'processing' && (
-                      <motion.div
+                      <div
                         key="processing"
-                        {...stepTransition}
                         className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-white/40 p-1.5 ring-2 ring-black/10 backdrop-blur-lg"
                       >
                         <div className="space-y-2 rounded-xl bg-white px-5 py-5" style={{ height: '360px' }}>
-                          {processingSteps.slice(0, processingIndex + 1).map((item) => (
-                            <motion.div
-                              key={item.label}
-                              layout
-                              initial={{ opacity: 0, x: -12 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ type: 'spring', stiffness: 220, damping: 28 }}
-                              className="flex items-center gap-2 rounded-md py-1 px-2"
-                            >
-                              <div className="flex items-center justify-center">
-                                {item.icon === 'search' && (
-                                  <Search className="text-gray-700" size={16} strokeWidth={1.5} opacity={0.4} />
-                                )}
-                                {item.icon === 'intercom' && (
-                                  <img src="https://cdn.worldvectorlogo.com/logos/intercom-2.svg" alt="" className="size-5 rounded-sm bg-white object-contain p-0.5 ring ring-gray-200/20" />
-                                )}
-                                {item.icon === 'github' && (
-                                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" className="size-5 rounded-sm bg-white object-contain p-0.5 ring ring-gray-200/20" />
-                                )}
-                                {item.icon === 'screenshot' && (
-                                  <Camera className="text-gray-700" size={16} strokeWidth={1.5} />
-                                )}
-                                {item.icon === 'structure' && (
-                                  <FileEdit className="text-gray-700" size={16} strokeWidth={1.5} />
-                                )}
-                                {item.icon === 'link' && (
-                                  <Link2 className="text-gray-700" size={16} strokeWidth={1.5} />
-                                )}
-                                {item.icon === 'writing' && (
-                                  <Pencil className="text-gray-700" size={16} strokeWidth={1.5} />
-                                )}
-                              </div>
-                              <div className="min-w-0 flex-1">
-                                <span className={`text-base text-neutral-600 ${item.shimmer ? 'loading-shimmer' : ''}`}>
-                                  {item.label}
-                                </span>
-                              </div>
-                            </motion.div>
+                          {processingSteps.map((item, index) => (
+                            index <= processingIndex && (
+                              <motion.div
+                                key={item.label}
+                                initial={{ opacity: 0, x: -12 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ type: 'spring', stiffness: 220, damping: 28 }}
+                                className="flex items-center gap-2 rounded-md py-1 px-2"
+                              >
+                                <div className="flex items-center justify-center">
+                                  {item.icon === 'search' && (
+                                    <Search className="text-gray-700" size={16} strokeWidth={1.5} opacity={0.4} />
+                                  )}
+                                  {item.icon === 'intercom' && (
+                                    <img src="https://cdn.worldvectorlogo.com/logos/intercom-2.svg" alt="" className="size-5 rounded-sm bg-white object-contain p-0.5 ring ring-gray-200/20" />
+                                  )}
+                                  {item.icon === 'github' && (
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" className="size-5 rounded-sm bg-white object-contain p-0.5 ring ring-gray-200/20" />
+                                  )}
+                                  {item.icon === 'screenshot' && (
+                                    <Camera className="text-gray-700" size={16} strokeWidth={1.5} />
+                                  )}
+                                  {item.icon === 'structure' && (
+                                    <FileEdit className="text-gray-700" size={16} strokeWidth={1.5} />
+                                  )}
+                                  {item.icon === 'link' && (
+                                    <Link2 className="text-gray-700" size={16} strokeWidth={1.5} />
+                                  )}
+                                  {item.icon === 'writing' && (
+                                    <Pencil className="text-gray-700" size={16} strokeWidth={1.5} />
+                                  )}
+                                </div>
+                                <div className="min-w-0 flex-1">
+                                  <span className={`text-base text-neutral-600 ${item.shimmer ? 'loading-shimmer' : ''}`}>
+                                    {item.label}
+                                  </span>
+                                </div>
+                              </motion.div>
+                            )
                           ))}
                         </div>
-                      </motion.div>
+                      </div>
                     )}
 
                     {/* Step 3: Article card */}
                     {step === 'article' && (
-                      <motion.div
+                      <div
                         key="article"
-                        {...stepTransition}
                         className="mx-auto w-full max-w-2xl overflow-hidden rounded-2xl bg-stone-200/40 p-1.5 ring-2 ring-black/10 backdrop-blur-lg"
                       >
-                        <motion.div
-                          className="flex items-center gap-3 rounded-t-xl border border-neutral-200 bg-white px-5 py-3.5"
-                          initial={{ opacity: 0, y: -4 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
+                        <div className="flex items-center gap-3 rounded-t-xl border border-neutral-200 bg-white px-5 py-3.5">
                           <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded bg-blue-500">
                             <img src="https://dazzling-cat.netlify.app/wonderbadge.png" alt="Wonder" className="h-full w-full object-contain" />
                           </div>
@@ -457,30 +431,21 @@ export default function HeroArticleDemo() {
                               </span>
                             </motion.button>
                           )}
-                        </motion.div>
-                        <motion.div
+                        </div>
+                        <div
                           className="overflow-y-auto rounded-b-xl bg-white px-6 py-6 sm:px-8 sm:py-7"
                           style={{ height: '440px' }}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 0.15, duration: 0.4 }}
                         >
-                          <motion.div
-                            className="mx-auto max-w-4xl"
-                            variants={containerVariants}
-                            initial="hidden"
-                            animate="visible"
-                            transition={{ staggerChildren: 0.1, delayChildren: 0.18 }}
-                          >
-                            <motion.h2 variants={itemVariants} className="mb-3 text-xl font-semibold text-neutral-800 sm:text-2xl">
+                          <div className="mx-auto max-w-4xl">
+                            <h2 className="mb-3 text-xl font-semibold text-neutral-800 sm:text-2xl">
                               How to export your Wonder help articles
-                            </motion.h2>
-                            <motion.p variants={itemVariants} className="mb-3 text-sm leading-relaxed text-neutral-600">
+                            </h2>
+                            <p className="mb-3 text-sm leading-relaxed text-neutral-600">
                               Wonder lets you sync your help center from Notion. This guide walks you through
                               exporting article data, backing up your content, and using the API for custom
                               workflows.
-                            </motion.p>
-                            <motion.div variants={itemVariants} className="mb-3 flex gap-2.5 rounded-lg border border-sky-600/20 bg-sky-600/10 p-3">
+                            </p>
+                            <div className="mb-3 flex gap-2.5 rounded-lg border border-sky-600/20 bg-sky-600/10 p-3">
                               <div className="mt-0.5 flex-none text-sky-700">
                                 <Info size={18} strokeWidth={1.5} />
                               </div>
@@ -490,29 +455,29 @@ export default function HeroArticleDemo() {
                                   <a className="font-medium underline" href="https://wonderdesk.ai/help">API docs</a>.
                                 </p>
                               </div>
-                            </motion.div>
-                            <motion.h3 variants={itemVariants} className="mt-4 mb-2 text-lg font-semibold text-neutral-800">Getting started</motion.h3>
-                            <motion.p variants={itemVariants} className="mb-3 text-sm leading-relaxed text-neutral-600">
+                            </div>
+                            <h3 className="mt-4 mb-2 text-lg font-semibold text-neutral-800">Getting started</h3>
+                            <p className="mb-3 text-sm leading-relaxed text-neutral-600">
                               Make sure your Notion workspace is connected to Wonder. Only workspace admins can
                               export data.
-                            </motion.p>
-                            <motion.h3 variants={itemVariants} className="mt-4 mb-2 text-lg font-semibold text-neutral-800">Export steps</motion.h3>
-                            <motion.ol variants={itemVariants} className="mb-3 list-decimal space-y-1.5 pl-5 text-sm text-neutral-600">
+                            </p>
+                            <h3 className="mt-4 mb-2 text-lg font-semibold text-neutral-800">Export steps</h3>
+                            <ol className="mb-3 list-decimal space-y-1.5 pl-5 text-sm text-neutral-600">
                               <li>Open your Wonder dashboard and go to <span className="font-medium text-neutral-800">Settings</span></li>
                               <li>Select <span className="font-medium text-neutral-800">Export</span>, choose <span className="font-medium text-neutral-800">CSV</span> or <span className="font-medium text-neutral-800">JSON</span></li>
                               <li>Click <span className="font-medium text-neutral-800">Download</span> to get your file</li>
-                            </motion.ol>
-                            <motion.div variants={itemVariants} className="mb-3 flex gap-2.5 rounded-lg border border-amber-600/20 bg-amber-600/10 p-3">
+                            </ol>
+                            <div className="mb-3 flex gap-2.5 rounded-lg border border-amber-600/20 bg-amber-600/10 p-3">
                               <div className="mt-0.5 flex-none text-amber-700">
                                 <AlertCircle size={18} strokeWidth={1.5} />
                               </div>
                               <div className="flex-grow text-sm">
                                 <p className="text-amber-700">Your live help center always reflects your current Notion content.</p>
                               </div>
-                            </motion.div>
-                          </motion.div>
-                        </motion.div>
-                      </motion.div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     )}
                   </AnimatePresence>
                 </div>
@@ -520,7 +485,7 @@ export default function HeroArticleDemo() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 }
