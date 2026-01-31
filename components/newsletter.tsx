@@ -82,7 +82,7 @@ export default function Newsletter() {
   }, [words.length]); // Added dependency array
 
   return (
-    <section>
+    <section className='bg-white'>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 newsletter-section">
         <div className="pb-12 md:pb-20">
 

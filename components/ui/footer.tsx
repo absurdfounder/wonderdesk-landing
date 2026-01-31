@@ -26,7 +26,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="border-neutral-200 px-4 sm:px-6 md:px-8">
+    <footer className="border-neutral-200 px-4 sm:px-6 md:px-8 bg-white">
       <div className="mx-auto max-w-7xl py-6 sm:py-8 md:py-12">
         <div className="flex flex-col gap-6 sm:gap-8 md:flex-row md:gap-12">
           {/* Brand Section */}

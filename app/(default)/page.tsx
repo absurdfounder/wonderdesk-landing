@@ -112,34 +112,36 @@ export default function Home() {
 
 
       <NotionToWebsite />
-      
-      
+
+
       {/* 
       <MarketplaceType />
       <Testimonials />
-            <ModalVideo />
+      <ModalVideo />
       <AIAgentSection />
-
       <OldWays />
-                  <SimpleAnalyticsDashboard />
-                        <GetStartedSection />
-
-
-
+      <SimpleAnalyticsDashboard />
+      <GetStartedSection />
 
 */}
-            <ModalVideo />
+      <ModalVideo />
 
-            <CustomerStorySection />
+      <CustomerStorySection />
 
 
-            <FeaturesBlocks />
-            <OldWays />
+      <FeaturesBlocks />
+      <OldWays />
 
       <HowItWorksSection />
       <CustomerStorySection2 />
 
       <Showcases />
+
+      <GetStartedSection />
+
+
+      <AIAgentSection />
+
     </>
   )
 }

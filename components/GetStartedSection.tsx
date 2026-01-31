@@ -63,10 +63,10 @@ const integrations = [
 
 export default function GetStartedSection() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 divide-x divide-neutral-800 lg:grid-cols-2">
+    <div className="px-4 sm:px-6 lg:px-8 border border-gray-800 bg-white">
+      <div className="grid grid-cols-1 divide-x divide-neutral-800 lg:grid-cols-2 max-w-7xl m-auto">
         {/* First Section: Get started in minutes */}
-        <section className="border-b border-neutral-200 bg-white overflow-hidden">
+        <section className="overflow-hidden">
           <div className="pr-0 lg:pr-8">
             <div className="pt-12 pb-12 sm:pt-20">
               <span className="font-silkscreen text-lg text-blue-600">Wonder-hosted</span>
@@ -95,7 +95,7 @@ export default function GetStartedSection() {
         </section>
 
         {/* Second Section: Zero-downtime migration */}
-        <section className="border-b border-neutral-200 bg-white overflow-hidden">
+        <section className="overflow-hidden">
           <div className="pl-0 lg:pl-8">
             <div className="pt-12 pb-12 sm:pt-20">
               <span className="font-silkscreen text-lg text-blue-600">ONE-click migration</span>
