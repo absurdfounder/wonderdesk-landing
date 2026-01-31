@@ -83,7 +83,7 @@ export default function Newsletter() {
 
   return (
     <section className='bg-white'>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 newsletter-section">
+      <div className="max-w-7xl mx-auto px-1 sm:px-6 lg:px-1 newsletter-section">
         <div className="pb-12 md:pb-20">
 
           {/* CTA box */}
