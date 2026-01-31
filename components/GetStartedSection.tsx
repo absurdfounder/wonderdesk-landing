@@ -125,7 +125,7 @@ export default function GetStartedSection() {
                 ))}
                 <a
                   className="rounded-md bg-stone-100 p-2 px-3 text-neutral-600 ring ring-stone-200 hover:bg-stone-200 transition-colors shrink-0 whitespace-nowrap"
-                  href="/integrations"
+                  href="/integration"
                 >
                   View all integrations →
                 </a>

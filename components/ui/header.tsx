@@ -214,7 +214,7 @@ export default function Header() {
                                 onClick={() => setDropdownOpen(false)}
                               />
                               <DropdownLink
-                                href="/integrations"
+                                href="/integration"
                                 iconColor="text-blue-500"
                                 bgColor="bg-blue-50"
                                 icon={Zap}

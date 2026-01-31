@@ -3297,6 +3297,1448 @@
           }
         }
       ]
+    },
+    {
+      "id": "helpdocs-io",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Helpdocs.io",
+        "provider": "WonderSites",
+        "description": "Wonder is the modern, flexible alternative to Helpdocs.io for creating beautiful documentation and help centers.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "mintlify",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Mintlify",
+        "provider": "WonderSites",
+        "description": "Wonder offers a powerful alternative to Mintlify for building modern documentation sites with ease.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "zendesk-help-center",
+      "product": {
+        "logo": "https://static-00.iconduck.com/assets.00/zendesk-icon-2048x2048-q18vy4hu.png",
+        "name": "Zendesk Help Center",
+        "provider": "WonderSites",
+        "description": "Wonder is a comprehensive alternative to Zendesk Help Center for customer support and knowledge management.",
+        "heroimage": "https://static-00.iconduck.com/assets.00/zendesk-icon-2048x2048-q18vy4hu.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "intercom-help-center",
+      "product": {
+        "logo": "https://dazzling-cat.netlify.app/integration_icons/intercom.png",
+        "name": "Intercom Help Center",
+        "provider": "WonderSites",
+        "description": "Wonder provides a robust alternative to Intercom Help Center for customer support and engagement.",
+        "heroimage": "https://dazzling-cat.netlify.app/integration_icons/intercom.png"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "docusaurus",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Docusaurus",
+        "provider": "WonderSites",
+        "description": "Wonder is a simpler, more intuitive alternative to Docusaurus for building documentation websites.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "gitbook",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "GitBook",
+        "provider": "WonderSites",
+        "description": "Wonder offers a modern alternative to GitBook for creating beautiful documentation and knowledge bases.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "document360",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Document360",
+        "provider": "WonderSites",
+        "description": "Wonder is a flexible alternative to Document360 for creating comprehensive knowledge bases and documentation.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "proprofs-kb",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "ProProfs KB",
+        "provider": "WonderSites",
+        "description": "Wonder is a modern alternative to ProProfs KB for building knowledge bases and help centers.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "zoho-desk",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Zoho Desk",
+        "provider": "WonderSites",
+        "description": "Wonder is a comprehensive alternative to Zoho Desk for customer support and helpdesk management.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "help-scout",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Help Scout",
+        "provider": "WonderSites",
+        "description": "Wonder is a modern alternative to Help Scout for customer support and helpdesk solutions.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "helpjuice",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Helpjuice",
+        "provider": "WonderSites",
+        "description": "Wonder is a powerful alternative to Helpjuice for creating knowledge bases and help centers.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "knowledgeowl",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "KnowledgeOwl",
+        "provider": "WonderSites",
+        "description": "Wonder is a modern alternative to KnowledgeOwl for building knowledge bases and documentation sites.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "archbee",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Archbee",
+        "provider": "WonderSites",
+        "description": "Wonder is a flexible alternative to Archbee for creating documentation and knowledge bases.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "stonly",
+      "product": {
+        "logo": "https://via.placeholder.com/100",
+        "name": "Stonly",
+        "provider": "WonderSites",
+        "description": "Wonder is a comprehensive alternative to Stonly for creating interactive guides and help centers.",
+        "heroimage": "https://via.placeholder.com/400"
+      },
+      "comparison_table": [
+        {
+          "feature": "Beginner Friendly",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Ease of Notion",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Built-in SEO",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Custom domain",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Multiple Website Support",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "AI Support Agent",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Collaboration",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Edit on Mobile",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Blog CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Helpdesk CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "marketplace CMS",
+          "feature_value": {
+            "Item": false,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Company Wiki CMS",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        },
+        {
+          "feature": "Integrated analytics",
+          "feature_value": {
+            "Item": true,
+            "Notion": true
+          }
+        }
+      ]
     }
     
   ]

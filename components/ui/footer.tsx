@@ -316,7 +316,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/helpdocs-io"
+                      href="/compare-against/helpdocs-io"
                     >
                       <span className="break-words">Helpdocs.io alternative</span>
                     </Link>
@@ -324,7 +324,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/mintlify"
+                      href="/compare-against/mintlify"
                     >
                       <span className="break-words">Mintlify alternative</span>
                     </Link>
@@ -332,7 +332,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/zendesk-help-center"
+                      href="/compare-against/zendesk-help-center"
                     >
                       <span className="break-words">Zendesk Help Center alternative</span>
                     </Link>
@@ -340,7 +340,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/intercom-help-center"
+                      href="/compare-against/intercom-help-center"
                     >
                       <span className="break-words">Intercom Help Center alternative</span>
                     </Link>
@@ -348,7 +348,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/docusaurus"
+                      href="/compare-against/docusaurus"
                     >
                       <span className="break-words">Docusaurus alternative</span>
                     </Link>
@@ -356,7 +356,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/gitbook"
+                      href="/compare-against/gitbook"
                     >
                       <span className="break-words">GitBook alternative</span>
                     </Link>
@@ -364,7 +364,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/document360"
+                      href="/compare-against/document360"
                     >
                       <span className="break-words">Document360 alternative</span>
                     </Link>
@@ -372,7 +372,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/proprofs-kb"
+                      href="/compare-against/proprofs-kb"
                     >
                       <span className="break-words">ProProfs KB alternative</span>
                     </Link>
@@ -380,7 +380,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/zoho-desk"
+                      href="/compare-against/zoho-desk"
                     >
                       <span className="break-words">Zoho Desk alternative</span>
                     </Link>
@@ -388,7 +388,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/help-scout"
+                      href="/compare-against/help-scout"
                     >
                       <span className="break-words">Help Scout alternative</span>
                     </Link>
@@ -396,7 +396,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/helpjuice"
+                      href="/compare-against/helpjuice"
                     >
                       <span className="break-words">Helpjuice alternative</span>
                     </Link>
@@ -404,7 +404,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/knowledgeowl"
+                      href="/compare-against/knowledgeowl"
                     >
                       <span className="break-words">KnowledgeOwl alternative</span>
                     </Link>
@@ -412,7 +412,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/archbee"
+                      href="/compare-against/archbee"
                     >
                       <span className="break-words">Archbee alternative</span>
                     </Link>
@@ -420,7 +420,7 @@ export default function Footer() {
                   <li>
                     <Link
                       className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
-                      href="/alternatives/stonly"
+                      href="/compare-against/stonly"
                     >
                       <span className="break-words">Stonly alternative</span>
                     </Link>

@@ -156,7 +156,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                     <span className="reveal reveal__hello-2">I&apos;m</span>{" "}
                     <span className="reveal reveal__hello-3">Wonder.</span>
                   </div>
-                  <span className="block reveal reveal__usp mt-1 sm:mt-2">
+                  <span className="block reveal reveal__usp mt-1 sm:mt-2 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                     Automated way to keep your <b>blog</b> & <b>help center</b> <span style={{ color: '#009fbc' }}>up to date.</span>
                   </span>
                 </h1>

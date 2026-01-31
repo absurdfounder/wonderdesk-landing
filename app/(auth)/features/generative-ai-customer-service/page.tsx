@@ -1,0 +1,92 @@
+import React from "react";
+import Link from "next/link";
+import Header from "@/components/ui/header";
+import FeaturesBlocks from "@/components/FeaturesBlocks";
+import Testimonials from "@/components/testimonials";
+import ModalVideo from "@/components/FullModalVideo";
+
+export const metadata = {
+    title: "AI Answers - Help desk chatbot for support | Wonder",
+    description:
+        "AI-powered help desk chatbot for customer support. Reduce support tickets and provide instant answers with Wonder's AI customer service.",
+    alternates: {
+        canonical: "https://wonderdesk.ai/features/generative-ai-customer-service",
+    },
+    openGraph: {
+        images: [
+            {
+                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
+                width: 1200,
+                height: 630,
+                alt: "AI Answers - Help desk chatbot for support",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        images: [
+            {
+                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
+                alt: "AI Answers - Help desk chatbot for support",
+            },
+        ],
+    },
+};
+
+export default function GenerativeAICustomerServicePage() {
+    return (
+        <div>
+            <section 
+                style={{
+                    backgroundImage: "linear-gradient(rgb(255 255 255 / 59%), rgba(255, 255, 255, 0)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundAttachment: "fixed"
+                }}
+            >
+                <Header />
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div className="pt-12 pb-6 md:pt-4 md:pb-6">
+                        <div className="max-w-4xl py-6 mx-auto lg:py-6">
+                            <div className="text-center">
+                                <div className="max-w-screen-xl px-4 mx-auto sm:px-6 mb-4">
+                                    <div className="text-center px-4 sm:px-6 lg:px-8">
+                                        <h1 className="font-funneldisplay text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tighter tracking-tighter mb-4 aos-init aos-animate">
+                                            <span className="text-3xl sm:text-4xl md:text-5xl relative">
+                                                Help desk chatbot
+                                            </span>
+                                            <br className="block" />
+                                            <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">for support</span>
+                                        </h1>
+                                        <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
+                                            Reduce support tickets and provide instant answers. Wonder's AI chatbot understands your documentation and helps customers find solutions 24/7.
+                                        </p>
+                                        <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
+                                            <div className="mt-3 sm:mt-0">
+                                                <Link href="https://app.wonderdesk.ai" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-md shadow bg-orange-700 sm:w-auto">
+                                                    <strong className="mr-1">Get Started →</strong>
+                                                </Link>
+                                                <p className="mt-3 text-sm text-slate-700"><strong>Free</strong> 3 day trial. Free Design Service.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ModalVideo />
+                    </div>
+                </div>
+            </section>
+
+            <FeaturesBlocks />
+            <Testimonials />
+        </div>
+    );
+}
