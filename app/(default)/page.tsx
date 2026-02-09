@@ -1,8 +1,7 @@
 export const metadata = {
   metadataBase: new URL('https://wonderdesk.ai'),
   title: 'Wonderdesk : AI Help Center, Blog, Changelog & Docs That Stay Up to Date',
-  description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.'
-',
+description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.',
   openGraph: {
     images: [
       {

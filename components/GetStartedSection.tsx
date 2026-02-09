@@ -107,33 +107,37 @@ export default function GetStartedSection() {
               </p>
             </div>
             <div className="pb-20">
+
               <div className="flex flex-wrap gap-2">
                 {integrations.map((integration) => (
                   <div
                     key={integration.name}
-                    className="flex items-center gap-2 rounded-lg bg-stone-50 p-2 ring ring-stone-200 shrink-0"
+                    className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1.5 shadow-sm transition-colors hover:bg-neutral-50"
                   >
                     <Image
                       src={integration.logo}
                       alt={integration.name}
-                      width={24}
-                      height={24}
-                      className="size-6 rounded bg-white object-cover ring ring-neutral-200 shrink-0"
+                      width={20}
+                      height={20}
+                      className="size-5 shrink-0 rounded object-cover"
                     />
-                    <span className="text-neutral-600 whitespace-nowrap">{integration.name}</span>
+                    <span className="text-sm font-medium text-neutral-800 whitespace-nowrap">
+                      {integration.name}
+                    </span>
                   </div>
                 ))}
-                <a
-                  className="rounded-md bg-stone-100 p-2 px-3 text-neutral-600 ring ring-stone-200 hover:bg-stone-200 transition-colors shrink-0 whitespace-nowrap"
-                  href="/integration"
-                >
-                  View all integrations →
-                </a>
-              </div>
+
+                <a className="flex items-center rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm font-medium text-neutral-600 shadow-sm transition-colors hover:bg-neutral-50 hover:text-neutral-900 whitespace-nowrap"
+                href="/integration">
+                View all integrations →
+              </a>
             </div>
+
+
           </div>
-        </section>
       </div>
-    </div>
+    </section>
+      </div >
+    </div >
   );
 }

@@ -30,7 +30,7 @@ export default function FeaturesBlocks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-12">
         <div className="text-start">
           <h2 className="font-funneldisplay text-2xl sm:text-3xl md:text-4xl mb-4 font-normal text-slate-800">
-          Get discovered by <b>Users</b> and <b>AI assistants</b>           
+          Get found on <b>Google</b>. Cited by <b>ChatGPT</b>.         
           </h2>
           <p className="text-xl text-slate-600">
             Busy teams need a simpler way to run marketing and support. Wonder automates both so you can focus on what matters.
