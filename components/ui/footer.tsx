@@ -436,7 +436,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200 max-w-9xl">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200 max-w-7xl m-auto">
         <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1 flex flex-wrap gap-4">
           © Boring Sites LLC. All rights reserved.{' '}
           <Link href="/privacy" className="hover:text-slate-900">Privacy</Link>
@@ -467,40 +467,7 @@ export default function Footer() {
               <span className="ml-2 hidden md:inline">Track my commits</span>
             </a>
           </li>
-          <li>
-            <a
-              href="https://bags.fm/FpTvUc2MuoeegL8Tw1QjY8wwBACv7sg5u7gN3yG2BAGS"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex justify-center items-center text-slate-600 hover:text-slate-900 bg-white hover:bg-white-100 rounded-md shadow transition duration-150 ease-in-out border px-3 py-1 md:px-4 md:py-1 text-sm"
-            >
-              View <b className="px-2">$WONDER</b> on
-              <Image
-                src="https://bags.fm/assets/images/bags-icon.png"
-                alt="Bags Logo"
-                width={24}
-                height={24}
-                className="mx-1 sm:mx-2 w-5 h-5 sm:w-6 sm:h-6 object-contain brightness-0 p-0.5"
-                unoptimized
-              />
-              Bags
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
-              >
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </li>
+
           <li>
             <a
               href="https://www.notion.com/integrations/wonder-sites"
