@@ -324,7 +324,7 @@ function DropdownLink({ href, icon: Icon, iconColor, bgColor, title, description
       className="flex items-center gap-3 rounded-lg px-3 py-3 transition-all duration-200 hover:bg-neutral-50 group"
     >
       <div className={`flex-shrink-0 ${iconColor} ${bgColor} transition-all duration-200 group-hover:scale-110 p-2.5 rounded-lg`}>
-        <Icon className="w-[18px] h-[18px]" strokeWidth={2} />
+        <Icon className="w-[18px] h-[18px]" />
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-sm font-medium text-neutral-800 group-hover:text-[#009fbc] transition-colors duration-200 mb-0.5">
