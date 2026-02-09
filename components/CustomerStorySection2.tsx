@@ -27,7 +27,7 @@ export default function CustomerStorySection2() {
       <div className="relative overflow-hidden bg-stone-100">
         <div className="relative aspect-[5/3]">
           <Image
-            src="https://pbs.twimg.com/profile_images/1773282762708881408/RzahtNBz_400x400.jpg"
+            src="https://dazzling-cat.netlify.app/AlexB-Cust.png"
             alt="Emmet Cooke"
             fill
             className="object-cover"

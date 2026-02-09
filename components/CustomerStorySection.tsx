@@ -27,7 +27,7 @@ export default function CustomerStorySection() {
       <div className="relative overflow-hidden bg-stone-100">
         <div className="relative aspect-[5/3]">
           <Image
-            src="https://cdn.senja.io/public/avatar/f25a441d-39c2-40ca-af8c-c58d68cc8cbf_tristan%20roth%20portrait%20-%20Copie.jpg"
+            src="https://dazzling-cat.netlify.app/TimBl-Cust.png"
             alt="Tristan Roth"
             fill
             className="object-cover"
