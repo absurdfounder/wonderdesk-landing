@@ -41,30 +41,30 @@ const features = [
 const integrations = [
   {
     name: 'Intercom',
-    logo: 'https://static.ferndesk.com/assets/logos/intercom.png',
+    logo: 'https://dazzling-cat.netlify.app/intercom.png',
   },
   {
     name: 'Zendesk',
-    logo: 'https://static.ferndesk.com/assets/logos/zendesk.jpg',
+    logo: 'https://dazzling-cat.netlify.app/zendesk.jpg',
   },
   {
     name: 'Crisp',
-    logo: 'https://static.ferndesk.com/assets/logos/crisp.png',
+    logo: 'https://dazzling-cat.netlify.app/crisp.png',
   },
   {
     name: 'Help Scout',
-    logo: 'https://static.ferndesk.com/assets/logos/helpscout.png',
+    logo: 'https://dazzling-cat.netlify.app/helpscout.png',
   },
   {
     name: 'Fernand',
-    logo: 'https://static.ferndesk.com/assets/logos/fernand.png',
+    logo: 'https://dazzling-cat.netlify.app/fernand.png',
   },
 ];
 
 export default function GetStartedSection() {
   return (
-    <div className="px-4 sm:px-6 lg:px-8 border border-gray-800 bg-white">
-      <div className="grid grid-cols-1 divide-x divide-neutral-800 lg:grid-cols-2 max-w-7xl m-auto">
+    <div className="px-4 sm:px-6 lg:px-8 border border-gray-200 bg-white">
+      <div className="grid grid-cols-1 divide-x divide-neutral-200 lg:grid-cols-2 max-w-7xl m-auto">
         {/* First Section: Get started in minutes */}
         <section className="overflow-hidden">
           <div className="pr-0 lg:pr-8">

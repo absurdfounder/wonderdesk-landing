@@ -1,7 +1,8 @@
 export const metadata = {
   metadataBase: new URL('https://wonderdesk.ai'),
-  title: 'Wonder: Notion to Blog, Helpdesk & Directory Sites (NoCode & SEO)',
-  description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
+  title: 'Wonderdesk : AI Help Center, Blog, Changelog & Docs That Stay Up to Date',
+  description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.'
+',
   openGraph: {
     images: [
       {
@@ -76,21 +77,21 @@ export default function Home() {
               Trusted by leading product-led companies
             </span>
             <div className="mx-auto flex flex-wrap place-items-center items-center justify-center gap-8">
-              <div className="h-12 max-h-12 w-32 transition-all duration-300 hover:scale-110">
+              <div className="h-6 max-h-12 w-32 transition-all duration-300 hover:scale-110">
                 <img
                   className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                   src="https://dazzling-cat.netlify.app/logos/zeroslistlogo.png"
                   alt="Transistor"
                 />
               </div>
-              <div className="h-12 max-h-12 w-32 transition-all duration-300 hover:scale-110">
+              <div className="h-8 max-h-12 w-32 transition-all duration-300 hover:scale-110">
                 <img
                   className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                   src="https://dazzling-cat.netlify.app/logos/marketingxlogo.png"
                   alt="Gummy Search"
                 />
               </div>
-              <div className="h-12 max-h-12 w-32 transition-all duration-300 hover:scale-110">
+              <div className="h-7 max-h-12 w-32 transition-all duration-300 hover:scale-110">
                 <img
                   className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                   src="https://dazzling-cat.netlify.app/logos/dealflowlogo.png"

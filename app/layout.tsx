@@ -36,15 +36,15 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://wonderdesk.ai'),
-  title: 'Wonder: Notion to Blog, Helpdesk & Directory Sites (NoCode & SEO)',
-  description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
+  title: 'Wonderdesk : AI Help Center, Blog, Changelog & Docs That Stay Up to Date',
+  description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.',
   alternates: {
     canonical: 'https://wonderdesk.ai',
   },
-  openGraph: {
-    title: 'Wonder: Notion to Blog, Helpdesk & Directory Sites (NoCode & SEO)',
-    description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
-    url: 'https://wonderdesk.ai',
+openGraph: {
+  title: 'Wonderdesk : AI Help Center, Blog, Changelog & Docs That Stay Up to Date',
+  description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.',
+  url: 'https://wonderdesk.ai',
     siteName: 'Wonder',
     images: [
       {
@@ -57,11 +57,11 @@ export const metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Wonder: Notion to Blog, Helpdesk & Directory Sites (NoCode & SEO)',
-    description: 'Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!',
-    images: [
+twitter: {
+  card: 'summary_large_image',
+  title: 'Wonderdesk : AI Help Center, Blog, Changelog & Docs That Stay Up to Date',
+  description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.',
+  images: [
       {
         url: 'https://dazzling-cat.netlify.app/WonderSites_socialshare.png',
         alt: 'Get a Marketplace with Notion',

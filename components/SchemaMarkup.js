@@ -33,7 +33,8 @@ const SchemaMarkup = () => {
     "name": "Wonder Sites",
     "applicationCategory": "WebApplication",
     "operatingSystem": "All",
-    "description": "Create superfast websites with Notion as your CMS. Go from Notion to Blog, Helpdesk, Documentation, Marketplace or Directory in minutes. Build unlimited sites!",
+    "description": "Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.
+",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
