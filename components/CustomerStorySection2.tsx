@@ -20,15 +20,15 @@ export default function CustomerStorySection2() {
           &ldquo;We&apos;re saving at least 20 hours/mo which frees me up to work on more impactful tasks.&rdquo;
         </blockquote>
         <div className="flex flex-col gap-1">
-          <div className="font-medium text-neutral-800">Emmet Cooke</div>
-          <div className="text-sm text-neutral-500">Founder, Pixelflow</div>
+          <div className="font-medium text-neutral-800">Alex Moreno</div>
+          <div className="text-sm text-neutral-500">Founder, HelpNest</div>
         </div>
       </div>
       <div className="relative overflow-hidden bg-stone-100">
         <div className="relative aspect-[5/3]">
           <Image
             src="https://dazzling-cat.netlify.app/AlexB-Cust.png"
-            alt="Emmet Cooke"
+            alt="Alex Moreno"
             fill
             className="object-cover"
             style={{

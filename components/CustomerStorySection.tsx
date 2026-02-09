@@ -20,15 +20,15 @@ export default function CustomerStorySection() {
           &ldquo;Wonder is by far the best support product I have ever used.&rdquo;
         </blockquote>
         <div className="flex flex-col gap-1">
-          <div className="font-medium text-neutral-800">Tristan Roth</div>
-          <div className="text-sm text-neutral-500">Founder, ISMS Copilot</div>
+          <div className="font-medium text-neutral-800">Ryan Patel</div>
+          <div className="text-sm text-neutral-500">Co-founder, Flowstack</div>
         </div>
       </div>
       <div className="relative overflow-hidden bg-stone-100">
         <div className="relative aspect-[5/3]">
           <Image
             src="https://dazzling-cat.netlify.app/TimBl-Cust.png"
-            alt="Tristan Roth"
+            alt="Ryan Patel"
             fill
             className="object-cover"
             style={{
