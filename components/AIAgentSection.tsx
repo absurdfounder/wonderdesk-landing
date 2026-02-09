@@ -133,7 +133,7 @@ export default function AIAgentSection() {
                 {/* Agent reply 1 */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-blue-500 text-lg font-semibold text-white">
-                    <img src='https://dazzling-cat.netlify.app/wonderbadge.png' alt='Wonder' width={48} height={48} />
+                    <img src='https://dazzling-cat.netlify.app/wondercharacter.png' alt='Wonder' width={48} height={48} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-3">
@@ -149,7 +149,7 @@ export default function AIAgentSection() {
                 {/* Agent reply 2 with CTA and draft cards */}
                 <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-blue-500 text-lg font-semibold text-white">
-                    <img src='https://dazzling-cat.netlify.app/wonderbadge.png' alt='Wonder' width={48} height={48} />
+                    <img src='https://dazzling-cat.netlify.app/wondercharacter.png' alt='Wonder' width={48} height={48} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-3">

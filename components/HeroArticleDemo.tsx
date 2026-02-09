@@ -284,7 +284,7 @@ export default function HeroArticleDemo() {
                       >
                         <div className="flex items-center gap-3 px-5 py-3.5">
                           <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-blue-500">
-                            <img src="https://dazzling-cat.netlify.app/wonderbadge.png" alt="Wonder" className="h-full w-full object-contain" />
+                            <img src="https://dazzling-cat.netlify.app/wondercharacter.png" alt="Wonder" className="h-full w-full object-contain" />
                           </div>
                           <div className="min-w-0 flex-1">
                             <h3 className="text-left text-base font-medium text-neutral-100">What can I help with?</h3>
@@ -404,7 +404,7 @@ export default function HeroArticleDemo() {
                       >
                         <div className="flex items-center gap-3 rounded-t-xl border border-neutral-200 bg-white px-5 py-3.5">
                           <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded bg-blue-500">
-                            <img src="https://dazzling-cat.netlify.app/wonderbadge.png" alt="Wonder" className="h-full w-full object-contain" />
+                            <img src="https://dazzling-cat.netlify.app/wondercharacter.png" alt="Wonder" className="h-full w-full object-contain" />
                           </div>
                           <div className="min-w-0 flex-1">
                             <div className="text-sm text-neutral-500">I&apos;ve drafted this article!</div>
