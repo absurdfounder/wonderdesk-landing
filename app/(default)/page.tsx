@@ -8,7 +8,7 @@ description: 'Wonderdesk is the AI-powered platform that writes, updates, and ma
         url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
         width: 1200,
         height: 630,
-        alt: "Notion to Helpdesk , Notion to Directory , Notion to Blog",
+        alt: "AI Help Center, Blog, Changelog & Docs That Stay Up to Date",
       },
     ],
   },
@@ -17,7 +17,7 @@ description: 'Wonderdesk is the AI-powered platform that writes, updates, and ma
     images: [
       {
         url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
-        alt: "Notion to Helpdesk , Notion to Directory , Notion to Blog",
+        alt: "AI Help Center, Blog, Changelog & Docs That Stay Up to Date",
       },
     ],
   },
