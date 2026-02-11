@@ -67,7 +67,7 @@ twitter: {
         alt: 'Get a Marketplace with Notion',
       },
     ],
-    site: '@WonderSitesCo',
+    site: '@WonderDeskAI',
   },
   icons: {
     icon: '/favicon.ico',
