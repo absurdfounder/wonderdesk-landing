@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import MarketingHeadline from '@/components/marketing/MarketingHeadline';
 import PixelButton from '@/components/ui/PixelButton';
-import { formatUsd, getPlanMonthlyPrice, PRICING_USD } from '@/lib/pricing';
-import { Building2, Check, Minus, Plus, Sparkles, type LucideIcon } from 'lucide-react';
+import { COMMON_PLAN_FEATURES, formatUsd, getPlanMonthlyPrice, PRICING_USD } from '@/lib/pricing';
+import { Building2, Check, Cloud, Laptop, Minus, Plus, Server, Sparkles, type LucideIcon } from 'lucide-react';
 
 const PRICING_GRID_TEMPLATE_ROWS =
   'auto minmax(4.5rem,auto) minmax(2.75rem,auto) minmax(2.5rem,auto) minmax(2.75rem,auto) minmax(11.5rem,auto) minmax(0px,1fr) auto';
@@ -124,10 +124,10 @@ function TierRail({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BillingModePill({ label, selected = true }: { label: string; selected?: boolean }) {
+function HostingModePill({ label, selected = true }: { label: string; selected?: boolean }) {
   return (
     <TierRail>
-      <div className="grid w-fit gap-1 rounded-sm border border-slate-100/90 bg-slate-50/60 p-1" role="radiogroup" aria-label="Billing mode">
+      <div className="grid w-fit gap-1 rounded-sm border border-slate-100/90 bg-slate-50/60 p-1" role="radiogroup" aria-label="Hosting mode">
         <button
           type="button"
           role="radio"
@@ -145,18 +145,23 @@ function BillingModePill({ label, selected = true }: { label: string; selected?:
   );
 }
 
-function BillingTabs({ value, onChange }: { value: 'Monthly' | 'Yearly'; onChange: (v: 'Monthly' | 'Yearly') => void }) {
+function BusinessBillingTabs({
+  value,
+  onChange,
+}: {
+  value: 'Monthly' | 'Yearly';
+  onChange: (v: 'Monthly' | 'Yearly') => void;
+}) {
   return (
     <TierRail>
       <div
         className="grid w-full grid-cols-2 gap-1 rounded-sm border border-slate-300 bg-slate-100 p-1 shadow-sm"
         role="radiogroup"
-        aria-label="Billing cycle"
+        aria-label="Business billing cycle"
       >
         {(['Monthly', 'Yearly'] as const).map((cycle) => {
           const selected = value === cycle;
-          const price =
-            cycle === 'Monthly' ? formatUsd(PRICING_USD.personalMonthly) : formatUsd(PRICING_USD.personalYearly / 12);
+          const price = formatUsd(getPlanMonthlyPrice('business', cycle));
           return (
             <button
               key={cycle}
@@ -363,39 +368,110 @@ function MobilePlanCard(props: DesktopPlanColumnProps) {
   );
 }
 
-const personalFeatures = [
-  'Wonder AI',
-  'AI Teams (Designer & Developer)',
-  'Unlimited pages',
-  'Privacy focused analytics',
-  'No watermark',
-  'Manual publishing',
-  'Auto publish every hour',
-];
-
-const businessFeatures = [
-  'Everything in Personal, plus',
-  'Sub-directory domain',
-  'Multi-lingual sites',
-  'Unlimited team members',
-  'Membership sites',
-  'Instant auto publish',
-];
-
 export default function SimplePricing() {
   const [billingCycle, setBillingCycle] = useState<'Monthly' | 'Yearly'>('Monthly');
+
+  const [selfInstallWebsites, setSelfInstallWebsites] = useState<number>(PRICING_USD.selfInstallIncludedWebsites);
+  const [selfInstallMembers, setSelfInstallMembers] = useState<number>(PRICING_USD.selfInstallIncludedMembers);
   const [personalWebsites, setPersonalWebsites] = useState<number>(PRICING_USD.personalIncludedWebsites);
   const [personalMembers, setPersonalMembers] = useState<number>(PRICING_USD.personalIncludedMembers);
   const [businessWebsites, setBusinessWebsites] = useState<number>(PRICING_USD.businessIncludedWebsites);
   const [businessMembers, setBusinessMembers] = useState<number>(PRICING_USD.businessIncludedMembers);
+  const [enterpriseWebsites, setEnterpriseWebsites] = useState<number>(PRICING_USD.enterpriseIncludedWebsites);
+  const [enterpriseMembers, setEnterpriseMembers] = useState<number>(PRICING_USD.enterpriseIncludedMembers);
 
   const personalPrice = formatUsd(getPlanMonthlyPrice('personal', billingCycle));
   const businessPrice = formatUsd(getPlanMonthlyPrice('business', billingCycle));
 
-  const plans = [
+  const selfInstallFeatures = (
+    <>
+      {COMMON_PLAN_FEATURES.map((feature) => (
+        <FeatureItem key={feature}>{feature}</FeatureItem>
+      ))}
+      <FeatureItem>Run on your own infrastructure</FeatureItem>
+      <FeatureItem>Manual publishing workflow</FeatureItem>
+      <FeatureItem>Lifetime license — pay once</FeatureItem>
+    </>
+  );
+
+  const personalFeatures = (
+    <>
+      {COMMON_PLAN_FEATURES.map((feature) => (
+        <FeatureItem key={feature}>{feature}</FeatureItem>
+      ))}
+      <FeatureItem>Unlimited pages</FeatureItem>
+      <FeatureItem>No watermark</FeatureItem>
+      <FeatureItem>Auto publish every hour</FeatureItem>
+    </>
+  );
+
+  const businessFeatures = (
+    <>
+      {COMMON_PLAN_FEATURES.map((feature) => (
+        <FeatureItem key={feature}>{feature}</FeatureItem>
+      ))}
+      <FeatureItem>Sub-directory domain</FeatureItem>
+      <FeatureItem>Multi-lingual sites</FeatureItem>
+      <FeatureItem>Unlimited team members</FeatureItem>
+      <FeatureItem>Membership sites</FeatureItem>
+      <FeatureItem>Instant auto publish</FeatureItem>
+    </>
+  );
+
+  const enterpriseFeatures = (
+    <>
+      {COMMON_PLAN_FEATURES.map((feature) => (
+        <FeatureItem key={feature}>{feature}</FeatureItem>
+      ))}
+      <FeatureItem>Private VPC or on-prem deployment</FeatureItem>
+      <FeatureItem>SSO and custom security reviews</FeatureItem>
+      <FeatureItem>Volume pricing and dedicated support</FeatureItem>
+      <FeatureItem>Priority onboarding and migration</FeatureItem>
+    </>
+  );
+
+  const plans: DesktopPlanColumnProps[] = [
     {
       index: '01',
-      eyebrow: 'For individuals',
+      eyebrow: 'Self-install',
+      badge: 'Lifetime',
+      title: 'Self Install',
+      icon: Laptop,
+      price: formatUsd(PRICING_USD.selfInstallLifetime),
+      cadence: 'one-time',
+      subline: (
+        <PricingSubline>
+          {PRICING_USD.selfInstallIncludedWebsites} website · 10,000 users / month · self-hosted
+        </PricingSubline>
+      ),
+      note: <PricingNote>Install and run Wonder on your own servers. One-time license, no recurring cloud fee.</PricingNote>,
+      tierRail: <HostingModePill label="Self hosted" />,
+      allowance: (
+        <AllowanceBlock
+          websiteCount={selfInstallWebsites}
+          memberCount={selfInstallMembers}
+          onWebsiteChange={setSelfInstallWebsites}
+          onMemberChange={setSelfInstallMembers}
+          minWebsites={PRICING_USD.selfInstallIncludedWebsites}
+          maxWebsites={PRICING_USD.selfInstallIncludedWebsites}
+          minMembers={PRICING_USD.selfInstallIncludedMembers}
+          maxMembers={PRICING_USD.selfInstallIncludedMembers}
+          websiteHelper={`${PRICING_USD.selfInstallIncludedWebsites} included`}
+          memberHelper={`${PRICING_USD.selfInstallIncludedMembers} included`}
+          disableWebsiteIncrease
+          disableMemberIncrease
+        />
+      ),
+      features: selfInstallFeatures,
+      cta: (
+        <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="dark" className="w-full">
+          Install locally
+        </PixelButton>
+      ),
+    },
+    {
+      index: '02',
+      eyebrow: 'Cloud starter',
       badge: 'Starter',
       title: 'Personal',
       icon: Sparkles,
@@ -409,11 +485,11 @@ export default function SimplePricing() {
       note: (
         <PricingNote>
           {billingCycle === 'Yearly'
-            ? `Billed annually at ${formatUsd(PRICING_USD.personalYearly)}. Cancel anytime.`
+            ? `Billed annually at ${formatUsd(PRICING_USD.personalYearly)}. 7-day free trial.`
             : '7-day free trial. No credit card required.'}
         </PricingNote>
       ),
-      tierRail: <BillingTabs value={billingCycle} onChange={setBillingCycle} />,
+      tierRail: <HostingModePill label="Cloud hosted" />,
       allowance: (
         <AllowanceBlock
           websiteCount={personalWebsites}
@@ -430,7 +506,7 @@ export default function SimplePricing() {
           disableMemberIncrease
         />
       ),
-      features: personalFeatures.map((f) => <FeatureItem key={f}>{f}</FeatureItem>),
+      features: personalFeatures,
       cta: (
         <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="dark" className="w-full">
           Get started free
@@ -438,11 +514,11 @@ export default function SimplePricing() {
       ),
     },
     {
-      index: '02',
-      eyebrow: 'For teams',
+      index: '03',
+      eyebrow: 'Hosted by us',
       badge: 'Most popular',
       title: 'Business',
-      icon: Building2,
+      icon: Cloud,
       featured: true,
       price: businessPrice,
       cadence: '/ month',
@@ -454,7 +530,7 @@ export default function SimplePricing() {
             : 'Additional team members and sites available on request.'}
         </PricingNote>
       ),
-      tierRail: <BillingModePill label={billingCycle === 'Yearly' ? 'Annual billing' : 'Monthly billing'} />,
+      tierRail: <BusinessBillingTabs value={billingCycle} onChange={setBillingCycle} />,
       allowance: (
         <AllowanceBlock
           websiteCount={businessWebsites}
@@ -471,14 +547,54 @@ export default function SimplePricing() {
           disableMemberIncrease
         />
       ),
-      features: businessFeatures.map((f) => <FeatureItem key={f}>{f}</FeatureItem>),
+      features: businessFeatures,
       cta: (
         <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="brand" className="w-full">
           Choose · {businessPrice}/month
         </PixelButton>
       ),
     },
-  ] as const;
+    {
+      index: '04',
+      eyebrow: 'Private deployment',
+      badge: 'Custom',
+      title: 'Enterprise',
+      icon: Building2,
+      price: 'Custom',
+      subline: <PricingSubline>Volume pricing and dedicated support</PricingSubline>,
+      note: <PricingNote>Self-hosted or private cloud with SSO, migration, and custom agreements.</PricingNote>,
+      tierRail: <HostingModePill label="Self hosted" />,
+      allowance: (
+        <AllowanceBlock
+          websiteCount={enterpriseWebsites}
+          memberCount={enterpriseMembers}
+          onWebsiteChange={setEnterpriseWebsites}
+          onMemberChange={setEnterpriseMembers}
+          minWebsites={PRICING_USD.enterpriseIncludedWebsites}
+          maxWebsites={PRICING_USD.enterpriseIncludedWebsites}
+          minMembers={PRICING_USD.enterpriseIncludedMembers}
+          maxMembers={PRICING_USD.enterpriseIncludedMembers}
+          websiteHelper="100+ included"
+          memberHelper="200 included"
+          disableWebsiteIncrease
+          disableMemberIncrease
+        />
+      ),
+      features: enterpriseFeatures,
+      cta: (
+        <PixelButton
+          href="/contact-us"
+          size="md"
+          tone="dark"
+          variant="outline"
+          className="w-full"
+          icon={<Server className="h-4 w-4" aria-hidden />}
+        >
+          Talk to sales
+        </PixelButton>
+      ),
+    },
+  ];
 
   return (
     <div className="w-full pb-8 md:pb-10">
@@ -490,14 +606,14 @@ export default function SimplePricing() {
             {
               parts: [
                 { text: 'Simple pricing,', tone: 'default' },
-                { text: 'built for growing teams.', tone: 'default' },
+                { text: 'by deployment.', tone: 'default' },
               ],
             },
             {
               parts: [{ text: 'Pay for the plan you need.', tone: 'brand' }],
             },
           ]}
-          subline="Start free with a 7-day trial. Keep your help center, blog, changelog, and docs up to date automatically."
+          subline="Self-install on your stack, start in the cloud, or talk to us for enterprise deployment. Every plan includes a 7-day free trial on cloud tiers."
         />
       </div>
 
@@ -507,7 +623,7 @@ export default function SimplePricing() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
           viewport={{ once: true }}
-          className="hidden overflow-hidden border-b border-slate-100 bg-slate-200 lg:grid lg:grid-cols-2"
+          className="hidden overflow-hidden border-b border-slate-100 bg-slate-200 lg:grid lg:grid-cols-4"
           style={{ gridTemplateRows: PRICING_GRID_TEMPLATE_ROWS }}
         >
           {plans.map((plan, idx) => (
