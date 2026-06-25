@@ -55,8 +55,8 @@ export default function Home() {
           <Hero />
         </div>
 
-        <section className="homepage-grid-row bg-white px-4 py-6 md:px-6 md:py-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="homepage-grid-row bg-white py-6 md:py-10">
+          <div className="landing-grid-column px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-center">
               <span className="mt-1 text-base font-medium text-balance text-gray-400 md:text-left">
                 Trusted by leading product-led companies
@@ -99,9 +99,13 @@ export default function Home() {
           <NotionToWebsite />
         </div>
 
-        <ModalVideo />
+        <div className="homepage-grid-row">
+          <ModalVideo />
+        </div>
 
-        <CustomerStorySection />
+        <div className="homepage-grid-row">
+          <CustomerStorySection />
+        </div>
 
         <div className="homepage-grid-row">
           <FeaturesBlocks />
@@ -111,13 +115,21 @@ export default function Home() {
           <OldWays />
         </div>
 
-        <HowItWorksSection />
+        <div className="homepage-grid-row">
+          <HowItWorksSection />
+        </div>
 
-        <CustomerStorySection2 />
+        <div className="homepage-grid-row">
+          <CustomerStorySection2 />
+        </div>
 
-        <Showcases />
+        <div className="homepage-grid-row">
+          <Showcases />
+        </div>
 
-        <GetStartedSection />
+        <div className="homepage-grid-row">
+          <GetStartedSection />
+        </div>
 
         <div className="homepage-grid-row">
           <div className="landing-grid-column">

@@ -139,14 +139,18 @@ export default function OldWays() {
   }, []);
 
   return (
-    <section 
-      className="bg-white relative"
-      style={{
-        backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(186, 183, 195, 0.08) 2px, rgba(186, 183, 195, 0.08) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(186, 183, 195, 0.08) 2px, rgba(186, 183, 195, 0.08) 4px)',
-        backgroundSize: '100% 20px, 20px 100%',
-      }}
+    <section
+      className="relative bg-white"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div
+        className="landing-grid-column"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(186, 183, 195, 0.08) 2px, rgba(186, 183, 195, 0.08) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(186, 183, 195, 0.08) 2px, rgba(186, 183, 195, 0.08) 4px)',
+          backgroundSize: '100% 20px, 20px 100%',
+        }}
+      >
+      <div className="px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div 
           className="relative"
           style={{ perspective: '1000px' }}
@@ -212,6 +216,7 @@ export default function OldWays() {
             );
           })}
         </div>
+      </div>
       </div>
     </section>
   );
