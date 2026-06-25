@@ -60,6 +60,10 @@ module.exports = {
         '1/1': '100%',
       },
       fontFamily: {
+        sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['var(--font-manrope)', 'var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+        funneldisplay: ['var(--font-display)', 'var(--font-manrope)', 'var(--font-inter)', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
       },
       fontSize: {

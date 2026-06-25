@@ -159,7 +159,7 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
       <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-8'>
         <div className="flex-1">
           <motion.h2
-            className="text-start font-funneldisplay text-2xl sm:text-3xl md:text-4xl text-slate-800"
+            className="text-start font-display text-2xl sm:text-3xl md:text-4xl text-slate-800"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

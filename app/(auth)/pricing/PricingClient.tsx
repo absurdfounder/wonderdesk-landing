@@ -401,7 +401,7 @@ const FAQSection: React.FC = () => {
         <div className="mt-20 max-w-7xl">
             <div className="px-4">
                 <div className="text-start mb-10">
-                    <h2 className="font-funneldisplay text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                    <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-3">
                         Frequently Asked Questions
                     </h2>
                     <p className="text-slate-600 max-w-2xl">
@@ -684,7 +684,7 @@ const Pricing: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 relative">
                 <div className="mb-8">
                     <div className="text-start mb-16">
-                        <h1 className="font-funneldisplay text-4xl md:text-5xl tracking-tight mb-6">
+                        <h1 className="font-display text-4xl md:text-5xl tracking-tight mb-6">
                             <span className="text-slate-800 block mb-2">
                                 Setup <img src="https://dazzling-cat.netlify.app/wonderbadge.png" className="inline-block w-12 h-12 rounded-md align-middle mx-1" /> Wonder at your company
                             </span>
@@ -709,7 +709,7 @@ const Pricing: React.FC = () => {
 
                 {/* Comparison table (desktop) */}
                 <div className="hidden lg:block mb-20">
-                    <h4 className="font-funneldisplay text-2xl font-bold text-slate-900 text-start mb-8">
+                    <h4 className="font-display text-2xl font-bold text-slate-900 text-start mb-8">
                         Compare plans
                     </h4>
                     <div className="wonder-pricing-compare">

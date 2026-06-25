@@ -1,7 +1,7 @@
 // app/layout.tsx or layout.js (depending on your setup)
 import './css/style.css'
 
-import { Inter, Roboto_Mono, Source_Serif_4, Comfortaa, Josefin_Slab } from 'next/font/google'
+import { Inter, Manrope, JetBrains_Mono, Source_Serif_4, Comfortaa, Josefin_Slab } from 'next/font/google'
 import localFont from 'next/font/local'
 import Script from 'next/script'
 
@@ -9,7 +9,8 @@ import Banner from '@/components/banner'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
-const robotoMono = Roboto_Mono({ subsets: ['latin'], variable: '--font-roboto-mono', display: 'swap' })
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', display: 'swap' })
 const sourceSerif4 = Source_Serif_4({ subsets: ['latin'], variable: '--font-source-serif-4', display: 'swap' })
 const comfortaa = Comfortaa({ subsets: ['latin'], variable: '--font-comfortaa', display: 'swap' })
 const josefinSlab = Josefin_Slab({ subsets: ['latin'], variable: '--font-josefin-slab', display: 'swap' })
@@ -26,7 +27,7 @@ const bungee = localFont({
 
 const funneldisplay = localFont({
   src: '../public/fonts/FunnelDisplay-VariableFont_wght.ttf',
-  variable: '--font-funneldisplay'
+  variable: '--font-display'
 })
 
 export const viewport = {
@@ -129,7 +130,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} ${robotoMono.variable} ${sourceSerif4.variable} ${comfortaa.variable} ${josefinSlab.variable} ${silkscreen.variable} ${bungee.variable} ${funneldisplay.variable} wonder-shell bg-gray-50 font-inter antialiased text-slate-900 tracking-tight`}>
+      <body className={`${inter.variable} ${manrope.variable} ${jetbrainsMono.variable} ${sourceSerif4.variable} ${comfortaa.variable} ${josefinSlab.variable} ${silkscreen.variable} ${bungee.variable} ${funneldisplay.variable} wonder-shell bg-gray-50 font-sans antialiased text-slate-900 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}
           <SchemaMarkup />

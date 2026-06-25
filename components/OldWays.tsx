@@ -184,7 +184,7 @@ export default function OldWays() {
                       <p className="text-sm font-bold uppercase tracking-wide text-blue-600 font-silkscreen">
                         {card.tag}
                       </p>
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-funneldisplay font-bold tracking-tight text-slate-900 mt-3 sm:mt-4">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold tracking-tight text-slate-900 mt-3 sm:mt-4">
                         {card.title} <span className="font-normal text-orange-600">{card.highlight}</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed">

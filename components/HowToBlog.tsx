@@ -10,7 +10,7 @@ export default function HowtoBlog() {
           {/* CTA Section */}
           <section className=" w-full rounded-2xl py-8 sm:py-12 px-1 sm:px-2 mt-12 mb-12">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-black">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-black">
                 We built the first blog
                 <span className=" block font-normal text-orange-600 mt-2">
                   that writes itself based on keywords.
@@ -208,7 +208,7 @@ export default function HowtoBlog() {
           {/* CTA Section */}
           <section className=" w-full bg-slate-900 rounded-2xl py-8 sm:py-12 px-4 sm:px-6 mt-12 mb-12">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">
                 This Time, You'll Actually Launch
                 <span className=" block font-normal text-orange-600 mt-2">
                   Skip the Setup Hell

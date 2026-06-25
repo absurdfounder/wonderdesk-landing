@@ -270,7 +270,7 @@ export default function MarketplaceType() {
     >
       {/* Title Section */}
       <div className="max-w-3xl mx-auto text-center pt-4 mb-6 sm:mb-8">
-        <h2 className="font-funneldisplay text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+        <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           No matter how unique your concept,
           <span className=" block font-normal text-orange-600">
             Wonder can support it.

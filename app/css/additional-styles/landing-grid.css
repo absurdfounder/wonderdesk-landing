@@ -40,7 +40,7 @@
   align-items: center;
   border-radius: 0.125rem;
   padding: 0.375rem 0.5rem;
-  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -61,7 +61,7 @@
   justify-content: center;
   border-radius: 0.125rem;
   padding: 0.375rem 0.75rem;
-  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -86,7 +86,7 @@
   border: 1px solid transparent;
   background: var(--wonder-brand);
   color: #ffffff;
-  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -123,7 +123,7 @@
   border: 1px solid #0f172a;
   background: transparent;
   color: #0f172a;
-  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -152,7 +152,7 @@
 }
 
 .wonder-footer-label {
-  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -234,7 +234,7 @@
 }
 
 .wonder-pricing-compare-head {
-  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -248,7 +248,7 @@
   border-bottom: 1px solid var(--wonder-slate-border);
   background: #f8fafc;
   padding: 0.75rem 1rem;
-  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.14em;

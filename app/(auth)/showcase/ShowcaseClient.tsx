@@ -456,7 +456,7 @@ function TemplateClientContent() {
                 {/* Page header with improved spacing and typography */}
                 <div className="pt-4 pb-12 md:pt-12 md:pb-18">
                     <div className="mx-auto text-center">
-                        <h1 className="font-funneldisplay text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-4xl mb-6">
+                        <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-4xl mb-6">
                             <span className="block">Websites built on Wonder</span>
                             <span className="block text-orange-600">and a few templates.</span>
                         </h1>

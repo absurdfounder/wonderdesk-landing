@@ -139,7 +139,7 @@ const FAQ: React.FC = () => {
     <div className="mx-auto mt-10">
       <div className="px-4 py-16 mx-auto max-w-7xl sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center sm:max-w-2xl lg:mx-auto">
-          <h2 className="font-funneldisplay text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <p className="text-base font-normal text-slate-600 mt-4 sm:text-lg">
@@ -162,7 +162,7 @@ const FAQ: React.FC = () => {
                 key={tab}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 font-semibold text-lg rounded-md m-2 font-roboto-mono ${
+                className={`px-4 py-2 font-semibold text-lg rounded-md m-2 font-mono ${
                   activeTab === tab 
                     ? "bg-orange-700 text-orange-50" 
                     : "text-slate-700 hover:bg-orange-100"

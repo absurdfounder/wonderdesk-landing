@@ -70,7 +70,7 @@ export default function GetStartedSection() {
           <div className="pr-0 lg:pr-8">
             <div className="pt-12 pb-12 sm:pt-20">
               <span className="font-silkscreen text-lg text-blue-600">Wonder-hosted</span>
-              <h2 className="mt-4 font-funneldisplay text-balance text-neutral-800 text-3xl lg:text-4xl">
+              <h2 className="mt-4 font-display text-balance text-neutral-800 text-3xl lg:text-4xl">
                 Get started in minutes
               </h2>
               <div className="mt-6">
@@ -99,7 +99,7 @@ export default function GetStartedSection() {
           <div className="pl-0 lg:pl-8">
             <div className="pt-12 pb-12 sm:pt-20">
               <span className="font-silkscreen text-lg text-blue-600">ONE-click migration</span>
-              <h2 className="mt-4 font-funneldisplay text-balance text-neutral-800 text-3xl lg:text-4xl">
+              <h2 className="mt-4 font-display text-balance text-neutral-800 text-3xl lg:text-4xl">
                 Zero-downtime migration
               </h2>
               <p className="mt-6 text-base text-slate-700">

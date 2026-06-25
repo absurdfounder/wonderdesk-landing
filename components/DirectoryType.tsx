@@ -111,7 +111,7 @@ export default function Directory_Type() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pt-6 md:pt-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="font-funneldisplay text-2xl sm:text-3xl md:text-4xl mb-4 text-slate-800">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl mb-4 text-slate-800">
               Unique your directory concept? <span className=" block font-normal text-orange-600">Wonder can support it.</span>
             </h1>
             <p className="text-xl text-slate-600">
