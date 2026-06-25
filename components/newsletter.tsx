@@ -73,8 +73,9 @@ export default function Newsletter() {
 
   return (
     <section className="homepage-grid-row bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden border border-slate-200 py-10 px-8 md:py-16 md:px-12"
+      <div className="landing-grid-column">
+        <div
+          className="relative overflow-hidden py-10 px-8 md:py-16 md:px-12"
           style={{
             backgroundImage:
               'linear-gradient(rgb(255 255 255 / 87%), rgb(187 229 255 / 76%)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)',
