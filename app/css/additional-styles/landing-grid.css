@@ -1,9 +1,20 @@
-/* Editorial grid frame — Trooper-style vertical borders only. Does not change colors or backgrounds. */
-.landing-grid-frame {
+/* Trooper-style editorial grid — structure only. Does not override colors, backgrounds, or typography. */
+
+.landing-grid-column {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: 80rem;
   border-left: 1px solid #e2e8f0;
   border-right: 1px solid #e2e8f0;
+}
+
+/* Align vertical grid lines on all existing max-w-7xl content columns */
+.homepage-grid .max-w-7xl {
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+}
+
+.homepage-grid-row {
+  border-top: 1px solid #e2e8f0;
 }

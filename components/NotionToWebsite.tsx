@@ -35,7 +35,7 @@ export default function FeaturesBlocks() {
   }, [features.length]);
 
   return (
-    <div className="flex my-12 items-start justify-start p-6 py-12 md:py-6 landing-grid-frame">
+    <div className="flex my-12 items-start justify-start p-6 py-12 md:py-6 max-w-7xl m-auto">
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes draw-check {

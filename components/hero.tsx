@@ -131,7 +131,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="landing-grid-frame px-3 sm:px-4 md:px-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
 
         <br />
         <br />

@@ -17,7 +17,7 @@ export default function HowItWorksSection() {
         backgroundPosition: '0px 0px'
       }}
     >
-      <div className="landing-grid-frame mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:gap-12">
           {/* Text content on top */}
           <div className="pt-12 pb-4 sm:pt-20 text-center lg:text-left">

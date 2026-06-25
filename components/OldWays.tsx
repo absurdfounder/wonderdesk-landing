@@ -146,7 +146,7 @@ export default function OldWays() {
         backgroundSize: '100% 20px, 20px 100%',
       }}
     >
-      <div className="landing-grid-frame px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div 
           className="relative"
           style={{ perspective: '1000px' }}

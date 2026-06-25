@@ -118,13 +118,14 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
       {/* Google Translate container (hidden) */}
       <div id="google_translate_element" className="fixed -z-50 top-0 left-0 opacity-0 pointer-events-none" />
 
-      {/* Main Content */}
-      <main className="grow bg-gray-50">
-        {children}
-      </main>
+      <div className="homepage-grid">
+        <main className="grow bg-gray-50">
+          {children}
+        </main>
 
-      <Newsletter />
-      <Footer />
+        <Newsletter />
+        <Footer />
+      </div>
     </PlausibleProvider>
   )
 }
