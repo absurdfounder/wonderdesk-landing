@@ -18,6 +18,27 @@
   border-top: 1px solid #e2e8f0;
 }
 
+/* Standard inner padding — apply inside landing-grid-column, never on the column itself */
+.landing-grid-pad {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .landing-grid-pad {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.homepage-grid {
+  background-color: #ffffff;
+}
+
+.homepage-grid main {
+  background-color: #ffffff;
+}
+
 .wonder-shell {
   --wonder-brand: #009fbc;
   --wonder-brand-dark: #007a94;

@@ -28,7 +28,7 @@ export default function FeaturesBlocks() {
   return (
     <section className="relative bg-white">
       <div className="landing-grid-column">
-        <div className="border-b border-slate-200 px-6 py-10 md:px-8 md:py-12">
+        <div className="border-b border-slate-200 landing-grid-pad py-10 md:py-12">
           <h2 className="font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
             Get found on <b>Google</b>. Cited by <b>ChatGPT</b>.
           </h2>

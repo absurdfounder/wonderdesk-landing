@@ -227,14 +227,21 @@ export default function AIAgentSection() {
   }, [scriptIdx, isRunning, processStep, cleanUp]);
 
   return (
-    <div style={{
+    <section className="bg-white">
+      <div
+        className="landing-grid-column"
+        style={{
+          backgroundColor: 'rgb(255, 255, 255)',
+          backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.6) 0.7px, transparent 0.7px)',
+          backgroundSize: '10px 10px',
+          backgroundPosition: '0px 0px',
+        }}
+      >
+    <div className="landing-grid-pad" style={{
       width: "100%",
-      minHeight: "100vh",
-      backgroundColor: "rgb(255, 255, 255)",
-      backgroundImage: "radial-gradient(circle, rgba(186, 183, 195, 0.6) 0.7px, transparent 0.7px)",
-      backgroundSize: "10px 10px",
-      backgroundPosition: "0px 0px",
-      padding: "60px 20px",
+      minHeight: "min(100vh, 900px)",
+      paddingTop: "60px",
+      paddingBottom: "60px",
       fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
     }}>
       <style>{`
@@ -423,5 +430,7 @@ export default function AIAgentSection() {
         </div>
       </div>
     </div>
+    </div>
+    </section>
   );
 }

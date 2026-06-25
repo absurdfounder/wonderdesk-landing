@@ -10,7 +10,7 @@ export default function HowItWorksSection() {
   return (
     <section className="relative bg-white">
       <div
-        className="landing-grid-column border-x border-neutral-200"
+        className="landing-grid-column"
         style={{
           backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.6) 0.7px, transparent 0.7px)',
           backgroundSize: '10px 10px',
@@ -18,7 +18,7 @@ export default function HowItWorksSection() {
           backgroundPosition: '0px 0px',
         }}
       >
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div className="landing-grid-pad">
         <div className="flex flex-col gap-8 md:gap-12">
           {/* Text content on top */}
           <div className="pt-12 pb-4 sm:pt-20 text-center lg:text-left">

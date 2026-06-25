@@ -20,7 +20,8 @@ export default function TellaVideoButton() {
 
   return (
     <section className="bg-white">
-      <div className="landing-grid-column border-x border-neutral-200 px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className="landing-grid-column">
+        <div className="landing-grid-pad py-12 md:py-16">
         {/* Video container with background */}
         <div 
           className="relative w-full max-w-6xl mx-auto rounded-xl overflow-hidden p-6 md:p-8 lg:p-12 flex items-center justify-center"
@@ -96,6 +97,7 @@ export default function TellaVideoButton() {
           </div>
         </div>
       </Dialog>
+        </div>
       </div>
     </section>
   )

@@ -64,7 +64,8 @@ const integrations = [
 export default function GetStartedSection() {
   return (
     <section className="bg-white">
-      <div className="landing-grid-column border-x border-neutral-200 px-4 sm:px-6 lg:px-8">
+      <div className="landing-grid-column">
+        <div className="landing-grid-pad">
       <div className="grid grid-cols-1 divide-x divide-neutral-200 lg:grid-cols-2">
         {/* First Section: Get started in minutes */}
         <section className="overflow-hidden">
@@ -137,6 +138,7 @@ export default function GetStartedSection() {
           </div>
         </section>
       </div>
+        </div>
       </div>
     </section>
   );

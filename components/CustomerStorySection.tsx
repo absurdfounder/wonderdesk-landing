@@ -8,7 +8,7 @@ export default function CustomerStorySection() {
   return (
     <section className="bg-white">
       <div
-        className="landing-grid-column border-x border-neutral-200"
+        className="landing-grid-column"
         style={{
           backgroundImage:
             'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(186, 183, 195, 0.08) 2px, rgba(186, 183, 195, 0.08) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(186, 183, 195, 0.08) 2px, rgba(186, 183, 195, 0.08) 4px)',

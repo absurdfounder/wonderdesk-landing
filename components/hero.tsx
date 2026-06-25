@@ -130,17 +130,9 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   };
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-
-        <div className="pt-2 sm:pt-1 md:pt-2 pb-12 sm:pb-16 md:pb-20">
+    <section className="relative overflow-hidden site-header-clear">
+      <div className="landing-grid-column">
+        <div className="landing-grid-pad pb-12 sm:pb-16 md:pb-20 pt-2 sm:pt-1 md:pt-2">
           {/* Left (text) + Right (tab sector) on lg; stacked on smaller screens */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-4 xl:gap-6">
             {/* Left: text content */}

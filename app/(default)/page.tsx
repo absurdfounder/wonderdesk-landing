@@ -55,8 +55,9 @@ export default function Home() {
           <Hero />
         </div>
 
-        <section className="homepage-grid-row bg-white py-6 md:py-10">
-          <div className="landing-grid-column px-4 sm:px-6 lg:px-8">
+        <section className="homepage-grid-row bg-white">
+          <div className="landing-grid-column">
+            <div className="landing-grid-pad py-6 md:py-10">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-center">
               <span className="mt-1 text-base font-medium text-balance text-gray-400 md:text-left">
                 Trusted by leading product-led companies
@@ -91,6 +92,7 @@ export default function Home() {
                   />
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </section>
@@ -132,9 +134,7 @@ export default function Home() {
         </div>
 
         <div className="homepage-grid-row">
-          <div className="landing-grid-column">
-            <AIAgentSection />
-          </div>
+          <AIAgentSection />
         </div>
     </>
   )
