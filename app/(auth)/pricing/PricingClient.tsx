@@ -11,6 +11,7 @@ import MigrateFrom from "@/public/images/migratefrom.png";
 import Testimonials from "@/components/testimonials";
 import Rating from "../compare-against/Rating";
 import Header from "@/components/ui/header";
+import WonderPricingGrid, { type PricingTier } from "@/components/pricing/WonderPricingGrid";
 
 // --- NEW: Exit Intent Popup Component ---
 interface ExitIntentPopupProps {
@@ -97,16 +98,6 @@ interface Position {
 interface FAQ {
     question: string;
     answer: string;
-}
-
-// Pricing tier interface
-interface PricingTier {
-    name: string;
-    highlight: boolean;
-    monthlyPrice: number;
-    yearlyPrice: number;
-    trafficLimit: string;
-    features: string[];
 }
 
 // Comparison table: cell is either check (true), cross (false), or text
@@ -510,7 +501,7 @@ const FlippingButtonLink: React.FC<FlippingButtonLinkProps> = ({
 // Main Pricing Component
 const Pricing: React.FC = () => {
     // State variables
-    const [activeTab, setActiveTab] = useState("Monthly");
+    const [billingCycle, setBillingCycle] = useState<'Monthly' | 'Yearly'>('Monthly');
     const [popupFeature, setPopupFeature] = useState<Feature | null>(null);
     const [hoveredFeature, setHoveredFeature] = useState<Feature | null>(null);
     const [tooltipPosition, setTooltipPosition] = useState<Position>({ top: 0, left: 0 });
@@ -625,10 +616,6 @@ const Pricing: React.FC = () => {
     }, []);
 
     // Event handlers
-    const handleTabClick = (tabName: string) => {
-        setActiveTab(tabName);
-    };
-
     const handleFeatureClick = (feature: Feature) => {
         setPopupFeature(feature);
     };
@@ -711,175 +698,102 @@ const Pricing: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Pricing Cards */}
-                <div className="grid md:grid-cols-2 gap-6 max-w-7xl mb-16">
-                    {pricingTiers.map((tier, index) => (
-                        <motion.div
-                            key={tier.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className={`relative bg-white rounded-xl shadow-lg border ${tier.highlight
-                                ? 'border-orange-400 shadow-xl transform md:scale-105'
-                                : 'border-slate-200'
-                                } overflow-hidden flex flex-col h-full`}
-                        >
-                            {tier.highlight && (
-                                <div className="bg-orange-300 text-black text-center py-1 text-sm font-medium">
-                                    MOST POPULAR
-                                </div>
-                            )}
-
-                            <div className="p-6 flex-grow">
-                                <div className="text-center mb-6">
-                                    <h3 className="text-lg font-semibold text-slate-700 mb-1">{tier.name}</h3>
-                                    <div className="flex items-baseline justify-center">
-                                        <span className="text-4xl font-bold text-slate-900">
-                                            ${activeTab === 'Yearly' ? (tier.yearlyPrice / 12).toFixed(2) : tier.monthlyPrice}
-                                        </span>
-                                        <span className="text-slate-600 ml-1">/mo</span>
-                                    </div>
-                                    {activeTab === 'Yearly' && (
-                                        <p className="text-slate-500 text-sm mt-1">
-                                            Billed annually at ${tier.yearlyPrice}
-                                        </p>
-                                    )}
-                                    <p className="text-slate-500 text-sm mt-1">
-                                        {tier.trafficLimit} users/month
-                                    </p>
-                                </div>
-
-
-                                <div className="mt-6">
-                                    <div className="font-medium text-slate-800 mb-4">What's included:</div>
-                                    <ul className="space-y-3">
-                                        {tier.features.map((feature, i) => (
-                                            <li key={i} className="flex items-start">
-                                                <Check className="h-5 w-5 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
-                                                <span className="text-slate-600">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="px-6 pb-6 mt-4">
-                                {/* --- UPDATED TO USE FlippingButtonLink --- */}
-                                <FlippingButtonLink
-                                    href="https://app.wonderdesk.ai"
-                                    initialText="Get started - free"
-                                    hoverText="in under 15 mins" // Customize hover text if needed
-                                    className={tier.highlight
-                                        ? 'bg-orange-600 hover:bg-orange-700 text-white focus:ring-orange-500'
-                                        : 'bg-slate-100 hover:bg-slate-200 text-slate-800 focus:ring-slate-500'
-                                    }
-                                />
-                                {/* --- END OF UPDATE --- */}
-                            </div>
-                        </motion.div>
-                    ))}
+                {/* Pricing grid (Trooper-style) */}
+                <div className="mb-16">
+                    <WonderPricingGrid
+                        tiers={pricingTiers}
+                        billingCycle={billingCycle}
+                        onBillingCycleChange={setBillingCycle}
+                    />
                 </div>
 
-                {/* Comparison Table (desktop) */}
+                {/* Comparison table (desktop) */}
                 <div className="hidden lg:block mb-20">
-                    <h4 className="text-2xl font-bold text-slate-900 text-start mb-8">
+                    <h4 className="font-funneldisplay text-2xl font-bold text-slate-900 text-start mb-8">
                         Compare plans
                     </h4>
-                    <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
-                        {/* Sticky header */}
-                        <div className="sticky top-16 z-10 border border-slate-200 bg-white/95 backdrop-blur-sm">
-                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 py-4">
-                                <div className="font-medium text-slate-600">Features</div>
-                                <div className="text-center font-medium text-slate-600">Personal</div>
-                                <div className="text-center font-medium text-slate-900">Business</div>
-                            </div>
+                    <div className="wonder-pricing-compare">
+                        <div className="wonder-pricing-compare-grid sticky top-16 z-10 bg-white">
+                            <div className="wonder-pricing-compare-cell wonder-pricing-compare-head">Features</div>
+                            <div className="wonder-pricing-compare-cell wonder-pricing-compare-head text-center">Personal</div>
+                            <div className="wonder-pricing-compare-cell wonder-pricing-compare-head text-center text-slate-900">Business</div>
                         </div>
-                        <div className="divide-y divide-slate-100">
+                        <div className="wonder-pricing-compare-grid">
                             {comparisonCategories.map((category) => {
                                 const Icon = category.icon;
                                 return (
-                                    <div key={category.title}>
-                                        <div className="border-b border-slate-100 bg-slate-50/50">
-                                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 py-4">
-                                                <h3 className={`flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500 ${category.iconColor}`}>
-                                                    <Icon className="w-[18px] h-[18px]" />
-                                                    {category.title}
-                                                </h3>
-                                                <div />
-                                                <div />
-                                            </div>
+                                    <React.Fragment key={category.title}>
+                                        <div className="wonder-pricing-compare-category">
+                                            <span className={`inline-flex items-center gap-2 ${category.iconColor}`}>
+                                                <Icon className="h-[18px] w-[18px]" />
+                                                {category.title}
+                                            </span>
                                         </div>
                                         {category.rows.map((row) => (
-                                            <div key={row.feature} className="border-b border-slate-100">
-                                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 items-center py-3">
-                                                    <div className="text-slate-700 text-sm">{row.feature}</div>
-                                                    <div className="flex justify-center">
-                                                        {typeof row.personal === "boolean" ? (
-                                                            row.personal ? (
-                                                                <Check className="w-5 h-5 text-green-600 shrink-0" strokeWidth={1.5} />
-                                                            ) : (
-                                                                <X className="w-5 h-5 text-slate-300 shrink-0" strokeWidth={1.5} />
-                                                            )
+                                            <React.Fragment key={row.feature}>
+                                                <div className="wonder-pricing-compare-cell text-slate-700">{row.feature}</div>
+                                                <div className="wonder-pricing-compare-cell flex items-center justify-center">
+                                                    {typeof row.personal === 'boolean' ? (
+                                                        row.personal ? (
+                                                            <Check className="h-5 w-5 shrink-0 text-[#009fbc]" strokeWidth={1.5} />
                                                         ) : (
-                                                            <div className="flex flex-col text-center items-center">
-                                                                <span className="text-slate-700 text-sm">{row.personal.text}</span>
-                                                                {row.personal.sub && <span className="text-slate-500 text-xs">{row.personal.sub}</span>}
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    <div className="flex justify-center">
-                                                        {typeof row.business === "boolean" ? (
-                                                            row.business ? (
-                                                                <Check className="w-5 h-5 text-green-600 shrink-0" strokeWidth={1.5} />
-                                                            ) : (
-                                                                <X className="w-5 h-5 text-slate-300 shrink-0" strokeWidth={1.5} />
-                                                            )
-                                                        ) : (
-                                                            <div className="flex flex-col text-center items-center">
-                                                                <span className="text-slate-700 text-sm">{row.business.text}</span>
-                                                                {row.business.sub && <span className="text-slate-500 text-xs">{row.business.sub}</span>}
-                                                            </div>
-                                                        )}
-                                                    </div>
+                                                            <X className="h-5 w-5 shrink-0 text-slate-300" strokeWidth={1.5} />
+                                                        )
+                                                    ) : (
+                                                        <div className="flex flex-col items-center text-center">
+                                                            <span className="text-sm text-slate-700">{row.personal.text}</span>
+                                                            {row.personal.sub ? (
+                                                                <span className="text-xs text-slate-500">{row.personal.sub}</span>
+                                                            ) : null}
+                                                        </div>
+                                                    )}
                                                 </div>
-                                            </div>
+                                                <div className="wonder-pricing-compare-cell flex items-center justify-center">
+                                                    {typeof row.business === 'boolean' ? (
+                                                        row.business ? (
+                                                            <Check className="h-5 w-5 shrink-0 text-[#009fbc]" strokeWidth={1.5} />
+                                                        ) : (
+                                                            <X className="h-5 w-5 shrink-0 text-slate-300" strokeWidth={1.5} />
+                                                        )
+                                                    ) : (
+                                                        <div className="flex flex-col items-center text-center">
+                                                            <span className="text-sm text-slate-700">{row.business.text}</span>
+                                                            {row.business.sub ? (
+                                                                <span className="text-xs text-slate-500">{row.business.sub}</span>
+                                                            ) : null}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </React.Fragment>
                                         ))}
-                                    </div>
+                                    </React.Fragment>
                                 );
                             })}
-                            {/* Monthly price row */}
-                            <div className="border-b border-slate-100">
-                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 items-center py-3">
-                                    <div className="font-medium text-sm text-slate-900">Monthly price</div>
-                                    <div className="flex justify-center">
-                                        <span className="text-sm text-slate-900">$18/mo</span>
-                                    </div>
-                                    <div className="flex justify-center">
-                                        <span className="text-sm text-slate-900">$86/mo</span>
-                                    </div>
-                                </div>
+                            <div className="wonder-pricing-compare-cell font-medium text-slate-900">Monthly price</div>
+                            <div className="wonder-pricing-compare-cell flex items-center justify-center text-sm text-slate-900">
+                                $
+                                {billingCycle === 'Yearly'
+                                    ? (pricingTiers[0].yearlyPrice / 12).toFixed(0)
+                                    : pricingTiers[0].monthlyPrice}
+                                /mo
                             </div>
-                            {/* CTA row */}
-                            <div className="border-b border-slate-200 bg-slate-50/30">
-                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 py-6">
-                                    <div />
-                                    <div className="flex justify-center px-4">
-                                        <Link
-                                            href="https://app.wonderdesk.ai"
-                                            className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 transition-colors"
-                                        >
-                                            Start free trial
-                                        </Link>
-                                    </div>
-                                    <div className="flex justify-center px-4">
-                                        <Link
-                                            href="https://app.wonderdesk.ai"
-                                            className="inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 transition-colors"
-                                        >
-                                            Start free trial
-                                        </Link>
-                                    </div>
-                                </div>
+                            <div className="wonder-pricing-compare-cell flex items-center justify-center text-sm text-slate-900">
+                                $
+                                {billingCycle === 'Yearly'
+                                    ? (pricingTiers[1].yearlyPrice / 12).toFixed(0)
+                                    : pricingTiers[1].monthlyPrice}
+                                /mo
+                            </div>
+                            <div className="wonder-pricing-compare-cell bg-slate-50" />
+                            <div className="wonder-pricing-compare-cell flex items-center justify-center bg-slate-50 px-4 py-5">
+                                <Link href="https://app.wonderdesk.ai" className="wonder-btn-secondary">
+                                    Start free trial
+                                </Link>
+                            </div>
+                            <div className="wonder-pricing-compare-cell flex items-center justify-center bg-slate-50 px-4 py-5">
+                                <Link href="https://app.wonderdesk.ai" className="wonder-btn-primary">
+                                    Start free trial
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -125,3 +125,49 @@
 .wonder-footer-link:hover {
   color: var(--wonder-brand);
 }
+
+.wonder-pricing-compare {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  background: #e2e8f0;
+}
+
+.wonder-pricing-compare-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  background: #ffffff;
+}
+
+.wonder-pricing-compare-cell {
+  border-bottom: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+.wonder-pricing-compare-cell:nth-child(3n) {
+  border-right: none;
+}
+
+.wonder-pricing-compare-head {
+  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+  background: #f8fafc;
+}
+
+.wonder-pricing-compare-category {
+  grid-column: 1 / -1;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+}

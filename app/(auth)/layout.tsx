@@ -9,12 +9,12 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
   const hideNewsletter = pathname === '/wonder-auth'
   
   return (
-    <>
+    <div className="homepage-grid">
       <main className="grow bg-gray-50">
         {children}
       </main>
       {!hideNewsletter && <Newsletter />}
       <Footer />
-    </>
+    </div>
   )
 }
