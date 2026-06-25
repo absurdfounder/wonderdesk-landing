@@ -76,12 +76,24 @@ module.exports = {
         '3/4': '75%',
         '1/1': '100%',
       },
+      /*
+       * Trooper-aligned typography (see trooper_landing/tailwind.config.js)
+       * — font-sans / font-inter     → body, UI (Inter)
+       * — font-display / font-erode  → headlines, pricing amounts (Erode)
+       * — font-mono                  → code, labels, compare tables (system stack)
+       * — font-brand / font-silkscreen → section kickers, pixel UI
+       * — font-funneldisplay         → alias for Erode (legacy class names)
+       */
       fontFamily: {
-        sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        display: ['var(--font-manrope)', 'var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        mono: ['var(--font-jetbrains-mono)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
-        funneldisplay: ['var(--font-display)', 'var(--font-manrope)', 'var(--font-inter)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-erode)', 'var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-erode)', 'ui-serif', 'Georgia', 'serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+        brand: ['var(--font-silkscreen)', 'monospace'],
         inter: ['var(--font-inter)', 'sans-serif'],
+        erode: ['var(--font-erode)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        funneldisplay: ['var(--font-erode)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        silkscreen: ['var(--font-silkscreen)', 'monospace'],
       },
       fontSize: {
         xs: '0.75rem',

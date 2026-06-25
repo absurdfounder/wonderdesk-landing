@@ -1,33 +1,28 @@
-// app/layout.tsx or layout.js (depending on your setup)
+// app/layout.tsx
 import './css/style.css'
 
-import { Inter, Manrope, JetBrains_Mono, Source_Serif_4, Comfortaa, Josefin_Slab } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Script from 'next/script'
 
 import Banner from '@/components/banner'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
+/** Body — paragraphs, nav, UI */
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' })
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', display: 'swap' })
-const sourceSerif4 = Source_Serif_4({ subsets: ['latin'], variable: '--font-source-serif-4', display: 'swap' })
-const comfortaa = Comfortaa({ subsets: ['latin'], variable: '--font-comfortaa', display: 'swap' })
-const josefinSlab = Josefin_Slab({ subsets: ['latin'], variable: '--font-josefin-slab', display: 'swap' })
 
+/** Section kickers, logo wordmark, small brand labels */
 const silkscreen = localFont({
   src: [{ path: '../public/fonts/Silkscreen-Regular.ttf', weight: '400', style: 'normal' }],
-  variable: '--font-silkscreen'
+  variable: '--font-silkscreen',
 })
 
-const bungee = localFont({
-  src: '../public/fonts/Bungee-Regular.ttf',
-  variable: '--font-bungee'
-})
-
-const funneldisplay = localFont({
-  src: '../public/fonts/FunnelDisplay-VariableFont_wght.ttf',
-  variable: '--font-display'
+/** H1, hero, section titles, pricing display (Erode — same as trooper_landing) */
+const erode = localFont({
+  src: '../public/fonts/Erode-Variable.ttf',
+  variable: '--font-erode',
+  display: 'swap',
+  weight: '300 700',
 })
 
 export const viewport = {
@@ -130,7 +125,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} ${manrope.variable} ${jetbrainsMono.variable} ${sourceSerif4.variable} ${comfortaa.variable} ${josefinSlab.variable} ${silkscreen.variable} ${bungee.variable} ${funneldisplay.variable} wonder-shell bg-gray-50 font-sans antialiased text-slate-900 tracking-tight`}>
+      <body className={`${inter.variable} ${silkscreen.variable} ${erode.variable} wonder-shell bg-gray-50 font-sans antialiased text-slate-900 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}
           <SchemaMarkup />

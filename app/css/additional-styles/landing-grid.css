@@ -29,6 +29,7 @@
   --wonder-slate-border: #e2e8f0;
   --color-line: #e8e8e5;
   --site-header-height: 3.5rem;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 @media (min-width: 640px) {
