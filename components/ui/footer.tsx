@@ -1,9 +1,24 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { Twitter, Linkedin, Youtube, Github, Sparkles, Bot, Globe, Chrome, BookOpen, Pen } from 'lucide-react';
-import Logo from '@/public/images/logonew-black.png';
+import {
+  Twitter,
+  Linkedin,
+  Youtube,
+  Github,
+  Sparkles,
+  Bot,
+  Globe,
+  Chrome,
+  Camera,
+  MessageCircle,
+  Code,
+  BookOpen,
+  ScrollText,
+  HelpCircle,
+  Zap,
+} from 'lucide-react';
+import WonderLogo from '@/components/ui/WonderLogo';
 import PixelButton from '@/components/ui/PixelButton';
 
 type LinkItem = {
@@ -33,15 +48,22 @@ const featureColumn: FooterColumn = {
       links: [
         { label: 'Help Center', href: '/features/ai-help-center', icon: <Sparkles className="h-3.5 w-3.5 text-sky-500" /> },
         { label: 'AI Documentation', href: '/features/ai-documentation-agent', icon: <Bot className="h-3.5 w-3.5 text-amber-500" /> },
+        { label: 'Automated screenshots', href: '/features/automated-screenshots-for-docs', icon: <Camera className="h-3.5 w-3.5 text-orange-500" /> },
+        { label: 'Self-service widget', href: '/features/self-service-help-widget', icon: <MessageCircle className="h-3.5 w-3.5 text-rose-500" /> },
+        { label: 'Blog', href: '/create-a-blog-notion', icon: <BookOpen className="h-3.5 w-3.5 text-blue-500" /> },
+        { label: 'Changelog', href: '/create-a-changelog-notion', icon: <ScrollText className="h-3.5 w-3.5 text-indigo-500" /> },
+        { label: 'Code to help docs', href: '/features/code-to-docs', icon: <Code className="h-3.5 w-3.5 text-violet-500" /> },
         { label: 'Multilingual', href: '/features/multilingual-knowledge-base', icon: <Globe className="h-3.5 w-3.5 text-teal-500" /> },
+        { label: 'Internal knowledge base', href: '/features/internal-knowledge-base', icon: <HelpCircle className="h-3.5 w-3.5 text-stone-500" /> },
         { label: 'Chrome extension', href: '/features/chrome-extension-for-documentation', icon: <Chrome className="h-3.5 w-3.5 text-amber-700" /> },
-        { label: 'Integrations', href: '/integration', icon: <Sparkles className="h-3.5 w-3.5 text-blue-500" /> },
+        { label: 'AI answers', href: '/features/generative-ai-customer-service', icon: <Sparkles className="h-3.5 w-3.5 text-lime-600" /> },
+        { label: 'Integrations', href: '/integration', icon: <Zap className="h-3.5 w-3.5 text-blue-500" /> },
       ],
     },
     {
       heading: 'Get help',
       links: [
-        { label: 'Contact us', href: 'mailto:support@wondersites.ai' },
+        { label: 'Contact us', href: 'mailto:support@wonderdesk.ai' },
         { label: 'Privacy policy', href: '/privacy' },
         { label: 'Terms of service', href: '/terms' },
       ],
@@ -58,16 +80,16 @@ const productColumn: FooterColumn = {
       links: [
         { label: 'How it works', href: '/' },
         { label: 'Examples', href: '/showcase' },
-        { label: 'Pricing', href: '/pricing' },
         { label: 'Integrations', href: '/integration' },
+        { label: 'Pricing', href: '/pricing' },
         { label: 'Dashboard', href: 'https://app.wonderdesk.ai', external: true },
       ],
     },
     {
       heading: 'Resources',
       links: [
-        { label: 'Blog templates', href: '/create-a-blog-notion', icon: <BookOpen className="h-3.5 w-3.5 text-sky-500" /> },
-        { label: 'Agency', href: '/agency', icon: <Pen className="h-3.5 w-3.5 text-violet-500" /> },
+        { label: 'Blog templates', href: '/create-a-blog-notion' },
+        { label: 'Agency', href: '/agency' },
         { label: 'Affiliate', href: '/affiliate' },
         { label: 'Compare', href: '/compare-against/helpjuice' },
       ],
@@ -75,9 +97,9 @@ const productColumn: FooterColumn = {
   ],
 };
 
-const compareColumn: FooterColumn = {
+const alternativesColumn: FooterColumn = {
   number: '04',
-  eyebrow: 'Compare',
+  eyebrow: 'Alternatives',
   groups: [
     {
       heading: 'Alternatives',
@@ -94,7 +116,7 @@ const compareColumn: FooterColumn = {
 
 function CellHeader({ number, eyebrow }: { number: string; eyebrow: string }) {
   return (
-    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-slate-500">
+    <div className="font-silkscreen text-[11px] uppercase tracking-[0.18em] text-slate-500">
       <span className="text-slate-400">[{number}]</span> {eyebrow}
     </div>
   );
@@ -134,7 +156,14 @@ function LinkList({ links }: { links: LinkItem[] }) {
 
 function FooterColumnCell({ column, borderRight }: { column: FooterColumn; borderRight: boolean }) {
   return (
-    <div className={`flex flex-col gap-6 px-6 py-8 md:px-8 md:py-10 ${borderRight ? 'lg:border-r lg:border-slate-100' : ''}`}>
+    <div
+      className={[
+        'flex flex-col gap-6 px-6 py-8 md:px-8 md:py-10',
+        borderRight ? 'lg:border-r lg:border-slate-100' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
       <CellHeader number={column.number} eyebrow={column.eyebrow} />
       {column.groups.map((group, gIdx) => (
         <div key={group.heading} className={gIdx > 0 ? 'border-t border-slate-100 pt-5' : ''}>
@@ -149,7 +178,7 @@ function FooterColumnCell({ column, borderRight }: { column: FooterColumn; borde
 }
 
 export default function Footer() {
-  const linkColumns = [featureColumn, productColumn, compareColumn];
+  const linkColumns = [featureColumn, productColumn, alternativesColumn];
 
   return (
     <footer className="border-t border-slate-100 bg-white">
@@ -157,32 +186,52 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-5 border-b border-slate-100 px-6 py-8 sm:col-span-2 md:px-8 md:py-10 lg:col-span-1 lg:border-b-0 lg:border-r lg:border-slate-100">
             <CellHeader number="01" eyebrow="Wonder" />
-            <Image src={Logo} alt="Wonder Sites" width={169} className="h-auto w-28 sm:w-32" />
+            <WonderLogo characterClassName="h-10 w-10 sm:h-11 sm:w-11 rounded-md object-contain" textClassName="text-lg sm:text-xl" />
             <p className="text-sm leading-relaxed text-slate-600">
               The AI agent that keeps your help center, blog, changelog, and documentation up to date.
             </p>
             <p className="text-sm text-slate-600">
-              Lead by{' '}
-              <a className="text-wonder hover:underline" href="https://twitter.com/absurdfounder" target="_blank" rel="noopener noreferrer">
+              Built by{' '}
+              <a
+                className="text-wonder hover:underline"
+                href="https://twitter.com/absurdfounder"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 @absurdfounder
               </a>
               .
             </p>
             <ul className="mt-auto space-y-1.5 pt-2">
               <li>
-                <a className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900" href="https://twitter.com/absurdfounder" target="_blank" rel="noopener noreferrer">
+                <a
+                  className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900"
+                  href="https://twitter.com/absurdfounder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Twitter className="h-3.5 w-3.5 text-slate-400" />
                   <span>Twitter (X)</span>
                 </a>
               </li>
               <li>
-                <a className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900" href="https://www.linkedin.com/company/wondersites" target="_blank" rel="noopener noreferrer">
+                <a
+                  className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900"
+                  href="https://www.linkedin.com/company/wondersites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Linkedin className="h-3.5 w-3.5 text-slate-400" />
                   <span>LinkedIn</span>
                 </a>
               </li>
               <li>
-                <a className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900" href="https://www.youtube.com/@wondersites" target="_blank" rel="noopener noreferrer">
+                <a
+                  className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900"
+                  href="https://www.youtube.com/@wondersites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Youtube className="h-3.5 w-3.5 text-slate-400" />
                   <span>YouTube</span>
                 </a>
@@ -238,8 +287,14 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-slate-200 bg-white px-3 py-2 text-xs font-mono uppercase tracking-[0.12em] text-slate-600 transition-colors hover:text-slate-900 md:text-[11px]"
             >
-              <span className="text-slate-400">Notion</span>
-              <span className="font-semibold text-slate-700">Partner</span>
+              <span className="text-slate-400">Powered by</span>
+              <img
+                src="https://www.notion.com/front-static/favicon.ico"
+                alt=""
+                className="h-3.5 w-3.5 rounded-sm"
+                loading="lazy"
+              />
+              <span className="font-semibold text-slate-700">Notion</span>
             </a>
           </div>
         </div>
@@ -247,7 +302,7 @@ export default function Footer() {
         <div className="overflow-x-hidden border-t border-slate-100 pb-5 pt-3 sm:pb-6 sm:pt-4 md:pb-8">
           <p
             aria-hidden
-            className="pointer-events-none select-none whitespace-nowrap text-center font-funneldisplay lowercase leading-none tracking-tight text-slate-200 text-[clamp(2.75rem,18vw,12rem)]"
+            className="pointer-events-none select-none whitespace-nowrap text-center font-brand lowercase leading-none tracking-tight text-slate-200 text-[clamp(2.75rem,18vw,12rem)]"
           >
             wonder.
           </p>

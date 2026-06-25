@@ -124,8 +124,8 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         </main>
 
         <Newsletter />
-        <Footer />
       </div>
+      <Footer />
     </PlausibleProvider>
   )
 }
