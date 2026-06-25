@@ -786,12 +786,12 @@ const Pricing: React.FC = () => {
                             </div>
                             <div className="wonder-pricing-compare-cell bg-slate-50" />
                             <div className="wonder-pricing-compare-cell flex items-center justify-center bg-slate-50 px-4 py-5">
-                                <Link href="https://app.wonderdesk.ai" className="wonder-btn-secondary">
+                                <Link href="https://app.wonderdesk.ai" className="wonder-plan-cta wonder-plan-cta-neutral max-w-[12rem]">
                                     Start free trial
                                 </Link>
                             </div>
                             <div className="wonder-pricing-compare-cell flex items-center justify-center bg-slate-50 px-4 py-5">
-                                <Link href="https://app.wonderdesk.ai" className="wonder-btn-primary">
+                                <Link href="https://app.wonderdesk.ai" className="wonder-plan-cta max-w-[12rem]">
                                     Start free trial
                                 </Link>
                             </div>

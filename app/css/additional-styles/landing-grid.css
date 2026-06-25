@@ -1,4 +1,4 @@
-/* Trooper-style editorial grid — structure only. Does not override colors, backgrounds, or typography. */
+/* Trooper-style editorial grid — structure + onboarding shell tokens (Wonderdesk teal brand). */
 
 .landing-grid-column {
   margin-left: auto;
@@ -9,7 +9,6 @@
   border-right: 1px solid #e2e8f0;
 }
 
-/* Align vertical grid lines on all existing max-w-7xl content columns */
 .homepage-grid .max-w-7xl {
   border-left: 1px solid #e2e8f0;
   border-right: 1px solid #e2e8f0;
@@ -19,31 +18,62 @@
   border-top: 1px solid #e2e8f0;
 }
 
-/* ── Trooper-style nav + footer (Wonderdesk teal brand) ── */
 .wonder-shell {
   --wonder-brand: #009fbc;
   --wonder-brand-dark: #007a94;
-  --wonder-brand-light: #e6f7fb;
+  --wonder-brand-600: #008aaa;
+  --wonder-brand-700: #006b80;
+  --wonder-brand-50: #e6f7fb;
+  --wonder-brand-100: #cceff7;
+  --wonder-brand-border: rgba(0, 159, 188, 0.35);
+  --wonder-slate-border: #e2e8f0;
 }
 
+/* ── Nav (Trooper onboarding header) ── */
 .wonder-nav-shell {
-  border-bottom: 1px solid #e2e8f0;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--wonder-slate-border);
+  background: #ffffff;
 }
 
 .wonder-nav-link {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.125rem;
+  padding: 0.375rem 0.5rem;
   font-family: var(--font-roboto-mono), ui-monospace, monospace;
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.12em;
+  line-height: 1;
   text-transform: uppercase;
-  color: #475569;
-  transition: color 0.15s ease;
+  color: #64748b;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .wonder-nav-link:hover {
-  color: var(--wonder-brand);
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.wonder-nav-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.125rem;
+  padding: 0.375rem 0.75rem;
+  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #64748b;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.wonder-nav-ghost:hover {
+  background: #f1f5f9;
+  color: #0f172a;
 }
 
 .wonder-btn-primary {
@@ -52,7 +82,7 @@
   justify-content: center;
   gap: 0.375rem;
   min-height: 2.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1rem;
   border: 1px solid transparent;
   background: var(--wonder-brand);
   color: #ffffff;
@@ -62,12 +92,25 @@
   letter-spacing: 0.14em;
   line-height: 1;
   text-transform: uppercase;
-  border-radius: 0.125rem;
+  clip-path: polygon(
+    6px 0,
+    100% 0,
+    100% calc(100% - 6px),
+    calc(100% - 3px) calc(100% - 6px),
+    calc(100% - 3px) calc(100% - 3px),
+    calc(100% - 6px) calc(100% - 3px),
+    calc(100% - 6px) 100%,
+    0 100%,
+    0 6px,
+    3px 6px,
+    3px 3px,
+    6px 3px
+  );
   transition: background-color 0.15s ease;
 }
 
 .wonder-btn-primary:hover {
-  background: var(--wonder-brand-dark);
+  background: var(--wonder-brand-600);
 }
 
 .wonder-btn-secondary {
@@ -76,7 +119,7 @@
   justify-content: center;
   gap: 0.25rem;
   min-height: 2.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1rem;
   border: 1px solid #0f172a;
   background: transparent;
   color: #0f172a;
@@ -87,7 +130,7 @@
   line-height: 1;
   text-transform: uppercase;
   border-radius: 0.125rem;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease;
 }
 
 .wonder-btn-secondary:hover {
@@ -97,13 +140,14 @@
 .wonder-nav-dropdown {
   overflow: hidden;
   border-radius: 0.125rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--wonder-slate-border);
   background: #ffffff;
   box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
 }
 
+/* ── Footer (Trooper onboarding footer rail) ── */
 .wonder-footer-shell {
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--wonder-slate-border);
   background: #ffffff;
 }
 
@@ -126,10 +170,50 @@
   color: var(--wonder-brand);
 }
 
+/* ── Pricing grid (Trooper OnboardingLandingPricing) ── */
+.wonder-landing-pricing {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 88rem;
+}
+
+.wonder-plan-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background: var(--wonder-brand);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+  text-decoration: none;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.wonder-plan-cta:hover {
+  background: var(--wonder-brand-600);
+}
+
+.wonder-plan-cta-neutral {
+  border: 1px solid var(--wonder-slate-border);
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.wonder-plan-cta-neutral:hover {
+  background: #f1f5f9;
+}
+
 .wonder-pricing-compare {
   overflow: hidden;
-  border: 1px solid #e2e8f0;
-  background: #e2e8f0;
+  border: 1px solid var(--wonder-slate-border);
+  background: var(--wonder-slate-border);
 }
 
 .wonder-pricing-compare-grid {
@@ -139,8 +223,8 @@
 }
 
 .wonder-pricing-compare-cell {
-  border-bottom: 1px solid #e2e8f0;
-  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--wonder-slate-border);
+  border-right: 1px solid var(--wonder-slate-border);
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
 }
@@ -161,7 +245,7 @@
 
 .wonder-pricing-compare-category {
   grid-column: 1 / -1;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--wonder-slate-border);
   background: #f8fafc;
   padding: 0.75rem 1rem;
   font-family: var(--font-roboto-mono), ui-monospace, monospace;

@@ -66,26 +66,23 @@ export default function Header() {
       {/* Main Header */}
       <header className="wonder-nav-shell fixed top-0 z-40 w-full">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          <div className="flex h-14 items-center justify-between sm:h-[3.75rem]">
-            {/* Logo */}
-            <div className='flex items-center'>
-              <Link href="/" className="shrink-0 mr-2 sm:mr-4 relative group">
+          <div className="flex h-14 items-center justify-between gap-4 sm:h-[3.75rem]">
+            <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+              <Link href="/" className="group relative shrink-0">
                 <Image
                   src={Logo}
-                  alt="Logo"
+                  alt="Wonder Sites"
                   width={260}
                   height={200}
-                  className="relative w-44 h-auto sm:w-52 md:w-56 lg:w-48"
+                  className="relative h-auto w-32 sm:w-36 lg:w-40"
                   priority
                 />
               </Link>
-
               <TranslateButton />
             </div>
 
-            {/* Desktop navigation */}
-            <nav className="hidden lg:flex lg:grow">
-              <ul className="flex gap-2 sm:gap-3 items-center justify-end w-full">
+            <nav className="hidden lg:flex lg:grow lg:justify-end">
+              <ul className="flex items-center gap-1 sm:gap-2">
                 <li className="relative" ref={dropdownRef}>
                   <button
                   className="wonder-nav-link flex items-center py-2"
@@ -230,23 +227,23 @@ export default function Header() {
                 <NavLink href="/pricing" text="Pricing" />
                 <NavLink href="https://app.wonderdesk.ai" text="Login" />
 
-                <li>
+                <li className="ml-1">
                   <button
                     data-cal-namespace="setup-call"
                     data-cal-link="set-meeting/setup-call"
                     data-cal-config='{"layout":"month_view"}'
-                    className="wonder-btn-secondary ml-1"
+                    className="wonder-nav-ghost"
                   >
-                    Sign in
+                    Book demo
                   </button>
                 </li>
 
-                <li>
+                <li className="ml-1">
                   <Link
                     href="https://app.wonderdesk.ai"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="wonder-btn-primary ml-1"
+                    className="wonder-btn-primary"
                   >
                     Get started
                     <ArrowRight className="h-3.5 w-3.5" />

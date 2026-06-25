@@ -1,0 +1,14 @@
+---
+description: Always push to remote when work is complete — do not ask for confirmation
+alwaysApply: true
+---
+
+# Auto-push when done
+
+When you finish a task that includes code changes in this repo:
+
+1. Commit with a clear message if there are uncommitted changes.
+2. Push to the tracked remote branch immediately.
+3. Do not ask whether to push — the user wants pushes by default after completed work.
+
+Only skip pushing when the user explicitly says not to push, or when there are no changes to commit.

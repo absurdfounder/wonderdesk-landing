@@ -28,23 +28,23 @@ export default function Footer() {
   return (
     <footer className="wonder-footer-shell">
       <div className="mx-auto max-w-7xl">
-        <div className="px-5 py-8 sm:px-6 md:py-12">
-          <div className="flex flex-col gap-6 sm:gap-8 md:flex-row md:gap-12">
+        <div className="px-5 py-10 sm:px-6 md:py-14">
+          <div className="flex flex-col gap-8 sm:gap-10 md:flex-row md:gap-12">
           {/* Brand Section */}
-          <div className="w-full md:w-64">
+          <div className="w-full md:w-56 lg:w-64">
             <div className="flex items-center gap-2">
               <Image
                 src={Logo}
                 alt="Wonder Sites"
                 width={169}
-                className="rounded-lg w-32 sm:w-40 md:w-auto"
+                className="h-auto w-28 sm:w-32"
               />
             </div>
-            <p className="mt-2 text-xs sm:text-sm text-neutral-500 leading-relaxed">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600">
             The AI agent that keeps your help center, blog, changelog, and documentation up to date.
             </p>
-            <p className="text-sm text-slate-600 mb-4">
-              Lead by <a className="text-orange-600 hover:underline" href="https://twitter.com/absurdfounder" target="_blank" rel="noopener noreferrer">@absurdfounder</a>.
+            <p className="mt-2 text-sm text-slate-500">
+              Lead by <a className="text-[#009fbc] hover:underline" href="https://twitter.com/absurdfounder" target="_blank" rel="noopener noreferrer">@absurdfounder</a>.
             </p>
             <ul className="mt-3 space-y-1">
               <li>
@@ -436,13 +436,13 @@ export default function Footer() {
         </div>
         </div>
 
-        <div className="flex flex-col border-t border-slate-200 px-5 py-6 sm:px-6 md:flex-row md:items-center md:justify-between md:py-8">
-          <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1 flex flex-wrap gap-4">
+        <div className="border-t border-slate-200 px-5 py-6 sm:px-6 md:flex md:items-center md:justify-between md:py-8">
+          <div className="order-2 mb-0 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500 md:order-1 md:text-sm">
           © Boring Sites LLC. All rights reserved.{' '}
           <Link href="/privacy" className="hover:text-slate-900">Privacy</Link>
           <Link href="/terms" className="hover:text-slate-900">Terms</Link>
         </div>
-        <ul className="flex flex-wrap mb-4 md:mb-0 order-1 md:order-2 gap-3 items-center">
+        <ul className="order-1 mb-4 flex flex-wrap items-center gap-3 md:order-2 md:mb-0">
           <li>
             <Image
               width={199}
