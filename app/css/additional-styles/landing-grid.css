@@ -18,3 +18,110 @@
 .homepage-grid-row {
   border-top: 1px solid #e2e8f0;
 }
+
+/* ── Trooper-style nav + footer (Wonderdesk teal brand) ── */
+.wonder-shell {
+  --wonder-brand: #009fbc;
+  --wonder-brand-dark: #007a94;
+  --wonder-brand-light: #e6f7fb;
+}
+
+.wonder-nav-shell {
+  border-bottom: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.wonder-nav-link {
+  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #475569;
+  transition: color 0.15s ease;
+}
+
+.wonder-nav-link:hover {
+  color: var(--wonder-brand);
+}
+
+.wonder-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  background: var(--wonder-brand);
+  color: #ffffff;
+  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  border-radius: 0.125rem;
+  transition: background-color 0.15s ease;
+}
+
+.wonder-btn-primary:hover {
+  background: var(--wonder-brand-dark);
+}
+
+.wonder-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #0f172a;
+  background: transparent;
+  color: #0f172a;
+  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  border-radius: 0.125rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.wonder-btn-secondary:hover {
+  background: #f8fafc;
+}
+
+.wonder-nav-dropdown {
+  overflow: hidden;
+  border-radius: 0.125rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+}
+
+.wonder-footer-shell {
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+.wonder-footer-label {
+  font-family: var(--font-roboto-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.wonder-footer-link {
+  font-size: 0.875rem;
+  color: #475569;
+  transition: color 0.15s ease;
+}
+
+.wonder-footer-link:hover {
+  color: var(--wonder-brand);
+}

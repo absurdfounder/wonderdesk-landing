@@ -26,9 +26,10 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="border-neutral-200 px-4 sm:px-6 md:px-8 bg-white">
-      <div className="mx-auto max-w-7xl py-6 sm:py-8 md:py-12">
-        <div className="flex flex-col gap-6 sm:gap-8 md:flex-row md:gap-12">
+    <footer className="wonder-footer-shell">
+      <div className="mx-auto max-w-7xl">
+        <div className="px-5 py-8 sm:px-6 md:py-12">
+          <div className="flex flex-col gap-6 sm:gap-8 md:flex-row md:gap-12">
           {/* Brand Section */}
           <div className="w-full md:w-64">
             <div className="flex items-center gap-2">
@@ -48,7 +49,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-1">
               <li>
                 <a
-                  className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                  className="wonder-footer-link flex items-center gap-2 text-xs sm:text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://twitter.com/absurdfounder"
@@ -59,7 +60,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                  className="wonder-footer-link flex items-center gap-2 text-xs sm:text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.linkedin.com/company/wondersites"
@@ -70,7 +71,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                  className="wonder-footer-link flex items-center gap-2 text-xs sm:text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.youtube.com/@wondersites"
@@ -87,11 +88,11 @@ export default function Footer() {
             {/* Features Column */}
             <div className="space-y-6 sm:space-y-8">
               <div>
-                <span className="text-xs sm:text-sm font-semibold text-neutral-800">Features</span>
+                <span className="wonder-footer-label">Features</span>
                 <ul className="mt-2 sm:mt-3 space-y-1">
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-sky-500 flex-shrink-0" />
@@ -100,7 +101,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <Bot className="h-3 w-3 sm:h-4 sm:w-4 text-amber-500 flex-shrink-0" />
@@ -109,7 +110,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <ImageIcon className="h-3 w-3 sm:h-4 sm:w-4 text-orange-500 flex-shrink-0" />
@@ -118,7 +119,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 text-rose-500 flex-shrink-0" />
@@ -127,7 +128,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <Code className="h-3 w-3 sm:h-4 sm:w-4 text-violet-500 flex-shrink-0" />
@@ -136,7 +137,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <Globe className="h-3 w-3 sm:h-4 sm:w-4 text-teal-500 flex-shrink-0" />
@@ -145,7 +146,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <Lock className="h-3 w-3 sm:h-4 sm:w-4 text-stone-500 flex-shrink-0" />
@@ -154,7 +155,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <MessageSquare className="h-3 w-3 sm:h-4 sm:w-4 text-lime-600 flex-shrink-0" />
@@ -163,7 +164,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/integration"
                     >
                       <Plug className="h-3 w-3 sm:h-4 sm:w-4 text-blue-500 flex-shrink-0" />
@@ -172,7 +173,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/create-a-chrome-extension"
                     >
                       <Chrome className="h-3 w-3 sm:h-4 sm:w-4 text-amber-800/30 flex-shrink-0" />
@@ -182,11 +183,11 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <span className="text-xs sm:text-sm font-semibold text-neutral-800">Get help</span>
+                <span className="wonder-footer-label">Get help</span>
                 <ul className="mt-2 sm:mt-3 space-y-1">
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="mailto:support@wondersites.ai"
                     >
                       <span className="break-words">Contact us</span>
@@ -194,7 +195,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/privacy"
                     >
                       <span className="break-words">Privacy policy</span>
@@ -202,7 +203,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/terms"
                     >
                       <span className="break-words">Terms of service</span>
@@ -215,11 +216,11 @@ export default function Footer() {
             {/* Product Column */}
             <div className="space-y-6 sm:space-y-8">
               <div>
-                <span className="text-xs sm:text-sm font-semibold text-neutral-800">Product</span>
+                <span className="wonder-footer-label">Product</span>
                 <ul className="mt-2 sm:mt-3 space-y-1">
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/"
                     >
                       <span className="break-words">How it works</span>
@@ -227,7 +228,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/integration"
                     >
                       <span className="break-words">Integrations</span>
@@ -235,7 +236,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/pricing"
                     >
                       <span className="break-words">Pricing</span>
@@ -243,7 +244,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/showcase"
                     >
                       <span className="break-words">Showcase</span>
@@ -251,7 +252,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <span className="break-words">Changelog</span>
@@ -259,7 +260,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="https://app.wonderdesk.ai"
                     >
                       <span className="break-words">Dashboard</span>
@@ -268,11 +269,11 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <span className="text-xs sm:text-sm font-semibold text-neutral-800">Resources</span>
+                <span className="wonder-footer-label">Resources</span>
                 <ul className="mt-2 sm:mt-3 space-y-1">
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <BookOpen className="h-3 w-3 sm:h-4 sm:w-4 text-sky-500 flex-shrink-0" />
@@ -281,7 +282,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <Pen className="h-3 w-3 sm:h-4 sm:w-4 text-amber-500 flex-shrink-0" />
@@ -290,7 +291,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/showcase"
                     >
                       <Users className="h-3 w-3 sm:h-4 sm:w-4 text-violet-500 flex-shrink-0" />
@@ -299,7 +300,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="#"
                     >
                       <Bell className="h-3 w-3 sm:h-4 sm:w-4 text-lime-500 flex-shrink-0" />
@@ -314,11 +315,11 @@ export default function Footer() {
             {/* Alternatives Column */}
             <div className="space-y-6 sm:space-y-8">
               <div>
-                <span className="text-xs sm:text-sm font-semibold text-neutral-800">Alternatives</span>
+                <span className="wonder-footer-label">Alternatives</span>
                 <ul className="mt-2 sm:mt-3 space-y-1">
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/helpdocs-io"
                     >
                       <span className="break-words">Helpdocs.io alternative</span>
@@ -326,7 +327,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/mintlify"
                     >
                       <span className="break-words">Mintlify alternative</span>
@@ -334,7 +335,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/zendesk-help-center"
                     >
                       <span className="break-words">Zendesk Help Center alternative</span>
@@ -342,7 +343,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/intercom-help-center"
                     >
                       <span className="break-words">Intercom Help Center alternative</span>
@@ -350,7 +351,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/docusaurus"
                     >
                       <span className="break-words">Docusaurus alternative</span>
@@ -358,7 +359,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/gitbook"
                     >
                       <span className="break-words">GitBook alternative</span>
@@ -366,7 +367,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/document360"
                     >
                       <span className="break-words">Document360 alternative</span>
@@ -374,7 +375,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/proprofs-kb"
                     >
                       <span className="break-words">ProProfs KB alternative</span>
@@ -382,7 +383,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/zoho-desk"
                     >
                       <span className="break-words">Zoho Desk alternative</span>
@@ -390,7 +391,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/help-scout"
                     >
                       <span className="break-words">Help Scout alternative</span>
@@ -398,7 +399,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/helpjuice"
                     >
                       <span className="break-words">Helpjuice alternative</span>
@@ -406,7 +407,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/knowledgeowl"
                     >
                       <span className="break-words">KnowledgeOwl alternative</span>
@@ -414,7 +415,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/archbee"
                     >
                       <span className="break-words">Archbee alternative</span>
@@ -422,7 +423,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600 transition-colors hover:text-neutral-800"
+                      className="wonder-footer-link flex items-center gap-2"
                       href="/compare-against/stonly"
                     >
                       <span className="break-words">Stonly alternative</span>
@@ -433,11 +434,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
 
-      {/* Bottom Bar */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200 max-w-7xl m-auto">
-        <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1 flex flex-wrap gap-4">
+        <div className="flex flex-col border-t border-slate-200 px-5 py-6 sm:px-6 md:flex-row md:items-center md:justify-between md:py-8">
+          <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1 flex flex-wrap gap-4">
           © Boring Sites LLC. All rights reserved.{' '}
           <Link href="/privacy" className="hover:text-slate-900">Privacy</Link>
           <Link href="/terms" className="hover:text-slate-900">Terms</Link>
@@ -455,7 +455,7 @@ export default function Footer() {
           </li>
           <li>
             <a
-              className="flex justify-center items-center text-slate-600 hover:text-slate-900 bg-white hover:bg-white-100 rounded-md shadow transition duration-150 ease-in-out border px-3 py-1 md:px-4 md:py-1 text-sm"
+              className="flex items-center justify-center rounded-sm border border-slate-200 bg-white px-3 py-1 text-sm text-slate-600 shadow-sm transition duration-150 ease-in-out hover:bg-slate-50 hover:text-slate-900 md:px-4 md:py-1"
               aria-label="Github"
               href="https://github.com/absurdfounder"
               target="_blank"
@@ -473,7 +473,7 @@ export default function Footer() {
               href="https://www.notion.com/integrations/wonder-sites"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center items-center text-slate-600 hover:text-slate-900 bg-white hover:bg-white-100 rounded-md shadow transition duration-150 ease-in-out border px-3 py-1 md:px-4 md:py-1 text-sm"
+              className="flex items-center justify-center rounded-sm border border-slate-200 bg-white px-3 py-1 text-sm text-slate-600 shadow-sm transition duration-150 ease-in-out hover:bg-slate-50 hover:text-slate-900 md:px-4 md:py-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -493,6 +493,7 @@ export default function Footer() {
             </a>
           </li>
         </ul>
+        </div>
       </div>
     </footer>
   )

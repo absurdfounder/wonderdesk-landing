@@ -26,19 +26,8 @@ import TranslateButton from './TranslateButton';
 import { getCalApi } from "@calcom/embed-react";
 
 export default function Header() {
-  const [top, setTop] = useState<boolean>(true);
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [isBookHovered, setIsBookHovered] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
-
-  useEffect(() => {
-    const scrollHandler = () => {
-      window.pageYOffset > 10 ? setTop(false) : setTop(true);
-    };
-    window.addEventListener('scroll', scrollHandler);
-    return () => window.removeEventListener('scroll', scrollHandler);
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -75,11 +64,9 @@ export default function Header() {
   return (
     <>
       {/* Main Header */}
-      <header
-        className={`w-full z-30 transition-all duration-300 ease-in-out w-full fixed top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 md:px-6 ${!top ? 'bg-none' : ''}`}
-      >
-        <div className="max-w-7xl mx-auto py-2 px-4 sm:py-2.5 sm:px-6">
-          <div className="flex items-center justify-between h-11 sm:h-12 md:h-12">
+      <header className="wonder-nav-shell fixed top-0 z-40 w-full">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="flex h-14 items-center justify-between sm:h-[3.75rem]">
             {/* Logo */}
             <div className='flex items-center'>
               <Link href="/" className="shrink-0 mr-2 sm:mr-4 relative group">
@@ -101,11 +88,11 @@ export default function Header() {
               <ul className="flex gap-2 sm:gap-3 items-center justify-end w-full">
                 <li className="relative" ref={dropdownRef}>
                   <button
-                    className="font-bold text-slate-800 hover:text-[#009fbc] py-2 flex items-center transition duration-150 ease-in-out relative group text-base"
+                  className="wonder-nav-link flex items-center py-2"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     aria-expanded={dropdownOpen}
                   >
-                    <span className="relative overflow-hidden text-ellipsis max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#009fbc] group-hover:after:w-full after:transition-all after:duration-300">Features</span>
+                    <span>Features</span>
                     <ChevronDown className={`w-4 h-4 ml-1 text-slate-400 transition-transform duration-200 flex-shrink-0 ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
@@ -117,9 +104,9 @@ export default function Header() {
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className="absolute left-0 top-full mt-2 z-50"
                       >
-                        <div className="overflow-hidden rounded-lg shadow-xl ring-1 ring-black/5 bg-white">
-                          <div className="p-6 w-[640px]">
-                            <h3 className="mb-4 text-xs font-semibold tracking-wider text-neutral-400 uppercase">
+                        <div className="wonder-nav-dropdown">
+                          <div className="w-[640px] p-6">
+                            <h3 className="wonder-footer-label mb-4">
                               Features
                             </h3>
                             <div className="grid grid-cols-2 gap-x-4 gap-y-1">
@@ -248,43 +235,21 @@ export default function Header() {
                     data-cal-namespace="setup-call"
                     data-cal-link="set-meeting/setup-call"
                     data-cal-config='{"layout":"month_view"}'
-                    className="btn-sm text-black border border-gray-200 bg-white hover:bg-slate-800 hover:text-white ml-2 flex items-center justify-between px-3 py-1.5 rounded-md transition duration-150 ease-in-out group overflow-hidden relative text-base"
-                    onMouseEnter={() => setIsBookHovered(true)}
-                    onMouseLeave={() => setIsBookHovered(false)}
+                    className="wonder-btn-secondary ml-1"
                   >
-                    <div className="relative z-10 overflow-hidden w-full">
-                      <div className="flex items-center justify-between">
-                        <span className="truncate max-w-[120px]">Sign In</span>
-                      </div>
-                    </div>
+                    Sign in
                   </button>
                 </li>
 
                 <li>
                   <Link
                     href="https://app.wonderdesk.ai"
-                    target='_blank'
-                    className="btn-sm text-white bg-slate-900 hover:bg-slate-800 ml-2 flex items-center justify-between px-3 py-1.5 rounded-md transition duration-150 ease-in-out group overflow-hidden relative text-base"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="wonder-btn-primary ml-1"
                   >
-                    <div className="relative z-10 overflow-hidden w-full">
-                      <div className="flex items-center justify-between">
-                        <div className="transition-transform duration-300 transform truncate max-w-[150px]"
-                          style={{
-                            transform: isHovered ? 'translateY(-100%)' : 'translateY(0)'
-                          }}>
-                          Get Started for free
-                        </div>
-                        <div className="transition-transform duration-300 transform absolute top-0 left-0 truncate max-w-[150px]"
-                          style={{
-                            transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
-                          }}>
-                          Takes 15 mins
-                        </div>
-                        <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                      </div>
-                    </div>
+                    Get started
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </li>
               </ul>
@@ -321,13 +286,13 @@ function DropdownLink({ href, icon: Icon, iconColor, bgColor, title, description
     <Link
       href={href}
       onClick={onClick}
-      className="flex items-center gap-3 rounded-lg px-3 py-3 transition-all duration-200 hover:bg-neutral-50 group"
+      className="flex items-center gap-3 rounded-sm px-3 py-3 transition-colors duration-200 hover:bg-slate-50 group"
     >
       <div className={`flex-shrink-0 ${iconColor} ${bgColor} transition-all duration-200 group-hover:scale-110 p-2.5 rounded-lg`}>
         <Icon className="w-[18px] h-[18px]" />
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-neutral-800 group-hover:text-[#009fbc] transition-colors duration-200 mb-0.5">
+        <p className="mb-0.5 text-sm font-medium text-slate-800 group-hover:text-[#009fbc] transition-colors duration-200">
           {title}
         </p>
         <p className="text-xs text-neutral-500 leading-snug">
@@ -345,11 +310,8 @@ interface NavLinkProps {
 
 function NavLink({ href, text }: NavLinkProps) {
   return (
-    <Link
-      href={href}
-      className="font-medium text-slate-900 hover:text-[#009fbc] px-1 py-2 flex items-center transition duration-150 ease-in-out relative group text-base"
-    >
-      <span className="relative truncate max-w-[120px] block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#009fbc] group-hover:after:w-full after:transition-all after:duration-300">{text}</span>
+    <Link href={href} className="wonder-nav-link px-1 py-2">
+      {text}
     </Link>
   );
 }
