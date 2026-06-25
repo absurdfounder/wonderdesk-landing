@@ -8,6 +8,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        wonder: {
+          DEFAULT: '#009fbc',
+          50: '#e6f7fb',
+          100: '#cceff7',
+          200: '#99dff0',
+          700: '#007a94',
+          800: '#006b80',
+        },
+        canvas: {
+          DEFAULT: '#FAFAF8',
+          warm: '#F7F7F4',
+        },
+        ink: {
+          DEFAULT: '#1a1a1a',
+          muted: '#525252',
+          faint: '#737373',
+        },
         gray: {
           100: '#FBFBFB',
           200: '#EAEAEA',

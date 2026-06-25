@@ -1,314 +1,167 @@
-'use client'
+'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ChevronDown, 
-  ArrowRight, 
-  Sparkles, 
-  Camera, 
-  MessageCircle, 
-  Code, 
-  Globe, 
-  Lock, 
-  Zap, 
-  Chrome,
-  Bot,
-  BookOpen,
-  ScrollText
-} from 'lucide-react';
+import { ArrowRight, ChevronDown, Sparkles, Camera, MessageCircle, Code, Globe, Lock, Zap, Chrome, Bot, BookOpen, ScrollText } from 'lucide-react';
 import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
 import TabletMenu from './tablet-menu';
 import TranslateButton from './TranslateButton';
-import { getCalApi } from "@calcom/embed-react";
+import PixelButton from '@/components/ui/PixelButton';
+
+const featureNavItems = [
+  { href: '/features/ai-help-center', title: 'Help Center', description: 'Self-updating knowledge base', icon: Sparkles, iconColor: 'text-sky-500', bgColor: 'bg-sky-50' },
+  { href: '/features/ai-documentation-agent', title: 'AI agent', description: 'AI that writes your docs', icon: Bot, iconColor: 'text-amber-500', bgColor: 'bg-amber-50' },
+  { href: '/features/automated-screenshots-for-docs', title: 'Automated screenshots', description: 'Screenshots that stay current', icon: Camera, iconColor: 'text-orange-500', bgColor: 'bg-orange-50' },
+  { href: '/features/self-service-help-widget', title: 'Self-service widget', description: 'Embed help in your product', icon: MessageCircle, iconColor: 'text-rose-500', bgColor: 'bg-rose-50' },
+  { href: '/create-a-blog-notion', title: 'Blog', description: 'Beautiful automated blog', icon: BookOpen, iconColor: 'text-blue-500', bgColor: 'bg-blue-50' },
+  { href: '/create-a-changelog-notion', title: 'Changelog', description: 'Automated product updates', icon: ScrollText, iconColor: 'text-indigo-500', bgColor: 'bg-indigo-50' },
+  { href: '/features/code-to-docs', title: 'Code to help docs', description: 'Sync docs with your code', icon: Code, iconColor: 'text-violet-500', bgColor: 'bg-violet-50' },
+  { href: '/features/multilingual-knowledge-base', title: 'Multilingual', description: 'Translate your help center', icon: Globe, iconColor: 'text-teal-500', bgColor: 'bg-teal-50' },
+  { href: '/features/internal-knowledge-base', title: 'Internal knowledge base', description: 'Private docs with login required', icon: Lock, iconColor: 'text-stone-500', bgColor: 'bg-stone-50' },
+  { href: '/features/generative-ai-customer-service', title: 'AI answers', description: 'Help desk chatbot for support', icon: Sparkles, iconColor: 'text-lime-600', bgColor: 'bg-lime-50' },
+  { href: '/integration', title: 'Integrations', description: 'Connect your favorite tools', icon: Zap, iconColor: 'text-blue-500', bgColor: 'bg-blue-50' },
+  { href: '/features/chrome-extension-for-documentation', title: 'Chrome extension', description: 'Update docs from any tab', icon: Chrome, iconColor: 'text-amber-700', bgColor: 'bg-amber-50/50' },
+];
+
+const primaryNavLinks = [
+  { href: '/showcase', label: 'Examples' },
+  { href: '/pricing', label: 'Pricing' },
+];
 
 export default function Header() {
-  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
-  const dropdownRef = useRef<HTMLLIElement>(null);
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setDropdownOpen(false);
-      }
-    };
+    setOpenDropdown(false);
+  }, [pathname]);
 
-    const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && dropdownOpen) {
-        setDropdownOpen(false);
-      }
-    };
-
-    if (dropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('keydown', handleEscapeKey);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscapeKey);
-    };
-  }, [dropdownOpen]);
-
-  // Initialize Cal.com booking widget
   useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ "namespace": "setup-call" });
-      cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
-    })();
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onPointerDown = (event: PointerEvent) => {
+      if (navRef.current?.contains(event.target as Node)) return;
+      setOpenDropdown(false);
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpenDropdown(false);
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [openDropdown]);
+
   return (
-    <>
-      {/* Main Header */}
-      <header className="wonder-nav-shell fixed top-0 z-40 w-full">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          <div className="flex h-14 items-center justify-between gap-4 sm:h-[3.75rem]">
-            <div className="flex min-w-0 items-center gap-2 sm:gap-3">
-              <Link href="/" className="group relative shrink-0">
-                <Image
-                  src={Logo}
-                  alt="Wonder Sites"
-                  width={260}
-                  height={200}
-                  className="relative h-auto w-32 sm:w-36 lg:w-40"
-                  priority
-                />
-              </Link>
-              <TranslateButton />
-            </div>
+    <header translate="no" className="site-header notranslate fixed top-0 z-[200] w-full transition-all duration-200">
+      <div
+        className={`border-b border-[var(--color-line)] bg-canvas transition-colors duration-200 transition-shadow duration-200 ${
+          scrolled ? 'shadow-sm' : ''
+        }`}
+      >
+        <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 border-l border-r border-[var(--color-line)] px-3 sm:h-16 sm:gap-4 sm:px-6">
+          <Link href="/" className="relative shrink-0">
+            <Image src={Logo} alt="Wonder Sites" width={260} height={200} className="h-auto w-28 sm:w-32 lg:w-36" priority />
+          </Link>
 
-            <nav className="hidden lg:flex lg:grow lg:justify-end">
-              <ul className="flex items-center gap-1 sm:gap-2">
-                <li className="relative" ref={dropdownRef}>
-                  <button
-                  className="wonder-nav-link flex items-center py-2"
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                    aria-expanded={dropdownOpen}
-                  >
-                    <span>Features</span>
-                    <ChevronDown className={`w-4 h-4 ml-1 text-slate-400 transition-transform duration-200 flex-shrink-0 ${dropdownOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  <AnimatePresence>
-                    {dropdownOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="absolute left-0 top-full mt-2 z-50"
-                      >
-                        <div className="wonder-nav-dropdown">
-                          <div className="w-[640px] p-6">
-                            <h3 className="wonder-footer-label mb-4">
-                              Features
-                            </h3>
-                            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                              <DropdownLink
-                                href="/features/ai-help-center"
-                                iconColor="text-sky-500"
-                                bgColor="bg-sky-50"
-                                icon={Sparkles}
-                                title="Help Center"
-                                description="Self-updating knowledge base"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/features/ai-documentation-agent"
-                                iconColor="text-amber-500"
-                                bgColor="bg-amber-50"
-                                icon={Bot}
-                                title="AI agent"
-                                description="AI that writes your docs"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/features/automated-screenshots-for-docs"
-                                iconColor="text-orange-500"
-                                bgColor="bg-orange-50"
-                                icon={Camera}
-                                title="Automated screenshots"
-                                description="Screenshots that stay current"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/features/self-service-help-widget"
-                                iconColor="text-rose-500"
-                                bgColor="bg-rose-50"
-                                icon={MessageCircle}
-                                title="Self-service widget"
-                                description="Embed help in your product"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/create-a-blog-notion"
-                                iconColor="text-blue-500"
-                                bgColor="bg-blue-50"
-                                icon={BookOpen}
-                                title="Blog"
-                                description="Beautiful automated blog"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/create-a-changelog-notion"
-                                iconColor="text-indigo-500"
-                                bgColor="bg-indigo-50"
-                                icon={ScrollText}
-                                title="Changelog"
-                                description="Automated product updates"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/features/code-to-docs"
-                                iconColor="text-violet-500"
-                                bgColor="bg-violet-50"
-                                icon={Code}
-                                title="Code to help docs"
-                                description="Sync docs with your code"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/features/multilingual-knowledge-base"
-                                iconColor="text-teal-500"
-                                bgColor="bg-teal-50"
-                                icon={Globe}
-                                title="Multilingual"
-                                description="Translate your help center"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/features/internal-knowledge-base"
-                                iconColor="text-stone-500"
-                                bgColor="bg-stone-50"
-                                icon={Lock}
-                                title="Internal knowledge base"
-                                description="Private docs with login required"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/features/generative-ai-customer-service"
-                                iconColor="text-lime-600"
-                                bgColor="bg-lime-50"
-                                icon={Sparkles}
-                                title="AI answers"
-                                description="Help desk chatbot for support"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/integration"
-                                iconColor="text-blue-500"
-                                bgColor="bg-blue-50"
-                                icon={Zap}
-                                title="Integrations"
-                                description="Connect your favorite tools"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                              <DropdownLink
-                                href="/features/chrome-extension-for-documentation"
-                                iconColor="text-amber-700"
-                                bgColor="bg-amber-50/50"
-                                icon={Chrome}
-                                title="Chrome extension"
-                                description="Update docs from any tab"
-                                onClick={() => setDropdownOpen(false)}
-                              />
-                            </div>
-                          </div>
+          <nav ref={navRef} className="hidden flex-1 items-center justify-center lg:flex" aria-label="Primary">
+            <ul className="flex items-center gap-1">
+              <li className="relative z-[210]">
+                <button
+                  type="button"
+                  onClick={() => setOpenDropdown(!openDropdown)}
+                  aria-expanded={openDropdown}
+                  className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                    openDropdown ? 'bg-canvas-warm text-ink' : 'text-ink-muted hover:bg-canvas-warm hover:text-ink'
+                  }`}
+                >
+                  Features
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openDropdown ? 'rotate-180 text-slate-600' : 'text-slate-400'}`} />
+                </button>
+                {openDropdown ? (
+                  <div className="absolute left-1/2 top-full z-[205] mt-2 w-[min(46rem,calc(100vw-2rem))] -translate-x-1/2" role="menu">
+                    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl ring-1 ring-black/5">
+                      <div className="p-5">
+                        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Features</div>
+                        <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+                          {featureNavItems.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setOpenDropdown(false)}
+                                role="menuitem"
+                                className="group flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
+                              >
+                                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${item.bgColor} transition-transform group-hover:scale-105`}>
+                                  <Icon className={`h-4 w-4 ${item.iconColor}`} strokeWidth={2} />
+                                </span>
+                                <span className="min-w-0 flex-1">
+                                  <span className="block text-sm font-medium text-slate-900 group-hover:text-wonder">{item.title}</span>
+                                  <span className="mt-0.5 block truncate text-xs text-slate-500">{item.description}</span>
+                                </span>
+                              </Link>
+                            );
+                          })}
                         </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </li>
-
-                <NavLink href="/showcase" text="Examples" />
-                <NavLink href="/pricing" text="Pricing" />
-                <NavLink href="https://app.wonderdesk.ai" text="Login" />
-
-                <li className="ml-1">
-                  <button
-                    data-cal-namespace="setup-call"
-                    data-cal-link="set-meeting/setup-call"
-                    data-cal-config='{"layout":"month_view"}'
-                    className="wonder-nav-ghost"
-                  >
-                    Book demo
-                  </button>
-                </li>
-
-                <li className="ml-1">
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+              </li>
+              {primaryNavLinks.map((link) => (
+                <li key={link.href} className="relative z-[220]">
                   <Link
-                    href="https://app.wonderdesk.ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="wonder-btn-primary"
+                    href={link.href}
+                    className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900"
                   >
-                    Get started
-                    <ArrowRight className="h-3.5 w-3.5" />
+                    {link.label}
                   </Link>
                 </li>
-              </ul>
-            </nav>
+              ))}
+            </ul>
+          </nav>
 
-            {/* Tablet menu */}
+          <div className="relative z-[220] ml-auto flex items-center gap-2 sm:gap-3">
+            <div className="hidden lg:block">
+              <TranslateButton />
+            </div>
+            <PixelButton href="https://app.wonderdesk.ai" external size="sm" variant="outline" tone="dark" className="hidden lg:inline-flex">
+              Sign in
+            </PixelButton>
+            <PixelButton
+              href="https://app.wonderdesk.ai"
+              external
+              size="sm"
+              tone="brand"
+              className="hidden lg:inline-flex"
+              icon={<ArrowRight className="h-3 w-3" strokeWidth={2.5} />}
+            >
+              Get started
+            </PixelButton>
             <div className="hidden md:block lg:hidden">
               <TabletMenu />
             </div>
-
-            {/* Mobile menu */}
             <div className="block md:hidden">
               <MobileMenu />
             </div>
           </div>
         </div>
-      </header>
-    </>
-  );
-}
-
-interface DropdownLinkProps {
-  href: string;
-  icon: React.ComponentType<{ className?: string }>;
-  iconColor: string;
-  bgColor: string;
-  title: string;
-  description: string;
-  onClick?: () => void;
-}
-
-function DropdownLink({ href, icon: Icon, iconColor, bgColor, title, description, onClick }: DropdownLinkProps) {
-  return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className="flex items-center gap-3 rounded-sm px-3 py-3 transition-colors duration-200 hover:bg-slate-50 group"
-    >
-      <div className={`flex-shrink-0 ${iconColor} ${bgColor} transition-all duration-200 group-hover:scale-110 p-2.5 rounded-lg`}>
-        <Icon className="w-[18px] h-[18px]" />
       </div>
-      <div className="flex-1 min-w-0">
-        <p className="mb-0.5 text-sm font-medium text-slate-800 group-hover:text-[#009fbc] transition-colors duration-200">
-          {title}
-        </p>
-        <p className="text-xs text-neutral-500 leading-snug">
-          {description}
-        </p>
-      </div>
-    </Link>
-  );
-}
-
-interface NavLinkProps {
-  href: string;
-  text: string;
-}
-
-function NavLink({ href, text }: NavLinkProps) {
-  return (
-    <Link href={href} className="wonder-nav-link px-1 py-2">
-      {text}
-    </Link>
+    </header>
   );
 }

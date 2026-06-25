@@ -27,6 +27,26 @@
   --wonder-brand-100: #cceff7;
   --wonder-brand-border: rgba(0, 159, 188, 0.35);
   --wonder-slate-border: #e2e8f0;
+  --color-line: #e8e8e5;
+  --site-header-height: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .wonder-shell {
+    --site-header-height: 4rem;
+  }
+}
+
+.bg-canvas {
+  background-color: #fafaf8;
+}
+
+.site-header {
+  z-index: 200;
+}
+
+.site-header-clear {
+  padding-top: var(--site-header-height);
 }
 
 /* ── Nav (Trooper onboarding header) ── */
