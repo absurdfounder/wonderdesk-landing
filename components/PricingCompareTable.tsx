@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import MarketingHeadline from '@/components/marketing/MarketingHeadline';
 import PixelButton from '@/components/ui/PixelButton';
 import { formatUsd, PRICING_USD } from '@/lib/pricing';
 import { Check, X } from 'lucide-react';
@@ -155,8 +156,8 @@ function DesktopCompareTable() {
 
         <div className={`${compareCellClass()} py-5`} />
         <div className={`${compareCellClass()} flex items-center justify-center px-3 py-5`}>
-          <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="dark" variant="outline" className="w-full">
-            Start free trial
+          <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="dark" className="w-full">
+            Get started free
           </PixelButton>
         </div>
         <div className={`${compareCellClass(true)} flex items-center justify-center px-3 py-5`}>
@@ -205,15 +206,15 @@ export default function PricingCompareTable() {
   return (
     <div className="w-full pb-8 md:pb-10">
       <div className="flex flex-col gap-6 pb-8 pt-2 max-md:gap-5 max-md:pb-6 md:pt-4">
-        <div className="max-w-3xl">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            Compare plans
-            <span className="block text-wonder">feature by feature.</span>
-          </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            Same grid rhythm as the cards above — every row aligned across Personal and Business.
-          </p>
-        </div>
+        <MarketingHeadline
+          as="h2"
+          size="section"
+          lines={[
+            { parts: [{ text: 'Compare plans', tone: 'default' }] },
+            { parts: [{ text: 'feature by feature.', tone: 'brand' }] },
+          ]}
+          subline="Same grid rhythm as the cards above — every row aligned across Personal and Business."
+        />
       </div>
 
       <div className="-mx-3 border-t border-slate-200 sm:-mx-4 md:-mx-6">
