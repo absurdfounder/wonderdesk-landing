@@ -19,6 +19,7 @@ module.exports = {
         canvas: {
           DEFAULT: '#FAFAF8',
           warm: '#F7F7F4',
+          section: '#FCFCFA',
         },
         ink: {
           DEFAULT: '#1a1a1a',
