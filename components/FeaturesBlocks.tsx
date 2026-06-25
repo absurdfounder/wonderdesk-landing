@@ -1,5 +1,6 @@
 import Image from "next/image";
-import LandingMissionTag from "./landing/LandingMissionTag";
+
+const sectionXPadding = "px-4 sm:px-6 lg:px-8";
 
 const blocks = [
   {
@@ -22,35 +23,39 @@ const blocks = [
   }
 ];
 
-type FeaturesBlocksProps = {
-  embedded?: boolean;
-};
-
-export default function FeaturesBlocks({ embedded = false }: FeaturesBlocksProps) {
-  const content = (
-    <>
-      <div className="pb-10 md:pb-12">
-        <LandingMissionTag index="04" label="Discovery" className="mb-4" />
-        <h2 className="landing-display text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-          Get found on <span className="landing-accent-text">Google</span>. Cited by <span className="landing-accent-text">ChatGPT</span>.
-        </h2>
-        <p className="mt-4 max-w-3xl text-lg text-slate-600">
-          Busy teams need a simpler way to run marketing and support. Wonder automates both so you can focus on what matters.
-        </p>
+export default function FeaturesBlocks() {
+  return (
+    <section className="relative py-12 md:py-16 bg-white">
+      {/* Section header */}
+      <div className="landing-grid-frame px-4 pb-10 sm:px-6 md:pb-12 lg:px-8">
+        <div className="text-start">
+          <h2 className="font-funneldisplay text-2xl sm:text-3xl md:text-4xl mb-4 font-normal text-slate-800">
+          Get found on <b>Google</b>. Cited by <b>ChatGPT</b>.         
+          </h2>
+          <p className="text-xl text-slate-600">
+            Busy teams need a simpler way to run marketing and support. Wonder automates both so you can focus on what matters.
+          </p>
+        </div>
       </div>
 
-      <div className="overflow-hidden border border-slate-200 bg-slate-200 lg:grid lg:grid-cols-3">
-        {blocks.map((block, idx) => (
+      {/* 3-column grid with cards - max-w-7xl */}
+      <div className="landing-grid-frame px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {blocks.map((block) => (
           <section
             key={block.title}
-            className={`flex flex-col bg-white ${idx < blocks.length - 1 ? 'lg:border-r lg:border-slate-200' : ''}`}
+            className="flex flex-col rounded-lg border border-neutral-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="px-5 py-10 sm:px-6">
-              <p className="text-base leading-relaxed text-slate-700">
-                <b className="font-semibold text-slate-900">{block.title}</b> {block.body}
-              </p>
+            <div className={sectionXPadding}>
+              <div className="grid items-start gap-8 md:grid-cols-1 md:gap-12">
+                <div className="md:order-1 pt-12 pb-12">
+                  <p className="body-text mt-6 max-w-4xl text-base text-slate-700">
+                    <b className="font-semibold text-slate-900">{block.title}</b> {block.body}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="mt-auto border-t border-slate-200">
+            <div className="md:order-2 mt-auto">
               <Image
                 alt={block.alt}
                 src={block.image}
@@ -63,17 +68,8 @@ export default function FeaturesBlocks({ embedded = false }: FeaturesBlocksProps
             </div>
           </section>
         ))}
+        </div>
       </div>
-    </>
-  );
-
-  if (embedded) {
-    return <div className="py-12 md:py-16">{content}</div>;
-  }
-
-  return (
-    <section className="relative bg-white py-12 md:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{content}</div>
     </section>
   );
 }

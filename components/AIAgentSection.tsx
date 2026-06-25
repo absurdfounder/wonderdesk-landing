@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import LandingMissionTag from "./landing/LandingMissionTag";
 import {
   FileText, ChevronRight,
   CheckCircle2, Clock, Eye, Send, ArrowRight,
@@ -148,11 +147,7 @@ function ProcessingSteps({ visibleCount }: { visibleCount: number }) {
 }
 
 /* ═══════════ Main Component ═══════════ */
-type AIAgentSectionProps = {
-  embedded?: boolean;
-};
-
-export default function AIAgentSection({ embedded = false }: AIAgentSectionProps) {
+export default function AIAgentSection() {
   const [chatItems, setChatItems] = useState<ChatMessage[]>([]);
   const [scriptIdx, setScriptIdx] = useState(0);
   const [agentTyping, setAgentTyping] = useState(false);
@@ -232,20 +227,16 @@ export default function AIAgentSection({ embedded = false }: AIAgentSectionProps
   }, [scriptIdx, isRunning, processStep, cleanUp]);
 
   return (
-    <div
-      className={embedded ? "w-full py-12 md:py-16" : ""}
-      style={{
-        width: "100%",
-        minHeight: embedded ? undefined : "100vh",
-        backgroundColor: embedded ? "transparent" : "rgb(255, 255, 255)",
-        backgroundImage: embedded
-          ? undefined
-          : "radial-gradient(circle, rgba(186, 230, 253, 0.45) 0.7px, transparent 0.7px)",
-        backgroundSize: embedded ? undefined : "10px 10px",
-        backgroundPosition: "0px 0px",
-        padding: embedded ? undefined : "60px 20px",
-      }}
-    >
+    <div style={{
+      width: "100%",
+      minHeight: "100vh",
+      backgroundColor: "rgb(255, 255, 255)",
+      backgroundImage: "radial-gradient(circle, rgba(186, 183, 195, 0.6) 0.7px, transparent 0.7px)",
+      backgroundSize: "10px 10px",
+      backgroundPosition: "0px 0px",
+      padding: "60px 20px",
+      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    }}>
       <style>{`
         @keyframes fadeSlide { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
         @keyframes dotBounce { 0%,80%,100%{transform:translateY(0);opacity:.35} 40%{transform:translateY(-3px);opacity:1} }
@@ -260,14 +251,6 @@ export default function AIAgentSection({ embedded = false }: AIAgentSectionProps
       `}</style>
 
       <div style={{ width: "100%", maxWidth: 900, margin: "0 auto" }}>
-        {embedded && (
-          <div className="mb-8 px-1">
-            <LandingMissionTag index="11" label="Live demo" className="mb-4" />
-            <h2 className="landing-display text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              Watch Wonder update your help center in <span className="landing-accent-text">real time</span>
-            </h2>
-          </div>
-        )}
         {/* Browser Window */}
         <div style={{
           borderRadius: 16, overflow: "hidden", border: "1px solid #d4d4d4",

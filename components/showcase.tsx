@@ -1,25 +1,41 @@
+import Image from 'next/image'
+import showcaseImage from '@/public/images/showcase.jpg'
+import Link from 'next/link'
 import TemplateList from '@/app/(auth)/compare-against/TemplateList'
-import LandingMissionTag from './landing/LandingMissionTag'
 
-type ShowcasesProps = {
-  embedded?: boolean;
-};
-
-export default function Showcases({ embedded = false }: ShowcasesProps) {
-  const content = (
-    <>
-      <LandingMissionTag index="09" label="Examples" className="mb-4" />
-      <TemplateList />
-    </>
-  );
-
-  if (embedded) {
-    return <div className="py-12 md:py-16">{content}</div>;
-  }
-
+export default function showcases() {
   return (
-    <section className="relative border bg-white landing-dot-grid">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">{content}</div>
+
+
+    <section className="relative border"
+    
+    style={{
+      backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.6) 0.7px, transparent 0.7px)',
+      backgroundSize: '10px 10px',
+      backgroundColor: 'rgb(255, 255, 255)',
+      backgroundPosition: '0px 0px'
+    }}
+    >
+
+
+
+      <div className="landing-grid-frame px-4 sm:px-6 lg:px-8">
+        <div className="py-12 md:py-20" 
+        >
+
+
+
+
+<TemplateList/>
+
+
+
+
+
+        </div>
+      </div>
     </section>
-  );
+
+
+  )
 }

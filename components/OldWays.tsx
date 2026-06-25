@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import LandingMissionTag from "./landing/LandingMissionTag";
 
 const sectionXPadding = "px-4 sm:px-6 lg:px-8";
 
@@ -12,11 +11,7 @@ interface Transform {
   y: number;
 }
 
-type OldWaysProps = {
-  embedded?: boolean;
-};
-
-export default function OldWays({ embedded = false }: OldWaysProps) {
+export default function OldWays() {
   const [cardTransforms, setCardTransforms] = useState<Transform[]>([]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -143,15 +138,19 @@ export default function OldWays({ embedded = false }: OldWaysProps) {
     };
   }, []);
 
-  const inner = (
-    <>
-      <div className="mb-10 md:mb-14">
-        <LandingMissionTag index="06" label="Platform" className="mb-4" />
-        <h2 className="landing-display text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-          Everything you need to run product knowledge on <span className="landing-accent-text">autopilot</span>
-        </h2>
-      </div>
-      <div className="relative" style={{ perspective: '1000px' }}>
+  return (
+    <section 
+      className="bg-white relative"
+      style={{
+        backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(186, 183, 195, 0.08) 2px, rgba(186, 183, 195, 0.08) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(186, 183, 195, 0.08) 2px, rgba(186, 183, 195, 0.08) 4px)',
+        backgroundSize: '100% 20px, 20px 100%',
+      }}
+    >
+      <div className="landing-grid-frame px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+        <div 
+          className="relative"
+          style={{ perspective: '1000px' }}
+        >
           {cards.map((card, index) => {
             const transform = cardTransforms[index] || { scale: 1, opacity: 1, y: 0 };
             const isLast = index === cards.length - 1;
@@ -168,7 +167,7 @@ export default function OldWays({ embedded = false }: OldWaysProps) {
                 }}
               >
                 <div
-                  className="landing-card overflow-hidden shadow-[0_10px_40px_rgba(15,23,42,0.08)] transition-[filter] duration-200"
+                  className="bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-lg transition-[filter] duration-200"
                   style={{
                     transform: `scale(${transform.scale}) translateY(${transform.y}px)`,
                     opacity: transform.opacity,
@@ -182,20 +181,20 @@ export default function OldWays({ embedded = false }: OldWaysProps) {
                 >
                   <div className="grid md:flex items-center bg-white">
                     <div className={`${sectionXPadding} py-8 sm:py-10 lg:py-12 md:w-2/5 w-full`}>
-                      <p className="font-roboto-mono text-[11px] font-bold uppercase tracking-[0.16em] text-sky-600">
+                      <p className="text-sm font-bold uppercase tracking-wide text-blue-600 font-silkscreen">
                         {card.tag}
                       </p>
-                      <h3 className="landing-display mt-3 text-xl font-semibold tracking-tight text-slate-900 sm:mt-4 sm:text-2xl lg:text-3xl">
-                        {card.title} <span className="font-normal landing-accent-text">{card.highlight}</span>
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-funneldisplay font-bold tracking-tight text-slate-900 mt-3 sm:mt-4">
+                        {card.title} <span className="font-normal text-orange-600">{card.highlight}</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed">
                         {card.description}
                       </p>
                     </div>
-                    <div
-                      className="w-full px-4 pb-4 pt-6 md:w-3/5 md:px-6 md:pb-6"
+                    <div 
+                      className="w-full px-4 md:px-6 pt-6 pb-4 md:pb-6 md:w-3/5"
                       style={{
-                        background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+                        background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
                       }}
                     >
                       <Image
@@ -203,7 +202,7 @@ export default function OldWays({ embedded = false }: OldWaysProps) {
                         alt={card.alt}
                         width={800}
                         height={600}
-                        className="h-auto w-full rounded-sm border border-slate-200 object-cover shadow-sm"
+                        className="w-full h-auto rounded-xl object-cover shadow-sm"
                         loading="lazy"
                       />
                     </div>
@@ -212,17 +211,8 @@ export default function OldWays({ embedded = false }: OldWaysProps) {
               </div>
             );
           })}
+        </div>
       </div>
-    </>
-  );
-
-  if (embedded) {
-    return <div className="py-12 md:py-20">{inner}</div>;
-  }
-
-  return (
-    <section className="relative bg-white landing-rule-grid">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">{inner}</div>
     </section>
   );
 }

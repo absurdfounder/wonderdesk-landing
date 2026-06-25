@@ -26,7 +26,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="landing-section border-t border-slate-200 bg-white">
+    <footer className="border-neutral-200 px-4 sm:px-6 md:px-8 bg-white">
       <div className="landing-grid-frame py-6 sm:py-8 md:py-12">
         <div className="flex flex-col gap-6 sm:gap-8 md:flex-row md:gap-12">
           {/* Brand Section */}
@@ -43,7 +43,7 @@ export default function Footer() {
             The AI agent that keeps your help center, blog, changelog, and documentation up to date.
             </p>
             <p className="text-sm text-slate-600 mb-4">
-              Lead by <a className="text-sky-600 hover:underline" href="https://twitter.com/absurdfounder" target="_blank" rel="noopener noreferrer">@absurdfounder</a>.
+              Lead by <a className="text-orange-600 hover:underline" href="https://twitter.com/absurdfounder" target="_blank" rel="noopener noreferrer">@absurdfounder</a>.
             </p>
             <ul className="mt-3 space-y-1">
               <li>
@@ -436,7 +436,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200 max-w-7xl m-auto">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200 landing-grid-frame">
         <div className="text-xs md:text-sm text-slate-600 mb-4 md:mb-0 order-2 md:order-1 flex flex-wrap gap-4">
           © Boring Sites LLC. All rights reserved.{' '}
           <Link href="/privacy" className="hover:text-slate-900">Privacy</Link>

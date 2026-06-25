@@ -82,10 +82,18 @@ export default function Newsletter() {
   }, [words.length]); // Added dependency array
 
   return (
-    <section className="landing-section bg-white">
-      <div className="landing-grid-frame pb-12 pt-8 md:pb-16">
+    <section className='bg-white'>
+      <div className="landing-grid-frame px-1 sm:px-6 lg:px-1 newsletter-section">
+        <div className="pb-12 md:pb-20">
+
+          {/* CTA box */}
           <div
-            className="landing-card relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-blue-50 px-6 py-10 md:px-10 md:py-14"
+            className="relative py-10 px-8 md:py-16 md:px-12 overflow-hidden rounded-2xl my-8 border"
+            style={{
+              backgroundImage: 'linear-gradient(rgb(255 255 255 / 87%), rgb(187 229 255 / 76%)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center'
+            }}
           >
 
             {/* Background illustration */}
@@ -101,10 +109,12 @@ export default function Newsletter() {
 
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
-                <h3 className="landing-display text-2xl font-semibold text-slate-900 sm:text-3xl">
-                  Stop living at your desk all day <span className="landing-accent-text">automate it</span>.
+                <h3 className="h2 text-slate-800 my-2">
+                  Stop living at your desk all day <span style={{ color: '#009fbc' }}>automate it </span>.
                 </h3>
-                <p className="my-3 text-base text-slate-600">
+                {/* Original rotating text logic (kept for reference) */}
+                {/* <h3 className="h2 text-slate-800 my-2">Build <span className="text-orange-400">{words[index]}</span> Sites</h3> */}
+                <p className="h5 font-normal text-slate-800 my-2">
                   Outdated posts are wasting time, money and affecting your reputation. Let Wonder run your Helpdesk & Blog on pure automations.
                 </p>
 
@@ -117,7 +127,7 @@ export default function Newsletter() {
                       initialText="Get started - free"
                       hoverText="in just 15 mins" // Customize hover text if needed
                       // Removed flex items-center justify-center as base class handles it
-                      className="landing-btn-primary w-full sm:w-auto text-sm"
+                      className="btn text-dark text-2xl bg-orange-300 hover:bg-orange-700 hover:text-orange-100 w-full mb-4 sm:w-auto sm:mb-0"
                     />
                     {/* --- END OF UPDATE --- */}
 
@@ -136,6 +146,8 @@ export default function Newsletter() {
             </div>
 
           </div>
+
+        </div>
       </div>
     </section>
   )
