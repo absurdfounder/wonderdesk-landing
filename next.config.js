@@ -11,9 +11,6 @@ const nextConfig = {
   env: {
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
   },
-  experimental: {
-    serverActions: true,
-  },
   async headers() {
     return [
       {

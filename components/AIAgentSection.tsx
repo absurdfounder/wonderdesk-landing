@@ -38,7 +38,24 @@ const DRAFT_ARTICLES = [
 ];
 
 /* Chat script */
-const CHAT_SCRIPT = [
+type ChatMessage =
+  | {
+      type: "user";
+      sender: string;
+      avatar: string;
+      text: string;
+      time: string;
+      delay: number;
+    }
+  | { type: "agent"; sender: string; text: string; time: string; delay: number };
+
+type ChatScriptStep =
+  | ChatMessage
+  | { type: "agent_typing"; delay: number }
+  | { type: "processing"; delay: number }
+  | { type: "drafts"; delay: number };
+
+const CHAT_SCRIPT: ChatScriptStep[] = [
   {
     type: "user",
     sender: "Vaibhav",
@@ -76,7 +93,7 @@ const CHAT_SCRIPT = [
 ];
 
 /* ─── Helpers ─── */
-function WonderAvatar({ size = 36 }) {
+function WonderAvatar({ size = 36 }: { size?: number }) {
   return (
     <div style={{
       width: size, height: size, borderRadius: 10, overflow: "hidden",
@@ -88,7 +105,7 @@ function WonderAvatar({ size = 36 }) {
   );
 }
 
-function ProcessingSteps({ visibleCount }) {
+function ProcessingSteps({ visibleCount }: { visibleCount: number }) {
   return (
     <div style={{ marginLeft: 48, marginTop: 8, marginBottom: 4 }}>
       <div style={{
@@ -131,15 +148,15 @@ function ProcessingSteps({ visibleCount }) {
 
 /* ═══════════ Main Component ═══════════ */
 export default function AIAgentSection() {
-  const [chatItems, setChatItems] = useState([]);
+  const [chatItems, setChatItems] = useState<ChatMessage[]>([]);
   const [scriptIdx, setScriptIdx] = useState(0);
   const [agentTyping, setAgentTyping] = useState(false);
   const [procVisible, setProcVisible] = useState(0);
   const [showDrafts, setShowDrafts] = useState(false);
   const [isRunning, setIsRunning] = useState(true);
-  const chatRef = useRef(null);
-  const timerRef = useRef(null);
-  const procRef = useRef(null);
+  const chatRef = useRef<HTMLDivElement | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const procRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
@@ -156,7 +173,7 @@ export default function AIAgentSection() {
     setProcVisible(0); setShowDrafts(false); setIsRunning(true);
   }, [cleanUp]);
 
-  const processStep = useCallback((idx) => {
+  const processStep = useCallback((idx: number) => {
     if (idx >= CHAT_SCRIPT.length) {
       // Auto-restart after completion
       timerRef.current = setTimeout(restart, 3000);
@@ -188,7 +205,7 @@ export default function AIAgentSection() {
           count++;
           setProcVisible(count);
           if (count >= PROCESSING_STEPS.length) {
-            clearInterval(procRef.current);
+            if (procRef.current) clearInterval(procRef.current);
             procRef.current = null;
             setScriptIdx(idx + 1);
           }
