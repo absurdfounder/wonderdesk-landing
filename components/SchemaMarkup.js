@@ -120,7 +120,7 @@ const SchemaMarkup = () => {
         "@type": "ListItem",
         "position": 3,
         "name": "Integrations",
-        "item": "https://wonderdesk.ai/integrations"
+        "item": "https://wonderdesk.ai/integration"
       },
       {
         "@type": "ListItem",

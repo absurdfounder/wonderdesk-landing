@@ -1,0 +1,20 @@
+# Trooper-only paths that must never live on wonderdesk.ai — send crawlers to homepage.
+/features/ai-workforce           /   301
+/features/github-integration     /   301
+/features/task-execution         /   301
+/features/persistent-memory      /   301
+/features/browser-control        /   301
+/features/system-access          /   301
+/features/email-automation       /   301
+/features/skills-plugins         /   301
+/features/multi-agent-collaboration /   301
+/features/openclaw-powered       /   301
+/features/chat-interfaces        /   301
+/channels/*                      /   301
+/loops/*                         /   301
+/plugin                          /   301
+/download                        /   301
+/alternatives/*                  /   301
+/use-cases/*                     /   301
+/teams/*                         /   301
+/skill/*                         /   301

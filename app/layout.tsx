@@ -78,11 +78,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const canonicalUrl = 'https://wonderdesk.ai'
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href={canonicalUrl} />
         {/* Google Translate Script */}
         <Script 
           src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" 

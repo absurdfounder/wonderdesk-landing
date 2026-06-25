@@ -27,39 +27,43 @@ async function loadIntegrations(): Promise<IntegrationOrTemplate[]> {
   }
 }
 
+const staticPages = [
+  { path: '/pricing', changefreq: 'weekly', priority: '0.8' },
+  { path: '/affiliate', changefreq: 'weekly', priority: '0.8' },
+  { path: '/showcase', changefreq: 'daily', priority: '0.8' },
+  { path: '/integration', changefreq: 'daily', priority: '0.8' },
+  { path: '/features/ai-help-center', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/ai-documentation-agent', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/automated-screenshots-for-docs', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/self-service-help-widget', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/code-to-docs', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/multilingual-knowledge-base', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/internal-knowledge-base', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/generative-ai-customer-service', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/chrome-extension-for-documentation', changefreq: 'weekly', priority: '0.8' },
+];
+
 function generateSiteMap(integrationsOrTemplates: IntegrationOrTemplate[]): string {
+  const lastmod = new Date().toISOString();
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>${URL}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  ${staticPages
+    .map(
+      (page) => `
   <url>
-    <loc>${URL}/integration</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${URL}/pricing</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${URL}/affiliate</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${URL}/showcase</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <loc>${URL}${page.path}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`
+    )
+    .join('')}
   ${integrationsOrTemplates
       .map(item => `
   <url>
