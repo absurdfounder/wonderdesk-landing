@@ -38,8 +38,8 @@ function PlanBadge({ children, featured = false }: { children: ReactNode; featur
     <span
       className={
         featured
-          ? 'border border-[rgba(0,159,188,0.25)] bg-[#e6f7fb] px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#006b80]'
-          : 'border border-slate-200 bg-slate-100 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-600'
+          ? 'border border-[rgba(0,159,188,0.25)] bg-[#e6f7fb] px-2 py-0.5 font-roboto-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#006b80]'
+          : 'border border-slate-200 bg-slate-100 px-2 py-0.5 font-roboto-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-600'
       }
     >
       {children}
@@ -63,7 +63,7 @@ function PlanHeader({
   return (
     <>
       <div className="flex items-start justify-between gap-3">
-        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+        <span className="font-roboto-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
           {eyebrow}
         </span>
         <PlanBadge featured={featured}>{badge}</PlanBadge>

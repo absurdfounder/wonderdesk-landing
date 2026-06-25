@@ -146,7 +146,7 @@ export default function OldWays() {
         backgroundSize: '100% 20px, 20px 100%',
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div className="landing-grid-frame px-4 py-16 sm:px-6 md:py-24 lg:px-8">
         <div 
           className="relative"
           style={{ perspective: '1000px' }}
@@ -184,7 +184,7 @@ export default function OldWays() {
                       <p className="text-sm font-bold uppercase tracking-wide text-blue-600 font-silkscreen">
                         {card.tag}
                       </p>
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold tracking-tight text-slate-900 mt-3 sm:mt-4">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-funneldisplay font-bold tracking-tight text-slate-900 mt-3 sm:mt-4">
                         {card.title} <span className="font-normal text-orange-600">{card.highlight}</span>
                       </h3>
                       <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed">
