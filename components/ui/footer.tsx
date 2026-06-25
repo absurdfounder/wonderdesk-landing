@@ -26,8 +26,8 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="border-neutral-200 px-4 sm:px-6 md:px-8 bg-white">
-      <div className="mx-auto max-w-7xl py-6 sm:py-8 md:py-12">
+    <footer className="landing-section border-t border-slate-200 bg-white">
+      <div className="landing-grid-frame py-6 sm:py-8 md:py-12">
         <div className="flex flex-col gap-6 sm:gap-8 md:flex-row md:gap-12">
           {/* Brand Section */}
           <div className="w-full md:w-64">
@@ -43,7 +43,7 @@ export default function Footer() {
             The AI agent that keeps your help center, blog, changelog, and documentation up to date.
             </p>
             <p className="text-sm text-slate-600 mb-4">
-              Lead by <a className="text-orange-600 hover:underline" href="https://twitter.com/absurdfounder" target="_blank" rel="noopener noreferrer">@absurdfounder</a>.
+              Lead by <a className="text-sky-600 hover:underline" href="https://twitter.com/absurdfounder" target="_blank" rel="noopener noreferrer">@absurdfounder</a>.
             </p>
             <ul className="mt-3 space-y-1">
               <li>
