@@ -131,7 +131,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="landing-grid-frame px-3 sm:px-4 md:px-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
 
         <br />
         <br />
@@ -150,7 +150,7 @@ export default function Hero({ onCategorySelect }: HeroProps) {
                   <ProductHuntBadge />
                 </div>
 
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl max-w-3xl lg:max-w-none mb-2 sm:mb-2 md:mb-2 leading-tight font-funneldisplay tracking-loose text-slate-700 font-normal">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl max-w-3xl lg:max-w-none mb-2 sm:mb-2 md:mb-2 leading-tight font-display tracking-loose text-slate-700 font-normal">
                   <div className="block opacity-50 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                     <span className="reveal reveal__hello-1">Hello,</span>{" "}
                     <span className="reveal reveal__hello-2">I&apos;m</span>{" "}

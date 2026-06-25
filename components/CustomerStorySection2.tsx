@@ -13,10 +13,10 @@ export default function CustomerStorySection2() {
         backgroundSize: '100% 20px, 20px 100%',
       }}
     >
-      <div className="landing-grid-frame mx-auto grid grid-cols-1 items-center lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center lg:grid-cols-2">
       <div className={`${sectionXPadding} flex flex-col gap-6 py-12`}>
         <div className="font-silkscreen text-xl text-blue-600">Customer Story</div>
-        <blockquote className="font-funneldisplay text-2xl font-medium text-neutral-800 lg:text-3xl pr-4">
+        <blockquote className="font-display text-2xl font-medium text-neutral-800 lg:text-3xl pr-4">
           &ldquo;We&apos;re saving at least 20 hours/mo which frees me up to work on more impactful tasks.&rdquo;
         </blockquote>
         <div className="flex flex-col gap-1">

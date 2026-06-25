@@ -34,13 +34,11 @@ type CellGroup = {
 };
 
 type FooterColumn = {
-  number: string;
   eyebrow: string;
   groups: CellGroup[];
 };
 
 const featureColumn: FooterColumn = {
-  number: '02',
   eyebrow: 'Features',
   groups: [
     {
@@ -72,7 +70,6 @@ const featureColumn: FooterColumn = {
 };
 
 const productColumn: FooterColumn = {
-  number: '03',
   eyebrow: 'Product',
   groups: [
     {
@@ -98,7 +95,6 @@ const productColumn: FooterColumn = {
 };
 
 const alternativesColumn: FooterColumn = {
-  number: '04',
   eyebrow: 'Alternatives',
   groups: [
     {
@@ -113,14 +109,6 @@ const alternativesColumn: FooterColumn = {
     },
   ],
 };
-
-function CellHeader({ number, eyebrow }: { number: string; eyebrow: string }) {
-  return (
-    <div className="font-silkscreen text-[11px] uppercase tracking-[0.18em] text-slate-500">
-      <span className="text-slate-400">[{number}]</span> {eyebrow}
-    </div>
-  );
-}
 
 function LinkList({ links }: { links: LinkItem[] }) {
   return (
@@ -164,12 +152,9 @@ function FooterColumnCell({ column, borderRight }: { column: FooterColumn; borde
         .filter(Boolean)
         .join(' ')}
     >
-      <CellHeader number={column.number} eyebrow={column.eyebrow} />
       {column.groups.map((group, gIdx) => (
         <div key={group.heading} className={gIdx > 0 ? 'border-t border-slate-100 pt-5' : ''}>
-          {column.groups.length > 1 ? (
-            <div className="mb-3 text-sm font-semibold text-slate-900">{group.heading}</div>
-          ) : null}
+          <div className="mb-3 text-sm font-semibold text-slate-900">{group.heading}</div>
           <LinkList links={group.links} />
         </div>
       ))}
@@ -185,7 +170,6 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl border-l border-r border-slate-100">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-5 border-b border-slate-100 px-6 py-8 sm:col-span-2 md:px-8 md:py-10 lg:col-span-1 lg:border-b-0 lg:border-r lg:border-slate-100">
-            <CellHeader number="01" eyebrow="Wonder" />
             <WonderLogo characterClassName="h-10 w-10 sm:h-11 sm:w-11 rounded-md object-contain" textClassName="text-lg sm:text-xl" />
             <p className="text-sm leading-relaxed text-slate-600">
               The AI agent that keeps your help center, blog, changelog, and documentation up to date.
@@ -244,7 +228,7 @@ export default function Footer() {
             const isMobileLast = idx === linkColumns.length - 1;
             return (
               <div
-                key={col.number}
+                key={col.eyebrow}
                 className={[
                   !isMobileLast ? 'border-b border-slate-100 sm:border-b lg:border-b-0' : '',
                   idx % 2 === 0 ? 'sm:border-r sm:border-slate-100 lg:border-r-0' : '',

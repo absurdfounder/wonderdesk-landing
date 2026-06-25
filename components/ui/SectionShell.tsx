@@ -41,9 +41,7 @@ export default function SectionShell({
       <div className={frameClasses}>
         {eyebrow ? (
           <div className="pb-2 pt-4 sm:pt-6 md:pt-8">
-            <span className="type-eyebrow-num">
-              {eyebrowNumber ? <span className="text-ink-faint">[{eyebrowNumber}]</span> : null}
-              {eyebrowNumber ? <span>&nbsp;</span> : null}
+            <span className="text-sm font-semibold uppercase tracking-wide text-slate-500">
               {eyebrow}
             </span>
           </div>

@@ -80,19 +80,19 @@ const Pricing: React.FC = () => {
       <ExitIntentPopup isOpen={showExitPopup} onClose={() => setShowExitPopup(false)} />
       <Header />
 
-      <SectionShell eyebrow="PRICING" eyebrowNumber="01" bgClass="bg-white" clearSiteHeader>
+      <SectionShell bgClass="bg-white" clearSiteHeader>
         <SimplePricing />
       </SectionShell>
 
-      <SectionShell eyebrow="COMPARE PLANS" eyebrowNumber="02" bgClass="bg-slate-50">
+      <SectionShell bgClass="bg-slate-50">
         <PricingCompareTable />
       </SectionShell>
 
-      <SectionShell eyebrow="Message from the founder" eyebrowNumber="03" bgClass="bg-white">
+      <SectionShell bgClass="bg-white">
         <FounderMessageSection />
       </SectionShell>
 
-      <SectionShell eyebrow="Intel Brief" eyebrowNumber="04" bgClass="bg-canvas-warm">
+      <SectionShell bgClass="bg-canvas-warm">
         <FAQ />
       </SectionShell>
     </div>

@@ -18,25 +18,6 @@
   border-top: 1px solid #e2e8f0;
 }
 
-/* Editorial column rails — shared by homepage sections */
-.landing-grid-frame {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 80rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-left: 1px solid var(--color-line, #e8e8e5);
-  border-right: 1px solid var(--color-line, #e8e8e5);
-}
-
-@media (min-width: 640px) {
-  .landing-grid-frame {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
 .wonder-shell {
   --wonder-brand: #009fbc;
   --wonder-brand-dark: #007a94;

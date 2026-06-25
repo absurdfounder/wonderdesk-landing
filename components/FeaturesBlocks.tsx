@@ -27,9 +27,9 @@ export default function FeaturesBlocks() {
   return (
     <section className="relative py-12 md:py-16 bg-white">
       {/* Section header */}
-      <div className="landing-grid-frame px-4 pb-10 sm:px-6 md:pb-12 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-12">
         <div className="text-start">
-          <h2 className="font-funneldisplay text-2xl sm:text-3xl md:text-4xl mb-4 font-normal text-slate-800">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-4 font-normal text-slate-800">
           Get found on <b>Google</b>. Cited by <b>ChatGPT</b>.         
           </h2>
           <p className="text-xl text-slate-600">
@@ -39,7 +39,7 @@ export default function FeaturesBlocks() {
       </div>
 
       {/* 3-column grid with cards - max-w-7xl */}
-      <div className="landing-grid-frame px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {blocks.map((block) => (
           <section

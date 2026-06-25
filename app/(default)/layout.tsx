@@ -7,7 +7,6 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Footer from '@/components/ui/footer'
 import Newsletter from '@/components/newsletter'
-import SectionShell from '@/components/ui/SectionShell'
 import { initGoogleTranslate, ensureTranslation } from '@/app/utils/googleTranslateHelper';
 
 export default function DefaultLayout({ children }: { children: React.ReactNode }) {
@@ -119,12 +118,13 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
       {/* Google Translate container (hidden) */}
       <div id="google_translate_element" className="fixed -z-50 top-0 left-0 opacity-0 pointer-events-none" />
 
-      <main className="grow bg-gray-50">{children}</main>
+      <div className="homepage-grid">
+        <main className="grow bg-gray-50">
+          {children}
+        </main>
 
-      <SectionShell eyebrow="Get started" eyebrowNumber="05" bgClass="bg-white" noBorderBottom={false}>
         <Newsletter />
-      </SectionShell>
-
+      </div>
       <Footer />
     </PlausibleProvider>
   )
