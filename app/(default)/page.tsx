@@ -37,6 +37,8 @@ import ModalVideo from '@/components/ModalVideo'
 import NotionToWebsite from '@/components/NotionToWebsite'
 import FloatingScrollIndicator from '@/components/FloatingScrollIndicator'
 import SimplePricing from '@/components/SimplePricing'
+import FounderMessageSection from '@/components/FounderMessageSection'
+import FAQ from '@/components/faq'
 
 export default function Home() {
   return (
@@ -138,6 +140,22 @@ export default function Home() {
           <section className="bg-white">
             <div className="landing-grid-column bg-white">
               <SimplePricing showFullPricingLink embedded />
+            </div>
+          </section>
+        </div>
+
+        <div className="homepage-grid-row bg-white">
+          <section className="bg-white">
+            <div className="landing-grid-column bg-white">
+              <FounderMessageSection embedded />
+            </div>
+          </section>
+        </div>
+
+        <div className="homepage-grid-row">
+          <section className="bg-canvas-warm">
+            <div className="landing-grid-column bg-canvas-warm">
+              <FAQ embedded />
             </div>
           </section>
         </div>

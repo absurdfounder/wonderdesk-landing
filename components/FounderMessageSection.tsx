@@ -7,7 +7,11 @@ import PixelButton from '@/components/ui/PixelButton';
 
 const getCalApiImport = () => import('@calcom/embed-react').then((mod) => mod.getCalApi);
 
-export default function FounderMessageSection() {
+type FounderMessageSectionProps = {
+  embedded?: boolean;
+};
+
+export default function FounderMessageSection({ embedded = false }: FounderMessageSectionProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       const loadCalApi = async () => {
@@ -31,17 +35,32 @@ export default function FounderMessageSection() {
   }, []);
 
   return (
-    <div className="pb-8 pt-2 md:pb-16">
-      <div className="overflow-hidden border border-slate-100 bg-white">
+    <div className={embedded ? 'bg-white' : 'pb-8 pt-2 md:pb-16'}>
+      <div
+        className={
+          embedded
+            ? 'overflow-hidden border-b border-slate-200 bg-white'
+            : 'overflow-hidden border border-slate-100 bg-white'
+        }
+      >
         <div className="flex flex-col lg:flex-row lg:items-stretch">
-          <div className="relative h-52 w-full shrink-0 overflow-hidden border-b-4 border-wonder bg-white sm:h-60 lg:h-auto lg:w-48 lg:border-b-0 lg:border-r lg:border-r-slate-200 xl:w-52">
+          <div className="relative h-52 w-full shrink-0 overflow-hidden border-b border-slate-200 bg-[#009fbc] sm:h-60 lg:h-auto lg:w-48 lg:min-h-[280px] lg:border-b-0 lg:border-r xl:w-52">
             <Image
               src="/images/founder-portrait.png"
               alt="Vaibhav, founder of Wonder"
               fill
-              className="object-cover object-top"
+              className="object-cover object-top opacity-90 contrast-[1.12] brightness-[0.88] saturate-0"
               sizes="(max-width: 1024px) 100vw, 208px"
               priority={false}
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[#009fbc] mix-blend-color" aria-hidden />
+            <div
+              className="pointer-events-none absolute inset-0 opacity-20 mix-blend-multiply"
+              style={{
+                backgroundImage: 'radial-gradient(circle, #003344 0.55px, transparent 0.55px)',
+                backgroundSize: '3px 3px',
+              }}
+              aria-hidden
             />
           </div>
 

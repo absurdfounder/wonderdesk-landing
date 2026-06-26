@@ -155,10 +155,10 @@ const FAQCell: React.FC<FAQCellProps> = ({ question, answer, index, totalRows, t
   const isLastMobile = index === totalCount - 1;
 
   const borderClasses = [
-    !isLastMobile ? 'border-b border-slate-100' : '',
-    'md:border-b',
+    !isLastMobile ? 'border-b border-slate-200' : '',
+    'md:border-b md:border-slate-200',
     isLastRowDesktop ? 'md:border-b-0' : '',
-    isLeftCol ? 'md:border-r md:border-slate-100' : '',
+    isLeftCol ? 'md:border-r md:border-slate-200' : '',
   ]
     .filter(Boolean)
     .join(' ');
@@ -192,46 +192,59 @@ const FAQCell: React.FC<FAQCellProps> = ({ question, answer, index, totalRows, t
   );
 };
 
-const FAQ: React.FC = () => {
+const FAQ: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const [activeTab, setActiveTab] = useState<string>('General');
   const activeFaqs = faqs[activeTab];
   const totalRows = Math.ceil(activeFaqs.length / 2);
 
   return (
-    <div className="mx-auto max-w-7xl px-0 pb-12 pt-4 sm:pb-20 sm:pt-6">
-      <div className="max-w-2xl">
-        <h2 className="font-funneldisplay text-[1.65rem] tracking-tight text-slate-900 sm:text-4xl">Intel brief.</h2>
-        <p className="mt-3 text-sm text-slate-600 sm:text-base">
-          Missing intel? Transmit your question to{' '}
-          <a
-            href="mailto:vaibhav@wonderdesk.ai"
-            className="text-wonder-700 hover:text-wonder hover:underline"
-            target="_blank"
-            rel="noopener"
-          >
-            vaibhav@wonderdesk.ai
-          </a>
-          .
-        </p>
+    <div
+      className={
+        embedded
+          ? 'bg-canvas-warm pb-12 pt-10 md:pb-16 md:pt-14'
+          : 'mx-auto max-w-7xl px-0 pb-12 pt-4 sm:pb-20 sm:pt-6'
+      }
+    >
+      <div className={embedded ? 'landing-grid-pad' : ''}>
+        <div className="max-w-2xl">
+          <h2 className="font-funneldisplay text-[1.65rem] tracking-tight text-slate-900 sm:text-4xl">Intel brief.</h2>
+          <p className="mt-3 text-sm text-slate-600 sm:text-base">
+            Missing intel? Transmit your question to{' '}
+            <a
+              href="mailto:vaibhav@wonderdesk.ai"
+              className="text-wonder-700 hover:text-wonder hover:underline"
+              target="_blank"
+              rel="noopener"
+            >
+              vaibhav@wonderdesk.ai
+            </a>
+            .
+          </p>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 border-b border-slate-200 sm:mt-8 sm:gap-x-6">
+          {Object.keys(faqs).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`-mb-px pb-2.5 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors sm:pb-3 sm:text-[12px] sm:tracking-[0.15em] ${
+                activeTab === tab
+                  ? 'border-b-2 border-wonder text-slate-900'
+                  : 'border-b-2 border-transparent text-slate-500 hover:text-slate-800'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 border-b border-slate-100 sm:mt-8 sm:gap-x-6">
-        {Object.keys(faqs).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`-mb-px pb-2.5 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors sm:pb-3 sm:text-[12px] sm:tracking-[0.15em] ${
-              activeTab === tab
-                ? 'border-b-2 border-wonder text-slate-900'
-                : 'border-b-2 border-transparent text-slate-500 hover:text-slate-800'
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      <div className="mt-8 grid grid-cols-1 border border-slate-100 bg-white md:grid-cols-2">
+      <div
+        className={[
+          'mt-8 grid grid-cols-1 bg-white md:grid-cols-2',
+          embedded ? 'border-t border-slate-200' : 'border border-slate-100',
+        ].join(' ')}
+      >
         {activeFaqs.map((faq, index) => (
           <FAQCell
             key={`${activeTab}-${index}`}

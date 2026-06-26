@@ -88,13 +88,17 @@ const Pricing: React.FC = () => {
         <PricingCompareTable />
       </SectionShell>
 
-      <SectionShell bgClass="bg-white">
-        <FounderMessageSection />
-      </SectionShell>
+      <section className="border-t border-slate-200 bg-white">
+        <div className="landing-grid-column bg-white">
+          <FounderMessageSection embedded />
+        </div>
+      </section>
 
-      <SectionShell bgClass="bg-canvas-warm">
-        <FAQ />
-      </SectionShell>
+      <section className="border-t border-slate-200 bg-canvas-warm">
+        <div className="landing-grid-column bg-canvas-warm">
+          <FAQ embedded />
+        </div>
+      </section>
     </div>
   );
 };
