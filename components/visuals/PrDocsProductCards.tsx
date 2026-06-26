@@ -19,10 +19,12 @@ import {
   Unplug,
 } from 'lucide-react';
 import PixelLandscapeWide from './shared/PixelLandscapeWide';
+import { HOME_FEATURE_PLAIN_BG } from './PrDocsPlatformCards';
 
 export const PRODUCT_COL_W = 373;
 export const PRODUCT_VISUAL_H = 392;
 export const PRODUCT_ROW_W = PRODUCT_COL_W * 3;
+export { HOME_FEATURE_PLAIN_BG } from './PrDocsPlatformCards';
 
 const FONT = 'var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif';
 
@@ -399,9 +401,11 @@ const CARD_BY_ID: Record<ProductCardId, () => JSX.Element> = {
 export function ProductColumnVisual({
   id,
   landscapeId,
+  variant = 'landscape',
 }: {
   id: ProductCardId;
-  landscapeId: string;
+  landscapeId?: string;
+  variant?: 'landscape' | 'plain';
 }) {
   const Card = CARD_BY_ID[id];
 
@@ -412,15 +416,18 @@ export function ProductColumnVisual({
         height: PRODUCT_VISUAL_H,
         position: 'relative',
         overflow: 'hidden',
+        background: variant === 'plain' ? HOME_FEATURE_PLAIN_BG : undefined,
       }}
     >
-      <div style={{ position: 'absolute', inset: 0 }}>
-        <PixelLandscapeWide
-          width={PRODUCT_COL_W}
-          height={PRODUCT_VISUAL_H}
-          gradientId={landscapeId}
-        />
-      </div>
+      {variant === 'landscape' ? (
+        <div style={{ position: 'absolute', inset: 0 }}>
+          <PixelLandscapeWide
+            width={PRODUCT_COL_W}
+            height={PRODUCT_VISUAL_H}
+            gradientId={landscapeId ?? 'product-column-sky'}
+          />
+        </div>
+      ) : null}
       <div
         style={{
           position: 'absolute',

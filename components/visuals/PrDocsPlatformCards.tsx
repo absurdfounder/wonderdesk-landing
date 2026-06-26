@@ -15,6 +15,8 @@ import PixelLandscapeWide from './shared/PixelLandscapeWide';
 export const PLATFORM_COL_W = 373;
 export const PLATFORM_VISUAL_H = 352;
 export const PLATFORM_ROW_W = PLATFORM_COL_W * 3;
+/** Plain light blue for homepage feature columns — no landscape illustration. */
+export const HOME_FEATURE_PLAIN_BG = '#D4E8FF';
 
 const FONT = 'var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif';
 
@@ -331,9 +333,11 @@ const CARD_BY_ID: Record<PlatformCardId, () => JSX.Element> = {
 export function PlatformColumnVisual({
   id,
   landscapeId,
+  variant = 'landscape',
 }: {
   id: PlatformCardId;
-  landscapeId: string;
+  landscapeId?: string;
+  variant?: 'landscape' | 'plain';
 }) {
   const Card = CARD_BY_ID[id];
 
@@ -344,15 +348,18 @@ export function PlatformColumnVisual({
         height: PLATFORM_VISUAL_H,
         position: 'relative',
         overflow: 'hidden',
+        background: variant === 'plain' ? HOME_FEATURE_PLAIN_BG : undefined,
       }}
     >
-      <div style={{ position: 'absolute', inset: 0 }}>
-        <PixelLandscapeWide
-          width={PLATFORM_COL_W}
-          height={PLATFORM_VISUAL_H}
-          gradientId={landscapeId}
-        />
-      </div>
+      {variant === 'landscape' ? (
+        <div style={{ position: 'absolute', inset: 0 }}>
+          <PixelLandscapeWide
+            width={PLATFORM_COL_W}
+            height={PLATFORM_VISUAL_H}
+            gradientId={landscapeId ?? 'platform-column-sky'}
+          />
+        </div>
+      ) : null}
       <div
         style={{
           position: 'absolute',

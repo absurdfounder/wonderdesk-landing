@@ -1,25 +1,28 @@
-import HomepageFeatureVisualRow from './features/HomepageFeatureVisualRow';
-import {
-  PLATFORM_ROW_W,
-  PLATFORM_VISUAL_H,
-  PlatformFeaturesVisualRow,
-} from './visuals/PrDocsPlatformCards';
+import FeatureBlockVisual, { type FeatureVisualId } from './features/FeatureBlockVisuals';
 
-const blocks = [
+const blocks: Array<{
+  tag: string;
+  title: string;
+  body: string;
+  visual: FeatureVisualId;
+}> = [
   {
     tag: 'Custom domains',
     title: 'Use your own domain or a subpath',
     body: 'so your help site feels like a natural part of your main site.',
+    visual: 'domain',
   },
   {
     tag: 'SEO & AI search',
     title: 'Built for search from day one',
     body: 'so people discover your content on Google, ChatGPT, and other platforms.',
+    visual: 'seo',
   },
   {
     tag: 'Performance',
     title: 'Lightning-fast article delivery',
     body: 'boosting search rankings and helping customers get answers in no time.',
+    visual: 'performance',
   },
 ];
 
@@ -46,13 +49,13 @@ export default function FeaturesBlocks() {
                   <span className="font-semibold text-slate-900">{block.title}</span> {block.body}
                 </p>
               </div>
+
+              <div className="mt-auto border-t border-slate-200">
+                <FeatureBlockVisual id={block.visual} />
+              </div>
             </article>
           ))}
         </div>
-
-        <HomepageFeatureVisualRow stageWidth={PLATFORM_ROW_W} stageHeight={PLATFORM_VISUAL_H}>
-          <PlatformFeaturesVisualRow landscapeId="home-platform-sky" />
-        </HomepageFeatureVisualRow>
       </div>
     </section>
   );

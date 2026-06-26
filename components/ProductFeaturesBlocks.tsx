@@ -1,25 +1,30 @@
-import HomepageFeatureVisualRow from './features/HomepageFeatureVisualRow';
-import {
-  PRODUCT_ROW_W,
-  PRODUCT_VISUAL_H,
-  ProductFeaturesVisualRow,
-} from './visuals/PrDocsProductCards';
+import ProductFeatureBlockVisual, {
+  type ProductFeatureVisualId,
+} from './features/ProductFeatureBlockVisuals';
 
-const blocks = [
+const blocks: Array<{
+  tag: string;
+  title: string;
+  body: string;
+  visual: ProductFeatureVisualId;
+}> = [
   {
     tag: 'Analytics',
     title: 'Advanced analytics',
     body: 'show you how your customers are using your help center, what articles are performing well, and where there\'s room for improvement.',
+    visual: 'analytics',
   },
   {
     tag: 'Editor',
     title: 'Our world-class editor',
     body: 'helps you create and edit content faster than any other platform.',
+    visual: 'editor',
   },
   {
     tag: 'Feedback',
     title: 'Collect positive and negative feedback',
     body: 'from your customers, and use them to improve your help center over time.',
+    visual: 'feedback',
   },
 ];
 
@@ -46,13 +51,13 @@ export default function ProductFeaturesBlocks() {
                   <span className="font-semibold text-slate-900">{block.title}</span> {block.body}
                 </p>
               </div>
+
+              <div className="mt-auto border-t border-slate-200">
+                <ProductFeatureBlockVisual id={block.visual} />
+              </div>
             </article>
           ))}
         </div>
-
-        <HomepageFeatureVisualRow stageWidth={PRODUCT_ROW_W} stageHeight={PRODUCT_VISUAL_H}>
-          <ProductFeaturesVisualRow landscapeId="home-product-sky" />
-        </HomepageFeatureVisualRow>
       </div>
     </section>
   );
