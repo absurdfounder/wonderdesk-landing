@@ -17,14 +17,14 @@ export default function PixelLandscapeWide({
       height={H}
       viewBox={`0 0 ${W} ${H}`}
       preserveAspectRatio="none"
-      style={{ display: 'block', imageRendering: 'pixelated' }}
+      style={{ display: 'block' }}
       aria-hidden
     >
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#8ec8ff" />
-          <stop offset="55%" stopColor="#b9ddff" />
-          <stop offset="100%" stopColor="#d8ecff" />
+          <stop offset="0%" stopColor="#a5c9ff" />
+          <stop offset="55%" stopColor="#bdd8ff" />
+          <stop offset="100%" stopColor="#d4e8ff" />
         </linearGradient>
       </defs>
       <rect width={W} height={H} fill={`url(#${gradientId})`} />

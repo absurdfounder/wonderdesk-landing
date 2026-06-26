@@ -1,20 +1,16 @@
 'use client';
 
 import {
-  AnalyticsCard,
-  EditorSidebarCard,
-  FeedbackCard,
   PRODUCT_COL_W,
   PRODUCT_VISUAL_H,
+  ProductFeaturesVisualRow,
 } from './PrDocsProductCards';
-import PixelLandscapeWide from './shared/PixelLandscapeWide';
 
 export const PR_DOCS_PRODUCT_W = 1119;
 export const PR_DOCS_PRODUCT_H = 560;
 
 const COL_W = PRODUCT_COL_W;
 const TEXT_H = 168;
-const VISUAL_H = PRODUCT_VISUAL_H;
 
 const FONT = 'var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif';
 
@@ -22,17 +18,14 @@ const COLUMNS = [
   {
     boldLead: 'Advanced analytics',
     rest: 'show you how your customers are using your help center, what articles are performing well, and where there\'s room for improvement.',
-    visual: <AnalyticsCard />,
   },
   {
     boldLead: 'Our world-class editor',
     rest: 'helps you create and edit content faster than any other platform.',
-    visual: <EditorSidebarCard />,
   },
   {
     boldLead: 'Collect positive and negative feedback',
     rest: 'from your customers, and use them to improve your help center over time.',
-    visual: <FeedbackCard />,
   },
 ];
 
@@ -67,28 +60,7 @@ export default function PrDocsProductFeaturesSection() {
         ))}
       </div>
 
-      <div style={{ position: 'relative', height: VISUAL_H }}>
-        <div style={{ position: 'absolute', inset: 0 }}>
-          <PixelLandscapeWide width={PR_DOCS_PRODUCT_W} height={VISUAL_H} gradientId="product-features-sky" />
-        </div>
-        <div style={{ position: 'absolute', inset: 0, display: 'flex' }}>
-          {COLUMNS.map((col, index) => (
-            <div
-              key={col.boldLead}
-              style={{
-                width: COL_W,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '16px 20px',
-                borderRight: index < COLUMNS.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none',
-              }}
-            >
-              {col.visual}
-            </div>
-          ))}
-        </div>
-      </div>
+      <ProductFeaturesVisualRow landscapeId="product-features-sky" />
     </div>
   );
 }

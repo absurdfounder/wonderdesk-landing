@@ -14,6 +14,7 @@ import PixelLandscapeWide from './shared/PixelLandscapeWide';
 
 export const PLATFORM_COL_W = 373;
 export const PLATFORM_VISUAL_H = 352;
+export const PLATFORM_ROW_W = PLATFORM_COL_W * 3;
 
 const FONT = 'var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif';
 
@@ -363,6 +364,45 @@ export function PlatformColumnVisual({
         }}
       >
         <Card />
+      </div>
+    </div>
+  );
+}
+
+const PLATFORM_ROW_CARDS = [
+  <DomainLiveCard key="domain" />,
+  <GoogleSerpCard key="seo" />,
+  <LighthouseCard key="performance" />,
+];
+
+export function PlatformFeaturesVisualRow({ landscapeId = 'platform-features-sky' }: { landscapeId?: string }) {
+  return (
+    <div
+      style={{
+        width: PLATFORM_ROW_W,
+        height: PLATFORM_VISUAL_H,
+        position: 'relative',
+      }}
+    >
+      <div style={{ position: 'absolute', inset: 0 }}>
+        <PixelLandscapeWide width={PLATFORM_ROW_W} height={PLATFORM_VISUAL_H} gradientId={landscapeId} />
+      </div>
+      <div style={{ position: 'absolute', inset: 0, display: 'flex' }}>
+        {PLATFORM_ROW_CARDS.map((card, index) => (
+          <div
+            key={index}
+            style={{
+              width: PLATFORM_COL_W,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '18px 22px',
+              borderRight: index < PLATFORM_ROW_CARDS.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none',
+            }}
+          >
+            {card}
+          </div>
+        ))}
       </div>
     </div>
   );

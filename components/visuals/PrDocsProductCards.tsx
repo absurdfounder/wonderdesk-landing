@@ -22,6 +22,7 @@ import PixelLandscapeWide from './shared/PixelLandscapeWide';
 
 export const PRODUCT_COL_W = 373;
 export const PRODUCT_VISUAL_H = 392;
+export const PRODUCT_ROW_W = PRODUCT_COL_W * 3;
 
 const FONT = 'var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif';
 
@@ -431,6 +432,45 @@ export function ProductColumnVisual({
         }}
       >
         <Card />
+      </div>
+    </div>
+  );
+}
+
+const PRODUCT_ROW_CARDS = [
+  <AnalyticsCard key="analytics" />,
+  <EditorSidebarCard key="editor" />,
+  <FeedbackCard key="feedback" />,
+];
+
+export function ProductFeaturesVisualRow({ landscapeId = 'product-features-sky' }: { landscapeId?: string }) {
+  return (
+    <div
+      style={{
+        width: PRODUCT_ROW_W,
+        height: PRODUCT_VISUAL_H,
+        position: 'relative',
+      }}
+    >
+      <div style={{ position: 'absolute', inset: 0 }}>
+        <PixelLandscapeWide width={PRODUCT_ROW_W} height={PRODUCT_VISUAL_H} gradientId={landscapeId} />
+      </div>
+      <div style={{ position: 'absolute', inset: 0, display: 'flex' }}>
+        {PRODUCT_ROW_CARDS.map((card, index) => (
+          <div
+            key={index}
+            style={{
+              width: PRODUCT_COL_W,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '16px 20px',
+              borderRight: index < PRODUCT_ROW_CARDS.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none',
+            }}
+          >
+            {card}
+          </div>
+        ))}
       </div>
     </div>
   );
