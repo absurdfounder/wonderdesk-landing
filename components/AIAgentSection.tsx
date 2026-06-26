@@ -1,152 +1,173 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import Link from 'next/link';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import {
-  FileText, ChevronRight,
-  CheckCircle2, Clock, Eye, Send, ArrowRight,
-  Search, MessageSquare, Camera, FileEdit, Check
-} from "lucide-react";
+  ArrowRight,
+  Camera,
+  CheckCircle2,
+  Eye,
+  FileEdit,
+  FileText,
+  Lock,
+  MessageSquare,
+  Pause,
+  Play,
+  RotateCcw,
+  Search,
+  Send,
+} from 'lucide-react';
 
-/* Processing steps that Wonder shows while working */
 const PROCESSING_STEPS = [
-  { icon: "search", label: "Scanning 47 help articles…" },
-  { icon: "file", label: "Found 12 articles with phone references" },
-  { icon: "edit", label: "Replacing with support portal links…" },
-  { icon: "image", label: "Updating screenshots…" },
-  { icon: "check", label: "Done! 12 articles updated" },
+  { icon: 'search' as const, label: 'Scanning 47 help articles…' },
+  { icon: 'file' as const, label: 'Found 12 articles with phone references' },
+  { icon: 'edit' as const, label: 'Replacing with support portal links…' },
+  { icon: 'image' as const, label: 'Updating screenshots…' },
+  { icon: 'check' as const, label: 'Done! 12 articles updated' },
 ];
 
 const DRAFT_ARTICLES = [
   {
-    title: "How to contact support",
-    excerpt: "If you need help with your account, you can reach our support team through our support portal. Visit support.company.com to submit a ticket or browse our knowledge base.",
+    title: 'How to contact support',
+    excerpt:
+      'If you need help with your account, reach our support team through our support portal. Visit support.company.com to submit a ticket.',
     changes: 4,
-    status: "Updated",
+    status: 'Updated',
   },
   {
-    title: "Account settings and preferences",
-    excerpt: "Update your account information, change notification preferences, and manage your subscription through our support portal.",
+    title: 'Account settings and preferences',
+    excerpt:
+      'Update your account information, change notification preferences, and manage your subscription through our support portal.',
     changes: 2,
-    status: "Updated",
+    status: 'Updated',
   },
   {
-    title: "Billing and payment help",
-    excerpt: "Questions about billing? Need to update your payment method? Our support team can help through our support portal.",
+    title: 'Billing and payment help',
+    excerpt:
+      'Questions about billing? Need to update your payment method? Our support team can help through our support portal.',
     changes: 3,
-    status: "Updated",
+    status: 'Updated',
   },
 ];
 
-/* Chat script */
 type ChatMessage =
   | {
-      type: "user";
+      type: 'user';
       sender: string;
       avatar: string;
       text: string;
       time: string;
       delay: number;
     }
-  | { type: "agent"; sender: string; text: string; time: string; delay: number };
+  | { type: 'agent'; sender: string; text: string; time: string; delay: number };
 
 type ChatScriptStep =
   | ChatMessage
-  | { type: "agent_typing"; delay: number }
-  | { type: "processing"; delay: number }
-  | { type: "drafts"; delay: number };
+  | { type: 'agent_typing'; delay: number }
+  | { type: 'processing'; delay: number }
+  | { type: 'drafts'; delay: number };
 
 const CHAT_SCRIPT: ChatScriptStep[] = [
   {
-    type: "user",
-    sender: "Vaibhav",
-    avatar: "https://avatars.githubusercontent.com/u/25829699?v=4",
+    type: 'user',
+    sender: 'Vaibhav',
+    avatar: 'https://avatars.githubusercontent.com/u/25829699?v=4',
     text: 'Hey Wonder, can you remove all phone-number mentions and replace with our support portal link → support.company.com',
-    time: "3:42 PM",
+    time: '3:42 PM',
     delay: 200,
   },
+  { type: 'agent_typing', delay: 800 },
   {
-    type: "agent_typing",
-    delay: 800,
-  },
-  {
-    type: "agent",
-    sender: "Wonder",
-    text: "On it! Scanning your help center now…",
-    time: "3:43 PM",
+    type: 'agent',
+    sender: 'Wonder',
+    text: 'On it! Scanning your help center now…',
+    time: '3:43 PM',
     delay: 1000,
   },
+  { type: 'processing', delay: 400 },
   {
-    type: "processing",
-    delay: 400,
-  },
-  {
-    type: "agent",
-    sender: "Wonder",
+    type: 'agent',
+    sender: 'Wonder',
     text: "All done! I found and updated 12 articles across your help center. Replaced all phone numbers with the support portal link and refreshed the screenshots. Here's a preview:",
-    time: "3:44 PM",
+    time: '3:44 PM',
     delay: 6500,
   },
-  {
-    type: "drafts",
-    delay: 600,
-  },
+  { type: 'drafts', delay: 600 },
 ];
 
-/* ─── Helpers ─── */
-function WonderAvatar({ size = 36 }: { size?: number }) {
+const WONDER_CHAR = 'https://dazzling-cat.netlify.app/wondercharacter.png';
+
+function WonderAvatar({ size = 40 }: { size?: number }) {
   return (
-    <div style={{
-      width: size, height: size, borderRadius: 10, overflow: "hidden",
-      background: "#3b82f6", display: "flex", alignItems: "center", justifyContent: "center",
-      flexShrink: 0,
-    }}>
-      <img src="https://dazzling-cat.netlify.app/wondercharacter.png" alt="Wonder" style={{ width: size, height: size, objectFit: "cover" }} />
+    <div
+      className="shrink-0 overflow-hidden rounded-lg border border-wonder/20 bg-wonder-50"
+      style={{ width: size, height: size }}
+    >
+      <img src={WONDER_CHAR} alt="Wonder" className="h-full w-full object-cover" />
     </div>
   );
 }
 
+function StepIcon({ icon }: { icon: (typeof PROCESSING_STEPS)[number]['icon'] }) {
+  const props = { size: 14, strokeWidth: 1.75, className: 'text-slate-400' };
+  if (icon === 'search') return <Search {...props} />;
+  if (icon === 'file') return <FileText {...props} />;
+  if (icon === 'edit') return <FileEdit {...props} />;
+  if (icon === 'image') return <Camera {...props} />;
+  return <CheckCircle2 size={14} strokeWidth={1.75} className="text-emerald-600" />;
+}
+
 function ProcessingSteps({ visibleCount }: { visibleCount: number }) {
   return (
-    <div style={{ marginLeft: 48, marginTop: 8, marginBottom: 4 }}>
-      <div style={{
-        background: "#fafafa", border: "1px solid #e5e7eb", borderRadius: 12,
-        padding: "12px 16px", display: "flex", flexDirection: "column", gap: 6,
-      }}>
-        {PROCESSING_STEPS.map((step, i) => (
-          i < visibleCount && (
-            <div key={i} style={{
-              display: "flex", alignItems: "center", gap: 8,
-              animation: "fadeSlide 0.35s ease both",
-              opacity: i < visibleCount - 1 ? 0.5 : 1,
-              transition: "opacity 0.3s",
-            }}>
-              <div style={{ width: 18, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                {step.icon === "search" && <Search size={14} strokeWidth={1.5} color="#6b7280" />}
-                {step.icon === "file" && <FileText size={14} strokeWidth={1.5} color="#6b7280" />}
-                {step.icon === "edit" && <FileEdit size={14} strokeWidth={1.5} color="#6b7280" />}
-                {step.icon === "image" && <Camera size={14} strokeWidth={1.5} color="#6b7280" />}
-                {step.icon === "check" && <CheckCircle2 size={14} strokeWidth={1.5} color="#22c55e" />}
-              </div>
-              <span style={{
-                fontSize: 12.5, color: step.icon === "check" ? "#16a34a" : "#6b7280",
-                fontWeight: step.icon === "check" ? 600 : 400,
-              }}>{step.label}</span>
-              {i === visibleCount - 1 && step.icon !== "check" && (
-                <div style={{ display: "flex", gap: 2, marginLeft: 4 }}>
-                  <div className="proc-dot" style={{ animationDelay: "0ms" }} />
-                  <div className="proc-dot" style={{ animationDelay: "150ms" }} />
-                  <div className="proc-dot" style={{ animationDelay: "300ms" }} />
-                </div>
-              )}
-            </div>
-          )
-        ))}
+    <div className="ml-0 mt-3 sm:ml-[54px]">
+      <div className="rounded-lg border border-slate-200 bg-slate-50/80 p-3 sm:p-4">
+        <ul className="flex flex-col gap-2">
+          {PROCESSING_STEPS.map((step, i) => {
+            if (i >= visibleCount) return null;
+            const isDone = step.icon === 'check';
+            const isActive = i === visibleCount - 1 && !isDone;
+
+            return (
+              <li
+                key={step.label}
+                className={`flex animate-[fadeSlide_0.35s_ease_both] items-center gap-2.5 text-sm ${
+                  isDone ? 'font-medium text-emerald-700' : 'text-slate-500'
+                } ${i < visibleCount - 1 ? 'opacity-50' : 'opacity-100'}`}
+              >
+                <StepIcon icon={step.icon} />
+                <span>{step.label}</span>
+                {isActive && (
+                  <span className="ml-1 flex gap-1">
+                    {[0, 150, 300].map((delay) => (
+                      <span
+                        key={delay}
+                        className="h-1 w-1 animate-[dotBounce_1.2s_infinite_ease-in-out] rounded-full bg-slate-400"
+                        style={{ animationDelay: `${delay}ms` }}
+                      />
+                    ))}
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
 }
 
-/* ═══════════ Main Component ═══════════ */
+function renderMessageText(text: string) {
+  return text.split(/(support\.company\.com)/g).map((part, j) =>
+    part === 'support.company.com' ? (
+      <span key={j} className="font-medium text-wonder underline decoration-wonder/30 underline-offset-2">
+        {part}
+      </span>
+    ) : (
+      <span key={j}>{part}</span>
+    ),
+  );
+}
+
 export default function AIAgentSection() {
   const [chatItems, setChatItems] = useState<ChatMessage[]>([]);
   const [scriptIdx, setScriptIdx] = useState(0);
@@ -169,56 +190,61 @@ export default function AIAgentSection() {
 
   const restart = useCallback(() => {
     cleanUp();
-    setChatItems([]); setScriptIdx(0); setAgentTyping(false);
-    setProcVisible(0); setShowDrafts(false); setIsRunning(true);
+    setChatItems([]);
+    setScriptIdx(0);
+    setAgentTyping(false);
+    setProcVisible(0);
+    setShowDrafts(false);
+    setIsRunning(true);
   }, [cleanUp]);
 
-  const processStep = useCallback((idx: number) => {
-    if (idx >= CHAT_SCRIPT.length) {
-      // Auto-restart after completion
-      timerRef.current = setTimeout(restart, 3000);
-      return;
-    }
+  const processStep = useCallback(
+    (idx: number) => {
+      if (idx >= CHAT_SCRIPT.length) {
+        timerRef.current = setTimeout(restart, 4000);
+        return;
+      }
 
-    const step = CHAT_SCRIPT[idx];
-    timerRef.current = setTimeout(() => {
-      if (step.type === "user") {
-        setChatItems(p => [...p, step]);
-        setScriptIdx(idx + 1);
-        return;
-      }
-      if (step.type === "agent_typing") {
-        setAgentTyping(true);
-        setScriptIdx(idx + 1);
-        return;
-      }
-      if (step.type === "agent") {
-        setAgentTyping(false);
-        setChatItems(p => [...p, step]);
-        setScriptIdx(idx + 1);
-        return;
-      }
-      if (step.type === "processing") {
-        setProcVisible(1);
-        let count = 1;
-        procRef.current = setInterval(() => {
-          count++;
-          setProcVisible(count);
-          if (count >= PROCESSING_STEPS.length) {
-            if (procRef.current) clearInterval(procRef.current);
-            procRef.current = null;
-            setScriptIdx(idx + 1);
-          }
-        }, 1100);
-        return;
-      }
-      if (step.type === "drafts") {
-        setShowDrafts(true);
-        setScriptIdx(idx + 1);
-        return;
-      }
-    }, step.delay);
-  }, [restart]);
+      const step = CHAT_SCRIPT[idx];
+      timerRef.current = setTimeout(() => {
+        if (step.type === 'user') {
+          setChatItems((p) => [...p, step]);
+          setScriptIdx(idx + 1);
+          return;
+        }
+        if (step.type === 'agent_typing') {
+          setAgentTyping(true);
+          setScriptIdx(idx + 1);
+          return;
+        }
+        if (step.type === 'agent') {
+          setAgentTyping(false);
+          setChatItems((p) => [...p, step]);
+          setScriptIdx(idx + 1);
+          return;
+        }
+        if (step.type === 'processing') {
+          setProcVisible(1);
+          let count = 1;
+          procRef.current = setInterval(() => {
+            count++;
+            setProcVisible(count);
+            if (count >= PROCESSING_STEPS.length) {
+              if (procRef.current) clearInterval(procRef.current);
+              procRef.current = null;
+              setScriptIdx(idx + 1);
+            }
+          }, 1100);
+          return;
+        }
+        if (step.type === 'drafts') {
+          setShowDrafts(true);
+          setScriptIdx(idx + 1);
+        }
+      }, step.delay);
+    },
+    [restart],
+  );
 
   useEffect(() => {
     if (!isRunning) return;
@@ -228,209 +254,183 @@ export default function AIAgentSection() {
 
   return (
     <section className="bg-white">
-      <div
-        className="landing-grid-column"
-        style={{
-          backgroundColor: 'rgb(255, 255, 255)',
-          backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.6) 0.7px, transparent 0.7px)',
-          backgroundSize: '10px 10px',
-          backgroundPosition: '0px 0px',
-        }}
-      >
-    <div className="landing-grid-pad" style={{
-      width: "100%",
-      minHeight: "min(100vh, 900px)",
-      paddingTop: "60px",
-      paddingBottom: "60px",
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-    }}>
       <style>{`
         @keyframes fadeSlide { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
         @keyframes dotBounce { 0%,80%,100%{transform:translateY(0);opacity:.35} 40%{transform:translateY(-3px);opacity:1} }
-        .proc-dot { width:3px; height:3px; border-radius:50%; background:#a3a3a3; animation:dotBounce 1.2s infinite ease-in-out; }
-        .typing-dot-lg { width:5px; height:5px; border-radius:50%; background:#a3a3a3; animation:dotBounce 1.2s infinite ease-in-out; }
-        .draft-card { transition: all 0.2s ease; }
-        .draft-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-        .chat-scroll::-webkit-scrollbar{width:4px}
-        .chat-scroll::-webkit-scrollbar-track{background:transparent}
-        .chat-scroll::-webkit-scrollbar-thumb{background:#e5e5e5;border-radius:4px}
-        *{box-sizing:border-box}
       `}</style>
 
-      <div style={{ width: "100%", maxWidth: 900, margin: "0 auto" }}>
-        {/* Browser Window */}
-        <div style={{
-          borderRadius: 16, overflow: "hidden", border: "1px solid #d4d4d4",
-          boxShadow: "0 20px 50px rgba(0,0,0,.25), 0 6px 18px rgba(0,0,0,.1)",
-          background: "#f5f5f4",
-        }}>
-          {/* Chrome bar */}
-          <div style={{ display: "flex", alignItems: "center", padding: "9px 16px", background: "#f5f5f4", borderBottom: "1px solid #e5e5e5", gap: 12 }}>
-            <div style={{ display: "flex", gap: 7 }}>
-              <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ff5f57" }} />
-              <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#febc2e" }} />
-              <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#28c840" }} />
+      <div className="landing-grid-column bg-white">
+        <div className="border-b border-slate-200 landing-grid-pad py-10 md:py-12">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <span className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
+                Just ask Wonder
+              </span>
+              <h2 className="mt-3 font-display text-2xl text-slate-800 sm:text-3xl md:text-4xl">
+                The AI agent that writes and updates your help articles for you
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                Tell Wonder what to change in plain English. It scans your help center, edits articles,
+                refreshes screenshots, and queues updates for review — like a teammate who never forgets.
+              </p>
             </div>
-            <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
-              <div style={{
-                display: "flex", alignItems: "center", gap: 5,
-                background: "white", borderRadius: 7, padding: "4px 16px",
-                fontSize: 12, color: "#78716c", border: "1px solid #e5e5e5",
-                maxWidth: 300, width: "100%", justifyContent: "center",
-                boxShadow: "inset 0 1px 2px rgba(0,0,0,0.04)",
-              }}>
-                <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><rect x="1" y="5" width="8" height="6" rx="1.5" stroke="#78716c" strokeWidth="1.5" fill="none" /><path d="M3 5V3.5a2 2 0 014 0V5" stroke="#78716c" strokeWidth="1.5" fill="none" /></svg>
-                app.wonderdesk.ai/chat
+
+            <Link
+              href="https://app.wonderdesk.ai/chat"
+              className="wonder-btn-primary w-full shrink-0 sm:w-auto"
+            >
+              Try Wonder chat
+            </Link>
+          </div>
+        </div>
+
+        <div
+          className="landing-grid-pad py-8 md:py-12"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.35) 0.7px, transparent 0.7px)',
+            backgroundSize: '10px 10px',
+          }}
+        >
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-stone-50 shadow-[0_24px_60px_-16px_rgba(15,23,42,0.18)] ring-1 ring-black/[0.04]">
+            {/* Browser chrome */}
+            <div className="flex items-center gap-3 border-b border-slate-200 bg-[#FDFCFB] px-4 py-2.5">
+              <div className="flex gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+              </div>
+
+              <div className="mx-auto flex max-w-sm flex-1 items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-1.5 shadow-inner">
+                <Lock size={11} className="shrink-0 text-slate-400" strokeWidth={2} />
+                <span className="truncate font-mono text-[11px] text-slate-500">app.wonderdesk.ai/chat</span>
+              </div>
+
+              <div className="flex gap-1">
+                <button
+                  type="button"
+                  onClick={() => setIsRunning((p) => !p)}
+                  className="flex h-7 w-7 items-center justify-center rounded border border-slate-200 bg-white text-slate-500 transition-colors hover:bg-slate-50"
+                  aria-label={isRunning ? 'Pause demo' : 'Play demo'}
+                >
+                  {isRunning ? <Pause size={12} /> : <Play size={12} className="ml-0.5" />}
+                </button>
+                <button
+                  type="button"
+                  onClick={restart}
+                  className="flex h-7 w-7 items-center justify-center rounded border border-slate-200 bg-white text-slate-500 transition-colors hover:bg-slate-50"
+                  aria-label="Restart demo"
+                >
+                  <RotateCcw size={12} />
+                </button>
               </div>
             </div>
-            <div style={{ display: "flex", gap: 5 }}>
-              <button onClick={() => setIsRunning(p => !p)} style={{ width: 26, height: 26, borderRadius: 5, border: "1px solid #d6d3d1", background: "white", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: "#78716c" }}>
-                {isRunning ? <span style={{ fontSize: 10 }}>⏸</span> : <span style={{ fontSize: 10 }}>▶</span>}
-              </button>
-              <button onClick={restart} style={{ width: 26, height: 26, borderRadius: 5, border: "1px solid #d6d3d1", background: "white", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: "#78716c" }}>
-                <span style={{ fontSize: 12 }}>↻</span>
-              </button>
-            </div>
-          </div>
 
-          {/* Chat area - now with flexbox layout */}
-          <div style={{ background: "white", display: "flex", flexDirection: "column", height: 600 }}>
-            {/* Scrollable chat messages */}
-            <div ref={chatRef} className="chat-scroll" style={{ 
-              flex: 1, 
-              overflowY: "auto", 
-              padding: "24px 28px 20px" 
-            }}>
-              {chatItems.map((item, i) => (
-                <div key={i} style={{ marginBottom: 20, animation: "fadeSlide 0.4s ease both" }}>
-                  <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                    {/* Avatar */}
-                    {item.type === "user" ? (
-                      <img src={item.avatar} alt={item.sender} style={{ width: 40, height: 40, borderRadius: 10, objectFit: "cover", flexShrink: 0 }} />
-                    ) : (
-                      <WonderAvatar size={40} />
-                    )}
-                    {/* Content */}
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 3 }}>
-                        <span style={{ fontSize: 15, fontWeight: 700, color: "#111" }}>{item.sender}</span>
-                        <span style={{ fontSize: 12, color: "#a3a3a3" }}>{item.time}</span>
+            {/* Chat panel */}
+            <div className="flex min-h-[480px] flex-col bg-white md:min-h-[540px]">
+              <div
+                ref={chatRef}
+                className="flex-1 space-y-5 overflow-y-auto px-4 py-5 sm:px-6 sm:py-6 [scrollbar-width:thin]"
+              >
+                {chatItems.map((item, i) => (
+                  <div key={i} className="animate-[fadeSlide_0.4s_ease_both]">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      {item.type === 'user' ? (
+                        <img
+                          src={item.avatar}
+                          alt={item.sender}
+                          className="h-10 w-10 shrink-0 rounded-lg object-cover"
+                        />
+                      ) : (
+                        <WonderAvatar />
+                      )}
+
+                      <div className="min-w-0 flex-1">
+                        <div className="mb-1 flex items-baseline gap-2">
+                          <span className="text-sm font-semibold text-slate-900">{item.sender}</span>
+                          <span className="text-xs text-slate-400">{item.time}</span>
+                        </div>
+                        <p className="text-sm leading-relaxed text-slate-600">{renderMessageText(item.text)}</p>
                       </div>
-                      <p style={{ fontSize: 14, lineHeight: 1.65, color: "#4b5563", margin: 0 }}>
-                        {item.text.split(/(support\.company\.com)/g).map((part, j) =>
-                          part === "support.company.com" ? (
-                            <span key={j} style={{ color: "#3b82f6", fontWeight: 500, textDecoration: "underline", textDecorationColor: "#93c5fd", textUnderlineOffset: 2 }}>{part}</span>
-                          ) : <span key={j}>{part}</span>
-                        )}
-                      </p>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-              {/* Agent typing indicator */}
-              {agentTyping && (
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 14, marginBottom: 20, animation: "fadeSlide 0.3s ease both" }}>
-                  <WonderAvatar size={40} />
-                  <div style={{ paddingTop: 12, display: "flex", gap: 4, alignItems: "center" }}>
-                    <div className="typing-dot-lg" style={{ animationDelay: "0ms" }} />
-                    <div className="typing-dot-lg" style={{ animationDelay: "150ms" }} />
-                    <div className="typing-dot-lg" style={{ animationDelay: "300ms" }} />
+                {agentTyping && (
+                  <div className="flex animate-[fadeSlide_0.3s_ease_both] items-start gap-3 sm:gap-4">
+                    <WonderAvatar />
+                    <div className="flex gap-1 pt-3">
+                      {[0, 150, 300].map((delay) => (
+                        <span
+                          key={delay}
+                          className="h-1.5 w-1.5 animate-[dotBounce_1.2s_infinite_ease-in-out] rounded-full bg-slate-400"
+                          style={{ animationDelay: `${delay}ms` }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {/* Processing steps */}
-              {procVisible > 0 && <ProcessingSteps visibleCount={procVisible} />}
+                {procVisible > 0 && <ProcessingSteps visibleCount={procVisible} />}
 
-              {/* Draft article cards */}
-              {showDrafts && (
-                <div style={{ marginLeft: 54, marginTop: 14, animation: "fadeSlide 0.5s ease both" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-                    <button style={{
-                      padding: "7px 16px", borderRadius: 9, background: "#111", color: "white",
-                      border: "none", fontSize: 13, fontWeight: 600, cursor: "pointer",
-                      display: "flex", alignItems: "center", gap: 6,
-                    }}>
-                      <Eye size={14} strokeWidth={2} /> Review & Publish
-                    </button>
-                    <span style={{ fontSize: 12, color: "#a3a3a3" }}>12 articles updated</span>
-                  </div>
-
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
-                    {DRAFT_ARTICLES.map((article, idx) => (
-                      <div
-                        key={idx}
-                        className="draft-card"
-                        style={{
-                          cursor: "pointer", borderRadius: 12,
-                          border: "1px solid #e5e7eb",
-                          background: "linear-gradient(to bottom, white, #fafafa)",
-                          padding: "14px 16px 12px",
-                          animation: `fadeSlide 0.4s ease ${idx * 120}ms both`,
-                        }}
+                {showDrafts && (
+                  <div className="animate-[fadeSlide_0.5s_ease_both] sm:ml-[54px]">
+                    <div className="mb-4 flex flex-wrap items-center gap-3">
+                      <button
+                        type="button"
+                        className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
                       >
-                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-                          <span style={{
-                            display: "inline-flex", alignItems: "center", gap: 4,
-                            background: "#dcfce7", padding: "2px 8px", borderRadius: 20,
-                            fontSize: 10, fontWeight: 600, color: "#16a34a",
-                          }}>
-                            <CheckCircle2 size={10} strokeWidth={2.5} />
-                            {article.status}
-                          </span>
-                          <span style={{
-                            fontSize: 10, color: "#a3a3a3", background: "#f5f5f5",
-                            padding: "1px 6px", borderRadius: 4,
-                          }}>{article.changes} changes</span>
-                        </div>
-                        <h4 style={{ fontSize: 13.5, fontWeight: 700, color: "#111", marginBottom: 6, lineHeight: 1.3 }}>{article.title}</h4>
-                        <p style={{
-                          fontSize: 12, lineHeight: 1.5, color: "#9ca3af", margin: 0,
-                          display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden",
-                          maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
-                          WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
-                        }}>{article.excerpt}</p>
-                        <div style={{
-                          display: "flex", alignItems: "center", gap: 4, marginTop: 10,
-                          fontSize: 11, color: "#3b82f6", fontWeight: 500,
-                        }}>
-                          View article <ArrowRight size={11} strokeWidth={2} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+                        <Eye size={14} strokeWidth={2} />
+                        Review &amp; publish
+                      </button>
+                      <span className="font-mono text-[11px] uppercase tracking-wide text-slate-400">
+                        12 articles updated
+                      </span>
+                    </div>
 
-            {/* Fixed input bar at bottom */}
-            <div style={{
-              padding: "12px 28px 16px", 
-              borderTop: "1px solid #f0f0f0",
-              background: "white",
-              flexShrink: 0
-            }}>
-              <div style={{
-                display: "flex", alignItems: "center", gap: 10,
-                background: "#f5f5f5", borderRadius: 12, border: "1px solid #e5e5e5",
-                padding: "11px 16px",
-              }}>
-                <MessageSquare size={16} strokeWidth={1.5} color="#b5b5b5" />
-                <span style={{ flex: 1, fontSize: 13.5, color: "#a3a3a3" }}>Ask Wonder anything…</span>
-                <div style={{
-                  width: 32, height: 32, borderRadius: 8, background: "#e5e5e5",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}>
-                  <Send size={14} strokeWidth={2} color="#b5b5b5" />
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                      {DRAFT_ARTICLES.map((article, idx) => (
+                        <div
+                          key={article.title}
+                          className="group flex flex-col rounded-lg border border-slate-200 bg-gradient-to-b from-white to-slate-50/80 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                          style={{ animation: `fadeSlide 0.4s ease ${idx * 120}ms both` }}
+                        >
+                          <div className="mb-2 flex items-center justify-between gap-2">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                              <CheckCircle2 size={10} strokeWidth={2.5} />
+                              {article.status}
+                            </span>
+                            <span className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] text-slate-400">
+                              {article.changes} changes
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-semibold leading-snug text-slate-900">{article.title}</h4>
+                          <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-slate-500 [mask-image:linear-gradient(to_bottom,black_55%,transparent_100%)]">
+                            {article.excerpt}
+                          </p>
+                          <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-wonder opacity-0 transition-opacity group-hover:opacity-100">
+                            View article <ArrowRight size={11} />
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Input bar */}
+              <div className="shrink-0 border-t border-slate-100 bg-white px-4 py-3 sm:px-6 sm:py-4">
+                <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 sm:px-4">
+                  <MessageSquare size={16} className="shrink-0 text-slate-400" strokeWidth={1.5} />
+                  <span className="flex-1 text-sm text-slate-400">Ask Wonder anything…</span>
+                  <div className="flex h-8 w-8 items-center justify-center rounded-md bg-wonder text-white">
+                    <Send size={14} strokeWidth={2} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    </div>
     </section>
   );
 }
