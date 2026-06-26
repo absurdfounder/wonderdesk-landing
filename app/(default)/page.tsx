@@ -52,7 +52,7 @@ export default function Home() {
           <Hero />
         </div>
 
-        <section className="homepage-grid-row bg-black">
+        <section className="homepage-grid-row">
           <div className="landing-grid-column bg-black">
             <div className="landing-grid-pad py-6 md:py-10">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-center">
