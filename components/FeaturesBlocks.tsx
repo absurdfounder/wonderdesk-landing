@@ -40,17 +40,17 @@ export default function FeaturesBlocks() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 divide-y divide-slate-200 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+        <div className="grid grid-cols-1 divide-y divide-slate-200/50 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
           {blocks.map((block) => (
             <article key={block.title} className="flex min-h-full flex-col bg-white">
-              <div className="flex flex-1 flex-col px-6 py-8 md:px-8 md:py-10">
+              <div className="flex flex-1 flex-col px-6 py-8 md:px-8 md:py-10 lg:min-h-[14rem]">
                 <span className="font-silkscreen text-xs uppercase tracking-wide text-wonder">{block.tag}</span>
                 <p className="mt-4 text-base leading-relaxed text-slate-700">
                   <span className="font-semibold text-slate-900">{block.title}</span> {block.body}
                 </p>
               </div>
 
-              <div className="mt-auto border-t border-slate-200">
+              <div className="mt-auto border-t border-slate-200/50">
                 <FeatureBlockVisual id={block.visual} />
               </div>
             </article>

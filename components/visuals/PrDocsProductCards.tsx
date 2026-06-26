@@ -22,7 +22,7 @@ import PixelLandscapeWide from './shared/PixelLandscapeWide';
 import { HOME_FEATURE_PLAIN_BG } from './PrDocsPlatformCards';
 
 export const PRODUCT_COL_W = 373;
-export const PRODUCT_VISUAL_H = 392;
+export const PRODUCT_VISUAL_H = 416;
 export const PRODUCT_ROW_W = PRODUCT_COL_W * 3;
 export { HOME_FEATURE_PLAIN_BG } from './PrDocsPlatformCards';
 
@@ -433,9 +433,9 @@ export function ProductColumnVisual({
           position: 'absolute',
           inset: 0,
           display: 'flex',
-          alignItems: 'center',
+          alignItems: variant === 'plain' ? 'flex-start' : 'center',
           justifyContent: 'center',
-          padding: '16px 20px',
+          padding: variant === 'plain' ? '20px 16px 16px' : '16px 20px',
         }}
       >
         <Card />

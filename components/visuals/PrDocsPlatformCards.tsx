@@ -365,9 +365,9 @@ export function PlatformColumnVisual({
           position: 'absolute',
           inset: 0,
           display: 'flex',
-          alignItems: 'center',
+          alignItems: variant === 'plain' ? 'flex-start' : 'center',
           justifyContent: 'center',
-          padding: '18px 22px',
+          padding: variant === 'plain' ? '20px 16px 16px' : '18px 22px',
         }}
       >
         <Card />
