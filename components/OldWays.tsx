@@ -161,7 +161,7 @@ export default function OldWays() {
                   </div>
 
                   <div className="relative min-h-[320px] border-slate-200 sm:min-h-[380px] lg:min-h-[500px] lg:border-l lg:rounded-r-xl">
-                    <PixelFramedVisual bare scaled>
+                    <PixelFramedVisual bare>
                       <OldWaysVisual index={index} />
                     </PixelFramedVisual>
                   </div>
