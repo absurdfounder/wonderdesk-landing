@@ -344,8 +344,8 @@ export function PlatformColumnVisual({
   return (
     <div
       style={{
-        width: PLATFORM_COL_W,
-        height: PLATFORM_VISUAL_H,
+        width: '100%',
+        height: '100%',
         position: 'relative',
         overflow: 'hidden',
         background: variant === 'plain' ? HOME_FEATURE_PLAIN_BG : undefined,

@@ -11,6 +11,8 @@ type FeatureVisualStageProps = {
   stageWidth?: number;
   stageHeight?: number;
   className?: string;
+  /** `contain` letterboxes (default). `width` scales to fill parent width edge-to-edge. */
+  fit?: 'contain' | 'width';
 };
 
 /** Fixed-size visual stage that scales down to fit its parent box without overflowing. */
@@ -19,6 +21,7 @@ export default function FeatureVisualStage({
   stageWidth = FEATURE_VISUAL_STAGE_W,
   stageHeight = FEATURE_VISUAL_STAGE_H,
   className = '',
+  fit = 'contain',
 }: FeatureVisualStageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
@@ -31,7 +34,10 @@ export default function FeatureVisualStage({
       const w = el.clientWidth;
       const h = el.clientHeight;
       if (!w || !h) return;
-      const next = Math.min(1, w / stageWidth, h / stageHeight);
+      const next =
+        fit === 'width'
+          ? w / stageWidth
+          : Math.min(1, w / stageWidth, h / stageHeight);
       setScale((prev) => (Math.abs(prev - next) < 0.001 ? prev : next));
     };
 
@@ -39,7 +45,24 @@ export default function FeatureVisualStage({
     const ro = new ResizeObserver(update);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [stageWidth, stageHeight]);
+  }, [stageWidth, stageHeight, fit]);
+
+  if (fit === 'width') {
+    return (
+      <div ref={containerRef} className={`relative h-full w-full overflow-hidden ${className}`}>
+        <div
+          className="origin-top-left"
+          style={{
+            width: stageWidth,
+            height: stageHeight,
+            transform: `scale(${scale})`,
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div ref={containerRef} className={`relative h-full w-full overflow-hidden ${className}`}>

@@ -412,8 +412,8 @@ export function ProductColumnVisual({
   return (
     <div
       style={{
-        width: PRODUCT_COL_W,
-        height: PRODUCT_VISUAL_H,
+        width: '100%',
+        height: '100%',
         position: 'relative',
         overflow: 'hidden',
         background: variant === 'plain' ? HOME_FEATURE_PLAIN_BG : undefined,
