@@ -433,9 +433,9 @@ export function ProductColumnVisual({
           position: 'absolute',
           inset: 0,
           display: 'flex',
-          alignItems: variant === 'plain' ? 'flex-start' : 'center',
+          alignItems: 'center',
           justifyContent: 'center',
-          padding: variant === 'plain' ? '20px 16px 16px' : '16px 20px',
+          padding: variant === 'plain' ? '18px 22px' : '16px 20px',
         }}
       >
         <Card />
