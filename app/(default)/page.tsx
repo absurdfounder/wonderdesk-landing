@@ -32,7 +32,6 @@ import AIAgentSection from '@/components/AIAgentSection'
 import CustomerStorySection from '@/components/CustomerStorySection'
 import CustomerStorySection2 from '@/components/CustomerStorySection2'
 import GetStartedSection from '@/components/GetStartedSection'
-import OldWays from '@/components/OldWays'
 import Showcases from '@/components/showcase'
 import ModalVideo from '@/components/ModalVideo'
 import NotionToWebsite from '@/components/NotionToWebsite'
@@ -116,10 +115,6 @@ export default function Home() {
 
         <div className="homepage-grid-row">
           <ProductFeaturesBlocks />
-        </div>
-
-        <div className="homepage-grid-row">
-          <OldWays />
         </div>
 
         <div className="homepage-grid-row">
