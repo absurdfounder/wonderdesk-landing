@@ -4,10 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AlertCircle, ArrowRight, HelpCircle, BookOpen, ShoppingBag, FileText, Briefcase, FileCode, Tag } from 'lucide-react';
+import { AlertCircle, ArrowRight, Tag } from 'lucide-react';
 import templateData from '@/public/showcase_data.json';
 
-// TypeScript interfaces remain the same
 interface CallToAction {
   text: string;
   link: string;
@@ -26,7 +25,7 @@ interface Product {
   provider: string;
   callToCopy: CallToAction;
   viewDemo: viewDemo;
-  tags?: string[]; // Add tags property
+  tags?: string[];
 }
 
 interface Template {
@@ -52,18 +51,15 @@ interface TagCount {
   count: number;
 }
 
-const truncateText = (text: string, maxLength: number): string => {
-  if (text.length > maxLength) {
-    return text.slice(0, maxLength) + "...";
-  }
-  return text;
-};
-
 interface TemplateLibraryProps {
   initialSelectedType?: string;
+  variant?: 'homepage' | 'standalone';
 }
 
-const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) => {
+const HOMEPAGE_TAG_LIMIT = 12;
+
+const TemplateLibrary = ({ variant = 'standalone' }: TemplateLibraryProps) => {
+  const isHomepage = variant === 'homepage';
   const [templates, setTemplates] = useState<Template[]>([]);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [displayedTemplates, setDisplayedTemplates] = useState<Template[]>([]);
@@ -72,51 +68,28 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
   const [lesserTags, setLesserTags] = useState<TagCount[]>([]);
   const [showAllTags, setShowAllTags] = useState(false);
 
-  const types = ['all', 'helpdesk', 'blog', 'directory', 'marketplace', 'company wiki', 'documentation'];
-
-  const typeIcons = {
-    'all': HelpCircle,
-    'helpdesk': HelpCircle,
-    'blog': BookOpen,
-    'directory': FileText,
-    'marketplace': ShoppingBag,
-    'company wiki': Briefcase,
-    'documentation': FileCode
-  };
-
   useEffect(() => {
     const allTemplates = templateData[0]?.template_library || [];
     setTemplates(allTemplates);
 
-    // Count tag occurrences across all templates
     const tagCounts: Record<string, number> = {};
 
-    allTemplates.forEach(template => {
-      if (template?.product?.tags) {
-        template.product.tags.forEach(tag => {
-          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-        });
-      }
+    allTemplates.forEach((template) => {
+      template?.product?.tags?.forEach((tag) => {
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+      });
     });
 
-    // Convert to TagCount objects and sort alphabetically
     const tagCountArray = Object.entries(tagCounts).map(([tag, count]) => ({
       tag,
-      count
+      count,
     }));
 
-    // Sort alphabetically first
-    tagCountArray.sort((a, b) => a.tag.localeCompare(b.tag));
+    tagCountArray.sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
 
-    // Then separate popular (2+ occurrences) from lesser tags (1 occurrence)
-    const popular = tagCountArray.filter(tc => tc.count >= 2);
-    const lesser = tagCountArray.filter(tc => tc.count < 2);
-
-    setPopularTags(popular);
-    setLesserTags(lesser);
+    setPopularTags(tagCountArray.filter((tc) => tc.count >= 2));
+    setLesserTags(tagCountArray.filter((tc) => tc.count < 2));
   }, []);
-
-  // Removed selectedType effect
 
   useEffect(() => {
     if (!Array.isArray(templates)) {
@@ -126,23 +99,19 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
 
     let filteredTemplates = templates;
 
-    // Filter by selected tags if any
     if (selectedTags.length > 0) {
-      filteredTemplates = filteredTemplates.filter(template => {
+      filteredTemplates = filteredTemplates.filter((template) => {
         if (!template?.product?.tags) return false;
-        return selectedTags.some(tag => template.product.tags?.includes(tag));
+        return selectedTags.some((tag) => template.product.tags?.includes(tag));
       });
     }
 
-    const templatesArray = Array.isArray(filteredTemplates) ? filteredTemplates : [];
-    setDisplayedTemplates(templatesArray.slice(0, 6)); // Always limit to 6 templates
+    setDisplayedTemplates(filteredTemplates.slice(0, 6));
   }, [selectedTags, templates]);
 
   const toggleTag = (tag: string) => {
-    setSelectedTags(prevTags =>
-      prevTags.includes(tag)
-        ? prevTags.filter(t => t !== tag)
-        : [...prevTags, tag]
+    setSelectedTags((prevTags) =>
+      prevTags.includes(tag) ? prevTags.filter((t) => t !== tag) : [...prevTags, tag],
     );
   };
 
@@ -150,284 +119,383 @@ const TemplateLibrary = ({ initialSelectedType = 'all' }: TemplateLibraryProps) 
     setSelectedTags([]);
   };
 
-  const toggleShowAllTags = () => {
-    setShowAllTags(!showAllTags);
-  };
+  const visiblePopularTags = isHomepage && !showAllTags
+    ? popularTags.slice(0, HOMEPAGE_TAG_LIMIT)
+    : popularTags;
 
-  return (
-    <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' id="template-section">
-      <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-8'>
-        <div className="flex-1">
-          <motion.h2
-            className="text-start font-display text-2xl sm:text-3xl md:text-4xl text-slate-800"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+  const hiddenPopularCount = isHomepage && !showAllTags
+    ? Math.max(0, popularTags.length - HOMEPAGE_TAG_LIMIT)
+    : 0;
+
+  const tagButtonClass = (active: boolean) =>
+    isHomepage
+      ? `rounded-sm border px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] transition-colors ${
+          active
+            ? 'border-wonder bg-wonder/10 text-wonder-800'
+            : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300 hover:text-slate-700'
+        }`
+      : `rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-200 ${
+          active ? 'bg-orange-500 text-white' : 'bg-slate-200 text-slate-600 hover:bg-slate-200'
+        }`;
+
+  const renderTagFilters = () => (
+    <>
+      <div className={isHomepage ? 'flex flex-wrap gap-2' : 'flex flex-wrap justify-start gap-2 mb-2 max-w-3xl'}>
+        {visiblePopularTags.map(({ tag }) => (
+          <button
+            key={tag}
+            type="button"
+            onClick={() => toggleTag(tag)}
+            className={tagButtonClass(selectedTags.includes(tag))}
           >
-            Beautifully crafted.
-          </motion.h2>
+            {tag}
+            {selectedTags.includes(tag) && !isHomepage && <span className="ml-1.5">×</span>}
+          </button>
+        ))}
 
-          <motion.p
-            className="text-base sm:text-lg lg:text-xl text-slate-600 mb-4 sm:mb-8 text-start"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+        {!isHomepage && showAllTags && lesserTags.map(({ tag }) => (
+          <button
+            key={tag}
+            type="button"
+            onClick={() => toggleTag(tag)}
+            className={tagButtonClass(selectedTags.includes(tag))}
           >
-            Browse through examples of live Notion websites, built with Wonder  Sites.
-          </motion.p>
-        </div>
-
-        <Link
-          className="w-full sm:w-auto px-6 py-3 text-base sm:text-lg lg:text-xl border border-slate-900 text-slate-800 rounded-lg hover:bg-slate-800 hover:text-white transition-colors duration-300 text-center whitespace-nowrap"
-          href="/showcase"
-        >
-          Explore all Showcases 
-        </Link>
+            {tag}
+            {selectedTags.includes(tag) && <span className="ml-1.5">×</span>}
+          </button>
+        ))}
       </div>
 
-
-
-
-      <motion.div
-        className="mt-8 mb-8 max-w-5xl"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-      >
-        {/* Mobile dropdown for tags */}
-        <div className="sm:hidden relative mb-4">
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1">
+        {isHomepage && hiddenPopularCount > 0 && (
           <button
-            onClick={() => setIsTagMenuOpen(!isTagMenuOpen)}
-            className="w-full px-4 py-2 text-left bg-white border rounded-lg shadow-sm flex items-center justify-between"
+            type="button"
+            onClick={() => setShowAllTags(true)}
+            className="text-sm font-medium text-orange-600 transition-colors hover:text-orange-700"
           >
-            <span>Tags {selectedTags.length > 0 ? `(${selectedTags.length} selected)` : ''}</span>
-            <svg className={`w-5 h-5 transition-transform ${isTagMenuOpen ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+            Show {hiddenPopularCount} more tags
           </button>
-          {isTagMenuOpen && (
-            <div className="absolute z-10 w-full mt-1 bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">
-              {/* Popular tags first (2+ templates) */}
-              <div className="p-2 bg-gray-50 border-b">
-                <p className="text-xs text-slate-500 font-medium">Popular Tags</p>
+        )}
+
+        {isHomepage && showAllTags && popularTags.length > HOMEPAGE_TAG_LIMIT && (
+          <button
+            type="button"
+            onClick={() => setShowAllTags(false)}
+            className="text-sm font-medium text-orange-600 transition-colors hover:text-orange-700"
+          >
+            Show fewer tags
+          </button>
+        )}
+
+        {!isHomepage && lesserTags.length > 0 && (
+          <button
+            type="button"
+            onClick={() => setShowAllTags(!showAllTags)}
+            className="text-sm font-medium text-orange-600 transition-colors hover:text-orange-800"
+          >
+            {showAllTags ? 'Show less' : `Show all (${lesserTags.length} more)`}
+          </button>
+        )}
+
+        {selectedTags.length > 0 && (
+          <button
+            type="button"
+            onClick={clearTags}
+            className="text-sm font-medium text-slate-500 transition-colors hover:text-slate-800"
+          >
+            Clear filters
+          </button>
+        )}
+
+        {isHomepage && (
+          <Link
+            href="/showcase"
+            className="text-sm font-medium text-wonder transition-colors hover:text-wonder-700"
+          >
+            Browse full showcase →
+          </Link>
+        )}
+      </div>
+    </>
+  );
+
+  const renderTemplateCard = (template: Template, index: number) => {
+    if (isHomepage) {
+      return (
+        <motion.article
+          key={template.id}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: index * 0.05 }}
+          className="bg-white"
+        >
+          <Link href={`/showcase/${template.id}`} className="group flex h-full flex-col">
+            <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200 bg-slate-50">
+              <Image
+                className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                width={640}
+                height={400}
+                src={template.product.logo}
+                unoptimized
+                alt={template.product.name}
+              />
+            </div>
+
+            <div className="flex flex-1 flex-col px-5 py-5 md:px-6 md:py-6">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="flex min-w-0 items-center gap-2 text-base font-semibold text-slate-900 transition-colors group-hover:text-wonder">
+                  <span className="truncate">{template.product.name}</span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-colors group-hover:text-wonder" />
+                </h3>
+                <span className="shrink-0 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400">
+                  {template.product.type}
+                </span>
               </div>
-              {popularTags.map(({ tag, count }) => (
-                <button
-                  key={tag}
-                  onClick={() => toggleTag(tag)}
-                  className={`w-full px-4 py-2 text-left flex items-center justify-between ${selectedTags.includes(tag) ? 'bg-orange-700 text-white' : 'hover:bg-slate-100'}`}
-                >
-                  <span className="flex items-center">
-                    <Tag className="mr-2 h-4 w-4" />
-                    {tag}
-                  </span>
-
-                </button>
-              ))}
-
-              {/* Show less common tags when expanded */}
-              {showAllTags && lesserTags.length > 0 && (
-                <>
-                  <div className="p-2 bg-gray-50 border-b border-t">
-                    <p className="text-xs text-slate-500 font-medium">Other Tags</p>
-                  </div>
-                  {lesserTags.map(({ tag, count }) => (
-                    <button
+              <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-500">
+                {template.product.description}
+              </p>
+              {template.product.tags && template.product.tags.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {template.product.tags.slice(0, 3).map((tag) => (
+                    <span
                       key={tag}
-                      onClick={() => toggleTag(tag)}
-                      className={`w-full px-4 py-2 text-left flex items-center justify-between ${selectedTags.includes(tag) ? 'bg-orange-700 text-white' : 'hover:bg-slate-100'}`}
+                      className="rounded-sm border border-slate-200 px-2 py-0.5 font-mono text-[9px] uppercase tracking-wide text-slate-500"
                     >
-                      <span className="flex items-center">
-                        <Tag className="mr-2 h-4 w-4" />
-                        {tag}
-                      </span>
-                      <span className={`text-xs ${selectedTags.includes(tag) ? 'text-white' : 'text-slate-400'}`}>
-                        {count} template
-                      </span>
-                    </button>
+                      {tag}
+                    </span>
                   ))}
-                </>
-              )}
-
-              {/* Show/hide toggle */}
-              {lesserTags.length > 0 && (
-                <button
-                  onClick={() => setShowAllTags(!showAllTags)}
-                  className="w-full px-4 py-2 text-left text-orange-600 border-t"
-                >
-                  {showAllTags ? "Show less" : `Show all (${lesserTags.length} more)`}
-                </button>
-              )}
-
-              {/* Clear button */}
-              {selectedTags.length > 0 && (
-                <button
-                  onClick={clearTags}
-                  className="w-full px-4 py-2 text-left text-orange-600 border-t"
-                >
-                  Clear all tags
-                </button>
+                </div>
               )}
             </div>
-          )}
-        </div>
+          </Link>
+        </motion.article>
+      );
+    }
 
-        {/* Desktop tag filters */}
-        <div className="hidden sm:block">
-          <div className="flex flex-wrap justify-start gap-2 mb-2 max-w-3xl">
-            {/* Popular tags (2+ templates) */}
-            {popularTags.map(({ tag, count }) => (
-              <motion.button
-                key={tag}
-                onClick={() => toggleTag(tag)}
-                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
-                  ? "bg-orange-500 text-white"
-                  : "bg-slate-200 text-slate-600 hover:bg-slate-200"
-                  }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {tag}
-                {selectedTags.includes(tag) && (
-                  <span className="ml-1.5">×</span>
-                )}
-              </motion.button>
-            ))}
+    return (
+      <motion.div
+        key={template.id}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="flex h-full"
+      >
+        <Link
+          href={`/showcase/${template.id}`}
+          className="relative flex w-full flex-col overflow-hidden rounded-2xl border bg-white transition-shadow duration-300 hover:shadow-2xl"
+        >
+          <div className="w-full p-4">
+            <div className="flex items-center justify-center">
+              <Image
+                className="h-full w-full object-cover"
+                width={100}
+                height={100}
+                src={template.product.logo}
+                unoptimized
+                alt={template.product.name}
+              />
+            </div>
+            <div className="p-4 text-start">
+              <div className="flex flex-col justify-between gap-2 sm:flex-row sm:gap-4">
+                <span className="group flex min-w-0 flex-1 items-center gap-2">
+                  <span className="truncate text-start font-bold transition-colors duration-300 group-hover:text-orange-600">
+                    {template.product.name}
+                  </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-400 transition-colors duration-300 group-hover:text-orange-600" />
+                </span>
 
-            {/* Show less common tags when expanded */}
-            {showAllTags && lesserTags.map(({ tag, count }) => (
-              <motion.button
-                key={tag}
-                onClick={() => toggleTag(tag)}
-                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${selectedTags.includes(tag)
-                  ? "bg-orange-500 text-white"
-                  : "bg-slate-200 text-slate-600 hover:bg-slate-200"
-                  }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {tag}
-                {selectedTags.includes(tag) && (
-                  <span className="ml-1.5">×</span>
+                <span className="inline-block self-start whitespace-nowrap rounded-md border-2 border-dashed border-slate-200 bg-slate-100 px-2 py-1 text-xs sm:self-auto sm:px-3 sm:text-sm">
+                  {template.product.type}
+                </span>
+              </div>
+
+              <p className="mb-3 mt-2 line-clamp-2 text-xs text-slate-400 sm:text-sm">
+                {template.product.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {template.product.tags?.slice(0, 2).map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-block rounded-md bg-slate-100 px-2 py-1 text-xs text-slate-800 sm:px-3 sm:text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+                {template.product.tags && template.product.tags.length > 2 && (
+                  <span className="inline-block self-center text-xs text-slate-400">
+                    +{template.product.tags.length - 2} more
+                  </span>
                 )}
-              </motion.button>
-            ))}
+              </div>
+            </div>
           </div>
-
-          {/* Show/hide toggle */}
-          {lesserTags.length > 0 && (
-            <button
-              onClick={toggleShowAllTags}
-              className="text-sm text-orange-600 hover:text-orange-800 font-medium transition-colors duration-200 mt-2"
-            >
-              {showAllTags ? "Show less" : `Show all (${lesserTags.length} more)`}
-            </button>
-          )}
-
-          {/* Clear all button */}
-          {selectedTags.length > 0 && (
-            <button
-              onClick={clearTags}
-              className="text-sm text-orange-600 hover:text-orange-800 font-medium transition-colors duration-200 mt-2"
-            >
-              Clear all filters
-            </button>
-          )}
-        </div>
+        </Link>
       </motion.div>
+    );
+  };
 
-      <AnimatePresence mode="wait">
-        {displayedTemplates.length > 0 ? (
-          <motion.div
-            key="templates"
-            className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+  const headerBlock = (
+    <div
+      className={
+        isHomepage
+          ? 'flex flex-col gap-6 border-b border-slate-200 landing-grid-pad py-10 md:flex-row md:items-end md:justify-between md:py-12'
+          : 'mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center sm:gap-6'
+      }
+    >
+      <div className="max-w-2xl">
+        <motion.h2
+          className="font-display text-2xl text-slate-800 sm:text-3xl md:text-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Beautifully crafted.
+        </motion.h2>
+
+        <motion.p
+          className={`text-base text-slate-600 sm:text-lg ${isHomepage ? 'mt-3' : 'mb-4 mt-2 text-start sm:mb-8 lg:text-xl'}`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Browse through examples of live Notion websites, built with Wonder Sites.
+        </motion.p>
+      </div>
+
+      <Link
+        className={
+          isHomepage
+            ? 'wonder-btn-secondary w-full shrink-0 sm:w-auto'
+            : 'w-full whitespace-nowrap rounded-lg border border-slate-900 px-6 py-3 text-center text-base text-slate-800 transition-colors duration-300 hover:bg-slate-800 hover:text-white sm:w-auto sm:text-lg lg:text-xl'
+        }
+        href="/showcase"
+      >
+        Explore all showcases
+      </Link>
+    </div>
+  );
+
+  const tagBlock = (
+    <motion.div
+      className={isHomepage ? 'border-b border-slate-200 landing-grid-pad py-5' : 'mb-8 mt-8 max-w-5xl'}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    >
+      <div className="sm:hidden relative mb-4">
+        <button
+          type="button"
+          onClick={() => setIsTagMenuOpen(!isTagMenuOpen)}
+          className="flex w-full items-center justify-between rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-left shadow-sm"
+        >
+          <span className="text-sm text-slate-700">
+            Filter by tag{selectedTags.length > 0 ? ` (${selectedTags.length})` : ''}
+          </span>
+          <svg
+            className={`h-5 w-5 transition-transform ${isTagMenuOpen ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden
           >
-            {displayedTemplates.map((template, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex h-full"
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        {isTagMenuOpen && (
+          <div className="absolute z-10 mt-1 max-h-60 w-full overflow-y-auto rounded-lg border border-slate-200 bg-white shadow-lg">
+            <div className="border-b bg-slate-50 p-2">
+              <p className="text-xs font-medium text-slate-500">Popular tags</p>
+            </div>
+            {popularTags.map(({ tag }) => (
+              <button
+                key={tag}
+                type="button"
+                onClick={() => toggleTag(tag)}
+                className={`flex w-full items-center px-4 py-2 text-left ${
+                  selectedTags.includes(tag) ? 'bg-wonder/10 text-wonder-800' : 'hover:bg-slate-50'
+                }`}
               >
-                <Link
-                  href={"/showcase/" + template.id}
-                  className="relative flex flex-col w-full overflow-hidden bg-white rounded-2xl  border hover:shadow-2xl transition-shadow duration-300"
-                >
-                  <div className="w-full p-4">
-                    <div className="flex justify-center items-center">
-                      <Image
-                        className="w-full h-full object-cover"
-                        width={100}
-                        height={100}
-                        src={template.product.logo}
-                        unoptimized
-                        alt={template.product.name}
-                      />
-                    </div>
-                    <div className="p-4 text-start">
-
-                      <div className='flex flex-col sm:flex-row justify-between gap-2 sm:gap-4'>
-                        <Link href={"/showcase/" + template.id} className="group flex gap-2 items-center flex-1 min-w-0">
-                          <span className="text-start font-bold group-hover:text-orange-600 transition-colors duration-300 truncate">
-                            {template.product.name}
-                          </span>
-                          <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-600 transition-colors duration-300 flex-shrink-0" />
-                        </Link>
-
-                        <span className="inline-block bg-slate-100 border-slate-200 border-dashed border-2 px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm whitespace-nowrap self-start sm:self-auto">
-                          {template.product.type}
-                        </span>
-                      </div>
-
-                      <p className="text-xs sm:text-sm text-slate-400 mt-2 mb-3 line-clamp-2">
-                        {template.product.description}
-                      </p>
-
-                      {/* Type and tags */}
-                      <div className="flex flex-wrap gap-2">
-
-
-                        {/* Tags display */}
-                        {template.product.tags && template.product.tags.slice(0, 2).map((tag, tagIndex) => (
-                          <span
-                            key={tagIndex}
-                            className={`inline-block px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm bg-slate-100 text-slate-800`}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                        {template.product.tags && template.product.tags.length > 2 && (
-                          <span className="inline-block text-xs text-slate-400 self-center">
-                            +{template.product.tags.length - 2} more
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+                <Tag className="mr-2 h-4 w-4" />
+                {tag}
+              </button>
             ))}
-          </motion.div>
-        ) : (
-          <motion.div
-            key="empty"
-            className="flex flex-col items-center justify-center mt-8 p-8 bg-slate-100 rounded-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            <AlertCircle size={48} className="text-orange-600 mb-4" />
-            <h2 className="text-2xl font-bold mb-2">No templates found</h2>
-            <p className="text-slate-600">Try adjusting your filters or check back later for more templates.</p>
-          </motion.div>
+            {selectedTags.length > 0 && (
+              <button
+                type="button"
+                onClick={clearTags}
+                className="w-full border-t px-4 py-2 text-left text-sm text-orange-600"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
         )}
-      </AnimatePresence>
+      </div>
+
+      {isHomepage && (
+        <div className="mb-1 sm:hidden">
+          <Link href="/showcase" className="text-sm font-medium text-wonder transition-colors hover:text-wonder-700">
+            Browse full showcase →
+          </Link>
+        </div>
+      )}
+
+      <div className="hidden sm:block">{renderTagFilters()}</div>
+    </motion.div>
+  );
+
+  const templatesGrid = (
+    <AnimatePresence mode="wait">
+      {displayedTemplates.length > 0 ? (
+        <motion.div
+          key="templates"
+          className={
+            isHomepage
+              ? 'grid grid-cols-1 gap-px bg-slate-200 sm:grid-cols-2 lg:grid-cols-3'
+              : 'mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'
+          }
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {displayedTemplates.map((template, index) => renderTemplateCard(template, index))}
+        </motion.div>
+      ) : (
+        <motion.div
+          key="empty"
+          className={`flex flex-col items-center justify-center rounded-lg bg-slate-50 p-8 ${
+            isHomepage ? 'landing-grid-pad py-16' : 'mt-8'
+          }`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+        >
+          <AlertCircle size={48} className="mb-4 text-orange-600" />
+          <h2 className="mb-2 text-2xl font-bold">No templates found</h2>
+          <p className="text-slate-600">Try adjusting your filters or check back later for more templates.</p>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+
+  if (isHomepage) {
+    return (
+      <div id="template-section">
+        {headerBlock}
+        {tagBlock}
+        {templatesGrid}
+      </div>
+    );
+  }
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" id="template-section">
+      {headerBlock}
+      {tagBlock}
+      {templatesGrid}
     </section>
   );
 };
