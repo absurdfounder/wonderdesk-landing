@@ -169,7 +169,7 @@ function renderMessageText(text: string) {
   );
 }
 
-export default function AIAgentSection() {
+export default function AIAgentSection({ demoOnly = false }: { demoOnly?: boolean }) {
   const [chatItems, setChatItems] = useState<ChatMessage[]>([]);
   const [scriptIdx, setScriptIdx] = useState(0);
   const [agentTyping, setAgentTyping] = useState(false);
@@ -254,42 +254,44 @@ export default function AIAgentSection() {
   }, [scriptIdx, isRunning, processStep, cleanUp]);
 
   return (
-    <section className="bg-white">
+    <section className={demoOnly ? '' : 'bg-white'}>
       <style>{`
         @keyframes fadeSlide { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
         @keyframes dotBounce { 0%,80%,100%{transform:translateY(0);opacity:.35} 40%{transform:translateY(-3px);opacity:1} }
       `}</style>
 
-      <div className="landing-grid-column bg-white">
-        <div className="border-b border-slate-200 landing-grid-pad py-10 md:py-12">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl">
-              <span className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
-                Just ask Wonder
-              </span>
-              <h2 className="mt-3 font-display text-2xl text-slate-800 sm:text-3xl md:text-4xl">
-                The AI agent that writes and updates your help articles for you
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                Tell Wonder what to change in plain English. It scans your help center, edits articles,
-                refreshes screenshots, and queues updates for review — like a teammate who never forgets.
-              </p>
-            </div>
+      <div className={demoOnly ? 'landing-grid-column bg-white' : 'landing-grid-column bg-white'}>
+        {!demoOnly ? (
+          <div className="border-b border-slate-200 landing-grid-pad py-10 md:py-12">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-2xl">
+                <span className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
+                  Just ask Wonder
+                </span>
+                <h2 className="mt-3 font-display text-2xl text-slate-800 sm:text-3xl md:text-4xl">
+                  The AI agent that writes and updates your help articles for you
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                  Tell Wonder what to change in plain English. It scans your help center, edits articles,
+                  refreshes screenshots, and queues updates for review — like a teammate who never forgets.
+                </p>
+              </div>
 
-            <Link
-              href="https://app.wonderdesk.ai/chat"
-              className="wonder-btn-primary w-full shrink-0 sm:w-auto"
-            >
-              Try Wonder chat
-            </Link>
+              <Link
+                href="https://app.wonderdesk.ai/chat"
+                className="wonder-btn-primary w-full shrink-0 sm:w-auto"
+              >
+                Try Wonder chat
+              </Link>
+            </div>
           </div>
-        </div>
+        ) : null}
 
         <div
-          className="border-t border-slate-200 py-8 md:py-12"
+          className={demoOnly ? '' : 'border-t border-slate-200 py-8 md:py-12'}
           style={{ backgroundColor: HOME_FEATURE_PLAIN_BG }}
         >
-          <div className="landing-grid-pad">
+          <div className={demoOnly ? 'landing-grid-pad py-8 md:py-10' : 'landing-grid-pad'}>
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_24px_60px_-16px_rgba(15,23,42,0.18)] ring-1 ring-black/[0.04]">
             {/* Browser chrome */}
             <div className="flex items-center gap-3 border-b border-slate-200 bg-[#FDFCFB] px-4 py-2.5">

@@ -207,9 +207,11 @@ const FAQ: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
     >
       <div className={embedded ? 'landing-grid-pad' : ''}>
         <div className="max-w-2xl">
-          <h2 className="font-funneldisplay text-[1.65rem] tracking-tight text-slate-900 sm:text-4xl">Intel brief.</h2>
+          <h2 className="font-display text-[1.65rem] tracking-tight text-slate-900 sm:text-4xl">
+            Frequently asked questions
+          </h2>
           <p className="mt-3 text-sm text-slate-600 sm:text-base">
-            Missing intel? Transmit your question to{' '}
+            Can&apos;t find what you need? Email{' '}
             <a
               href="mailto:vaibhav@wonderdesk.ai"
               className="text-wonder-700 hover:text-wonder hover:underline"

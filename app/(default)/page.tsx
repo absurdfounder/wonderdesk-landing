@@ -25,108 +25,45 @@ description: 'Wonderdesk is the AI-powered platform that writes, updates, and ma
 
 import Hero from '@/components/hero'
 import Header from '@/components/ui/header'
-import FeaturesBlocks from '@/components/FeaturesBlocks'
-import ProductFeaturesBlocks from '@/components/ProductFeaturesBlocks'
-import HowItWorksSection from '@/components/HowItWorksSection'
-import AIAgentSection from '@/components/AIAgentSection'
-import CustomerStorySection from '@/components/CustomerStorySection'
-import CustomerStorySection2 from '@/components/CustomerStorySection2'
+import TrustBarSection from '@/components/home/TrustBarSection'
+import PainSection from '@/components/home/PainSection'
+import HowWonderWorksSection from '@/components/home/HowWonderWorksSection'
+import PlatformFeaturesSection from '@/components/home/PlatformFeaturesSection'
+import TestimonialWallSection from '@/components/home/TestimonialWallSection'
 import GetStartedSection from '@/components/GetStartedSection'
-import Showcases from '@/components/showcase'
-import ModalVideo from '@/components/ModalVideo'
-import NotionToWebsite from '@/components/NotionToWebsite'
 import FloatingScrollIndicator from '@/components/FloatingScrollIndicator'
 import SimplePricing from '@/components/SimplePricing'
-import FounderMessageSection from '@/components/FounderMessageSection'
 import FAQ from '@/components/faq'
+import FinalCTASection from '@/components/home/FinalCTASection'
 
 export default function Home() {
   return (
     <>
       <FloatingScrollIndicator />
 
-        {/* Hero — unchanged banner background, full bleed */}
         <div>
           <Header />
           <Hero />
         </div>
 
-        <section className="homepage-grid-row">
-          <div className="landing-grid-column bg-black">
-            <div className="landing-grid-pad py-6 md:py-10">
-            <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-center">
-              <span className="mt-1 text-base font-medium text-balance text-gray-400 md:text-left">
-                Trusted by leading product-led companies
-              </span>
-              <div className="mx-auto flex flex-wrap place-items-center items-center justify-center gap-8">
-                <div className="h-6 max-h-12 w-32 transition-all duration-300 hover:scale-110">
-                  <img
-                    className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                    src="https://dazzling-cat.netlify.app/logos/zeroslistlogo.png"
-                    alt="Zeroslist"
-                    style={{ filter: 'brightness(20)' }}
-                  />
-                </div>
-                <div className="h-8 max-h-12 w-32 transition-all duration-300 hover:scale-110">
-                  <img
-                    className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                    src="https://dazzling-cat.netlify.app/logos/marketingxlogo.png"
-                    alt="MarketingX"
-                    style={{ filter: 'brightness(20)' }}
-                  />
-                </div>
-                <div className="h-7 max-h-12 w-32 transition-all duration-300 hover:scale-110">
-                  <img
-                    className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                    src="https://dazzling-cat.netlify.app/logos/dealflowlogo.png"
-                    alt="Dealflow"
-                    style={{ filter: 'brightness(20)' }}
-                  />
-                </div>
-                <div className="h-12 max-h-12 w-32 transition-all duration-300 hover:scale-110">
-                  <img
-                    className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                    src="https://dazzling-cat.netlify.app/logos/downtownlogo.png"
-                    alt="Downtown"
-                    style={{ filter: 'brightness(20)' }}
-                  />
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-        </section>
-
         <div className="homepage-grid-row">
-          <NotionToWebsite />
+          <TrustBarSection />
         </div>
 
         <div className="homepage-grid-row">
-          <ModalVideo />
+          <PainSection />
         </div>
 
         <div className="homepage-grid-row">
-          <CustomerStorySection />
+          <HowWonderWorksSection />
         </div>
 
         <div className="homepage-grid-row">
-          <ProductFeaturesBlocks />
+          <PlatformFeaturesSection />
         </div>
 
         <div className="homepage-grid-row">
-          <FeaturesBlocks />
-        </div>
-
-        <div className="homepage-grid-row">
-          <HowItWorksSection />
-        </div>
-
-        <div className="homepage-grid-row">
-          <CustomerStorySection2 />
-        </div>
-
-        <div className="homepage-grid-row">
-          <Showcases />
+          <TestimonialWallSection />
         </div>
 
         <div className="homepage-grid-row">
@@ -141,14 +78,6 @@ export default function Home() {
           </section>
         </div>
 
-        <div className="homepage-grid-row bg-white">
-          <section className="bg-white">
-            <div className="landing-grid-column bg-white">
-              <FounderMessageSection embedded />
-            </div>
-          </section>
-        </div>
-
         <div className="homepage-grid-row">
           <section className="bg-canvas-warm">
             <div className="landing-grid-column bg-canvas-warm">
@@ -158,7 +87,7 @@ export default function Home() {
         </div>
 
         <div className="homepage-grid-row">
-          <AIAgentSection />
+          <FinalCTASection />
         </div>
     </>
   )
