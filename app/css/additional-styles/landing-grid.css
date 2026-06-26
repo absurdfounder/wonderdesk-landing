@@ -5,17 +5,17 @@
   margin-right: auto;
   width: 100%;
   max-width: 80rem;
-  border-left: 1px solid #e2e8f0;
-  border-right: 1px solid #e2e8f0;
+  border-left: 1px solid rgb(226 232 240 / 50%);
+  border-right: 1px solid rgb(226 232 240 / 50%);
 }
 
 .homepage-grid .max-w-7xl {
-  border-left: 1px solid #e2e8f0;
-  border-right: 1px solid #e2e8f0;
+  border-left: 1px solid rgb(226 232 240 / 50%);
+  border-right: 1px solid rgb(226 232 240 / 50%);
 }
 
 .homepage-grid-row {
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid rgb(226 232 240 / 50%);
 }
 
 /* Standard inner padding — apply inside landing-grid-column, never on the column itself */
