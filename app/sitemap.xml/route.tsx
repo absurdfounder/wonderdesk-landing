@@ -37,6 +37,7 @@ const staticPages = [
   { path: '/features/automated-screenshots-for-docs', changefreq: 'weekly', priority: '0.8' },
   { path: '/features/self-service-help-widget', changefreq: 'weekly', priority: '0.8' },
   { path: '/features/code-to-docs', changefreq: 'weekly', priority: '0.8' },
+  { path: '/features/pr-to-docs', changefreq: 'weekly', priority: '0.8' },
   { path: '/features/multilingual-knowledge-base', changefreq: 'weekly', priority: '0.8' },
   { path: '/features/internal-knowledge-base', changefreq: 'weekly', priority: '0.8' },
   { path: '/features/generative-ai-customer-service', changefreq: 'weekly', priority: '0.8' },
