@@ -26,6 +26,7 @@ description: 'Wonderdesk is the AI-powered platform that writes, updates, and ma
 import Hero from '@/components/hero'
 import Header from '@/components/ui/header'
 import FeaturesBlocks from '@/components/FeaturesBlocks'
+import ProductFeaturesBlocks from '@/components/ProductFeaturesBlocks'
 import HowItWorksSection from '@/components/HowItWorksSection'
 import AIAgentSection from '@/components/AIAgentSection'
 import CustomerStorySection from '@/components/CustomerStorySection'
@@ -114,6 +115,10 @@ export default function Home() {
 
         <div className="homepage-grid-row">
           <FeaturesBlocks />
+        </div>
+
+        <div className="homepage-grid-row">
+          <ProductFeaturesBlocks />
         </div>
 
         <div className="homepage-grid-row">

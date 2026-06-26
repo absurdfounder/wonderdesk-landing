@@ -1,42 +1,44 @@
-import FeatureBlockVisual, { type FeatureVisualId } from './features/FeatureBlockVisuals';
+import ProductFeatureBlockVisual, {
+  type ProductFeatureVisualId,
+} from './features/ProductFeatureBlockVisuals';
 
 const blocks: Array<{
   tag: string;
   title: string;
   body: string;
-  visual: FeatureVisualId;
+  visual: ProductFeatureVisualId;
 }> = [
   {
-    tag: 'Custom domains',
-    title: 'Use your own domain or a subpath',
-    body: 'so your help site feels like a natural part of your main site.',
-    visual: 'domain',
+    tag: 'Analytics',
+    title: 'Advanced analytics',
+    body: 'show you how your customers are using your help center, what articles are performing well, and where there\'s room for improvement.',
+    visual: 'analytics',
   },
   {
-    tag: 'SEO & AI search',
-    title: 'Built for search from day one',
-    body: 'so people discover your content on Google, ChatGPT, and other platforms.',
-    visual: 'seo',
+    tag: 'Editor',
+    title: 'Our world-class editor',
+    body: 'helps you create and edit content faster than any other platform.',
+    visual: 'editor',
   },
   {
-    tag: 'Performance',
-    title: 'Lightning-fast article delivery',
-    body: 'boosting search rankings and helping customers get answers in no time.',
-    visual: 'performance',
+    tag: 'Feedback',
+    title: 'Collect positive and negative feedback',
+    body: 'from your customers, and use them to improve your help center over time.',
+    visual: 'feedback',
   },
 ];
 
-export default function FeaturesBlocks() {
+export default function ProductFeaturesBlocks() {
   return (
-    <section className="relative bg-white">
+    <section className="relative border-t border-slate-200 bg-white">
       <div className="landing-grid-column">
         <div className="border-b border-slate-200 landing-grid-pad py-10 md:py-12">
           <h2 className="font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            Get found on <b>Google</b>. Cited by <b>ChatGPT</b>.
+            Optimize
           </h2>
           <p className="mt-3 max-w-3xl text-base text-slate-600 sm:text-lg md:mt-4">
-            Busy teams need a simpler way to run marketing and support. Wonder automates both so you can focus on
-            what matters.
+            Continuously improve your help center. Wonder gives you the tools you need to optimize
+            performance and customer satisfaction.
           </p>
         </div>
 
@@ -51,7 +53,7 @@ export default function FeaturesBlocks() {
               </div>
 
               <div className="mt-auto border-t border-slate-200">
-                <FeatureBlockVisual id={block.visual} />
+                <ProductFeatureBlockVisual id={block.visual} />
               </div>
             </article>
           ))}

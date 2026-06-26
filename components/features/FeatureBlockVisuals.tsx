@@ -1,27 +1,20 @@
 'use client';
 
-import type { ReactElement } from 'react';
 import FeatureVisualStage from '../ui/FeatureVisualStage';
-import { DomainFeatureVisual, SeoFeatureVisual, PerformanceFeatureVisual } from '../visuals/WonderVisualKit';
+import {
+  PLATFORM_COL_W,
+  PLATFORM_VISUAL_H,
+  PlatformColumnVisual,
+  type PlatformCardId,
+} from '../visuals/PrDocsPlatformCards';
 
-export type FeatureVisualId = 'domain' | 'seo' | 'performance';
+export type FeatureVisualId = PlatformCardId;
 
-const VISUALS: Record<FeatureVisualId, () => ReactElement> = {
-  domain: DomainFeatureVisual,
-  seo: SeoFeatureVisual,
-  performance: PerformanceFeatureVisual,
-};
-
-/**
- * FeaturesBlocks cards have a fixed 4:3 aspect ratio, so FeatureVisualStage
- * is correct here — it scales the 480×360 canvas to fit whatever column width.
- */
 export default function FeatureBlockVisual({ id }: { id: FeatureVisualId }) {
-  const Visual = VISUALS[id];
   return (
-    <div className="relative aspect-[4/3] min-h-[200px] w-full overflow-hidden">
-      <FeatureVisualStage>
-        <Visual />
+    <div className="relative min-h-[240px] w-full overflow-hidden sm:min-h-[280px] lg:min-h-[320px]">
+      <FeatureVisualStage stageWidth={PLATFORM_COL_W} stageHeight={PLATFORM_VISUAL_H}>
+        <PlatformColumnVisual id={id} landscapeId={`home-features-${id}`} />
       </FeatureVisualStage>
     </div>
   );
