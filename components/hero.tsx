@@ -132,7 +132,16 @@ export default function Hero({ onCategorySelect }: HeroProps) {
   return (
     <section className="relative overflow-hidden site-header-clear">
       <div className="landing-grid-column">
-        <div className="landing-grid-pad pb-12 sm:pb-16 md:pb-20 pt-2 sm:pt-1 md:pt-2">
+        <div
+          className="landing-grid-pad pb-12 sm:pb-16 md:pb-8 pt-2 sm:pt-1 md:pt-2"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgb(254 254 255), rgb(255 255 255 / 89%), rgb(255 255 255 / 48%)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+          }}
+        >
           {/* Left (text) + Right (tab sector) on lg; stacked on smaller screens */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-4 xl:gap-6">
             {/* Left: text content */}

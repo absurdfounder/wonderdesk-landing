@@ -47,20 +47,13 @@ export default function Home() {
       <FloatingScrollIndicator />
 
         {/* Hero — unchanged banner background, full bleed */}
-        <div
-          style={{
-            backgroundImage: "linear-gradient(rgb(254 254 255), rgb(255 255 255 / 89%), rgb(255 255 255 / 48%)), url(https://dazzling-cat.netlify.app/wondercollectivebanner.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed"
-          }}
-        >
+        <div>
           <Header />
           <Hero />
         </div>
 
-        <section className="homepage-grid-row bg-white">
-          <div className="landing-grid-column">
+        <section className="homepage-grid-row bg-black">
+          <div className="landing-grid-column bg-black">
             <div className="landing-grid-pad py-6 md:py-10">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-center">
               <span className="mt-1 text-base font-medium text-balance text-gray-400 md:text-left">
@@ -72,6 +65,7 @@ export default function Home() {
                     className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                     src="https://dazzling-cat.netlify.app/logos/zeroslistlogo.png"
                     alt="Zeroslist"
+                    style={{ filter: 'brightness(20)' }}
                   />
                 </div>
                 <div className="h-8 max-h-12 w-32 transition-all duration-300 hover:scale-110">
@@ -79,6 +73,7 @@ export default function Home() {
                     className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                     src="https://dazzling-cat.netlify.app/logos/marketingxlogo.png"
                     alt="MarketingX"
+                    style={{ filter: 'brightness(20)' }}
                   />
                 </div>
                 <div className="h-7 max-h-12 w-32 transition-all duration-300 hover:scale-110">
@@ -86,6 +81,7 @@ export default function Home() {
                     className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                     src="https://dazzling-cat.netlify.app/logos/dealflowlogo.png"
                     alt="Dealflow"
+                    style={{ filter: 'brightness(20)' }}
                   />
                 </div>
                 <div className="h-12 max-h-12 w-32 transition-all duration-300 hover:scale-110">
@@ -93,6 +89,7 @@ export default function Home() {
                     className="h-full w-full origin-center object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                     src="https://dazzling-cat.netlify.app/logos/downtownlogo.png"
                     alt="Downtown"
+                    style={{ filter: 'brightness(20)' }}
                   />
                 </div>
               </div>
