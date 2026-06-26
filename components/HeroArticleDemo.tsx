@@ -213,7 +213,7 @@ export default function HeroArticleDemo() {
           background-clip: text;
         }
       `}</style>
-      <div className="relative w-full pb-10 sm:pb-12 lg:pb-16">
+      <div className="relative w-full py-6 sm:py-8">
         <div className="mx-auto w-full max-w-6xl px-1 sm:px-1">
           <div className="flex flex-col rounded-2xl shadow-2xl px-1 py-1 shadow-black/50 border border-neutral-200 bg-stone-50/70 backdrop-blur-sm">
             {/* Desktop title bar */}
@@ -273,7 +273,7 @@ export default function HeroArticleDemo() {
                 backgroundPosition: "center",
               }}
             >
-              <div className="relative flex items-center justify-center h-full p-8 sm:p-4 lg:p-6">
+              <div className="relative flex h-full items-center justify-center p-6 sm:p-8">
                 <div className="w-full max-w-5xl">
                   <AnimatePresence mode="wait">
                     {/* Step 1: Input card */}
@@ -351,7 +351,7 @@ export default function HeroArticleDemo() {
                         key="processing"
                         className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-white/40 p-1.5 ring-2 ring-black/10 backdrop-blur-lg"
                       >
-                        <div className="space-y-2 rounded-xl bg-white px-5 py-5" style={{ height: '360px' }}>
+                        <div className="space-y-2 rounded-xl bg-white px-5 py-6">
                           {processingSteps.map((item, index) => (
                             index <= processingIndex && (
                               <motion.div
