@@ -110,11 +110,11 @@ export default function Home() {
         </div>
 
         <div className="homepage-grid-row">
-          <FeaturesBlocks />
+          <ProductFeaturesBlocks />
         </div>
 
         <div className="homepage-grid-row">
-          <ProductFeaturesBlocks />
+          <FeaturesBlocks />
         </div>
 
         <div className="homepage-grid-row">
