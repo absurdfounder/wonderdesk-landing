@@ -9,6 +9,14 @@ import PrDocsHowItWorksCards, {
   PR_DOCS_HOW_IT_WORKS_H,
   PR_DOCS_HOW_IT_WORKS_W,
 } from '@/components/visuals/PrDocsHowItWorksCards';
+import PrDocsTaskWorkspaceCard, {
+  PR_DOCS_TASK_H,
+  PR_DOCS_TASK_W,
+} from '@/components/visuals/PrDocsTaskWorkspaceCard';
+import PrDocsAuditResultsCard, {
+  PR_DOCS_AUDIT_H,
+  PR_DOCS_AUDIT_W,
+} from '@/components/visuals/PrDocsAuditResultsCard';
 import PrDocsMigrationSection, {
   PR_DOCS_MIGRATION_H,
   PR_DOCS_MIGRATION_W,
@@ -128,6 +136,80 @@ export default function PrToDocsPage() {
                 >
                   <PrDocsHowItWorksCards />
                 </FeatureVisualStage>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-200 landing-grid-pad py-10 md:py-14 text-center">
+            <h2 className="font-display text-2xl text-slate-800 sm:text-3xl">
+              From task to published article
+            </h2>
+            <p className="mt-3 max-w-xl mx-auto text-base text-slate-600 leading-relaxed">
+              Wonder works through integration guides in a live workspace — browsing your codebase, drafting
+              articles, and showing you the preview before anything ships.
+            </p>
+          </div>
+
+          <div className="border-t border-slate-200">
+            <div
+              className="overflow-x-auto"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle, rgba(186, 183, 195, 0.35) 0.7px, transparent 0.7px)',
+                backgroundSize: '10px 10px',
+                backgroundColor: '#ffffff',
+              }}
+            >
+              <div className="landing-grid-pad mx-auto w-full max-w-[min(100%,72rem)] py-10 md:py-14">
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{ aspectRatio: `${PR_DOCS_TASK_W} / ${PR_DOCS_TASK_H}` }}
+                >
+                  <FeatureVisualStage
+                    stageWidth={PR_DOCS_TASK_W}
+                    stageHeight={PR_DOCS_TASK_H}
+                    className="absolute inset-0"
+                  >
+                    <PrDocsTaskWorkspaceCard />
+                  </FeatureVisualStage>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-200 landing-grid-pad py-10 md:py-14 text-center">
+            <h2 className="font-display text-2xl text-slate-800 sm:text-3xl">
+              Close the gaps in your help center
+            </h2>
+            <p className="mt-3 max-w-xl mx-auto text-base text-slate-600 leading-relaxed">
+              Wonder audits support conversations and surfaces high-impact recommendations — so you know exactly
+              which articles to write or expand next.
+            </p>
+          </div>
+
+          <div className="border-t border-slate-200">
+            <div
+              className="overflow-x-auto"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle, rgba(186, 183, 195, 0.35) 0.7px, transparent 0.7px)',
+                backgroundSize: '10px 10px',
+                backgroundColor: '#ffffff',
+              }}
+            >
+              <div className="landing-grid-pad mx-auto w-full max-w-[min(100%,72rem)] py-10 md:py-14">
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{ aspectRatio: `${PR_DOCS_AUDIT_W} / ${PR_DOCS_AUDIT_H}` }}
+                >
+                  <FeatureVisualStage
+                    stageWidth={PR_DOCS_AUDIT_W}
+                    stageHeight={PR_DOCS_AUDIT_H}
+                    className="absolute inset-0"
+                  >
+                    <PrDocsAuditResultsCard />
+                  </FeatureVisualStage>
+                </div>
               </div>
             </div>
           </div>

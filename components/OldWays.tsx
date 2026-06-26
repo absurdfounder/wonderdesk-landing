@@ -121,7 +121,7 @@ export default function OldWays() {
     <section className="relative bg-white">
       <div className="landing-grid-column bg-white">
         <div className="relative pt-8 pb-6 sm:pt-12 sm:pb-10 md:pb-14">
-          <div className="relative space-y-4 sm:space-y-5 md:space-y-6" style={{ perspective: '1000px' }}>
+          <div className="relative space-y-4 sm:space-y-5 md:space-y-6 p-6 px-6" style={{ perspective: '1000px' }}>
         {cards.map((card, index) => {
           const transform = cardTransforms[index] || { scale: 1, opacity: 1, y: 0 };
 
