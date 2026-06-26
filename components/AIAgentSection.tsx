@@ -17,6 +17,7 @@ import {
   Search,
   Send,
 } from 'lucide-react';
+import { HOME_FEATURE_PLAIN_BG } from '@/components/visuals/PrDocsPlatformCards';
 
 const PROCESSING_STEPS = [
   { icon: 'search' as const, label: 'Scanning 47 help articles…' },
@@ -285,13 +286,11 @@ export default function AIAgentSection() {
         </div>
 
         <div
-          className="landing-grid-pad py-8 md:py-12"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.35) 0.7px, transparent 0.7px)',
-            backgroundSize: '10px 10px',
-          }}
+          className="border-t border-slate-200 py-8 md:py-12"
+          style={{ backgroundColor: HOME_FEATURE_PLAIN_BG }}
         >
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-stone-50 shadow-[0_24px_60px_-16px_rgba(15,23,42,0.18)] ring-1 ring-black/[0.04]">
+          <div className="landing-grid-pad">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_24px_60px_-16px_rgba(15,23,42,0.18)] ring-1 ring-black/[0.04]">
             {/* Browser chrome */}
             <div className="flex items-center gap-3 border-b border-slate-200 bg-[#FDFCFB] px-4 py-2.5">
               <div className="flex gap-1.5">
@@ -428,6 +427,7 @@ export default function AIAgentSection() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
