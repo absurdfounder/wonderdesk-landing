@@ -50,16 +50,8 @@ export default function FeaturesBlocks() {
                 </p>
               </div>
 
-              <div
-                className="mt-auto border-t border-slate-100 p-4 md:p-5"
-                style={{
-                  background:
-                    'linear-gradient(180deg, rgba(248, 250, 252, 0.95) 0%, rgba(255, 255, 255, 1) 100%)',
-                }}
-              >
-                <div className="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
-                  <FeatureBlockVisual id={block.visual} />
-                </div>
+              <div className="mt-auto border-t border-slate-200 bg-gradient-to-b from-wonder-50/30 to-white">
+                <FeatureBlockVisual id={block.visual} />
               </div>
             </article>
           ))}
