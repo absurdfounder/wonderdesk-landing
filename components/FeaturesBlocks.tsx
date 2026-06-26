@@ -1,26 +1,28 @@
-import Image from 'next/image';
+import FeatureBlockVisual, { type FeatureVisualId } from './features/FeatureBlockVisuals';
 
-const blocks = [
+const blocks: Array<{
+  tag: string;
+  title: string;
+  body: string;
+  visual: FeatureVisualId;
+}> = [
   {
     tag: 'Custom domains',
     title: 'Use your own domain or a subpath',
     body: 'so your help site feels like a natural part of your main site.',
-    image: 'https://dazzling-cat.netlify.app/wonderdomain.png',
-    alt: 'Custom domain setup in Wonder',
+    visual: 'domain',
   },
   {
     tag: 'SEO & AI search',
     title: 'Built for search from day one',
     body: 'so people discover your content on Google, ChatGPT, and other platforms.',
-    image: 'https://dazzling-cat.netlify.app/analyticsseo.png',
-    alt: 'SEO and analytics dashboard',
+    visual: 'seo',
   },
   {
     tag: 'Performance',
     title: 'Lightning-fast article delivery',
     body: 'boosting search rankings and helping customers get answers in no time.',
-    image: 'https://dazzling-cat.netlify.app/performancewebsite.png',
-    alt: 'Fast help center performance scores',
+    visual: 'performance',
   },
 ];
 
@@ -56,15 +58,7 @@ export default function FeaturesBlocks() {
                 }}
               >
                 <div className="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
-                  <Image
-                    alt={block.alt}
-                    src={block.image}
-                    width={1200}
-                    height={720}
-                    className="h-auto w-full object-cover object-top"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <FeatureBlockVisual id={block.visual} />
                 </div>
               </div>
             </article>
