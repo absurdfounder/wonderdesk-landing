@@ -1,526 +1,451 @@
 'use client';
 
-import type { ReactNode } from 'react';
-import {
-  ArrowRight,
-  BarChart3,
-  Folder,
-  Github,
-  Globe,
-  Lock,
-  MessageSquare,
-  RefreshCw,
-  Search,
-  Sparkles,
-  X,
-} from 'lucide-react';
+/**
+ * Wonder Visual Kit — all visuals are designed for a 480×360 fixed canvas
+ * inside FeatureVisualStage. Use pixel values only; no responsive breakpoints.
+ */
 
-export const WONDER_CHAR = 'https://dazzling-cat.netlify.app/wondercharacter.png';
+import { BarChart3, Folder, Github, Globe, Lock, MessageSquare, Search, Sparkles, X } from 'lucide-react';
 
-export function WonderBear({
-  className = '',
-  size = 72,
-}: {
-  className?: string;
-  size?: number;
-}) {
+const BEAR = 'https://dazzling-cat.netlify.app/wondercharacter.png';
+
+/* ─── Score ring (Lighthouse-style, teal) ─── */
+function Ring({ score, label }: { score: number; label: string }) {
+  const R = 30;
+  const C = 2 * Math.PI * R;
+  const dash = C - (score / 100) * C;
   return (
-    <img
-      src={WONDER_CHAR}
-      alt=""
-      className={`pointer-events-none object-contain drop-shadow-md ${className}`}
-      style={{ width: size, height: size }}
-    />
-  );
-}
-
-export function SkyBackdrop({ children }: { children: ReactNode }) {
-  return (
-    <div className="relative h-full w-full overflow-hidden bg-gradient-to-b from-[#7ec8e3] via-[#a8daf0] to-[#cceeff]">
-      <div
-        className="pointer-events-none absolute -left-8 top-6 h-16 w-28 rounded-full bg-white/55 blur-md"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute right-4 top-10 h-12 w-20 rounded-full bg-white/45 blur-md"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#e6f7fb]/90 to-transparent"
-        aria-hidden
-      />
-      <div className="relative z-10 flex h-full items-center justify-center p-4">{children}</div>
-    </div>
-  );
-}
-
-export function WindowChrome({
-  title,
-  children,
-  className = '',
-}: {
-  title?: string;
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`overflow-hidden rounded-lg border border-slate-200/90 bg-white shadow-[0_20px_50px_-20px_rgba(15,23,42,0.2)] ring-1 ring-black/[0.05] ${className}`}
-    >
-      <div className="flex items-center gap-2 border-b border-slate-100 bg-[#fafafa] px-3 py-2">
-        <div className="flex gap-1">
-          <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-          <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-          <span className="h-2 w-2 rounded-full bg-[#28c840]" />
-        </div>
-        {title ? (
-          <span className="truncate font-mono text-[9px] uppercase tracking-wide text-slate-400">{title}</span>
-        ) : null}
-      </div>
-      {children}
-    </div>
-  );
-}
-
-export function ScoreRing({
-  score,
-  label,
-  size = 56,
-}: {
-  score: number;
-  label: string;
-  size?: number;
-}) {
-  const r = (size - 10) / 2;
-  const c = 2 * Math.PI * r;
-  const offset = c - (score / 100) * c;
-  const stroke = score >= 90 ? '#009fbc' : score >= 50 ? '#f59e0b' : '#ef4444';
-
-  return (
-    <div className="flex flex-col items-center gap-0.5">
-      <div className="relative" style={{ width: size, height: size }}>
-        <svg className="h-full w-full -rotate-90" viewBox={`0 0 ${size} ${size}`} aria-hidden>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+      <div style={{ position: 'relative', width: 68, height: 68 }}>
+        <svg width={68} height={68} style={{ transform: 'rotate(-90deg)' }}>
+          <circle cx={34} cy={34} r={R} fill="none" stroke="#e2e8f0" strokeWidth={5} />
           <circle
-            cx={size / 2}
-            cy={size / 2}
-            r={r}
-            fill="none"
-            stroke="#e2e8f0"
-            strokeWidth="4"
-          />
-          <circle
-            cx={size / 2}
-            cy={size / 2}
-            r={r}
-            fill="none"
-            stroke={stroke}
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeDasharray={c}
-            strokeDashoffset={offset}
+            cx={34} cy={34} r={R} fill="none"
+            stroke="#009fbc" strokeWidth={5} strokeLinecap="round"
+            strokeDasharray={C} strokeDashoffset={dash}
           />
         </svg>
-        <span
-          className="absolute inset-0 flex items-center justify-center font-semibold tabular-nums text-slate-800"
-          style={{ fontSize: size * 0.28 }}
-        >
-          {score}
-        </span>
+        <span style={{
+          position: 'absolute', inset: 0,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontSize: 17, fontWeight: 700, color: '#0f172a', fontVariantNumeric: 'tabular-nums',
+        }}>{score}</span>
       </div>
-      <span className="max-w-[64px] text-center text-[8px] font-medium leading-tight text-slate-500">
-        {label}
-      </span>
+      <span style={{ fontSize: 9, color: '#64748b', textAlign: 'center', maxWidth: 60, lineHeight: 1.3 }}>{label}</span>
     </div>
   );
 }
 
-export function BarChart({ className = '' }: { className?: string }) {
-  const bars = [38, 55, 48, 72, 58, 85, 68, 92, 74, 88, 80, 94];
+/* ─── Bar chart ─── */
+function Bars({ color = '#009fbc' }: { color?: string }) {
+  const vals = [38, 55, 48, 72, 58, 85, 68, 92, 74, 88, 80, 94];
   return (
-    <div className={`flex h-12 items-end gap-[2px] sm:h-14 ${className}`}>
-      {bars.map((h, i) => (
-        <div
-          key={i}
-          className="flex-1 rounded-t-sm bg-wonder"
-          style={{ height: `${h}%`, opacity: 0.45 + (i / bars.length) * 0.55 }}
-        />
+    <div style={{ display: 'flex', alignItems: 'flex-end', gap: 2, height: 52 }}>
+      {vals.map((h, i) => (
+        <div key={i} style={{
+          flex: 1, borderRadius: '2px 2px 0 0',
+          background: color, height: `${h}%`,
+          opacity: 0.35 + (i / vals.length) * 0.65,
+        }} />
       ))}
     </div>
   );
 }
 
-export function MetricTiles({
-  metrics,
-}: {
-  metrics: Array<{ v: string; l: string }>;
-}) {
+/* ─── 1. DOMAIN VISUAL ─── */
+export function DomainVisual() {
   return (
-    <div className="grid grid-cols-4 gap-1.5">
-      {metrics.map((m) => (
-        <div
-          key={m.l}
-          className="rounded border border-slate-100 bg-slate-50/90 px-1.5 py-1 text-center"
-        >
-          <p className="text-[11px] font-semibold tabular-nums text-slate-900 sm:text-xs">{m.v}</p>
-          <p className="text-[7px] uppercase tracking-wide text-slate-400 sm:text-[8px]">{m.l}</p>
+    <div style={{
+      width: 480, height: 360, position: 'relative', overflow: 'hidden',
+      background: 'linear-gradient(180deg, #5bb8d4 0%, #82ccdf 35%, #b8e4f0 65%, #e6f7fb 100%)',
+    }}>
+      {/* clouds */}
+      <div style={{ position: 'absolute', top: 22, left: 28, width: 90, height: 32, borderRadius: 40, background: 'rgba(255,255,255,0.48)', filter: 'blur(6px)' }} />
+      <div style={{ position: 'absolute', top: 40, right: 40, width: 70, height: 24, borderRadius: 40, background: 'rgba(255,255,255,0.38)', filter: 'blur(5px)' }} />
+      {/* modal */}
+      <div style={{
+        position: 'absolute', top: '50%', left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 288, background: '#fff',
+        borderRadius: 12, boxShadow: '0 24px 64px -12px rgba(15,23,42,0.28)',
+        border: '1px solid rgba(255,255,255,0.9)',
+        overflow: 'hidden',
+      }}>
+        {/* header */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderBottom: '1px solid #f1f5f9' }}>
+          <span style={{ fontWeight: 600, fontSize: 14, color: '#0f172a' }}>Add Domain</span>
+          <X size={14} color="#94a3b8" />
         </div>
-      ))}
-    </div>
-  );
-}
-
-/** Add Domain modal — matches wonderdomain reference */
-export function DomainSetupModal({ compact = false }: { compact?: boolean }) {
-  return (
-    <div
-      className={`w-full overflow-hidden rounded-lg border border-white/80 bg-white shadow-xl ${
-        compact ? 'max-w-[220px]' : 'max-w-[300px]'
-      }`}
-    >
-      <div className="flex items-center justify-between border-b border-slate-100 px-3 py-2.5">
-        <span className={`font-semibold text-slate-900 ${compact ? 'text-xs' : 'text-sm'}`}>
-          Add Domain
-        </span>
-        <X size={compact ? 12 : 14} className="text-slate-400" />
-      </div>
-      <div className="space-y-2 p-3">
-        <p className="text-[9px] font-medium uppercase tracking-wide text-slate-500">
-          Choose setup type
-        </p>
-        <div className="rounded-md border-2 border-orange-500 bg-orange-50/50 p-2">
-          <div className="flex items-start gap-2">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded border border-orange-200 bg-white">
-              <Globe size={14} className="text-orange-600" />
-            </div>
-            <div>
-              <p className="text-[10px] font-semibold text-slate-900">Domain or Subdomain</p>
-              <p className="text-[8px] text-slate-500">help.yourcompany.com</p>
-            </div>
-          </div>
-        </div>
-        <div className="rounded-md border border-slate-200 p-2">
-          <div className="flex items-start gap-2">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded border border-slate-200 bg-slate-50">
-              <Folder size={14} className="text-slate-500" />
-            </div>
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-1">
-                <p className="text-[10px] font-semibold text-slate-900">Subdirectory</p>
-                <span className="rounded-full bg-orange-100 px-1.5 py-px text-[7px] font-semibold text-orange-700">
-                  Recommended
-                </span>
+        <div style={{ padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#64748b', margin: 0 }}>Choose setup type</p>
+          {/* option 1 — selected */}
+          <div style={{ border: '2px solid #f97316', borderRadius: 8, padding: 10, background: 'rgba(255,237,213,0.35)' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
+              <div style={{ width: 30, height: 30, borderRadius: 6, border: '1px solid #fed7aa', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <Globe size={14} color="#ea580c" />
               </div>
-              <p className="text-[8px] text-slate-500">yourcompany.com/help</p>
+              <div>
+                <p style={{ fontSize: 11, fontWeight: 600, color: '#0f172a', margin: 0 }}>Domain or Subdomain</p>
+                <p style={{ fontSize: 10, color: '#64748b', margin: '2px 0 0' }}>help.yourcompany.com</p>
+              </div>
+            </div>
+          </div>
+          {/* option 2 */}
+          <div style={{ border: '1px solid #e2e8f0', borderRadius: 8, padding: 10, background: '#fff' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
+              <div style={{ width: 30, height: 30, borderRadius: 6, border: '1px solid #e2e8f0', background: '#f8fafc', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <Folder size={14} color="#64748b" />
+              </div>
+              <div style={{ flex: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <p style={{ fontSize: 11, fontWeight: 600, color: '#0f172a', margin: 0 }}>Subdirectory</p>
+                  <span style={{ background: '#ffedd5', color: '#c2410c', fontSize: 8, fontWeight: 700, padding: '1px 6px', borderRadius: 999, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Recommended</span>
+                </div>
+                <p style={{ fontSize: 10, color: '#64748b', margin: '2px 0 0' }}>yourcompany.com/help</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-end border-t border-slate-100 px-3 py-2">
-        <span className="rounded bg-orange-600 px-3 py-1 text-[10px] font-semibold text-white">
-          Proceed
-        </span>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '10px 16px', borderTop: '1px solid #f1f5f9' }}>
+          <span style={{ background: '#ea580c', color: '#fff', fontSize: 11, fontWeight: 600, padding: '6px 16px', borderRadius: 6 }}>Proceed</span>
+        </div>
       </div>
     </div>
   );
 }
 
-/** Help center search + analytics stack */
-export function HelpCenterAnalyticsStack({ showBear = true }: { showBear?: boolean }) {
+/* ─── 2. SEO VISUAL ─── */
+export function SeoVisual() {
+  const metrics = [
+    { v: '20k', l: 'Views' }, { v: '11k', l: 'Searches' },
+    { v: '64%', l: 'Resolved' }, { v: '43s', l: 'Avg time' },
+  ];
   return (
-    <div className="relative h-full w-full px-3 py-4 sm:px-4">
-      <div className="overflow-hidden rounded-lg border border-slate-200/80 bg-white/95 shadow-sm">
-        <div className="border-b border-slate-100 px-3 py-2">
-          <div className="flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1.5">
-            <Search size={12} className="text-slate-400" />
-            <span className="text-[10px] text-slate-400">How can we help?</span>
+    <div style={{ width: 480, height: 360, position: 'relative', background: 'linear-gradient(180deg, #e6f7fb 0%, #f8fafc 60%, #fff 100%)' }}>
+      {/* main card */}
+      <div style={{
+        position: 'absolute', top: 28, left: 28, right: 96,
+        background: '#fff', borderRadius: 12,
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 16px 40px -12px rgba(15,23,42,0.14)',
+        overflow: 'hidden',
+      }}>
+        {/* search bar */}
+        <div style={{ padding: '10px 14px', borderBottom: '1px solid #f1f5f9' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, padding: '7px 12px' }}>
+            <Search size={13} color="#94a3b8" />
+            <span style={{ fontSize: 12, color: '#94a3b8' }}>How can we help?</span>
           </div>
         </div>
-        <div className="relative p-3">
-          <div className="mb-2 flex items-center justify-between">
-            <span className="font-mono text-[9px] text-slate-500">help.notionbear.com</span>
-            <span className="rounded-full bg-wonder/10 px-1.5 py-px text-[7px] font-semibold uppercase text-wonder-800">
-              Indexed
-            </span>
+        <div style={{ padding: 14 }}>
+          {/* domain row */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+            <span style={{ fontFamily: 'monospace', fontSize: 10, color: '#64748b' }}>help.notionbear.com</span>
+            <span style={{ background: '#e6f7fb', color: '#007a94', fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '2px 7px', borderRadius: 99 }}>Indexed</span>
           </div>
-          <MetricTiles
-            metrics={[
-              { v: '20k', l: 'Views' },
-              { v: '11k', l: 'Searches' },
-              { v: '64%', l: 'Resolved' },
-              { v: '43s', l: 'Avg time' },
-            ]}
-          />
-          <div className="mt-2 border-t border-slate-100 pt-2">
-            <BarChart />
+          {/* metrics */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 6, marginBottom: 12 }}>
+            {metrics.map(m => (
+              <div key={m.l} style={{ background: '#f8fafc', border: '1px solid #f1f5f9', borderRadius: 6, padding: '6px 4px', textAlign: 'center' }}>
+                <p style={{ margin: 0, fontSize: 13, fontWeight: 700, color: '#0f172a', fontVariantNumeric: 'tabular-nums' }}>{m.v}</p>
+                <p style={{ margin: '1px 0 0', fontSize: 8, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#94a3b8' }}>{m.l}</p>
+              </div>
+            ))}
           </div>
+          <Bars />
         </div>
       </div>
-      {showBear ? (
-        <WonderBear
-          className="absolute -bottom-1 right-1 sm:right-3"
-          size={64}
-        />
-      ) : null}
+      {/* bear */}
+      <img src={BEAR} alt="" style={{ position: 'absolute', bottom: 24, right: 20, width: 80, height: 80, objectFit: 'contain', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.15))' }} />
     </div>
   );
 }
 
-/** Site preview + Lighthouse panel */
-export function SiteWithLighthouse({
-  siteTitle = 'AIRDROPS WORK',
-  headerTint = 'from-rose-200/80 to-orange-100/70',
-}: {
-  siteTitle?: string;
-  headerTint?: string;
-}) {
+/* ─── 3. PERFORMANCE VISUAL ─── */
+export function PerformanceVisual() {
   return (
-    <div className="relative flex h-full w-full flex-col justify-end px-3 pb-3 pt-4 sm:px-4">
-      <div className="pointer-events-none absolute inset-x-3 top-4 overflow-hidden rounded-md border border-slate-200/70 bg-white opacity-70 sm:inset-x-4">
-        <div className={`bg-gradient-to-r px-3 py-2 ${headerTint}`}>
-          <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-700">{siteTitle}</p>
+    <div style={{ width: 480, height: 360, position: 'relative', background: 'linear-gradient(180deg, #fce7e0 0%, #fdf4ee 40%, #fff 100%)' }}>
+      {/* faded site preview */}
+      <div style={{ position: 'absolute', top: 16, left: 20, right: 20, borderRadius: 8, overflow: 'hidden', opacity: 0.6, border: '1px solid #e2e8f0', boxShadow: '0 4px 16px -4px rgba(15,23,42,0.1)' }}>
+        <div style={{ background: 'linear-gradient(90deg, #fca5a5 0%, #fdba74 100%)', padding: '8px 12px' }}>
+          <p style={{ margin: 0, fontSize: 9, fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7c2d12' }}>Airdrops Work</p>
         </div>
-        <div className="space-y-1.5 px-3 py-3">
-          <div className="h-1.5 w-3/4 rounded bg-slate-100" />
-          <div className="h-1.5 w-full rounded bg-slate-100" />
-          <div className="h-1.5 w-5/6 rounded bg-slate-100" />
-        </div>
-      </div>
-
-      <div className="relative z-10 rounded-lg border border-slate-200 bg-white/95 p-3 shadow-lg backdrop-blur-sm">
-        <p className="mb-2 text-center text-[8px] font-semibold uppercase tracking-[0.16em] text-slate-500">
-          Lighthouse scores
-        </p>
-        <div className="flex items-start justify-between gap-0.5">
-          <ScoreRing score={98} label="Performance" size={48} />
-          <ScoreRing score={100} label="Accessibility" size={48} />
-          <ScoreRing score={100} label="Best Practices" size={48} />
-          <ScoreRing score={100} label="SEO" size={48} />
+        <div style={{ background: '#fff', padding: '10px 12px', display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <div style={{ height: 6, borderRadius: 3, width: '70%', background: '#f1f5f9' }} />
+          <div style={{ height: 6, borderRadius: 3, width: '100%', background: '#f1f5f9' }} />
+          <div style={{ height: 6, borderRadius: 3, width: '85%', background: '#f1f5f9' }} />
         </div>
       </div>
-
-      <WonderBear className="absolute bottom-0 left-2 sm:left-4" size={56} />
+      {/* lighthouse panel */}
+      <div style={{
+        position: 'absolute', bottom: 28, left: 40, right: 40,
+        background: '#fff', borderRadius: 12,
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 20px 48px -16px rgba(15,23,42,0.18)',
+        padding: '14px 20px',
+      }}>
+        <p style={{ margin: '0 0 12px', textAlign: 'center', fontSize: 10, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#64748b' }}>Lighthouse scores</p>
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <Ring score={98} label="Performance" />
+          <Ring score={100} label="Accessibility" />
+          <Ring score={100} label="Best Practices" />
+          <Ring score={100} label="SEO" />
+        </div>
+      </div>
+      {/* bear */}
+      <img src={BEAR} alt="" style={{ position: 'absolute', bottom: 24, left: 14, width: 64, height: 64, objectFit: 'contain', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.15))' }} />
     </div>
   );
 }
 
-/** Notion workspace vignette */
-export function NotionWorkspaceVignette() {
+/* ─── 4. NOTION HOSTING VISUAL ─── */
+export function NotionHostingVisual() {
   return (
-    <div className="relative flex h-full w-full items-center justify-center gap-2 px-3 py-4 sm:gap-3 sm:px-5">
-      <WindowChrome title="Notion" className="w-[58%] max-w-[260px] shrink-0">
-        <div className="flex min-h-[140px]">
-          <div className="w-[28%] border-r border-slate-100 bg-slate-50/80 p-2">
-            <p className="text-[7px] font-semibold text-slate-500">Workspace</p>
-            <div className="mt-2 space-y-1">
-              {['Search', 'Home', 'Inbox'].map((item) => (
-                <div key={item} className="h-1 w-full rounded bg-slate-200/80" />
+    <div style={{ width: 480, height: 360, position: 'relative', background: 'linear-gradient(180deg, #e6f7fb 0%, #f0fafd 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
+      {/* notion window */}
+      <div style={{ width: 260, background: '#fff', borderRadius: 10, boxShadow: '0 20px 50px -16px rgba(15,23,42,0.2)', border: '1px solid #e2e8f0', overflow: 'hidden', flexShrink: 0 }}>
+        {/* chrome */}
+        <div style={{ background: '#fafafa', borderBottom: '1px solid #f1f5f9', padding: '8px 12px', display: 'flex', alignItems: 'center', gap: 6 }}>
+          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff5f57' }} />
+          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#febc2e' }} />
+          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#28c840' }} />
+          <span style={{ fontFamily: 'monospace', fontSize: 9, color: '#94a3b8', marginLeft: 6, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Notion</span>
+        </div>
+        {/* body */}
+        <div style={{ display: 'flex', height: 165 }}>
+          {/* sidebar */}
+          <div style={{ width: 68, background: '#f8fafc', borderRight: '1px solid #f1f5f9', padding: '10px 8px', flexShrink: 0 }}>
+            <p style={{ margin: '0 0 8px', fontSize: 8, fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.12em' }}>Workspace</p>
+            {['Search', 'Home', 'Updates', 'Settings', 'New page'].map(item => (
+              <div key={item} style={{ height: 6, borderRadius: 3, background: '#e2e8f0', marginBottom: 5 }} />
+            ))}
+          </div>
+          {/* content */}
+          <div style={{ flex: 1, padding: '12px 14px' }}>
+            <p style={{ margin: '0 0 2px', fontSize: 13, fontWeight: 700, color: '#0f172a' }}>Vetted Applicants</p>
+            <p style={{ margin: '0 0 10px', fontSize: 9, color: '#94a3b8' }}>A curated collection of talent</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {['Aa Text', 'Page', 'To-do list', 'Heading 1', 'Heading 2', 'Heading 3'].map(item => (
+                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <div style={{ width: 4, height: 4, borderRadius: '50%', background: '#cbd5e1', flexShrink: 0 }} />
+                  <div style={{ height: 5, borderRadius: 2, background: '#f1f5f9', width: `${60 + Math.random() * 30}%` }} />
+                </div>
               ))}
             </div>
           </div>
-          <div className="flex-1 p-2.5">
-            <p className="text-[11px] font-semibold text-slate-900">Vetted Applicants</p>
-            <div className="mt-2 space-y-1">
-              <div className="h-1 w-full rounded bg-slate-100" />
-              <div className="h-1 w-4/5 rounded bg-slate-100" />
-            </div>
-            <div className="mt-3 rounded border border-slate-200 bg-white p-1.5 shadow-sm">
-              <p className="text-[8px] font-medium text-slate-600">Basic blocks</p>
-              <div className="mt-1 space-y-0.5">
-                <div className="h-1 w-full rounded bg-slate-100" />
-                <div className="h-1 w-3/4 rounded bg-slate-100" />
-              </div>
-            </div>
-          </div>
         </div>
-      </WindowChrome>
-
-      <div className="relative flex flex-col items-center">
-        <WonderBear size={80} />
-        <span className="mt-1 rounded bg-slate-900 px-2 py-0.5 text-[8px] font-bold text-white">Notion</span>
+      </div>
+      {/* bear + flag */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+        <img src={BEAR} alt="" style={{ width: 88, height: 88, objectFit: 'contain', filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))' }} />
+        <div style={{ background: '#0f172a', color: '#fff', fontSize: 9, fontWeight: 700, padding: '3px 10px', borderRadius: 4, letterSpacing: '0.05em' }}>Notion</div>
       </div>
     </div>
   );
 }
 
-/** Notion → Wonder sync flow */
-export function NotionToWonderSync() {
+/* ─── 5. SEO (OLDWAYS) VISUAL ─── */
+export function SeoOldWaysVisual() {
   return (
-    <div className="flex h-full w-full items-center justify-center gap-3 px-4">
-      <WindowChrome className="w-[38%] max-w-[150px]">
-        <div className="p-2.5">
-          <p className="text-[9px] font-semibold text-slate-800">Getting started</p>
-          <div className="mt-2 space-y-1">
-            <div className="h-1 w-full rounded bg-slate-100" />
-            <div className="h-1 w-5/6 rounded bg-slate-100" />
-          </div>
+    <div style={{ width: 480, height: 360, position: 'relative', background: 'linear-gradient(180deg, #fce7e0 0%, #fdf4ee 40%, #f8fafc 100%)' }}>
+      {/* faded site */}
+      <div style={{ position: 'absolute', top: 20, left: 32, right: 32, borderRadius: 8, overflow: 'hidden', opacity: 0.65, border: '1px solid #e2e8f0' }}>
+        <div style={{ background: 'linear-gradient(90deg, #fb923c 0%, #f97316 100%)', padding: '7px 12px' }}>
+          <p style={{ margin: 0, fontSize: 9, fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#fff' }}>Airdrops Work</p>
         </div>
-      </WindowChrome>
-
-      <div className="flex flex-col items-center text-wonder">
-        <RefreshCw size={16} strokeWidth={2} className="animate-[spin_8s_linear_infinite]" />
-        <span className="mt-0.5 font-mono text-[7px] uppercase tracking-wider">Sync</span>
+        <div style={{ background: '#fff', padding: '8px 12px', display: 'flex', gap: 4 }}>
+          <div style={{ height: 5, borderRadius: 2, width: '55%', background: '#f1f5f9' }} />
+          <div style={{ height: 5, borderRadius: 2, width: '25%', background: '#f1f5f9' }} />
+        </div>
       </div>
-
-      <WindowChrome className="w-[38%] max-w-[150px]">
-        <div className="border-b border-wonder/20 bg-wonder/5 px-2 py-1.5">
-          <span className="font-mono text-[8px] text-wonder-800">help.co.com</span>
+      {/* lighthouse */}
+      <div style={{
+        position: 'absolute', bottom: 32, left: 40, right: 40,
+        background: '#fff', borderRadius: 12,
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 20px 48px -16px rgba(15,23,42,0.18)',
+        padding: '14px 20px',
+      }}>
+        <p style={{ margin: '0 0 12px', textAlign: 'center', fontSize: 10, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#64748b' }}>Lighthouse scores</p>
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <Ring score={98} label="Performance" />
+          <Ring score={100} label="Accessibility" />
+          <Ring score={100} label="Best Practices" />
+          <Ring score={100} label="SEO" />
         </div>
-        <div className="p-2.5">
-          <div className="h-1.5 w-2/3 rounded bg-wonder/30" />
-          <div className="mt-1.5 h-1 w-full rounded bg-slate-100" />
-        </div>
-      </WindowChrome>
+      </div>
+      <img src={BEAR} alt="" style={{ position: 'absolute', bottom: 28, left: 12, width: 60, height: 60, objectFit: 'contain', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.14))' }} />
     </div>
   );
 }
 
-export function MembershipPaywallVisual() {
-  const tiers = [
-    { name: 'Free', price: '$0', active: false },
-    { name: 'Pro', price: '$12', active: true },
-    { name: 'Team', price: '$49', active: false },
-  ];
-
+/* ─── 6. MEMBERSHIP VISUAL ─── */
+export function MembershipVisual() {
+  const tiers = [{ n: 'Free', p: '$0', a: false }, { n: 'Pro', p: '$12', a: true }, { n: 'Team', p: '$49', a: false }];
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center px-4 py-5">
-      <div className="mb-3 flex w-full max-w-[300px] gap-1.5">
-        {tiers.map((tier) => (
-          <div
-            key={tier.name}
-            className={`flex-1 rounded-md border px-1.5 py-2 text-center ${
-              tier.active ? 'border-orange-500 bg-orange-50' : 'border-slate-200 bg-white'
-            }`}
-          >
-            <p className="text-[9px] font-semibold">{tier.name}</p>
-            <p className="text-xs font-bold tabular-nums">{tier.price}</p>
+    <div style={{ width: 480, height: 360, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, background: 'linear-gradient(180deg, #fff7ed 0%, #fff 100%)', padding: '0 60px' }}>
+      {/* tiers */}
+      <div style={{ display: 'flex', gap: 8, width: '100%' }}>
+        {tiers.map(t => (
+          <div key={t.n} style={{
+            flex: 1, border: t.a ? '2px solid #f97316' : '1px solid #e2e8f0',
+            background: t.a ? '#fff7ed' : '#fff',
+            borderRadius: 10, padding: '10px 8px', textAlign: 'center',
+            boxShadow: t.a ? '0 4px 16px -4px rgba(249,115,22,0.2)' : 'none',
+          }}>
+            <p style={{ margin: 0, fontSize: 10, fontWeight: 600, color: '#0f172a' }}>{t.n}</p>
+            <p style={{ margin: '2px 0 0', fontSize: 18, fontWeight: 700, color: '#0f172a', fontVariantNumeric: 'tabular-nums' }}>{t.p}</p>
+            <p style={{ margin: 0, fontSize: 9, color: '#94a3b8' }}>/mo</p>
           </div>
         ))}
       </div>
-      <div className="relative w-full max-w-[300px] overflow-hidden rounded-lg border border-slate-200 bg-white">
-        <div className="space-y-1.5 p-4 opacity-40 blur-[1px]">
-          <div className="h-1.5 w-2/3 rounded bg-slate-200" />
-          <div className="h-1 w-full rounded bg-slate-100" />
+      {/* locked article */}
+      <div style={{ width: '100%', position: 'relative', overflow: 'hidden', borderRadius: 10, border: '1px solid #e2e8f0' }}>
+        <div style={{ padding: '14px 16px', opacity: 0.35, filter: 'blur(1px)' }}>
+          <div style={{ height: 10, borderRadius: 4, background: '#e2e8f0', width: '55%', marginBottom: 8 }} />
+          <div style={{ height: 6, borderRadius: 3, background: '#f1f5f9', marginBottom: 5 }} />
+          <div style={{ height: 6, borderRadius: 3, background: '#f1f5f9', width: '80%' }} />
         </div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/85">
-          <Lock size={18} className="text-wonder" />
-          <p className="mt-1.5 text-[10px] font-semibold">Members-only article</p>
-          <span className="mt-1.5 rounded bg-orange-600 px-2.5 py-0.5 text-[9px] font-semibold text-white">
-            Subscribe
-          </span>
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'rgba(255,255,255,0.88)',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 6,
+        }}>
+          <Lock size={20} color="#009fbc" />
+          <p style={{ margin: 0, fontSize: 12, fontWeight: 600, color: '#0f172a' }}>Members-only article</p>
+          <span style={{ background: '#ea580c', color: '#fff', fontSize: 10, fontWeight: 700, padding: '5px 14px', borderRadius: 6 }}>Subscribe to read</span>
         </div>
       </div>
     </div>
   );
 }
 
-export function AiChatWidgetVisual() {
+/* ─── 7. ANALYTICS VISUAL ─── */
+export function AnalyticsVisual() {
+  const metrics = [
+    { v: '20k', l: 'Views' }, { v: '11k', l: 'Visitors' },
+    { v: '64%', l: 'Clicks' }, { v: '43s', l: 'Avg time' },
+  ];
   return (
-    <div className="relative flex h-full w-full items-end justify-end p-4">
-      <div className="pointer-events-none absolute inset-x-4 top-5 rounded-md border border-slate-200/80 bg-white/60 p-3 opacity-60">
-        <div className="h-1.5 w-3/4 rounded bg-slate-100" />
-        <div className="mt-1 h-1.5 w-full rounded bg-slate-100" />
-      </div>
-
-      <div className="relative z-10 w-full max-w-[280px] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
-        <div className="flex items-center gap-2 border-b border-slate-100 bg-wonder/5 px-3 py-2">
-          <img src={WONDER_CHAR} alt="" className="h-5 w-5 rounded object-cover" />
-          <span className="text-[11px] font-semibold">Wonder AI</span>
-          <Sparkles size={11} className="ml-auto text-wonder" />
+    <div style={{ width: 480, height: 360, position: 'relative', background: 'linear-gradient(180deg, #e6f7fb 0%, #f8fafc 60%, #fff 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 40px' }}>
+      <div style={{ width: '100%', background: '#fff', borderRadius: 14, border: '1px solid #e2e8f0', boxShadow: '0 20px 48px -16px rgba(15,23,42,0.14)', overflow: 'hidden' }}>
+        {/* toolbar */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 16px', borderBottom: '1px solid #f1f5f9', background: '#fafafa' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <BarChart3 size={14} color="#009fbc" />
+            <span style={{ fontFamily: 'monospace', fontSize: 11, color: '#475569' }}>help.acme.com</span>
+          </div>
+          <span style={{ fontFamily: 'monospace', fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#94a3b8' }}>Last 30 days</span>
         </div>
-        <div className="space-y-2 p-3">
-          <div className="flex flex-wrap gap-1">
-            {['Reset password', 'Billing', 'API docs'].map((s) => (
-              <span
-                key={s}
-                className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[9px] text-slate-600"
-              >
-                {s}
-              </span>
+        <div style={{ padding: '14px 16px' }}>
+          {/* metrics */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 14 }}>
+            {metrics.map(m => (
+              <div key={m.l} style={{ background: '#f8fafc', border: '1px solid #f1f5f9', borderRadius: 8, padding: '8px 6px', textAlign: 'center' }}>
+                <p style={{ margin: 0, fontSize: 18, fontWeight: 700, color: '#0f172a', fontVariantNumeric: 'tabular-nums' }}>{m.v}</p>
+                <p style={{ margin: '2px 0 0', fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#94a3b8' }}>{m.l}</p>
+              </div>
             ))}
           </div>
-          <div className="rounded-lg bg-violet-50 px-2.5 py-1.5 text-[10px] text-violet-900">
-            That&apos;s great. Thanks so much!
-          </div>
-          <div className="max-w-[90%] rounded-lg rounded-tl-sm bg-wonder/10 px-2.5 py-1.5 text-[10px] leading-relaxed text-slate-700">
-            I found 3 articles about password resets. Open the best match?
+          <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: 12 }}>
+            <Bars />
           </div>
         </div>
-        <div className="flex items-center gap-2 border-t border-slate-100 px-3 py-1.5">
-          <MessageSquare size={12} className="text-slate-400" />
-          <span className="flex-1 text-[10px] text-slate-400">Ask anything…</span>
-          <ArrowRight size={12} className="text-wonder" />
+      </div>
+      <img src={BEAR} alt="" style={{ position: 'absolute', bottom: 20, right: 24, width: 72, height: 72, objectFit: 'contain', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.14))' }} />
+    </div>
+  );
+}
+
+/* ─── 8. AI SUPPORT VISUAL ─── */
+export function AiSupportVisual() {
+  return (
+    <div style={{ width: 480, height: 360, position: 'relative', background: 'linear-gradient(135deg, #f0f9ff 0%, #e6f7fb 40%, #f8fafc 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      {/* faded help center bg */}
+      <div style={{ position: 'absolute', top: 20, left: 28, right: 28, background: 'rgba(255,255,255,0.55)', borderRadius: 8, border: '1px solid rgba(226,232,240,0.6)', padding: '10px 14px' }}>
+        <div style={{ height: 6, borderRadius: 3, background: '#e2e8f0', width: '40%', marginBottom: 5 }} />
+        <div style={{ height: 5, borderRadius: 2, background: '#f1f5f9', width: '100%' }} />
+      </div>
+      {/* chat widget */}
+      <div style={{
+        width: 288, background: '#fff', borderRadius: 14,
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 24px 60px -16px rgba(15,23,42,0.18)',
+        overflow: 'hidden',
+      }}>
+        {/* header */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderBottom: '1px solid #f1f5f9', background: 'rgba(0,159,188,0.06)' }}>
+          <img src={BEAR} alt="" style={{ width: 26, height: 26, borderRadius: 8, objectFit: 'cover' }} />
+          <span style={{ fontSize: 13, fontWeight: 700, color: '#0f172a' }}>Wonder AI</span>
+          <Sparkles size={13} color="#009fbc" style={{ marginLeft: 'auto' }} />
+        </div>
+        <div style={{ padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {/* suggestion chips */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
+            {['Reset password', 'Billing help', 'API docs'].map(s => (
+              <span key={s} style={{ border: '1px solid #e2e8f0', background: '#f8fafc', borderRadius: 999, padding: '3px 10px', fontSize: 10, color: '#475569' }}>{s}</span>
+            ))}
+          </div>
+          {/* user bubble */}
+          <div style={{ background: '#f1f5f9', borderRadius: '12px 12px 4px 12px', padding: '8px 12px', fontSize: 11, color: '#475569', alignSelf: 'flex-end', maxWidth: '85%' }}>
+            That&apos;s great. Thanks so much!
+          </div>
+          {/* ai bubble */}
+          <div style={{ background: 'rgba(0,159,188,0.08)', borderRadius: '4px 12px 12px 12px', padding: '8px 12px', fontSize: 11, color: '#0f172a', maxWidth: '88%', lineHeight: 1.5 }}>
+            I found 3 articles about password resets. Want me to open the best match?
+          </div>
+        </div>
+        {/* input bar */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', borderTop: '1px solid #f1f5f9' }}>
+          <MessageSquare size={14} color="#cbd5e1" />
+          <span style={{ flex: 1, fontSize: 11, color: '#cbd5e1' }}>Ask anything…</span>
+          <div style={{ width: 28, height: 28, borderRadius: 8, background: '#009fbc', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <svg width={12} height={12} viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export function IntegrationsGridVisual() {
+/* ─── 9. INTEGRATIONS VISUAL ─── */
+export function IntegrationsVisual() {
   const apps = [
     { name: 'Slack', logo: 'https://cdn.simpleicons.org/slack/4A154B' },
     { name: 'Intercom', logo: 'https://dazzling-cat.netlify.app/intercom.png' },
     { name: 'Crisp', logo: 'https://dazzling-cat.netlify.app/crisp.png' },
     { name: 'HubSpot', logo: 'https://cdn.simpleicons.org/hubspot/FF7A59' },
     { name: 'Zendesk', logo: 'https://dazzling-cat.netlify.app/zendesk.jpg' },
-    { name: 'GitHub', icon: true },
+    { name: 'GitHub', logo: null },
   ];
-
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center px-4 py-5">
-      <div className="w-full max-w-[320px] rounded-xl border border-dashed border-slate-300 bg-white/80 p-3">
-        <div className="grid grid-cols-3 gap-1.5">
-          {apps.map((app) => (
-            <div
-              key={app.name}
-              className="flex flex-col items-center gap-1 rounded-lg border border-slate-200 bg-white px-1.5 py-2.5"
-            >
-              {app.icon ? (
-                <Github size={20} className="text-slate-700" />
-              ) : (
-                <img src={app.logo} alt="" className="h-5 w-5 object-contain" />
-              )}
-              <span className="font-mono text-[7px] uppercase tracking-wide text-slate-500">{app.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mt-3 flex items-center gap-1.5 rounded-full border border-wonder/30 bg-wonder/5 px-2.5 py-0.5">
-        <span className="relative flex h-1.5 w-1.5">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-wonder opacity-50" />
-          <span className="relative h-1.5 w-1.5 rounded-full bg-wonder" />
-        </span>
-        <span className="font-mono text-[9px] uppercase tracking-wide text-wonder-800">Connected</span>
-      </div>
-    </div>
-  );
-}
-
-export function AnalyticsDashboardVisual() {
-  return (
-    <div className="relative flex h-full w-full flex-col justify-center px-4 py-4">
-      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-        <div className="flex items-center justify-between border-b border-slate-100 px-3 py-2">
-          <div className="flex items-center gap-1.5">
-            <BarChart3 size={12} className="text-wonder" />
-            <span className="font-mono text-[9px] text-slate-600">help.acme.com</span>
+    <div style={{ width: 480, height: 360, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, background: 'linear-gradient(180deg, #f8fafc 0%, #fff 100%)' }}>
+      <div style={{
+        border: '1.5px dashed #cbd5e1', borderRadius: 14,
+        background: 'rgba(255,255,255,0.8)', padding: 16,
+        display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8,
+        width: 280,
+      }}>
+        {apps.map(app => (
+          <div key={app.name} style={{
+            border: '1px solid #e2e8f0', borderRadius: 10, background: '#fff',
+            padding: '12px 8px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5,
+            boxShadow: '0 1px 4px rgba(15,23,42,0.05)',
+          }}>
+            {app.logo ? (
+              <img src={app.logo} alt="" style={{ width: 24, height: 24, objectFit: 'contain', borderRadius: 4 }} />
+            ) : (
+              <Github size={24} color="#374151" />
+            )}
+            <span style={{ fontFamily: 'monospace', fontSize: 8, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#64748b' }}>{app.name}</span>
           </div>
-          <span className="font-mono text-[8px] uppercase text-slate-400">30 days</span>
-        </div>
-        <div className="p-3">
-          <MetricTiles
-            metrics={[
-              { v: '20k', l: 'Views' },
-              { v: '11k', l: 'Visitors' },
-              { v: '64%', l: 'Clicks' },
-              { v: '43s', l: 'Avg' },
-            ]}
-          />
-          <div className="mt-2 border-t border-slate-100 pt-2">
-            <BarChart />
-          </div>
-        </div>
+        ))}
       </div>
-      <WonderBear className="absolute bottom-3 right-4" size={56} />
+      {/* live badge */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,159,188,0.07)', border: '1px solid rgba(0,159,188,0.25)', borderRadius: 99, padding: '5px 12px' }}>
+        <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#009fbc', display: 'inline-block', boxShadow: '0 0 0 2px rgba(0,159,188,0.25)' }} />
+        <span style={{ fontFamily: 'monospace', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#007a94', fontWeight: 700 }}>Connected</span>
+      </div>
     </div>
   );
 }
