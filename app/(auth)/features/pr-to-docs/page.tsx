@@ -5,6 +5,22 @@ import PrDocsNotificationCard, {
   PR_DOCS_CARD_H,
   PR_DOCS_CARD_W,
 } from '@/components/visuals/PrDocsNotificationCard';
+import PrDocsHowItWorksCards, {
+  PR_DOCS_HOW_IT_WORKS_H,
+  PR_DOCS_HOW_IT_WORKS_W,
+} from '@/components/visuals/PrDocsHowItWorksCards';
+import PrDocsMigrationSection, {
+  PR_DOCS_MIGRATION_H,
+  PR_DOCS_MIGRATION_W,
+} from '@/components/visuals/PrDocsMigrationSection';
+import PrDocsPlatformFeaturesSection, {
+  PR_DOCS_PLATFORM_H,
+  PR_DOCS_PLATFORM_W,
+} from '@/components/visuals/PrDocsPlatformFeaturesSection';
+import PrDocsProductFeaturesSection, {
+  PR_DOCS_PRODUCT_H,
+  PR_DOCS_PRODUCT_W,
+} from '@/components/visuals/PrDocsProductFeaturesSection';
 import FeatureVisualStage from '@/components/ui/FeatureVisualStage';
 
 export const metadata = {
@@ -94,6 +110,78 @@ export default function PrToDocsPage() {
               <PrDocsNotificationCard />
             </FeatureVisualStage>
           </PixelFramedVisual>
+
+          <div className="border-t border-slate-200 landing-grid-pad py-10 md:py-14">
+            <div
+              className="overflow-x-auto"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle, rgba(186, 183, 195, 0.35) 0.7px, transparent 0.7px)',
+                backgroundSize: '10px 10px',
+                backgroundColor: '#ffffff',
+              }}
+            >
+              <div className="mx-auto w-full max-w-[min(100%,72rem)] py-10 md:py-12">
+                <FeatureVisualStage
+                  stageWidth={PR_DOCS_HOW_IT_WORKS_W}
+                  stageHeight={PR_DOCS_HOW_IT_WORKS_H}
+                >
+                  <PrDocsHowItWorksCards />
+                </FeatureVisualStage>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-200">
+            <div className="overflow-x-auto" style={{ backgroundColor: '#F9FAFB' }}>
+              <div
+                className="landing-grid-pad mx-auto w-full max-w-[min(100%,72rem)] py-12 md:py-16"
+                style={{ minHeight: 360 }}
+              >
+                <FeatureVisualStage
+                  stageWidth={PR_DOCS_MIGRATION_W}
+                  stageHeight={PR_DOCS_MIGRATION_H}
+                  className="min-h-[280px] sm:min-h-[340px] md:min-h-[400px]"
+                >
+                  <PrDocsMigrationSection />
+                </FeatureVisualStage>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-200">
+            <div className="overflow-x-auto bg-white">
+              <div
+                className="landing-grid-pad mx-auto w-full max-w-[min(100%,72rem)] py-12 md:py-16"
+                style={{ minHeight: 400 }}
+              >
+                <FeatureVisualStage
+                  stageWidth={PR_DOCS_PLATFORM_W}
+                  stageHeight={PR_DOCS_PLATFORM_H}
+                  className="min-h-[300px] sm:min-h-[380px] md:min-h-[460px]"
+                >
+                  <PrDocsPlatformFeaturesSection />
+                </FeatureVisualStage>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-200">
+            <div className="overflow-x-auto bg-white">
+              <div
+                className="landing-grid-pad mx-auto w-full max-w-[min(100%,72rem)] py-12 md:py-16"
+                style={{ minHeight: 420 }}
+              >
+                <FeatureVisualStage
+                  stageWidth={PR_DOCS_PRODUCT_W}
+                  stageHeight={PR_DOCS_PRODUCT_H}
+                  className="min-h-[320px] sm:min-h-[400px] md:min-h-[480px]"
+                >
+                  <PrDocsProductFeaturesSection />
+                </FeatureVisualStage>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
