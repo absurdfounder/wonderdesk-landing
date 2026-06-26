@@ -36,6 +36,7 @@ import Showcases from '@/components/showcase'
 import ModalVideo from '@/components/ModalVideo'
 import NotionToWebsite from '@/components/NotionToWebsite'
 import FloatingScrollIndicator from '@/components/FloatingScrollIndicator'
+import SimplePricing from '@/components/SimplePricing'
 
 export default function Home() {
   return (
@@ -131,6 +132,14 @@ export default function Home() {
 
         <div className="homepage-grid-row">
           <GetStartedSection />
+        </div>
+
+        <div className="homepage-grid-row bg-white">
+          <section className="bg-white">
+            <div className="landing-grid-column bg-white">
+              <SimplePricing showFullPricingLink embedded />
+            </div>
+          </section>
         </div>
 
         <div className="homepage-grid-row">

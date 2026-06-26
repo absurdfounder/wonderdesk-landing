@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import MarketingHeadline from '@/components/marketing/MarketingHeadline';
 import PixelButton from '@/components/ui/PixelButton';
@@ -368,7 +369,14 @@ function MobilePlanCard(props: DesktopPlanColumnProps) {
   );
 }
 
-export default function SimplePricing() {
+type SimplePricingProps = {
+  /** Show link strip to full /pricing page (homepage embed). */
+  showFullPricingLink?: boolean;
+  /** Align to landing-grid-column rails on the homepage. */
+  embedded?: boolean;
+};
+
+export default function SimplePricing({ showFullPricingLink = false, embedded = false }: SimplePricingProps) {
   const [billingCycle, setBillingCycle] = useState<'Monthly' | 'Yearly'>('Monthly');
 
   const [selfInstallWebsites, setSelfInstallWebsites] = useState<number>(PRICING_USD.selfInstallIncludedWebsites);
@@ -596,9 +604,15 @@ export default function SimplePricing() {
     },
   ];
 
-  return (
-    <div className="w-full pb-8 md:pb-10">
-      <div className="flex flex-col gap-6 pb-8 pt-2 max-md:gap-5 max-md:pb-6 md:pt-4">
+  const headlineBlock = (
+    <div
+      className={[
+        'flex flex-col gap-6 pb-8 pt-2 max-md:gap-5 max-md:pb-6 md:pt-4',
+        embedded ? 'landing-grid-pad pt-10 md:pt-14' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
         <MarketingHeadline
           as="h2"
           size="section"
@@ -615,9 +629,11 @@ export default function SimplePricing() {
           ]}
           subline="Self-install on your stack, start in the cloud, or talk to us for enterprise deployment. Every plan includes a 7-day free trial on cloud tiers."
         />
-      </div>
+    </div>
+  );
 
-      <div className="border-t border-slate-100 sm:-mx-6">
+  const gridBlock = (
+      <div className={['border-t border-slate-200', embedded ? '' : 'border-slate-100 sm:-mx-6'].filter(Boolean).join(' ')}>
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -636,7 +652,38 @@ export default function SimplePricing() {
             <MobilePlanCard key={plan.title} {...plan} isLast={idx === plans.length - 1} />
           ))}
         </div>
+
+        {showFullPricingLink ? (
+          <div className="border-t border-slate-200 bg-wonder-50/80">
+            <Link
+              href="/pricing"
+              className="group flex w-full items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium text-wonder transition-colors hover:text-wonder-700 sm:py-4 md:py-5"
+            >
+              See full rate card and FAQ
+              <svg
+                viewBox="0 0 14 14"
+                className="h-3 w-3 transition-transform group-hover:translate-x-0.5"
+                aria-hidden
+              >
+                <path
+                  d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+              </svg>
+            </Link>
+          </div>
+        ) : null}
       </div>
+  );
+
+  return (
+    <div className={['w-full', embedded ? '' : 'pb-8 md:pb-10'].filter(Boolean).join(' ')}>
+      {headlineBlock}
+      {gridBlock}
     </div>
   );
 }
