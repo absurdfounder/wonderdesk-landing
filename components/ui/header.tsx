@@ -9,7 +9,7 @@ import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
 import TabletMenu from './tablet-menu';
 import TranslateButton from './TranslateButton';
-import PixelButton from '@/components/ui/PixelButton';
+import WonderButton from '@/components/ui/WonderButton';
 
 const featureNavItems = [
   { href: '/features/ai-help-center', title: 'Help Center', description: 'Self-updating knowledge base', icon: Sparkles, iconColor: 'text-sky-500', bgColor: 'bg-sky-50' },
@@ -140,19 +140,24 @@ export default function Header() {
             <div className="hidden lg:block">
               <TranslateButton />
             </div>
-            <PixelButton href="https://app.wonderdesk.ai" external size="sm" variant="outline" tone="dark" className="hidden lg:inline-flex">
-              Sign in
-            </PixelButton>
-            <PixelButton
+            <WonderButton
               href="https://app.wonderdesk.ai"
               external
               size="sm"
-              tone="brand"
+              variant="secondary"
               className="hidden lg:inline-flex"
-              icon={<ArrowRight className="h-3 w-3" strokeWidth={2.5} />}
+            >
+              Sign in
+            </WonderButton>
+            <WonderButton
+              href="https://app.wonderdesk.ai"
+              external
+              size="sm"
+              className="hidden lg:inline-flex"
+              icon={<ArrowRight className="h-3.5 w-3.5" strokeWidth={2} />}
             >
               Get started
-            </PixelButton>
+            </WonderButton>
             <div className="hidden md:block lg:hidden">
               <TabletMenu />
             </div>

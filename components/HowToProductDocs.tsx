@@ -234,7 +234,7 @@ export default function HowtoDocs() {
               </Link>
               <Link
                 href="#template-section"
-                className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl border border-white text-white rounded-lg hover:bg-slate-800 transition-colors duration-300 text-center"
+                className="wonder-btn-secondary w-full sm:w-auto text-center"
               >
                 Sites built on Wonder
               </Link>

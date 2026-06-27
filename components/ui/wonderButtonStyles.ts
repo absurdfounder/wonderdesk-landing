@@ -2,15 +2,17 @@ export type WonderButtonVariant = 'primary' | 'secondary' | 'outline';
 export type WonderButtonSize = 'sm' | 'md' | 'lg';
 
 const variantClasses: Record<WonderButtonVariant, string> = {
-  primary: 'border border-transparent bg-wonder text-white shadow-sm hover:bg-wonder-700',
+  primary:
+    'border border-transparent bg-wonder text-white shadow-sm hover:bg-[var(--wonder-brand-600)]',
   secondary:
     'border border-slate-800 bg-white text-slate-900 hover:bg-slate-800 hover:text-white',
-  outline: 'border border-slate-200 bg-white text-slate-700 hover:bg-slate-50',
+  outline:
+    'border border-slate-200 bg-white text-slate-700 hover:bg-slate-50',
 };
 
 const sizeClasses: Record<WonderButtonSize, string> = {
-  sm: 'min-h-[40px] px-4 py-2 text-sm',
-  md: 'min-h-[48px] px-6 py-3 text-sm sm:text-base',
+  sm: 'min-h-10 px-4 py-2 text-sm',
+  md: 'min-h-12 px-6 py-3 text-sm sm:text-base',
   lg: 'min-h-[52px] px-8 py-3.5 text-base',
 };
 

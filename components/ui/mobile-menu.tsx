@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import Link from 'next/link';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
+import WonderButton from '@/components/ui/WonderButton';
 
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
@@ -242,33 +243,36 @@ export default function MobileMenu() {
               </Transition>
             </li>
 
-            {/* Login */}
-            <li>
-              <Link href="https://app.wonderdesk.ai" className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out w-full justify-between border-b-2" onClick={() => {
-                setMobileNavOpen(false);
-                setDropdownOpen(false);
-              }}>
-                Login
-              </Link>
-            </li>
-
-            {/* Create Website button */}
-            <li className="pt-2">
-              <Link
+            <li className="px-5 py-2">
+              <WonderButton
                 href="https://app.wonderdesk.ai"
-                target='_blank'
-                className="btn-sm text-white bg-slate-900 hover:bg-slate-800 w-full flex items-center justify-between px-5 py-3 rounded-md transition duration-300 ease-in-out group relative overflow-hidden"
+                external
+                size="md"
+                variant="secondary"
+                className="w-full"
                 onClick={() => {
                   setMobileNavOpen(false);
                   setDropdownOpen(false);
                 }}
               >
-                <span className="relative z-10">Create free account</span>
-                <div className="absolute bg-orange-500 w-0 h-full left-0 top-0 group-hover:w-full transition-all duration-300 ease-in-out -z-0"></div>
-                <svg className="w-4 h-4 fill-current text-white shrink-0 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
-                </svg>
-              </Link>
+                Sign in
+              </WonderButton>
+            </li>
+
+            <li className="px-5 pb-2 pt-1">
+              <WonderButton
+                href="https://app.wonderdesk.ai"
+                external
+                size="md"
+                className="w-full"
+                icon={<ArrowRight className="h-4 w-4" strokeWidth={2} />}
+                onClick={() => {
+                  setMobileNavOpen(false);
+                  setDropdownOpen(false);
+                }}
+              >
+                Get started
+              </WonderButton>
             </li>
           </ul>
         </Transition.Child>

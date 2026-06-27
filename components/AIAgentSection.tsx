@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import WonderButton from '@/components/ui/WonderButton';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import {
   ArrowRight,
@@ -343,13 +343,13 @@ export default function AIAgentSection({
           {showDrafts && (
             <div className="animate-[fadeSlide_0.5s_ease_both] sm:ml-[54px]">
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <button
+                <WonderButton
                   type="button"
-                  className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+                  size="sm"
+                  icon={<Eye size={14} strokeWidth={2} />}
                 >
-                  <Eye size={14} strokeWidth={2} />
                   Review &amp; publish
-                </button>
+                </WonderButton>
                 <span className="font-mono text-[11px] uppercase tracking-wide text-slate-400">
                   12 articles updated
                 </span>
@@ -428,12 +428,9 @@ export default function AIAgentSection({
                 </p>
               </div>
 
-              <Link
-                href="https://app.wonderdesk.ai/chat"
-                className="wonder-btn-primary w-full shrink-0 sm:w-auto"
-              >
+              <WonderButton href="https://app.wonderdesk.ai/chat" size="md" className="w-full shrink-0 sm:w-auto">
                 Try Wonder chat
-              </Link>
+              </WonderButton>
             </div>
           </div>
         ) : null}

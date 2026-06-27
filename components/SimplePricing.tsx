@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import MarketingHeadline from '@/components/marketing/MarketingHeadline';
-import PixelButton from '@/components/ui/PixelButton';
+import WonderButton from '@/components/ui/WonderButton';
 import { COMMON_PLAN_FEATURES, formatUsd, getPlanMonthlyPrice, PRICING_USD } from '@/lib/pricing';
 import { Building2, Check, Cloud, Laptop, Minus, Plus, Server, Sparkles, type LucideIcon } from 'lucide-react';
 
@@ -472,9 +472,9 @@ export default function SimplePricing({ showFullPricingLink = false, embedded = 
       ),
       features: selfInstallFeatures,
       cta: (
-        <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="dark" className="w-full">
+        <WonderButton href="https://app.wonderdesk.ai" external size="md" className="w-full">
           Install locally
-        </PixelButton>
+        </WonderButton>
       ),
     },
     {
@@ -516,9 +516,9 @@ export default function SimplePricing({ showFullPricingLink = false, embedded = 
       ),
       features: personalFeatures,
       cta: (
-        <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="dark" className="w-full">
+        <WonderButton href="https://app.wonderdesk.ai" external size="md" className="w-full">
           Get started free
-        </PixelButton>
+        </WonderButton>
       ),
     },
     {
@@ -557,9 +557,9 @@ export default function SimplePricing({ showFullPricingLink = false, embedded = 
       ),
       features: businessFeatures,
       cta: (
-        <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="brand" className="w-full">
+        <WonderButton href="https://app.wonderdesk.ai" external size="md" className="w-full">
           Choose · {businessPrice}/month
-        </PixelButton>
+        </WonderButton>
       ),
     },
     {
@@ -590,16 +590,15 @@ export default function SimplePricing({ showFullPricingLink = false, embedded = 
       ),
       features: enterpriseFeatures,
       cta: (
-        <PixelButton
+        <WonderButton
           href="/contact-us"
           size="md"
-          tone="dark"
-          variant="outline"
+          variant="secondary"
           className="w-full"
           icon={<Server className="h-4 w-4" aria-hidden />}
         >
           Talk to sales
-        </PixelButton>
+        </WonderButton>
       ),
     },
   ];

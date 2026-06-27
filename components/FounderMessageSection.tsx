@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
-import PixelButton from '@/components/ui/PixelButton';
+import WonderButton from '@/components/ui/WonderButton';
 
 const getCalApiImport = () => import('@calcom/embed-react').then((mod) => mod.getCalApi);
 
@@ -91,10 +91,9 @@ export default function FounderMessageSection({ embedded = false }: FounderMessa
                 </a>
               </div>
 
-              <PixelButton
+              <WonderButton
                 size="lg"
-                variant="outline"
-                tone="dark"
+                variant="secondary"
                 className="w-full shrink-0 sm:w-auto"
                 icon={<ArrowRight className="h-4 w-4" />}
                 data-cal-namespace="setup-call"
@@ -102,7 +101,7 @@ export default function FounderMessageSection({ embedded = false }: FounderMessa
                 data-cal-config='{"layout":"month_view"}'
               >
                 Talk to founder
-              </PixelButton>
+              </WonderButton>
             </div>
           </div>
         </div>

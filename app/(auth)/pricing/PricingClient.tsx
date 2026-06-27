@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import WonderButton from '@/components/ui/WonderButton';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import Header from '@/components/ui/header';
@@ -46,13 +46,15 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ isOpen, onClose }) =>
               Did we mention that the trial is free, you can signup in seconds, and no credit card is required? Give us a
               try, we&apos;d love to show you what Wonder can do!
             </p>
-            <Link
+            <WonderButton
               href="https://app.wonderdesk.ai"
-              className="block w-fit rounded-lg bg-orange-600 px-6 py-3 text-lg font-medium text-white shadow-lg transition-colors hover:bg-orange-700"
+              external
+              size="md"
+              className="w-fit"
               onClick={() => onClose()}
             >
               OK Lets get started
-            </Link>
+            </WonderButton>
           </motion.div>
         </motion.div>
       )}

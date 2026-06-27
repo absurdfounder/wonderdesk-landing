@@ -1,7 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import Link from 'next/link';
+import WonderButton from '@/components/ui/WonderButton';
 import { Check, Sparkles, Building2 } from 'lucide-react';
 
 export type PricingTier = {
@@ -196,12 +196,15 @@ function TrafficAllowance({ trafficLimit }: { trafficLimit: string }) {
 
 function PlanCta({ featured = false, children }: { featured?: boolean; children: ReactNode }) {
   return (
-    <Link
+    <WonderButton
       href="https://app.wonderdesk.ai"
-      className={featured ? 'wonder-plan-cta' : 'wonder-plan-cta wonder-plan-cta-neutral'}
+      external
+      size="md"
+      variant={featured ? 'primary' : 'secondary'}
+      className="w-full"
     >
       {children}
-    </Link>
+    </WonderButton>
   );
 }
 

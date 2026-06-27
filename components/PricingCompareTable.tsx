@@ -2,7 +2,7 @@
 
 import React from 'react';
 import MarketingHeadline from '@/components/marketing/MarketingHeadline';
-import PixelButton from '@/components/ui/PixelButton';
+import WonderButton from '@/components/ui/WonderButton';
 import { formatUsd, PRICING_USD } from '@/lib/pricing';
 import { Check, Server, X } from 'lucide-react';
 
@@ -196,31 +196,30 @@ function DesktopCompareTable() {
 
         <div className={`${compareCellClass()} py-5`} />
         <div className={`${compareCellClass()} flex items-center justify-center px-3 py-5`}>
-          <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="dark" className="w-full">
+          <WonderButton href="https://app.wonderdesk.ai" external size="md" className="w-full">
             Install locally
-          </PixelButton>
+          </WonderButton>
         </div>
         <div className={`${compareCellClass()} flex items-center justify-center px-3 py-5`}>
-          <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="dark" className="w-full">
+          <WonderButton href="https://app.wonderdesk.ai" external size="md" className="w-full">
             Get started free
-          </PixelButton>
+          </WonderButton>
         </div>
         <div className={`${compareCellClass(true)} flex items-center justify-center px-3 py-5`}>
-          <PixelButton href="https://app.wonderdesk.ai" external size="md" tone="brand" className="w-full">
+          <WonderButton href="https://app.wonderdesk.ai" external size="md" className="w-full">
             Start with business
-          </PixelButton>
+          </WonderButton>
         </div>
         <div className={`${compareCellClass()} flex items-center justify-center px-3 py-5`}>
-          <PixelButton
+          <WonderButton
             href="/contact-us"
             size="md"
-            tone="dark"
-            variant="outline"
+            variant="secondary"
             className="w-full"
             icon={<Server className="h-4 w-4" aria-hidden />}
           >
             Talk to sales
-          </PixelButton>
+          </WonderButton>
         </div>
       </div>
     </div>
