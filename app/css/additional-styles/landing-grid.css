@@ -54,13 +54,14 @@
   --wonder-brand-border: rgba(0, 159, 188, 0.35);
   --wonder-slate-border: #e2e8f0;
   --color-line: #e8e8e5;
-  --site-header-height: 3.5rem;
+  --site-top-bar-height: 2.5rem;
+  --site-header-height: calc(var(--site-top-bar-height) + 3.5rem);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 @media (min-width: 640px) {
   .wonder-shell {
-    --site-header-height: 4rem;
+    --site-header-height: calc(var(--site-top-bar-height) + 4rem);
   }
 }
 

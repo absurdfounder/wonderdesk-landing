@@ -10,6 +10,7 @@ import MobileMenu from './mobile-menu';
 import TabletMenu from './tablet-menu';
 import TranslateButton from './TranslateButton';
 import WonderButton from '@/components/ui/WonderButton';
+import OpenclawAnnouncementBar from '@/components/ui/OpenclawAnnouncementBar';
 
 const featureNavItems = [
   { href: '/features/ai-help-center', title: 'Help Center', description: 'Self-updating knowledge base', icon: Sparkles, iconColor: 'text-sky-500', bgColor: 'bg-sky-50' },
@@ -67,6 +68,7 @@ export default function Header() {
 
   return (
     <header translate="no" className="site-header notranslate fixed top-0 z-[200] w-full transition-all duration-200">
+      <OpenclawAnnouncementBar />
       <div
         className={`border-b border-[var(--color-line)] bg-white transition-colors duration-200 transition-shadow duration-200 ${
           scrolled ? 'shadow-sm' : ''
