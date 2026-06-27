@@ -13,14 +13,17 @@ const CARD_H = 468;
 const VISUAL_H = 240;
 const GAP = 20;
 
-const DOT_GRID_STYLE = {
+const DOT_GRID_STYLE_LIGHT = {
   backgroundColor: '#F7F7F7',
   backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.45) 0.65px, transparent 0.65px)',
   backgroundSize: '10px 10px',
 } as const;
 
-const DOT_GRID_CLASS =
+const DOT_GRID_CLASS_LIGHT =
   'bg-[#F7F7F7] [background-image:radial-gradient(circle,rgba(186,183,195,0.45)_0.65px,transparent_0.65px)] [background-size:10px_10px]';
+
+const DOT_GRID_CLASS_DARK =
+  'bg-[#141414] [background-image:radial-gradient(circle,rgba(148,163,184,0.22)_0.65px,transparent_0.65px)] [background-size:10px_10px]';
 
 const INTEGRATION_ROW_ONE = [
   { name: 'Dashboard', logo: '', dashboard: true },
@@ -67,21 +70,37 @@ function IntegrationPill({
   name,
   logo,
   dashboard,
+  dark = false,
 }: {
   name: string;
   logo: string;
   dashboard?: boolean;
+  dark?: boolean;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[#E5E7EB] bg-white px-3.5 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+    <div
+      className={
+        dark
+          ? 'inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-700 bg-slate-900 px-3.5 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.35)]'
+          : 'inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[#E5E7EB] bg-white px-3.5 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.04)]'
+      }
+    >
       {dashboard ? (
-        <span className="flex h-4 w-4 items-center justify-center rounded bg-slate-100 text-slate-600">
+        <span
+          className={
+            dark
+              ? 'flex h-4 w-4 items-center justify-center rounded bg-slate-800 text-slate-300'
+              : 'flex h-4 w-4 items-center justify-center rounded bg-slate-100 text-slate-600'
+          }
+        >
           <BarChart3 className="h-2.5 w-2.5" strokeWidth={2.25} />
         </span>
       ) : (
         <img src={logo} alt="" width={16} height={16} className="h-4 w-4 rounded-sm object-contain" />
       )}
-      <span className="text-[13px] font-medium leading-none text-[#374151]">{name}</span>
+      <span className={`text-[13px] font-medium leading-none ${dark ? 'text-slate-200' : 'text-[#374151]'}`}>
+        {name}
+      </span>
     </div>
   );
 }
@@ -138,17 +157,17 @@ function IntegrationPillFixed({
   );
 }
 
-function SourcesVisualResponsive() {
+function SourcesVisualResponsive({ dark = false }: { dark?: boolean }) {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-2.5 px-3">
       <div className="flex flex-wrap items-center justify-center gap-2">
         {INTEGRATION_ROW_ONE.map((pill) => (
-          <IntegrationPill key={pill.name} {...pill} />
+          <IntegrationPill key={pill.name} {...pill} dark={dark} />
         ))}
       </div>
       <div className="flex flex-wrap items-center justify-center gap-2">
         {INTEGRATION_ROW_TWO.map((pill) => (
-          <IntegrationPill key={pill.name} {...pill} />
+          <IntegrationPill key={pill.name} {...pill} dark={dark} />
         ))}
       </div>
     </div>
@@ -204,7 +223,17 @@ function ApproveVisual() {
   );
 }
 
-const RESPONSIVE_VISUALS = [<SourcesVisualResponsive key="sources" />, <DraftVisual key="draft" />, <ApproveVisual key="approve" />];
+const RESPONSIVE_VISUALS_LIGHT = [
+  <SourcesVisualResponsive key="sources" />,
+  <DraftVisual key="draft" />,
+  <ApproveVisual key="approve" />,
+];
+
+const RESPONSIVE_VISUALS_DARK = [
+  <SourcesVisualResponsive dark key="sources" />,
+  <DraftVisual key="draft" />,
+  <ApproveVisual key="approve" />,
+];
 
 const FIXED_VISUALS = [<SourcesVisualFixed key="sources" />, <DraftVisual key="draft" />, <ApproveVisual key="approve" />];
 
@@ -212,19 +241,49 @@ function FeatureCardShellResponsive({
   visual,
   title,
   description,
+  dark = false,
 }: {
   visual: ReactNode;
   title: string;
   description: string;
+  dark?: boolean;
 }) {
+  const dotGridClass = dark ? DOT_GRID_CLASS_DARK : DOT_GRID_CLASS_LIGHT;
+
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-[#E8E8E8] bg-white">
-      <div className={`relative h-[240px] shrink-0 overflow-hidden ${DOT_GRID_CLASS}`}>{visual}</div>
-      <div className="flex flex-1 flex-col justify-center px-6 py-8 text-center sm:px-7 sm:py-9">
-        <h3 className="font-sans text-[17px] font-semibold leading-snug tracking-[-0.01em] text-[#111111]">
+    <article
+      className={
+        dark
+          ? 'flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-[#0f0f0f]'
+          : 'flex flex-col overflow-hidden rounded-2xl border border-[#E8E8E8] bg-white'
+      }
+    >
+      <div className={`relative h-[240px] shrink-0 overflow-hidden ${dotGridClass}`}>{visual}</div>
+      <div
+        className={
+          dark
+            ? 'flex flex-1 flex-col justify-center bg-[#0f0f0f] px-6 py-8 text-center sm:px-7 sm:py-9'
+            : 'flex flex-1 flex-col justify-center px-6 py-8 text-center sm:px-7 sm:py-9'
+        }
+      >
+        <h3
+          className={
+            dark
+              ? 'font-sans text-[17px] font-semibold leading-snug tracking-[-0.01em] text-white'
+              : 'font-sans text-[17px] font-semibold leading-snug tracking-[-0.01em] text-[#111111]'
+          }
+        >
           {title}
         </h3>
-        <p className="mt-2.5 text-sm font-normal leading-[1.55] text-[#666666]">{description}</p>
+        <p
+          className={
+            dark
+              ? 'mt-2.5 text-sm font-normal leading-[1.55] text-slate-400'
+              : 'mt-2.5 text-sm font-normal leading-[1.55] text-[#666666]'
+          }
+        >
+          {description}
+        </p>
       </div>
     </article>
   );
@@ -254,7 +313,7 @@ function FeatureCardShellFixed({
     >
       <div
         style={{
-          ...DOT_GRID_STYLE,
+          ...DOT_GRID_STYLE_LIGHT,
           height: VISUAL_H,
           position: 'relative',
           overflow: 'hidden',
@@ -302,7 +361,10 @@ function FeatureCardShellFixed({
   );
 }
 
-export function MeetWonderFeatureCards() {
+export function MeetWonderFeatureCards({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
+  const dark = variant === 'dark';
+  const visuals = dark ? RESPONSIVE_VISUALS_DARK : RESPONSIVE_VISUALS_LIGHT;
+
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
       {CARDS.map((card, index) => (
@@ -310,7 +372,8 @@ export function MeetWonderFeatureCards() {
           key={card.title}
           title={card.title}
           description={card.description}
-          visual={RESPONSIVE_VISUALS[index]}
+          visual={visuals[index]}
+          dark={dark}
         />
       ))}
     </div>
