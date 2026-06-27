@@ -36,7 +36,7 @@ export default function HowWonderWorksSection() {
       />
 
       <div className="landing-grid-column relative bg-white">
-        <div className="landing-grid-pad border-b border-slate-200 py-14 text-center md:py-20">
+        <div className="landing-grid-pad border-b border-slate-200 py-14 text-center md:py-20 lg:py-24">
           <p className="font-silkscreen text-xs uppercase tracking-[0.22em] text-wonder sm:text-sm">
             Meet Wonderdesk
           </p>
@@ -51,7 +51,7 @@ export default function HowWonderWorksSection() {
           </p>
         </div>
 
-        <div className="landing-grid-pad pb-14 pt-10 md:pb-20 md:pt-14">
+        <div className="landing-grid-pad pb-16 pt-12 md:pb-24 md:pt-14">
           <MeetWonderFeatureCards />
         </div>
       </div>

@@ -7,9 +7,9 @@ const testimonials = [
   },
   {
     quote:
-      'Our team finally publishes help articles on schedule. The AI suggestions are a strong starting point, not busywork.',
-    name: 'Alex Moreno',
-    role: 'Founder, HelpNest',
+      'Migration from Intercom took one afternoon. URLs and SEO settings carried over without breaking a single link.',
+    name: 'Jordan Lee',
+    role: 'VP Product, Relay',
   },
   {
     quote:

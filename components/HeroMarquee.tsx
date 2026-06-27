@@ -3,33 +3,27 @@
 import React from 'react';
 import {
   Search,
-  Radio,
-  Workflow,
-  Code,
-  BarChart3,
-  Rocket,
   GitBranch,
-  Mail,
   Globe,
+  Camera,
+  ScrollText,
+  BookOpen,
+  MessageCircle,
   Ticket,
-  Brain,
-  Target,
+  FileText,
   type LucideIcon,
 } from 'lucide-react';
 
 const tags = [
-  { label: 'memory', icon: Brain },
-  { label: 'goals', icon: Target },
-  { label: 'recon', icon: Search },
-  { label: 'comms', icon: Radio },
-  { label: 'logistics', icon: Workflow },
-  { label: 'code ops', icon: Code },
   { label: 'github', icon: GitBranch },
-  { label: 'email', icon: Mail },
-  { label: 'browser', icon: Globe },
-  { label: 'tickets', icon: Ticket },
-  { label: 'deploy', icon: Rocket },
-  { label: 'intel', icon: BarChart3 },
+  { label: 'intercom', icon: MessageCircle },
+  { label: 'zendesk', icon: Ticket },
+  { label: 'notion', icon: FileText },
+  { label: 'screenshots', icon: Camera },
+  { label: 'changelog', icon: ScrollText },
+  { label: 'help center', icon: BookOpen },
+  { label: 'seo', icon: Globe },
+  { label: 'support', icon: Search },
 ];
 
 const Tag = ({

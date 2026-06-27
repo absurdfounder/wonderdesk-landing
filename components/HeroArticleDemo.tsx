@@ -583,7 +583,13 @@ function DemoBoardPane({ tasks, highlightedTaskId }: { tasks: Task[]; highlighte
   );
 }
 
-export default function TrooperDemo({ scenarioId = DEFAULT_DEMO_SCENARIO_ID }: { scenarioId?: DemoScenarioId }) {
+export default function TrooperDemo({
+  scenarioId = DEFAULT_DEMO_SCENARIO_ID,
+  embedded = false,
+}: {
+  scenarioId?: DemoScenarioId;
+  embedded?: boolean;
+}) {
   const scenario = getDemoScenario(scenarioId);
   const CHAT_SCRIPT = scenario.chatScript;
   const TASK_EXEC_SCRIPT = scenario.taskExecScript;
@@ -922,9 +928,12 @@ export default function TrooperDemo({ scenarioId = DEFAULT_DEMO_SCENARIO_ID }: {
         *{box-sizing:border-box}
       `}</style>
 
-      <div className="relative border-t border-slate-100 px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12">
-        <PixelDitherGradient />
-        <div className="Trooper-demo relative z-10 hidden lg:block" style={{ width: "100%", margin: "0 auto", fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 13 }}>
+      <div className={embedded ? 'relative w-full' : 'relative border-t border-slate-100 px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12'}>
+        {!embedded ? <PixelDitherGradient /> : null}
+        <div
+          className={embedded ? 'Trooper-demo relative z-10 w-full' : 'Trooper-demo relative z-10 w-full md:block'}
+          style={{ width: "100%", margin: "0 auto", fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 13 }}
+        >
         <DemoScaleFrame>
         <div style={{
           position: "relative", width: DEMO_CANVAS_W, borderRadius: C.radius, overflow: "hidden",

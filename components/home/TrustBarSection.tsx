@@ -2,22 +2,22 @@ const logos = [
   {
     src: 'https://dazzling-cat.netlify.app/logos/zeroslistlogo.png',
     alt: 'Zeroslist',
-    className: 'h-6',
+    className: 'h-7',
   },
   {
     kind: 'marketing-x' as const,
     alt: 'Marketing X',
-    className: 'h-5',
+    className: 'h-6',
   },
   {
     src: 'https://dazzling-cat.netlify.app/logos/dealflowlogo.png',
     alt: 'Dealflow',
-    className: 'h-7',
+    className: 'h-8',
   },
   {
     src: 'https://dazzling-cat.netlify.app/logos/downtownlogo.png',
     alt: 'Downtown',
-    className: 'h-10',
+    className: 'h-11',
   },
 ];
 
@@ -65,7 +65,7 @@ function TrustLogo({
       className={`${logo.className} flex max-h-12 shrink-0 items-center transition-transform duration-300 hover:scale-105`}
     >
       <img
-        className="h-full w-auto max-w-[9rem] object-contain opacity-70 transition-opacity duration-300 hover:opacity-100"
+        className="h-full w-auto max-w-[10rem] object-contain opacity-85 transition-opacity duration-300 hover:opacity-100"
         src={logo.src}
         alt={logo.alt}
         style={{ filter: 'brightness(0) invert(1)' }}

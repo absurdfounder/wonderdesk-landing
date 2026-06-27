@@ -171,7 +171,7 @@ export default function PlatformFeaturesSection() {
                   ref={(el) => {
                     cardRefs.current[index] = el;
                   }}
-                  className="lg:sticky lg:top-[14vh] lg:pb-28"
+                  className="lg:sticky lg:top-[14vh] lg:pb-16"
                   style={{ zIndex: blocks.length + index }}
                 >
                   <article

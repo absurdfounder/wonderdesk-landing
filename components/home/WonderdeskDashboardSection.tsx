@@ -2,44 +2,38 @@
 
 import HeroArticleDemo from '@/components/HeroArticleDemo';
 import HeroMarquee from '@/components/HeroMarquee';
-import FernCircleCheckIcon from '@/components/ui/FernCircleCheckIcon';
-
-const TRUST_ITEMS = ['7-day free trial', 'No credit card required', 'Import your existing docs'] as const;
+import PixelDitherGradient from '@/components/ui/PixelDitherGradient';
 
 export default function WonderdeskDashboardSection() {
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="landing-grid-column bg-white">
-        <div className="landing-grid-pad border-b border-slate-200 pb-10 pt-8 md:pb-14 md:pt-10">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="min-w-0">
-              <p className="font-silkscreen text-[10px] font-bold uppercase tracking-[0.18em] text-wonder sm:text-xs">
-                Built for your stack
-              </p>
-              <div className="mt-3 max-w-3xl">
-                <HeroMarquee />
-              </div>
-            </div>
-
-            <ul className="wonder-trust-row shrink-0" aria-label="Product highlights">
-              {TRUST_ITEMS.map((item) => (
-                <li key={item} className="wonder-trust-row__item">
-                  <FernCircleCheckIcon className="wonder-trust-row__check text-wonder" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative mt-8 hidden min-w-0 overflow-hidden sm:mt-10 lg:block">
-            <HeroArticleDemo />
-          </div>
-
-          <div className="relative mt-8 min-w-0 overflow-hidden lg:hidden">
-            <p className="mb-4 text-center text-sm text-slate-500">
-              Open on desktop for the full interactive workspace preview.
+        <div className="landing-grid-pad border-b border-slate-200 py-12 md:py-16 lg:py-20">
+          <div className="max-w-3xl">
+            <p className="font-silkscreen text-xs uppercase tracking-[0.22em] text-wonder sm:text-sm">
+              See it in action
             </p>
-            <HeroArticleDemo />
+            <h2 className="mt-3 font-display text-2xl font-normal leading-tight text-slate-900 sm:text-3xl md:text-4xl">
+              Chat, tasks, and doc drafts in one workspace
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+              Wonderdesk connects to your stack, assigns documentation work, and queues article updates for
+              review—so your team ships help content with the same rhythm as product releases.
+            </p>
+          </div>
+
+          <div className="mt-8 max-w-4xl">
+            <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:text-[11px]">
+              Connects with
+            </p>
+            <HeroMarquee />
+          </div>
+
+          <div className="relative mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 md:mt-10">
+            <PixelDitherGradient />
+            <div className="relative z-10 p-2 sm:p-4 md:p-5">
+              <HeroArticleDemo embedded />
+            </div>
           </div>
         </div>
       </div>

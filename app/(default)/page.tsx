@@ -56,15 +56,15 @@ export default function Home() {
         </div>
 
         <div className="homepage-grid-row">
-          <WonderdeskDashboardSection />
-        </div>
-
-        <div className="homepage-grid-row">
           <HowWonderWorksSection />
         </div>
 
         <div className="homepage-grid-row">
           <PlatformFeaturesSection />
+        </div>
+
+        <div className="homepage-grid-row">
+          <WonderdeskDashboardSection />
         </div>
 
         <div className="homepage-grid-row">
