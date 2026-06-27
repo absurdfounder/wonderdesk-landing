@@ -1,7 +1,11 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
 import LandingIconsGrid from '@/components/LandingIconsGrid';
+
+const OPENCLAW_ICON =
+  'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/openclaw-color.png';
 
 export default function IntegrationsCapabilitySection() {
   return (
@@ -18,10 +22,20 @@ export default function IntegrationsCapabilitySection() {
                 <ChevronRight className="size-4" aria-hidden />
               </Link>
             </p>
-            <h2 className="font-display text-3xl font-medium leading-9 tracking-tight text-ink sm:text-4xl sm:leading-11 xl:text-[2.75rem] xl:leading-[3rem]">
-              Anything your product touches,
-              <br />
-              Wonderdesk keeps documented.
+            <h2 className="mx-auto max-w-4xl font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl xl:text-[2.75rem] xl:leading-[3rem]">
+              <span className="inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-2 leading-tight sm:leading-[1.15]">
+                <Image
+                  src={OPENCLAW_ICON}
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9"
+                />
+                <span>Openclaw meets Support</span>
+              </span>
+              <span className="mt-3 block text-lg font-normal leading-snug text-slate-500 sm:mt-4 sm:text-xl xl:text-2xl">
+                Automate everything about Support
+              </span>
             </h2>
           </div>
         </div>
