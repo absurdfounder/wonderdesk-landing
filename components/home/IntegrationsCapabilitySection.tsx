@@ -69,7 +69,7 @@ export default function IntegrationsCapabilitySection({
           <OpenclawHeadline compact />
         </div>
 
-        <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-b from-neutral-50 to-white">
+        <div>
           <LandingIconsGrid />
         </div>
 
