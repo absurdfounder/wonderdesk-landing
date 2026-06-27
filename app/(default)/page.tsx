@@ -1,14 +1,14 @@
 export const metadata = {
   metadataBase: new URL('https://wonderdesk.ai'),
-  title: 'Wonderdesk : AI Help Center, Blog, Changelog & Docs That Stay Up to Date',
-description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.',
+  title: 'Wonderdesk | AI Help Center & Knowledge Base Software',
+description: 'Wonderdesk is AI help center software that drafts and updates documentation from your product changes. Launch a searchable knowledge base with custom domains, SEO, and analytics.',
   openGraph: {
     images: [
       {
         url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
         width: 1200,
         height: 630,
-        alt: "AI Help Center, Blog, Changelog & Docs That Stay Up to Date",
+        alt: "Wonderdesk AI help center and knowledge base software",
       },
     ],
   },
@@ -79,8 +79,8 @@ export default function Home() {
         </div>
 
         <div className="homepage-grid-row">
-          <section className="bg-canvas-warm">
-            <div className="landing-grid-column bg-canvas-warm">
+          <section className="bg-slate-100">
+            <div className="landing-grid-column bg-slate-100">
               <FAQ embedded />
             </div>
           </section>

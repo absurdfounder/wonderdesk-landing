@@ -19,6 +19,7 @@ import {
   Unplug,
 } from 'lucide-react';
 import PixelLandscapeWide from './shared/PixelLandscapeWide';
+import FeatureSkyBackground from './shared/FeatureSkyBackground';
 import { HOME_FEATURE_PLAIN_BG } from './PrDocsPlatformCards';
 
 export const PRODUCT_COL_W = 373;
@@ -405,12 +406,13 @@ export function ProductColumnVisual({
 }: {
   id: ProductCardId;
   landscapeId?: string;
-  variant?: 'landscape' | 'plain';
+  variant?: 'landscape' | 'plain' | 'photo';
 }) {
   const Card = CARD_BY_ID[id];
 
   return (
     <div
+      className={variant === 'photo' ? 'platform-feature-visual-root' : undefined}
       style={{
         width: '100%',
         height: '100%',
@@ -428,17 +430,29 @@ export function ProductColumnVisual({
           />
         </div>
       ) : null}
+      {variant === 'photo' ? <FeatureSkyBackground tinted /> : null}
       <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: variant === 'plain' ? '18px 22px' : '16px 20px',
-        }}
+        className={variant === 'photo' ? 'platform-feature-mockup-stage' : undefined}
+        style={
+          variant === 'photo'
+            ? undefined
+            : {
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: variant === 'plain' ? '18px 22px' : '16px 20px',
+              }
+        }
       >
-        <Card />
+        {variant === 'photo' ? (
+          <div className="platform-feature-mockup">
+            <Card />
+          </div>
+        ) : (
+          <Card />
+        )}
       </div>
     </div>
   );

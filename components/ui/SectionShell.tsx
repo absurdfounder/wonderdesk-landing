@@ -17,19 +17,19 @@ export default function SectionShell({
   eyebrow,
   eyebrowNumber,
   className = '',
-  bgClass = 'bg-canvas',
+  bgClass = 'bg-slate-100',
   noBorder = false,
   noBorderBottom = true,
   clearSiteHeader = false,
   children,
 }: SectionShellProps) {
-  const sectionClasses = [bgClass || 'bg-canvas', clearSiteHeader ? 'site-header-clear' : '', className]
+  const sectionClasses = [bgClass || 'bg-slate-100', clearSiteHeader ? 'site-header-clear' : '', className]
     .filter(Boolean)
     .join(' ');
 
   const frameClasses = [
     'mx-auto min-w-0 max-w-7xl overflow-x-hidden border-[var(--color-line)] px-4 sm:px-6',
-    bgClass || 'bg-canvas',
+    bgClass || 'bg-slate-100',
     !noBorder ? 'border-l border-r border-t' : 'border-l border-r',
     !noBorderBottom ? 'border-b' : '',
   ]

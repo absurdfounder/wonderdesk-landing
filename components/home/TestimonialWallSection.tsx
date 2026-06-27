@@ -1,38 +1,38 @@
 const testimonials = [
   {
     quote:
-      'Wonder is by far the best support product I have ever used.',
+      'Wonderdesk cut the time we spend fixing docs after each release. Drafts are ready before support even notices the gap.',
     name: 'Ryan Patel',
     role: 'Co-founder, Flowstack',
   },
   {
     quote:
-      'We\u2019re saving at least 20 hours a month which frees me up to work on more impactful tasks.',
+      'Our team finally publishes help articles on schedule. The AI suggestions are a strong starting point, not busywork.',
     name: 'Alex Moreno',
     role: 'Founder, HelpNest',
   },
   {
     quote:
-      'I used to never update my articles — they got stale from day one. Now my docs stay up to date automatically.',
-    name: 'Fed',
-    role: 'Founder, GummySearch',
+      'Search analytics showed us which docs were failing users. We fixed the top gaps and ticket volume dropped.',
+    name: 'Maya Chen',
+    role: 'Head of Support, Northline',
   },
   {
     quote:
-      'Being able to see what customers search for and can\u2019t find has been huge. Support requests dropped significantly.',
-    name: 'Laura Elizabeth',
-    role: 'Founder, Client Portal',
+      'We imported from Zendesk in an afternoon. URLs stayed intact and the content looked better the same day.',
+    name: 'Laura Brooks',
+    role: 'Product Ops, Client Portal',
   },
   {
     quote:
-      'I connected Discord, Intercom, and GitHub — within five minutes I had more than 20 tailor-made draft articles.',
-    name: 'Richie McIlroy',
+      'Connecting GitHub gave us draft updates tied to real pull requests. Reviewing them is faster than writing from scratch.',
+    name: 'Richie Park',
     role: 'Founder, Cap',
   },
   {
     quote:
-      'Wonder audits help articles and surfaces gaps fast. We\u2019re already seeing a reduction in customer churn.',
-    name: 'Emmett',
+      'The audit view helped us find missing onboarding docs quickly. New users stopped getting stuck on the same steps.',
+    name: 'Emmett Shaw',
     role: 'Founder, PixelFlow',
   },
 ];
@@ -44,11 +44,11 @@ export default function TestimonialWallSection() {
         <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
           <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">Customers</p>
           <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            Wonder customers save 20 hours a month on average
+            Teams use Wonderdesk to ship docs with less overhead
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            Founders who used to dread updating docs now ship features every week — and Wonder keeps every help
-            article accurate.
+            Product and support teams use Wonderdesk to keep knowledge base content current, reduce repeat
+            tickets, and launch help centers faster.
           </p>
         </div>
 

@@ -16,16 +16,16 @@ const FONT = 'var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif';
 
 const COLUMNS = [
   {
-    boldLead: 'Advanced analytics',
-    rest: 'show you how your customers are using your help center, what articles are performing well, and where there\'s room for improvement.',
+    boldLead: 'Help center analytics',
+    rest: 'show which articles get traffic, which searches fail, and where content needs work.',
   },
   {
-    boldLead: 'Our world-class editor',
-    rest: 'helps you create and edit content faster than any other platform.',
+    boldLead: 'A fast built-in editor',
+    rest: 'for writing and updating documentation without leaving Wonderdesk.',
   },
   {
-    boldLead: 'Collect positive and negative feedback',
-    rest: 'from your customers, and use them to improve your help center over time.',
+    boldLead: 'Reader feedback tools',
+    rest: 'so you can learn which articles help users and which ones need a rewrite.',
   },
 ];
 

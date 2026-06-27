@@ -27,8 +27,7 @@ export default function HowItWorksSection() {
             One home for all product knowledge
             </h2>
             <p className="body-text mt-6 max-w-4xl text-base text-slate-600 leading-relaxed">
-            Your current help center, blog, changelog, and documentation is a constant struggle to maintain. Wonder gives you a fully customizable, SEO-optimized help center that our AI agent, Wonder, automatically keeps in sync with your product.
-
+            Wonderdesk brings your help center, changelog, blog, and product docs into one SEO-friendly platform. Our AI agent suggests updates when your product changes, so your team spends less time fixing stale articles.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
               <Link

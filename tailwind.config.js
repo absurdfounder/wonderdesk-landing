@@ -16,11 +16,6 @@ module.exports = {
           700: '#007a94',
           800: '#006b80',
         },
-        canvas: {
-          DEFAULT: '#FAFAF8',
-          warm: '#F7F7F4',
-          section: '#FCFCFA',
-        },
         ink: {
           DEFAULT: '#1a1a1a',
           muted: '#525252',

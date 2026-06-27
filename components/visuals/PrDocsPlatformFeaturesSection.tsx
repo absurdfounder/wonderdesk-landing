@@ -17,16 +17,16 @@ const FONT = 'var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif';
 
 const COLUMNS = [
   {
-    boldLead: 'Connect a custom domain or subfolder',
-    rest: 'to Wonderdesk and make your help center feel like part of your main website.',
+    boldLead: 'Use your own domain or subfolder',
+    rest: 'so your help center looks and feels like part of your main website.',
   },
   {
-    boldLead: 'SEO and AEO optimized out of the box,',
-    rest: 'so your customers can find answers to their questions on Google, ChatGPT and more.',
+    boldLead: 'SEO-ready pages',
+    rest: 'with clean structure so customers can find answers on Google, ChatGPT, and other search tools.',
   },
   {
-    boldLead: 'Articles load in milliseconds,',
-    rest: 'so your page rankings improve and your customers find answers faster.',
+    boldLead: 'Fast article pages',
+    rest: 'that load quickly, rank better, and keep users on your site.',
   },
 ];
 

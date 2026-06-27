@@ -11,6 +11,7 @@ import {
   X,
 } from 'lucide-react';
 import PixelLandscapeWide from './shared/PixelLandscapeWide';
+import FeatureSkyBackground from './shared/FeatureSkyBackground';
 
 export const PLATFORM_COL_W = 373;
 export const PLATFORM_VISUAL_H = 352;
@@ -62,7 +63,7 @@ export function DomainLiveCard() {
 
       <div
         style={{
-          border: '2px solid #111111',
+          border: '2px solid #009fbc',
           borderRadius: 10,
           padding: '11px 12px',
           marginBottom: 8,
@@ -337,12 +338,13 @@ export function PlatformColumnVisual({
 }: {
   id: PlatformCardId;
   landscapeId?: string;
-  variant?: 'landscape' | 'plain';
+  variant?: 'landscape' | 'plain' | 'photo';
 }) {
   const Card = CARD_BY_ID[id];
 
   return (
     <div
+      className={variant === 'photo' ? 'platform-feature-visual-root' : undefined}
       style={{
         width: '100%',
         height: '100%',
@@ -360,17 +362,29 @@ export function PlatformColumnVisual({
           />
         </div>
       ) : null}
+      {variant === 'photo' ? <FeatureSkyBackground tinted /> : null}
       <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '18px 22px',
-        }}
+        className={variant === 'photo' ? 'platform-feature-mockup-stage' : undefined}
+        style={
+          variant === 'photo'
+            ? undefined
+            : {
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '18px 22px',
+              }
+        }
       >
-        <Card />
+        {variant === 'photo' ? (
+          <div className="platform-feature-mockup">
+            <Card />
+          </div>
+        ) : (
+          <Card />
+        )}
       </div>
     </div>
   );

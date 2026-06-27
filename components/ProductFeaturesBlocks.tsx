@@ -10,20 +10,20 @@ const blocks: Array<{
 }> = [
   {
     tag: 'Analytics',
-    title: 'Advanced analytics',
-    body: 'show you how your customers are using your help center, what articles are performing well, and where there\'s room for improvement.',
+    title: 'Help center analytics',
+    body: 'show which articles get traffic, which searches fail, and where your documentation needs work.',
     visual: 'analytics',
   },
   {
     tag: 'Editor',
-    title: 'Our world-class editor',
-    body: 'helps you create and edit content faster than any other platform.',
+    title: 'Built-in editor',
+    body: 'for writing and updating help articles, changelogs, and guides in one place.',
     visual: 'editor',
   },
   {
     tag: 'Feedback',
-    title: 'Collect positive and negative feedback',
-    body: 'from your customers, and use them to improve your help center over time.',
+    title: 'Reader feedback',
+    body: 'helps you spot weak articles and improve your knowledge base over time.',
     visual: 'feedback',
   },
 ];
@@ -34,11 +34,11 @@ export default function ProductFeaturesBlocks() {
       <div className="landing-grid-column">
         <div className="border-b border-slate-200 landing-grid-pad py-10 md:py-12">
           <h2 className="font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            Optimize
+            Improve your documentation over time
           </h2>
           <p className="mt-3 max-w-3xl text-base text-slate-600 sm:text-lg md:mt-4">
-            Continuously improve your help center. Wonder gives you the tools you need to optimize
-            performance and customer satisfaction.
+            Wonderdesk gives you analytics, editing, and feedback tools so your help center gets better as
+            your product grows.
           </p>
         </div>
 

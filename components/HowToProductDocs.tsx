@@ -17,7 +17,7 @@ export default function HowtoDocs() {
                 </span>
               </h2>
               <p className="text-lg sm:text-xl text-slate-600">
-                Wonder automatically keeps your help center up to date by listening to your team communicate about your product. Here's how it works…
+                Wonderdesk helps your team keep help center content current by connecting product changes to documentation updates. Here&apos;s how it works…
               </p>
             </div>
 
@@ -228,7 +228,7 @@ export default function HowtoDocs() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-xl mx-auto px-4">
               <Link
                 href="https://app.wonderdesk.ai"
-                className="w-full sm:w-auto px-6 py-3 text-lg sm:text-xl bg-orange-700 text-black rounded-lg hover:bg-orange-700 transition-colors duration-300 text-center"
+                className="wonder-btn-primary w-full sm:w-auto text-center"
               >
                 Start from 98% Ready
               </Link>

@@ -201,7 +201,7 @@ const FAQ: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
     <div
       className={
         embedded
-          ? 'bg-canvas-warm pb-12 pt-10 md:pb-16 md:pt-14'
+          ? 'bg-slate-100 pb-12 pt-10 md:pb-16 md:pt-14'
           : 'mx-auto max-w-7xl px-0 pb-12 pt-4 sm:pb-20 sm:pt-6'
       }
     >

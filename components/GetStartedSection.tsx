@@ -17,15 +17,14 @@ export default function GetStartedSection() {
       <div className="landing-grid-column">
         <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-14">
           <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
-            One-click migration
+            Easy migration
           </p>
           <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            Switching is a click, not a project
+            Move your help center without rebuilding it
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            Already on Intercom, Zendesk, or Help Scout? Bring your help center across in one click. Original
-            URLs preserved, redirects handled, SEO intact — Wonder refines what you have instead of making you
-            rewrite from scratch.
+            Import content from Intercom, Zendesk, Help Scout, and other tools. Wonderdesk keeps your URLs,
+            redirects, and SEO settings so the switch is low risk.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-2">

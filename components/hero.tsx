@@ -52,17 +52,16 @@ export default function Hero(_props: HeroProps) {
             <div className="flex-1 lg:max-w-[48%] text-left">
               <div className="px-2 sm:px-4 md:px-6 lg:px-0">
                 <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
-                  Self-updating docs
+                  AI help center software
                 </p>
 
                 <h1 className="mt-3 max-w-3xl font-display text-3xl font-normal leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:max-w-none">
-                  Never write another help article
+                  Keep your help docs accurate after every release
                 </h1>
 
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                  Wonder is the help center with an AI agent that watches your codebase, support tickets, and
-                  releases — then drafts the doc updates for you to approve. Stop shipping outdated docs to your
-                  customers.
+                  Wonderdesk is an AI help center that tracks product changes, drafts documentation updates,
+                  and lets your team review before publish. Fewer support tickets. Better self-serve answers.
                 </p>
               </div>
 
@@ -72,8 +71,8 @@ export default function Hero(_props: HeroProps) {
 
               <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 px-4 text-sm text-slate-500 sm:px-0 lg:px-0">
                 <li>7-day free trial</li>
-                <li>No credit card</li>
-                <li>Migrate in one click</li>
+                <li>No credit card required</li>
+                <li>Import your existing docs</li>
               </ul>
 
               <div className="mt-6 px-4 sm:px-0 lg:px-0">

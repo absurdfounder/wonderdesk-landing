@@ -4,18 +4,18 @@ import { BookOpen, FilePen, ShieldCheck } from 'lucide-react';
 const steps = [
   {
     icon: BookOpen,
-    title: 'Wonder reads your real sources',
-    body: 'Your codebase, pull requests, support tickets, changelogs, and product videos — everywhere your product knowledge already lives.',
+    title: 'Connect your product sources',
+    body: 'Link GitHub, support tools, changelogs, and release notes so Wonderdesk understands how your product works today.',
   },
   {
     icon: FilePen,
-    title: 'Wonder drafts every update',
-    body: 'When something ships, Wonder rewrites stale articles and refreshes screenshots the way a teammate would — ready for your review.',
+    title: 'Get suggested doc updates',
+    body: 'When features change, Wonderdesk drafts new or revised help articles and can refresh screenshots for you to review.',
   },
   {
     icon: ShieldCheck,
-    title: 'You approve in one click',
-    body: 'Every update lands as a draft. Publish it, edit it first, or dismiss it. Nothing goes live without you.',
+    title: 'Publish what you approve',
+    body: 'Every suggestion arrives as a draft. Edit it, publish it, or skip it. Your team stays in control.',
   },
 ];
 
@@ -24,13 +24,13 @@ export default function HowWonderWorksSection() {
     <section className="bg-white">
       <div className="landing-grid-column">
         <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
-          <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">Meet Wonder</p>
+          <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">How it works</p>
           <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            You build the product. Wonder handles the docs.
+            An AI help center that updates with your product
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            Not a chatbot you prompt. An agent that watches your product, drafts doc updates, and queues them for
-            approval — so your help center stays accurate as you ship.
+            Wonderdesk watches for changes, suggests documentation updates, and helps your team keep knowledge
+            base content accurate without manual rewrites after every release.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">

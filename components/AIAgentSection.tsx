@@ -20,33 +20,33 @@ import {
 import { HOME_FEATURE_PLAIN_BG } from '@/components/visuals/PrDocsPlatformCards';
 
 const PROCESSING_STEPS = [
-  { icon: 'search' as const, label: 'Scanning 47 help articles…' },
-  { icon: 'file' as const, label: 'Found 12 articles with phone references' },
-  { icon: 'edit' as const, label: 'Replacing with support portal links…' },
-  { icon: 'image' as const, label: 'Updating screenshots…' },
-  { icon: 'check' as const, label: 'Done! 12 articles updated' },
+  { icon: 'search' as const, label: 'Scanning 38 help articles…' },
+  { icon: 'file' as const, label: 'Found 9 articles with old Settings labels' },
+  { icon: 'edit' as const, label: 'Updating copy to Workspace settings…' },
+  { icon: 'image' as const, label: 'Refreshing screenshots…' },
+  { icon: 'check' as const, label: 'Done! 9 articles ready for review' },
 ];
 
 const DRAFT_ARTICLES = [
   {
-    title: 'How to contact support',
+    title: 'Open workspace settings',
     excerpt:
-      'If you need help with your account, reach our support team through our support portal. Visit support.company.com to submit a ticket.',
-    changes: 4,
+      'Manage team members, billing, and notifications from Workspace settings in the left sidebar of your dashboard.',
+    changes: 3,
     status: 'Updated',
   },
   {
-    title: 'Account settings and preferences',
+    title: 'Invite teammates to your workspace',
     excerpt:
-      'Update your account information, change notification preferences, and manage your subscription through our support portal.',
+      'Go to Workspace settings → Team, enter an email address, and choose a role before sending the invite.',
     changes: 2,
     status: 'Updated',
   },
   {
-    title: 'Billing and payment help',
+    title: 'Change notification preferences',
     excerpt:
-      'Questions about billing? Need to update your payment method? Our support team can help through our support portal.',
-    changes: 3,
+      'Open Workspace settings → Notifications to choose which product and billing alerts you receive by email.',
+    changes: 2,
     status: 'Updated',
   },
 ];
@@ -73,7 +73,7 @@ const CHAT_SCRIPT: ChatScriptStep[] = [
     type: 'user',
     sender: 'Vaibhav',
     avatar: 'https://avatars.githubusercontent.com/u/25829699?v=4',
-    text: 'Hey Wonder, can you remove all phone-number mentions and replace with our support portal link → support.company.com',
+    text: 'Hey Wonder, we renamed Settings to Workspace settings in the app. Please update the help docs.',
     time: '3:42 PM',
     delay: 200,
   },
@@ -81,7 +81,7 @@ const CHAT_SCRIPT: ChatScriptStep[] = [
   {
     type: 'agent',
     sender: 'Wonder',
-    text: 'On it! Scanning your help center now…',
+    text: 'On it. I am scanning your knowledge base for outdated Settings references.',
     time: '3:43 PM',
     delay: 1000,
   },
@@ -89,7 +89,7 @@ const CHAT_SCRIPT: ChatScriptStep[] = [
   {
     type: 'agent',
     sender: 'Wonder',
-    text: "All done! I found and updated 12 articles across your help center. Replaced all phone numbers with the support portal link and refreshed the screenshots. Here's a preview:",
+    text: 'Finished. I updated 9 articles with the new Workspace settings label and refreshed the screenshots. Preview:',
     time: '3:44 PM',
     delay: 6500,
   },
@@ -158,15 +158,7 @@ function ProcessingSteps({ visibleCount }: { visibleCount: number }) {
 }
 
 function renderMessageText(text: string) {
-  return text.split(/(support\.company\.com)/g).map((part, j) =>
-    part === 'support.company.com' ? (
-      <span key={j} className="font-medium text-wonder underline decoration-wonder/30 underline-offset-2">
-        {part}
-      </span>
-    ) : (
-      <span key={j}>{part}</span>
-    ),
-  );
+  return text;
 }
 
 export default function AIAgentSection({ demoOnly = false }: { demoOnly?: boolean }) {
@@ -266,14 +258,14 @@ export default function AIAgentSection({ demoOnly = false }: { demoOnly?: boolea
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
                 <span className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
-                  Just ask Wonder
+                  AI documentation agent
                 </span>
                 <h2 className="mt-3 font-display text-2xl text-slate-800 sm:text-3xl md:text-4xl">
-                  The AI agent that writes and updates your help articles for you
+                  Ask Wonderdesk to update your help articles
                 </h2>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                  Tell Wonder what to change in plain English. It scans your help center, edits articles,
-                  refreshes screenshots, and queues updates for review — like a teammate who never forgets.
+                  Describe the change in plain English. Wonderdesk reviews your knowledge base, drafts edits,
+                  refreshes screenshots when needed, and sends updates for your team to approve.
                 </p>
               </div>
 

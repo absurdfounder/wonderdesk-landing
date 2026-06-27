@@ -92,11 +92,11 @@ export default function PageDetail() {
                                             professional <span className="text-3xl sm:text-4xl md:text-5xl gradient-text-accent mx-4">directory</span>
                                         </h1>
                                         <p className="max-w-md mx-auto mt-3 text-base text-slate-500 sm:mb-0 sm:text-lg md:mt-5 md:text-lg md:max-w-2xl">
-                                            Your support inbox is flooded with customers who want to self-serve, not spend hours talking to an agent.  But your help center is constantly out of date and your customers can’t find what they’re looking for. With Wonder, never again.
+                                            Customers want self-serve answers, but outdated help docs send them back to support. Wonderdesk helps you publish a searchable knowledge base that stays aligned with your product.
                                         </p>
                                         <div className="flex flex-col-reverse justify-center w-full mt-10 sm:flex-row">
                                             <div className="mt-3 sm:mt-0">
-                                                <Link href="/signup" className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out rounded-md shadow bg-orange-700 sm:w-auto">
+                                                <Link href="/signup" className="wonder-btn-primary w-full sm:w-auto">
                                                     <strong className="mr-1">Create a free account →</strong>
                                                 </Link>
                                                 <p className="mt-3 text-sm text-slate-700"><strong>Free</strong> 3 day trial. Free Design Service.</p>

@@ -4,20 +4,20 @@ const sectionXPadding = "px-4 sm:px-6 lg:px-8";
 
 const blocks = [
   {
-    title: "Advanced analytics",
-    body: "show you how your customers are using your help center, what articles are performing well, and where there's room for improvement.",
+    title: "Help center analytics",
+    body: "show which articles get traffic, which searches fail, and where your documentation needs work.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
     alt: "Analytics",
   },
   {
-    title: "World-class editor",
-    body: "helps you create and edit content faster than any other platform.",
+    title: "Built-in editor",
+    body: "for writing and updating help articles without leaving Wonderdesk.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
     alt: "Editor",
   },
   {
-    title: "Customer feedback",
-    body: "collect positive and negative feedback from your customers, and use them to improve your help center over time.",
+    title: "Reader feedback",
+    body: "helps you learn which articles help users and which ones need a rewrite.",
     image: "https://dazzling-cat.netlify.app/wonderdomain.png",
     alt: "Feedback",
   }
@@ -26,22 +26,20 @@ const blocks = [
 export default function FeaturesBlocks() {
   return (
     <section className="relative py-12 md:py-16">
-      {/* Section header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-12">
         <div className="text-start">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-4 text-slate-800">
-          Optimize
+            Improve your documentation
           </h2>
           <p className="text-xl text-slate-600 mb-2">
-            Continuously improve your help center
+            Tools to grow a better knowledge base
           </p>
           <p className="text-lg text-slate-600">
-            Wonder gives you the tools you need to optimize your help center and improve customer satisfaction.
+            Wonderdesk includes analytics, editing, and feedback features so your help center improves over time.
           </p>
         </div>
       </div>
 
-      {/* 3-column grid with cards - max-w-7xl */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {blocks.map((block) => (

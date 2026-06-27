@@ -114,9 +114,9 @@ export default function PrDocsMigrationSection() {
             lineHeight: 1.15,
           }}
         >
-          Switching is a click,
+          Move your help center
           <br />
-          not a project
+          without starting over
         </h2>
 
         <p
@@ -129,9 +129,8 @@ export default function PrDocsMigrationSection() {
             maxWidth: 460,
           }}
         >
-          Already on Intercom, Zendesk, or GitBook? Bring your help center across in one click.
-          Original URLs preserved, redirects handled, SEO intact. Wonder refines what you already
-          have instead of making you rewrite from scratch.
+          Import from Intercom, Zendesk, GitBook, and other platforms. Wonderdesk preserves URLs, redirects,
+          and SEO metadata so your migration is low risk.
         </p>
 
         <p

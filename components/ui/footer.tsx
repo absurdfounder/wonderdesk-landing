@@ -19,7 +19,7 @@ import {
   Zap,
 } from 'lucide-react';
 import WonderLogo from '@/components/ui/WonderLogo';
-import PixelButton from '@/components/ui/PixelButton';
+import WonderButton from '@/components/ui/WonderButton';
 
 type LinkItem = {
   label: string;
@@ -172,7 +172,7 @@ export default function Footer() {
           <div className="flex flex-col gap-5 border-b border-slate-100 px-6 py-8 sm:col-span-2 md:px-8 md:py-10 lg:col-span-1 lg:border-b-0 lg:border-r lg:border-slate-100">
             <WonderLogo characterClassName="h-10 w-10 sm:h-11 sm:w-11 rounded-md object-contain" textClassName="text-lg sm:text-xl" />
             <p className="text-sm leading-relaxed text-slate-600">
-              The AI agent that keeps your help center, blog, changelog, and documentation up to date.
+              Wonderdesk helps teams run an AI-powered help center, knowledge base, changelog, and product docs from one place.
             </p>
             <p className="text-sm text-slate-600">
               Built by{' '}
@@ -253,18 +253,17 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <PixelButton
+            <WonderButton
               href="https://github.com/absurdfounder"
               external
               size="sm"
               variant="outline"
-              tone="dark"
-              ariaLabel="Track my commits on GitHub"
+              aria-label="Track my commits on GitHub"
               icon={<Github className="h-3.5 w-3.5" strokeWidth={2} />}
             >
               <span className="hidden md:inline">Track my commits</span>
               <span className="md:hidden">Commits</span>
-            </PixelButton>
+            </WonderButton>
             <a
               href="https://www.notion.com/integrations/wonder-sites"
               target="_blank"

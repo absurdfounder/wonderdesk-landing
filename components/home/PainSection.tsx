@@ -1,15 +1,15 @@
 const pains = [
   {
-    title: 'You sent the link knowing it was wrong',
-    body: 'The screenshot was two redesigns old. Fixing it meant an hour you didn\u2019t have — so you sent it anyway and hoped they wouldn\u2019t scroll far.',
+    title: 'Screenshots no longer match the product',
+    body: 'A small UI change can make a whole tutorial wrong. Fixing it takes time, so outdated images stay live longer than they should.',
   },
   {
-    title: 'You\u2019ve answered this exact question 200 times',
-    body: 'It should live in your help center. Instead it lives in your inbox, costing you ten minutes every week. Writing it up never reaches the top of the list.',
+    title: 'Support keeps answering the same questions',
+    body: 'Your team explains the same workflow in chat every week. The answer belongs in your knowledge base, but writing it keeps getting pushed back.',
   },
   {
-    title: 'A trial user got stuck and never came back',
-    body: 'They wanted to help themselves. The doc they needed was missing or wrong, so they quietly gave up. You won\u2019t get a ticket — just a trial that never converted.',
+    title: 'Users leave when docs fail them',
+    body: 'People try to self-serve first. If search returns old or missing articles, they give up, open a ticket, or churn quietly.',
   },
 ];
 
@@ -18,13 +18,13 @@ export default function PainSection() {
     <section className="bg-white">
       <div className="landing-grid-column">
         <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-14">
-          <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">Sound familiar?</p>
+          <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">The problem</p>
           <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            Your help center has been next weekend&apos;s problem for six months.
+            Outdated help docs create extra support work
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            It&apos;s not that you don&apos;t care. You ship constantly, and every renamed button or reworked flow
-            quietly makes a help article wrong. No test fails. Nothing flags it. You find out when a customer does.
+            Product teams ship fast. Documentation usually lags behind. That gap shows up as repeat tickets,
+            slower onboarding, and lower trust in your help center.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">

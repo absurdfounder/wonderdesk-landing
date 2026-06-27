@@ -68,7 +68,7 @@ export default function Header() {
   return (
     <header translate="no" className="site-header notranslate fixed top-0 z-[200] w-full transition-all duration-200">
       <div
-        className={`border-b border-[var(--color-line)] bg-canvas transition-colors duration-200 transition-shadow duration-200 ${
+        className={`border-b border-[var(--color-line)] bg-white transition-colors duration-200 transition-shadow duration-200 ${
           scrolled ? 'shadow-sm' : ''
         }`}
       >
@@ -85,7 +85,7 @@ export default function Header() {
                   onClick={() => setOpenDropdown(!openDropdown)}
                   aria-expanded={openDropdown}
                   className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                    openDropdown ? 'bg-canvas-warm text-ink' : 'text-ink-muted hover:bg-canvas-warm hover:text-ink'
+                    openDropdown ? 'bg-slate-100 text-ink' : 'text-ink-muted hover:bg-slate-100 hover:text-ink'
                   }`}
                 >
                   Features
