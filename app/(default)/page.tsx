@@ -79,8 +79,8 @@ export default function Home() {
         </div>
 
         <div className="homepage-grid-row">
-          <section className="bg-slate-100">
-            <div className="landing-grid-column bg-slate-100">
+          <section className="bg-white">
+            <div className="landing-grid-column">
               <FAQ embedded />
             </div>
           </section>

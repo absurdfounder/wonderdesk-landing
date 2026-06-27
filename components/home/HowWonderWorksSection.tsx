@@ -1,60 +1,56 @@
-import AIAgentSection from '@/components/AIAgentSection';
-import { BookOpen, FilePen, ShieldCheck } from 'lucide-react';
+import { MeetWonderFeatureCards } from '@/components/visuals/PrDocsHowItWorksCards';
 
-const steps = [
-  {
-    icon: BookOpen,
-    title: 'Wonder reads your sources',
-    body: 'Codebase, pull requests, tickets, changelogs — wherever product knowledge already lives.',
-  },
-  {
-    icon: FilePen,
-    title: 'Wonder drafts the updates',
-    body: 'Stale articles get rewritten and screenshots refresh, ready for your review.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'You approve in one click',
-    body: 'Every update is a draft. Publish, edit, or skip. Nothing goes live without you.',
-  },
-];
+const MEET_WONDER_CROSS_PATTERN =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M12 0h4v28h-4zM0 12h28v4H0z' fill='%23009fbc' fill-opacity='0.14'/%3E%3C/svg%3E\")";
 
 export default function HowWonderWorksSection() {
   return (
-    <section className="bg-white">
-      <div className="landing-grid-column bg-white">
-        <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
-          <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">Meet Wonder</p>
-          <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-900 sm:text-3xl md:text-4xl">
+    <section className="relative overflow-hidden bg-white">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[min(420px,55vw)]"
+        style={{
+          background:
+            'radial-gradient(ellipse 85% 70% at 50% -15%, rgba(0, 159, 188, 0.14) 0%, rgba(0, 159, 188, 0.04) 42%, transparent 72%)',
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute left-0 top-0 h-36 w-36 opacity-90 sm:h-44 sm:w-44"
+        style={{
+          backgroundImage: MEET_WONDER_CROSS_PATTERN,
+          backgroundSize: '28px 28px',
+          maskImage: 'radial-gradient(ellipse 90% 90% at 0% 0%, black 20%, transparent 72%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 90% 90% at 0% 0%, black 20%, transparent 72%)',
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute right-0 top-0 h-36 w-36 opacity-90 sm:h-44 sm:w-44"
+        style={{
+          backgroundImage: MEET_WONDER_CROSS_PATTERN,
+          backgroundSize: '28px 28px',
+          maskImage: 'radial-gradient(ellipse 90% 90% at 100% 0%, black 20%, transparent 72%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 90% 90% at 100% 0%, black 20%, transparent 72%)',
+        }}
+        aria-hidden
+      />
+
+      <div className="landing-grid-column relative">
+        <div className="landing-grid-pad border-b border-slate-200 py-14 text-center md:py-20">
+          <p className="font-silkscreen text-xs uppercase tracking-[0.22em] text-wonder sm:text-sm">
+            Meet Wonderdesk
+          </p>
+          <h2 className="mx-auto mt-4 max-w-3xl font-display text-[2rem] font-normal leading-[1.15] tracking-tight text-slate-900 sm:text-4xl md:text-[2.75rem]">
             You build the product. Wonder handles the docs.
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            Not a chatbot you prompt. An agent that watches your product, drafts doc updates, and queues them for
-            approval.
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            She reads your codebase, your support tickets, and your releases, then drafts every update for you to
+            approve. Not a chatbot you prompt. An agent that does the work.
           </p>
         </div>
 
-        <div className="border-b border-slate-200 bg-slate-50/80">
-          <div className="landing-grid-pad py-8 md:py-10 lg:py-12">
-            <AIAgentSection embedded />
-          </div>
-        </div>
-
-        <div className="landing-grid-pad py-10 md:py-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6 lg:gap-10">
-            {steps.map((step) => {
-              const Icon = step.icon;
-              return (
-                <article key={step.title} className="md:border-l md:border-slate-200 md:pl-6 lg:pl-8 first:md:border-l-0 first:md:pl-0">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white shadow-sm">
-                    <Icon className="h-5 w-5 text-wonder" strokeWidth={1.75} />
-                  </div>
-                  <h3 className="font-display text-lg font-medium text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.body}</p>
-                </article>
-              );
-            })}
-          </div>
+        <div className="landing-grid-pad pb-14 pt-10 md:pb-20 md:pt-12">
+          <MeetWonderFeatureCards />
         </div>
       </div>
     </section>

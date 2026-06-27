@@ -1,6 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import { BarChart3 } from 'lucide-react';
 
 const WONDER_AVATAR = 'https://dazzling-cat.netlify.app/wondercharacter.png';
 
@@ -12,32 +13,87 @@ const CARD_H = 468;
 const VISUAL_H = 240;
 const GAP = 20;
 
-const DOT_GRID = {
+const DOT_GRID_STYLE = {
   backgroundColor: '#F7F7F7',
-  backgroundImage:
-    'radial-gradient(circle, rgba(186, 183, 195, 0.45) 0.65px, transparent 0.65px)',
+  backgroundImage: 'radial-gradient(circle, rgba(186, 183, 195, 0.45) 0.65px, transparent 0.65px)',
   backgroundSize: '10px 10px',
-};
+} as const;
+
+const DOT_GRID_CLASS =
+  'bg-[#F7F7F7] [background-image:radial-gradient(circle,rgba(186,183,195,0.45)_0.65px,transparent_0.65px)] [background-size:10px_10px]';
+
+const INTEGRATION_ROW_ONE = [
+  { name: 'Dashboard', logo: '', dashboard: true },
+  { name: 'Fernand', logo: 'https://dazzling-cat.netlify.app/fernand.png' },
+  { name: 'Zendesk', logo: 'https://dazzling-cat.netlify.app/zendesk.jpg' },
+] as const;
+
+const INTEGRATION_ROW_TWO = [
+  { name: 'Crisp', logo: 'https://dazzling-cat.netlify.app/crisp.png' },
+  { name: 'HubSpot', logo: 'https://cdn.simpleicons.org/hubspot/FF7A59' },
+  { name: 'Featurebase', logo: 'https://cdn.simpleicons.org/featurebase/2563EB' },
+  { name: 'Plain', logo: 'https://cdn.simpleicons.org/plain/1F2937' },
+] as const;
 
 const INTEGRATION_PILLS = [
-  { name: 'Fernand', logo: 'https://dazzling-cat.netlify.app/fernand.png', left: -14, top: 30 },
-  { name: 'Zendesk', logo: 'https://dazzling-cat.netlify.app/zendesk.jpg', left: 128, top: 20 },
-  { name: 'Help Scout', logo: 'https://dazzling-cat.netlify.app/helpscout.png', left: 18, top: 94 },
-  { name: 'Intercom', logo: 'https://dazzling-cat.netlify.app/intercom.png', left: 104, top: 84 },
-  { name: 'Crisp', logo: 'https://dazzling-cat.netlify.app/crisp.png', left: 214, top: 98 },
-  { name: 'BoldDesk', logo: '', left: -10, top: 160, customIcon: true },
-  { name: 'HubSpot', logo: 'https://cdn.simpleicons.org/hubspot/FF7A59', left: 108, top: 170 },
-  { name: 'Front', logo: 'https://cdn.simpleicons.org/frontapp/001B38', left: 246, top: 164 },
+  { name: 'Dashboard', logo: '', left: 24, top: 36, dashboard: true },
+  { name: 'Fernand', logo: 'https://dazzling-cat.netlify.app/fernand.png', left: 128, top: 24 },
+  { name: 'Zendesk', logo: 'https://dazzling-cat.netlify.app/zendesk.jpg', left: 232, top: 36 },
+  { name: 'Crisp', logo: 'https://dazzling-cat.netlify.app/crisp.png', left: 8, top: 108 },
+  { name: 'HubSpot', logo: 'https://cdn.simpleicons.org/hubspot/FF7A59', left: 108, top: 100 },
+  { name: 'Featurebase', logo: 'https://cdn.simpleicons.org/featurebase/2563EB', left: 214, top: 108 },
+  { name: 'Plain', logo: 'https://cdn.simpleicons.org/plain/1F2937', left: 118, top: 168 },
 ];
+
+const CARDS = [
+  {
+    title: 'She reads your real sources',
+    description:
+      'Your codebase, pull requests, support tickets, changelogs and product videos. Everywhere your product knowledge already lives.',
+  },
+  {
+    title: 'She drafts every update',
+    description:
+      'When something ships, Wonder rewrites the stale article and recaptures the screenshots, the way a teammate would.',
+  },
+  {
+    title: 'You approve in one click',
+    description:
+      'Every update lands as a draft. Publish it, edit it first, or dismiss it. Nothing goes live without you.',
+  },
+] as const;
 
 function IntegrationPill({
   name,
   logo,
-  customIcon,
+  dashboard,
 }: {
   name: string;
   logo: string;
-  customIcon?: boolean;
+  dashboard?: boolean;
+}) {
+  return (
+    <div className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[#E5E7EB] bg-white px-3.5 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+      {dashboard ? (
+        <span className="flex h-4 w-4 items-center justify-center rounded bg-slate-100 text-slate-600">
+          <BarChart3 className="h-2.5 w-2.5" strokeWidth={2.25} />
+        </span>
+      ) : (
+        <img src={logo} alt="" width={16} height={16} className="h-4 w-4 rounded-sm object-contain" />
+      )}
+      <span className="text-[13px] font-medium leading-none text-[#374151]">{name}</span>
+    </div>
+  );
+}
+
+function IntegrationPillFixed({
+  name,
+  logo,
+  dashboard,
+}: {
+  name: string;
+  logo: string;
+  dashboard?: boolean;
 }) {
   return (
     <div
@@ -53,23 +109,20 @@ function IntegrationPill({
         whiteSpace: 'nowrap',
       }}
     >
-      {customIcon ? (
+      {dashboard ? (
         <div
           style={{
             width: 16,
             height: 16,
             borderRadius: 4,
-            background: 'linear-gradient(135deg, #6366F1 0%, #4F46E5 100%)',
+            background: '#F3F4F6',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: 9,
-            fontWeight: 800,
-            color: '#ffffff',
-            lineHeight: 1,
+            color: '#4B5563',
           }}
         >
-          B
+          <BarChart3 style={{ width: 10, height: 10 }} strokeWidth={2.25} />
         </div>
       ) : (
         <img
@@ -80,21 +133,104 @@ function IntegrationPill({
           style={{ width: 16, height: 16, borderRadius: 3, objectFit: 'contain' }}
         />
       )}
-      <span
-        style={{
-          fontSize: 13,
-          fontWeight: 500,
-          color: '#374151',
-          lineHeight: 1,
-        }}
-      >
-        {name}
-      </span>
+      <span style={{ fontSize: 13, fontWeight: 500, color: '#374151', lineHeight: 1 }}>{name}</span>
     </div>
   );
 }
 
-function FeatureCardShell({
+function SourcesVisualResponsive() {
+  return (
+    <div className="flex h-full flex-col items-center justify-center gap-2.5 px-3">
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        {INTEGRATION_ROW_ONE.map((pill) => (
+          <IntegrationPill key={pill.name} {...pill} />
+        ))}
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        {INTEGRATION_ROW_TWO.map((pill) => (
+          <IntegrationPill key={pill.name} {...pill} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SourcesVisualFixed() {
+  return (
+    <>
+      {INTEGRATION_PILLS.map((pill) => (
+        <div key={pill.name} style={{ position: 'absolute', left: pill.left, top: pill.top }}>
+          <IntegrationPillFixed name={pill.name} logo={pill.logo} dashboard={pill.dashboard} />
+        </div>
+      ))}
+    </>
+  );
+}
+
+function DraftVisual() {
+  return (
+    <div className="absolute left-1/2 top-1/2 w-[min(268px,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-[#E5E7EB] bg-white p-3.5 shadow-[0_8px_24px_rgba(0,0,0,0.06)] sm:p-4">
+      <div className="mb-3 flex items-center gap-2">
+        <img src={WONDER_AVATAR} alt="" width={24} height={24} className="h-6 w-6 rounded-full object-cover" />
+        <span className="text-[13px] font-medium text-[#111111]">Wonder updated this article</span>
+      </div>
+      <div className="overflow-hidden rounded-lg font-mono text-xs leading-snug">
+        <div className="bg-[#FFF5F5] px-2.5 py-1.5 text-[#AA0000]">- Open your workspace settings</div>
+        <div className="bg-[#F0FFF4] px-2.5 py-1.5 text-[#008800]">
+          + Open your <strong className="font-bold">project</strong> settings
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ApproveVisual() {
+  return (
+    <div className="absolute left-1/2 top-1/2 w-[min(286px,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+      <div className="mb-1.5 flex items-center gap-2">
+        <img src={WONDER_AVATAR} alt="" width={24} height={24} className="h-6 w-6 rounded-full object-cover" />
+        <span className="text-[13px] font-semibold text-[#111111]">Draft ready for review</span>
+      </div>
+      <p className="mb-3.5 text-xs leading-snug text-[#888888]">&ldquo;Inviting your teammates&rdquo; · 1 edit</p>
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="inline-flex rounded-lg bg-black px-3.5 py-2 text-[13px] font-semibold leading-none text-white">
+          Approve &amp; publish
+        </span>
+        <span className="inline-flex rounded-lg border border-[#E5E7EB] bg-white px-3.5 py-2 text-[13px] font-medium leading-none text-[#374151]">
+          Review
+        </span>
+      </div>
+    </div>
+  );
+}
+
+const RESPONSIVE_VISUALS = [<SourcesVisualResponsive key="sources" />, <DraftVisual key="draft" />, <ApproveVisual key="approve" />];
+
+const FIXED_VISUALS = [<SourcesVisualFixed key="sources" />, <DraftVisual key="draft" />, <ApproveVisual key="approve" />];
+
+function FeatureCardShellResponsive({
+  visual,
+  title,
+  description,
+}: {
+  visual: ReactNode;
+  title: string;
+  description: string;
+}) {
+  return (
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-[#E8E8E8] bg-white">
+      <div className={`relative h-[240px] shrink-0 overflow-hidden ${DOT_GRID_CLASS}`}>{visual}</div>
+      <div className="flex flex-1 flex-col justify-center px-6 py-8 text-center sm:px-7 sm:py-9">
+        <h3 className="font-sans text-[17px] font-semibold leading-snug tracking-[-0.01em] text-[#111111]">
+          {title}
+        </h3>
+        <p className="mt-2.5 text-sm font-normal leading-[1.55] text-[#666666]">{description}</p>
+      </div>
+    </article>
+  );
+}
+
+function FeatureCardShellFixed({
   visual,
   title,
   description,
@@ -118,7 +254,7 @@ function FeatureCardShell({
     >
       <div
         style={{
-          ...DOT_GRID,
+          ...DOT_GRID_STYLE,
           height: VISUAL_H,
           position: 'relative',
           overflow: 'hidden',
@@ -166,182 +302,20 @@ function FeatureCardShell({
   );
 }
 
-function SourcesVisual() {
+export function MeetWonderFeatureCards() {
   return (
-    <>
-      {INTEGRATION_PILLS.map((pill) => (
-        <div
-          key={pill.name}
-          style={{
-            position: 'absolute',
-            left: pill.left,
-            top: pill.top,
-          }}
-        >
-          <IntegrationPill
-            name={pill.name}
-            logo={pill.logo}
-            customIcon={pill.customIcon}
-          />
-        </div>
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+      {CARDS.map((card, index) => (
+        <FeatureCardShellResponsive
+          key={card.title}
+          title={card.title}
+          description={card.description}
+          visual={RESPONSIVE_VISUALS[index]}
+        />
       ))}
-    </>
-  );
-}
-
-function DraftVisual() {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 268,
-        background: '#ffffff',
-        border: '1px solid #E5E7EB',
-        borderRadius: 12,
-        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.06)',
-        padding: '14px 14px 12px',
-      }}
-    >
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-        <img
-          src={WONDER_AVATAR}
-          alt=""
-          width={24}
-          height={24}
-          style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover' }}
-        />
-        <span style={{ fontSize: 13, fontWeight: 500, color: '#111111' }}>
-          Wonder updated this article
-        </span>
-      </div>
-      <div style={{ borderRadius: 8, overflow: 'hidden', fontSize: 12, lineHeight: 1.45 }}>
-        <div
-          style={{
-            padding: '7px 10px',
-            background: '#FFF5F5',
-            color: '#AA0000',
-            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
-          }}
-        >
-          - Open your workspace settings
-        </div>
-        <div
-          style={{
-            padding: '7px 10px',
-            background: '#F0FFF4',
-            color: '#008800',
-            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
-          }}
-        >
-          + Open your <strong style={{ fontWeight: 700 }}>project</strong> settings
-        </div>
-      </div>
     </div>
   );
 }
-
-function ApproveVisual() {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 286,
-        background: '#ffffff',
-        border: '1px solid #E5E7EB',
-        borderRadius: 12,
-        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.06)',
-        padding: '16px 16px 14px',
-      }}
-    >
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-        <img
-          src={WONDER_AVATAR}
-          alt=""
-          width={24}
-          height={24}
-          style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover' }}
-        />
-        <span style={{ fontSize: 13, fontWeight: 600, color: '#111111' }}>
-          Draft ready for review
-        </span>
-      </div>
-      <p
-        style={{
-          margin: '0 0 14px',
-          fontSize: 12,
-          fontWeight: 400,
-          color: '#888888',
-          lineHeight: 1.3,
-        }}
-      >
-        &ldquo;Inviting your teammates&rdquo; · 1 edit
-      </p>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <button
-          type="button"
-          style={{
-            padding: '9px 14px',
-            background: '#000000',
-            color: '#ffffff',
-            border: 'none',
-            borderRadius: 8,
-            fontSize: 13,
-            fontWeight: 600,
-            lineHeight: 1,
-            cursor: 'default',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          Approve &amp; publish
-        </button>
-        <button
-          type="button"
-          style={{
-            padding: '9px 14px',
-            background: '#ffffff',
-            color: '#374151',
-            border: '1px solid #E5E7EB',
-            borderRadius: 8,
-            fontSize: 13,
-            fontWeight: 500,
-            lineHeight: 1,
-            cursor: 'default',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          Review
-        </button>
-      </div>
-    </div>
-  );
-}
-
-const CARDS = [
-  {
-    title: 'She reads your real sources',
-    description:
-      'Your codebase, pull requests, support tickets, changelogs and product videos. Everywhere your product knowledge already lives.',
-    visual: <SourcesVisual />,
-  },
-  {
-    title: 'She drafts every update',
-    description:
-      'When something ships, Wonder rewrites the stale article and recaptures the screenshots, the way a teammate would.',
-    visual: <DraftVisual />,
-  },
-  {
-    title: 'You approve in one click',
-    description:
-      'Every update lands as a draft. Publish it, edit it first, or dismiss it. Nothing goes live without you.',
-    visual: <ApproveVisual />,
-  },
-];
 
 export default function PrDocsHowItWorksCards() {
   return (
@@ -354,12 +328,12 @@ export default function PrDocsHowItWorksCards() {
         fontFamily: 'var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif',
       }}
     >
-      {CARDS.map((card) => (
-        <FeatureCardShell
+      {CARDS.map((card, index) => (
+        <FeatureCardShellFixed
           key={card.title}
           title={card.title}
           description={card.description}
-          visual={card.visual}
+          visual={FIXED_VISUALS[index]}
         />
       ))}
     </div>

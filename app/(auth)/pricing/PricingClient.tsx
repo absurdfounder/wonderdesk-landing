@@ -96,8 +96,8 @@ const Pricing: React.FC = () => {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-slate-100">
-        <div className="landing-grid-column bg-slate-100">
+      <section className="border-t border-slate-200 bg-white">
+        <div className="landing-grid-column">
           <FAQ embedded />
         </div>
       </section>
