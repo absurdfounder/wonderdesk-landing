@@ -77,16 +77,16 @@ function TrustLogo({
 export default function TrustBarSection() {
   return (
     <>
-      <section className="bg-white">
-        <div className="landing-grid-column">
-          <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
+      <section className="bg-black">
+        <div className="landing-grid-column border-slate-800 bg-black">
+          <div className="landing-grid-pad border-b border-slate-800 py-10 md:py-12">
             <div className="mx-auto max-w-3xl text-center">
-              <blockquote className="font-display text-xl font-medium leading-snug text-slate-800 sm:text-2xl md:text-[1.65rem]">
+              <blockquote className="font-display text-xl font-medium leading-snug text-white sm:text-2xl md:text-[1.65rem]">
                 &ldquo;We cut doc update time sharply. Wonderdesk flags stale articles and gives us drafts we
                 can publish in minutes.&rdquo;
               </blockquote>
-              <p className="mt-4 text-sm text-slate-500">
-                <span className="font-medium text-slate-700">Alex Moreno</span> · Founder, HelpNest
+              <p className="mt-4 text-sm text-gray-400">
+                <span className="font-medium text-gray-200">Alex Moreno</span> · Founder, HelpNest
               </p>
             </div>
           </div>
