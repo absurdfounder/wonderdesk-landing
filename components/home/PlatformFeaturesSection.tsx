@@ -1,11 +1,9 @@
 import {
-  AnalyticsCard,
-  EditorSidebarCard,
-} from '@/components/visuals/PrDocsProductCards';
-import {
-  DomainLiveCard,
-  GoogleSerpCard,
-} from '@/components/visuals/PrDocsPlatformCards';
+  AnalyticsMockup,
+  DomainPublishMockup,
+  EditorDraftMockup,
+  SeoSearchMockup,
+} from '@/components/home/PlatformFeatureMockups';
 import type { ComponentType } from 'react';
 
 type PlatformBlock = {
@@ -22,14 +20,14 @@ const blocks: PlatformBlock[] = [
     title: 'Host help docs on',
     highlight: 'your own domain',
     description: 'Use help.yourcompany.com or a /help path so your knowledge base matches your brand.',
-    Visual: DomainLiveCard,
+    Visual: DomainPublishMockup,
   },
   {
     tag: 'SEO & AI search',
     title: 'Built for Google and',
     highlight: 'AI search',
     description: 'Clean URLs, metadata, and structure help customers find answers in search engines and AI tools.',
-    Visual: GoogleSerpCard,
+    Visual: SeoSearchMockup,
   },
   {
     tag: 'Analytics',
@@ -37,7 +35,7 @@ const blocks: PlatformBlock[] = [
     highlight: 'read and search',
     description:
       'Track article views, search terms, and content gaps so you know what to improve in your help center.',
-    Visual: AnalyticsCard,
+    Visual: AnalyticsMockup,
   },
   {
     tag: 'Editor & feedback',
@@ -45,7 +43,7 @@ const blocks: PlatformBlock[] = [
     highlight: 'improve docs',
     description:
       'Create help articles in one editor, collect reader feedback, and refine weak documentation over time.',
-    Visual: EditorSidebarCard,
+    Visual: EditorDraftMockup,
   },
 ];
 
