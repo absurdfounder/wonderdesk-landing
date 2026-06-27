@@ -6,7 +6,6 @@ import Script from 'next/script'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Footer from '@/components/ui/footer'
-import Newsletter from '@/components/newsletter'
 import { initGoogleTranslate, ensureTranslation } from '@/app/utils/googleTranslateHelper';
 
 export default function DefaultLayout({ children }: { children: React.ReactNode }) {
@@ -122,8 +121,6 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         <main className="grow bg-gray-50">
           {children}
         </main>
-
-        <Newsletter />
       </div>
       <Footer />
     </PlausibleProvider>
