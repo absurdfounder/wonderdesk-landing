@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ChevronDown, Sparkles, Camera, MessageCircle, Code, Globe, Lock, Zap, Chrome, Bot, BookOpen, ScrollText } from 'lucide-react';
+import { ArrowRight, ChevronDown, Sparkles, Camera, MessageCircle, Code, Globe, Lock, Zap, Chrome, Bot, BookOpen, ScrollText, Github } from 'lucide-react';
 import Logo from '@/public/images/logonew-black.png';
 import MobileMenu from './mobile-menu';
 import TabletMenu from './tablet-menu';
@@ -171,6 +171,15 @@ export default function Header() {
           </nav>
 
           <div className="relative z-[220] ml-auto flex items-center gap-2 sm:gap-3">
+            <a
+              href="https://github.com/wonder-sites"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Wonderdesk on GitHub"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            >
+              <Github className="h-[18px] w-[18px]" strokeWidth={2} />
+            </a>
             <div className="hidden lg:block">
               <TranslateButton />
             </div>

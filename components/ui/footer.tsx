@@ -220,6 +220,17 @@ export default function Footer() {
                   <span>YouTube</span>
                 </a>
               </li>
+              <li>
+                <a
+                  className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-slate-900"
+                  href="https://github.com/wonder-sites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-3.5 w-3.5 text-slate-400" />
+                  <span>GitHub</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -254,15 +265,14 @@ export default function Footer() {
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <WonderButton
-              href="https://github.com/absurdfounder"
+              href="https://github.com/wonder-sites"
               external
               size="sm"
               variant="outline"
-              aria-label="Track my commits on GitHub"
+              aria-label="Wonderdesk open source on GitHub"
               icon={<Github className="h-3.5 w-3.5" strokeWidth={2} />}
             >
-              <span className="hidden md:inline">Track my commits</span>
-              <span className="md:hidden">Commits</span>
+              Open Source
             </WonderButton>
             <a
               href="https://www.notion.com/integrations/wonder-sites"
