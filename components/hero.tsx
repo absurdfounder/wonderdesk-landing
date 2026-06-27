@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import HeroCTAs from './ui/HeroCTAs';
 import FlippingText from './ui/FlippingText';
+import WonderDocsHeroDemo from './WonderDocsHeroDemo';
 
 const HERO_FLIP_WORDS = [
   'help docs',
@@ -57,7 +58,7 @@ export default function Hero(_props: HeroProps) {
           }}
         >
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-4 xl:gap-6">
-            <div className="flex-1 text-left lg:max-w-3xl">
+            <div className="flex-1 text-left lg:max-w-[48%]">
               <div className="px-2 sm:px-4 md:px-6 lg:px-0">
                 <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
                   AI help center software
@@ -101,6 +102,10 @@ export default function Hero(_props: HeroProps) {
                   />
                 </Link>
               </div>
+            </div>
+
+            <div className="mt-10 w-full flex-1 lg:mt-0 lg:max-w-[52%] lg:pl-4">
+              <WonderDocsHeroDemo />
             </div>
           </div>
         </div>
