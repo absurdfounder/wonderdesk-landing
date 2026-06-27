@@ -1,9 +1,20 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 import { BarChart3 } from 'lucide-react';
 
 const WONDER_AVATAR = 'https://dazzling-cat.netlify.app/wondercharacter.png';
+
+/** Verified logo sources used across homepage + pr-to-docs visuals */
+const MEET_WONDER_LOGOS = {
+  fernand: 'https://dazzling-cat.netlify.app/fernand.png',
+  zendesk: 'https://dazzling-cat.netlify.app/zendesk.jpg',
+  crisp: 'https://dazzling-cat.netlify.app/crisp.png',
+  hubspot: 'https://cdn.simpleicons.org/hubspot/FF7A59',
+  featurebase: 'https://featurebase.app/favicon.ico',
+  plain: 'https://www.google.com/s2/favicons?domain=plain.com&sz=64',
+} as const;
 
 export const PR_DOCS_HOW_IT_WORKS_W = 1096;
 export const PR_DOCS_HOW_IT_WORKS_H = 468;
@@ -27,25 +38,25 @@ const DOT_GRID_CLASS_DARK =
 
 const INTEGRATION_ROW_ONE = [
   { name: 'Dashboard', logo: '', dashboard: true },
-  { name: 'Fernand', logo: 'https://dazzling-cat.netlify.app/fernand.png' },
-  { name: 'Zendesk', logo: 'https://dazzling-cat.netlify.app/zendesk.jpg' },
+  { name: 'Fernand', logo: MEET_WONDER_LOGOS.fernand },
+  { name: 'Zendesk', logo: MEET_WONDER_LOGOS.zendesk },
 ] as const;
 
 const INTEGRATION_ROW_TWO = [
-  { name: 'Crisp', logo: 'https://dazzling-cat.netlify.app/crisp.png' },
-  { name: 'HubSpot', logo: 'https://cdn.simpleicons.org/hubspot/FF7A59' },
-  { name: 'Featurebase', logo: 'https://cdn.simpleicons.org/featurebase/2563EB' },
-  { name: 'Plain', logo: 'https://cdn.simpleicons.org/plain/1F2937' },
+  { name: 'Crisp', logo: MEET_WONDER_LOGOS.crisp },
+  { name: 'HubSpot', logo: MEET_WONDER_LOGOS.hubspot },
+  { name: 'Featurebase', logo: MEET_WONDER_LOGOS.featurebase },
+  { name: 'Plain', logo: MEET_WONDER_LOGOS.plain },
 ] as const;
 
 const INTEGRATION_PILLS = [
   { name: 'Dashboard', logo: '', left: 24, top: 36, dashboard: true },
-  { name: 'Fernand', logo: 'https://dazzling-cat.netlify.app/fernand.png', left: 128, top: 24 },
-  { name: 'Zendesk', logo: 'https://dazzling-cat.netlify.app/zendesk.jpg', left: 232, top: 36 },
-  { name: 'Crisp', logo: 'https://dazzling-cat.netlify.app/crisp.png', left: 8, top: 108 },
-  { name: 'HubSpot', logo: 'https://cdn.simpleicons.org/hubspot/FF7A59', left: 108, top: 100 },
-  { name: 'Featurebase', logo: 'https://cdn.simpleicons.org/featurebase/2563EB', left: 214, top: 108 },
-  { name: 'Plain', logo: 'https://cdn.simpleicons.org/plain/1F2937', left: 118, top: 168 },
+  { name: 'Fernand', logo: MEET_WONDER_LOGOS.fernand, left: 128, top: 24 },
+  { name: 'Zendesk', logo: MEET_WONDER_LOGOS.zendesk, left: 232, top: 36 },
+  { name: 'Crisp', logo: MEET_WONDER_LOGOS.crisp, left: 8, top: 108 },
+  { name: 'HubSpot', logo: MEET_WONDER_LOGOS.hubspot, left: 108, top: 100 },
+  { name: 'Featurebase', logo: MEET_WONDER_LOGOS.featurebase, left: 214, top: 108 },
+  { name: 'Plain', logo: MEET_WONDER_LOGOS.plain, left: 118, top: 168 },
 ];
 
 const CARDS = [
@@ -66,6 +77,31 @@ const CARDS = [
   },
 ] as const;
 
+function IntegrationLogo({ name, logo }: { name: string; logo: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed || !logo) {
+    return (
+      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded bg-slate-100 text-[9px] font-bold uppercase text-slate-600">
+        {name.charAt(0)}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={logo}
+      alt=""
+      width={16}
+      height={16}
+      loading="lazy"
+      decoding="async"
+      className="h-4 w-4 shrink-0 rounded-sm object-contain"
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 function IntegrationPill({
   name,
   logo,
@@ -82,7 +118,7 @@ function IntegrationPill({
       className={
         dark
           ? 'inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-700 bg-slate-900 px-3.5 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.35)]'
-          : 'inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[#E5E7EB] bg-white px-3.5 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.04)]'
+          : 'inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.05)]'
       }
     >
       {dashboard ? (
@@ -96,7 +132,7 @@ function IntegrationPill({
           <BarChart3 className="h-2.5 w-2.5" strokeWidth={2.25} />
         </span>
       ) : (
-        <img src={logo} alt="" width={16} height={16} className="h-4 w-4 rounded-sm object-contain" />
+        <IntegrationLogo name={name} logo={logo} />
       )}
       <span className={`text-[13px] font-medium leading-none ${dark ? 'text-slate-200' : 'text-[#374151]'}`}>
         {name}
@@ -144,13 +180,7 @@ function IntegrationPillFixed({
           <BarChart3 style={{ width: 10, height: 10 }} strokeWidth={2.25} />
         </div>
       ) : (
-        <img
-          src={logo}
-          alt=""
-          width={16}
-          height={16}
-          style={{ width: 16, height: 16, borderRadius: 3, objectFit: 'contain' }}
-        />
+        <IntegrationLogo name={name} logo={logo} />
       )}
       <span style={{ fontSize: 13, fontWeight: 500, color: '#374151', lineHeight: 1 }}>{name}</span>
     </div>
@@ -159,13 +189,13 @@ function IntegrationPillFixed({
 
 function SourcesVisualResponsive({ dark = false }: { dark?: boolean }) {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-2.5 px-3">
-      <div className="flex flex-wrap items-center justify-center gap-2">
+    <div className="flex h-full flex-col items-center justify-center gap-3 px-4 py-6">
+      <div className="flex flex-wrap items-center justify-center gap-2.5">
         {INTEGRATION_ROW_ONE.map((pill) => (
           <IntegrationPill key={pill.name} {...pill} dark={dark} />
         ))}
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-2.5">
         {INTEGRATION_ROW_TWO.map((pill) => (
           <IntegrationPill key={pill.name} {...pill} dark={dark} />
         ))}
@@ -254,8 +284,8 @@ function FeatureCardShellResponsive({
     <article
       className={
         dark
-          ? 'flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-[#0f0f0f]'
-          : 'flex flex-col overflow-hidden rounded-2xl border border-[#E8E8E8] bg-white'
+          ? 'flex h-full flex-col overflow-hidden rounded-2xl border border-slate-800 bg-[#0f0f0f]'
+          : 'flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)]'
       }
     >
       <div className={`relative h-[240px] shrink-0 overflow-hidden ${dotGridClass}`}>{visual}</div>
@@ -263,14 +293,14 @@ function FeatureCardShellResponsive({
         className={
           dark
             ? 'flex flex-1 flex-col justify-center bg-[#0f0f0f] px-6 py-8 text-center sm:px-7 sm:py-9'
-            : 'flex flex-1 flex-col justify-center px-6 py-8 text-center sm:px-7 sm:py-9'
+            : 'flex flex-1 flex-col justify-center px-6 py-8 text-center sm:px-8 sm:py-10'
         }
       >
         <h3
           className={
             dark
               ? 'font-sans text-[17px] font-semibold leading-snug tracking-[-0.01em] text-white'
-              : 'font-sans text-[17px] font-semibold leading-snug tracking-[-0.01em] text-[#111111]'
+              : 'font-sans text-[17px] font-semibold leading-snug tracking-[-0.02em] text-slate-900 sm:text-lg'
           }
         >
           {title}
@@ -278,8 +308,8 @@ function FeatureCardShellResponsive({
         <p
           className={
             dark
-              ? 'mt-2.5 text-sm font-normal leading-[1.55] text-slate-400'
-              : 'mt-2.5 text-sm font-normal leading-[1.55] text-[#666666]'
+              ? 'mx-auto mt-2.5 max-w-[30ch] text-sm font-normal leading-[1.55] text-slate-400'
+              : 'mx-auto mt-3 max-w-[32ch] text-sm font-normal leading-[1.6] text-slate-600'
           }
         >
           {description}
@@ -366,7 +396,7 @@ export function MeetWonderFeatureCards({ variant = 'light' }: { variant?: 'light
   const visuals = dark ? RESPONSIVE_VISUALS_DARK : RESPONSIVE_VISUALS_LIGHT;
 
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3 md:gap-5 lg:gap-6">
       {CARDS.map((card, index) => (
         <FeatureCardShellResponsive
           key={card.title}

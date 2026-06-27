@@ -193,3 +193,26 @@
 .loading-shimmer {
   animation: shimmer 1.5s ease-in-out infinite;
 }
+
+@keyframes heroMarqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer components {
+  .wonder-trust-row {
+    @apply flex flex-col items-start gap-2 text-sm text-slate-500 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2;
+  }
+
+  .wonder-trust-row__item {
+    @apply inline-flex items-center gap-1.5;
+  }
+
+  .wonder-trust-row__check {
+    @apply h-4 w-4 shrink-0;
+  }
+}

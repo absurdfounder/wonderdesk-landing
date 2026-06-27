@@ -28,6 +28,7 @@ import Header from '@/components/ui/header'
 import TrustBarSection from '@/components/home/TrustBarSection'
 import PainSection from '@/components/home/PainSection'
 import HowWonderWorksSection from '@/components/home/HowWonderWorksSection'
+import WonderdeskDashboardSection from '@/components/home/WonderdeskDashboardSection'
 import PlatformFeaturesSection from '@/components/home/PlatformFeaturesSection'
 import TestimonialWallSection from '@/components/home/TestimonialWallSection'
 import GetStartedSection from '@/components/GetStartedSection'
@@ -52,6 +53,10 @@ export default function Home() {
 
         <div className="homepage-grid-row">
           <PainSection />
+        </div>
+
+        <div className="homepage-grid-row">
+          <WonderdeskDashboardSection />
         </div>
 
         <div className="homepage-grid-row">
