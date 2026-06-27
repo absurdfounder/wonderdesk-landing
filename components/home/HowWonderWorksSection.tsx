@@ -26,7 +26,7 @@ export default function HowWonderWorksSection() {
         <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
           <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">How it works</p>
           <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            An AI help center that updates with your product
+            Docs that track your product
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
             Wonderdesk watches for changes, suggests documentation updates, and helps your team keep knowledge

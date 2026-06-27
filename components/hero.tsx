@@ -5,6 +5,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import HeroArticleDemo from './HeroArticleDemo';
 import HeroCTAs from './ui/HeroCTAs';
+import FlippingText from './ui/FlippingText';
+
+const HERO_FLIP_WORDS = [
+  'help docs',
+  'customer queries',
+  'knowledge base',
+  'changelogs',
+  'support articles',
+];
 
 const getCalApiImport = () => import('@calcom/embed-react').then((mod) => mod.getCalApi);
 
@@ -55,13 +64,15 @@ export default function Hero(_props: HeroProps) {
                   AI help center software
                 </p>
 
-                <h1 className="mt-3 max-w-3xl font-display text-3xl font-normal leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:max-w-none">
-                  Keep your help docs accurate after every release
+                <h1 className="mt-3 max-w-3xl font-display text-3xl font-normal leading-[1.12] tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:max-w-none">
+                  <span className="block">Self-updating</span>
+                  <span className="mt-1 block sm:mt-2">
+                    <FlippingText words={HERO_FLIP_WORDS} />
+                  </span>
                 </h1>
 
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                  Wonderdesk is an AI help center that tracks product changes, drafts documentation updates,
-                  and lets your team review before publish. Fewer support tickets. Better self-serve answers.
+                  Wonderdesk drafts and updates documentation when your product changes. Review, publish, done.
                 </p>
               </div>
 

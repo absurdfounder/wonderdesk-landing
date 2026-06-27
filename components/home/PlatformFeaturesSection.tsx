@@ -149,7 +149,7 @@ export default function PlatformFeaturesSection() {
             Platform features
           </p>
           <h2 className="mt-3 font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            One help center platform, fully featured
+            One platform, fully featured
           </h2>
           <p className="mt-3 max-w-3xl text-base text-slate-600 sm:text-lg md:mt-4">
             Wonderdesk includes AI search, custom domains, analytics, SEO tools, editing, and feedback —

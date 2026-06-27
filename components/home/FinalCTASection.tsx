@@ -57,11 +57,10 @@ export default function FinalCTASection() {
               Start with Wonderdesk
             </p>
             <h2 className="mt-3 font-display text-2xl font-normal leading-tight text-slate-900 sm:text-3xl md:text-4xl">
-              Launch a help center that stays up to date
+              Start self-updating docs
             </h2>
             <p className="mt-4 text-base leading-relaxed text-slate-700 sm:text-lg">
-              Try Wonderdesk free for 7 days. Connect your product, review AI-drafted documentation, and publish
-              a knowledge base your customers can trust.
+              Free 7-day trial. Connect your product and publish a help center that stays current.
             </p>
 
             <HeroCTAs className="mt-8" align="start" primaryHref="https://app.wonderdesk.ai?ref=final-cta" />

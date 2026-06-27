@@ -20,7 +20,7 @@ export default function PainSection() {
         <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-14">
           <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">The problem</p>
           <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            Outdated help docs create extra support work
+            Outdated docs, more support work
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
             Product teams ship fast. Documentation usually lags behind. That gap shows up as repeat tickets,

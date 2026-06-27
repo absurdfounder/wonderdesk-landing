@@ -44,7 +44,7 @@ export default function TestimonialWallSection() {
         <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
           <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">Customers</p>
           <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            Teams use Wonderdesk to ship docs with less overhead
+            Less doc overhead, more shipping
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
             Product and support teams use Wonderdesk to keep knowledge base content current, reduce repeat
