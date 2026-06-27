@@ -9,7 +9,6 @@ type VisualVariant = 'landscape' | 'plain' | 'photo';
 
 interface Transform {
   scale: number;
-  opacity: number;
   y: number;
 }
 
@@ -60,7 +59,7 @@ const blocks: PlatformBlock[] = [
       'Track article views, search terms, and content gaps so you know what to improve in your help center.',
     kind: 'product',
     visual: 'analytics',
-    visualVariant: 'plain',
+    visualVariant: 'photo',
   },
   {
     tag: 'Editor & feedback',
@@ -70,7 +69,7 @@ const blocks: PlatformBlock[] = [
       'Create help articles in one editor, collect reader feedback, and refine weak documentation over time.',
     kind: 'product',
     visual: 'editor',
-    visualVariant: 'landscape',
+    visualVariant: 'photo',
   },
 ];
 
@@ -85,7 +84,7 @@ export default function PlatformFeaturesSection() {
       const transforms: Transform[] = [];
 
       if (isMobile) {
-        setCardTransforms(blocks.map(() => ({ scale: 1, opacity: 1, y: 0 })));
+        setCardTransforms(blocks.map(() => ({ scale: 1, y: 0 })));
         return;
       }
 
@@ -97,19 +96,18 @@ export default function PlatformFeaturesSection() {
 
       cardRefs.current.forEach((card, index) => {
         if (!card) {
-          transforms.push({ scale: 1, opacity: 1, y: 0 });
+          transforms.push({ scale: 1, y: 0 });
           return;
         }
 
         const cardsOnTop = Math.max(0, activeCardIndex - index);
         if (cardsOnTop > 0) {
           transforms.push({
-            scale: Math.max(0.94, 1 - 0.02 * cardsOnTop),
-            opacity: Math.max(0.55, 1 - 0.1 * cardsOnTop),
-            y: -6 * cardsOnTop,
+            scale: Math.max(0.96, 1 - 0.015 * cardsOnTop),
+            y: -4 * cardsOnTop,
           });
         } else {
-          transforms.push({ scale: 1, opacity: 1, y: 0 });
+          transforms.push({ scale: 1, y: 0 });
         }
       });
 
@@ -156,7 +154,7 @@ export default function PlatformFeaturesSection() {
             style={{ perspective: '1000px' }}
           >
             {blocks.map((block, index) => {
-              const transform = cardTransforms[index] || { scale: 1, opacity: 1, y: 0 };
+              const transform = cardTransforms[index] || { scale: 1, y: 0 };
 
               return (
                 <div
@@ -164,14 +162,13 @@ export default function PlatformFeaturesSection() {
                   ref={(el) => {
                     cardRefs.current[index] = el;
                   }}
-                  className="lg:sticky lg:top-[14vh] lg:pb-16"
-                  style={{ zIndex: blocks.length + index }}
+                  className="lg:sticky lg:top-[14vh] lg:pb-12"
+                  style={{ zIndex: index + 1 }}
                 >
                   <article
-                    className="relative overflow-hidden rounded-xl border border-slate-200/50 bg-white shadow-sm will-change-transform"
+                    className="relative isolate overflow-hidden rounded-xl border border-slate-200/50 bg-white shadow-sm will-change-transform"
                     style={{
                       transform: `scale(${transform.scale}) translateY(${transform.y}px)`,
-                      opacity: transform.opacity,
                       transformOrigin: 'center top',
                       transition:
                         'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
