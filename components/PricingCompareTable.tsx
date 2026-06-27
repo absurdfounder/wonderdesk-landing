@@ -191,7 +191,7 @@ function DesktopCompareTable() {
           </span>
         </div>
         <div className={`${compareCellClass()} flex items-center justify-center py-4 text-center`}>
-          <span className="font-funneldisplay text-lg font-medium text-slate-900">Custom</span>
+          <span className="font-display text-lg font-medium text-slate-900">Custom</span>
         </div>
 
         <div className={`${compareCellClass()} py-5`} />

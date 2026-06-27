@@ -65,7 +65,7 @@ export default function FounderMessageSection({ embedded = false }: FounderMessa
           </div>
 
           <div className="flex min-w-0 flex-1 flex-col p-5 sm:p-6 md:p-7 lg:p-9">
-            <p className="font-funneldisplay text-xl leading-[1.45] tracking-tight text-slate-900 sm:text-xl md:text-[1.65rem] md:leading-[1.35]">
+            <p className="font-display text-xl leading-[1.45] tracking-tight text-slate-900 sm:text-xl md:text-[1.65rem] md:leading-[1.35]">
               Every team deserves a{' '}
               <span className="font-semibold text-wonder">self-updating help center</span> that saves hours
               every week on support and docs. That shouldn&apos;t be limited to companies with big content
@@ -75,7 +75,7 @@ export default function FounderMessageSection({ embedded = false }: FounderMessa
 
             <div className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:items-end sm:justify-between sm:gap-4 md:mt-8">
               <div>
-                <p className="font-funneldisplay text-base font-bold text-slate-900 sm:text-base md:text-lg">
+                <p className="font-display text-base font-bold text-slate-900 sm:text-base md:text-lg">
                   Vaibhav
                 </p>
                 <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.18em] text-slate-500">

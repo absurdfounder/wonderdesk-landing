@@ -53,7 +53,7 @@ function PlanHeader({
       </div>
       <div className="mt-4 flex items-center gap-2.5">
         <Icon className="h-5 w-5 shrink-0 text-wonder" aria-hidden />
-        <h3 className="font-funneldisplay text-xl font-medium tracking-tight text-slate-900">{title}</h3>
+        <h3 className="font-display text-xl font-medium tracking-tight text-slate-900">{title}</h3>
       </div>
     </>
   );
@@ -249,7 +249,7 @@ function AllowanceBlock({
 function PricingAmount({ price, cadence }: { price: string; cadence?: string }) {
   return (
     <div className="flex items-end gap-1.5 lg:min-h-[2.75rem]">
-      <span className="font-funneldisplay text-3xl font-medium tabular-nums tracking-tight text-slate-900 sm:text-4xl">
+      <span className="font-display text-3xl font-medium tabular-nums tracking-tight text-slate-900 sm:text-4xl">
         {price}
       </span>
       {cadence ? <span className="pb-1 text-sm text-slate-500">{cadence}</span> : null}
