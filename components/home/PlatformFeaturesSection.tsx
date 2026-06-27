@@ -1,24 +1,20 @@
-import PlatformFeaturesVisual from '@/components/home/PlatformFeaturesVisual';
-import type { FeatureVisualId } from '@/components/features/FeatureBlockVisuals';
-import type { ProductFeatureVisualId } from '@/components/features/ProductFeatureBlockVisuals';
+import {
+  AnalyticsCard,
+  EditorSidebarCard,
+} from '@/components/visuals/PrDocsProductCards';
+import {
+  DomainLiveCard,
+  GoogleSerpCard,
+} from '@/components/visuals/PrDocsPlatformCards';
+import type { ReactNode } from 'react';
 
-type PlatformBlock =
-  | {
-      tag: string;
-      title: string;
-      highlight: string;
-      description: string;
-      kind: 'platform';
-      visual: FeatureVisualId;
-    }
-  | {
-      tag: string;
-      title: string;
-      highlight: string;
-      description: string;
-      kind: 'product';
-      visual: ProductFeatureVisualId;
-    };
+type PlatformBlock = {
+  tag: string;
+  title: string;
+  highlight: string;
+  description: string;
+  visual: ReactNode;
+};
 
 const blocks: PlatformBlock[] = [
   {
@@ -26,16 +22,14 @@ const blocks: PlatformBlock[] = [
     title: 'Host help docs on',
     highlight: 'your own domain',
     description: 'Use help.yourcompany.com or a /help path so your knowledge base matches your brand.',
-    kind: 'platform',
-    visual: 'domain',
+    visual: <DomainLiveCard />,
   },
   {
     tag: 'SEO & AI search',
     title: 'Built for Google and',
     highlight: 'AI search',
     description: 'Clean URLs, metadata, and structure help customers find answers in search engines and AI tools.',
-    kind: 'platform',
-    visual: 'seo',
+    visual: <GoogleSerpCard />,
   },
   {
     tag: 'Analytics',
@@ -43,8 +37,7 @@ const blocks: PlatformBlock[] = [
     highlight: 'read and search',
     description:
       'Track article views, search terms, and content gaps so you know what to improve in your help center.',
-    kind: 'product',
-    visual: 'analytics',
+    visual: <AnalyticsCard />,
   },
   {
     tag: 'Editor & feedback',
@@ -52,8 +45,7 @@ const blocks: PlatformBlock[] = [
     highlight: 'improve docs',
     description:
       'Create help articles in one editor, collect reader feedback, and refine weak documentation over time.',
-    kind: 'product',
-    visual: 'editor',
+    visual: <EditorSidebarCard />,
   },
 ];
 
@@ -76,27 +68,20 @@ export default function PlatformFeaturesSection() {
 
         <div className="divide-y divide-slate-200">
           {blocks.map((block) => (
-            <article
-              key={block.tag}
-              className="platform-feature-card-grid platform-feature-card-grid--tight landing-grid-pad lg:px-8 xl:px-10"
-            >
-              <div className="platform-feature-card-copy">
+            <article key={block.tag} className="platform-feature-row">
+              <div className="platform-feature-row__copy landing-grid-pad">
                 <span className="font-silkscreen text-[11px] uppercase tracking-[0.12em] text-wonder">
                   {block.tag}
                 </span>
-                <h3 className="mt-3.5 font-display text-[1.75rem] font-medium leading-[1.15] tracking-tight text-balance text-slate-900">
+                <h3 className="mt-3 font-display text-[1.65rem] font-medium leading-[1.15] tracking-tight text-balance text-slate-900 sm:text-[1.75rem]">
                   {block.title}{' '}
                   <span className="font-normal text-wonder">{block.highlight}</span>
                 </h3>
                 <p className="mt-3 max-w-md text-[15px] leading-6 text-slate-500">{block.description}</p>
               </div>
 
-              <div className="platform-feature-card-visual relative w-full overflow-hidden">
-                {block.kind === 'platform' ? (
-                  <PlatformFeaturesVisual kind="platform" visual={block.visual} variant="photo" />
-                ) : (
-                  <PlatformFeaturesVisual kind="product" visual={block.visual} variant="photo" />
-                )}
+              <div className="platform-feature-row__visual">
+                <div className="platform-feature-row__mockup">{block.visual}</div>
               </div>
             </article>
           ))}
