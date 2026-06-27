@@ -45,7 +45,7 @@ export default function Hero(_props: HeroProps) {
   }, []);
 
   return (
-    <section className="relative overflow-hidden site-header-clear">
+    <section id="site-hero" className="relative overflow-hidden site-header-clear">
       <div className="landing-grid-column">
         <div
           className="landing-grid-pad pb-12 sm:pb-16 md:pb-10 pt-2 sm:pt-1 md:pt-2"

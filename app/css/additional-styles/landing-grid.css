@@ -55,14 +55,19 @@
   --wonder-slate-border: #e2e8f0;
   --color-line: #e8e8e5;
   --site-top-bar-height: 2.5rem;
-  --site-header-height: calc(var(--site-top-bar-height) + 3.5rem);
+  --site-nav-height: 3.5rem;
+  --site-header-height: var(--site-nav-height);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 @media (min-width: 640px) {
   .wonder-shell {
-    --site-header-height: calc(var(--site-top-bar-height) + 4rem);
+    --site-nav-height: 4rem;
   }
+}
+
+html.home-top-bar {
+  --site-header-height: calc(var(--site-top-bar-height) + var(--site-nav-height));
 }
 
 

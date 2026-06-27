@@ -34,9 +34,12 @@ const primaryNavLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const isHome = pathname === '/';
   const [scrolled, setScrolled] = useState(false);
+  const [heroInView, setHeroInView] = useState(isHome);
   const [openDropdown, setOpenDropdown] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const showAnnouncementBar = isHome && heroInView;
 
   useEffect(() => {
     setOpenDropdown(false);
@@ -48,6 +51,28 @@ export default function Header() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isHome) {
+      setHeroInView(false);
+      return;
+    }
+
+    const hero = document.getElementById('site-hero');
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroInView(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [isHome]);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('home-top-bar', showAnnouncementBar);
+    return () => document.documentElement.classList.remove('home-top-bar');
+  }, [showAnnouncementBar]);
 
   useEffect(() => {
     if (!openDropdown) return;
@@ -68,7 +93,14 @@ export default function Header() {
 
   return (
     <header translate="no" className="site-header notranslate fixed top-0 z-[200] w-full transition-all duration-200">
-      <OpenclawAnnouncementBar />
+      <div
+        aria-hidden={!showAnnouncementBar}
+        className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
+          showAnnouncementBar ? 'max-h-10 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        }`}
+      >
+        <OpenclawAnnouncementBar />
+      </div>
       <div
         className={`border-b border-[var(--color-line)] bg-white transition-colors duration-200 transition-shadow duration-200 ${
           scrolled ? 'shadow-sm' : ''
