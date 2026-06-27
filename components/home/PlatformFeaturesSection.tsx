@@ -1,16 +1,6 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
 import PlatformFeaturesVisual from '@/components/home/PlatformFeaturesVisual';
 import type { FeatureVisualId } from '@/components/features/FeatureBlockVisuals';
 import type { ProductFeatureVisualId } from '@/components/features/ProductFeatureBlockVisuals';
-
-type VisualVariant = 'landscape' | 'plain' | 'photo';
-
-interface Transform {
-  scale: number;
-  y: number;
-}
 
 type PlatformBlock =
   | {
@@ -20,7 +10,6 @@ type PlatformBlock =
       description: string;
       kind: 'platform';
       visual: FeatureVisualId;
-      visualVariant: VisualVariant;
     }
   | {
       tag: string;
@@ -29,7 +18,6 @@ type PlatformBlock =
       description: string;
       kind: 'product';
       visual: ProductFeatureVisualId;
-      visualVariant: VisualVariant;
     };
 
 const blocks: PlatformBlock[] = [
@@ -40,7 +28,6 @@ const blocks: PlatformBlock[] = [
     description: 'Use help.yourcompany.com or a /help path so your knowledge base matches your brand.',
     kind: 'platform',
     visual: 'domain',
-    visualVariant: 'photo',
   },
   {
     tag: 'SEO & AI search',
@@ -49,7 +36,6 @@ const blocks: PlatformBlock[] = [
     description: 'Clean URLs, metadata, and structure help customers find answers in search engines and AI tools.',
     kind: 'platform',
     visual: 'seo',
-    visualVariant: 'photo',
   },
   {
     tag: 'Analytics',
@@ -59,7 +45,6 @@ const blocks: PlatformBlock[] = [
       'Track article views, search terms, and content gaps so you know what to improve in your help center.',
     kind: 'product',
     visual: 'analytics',
-    visualVariant: 'photo',
   },
   {
     tag: 'Editor & feedback',
@@ -69,73 +54,14 @@ const blocks: PlatformBlock[] = [
       'Create help articles in one editor, collect reader feedback, and refine weak documentation over time.',
     kind: 'product',
     visual: 'editor',
-    visualVariant: 'photo',
   },
 ];
 
 export default function PlatformFeaturesSection() {
-  const [cardTransforms, setCardTransforms] = useState<Transform[]>([]);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const calculateTransforms = () => {
-      const isMobile = window.innerWidth < 1024;
-      const stickyTop = window.innerHeight * 0.14;
-      const transforms: Transform[] = [];
-
-      if (isMobile) {
-        setCardTransforms(blocks.map(() => ({ scale: 1, y: 0 })));
-        return;
-      }
-
-      let activeCardIndex = 0;
-      cardRefs.current.forEach((card, index) => {
-        if (!card) return;
-        if (card.getBoundingClientRect().top <= stickyTop + 10) activeCardIndex = index;
-      });
-
-      cardRefs.current.forEach((card, index) => {
-        if (!card) {
-          transforms.push({ scale: 1, y: 0 });
-          return;
-        }
-
-        const cardsOnTop = Math.max(0, activeCardIndex - index);
-        if (cardsOnTop > 0) {
-          transforms.push({
-            scale: Math.max(0.96, 1 - 0.015 * cardsOnTop),
-            y: -4 * cardsOnTop,
-          });
-        } else {
-          transforms.push({ scale: 1, y: 0 });
-        }
-      });
-
-      setCardTransforms(transforms);
-    };
-
-    calculateTransforms();
-
-    let rafId: number | null = null;
-    const handleScroll = () => {
-      if (rafId) cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(calculateTransforms);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', calculateTransforms);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', calculateTransforms);
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, []);
-
   return (
-    <section className="relative bg-white">
+    <section className="bg-white">
       <div className="landing-grid-column bg-white">
-        <div className="border-b border-slate-200 landing-grid-pad py-10 md:py-12">
+        <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
           <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
             Platform features
           </p>
@@ -148,67 +74,31 @@ export default function PlatformFeaturesSection() {
           </p>
         </div>
 
-        <div className="relative pt-8 pb-6 sm:pt-12 sm:pb-10 md:pb-14">
-          <div
-            className="relative space-y-4 p-6 px-6 sm:space-y-5 md:space-y-6"
-            style={{ perspective: '1000px' }}
-          >
-            {blocks.map((block, index) => {
-              const transform = cardTransforms[index] || { scale: 1, y: 0 };
+        <div className="grid grid-cols-1 divide-y divide-slate-200 sm:grid-cols-2 sm:divide-x">
+          {blocks.map((block) => (
+            <article key={block.tag} className="flex flex-col bg-white">
+              <div className="platform-feature-visual-panel platform-feature-visual-panel--grid">
+                {block.kind === 'platform' ? (
+                  <PlatformFeaturesVisual kind="platform" visual={block.visual} variant="photo" />
+                ) : (
+                  <PlatformFeaturesVisual kind="product" visual={block.visual} variant="photo" />
+                )}
+              </div>
 
-              return (
-                <div
-                  key={block.tag}
-                  ref={(el) => {
-                    cardRefs.current[index] = el;
-                  }}
-                  className="lg:sticky lg:top-[14vh] lg:pb-12"
-                  style={{ zIndex: index + 1 }}
-                >
-                  <article
-                    className="relative isolate overflow-hidden rounded-xl border border-slate-200/50 bg-white shadow-sm will-change-transform"
-                    style={{
-                      transform: `scale(${transform.scale}) translateY(${transform.y}px)`,
-                      transformOrigin: 'center top',
-                      transition:
-                        'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
-                    }}
-                  >
-                    <div className="platform-feature-card-grid">
-                      <div className="platform-feature-card-copy">
-                        <span className="font-silkscreen text-[11px] uppercase tracking-[0.12em] text-wonder">
-                          {block.tag}
-                        </span>
-                        <h3 className="mt-3.5 font-display text-[1.75rem] font-medium leading-[1.15] tracking-tight text-balance text-slate-900">
-                          {block.title}{' '}
-                          <span className="font-normal text-wonder">{block.highlight}</span>
-                        </h3>
-                        <p className="mt-3 max-w-[17.5rem] text-[15px] leading-6 text-slate-500">
-                          {block.description}
-                        </p>
-                      </div>
-
-                      <div className="relative w-full overflow-hidden lg:rounded-r-xl">
-                        {block.kind === 'platform' ? (
-                          <PlatformFeaturesVisual
-                            kind="platform"
-                            visual={block.visual}
-                            variant={block.visualVariant}
-                          />
-                        ) : (
-                          <PlatformFeaturesVisual
-                            kind="product"
-                            visual={block.visual}
-                            variant={block.visualVariant}
-                          />
-                        )}
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              );
-            })}
-          </div>
+              <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-9 lg:py-10">
+                <span className="font-silkscreen text-[11px] uppercase tracking-[0.12em] text-wonder">
+                  {block.tag}
+                </span>
+                <h3 className="mt-3 font-display text-xl font-medium leading-snug tracking-tight text-slate-900 sm:text-[1.35rem]">
+                  {block.title}{' '}
+                  <span className="font-normal text-wonder">{block.highlight}</span>
+                </h3>
+                <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600 sm:text-[15px] sm:leading-6">
+                  {block.description}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
