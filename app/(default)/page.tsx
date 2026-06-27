@@ -30,7 +30,6 @@ import PainSection from '@/components/home/PainSection'
 import HowWonderWorksSection from '@/components/home/HowWonderWorksSection'
 import WonderdeskDashboardSection from '@/components/home/WonderdeskDashboardSection'
 import PlatformFeaturesSection from '@/components/home/PlatformFeaturesSection'
-import IntegrationsCapabilitySection from '@/components/home/IntegrationsCapabilitySection'
 import TestimonialWallSection from '@/components/home/TestimonialWallSection'
 import GetStartedSection from '@/components/GetStartedSection'
 import FloatingScrollIndicator from '@/components/FloatingScrollIndicator'
@@ -62,10 +61,6 @@ export default function Home() {
 
         <div className="homepage-grid-row">
           <PlatformFeaturesSection />
-        </div>
-
-        <div className="homepage-grid-row">
-          <IntegrationsCapabilitySection />
         </div>
 
         <div className="homepage-grid-row">

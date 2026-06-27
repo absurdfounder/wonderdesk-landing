@@ -5,6 +5,8 @@ import PlatformFeaturesVisual from '@/components/home/PlatformFeaturesVisual';
 import type { FeatureVisualId } from '@/components/features/FeatureBlockVisuals';
 import type { ProductFeatureVisualId } from '@/components/features/ProductFeatureBlockVisuals';
 
+type VisualVariant = 'landscape' | 'plain' | 'photo';
+
 interface Transform {
   scale: number;
   opacity: number;
@@ -19,6 +21,7 @@ type PlatformBlock =
       description: string;
       kind: 'platform';
       visual: FeatureVisualId;
+      visualVariant: VisualVariant;
     }
   | {
       tag: string;
@@ -27,6 +30,7 @@ type PlatformBlock =
       description: string;
       kind: 'product';
       visual: ProductFeatureVisualId;
+      visualVariant: VisualVariant;
     };
 
 const blocks: PlatformBlock[] = [
@@ -37,6 +41,7 @@ const blocks: PlatformBlock[] = [
     description: 'Use help.yourcompany.com or a /help path so your knowledge base matches your brand.',
     kind: 'platform',
     visual: 'domain',
+    visualVariant: 'photo',
   },
   {
     tag: 'SEO & AI search',
@@ -45,14 +50,7 @@ const blocks: PlatformBlock[] = [
     description: 'Clean URLs, metadata, and structure help customers find answers in search engines and AI tools.',
     kind: 'platform',
     visual: 'seo',
-  },
-  {
-    tag: 'Performance',
-    title: 'Fast-loading',
-    highlight: 'help articles',
-    description: 'Quick pages improve search rankings and make it easier for users to get answers.',
-    kind: 'platform',
-    visual: 'performance',
+    visualVariant: 'photo',
   },
   {
     tag: 'Analytics',
@@ -62,22 +60,17 @@ const blocks: PlatformBlock[] = [
       'Track article views, search terms, and content gaps so you know what to improve in your help center.',
     kind: 'product',
     visual: 'analytics',
+    visualVariant: 'plain',
   },
   {
-    tag: 'Editor',
-    title: 'Write and update docs',
-    highlight: 'in one editor',
-    description: 'Create help articles, changelogs, and guides without switching between tools.',
+    tag: 'Editor & feedback',
+    title: 'Write, update, and',
+    highlight: 'improve docs',
+    description:
+      'Create help articles in one editor, collect reader feedback, and refine weak documentation over time.',
     kind: 'product',
     visual: 'editor',
-  },
-  {
-    tag: 'Feedback',
-    title: 'Collect reader',
-    highlight: 'feedback',
-    description: 'Ask if articles were helpful and use responses to improve weak documentation over time.',
-    kind: 'product',
-    visual: 'feedback',
+    visualVariant: 'landscape',
   },
 ];
 
@@ -152,8 +145,8 @@ export default function PlatformFeaturesSection() {
             One platform, fully featured
           </h2>
           <p className="mt-3 max-w-3xl text-base text-slate-600 sm:text-lg md:mt-4">
-            Wonderdesk includes AI search, custom domains, analytics, SEO tools, editing, and feedback —
-            everything you need to run a modern knowledge base that stays current.
+            Custom domains, SEO, analytics, and a modern editor — everything you need to run a knowledge
+            base that stays current.
           </p>
         </div>
 
@@ -200,9 +193,17 @@ export default function PlatformFeaturesSection() {
 
                       <div className="relative w-full overflow-hidden lg:rounded-r-xl">
                         {block.kind === 'platform' ? (
-                          <PlatformFeaturesVisual kind="platform" visual={block.visual} />
+                          <PlatformFeaturesVisual
+                            kind="platform"
+                            visual={block.visual}
+                            variant={block.visualVariant}
+                          />
                         ) : (
-                          <PlatformFeaturesVisual kind="product" visual={block.visual} />
+                          <PlatformFeaturesVisual
+                            kind="product"
+                            visual={block.visual}
+                            variant={block.visualVariant}
+                          />
                         )}
                       </div>
                     </div>

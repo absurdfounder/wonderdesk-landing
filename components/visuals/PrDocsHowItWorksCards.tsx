@@ -49,16 +49,6 @@ const INTEGRATION_ROW_TWO = [
   { name: 'Plain', logo: MEET_WONDER_LOGOS.plain },
 ] as const;
 
-const INTEGRATION_PILLS = [
-  { name: 'Dashboard', logo: '', left: 24, top: 36, dashboard: true },
-  { name: 'Fernand', logo: MEET_WONDER_LOGOS.fernand, left: 128, top: 24 },
-  { name: 'Zendesk', logo: MEET_WONDER_LOGOS.zendesk, left: 232, top: 36 },
-  { name: 'Crisp', logo: MEET_WONDER_LOGOS.crisp, left: 8, top: 108 },
-  { name: 'HubSpot', logo: MEET_WONDER_LOGOS.hubspot, left: 108, top: 100 },
-  { name: 'Featurebase', logo: MEET_WONDER_LOGOS.featurebase, left: 214, top: 108 },
-  { name: 'Plain', logo: MEET_WONDER_LOGOS.plain, left: 118, top: 168 },
-];
-
 const CARDS = [
   {
     title: 'She reads your real sources',
@@ -206,13 +196,33 @@ function SourcesVisualResponsive({ dark = false }: { dark?: boolean }) {
 
 function SourcesVisualFixed() {
   return (
-    <>
-      {INTEGRATION_PILLS.map((pill) => (
-        <div key={pill.name} style={{ position: 'absolute', left: pill.left, top: pill.top }}>
-          <IntegrationPillFixed name={pill.name} logo={pill.logo} dashboard={pill.dashboard} />
-        </div>
-      ))}
-    </>
+    <div
+      style={{
+        display: 'flex',
+        height: '100%',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 12,
+        padding: '0 16px',
+      }}
+    >
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+        {INTEGRATION_ROW_ONE.map((pill) => (
+          <IntegrationPillFixed
+            key={pill.name}
+            name={pill.name}
+            logo={pill.logo}
+            dashboard={'dashboard' in pill ? pill.dashboard : undefined}
+          />
+        ))}
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+        {INTEGRATION_ROW_TWO.map((pill) => (
+          <IntegrationPillFixed key={pill.name} name={pill.name} logo={pill.logo} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -288,12 +298,16 @@ function FeatureCardShellResponsive({
           : 'flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)]'
       }
     >
-      <div className={`relative h-[240px] shrink-0 overflow-hidden ${dotGridClass}`}>{visual}</div>
+      <div
+        className={`relative flex h-[240px] shrink-0 items-center justify-center overflow-hidden ${dotGridClass}`}
+      >
+        {visual}
+      </div>
       <div
         className={
           dark
-            ? 'flex flex-1 flex-col justify-center bg-[#0f0f0f] px-6 py-8 text-center sm:px-7 sm:py-9'
-            : 'flex flex-1 flex-col justify-center px-6 py-8 text-center sm:px-8 sm:py-10'
+            ? 'flex flex-1 flex-col justify-center bg-[#0f0f0f] px-6 py-7 text-center sm:px-7 sm:py-8'
+            : 'flex flex-1 flex-col justify-center px-6 py-6 text-center sm:px-8 sm:py-7'
         }
       >
         <h3
@@ -348,6 +362,9 @@ function FeatureCardShellFixed({
           position: 'relative',
           overflow: 'hidden',
           flexShrink: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         {visual}
@@ -356,7 +373,7 @@ function FeatureCardShellFixed({
         style={{
           flex: 1,
           background: '#ffffff',
-          padding: '32px 28px 36px',
+          padding: '28px 28px 32px',
           textAlign: 'center',
           display: 'flex',
           flexDirection: 'column',

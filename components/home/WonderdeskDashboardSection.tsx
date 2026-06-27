@@ -1,7 +1,7 @@
 'use client';
 
 import HeroArticleDemo from '@/components/HeroArticleDemo';
-import HeroMarquee from '@/components/HeroMarquee';
+import IntegrationsCapabilitySection from '@/components/home/IntegrationsCapabilitySection';
 import PixelDitherGradient from '@/components/ui/PixelDitherGradient';
 
 export default function WonderdeskDashboardSection() {
@@ -22,19 +22,14 @@ export default function WonderdeskDashboardSection() {
             </p>
           </div>
 
-          <div className="mt-8 max-w-4xl">
-            <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:text-[11px]">
-              Connects with
-            </p>
-            <HeroMarquee />
-          </div>
-
           <div className="relative mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 md:mt-10">
             <PixelDitherGradient />
             <div className="relative z-10 p-2 sm:p-4 md:p-5">
               <HeroArticleDemo embedded scenarioId="docs" />
             </div>
           </div>
+
+          <IntegrationsCapabilitySection embedded />
         </div>
       </div>
     </section>
