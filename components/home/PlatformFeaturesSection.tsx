@@ -88,7 +88,7 @@ export default function PlatformFeaturesSection() {
                 <p className="mt-3 max-w-md text-[15px] leading-6 text-slate-500">{block.description}</p>
               </div>
 
-              <div className="relative w-full overflow-hidden lg:min-h-full">
+              <div className="platform-feature-card-visual relative min-h-[220px] w-full overflow-hidden sm:min-h-[260px] lg:min-h-[24rem]">
                 {block.kind === 'platform' ? (
                   <PlatformFeaturesVisual kind="platform" visual={block.visual} variant="photo" />
                 ) : (
