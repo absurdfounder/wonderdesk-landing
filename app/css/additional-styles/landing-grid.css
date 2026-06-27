@@ -9,6 +9,11 @@
   border-right: 1px solid rgb(226 232 240 / 50%);
 }
 
+.landing-grid-column--dark {
+  border-left-color: rgb(30 41 59);
+  border-right-color: rgb(30 41 59);
+}
+
 .homepage-grid .max-w-7xl {
   border-left: 1px solid rgb(226 232 240 / 50%);
   border-right: 1px solid rgb(226 232 240 / 50%);

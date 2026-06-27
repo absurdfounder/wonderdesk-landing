@@ -76,39 +76,33 @@ function TrustLogo({
 
 export default function TrustBarSection() {
   return (
-    <>
-      <section className="bg-black">
-        <div className="landing-grid-column border-slate-800 bg-black">
-          <div className="landing-grid-pad border-b border-slate-800 py-10 md:py-12">
-            <div className="mx-auto max-w-3xl text-center">
-              <blockquote className="font-display text-xl font-medium leading-snug text-white sm:text-2xl md:text-[1.65rem]">
-                &ldquo;We cut doc update time sharply. Wonderdesk flags stale articles and gives us drafts we
-                can publish in minutes.&rdquo;
-              </blockquote>
-              <p className="mt-4 text-sm text-gray-400">
-                <span className="font-medium text-gray-200">Alex Moreno</span> · Founder, HelpNest
-              </p>
-            </div>
+    <section className="bg-white">
+      <div className="landing-grid-column landing-grid-column--dark bg-black">
+        <div className="landing-grid-pad border-b border-slate-800 py-10 md:py-12">
+          <div className="mx-auto max-w-3xl text-center">
+            <blockquote className="font-display text-xl font-medium leading-snug text-white sm:text-2xl md:text-[1.65rem]">
+              &ldquo;We cut doc update time sharply. Wonderdesk flags stale articles and gives us drafts we
+              can publish in minutes.&rdquo;
+            </blockquote>
+            <p className="mt-4 text-sm text-gray-400">
+              <span className="font-medium text-gray-200">Alex Moreno</span> · Founder, HelpNest
+            </p>
           </div>
         </div>
-      </section>
 
-      <section className="bg-black">
-        <div className="landing-grid-column border-slate-800 bg-black">
-          <div className="landing-grid-pad py-6 md:py-8">
-            <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between">
-              <span className="text-center text-sm font-medium text-gray-400 md:text-left md:text-base">
-                Trusted by growing SaaS teams
-              </span>
-              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 md:justify-end">
-                {logos.map((logo) => (
-                  <TrustLogo key={logo.alt} logo={logo} />
-                ))}
-              </div>
+        <div className="landing-grid-pad py-6 md:py-8">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between">
+            <span className="text-center text-sm font-medium text-gray-400 md:text-left md:text-base">
+              Trusted by growing SaaS teams
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 md:justify-end">
+              {logos.map((logo) => (
+                <TrustLogo key={logo.alt} logo={logo} />
+              ))}
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
