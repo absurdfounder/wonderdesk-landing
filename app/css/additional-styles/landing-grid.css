@@ -228,18 +228,6 @@ html.home-top-bar {
   container-name: feature-panel;
 }
 
-.platform-feature-visual-panel--grid {
-  aspect-ratio: 5 / 4;
-  flex-shrink: 0;
-  border-color: rgb(226 232 240);
-}
-
-@media (min-width: 640px) {
-  .platform-feature-visual-panel--grid {
-    aspect-ratio: 1 / 1;
-  }
-}
-
 .platform-feature-visual-root {
   position: absolute;
   inset: 0;

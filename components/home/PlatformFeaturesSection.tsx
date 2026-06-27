@@ -74,28 +74,26 @@ export default function PlatformFeaturesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 divide-y divide-slate-200 sm:grid-cols-2 sm:divide-x">
+        <div className="divide-y divide-slate-200">
           {blocks.map((block) => (
-            <article key={block.tag} className="flex flex-col bg-white">
-              <div className="platform-feature-visual-panel platform-feature-visual-panel--grid">
+            <article key={block.tag} className="platform-feature-card-grid bg-white">
+              <div className="platform-feature-card-copy">
+                <span className="font-silkscreen text-[11px] uppercase tracking-[0.12em] text-wonder">
+                  {block.tag}
+                </span>
+                <h3 className="mt-3.5 font-display text-[1.75rem] font-medium leading-[1.15] tracking-tight text-balance text-slate-900">
+                  {block.title}{' '}
+                  <span className="font-normal text-wonder">{block.highlight}</span>
+                </h3>
+                <p className="mt-3 max-w-md text-[15px] leading-6 text-slate-500">{block.description}</p>
+              </div>
+
+              <div className="relative w-full overflow-hidden lg:min-h-full">
                 {block.kind === 'platform' ? (
                   <PlatformFeaturesVisual kind="platform" visual={block.visual} variant="photo" />
                 ) : (
                   <PlatformFeaturesVisual kind="product" visual={block.visual} variant="photo" />
                 )}
-              </div>
-
-              <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-9 lg:py-10">
-                <span className="font-silkscreen text-[11px] uppercase tracking-[0.12em] text-wonder">
-                  {block.tag}
-                </span>
-                <h3 className="mt-3 font-display text-xl font-medium leading-snug tracking-tight text-slate-900 sm:text-[1.35rem]">
-                  {block.title}{' '}
-                  <span className="font-normal text-wonder">{block.highlight}</span>
-                </h3>
-                <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600 sm:text-[15px] sm:leading-6">
-                  {block.description}
-                </p>
               </div>
             </article>
           ))}
