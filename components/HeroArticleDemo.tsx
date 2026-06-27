@@ -903,7 +903,7 @@ export default function TrooperDemo({
     setIsRunning(true);
   };
 
-  const composerPlaceholder = inputText ? "" : (messages.length > 0 ? "Send follow-up" : "Do anything with AI…");
+  const composerPlaceholder = inputText ? "" : (messages.length > 0 ? "Send follow-up" : "Ask Wonderdesk to update docs…");
   const showSplit = SPLIT_PAGES.includes(activePage);
 
   return (

@@ -20,10 +20,10 @@ import type { DemoWorkspaceMode } from './demoTaskExecution';
 
 const ALL_PEOPLE: Record<string, { img: string; title?: string }> = {
   Vaibhav: { img: 'https://avatars.githubusercontent.com/u/25829699?v=4' },
-  Jordan: { img: 'https://i.pravatar.cc/150?u=agent-jordan', title: 'Chief of Staff' },
-  Aria: { img: 'https://i.pravatar.cc/150?u=agent-aria', title: 'Research Specialist' },
-  Leo: { img: 'https://i.pravatar.cc/150?u=agent-leo', title: 'DevOps' },
-  Ren: { img: 'https://i.pravatar.cc/150?u=agent-ren', title: 'Frontend' },
+  Jordan: { img: 'https://i.pravatar.cc/150?u=agent-jordan', title: 'Documentation Lead' },
+  Aria: { img: 'https://i.pravatar.cc/150?u=agent-aria', title: 'Content Strategist' },
+  Leo: { img: 'https://i.pravatar.cc/150?u=agent-leo', title: 'Support Ops' },
+  Ren: { img: 'https://i.pravatar.cc/150?u=agent-ren', title: 'Technical Writer' },
 };
 
 function ProviderChip({ provider, size = 14 }: { provider: string; size?: number }) {

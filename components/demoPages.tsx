@@ -22,10 +22,10 @@ const listCard: CSSProperties = {
 const sectionLabel: CSSProperties = { fontSize: 12, fontWeight: 500, color: '#a3a3a3' };
 
 export const DEMO_AGENTS = [
-  { name: 'Jordan', role: 'Chief of Staff', badge: 'LEAD', img: 'https://i.pravatar.cc/150?u=agent-jordan' },
-  { name: 'Aria', role: 'Growth & Marketing', badge: 'MEMBER', img: 'https://i.pravatar.cc/150?u=agent-aria' },
-  { name: 'Leo', role: 'Operations & Finance', badge: 'MEMBER', img: 'https://i.pravatar.cc/150?u=agent-leo' },
-  { name: 'Ren', role: 'Product Builder', badge: 'MEMBER', img: 'https://i.pravatar.cc/150?u=agent-ren' },
+  { name: 'Jordan', role: 'Documentation Lead', badge: 'LEAD', img: 'https://i.pravatar.cc/150?u=agent-jordan' },
+  { name: 'Aria', role: 'Content Strategist', badge: 'MEMBER', img: 'https://i.pravatar.cc/150?u=agent-aria' },
+  { name: 'Leo', role: 'Support Ops', badge: 'MEMBER', img: 'https://i.pravatar.cc/150?u=agent-leo' },
+  { name: 'Ren', role: 'Technical Writer', badge: 'MEMBER', img: 'https://i.pravatar.cc/150?u=agent-ren' },
 ];
 
 function Av({ src, size = 32 }: { src: string; size?: number }) {
@@ -256,19 +256,19 @@ export function DemoAgentsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
             <OrgNode name="Vaibhav" role="Founder" img="https://avatars.githubusercontent.com/u/25829699?v=4" human />
             <div style={{ width: 1, height: 24, background: C.border }} />
-            <OrgNode name="Jordan" role="Chief of Staff" img={DEMO_AGENTS[0].img} lead />
+            <OrgNode name="Jordan" role="Documentation Lead" img={DEMO_AGENTS[0].img} lead />
             <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ width: 1, height: 20, background: C.border }} />
-                <OrgNode name="Aria" role="Growth" img={DEMO_AGENTS[1].img} />
+                <OrgNode name="Aria" role="Content" img={DEMO_AGENTS[1].img} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ width: 1, height: 20, background: C.border }} />
-                <OrgNode name="Ren" role="Product" img={DEMO_AGENTS[3].img} />
+                <OrgNode name="Ren" role="Technical Writing" img={DEMO_AGENTS[3].img} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ width: 1, height: 20, background: C.border }} />
-                <OrgNode name="Leo" role="Ops" img={DEMO_AGENTS[2].img} />
+                <OrgNode name="Leo" role="Support Ops" img={DEMO_AGENTS[2].img} />
               </div>
             </div>
           </div>
@@ -293,9 +293,9 @@ function OrgNode({ name, role, img, human, lead }: { name: string; role: string;
 /* ─── Goals ─── */
 export function DemoGoalsPage() {
   const goals = [
-    { title: 'Launch Wonder on Product Hunt', status: 'Active', priority: 'High', progress: 72, tasks: 6 },
-    { title: 'Hit 10k monthly visitors', status: 'Active', priority: 'Medium', progress: 45, tasks: 4 },
-    { title: 'Ship v2 onboarding', status: 'Planned', priority: 'Low', progress: 12, tasks: 3 },
+    { title: 'Keep help center current with every release', status: 'Active', priority: 'High', progress: 72, tasks: 6 },
+    { title: 'Reduce support tickets via self-serve docs', status: 'Active', priority: 'Medium', progress: 45, tasks: 4 },
+    { title: 'Ship enterprise SSO documentation', status: 'Planned', priority: 'Low', progress: 12, tasks: 3 },
   ];
   return (
     <DemoPageLayout>

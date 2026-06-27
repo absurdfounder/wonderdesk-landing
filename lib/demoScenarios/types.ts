@@ -41,6 +41,7 @@ export type DemoOrg = {
 export type ChannelBrand = 'trooper' | 'slack' | 'whatsapp';
 
 export type DemoScenarioId =
+  | 'docs'
   | 'launch'
   | 'coding'
   | 'marketing'

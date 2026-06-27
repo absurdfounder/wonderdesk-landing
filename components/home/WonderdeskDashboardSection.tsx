@@ -17,8 +17,8 @@ export default function WonderdeskDashboardSection() {
               Chat, tasks, and doc drafts in one workspace
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              Wonderdesk connects to your stack, assigns documentation work, and queues article updates for
-              review—so your team ships help content with the same rhythm as product releases.
+              When a PR ships, Wonderdesk drafts the missing article, refreshes related docs, and routes
+              support follow-ups—so your team ships help content with the same rhythm as product releases.
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export default function WonderdeskDashboardSection() {
           <div className="relative mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 md:mt-10">
             <PixelDitherGradient />
             <div className="relative z-10 p-2 sm:p-4 md:p-5">
-              <HeroArticleDemo embedded />
+              <HeroArticleDemo embedded scenarioId="docs" />
             </div>
           </div>
         </div>

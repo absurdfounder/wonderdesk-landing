@@ -1,3 +1,4 @@
+import { docsScenario } from './docs';
 import { launchScenario } from './launch';
 import { codingScenario } from './coding';
 import { marketingScenario } from './marketing';
@@ -22,6 +23,7 @@ import type { DemoScenario, DemoScenarioId } from './types';
 export type { DemoScenario, DemoScenarioId, DemoOrg, DemoKanbanTask, ChannelBrand } from './types';
 
 const SCENARIOS: Record<DemoScenarioId, DemoScenario> = {
+  docs: docsScenario,
   launch: launchScenario,
   coding: codingScenario,
   marketing: marketingScenario,
@@ -43,8 +45,8 @@ const SCENARIOS: Record<DemoScenarioId, DemoScenario> = {
   growth: growthScenario,
 };
 
-export function getDemoScenario(id: DemoScenarioId = 'launch'): DemoScenario {
-  return SCENARIOS[id] ?? launchScenario;
+export function getDemoScenario(id: DemoScenarioId = 'docs'): DemoScenario {
+  return SCENARIOS[id] ?? docsScenario;
 }
 
-export const DEFAULT_DEMO_SCENARIO_ID: DemoScenarioId = 'launch';
+export const DEFAULT_DEMO_SCENARIO_ID: DemoScenarioId = 'docs';
