@@ -1,20 +1,21 @@
 import AIAgentSection from '@/components/AIAgentSection';
+import { BookOpen, FilePen, ShieldCheck } from 'lucide-react';
 
 const steps = [
   {
-    number: '01',
-    title: 'Connect sources',
-    body: 'GitHub, support tools, changelogs, release notes.',
+    icon: BookOpen,
+    title: 'Wonder reads your sources',
+    body: 'Codebase, pull requests, tickets, changelogs — wherever product knowledge already lives.',
   },
   {
-    number: '02',
-    title: 'Get draft updates',
-    body: 'Wonderdesk suggests edits and refreshed screenshots.',
+    icon: FilePen,
+    title: 'Wonder drafts the updates',
+    body: 'Stale articles get rewritten and screenshots refresh, ready for your review.',
   },
   {
-    number: '03',
-    title: 'Publish what you approve',
-    body: 'Every change is a draft until your team ships it.',
+    icon: ShieldCheck,
+    title: 'You approve in one click',
+    body: 'Every update is a draft. Publish, edit, or skip. Nothing goes live without you.',
   },
 ];
 
@@ -22,42 +23,37 @@ export default function HowWonderWorksSection() {
   return (
     <section className="bg-white">
       <div className="landing-grid-column bg-white">
-        <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-14 lg:py-16">
-          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-12 xl:gap-16">
-            <div className="max-w-md lg:pt-2">
-              <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">
-                How it works
-              </p>
-              <h2 className="mt-3 font-display text-2xl font-normal text-slate-900 sm:text-3xl md:text-4xl">
-                Docs that track your product
-              </h2>
-              <p className="mt-3 text-base leading-relaxed text-slate-600 sm:text-lg">
-                Watch Wonderdesk turn a product change into reviewed help articles.
-              </p>
+        <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
+          <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">Meet Wonder</p>
+          <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-900 sm:text-3xl md:text-4xl">
+            You build the product. Wonder handles the docs.
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            Not a chatbot you prompt. An agent that watches your product, drafts doc updates, and queues them for
+            approval.
+          </p>
+        </div>
 
-              <ol className="mt-8 space-y-0 border-t border-slate-200">
-                {steps.map((step) => (
-                  <li
-                    key={step.number}
-                    className="grid grid-cols-[3.5rem_1fr] gap-3 border-b border-slate-200 py-5 sm:grid-cols-[4rem_1fr] sm:gap-4"
-                  >
-                    <span className="pt-0.5 font-mono text-xs font-semibold tracking-[0.14em] text-wonder">
-                      {step.number}
-                    </span>
-                    <div>
-                      <h3 className="font-display text-lg font-medium leading-snug text-slate-900">
-                        {step.title}
-                      </h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{step.body}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
+        <div className="border-b border-slate-200 bg-slate-50/80">
+          <div className="landing-grid-pad py-8 md:py-10 lg:py-12">
+            <AIAgentSection embedded />
+          </div>
+        </div>
 
-            <div className="min-w-0 lg:sticky lg:top-[14vh]">
-              <AIAgentSection demoOnly embedded />
-            </div>
+        <div className="landing-grid-pad py-10 md:py-12">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6 lg:gap-10">
+            {steps.map((step) => {
+              const Icon = step.icon;
+              return (
+                <article key={step.title} className="md:border-l md:border-slate-200 md:pl-6 lg:pl-8 first:md:border-l-0 first:md:pl-0">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white shadow-sm">
+                    <Icon className="h-5 w-5 text-wonder" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="font-display text-lg font-medium text-slate-900">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.body}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>

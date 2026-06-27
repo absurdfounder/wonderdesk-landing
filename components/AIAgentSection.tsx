@@ -355,7 +355,7 @@ export default function AIAgentSection({
                 </span>
               </div>
 
-              <div className={`grid grid-cols-1 gap-3 ${embedded ? 'sm:grid-cols-1' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
+              <div className={`grid grid-cols-1 gap-3 ${embedded ? 'sm:grid-cols-2 xl:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
                 {DRAFT_ARTICLES.map((article, idx) => (
                   <div
                     key={article.title}
