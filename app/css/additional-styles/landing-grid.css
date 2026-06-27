@@ -230,9 +230,9 @@ html.home-top-bar {
   justify-content: center;
   min-height: 16rem;
   padding: 1.25rem 1.5rem;
-  background-color: #f7f7f7;
-  background-image: radial-gradient(circle, rgba(186, 183, 195, 0.45) 0.65px, transparent 0.65px);
-  background-size: 10px 10px;
+  background-color: #c7edf5;
+  background-image: radial-gradient(circle, rgba(0, 159, 188, 0.18) 0.85px, transparent 0.85px);
+  background-size: 12px 12px;
 }
 
 .platform-feature-row__mockup {
@@ -252,12 +252,12 @@ html.home-top-bar {
 
 @media (min-width: 1024px) {
   .platform-feature-row {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
     min-height: 20rem;
   }
 
   .platform-feature-row--reverse {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-columns: minmax(0, 4fr) minmax(0, 5fr);
   }
 
   .platform-feature-row--reverse .platform-feature-row__copy {
@@ -281,7 +281,8 @@ html.home-top-bar {
   }
 
   .platform-feature-row__visual {
-    min-height: 20rem;
+    min-height: 34rem;
+    width: 36rem;
     padding: 1.5rem 2rem;
   }
 
