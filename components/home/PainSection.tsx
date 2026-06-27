@@ -1,40 +1,45 @@
 const pains = [
   {
-    title: 'Screenshots no longer match the product',
-    body: 'A small UI change can make a whole tutorial wrong. Fixing it takes time, so outdated images stay live longer than they should.',
+    number: '01',
+    title: 'Stale screenshots',
+    body: 'One UI change ages every tutorial image. Fixes keep getting pushed back.',
   },
   {
-    title: 'Support keeps answering the same questions',
-    body: 'Your team explains the same workflow in chat every week. The answer belongs in your knowledge base, but writing it keeps getting pushed back.',
+    number: '02',
+    title: 'Repeat tickets',
+    body: 'Support answers the same workflow in chat every week instead of once in docs.',
   },
   {
-    title: 'Users leave when docs fail them',
-    body: 'People try to self-serve first. If search returns old or missing articles, they give up, open a ticket, or churn quietly.',
+    number: '03',
+    title: 'Quiet churn',
+    body: 'Users self-serve first. Wrong or missing articles mean tickets—or they leave.',
   },
 ];
 
 export default function PainSection() {
   return (
     <section className="bg-white">
-      <div className="landing-grid-column">
-        <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-14">
-          <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">The problem</p>
-          <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-800 sm:text-3xl md:text-4xl">
-            Outdated docs, more support work
+      <div className="landing-grid-column bg-white">
+        <div className="landing-grid-pad border-b border-slate-200 py-10 md:py-12">
+          <p className="font-silkscreen text-xs uppercase tracking-wide text-wonder sm:text-sm">Sound familiar?</p>
+          <h2 className="mt-3 max-w-3xl font-display text-2xl font-normal text-slate-900 sm:text-3xl md:text-4xl">
+            Your docs fall behind every release
           </h2>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            Product teams ship fast. Documentation usually lags behind. That gap shows up as repeat tickets,
-            slower onboarding, and lower trust in your help center.
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            You ship constantly. Help articles drift out of date—and customers notice before your team does.
           </p>
+        </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-            {pains.map((pain) => (
-              <article key={pain.title} className="rounded-xl border border-slate-200 bg-slate-50/50 p-6">
-                <h3 className="font-display text-lg font-medium leading-snug text-slate-900">{pain.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{pain.body}</p>
-              </article>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 divide-y divide-slate-200 md:grid-cols-3 md:divide-x md:divide-y-0">
+          {pains.map((pain) => (
+            <article key={pain.number} className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
+              <p className="font-mono text-[11px] font-semibold tracking-[0.16em] text-wonder">{pain.number}</p>
+              <h3 className="mt-3 font-display text-xl font-medium leading-snug text-slate-900 sm:text-[1.35rem]">
+                {pain.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">{pain.body}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
