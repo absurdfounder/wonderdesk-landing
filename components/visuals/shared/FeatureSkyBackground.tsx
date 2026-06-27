@@ -25,7 +25,7 @@ export default function FeatureSkyBackground({
         fill
         priority={priority}
         sizes="(min-width: 1024px) 50vw, 100vw"
-        className="object-cover object-[center_42%] scale-[1.28]"
+        className="object-cover object-center scale-[1.15]"
         draggable={false}
       />
       {tinted ? <div className="platform-feature-sky-tint" /> : null}

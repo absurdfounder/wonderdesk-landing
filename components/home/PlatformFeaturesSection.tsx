@@ -76,7 +76,10 @@ export default function PlatformFeaturesSection() {
 
         <div className="divide-y divide-slate-200">
           {blocks.map((block) => (
-            <article key={block.tag} className="platform-feature-card-grid bg-white">
+            <article
+              key={block.tag}
+              className="platform-feature-card-grid platform-feature-card-grid--tight landing-grid-pad lg:px-8 xl:px-10"
+            >
               <div className="platform-feature-card-copy">
                 <span className="font-silkscreen text-[11px] uppercase tracking-[0.12em] text-wonder">
                   {block.tag}
@@ -88,7 +91,7 @@ export default function PlatformFeaturesSection() {
                 <p className="mt-3 max-w-md text-[15px] leading-6 text-slate-500">{block.description}</p>
               </div>
 
-              <div className="platform-feature-card-visual relative min-h-[220px] w-full overflow-hidden sm:min-h-[260px] lg:min-h-[24rem]">
+              <div className="platform-feature-card-visual relative w-full overflow-hidden">
                 {block.kind === 'platform' ? (
                   <PlatformFeaturesVisual kind="platform" visual={block.visual} variant="photo" />
                 ) : (
