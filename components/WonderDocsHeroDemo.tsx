@@ -280,9 +280,9 @@ export default function HeroArticleDemo() {
                     {step === 'input' && (
                       <div
                         key="input"
-                        className="mx-auto w-full max-w-5xl overflow-hidden rounded-2xl bg-black/30 p-1.5 ring-2 ring-white/10 backdrop-blur-lg"
+                        className="mx-auto w-full max-w-5xl overflow-hidden rounded-2xl bg-black/30 p-2.5 ring-2 ring-white/10 backdrop-blur-lg sm:p-3"
                       >
-                        <div className="flex items-center gap-3 px-5 py-3.5">
+                        <div className="flex items-center gap-3 px-3 py-3 sm:px-4 sm:py-3.5">
                           <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-blue-500">
                             <img src="https://dazzling-cat.netlify.app/wondercharacter.png" alt="Wonder" className="h-full w-full object-contain" />
                           </div>
@@ -307,8 +307,8 @@ export default function HeroArticleDemo() {
                         </div>
                         <div className="rounded-xl bg-white">
                           <div
-                            className="w-full border-none bg-transparent px-6 py-5 text-base text-neutral-700 leading-relaxed"
-                            style={{ height: '140px', overflow: 'hidden' }}
+                            className="w-full border-none bg-transparent px-5 py-4 text-base leading-relaxed text-neutral-700 sm:px-6"
+                            style={{ minHeight: '132px', overflow: 'hidden' }}
                             aria-label="Task description"
                           >
                             <span>{fullPromptText.slice(0, typedLength)}</span>
@@ -319,7 +319,7 @@ export default function HeroArticleDemo() {
                               aria-hidden
                             />
                           </div>
-                          <div className="flex justify-between border-t border-neutral-200 px-6 pt-5 pb-6">
+                          <div className="flex items-center justify-between border-t border-neutral-200 px-5 py-4 sm:px-6">
                             <div className="flex items-center gap-2">
                               <button type="button" disabled className="inline-flex size-10 cursor-not-allowed items-center justify-center rounded-full bg-neutral-200 text-neutral-600 opacity-50" aria-label="Attach">
                                 <Paperclip size={20} strokeWidth={1.5} />
