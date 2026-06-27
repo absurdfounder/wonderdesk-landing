@@ -164,7 +164,7 @@ const FAQCell: React.FC<FAQCellProps> = ({ question, answer, index, totalRows, t
     .join(' ');
 
   return (
-    <div className={`group relative bg-white ${borderClasses}`}>
+    <div className={`group relative ${borderClasses}`}>
       <button
         className="flex w-full items-start gap-3 px-4 py-4 text-left sm:gap-4 sm:px-6 sm:py-6"
         onClick={() => setIsOpen(!isOpen)}
@@ -201,7 +201,7 @@ const FAQ: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
     <div
       className={
         embedded
-          ? 'bg-slate-100 pb-12 pt-10 md:pb-16 md:pt-14'
+          ? 'pb-12 pt-10 md:pb-16 md:pt-14'
           : 'mx-auto max-w-7xl px-0 pb-12 pt-4 sm:pb-20 sm:pt-6'
       }
     >
@@ -243,8 +243,8 @@ const FAQ: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
 
       <div
         className={[
-          'mt-8 grid grid-cols-1 bg-white md:grid-cols-2',
-          embedded ? 'border-t border-slate-200' : 'border border-slate-100',
+          'mt-8 grid grid-cols-1 md:grid-cols-2',
+          embedded ? 'border-t border-slate-200' : 'border border-slate-200',
         ].join(' ')}
       >
         {activeFaqs.map((faq, index) => (
