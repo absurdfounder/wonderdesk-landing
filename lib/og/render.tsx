@@ -1,6 +1,7 @@
 import React from 'react';
 import { ImageResponse } from 'next/og';
 import { mergeBadgeIcons } from '@/lib/og/agentIcons';
+import { loadOgRenderAssets, type OgRenderAssets } from '@/lib/og/assets';
 import { loadOgFonts } from '@/lib/og/fonts';
 import { formatOgDisplayUrl } from '@/lib/og/pageUrls';
 import type { OgHeroContent } from '@/lib/og/types';
@@ -11,8 +12,10 @@ const BRAND_ACCENT = '#0891b2';
 const BRAND_ACCENT_TEXT = '#0e7490';
 const SLATE_200 = '#e2e8f0';
 const SLATE_400 = '#94a3b8';
-const WONDERDESK_LOGOMARK_URL = 'https://wonderdesk.ai/images/logonew-black.png';
-const OG_BACKGROUND_URL = 'https://wonderdesk.ai/og/share-background.png';
+
+/** Full wordmark includes the orange star + WONDER DESK (908×128). */
+const LOGO_WIDTH = 210;
+const LOGO_HEIGHT = 30;
 
 /** Scaled from site max-w-7xl + md:px-6 frame rhythm for 1200×630 OG canvas. */
 const FRAME_INSET = 28;
@@ -29,23 +32,16 @@ const CAMO_WASH_BG = [
   'linear-gradient(180deg, #f8fbfd 0%, #eef6fa 100%)',
 ].join(', ');
 
-function WonderdeskBrandMark() {
+function WonderdeskBrandMark({ logoUrl }: { logoUrl: string }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={WONDERDESK_LOGOMARK_URL} alt="" width={56} height={56} />
-      <span
-        style={{
-          fontSize: 32,
-          lineHeight: 1,
-          fontFamily: 'Silkscreen',
-          color: '#0f172a',
-          letterSpacing: '-0.02em',
-        }}
-      >
-        wonderdesk
-      </span>
-    </div>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={logoUrl}
+      alt=""
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
+      style={{ objectFit: 'contain', display: 'block' }}
+    />
   );
 }
 
@@ -121,7 +117,7 @@ function BadgeRow({ badges }: { badges: NonNullable<OgHeroContent['badgeIcons']>
   );
 }
 
-function DecorativeGridPanel() {
+function DecorativeGridPanel({ gridBackgroundUrl }: { gridBackgroundUrl: string }) {
   const cellStyle = {
     display: 'flex' as const,
     flex: 1,
@@ -144,7 +140,7 @@ function DecorativeGridPanel() {
     >
       <div style={{ display: 'flex', flex: 1, gap: 1 }}>
         <div style={{ ...cellStyle, background: '#eef8fc' }} />
-        <div style={cellStyle}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={OG_BACKGROUND_URL} alt="" width={170} height={130} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.85 }} /></div>
+        <div style={cellStyle}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={gridBackgroundUrl} alt="" width={170} height={130} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.92 }} /></div>
         <div style={{ ...cellStyle, background: '#fafaf8' }} />
       </div>
       <div style={{ display: 'flex', flex: 1, gap: 1 }}>
@@ -161,7 +157,7 @@ function DecorativeGridPanel() {
   );
 }
 
-export function OgHeroImage({ content }: { content: OgHeroContent }) {
+export function OgHeroImage({ content, assets }: { content: OgHeroContent; assets: OgRenderAssets }) {
   const singleLine = content.singleLineHeadline !== false;
   const badges = mergeBadgeIcons(content.badgeIcons, content.description);
   const displayUrl = formatOgDisplayUrl(content.pageUrl || 'https://wonderdesk.ai');
@@ -211,7 +207,7 @@ export function OgHeroImage({ content }: { content: OgHeroContent }) {
           }}
         >
           <MissionEyebrow index={content.eyebrowIndex} label={content.eyebrowLabel} />
-          <WonderdeskBrandMark />
+          <WonderdeskBrandMark logoUrl={assets.logoUrl} />
         </div>
 
         {/* Main body — content column + decorative grid panel */}
@@ -329,7 +325,7 @@ export function OgHeroImage({ content }: { content: OgHeroContent }) {
             </div>
           </div>
 
-          <DecorativeGridPanel />
+          <DecorativeGridPanel gridBackgroundUrl={assets.gridBackgroundUrl} />
         </div>
 
         {/* Footer band — URL row with section divider */}
@@ -350,8 +346,8 @@ export function OgHeroImage({ content }: { content: OgHeroContent }) {
 }
 
 export async function createOgImageResponse(content: OgHeroContent) {
-  const fonts = await loadOgFonts();
-  return new ImageResponse(<OgHeroImage content={content} />, {
+  const [fonts, assets] = await Promise.all([loadOgFonts(), loadOgRenderAssets()]);
+  return new ImageResponse(<OgHeroImage content={content} assets={assets} />, {
     ...OG_SIZE,
     fonts,
   });
