@@ -2,6 +2,7 @@ import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { _loadFromJson, _transformDataToPostPageView } from '../../../utils/helper';
+import { mergeOgImages } from '@/lib/og/buildMetadata';
 import MoveBack from '@/components/MoveBack';
 import Loading from '@/components/Loading';
 import Header from '@/components/ui/header';
@@ -64,16 +65,18 @@ export async function generateMetadata(
     };
   }
 
-  return {
-    title: `Integrate ${filteredContent.product.name} with Wonder  Sites`,
-    description: `Connect Wonder  to ${filteredContent.product.name}: ${filteredContent.product.description}`,
-    openGraph: {
-      images: [{ url: filteredContent.proof.screenshot }],
+  return mergeOgImages(
+    {
+      title: `Integrate ${filteredContent.product.name} with Wonderdesk`,
+      description: `Connect Wonderdesk to ${filteredContent.product.name}: ${filteredContent.product.description}`,
+      alternates: {
+        canonical: `https://wonderdesk.ai/integration/${slug}`,
+      },
     },
-    alternates: {
-      canonical: `https://wonderdesk.ai/integration/${slug}`,
-    },
-  };
+    'legacy-integration',
+    `${filteredContent.product.name} Integration | Wonderdesk`,
+    slug,
+  );
 }
 
 async function getData(slug: string) {

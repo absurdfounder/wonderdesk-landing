@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "AI Help Center - Self-updating knowledge base | Wonder",
-    description:
-        "Create a self-updating help center that stays current automatically. Build your knowledge base with Wonder's AI-powered help center.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/ai-help-center",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "AI Help Center - Self-updating knowledge base",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "AI Help Center - Self-updating knowledge base",
-            },
-        ],
-    },
-};
-
-export default function AIHelpCenterPage() {
+export const metadata = buildPageMetadata({
+  title: "AI Help Center - Self-updating knowledge base | Wonder",
+  description: "Create a self-updating help center that stays current automatically. Build your knowledge base with Wonderdesk's AI-powered help center.",
+  canonical: "https://wonderdesk.ai/features/ai-help-center",
+  ogKind: "feature",
+  ogSlug: "ai-help-center",
+});export default function AIHelpCenterPage() {
     return (
         <div>
             <section 

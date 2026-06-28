@@ -8,6 +8,7 @@ import ComparisonTable from '../ComparisonTable';
 import TemplateDesign from '../TemplateDesign';
 import TemplateLibrary from '../TemplateList';
 import { _loadFromJsonComparison, _transformDataToPostPageView } from '../../../utils/helper';
+import { mergeOgImages } from '@/lib/og/buildMetadata';
 import MoveBack from '@/components/MoveBack';
 import Loading from '@/components/Loading';
 import Header from '@/components/ui/header';
@@ -64,17 +65,18 @@ export async function generateMetadata(
     throw new Error('Comparision not found');
   }
 
-  return {
-    title: `The simple, powerful ${filteredContent.product.name} alternative - Wonder vs ${filteredContent.product.name}`,
-    description: `Wonder is the fast, modern ${filteredContent.product.name} alternative built on notion as a CMS, it's focused completely on professional website publishing. You can publish a blog, helpdesk, directory or even a 2-sided marketplace. 
-Compare Wonder  to ${filteredContent.product.name}: ${filteredContent.product.description}`,
-    openGraph: {
-      images: [{ url: filteredContent.product.heroimage }],
+  return mergeOgImages(
+    {
+      title: `The simple, powerful ${filteredContent.product.name} alternative - Wonderdesk vs ${filteredContent.product.name}`,
+      description: `Wonderdesk is the fast, modern ${filteredContent.product.name} alternative built on Notion as a CMS. Compare Wonderdesk to ${filteredContent.product.name}: ${filteredContent.product.description}`,
+      alternates: {
+        canonical: `https://wonderdesk.ai/compare-against/${slug}`,
+      },
     },
-    alternates: {
-      canonical: `https://wonderdesk.ai/compare-against/${slug}`,
-    },
-  };
+    'compare',
+    `Wonderdesk vs ${filteredContent.product.name}`,
+    slug,
+  );
 }
 
 export default async function ComparisonAgainst({ params }: { params: { slug: string } }) {

@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "Multilingual Knowledge Base - Translate your help center | Wonder",
-    description:
-        "Translate your help center into multiple languages automatically. Reach customers worldwide with Wonder's multilingual knowledge base.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/multilingual-knowledge-base",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "Multilingual Knowledge Base - Translate your help center",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "Multilingual Knowledge Base - Translate your help center",
-            },
-        ],
-    },
-};
-
-export default function MultilingualKnowledgeBasePage() {
+export const metadata = buildPageMetadata({
+  title: "Multilingual Knowledge Base - Translate your help center | Wonder",
+  description: "Translate your help center into multiple languages automatically. Reach customers worldwide with Wonderdesk's multilingual knowledge base.",
+  canonical: "https://wonderdesk.ai/features/multilingual-knowledge-base",
+  ogKind: "feature",
+  ogSlug: "multilingual-knowledge-base",
+});export default function MultilingualKnowledgeBasePage() {
     return (
         <div>
             <section 

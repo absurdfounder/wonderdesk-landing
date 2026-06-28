@@ -1,27 +1,22 @@
+import { ogImageMeta } from '@/lib/og/url';
+
+const homeOg = ogImageMeta('home', 'Wonderdesk — AI help center and knowledge base software');
+
 export const metadata = {
   metadataBase: new URL('https://wonderdesk.ai'),
   title: 'Wonderdesk | AI Help Center & Knowledge Base Software',
-description: 'Wonderdesk is AI help center software that drafts and updates documentation from your product changes. Launch a searchable knowledge base with custom domains, SEO, and analytics.',
+  description: 'Wonderdesk is AI help center software that drafts and updates documentation from your product changes. Launch a searchable knowledge base with custom domains, SEO, and analytics.',
+  alternates: {
+    canonical: 'https://wonderdesk.ai',
+  },
   openGraph: {
-    images: [
-      {
-        url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
-        width: 1200,
-        height: 630,
-        alt: "Wonderdesk AI help center and knowledge base software",
-      },
-    ],
+    images: homeOg.openGraph!.images,
   },
   twitter: {
-    card: "summary_large_image",
-    images: [
-      {
-        url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
-        alt: "AI Help Center, Blog, Changelog & Docs That Stay Up to Date",
-      },
-    ],
+    card: 'summary_large_image',
+    images: homeOg.twitter!.images,
   },
-}
+};
 
 import Hero from '@/components/hero'
 import Header from '@/components/ui/header'

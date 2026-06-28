@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "AI Answers - Help desk chatbot for support | Wonder",
-    description:
-        "AI-powered help desk chatbot for customer support. Reduce support tickets and provide instant answers with Wonder's AI customer service.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/generative-ai-customer-service",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "AI Answers - Help desk chatbot for support",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "AI Answers - Help desk chatbot for support",
-            },
-        ],
-    },
-};
-
-export default function GenerativeAICustomerServicePage() {
+export const metadata = buildPageMetadata({
+  title: "AI Answers - Help desk chatbot for support | Wonder",
+  description: "AI-powered help desk chatbot for customer support. Reduce support tickets and provide instant answers with Wonderdesk's AI customer service.",
+  canonical: "https://wonderdesk.ai/features/generative-ai-customer-service",
+  ogKind: "feature",
+  ogSlug: "generative-ai-customer-service",
+});export default function GenerativeAICustomerServicePage() {
     return (
         <div>
             <section 

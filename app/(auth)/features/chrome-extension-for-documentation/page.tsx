@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "Chrome Extension - Update docs from any tab | Wonder",
-    description:
-        "Update your documentation from any tab with Wonder's Chrome extension. Capture screenshots and update docs without leaving your browser.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/chrome-extension-for-documentation",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "Chrome Extension - Update docs from any tab",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "Chrome Extension - Update docs from any tab",
-            },
-        ],
-    },
-};
-
-export default function ChromeExtensionForDocumentationPage() {
+export const metadata = buildPageMetadata({
+  title: "Chrome Extension - Update docs from any tab | Wonder",
+  description: "Update your documentation from any tab with Wonderdesk's Chrome extension. Capture screenshots and update docs without leaving your browser.",
+  canonical: "https://wonderdesk.ai/features/chrome-extension-for-documentation",
+  ogKind: "feature",
+  ogSlug: "chrome-extension-for-documentation",
+});export default function ChromeExtensionForDocumentationPage() {
     return (
         <div>
             <section 

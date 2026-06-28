@@ -1,44 +1,15 @@
 import Link from 'next/link';
 // Image import is present but not used in this specific policy content
 import Image from 'next/image';
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: 'Wonder Sites Terms of Service', // More specific title
-    description: 'Terms of Service for using Wonder Sites (wonderdesk.ai)', // More specific description
-    alternates: {
-        canonical: "https://wonderdesk.ai/terms",
-      },
-    openGraph: {
-        title: 'Wonder Sites Terms of Service', // Consistent title
-        description: 'Read the terms governing your use of the Wonder Sites platform.', // Specific OG description
-        url: "https://wonderdesk.ai/terms", // Add URL
-        siteName: 'Wonder Sites', // Add site name
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Wonder Sites - Notion to Website", // More relevant alt text
-            },
-        ],
-        locale: 'en_US', // Optional: Specify locale
-        type: 'website',
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: 'Wonder Sites Terms of Service', // Consistent title
-        description: 'Read the terms governing your use of the Wonder Sites platform.', // Specific Twitter description
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
-                alt: "Wonder Sites - Notion to Website", // More relevant alt text
-            },
-        ],
-    },
-};
-
-
-export default function TermsOfServicePage() { // Renamed component
+export const metadata = buildPageMetadata({
+  title: "Terms of Service",
+  description: "Terms governing use of Wonderdesk and related services.",
+  canonical: "https://wonderdesk.ai/terms",
+  ogKind: "page",
+  ogSlug: "terms",
+});export default function TermsOfServicePage() { // Renamed component
     return (
         <section>
             <div className="max-w-3xl mx-auto px-4 sm:px-6"> {/* Adjusted max-width */}

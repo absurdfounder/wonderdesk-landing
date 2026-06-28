@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata, ResolvingMetadata } from 'next';
 import { _loadFromJson, _transformDataToPostPageView, renderContent } from '../../../utils/helper';
+import { mergeOgImages } from '@/lib/og/buildMetadata';
 import Image from 'next/image';
 import Link from 'next/link';
 import MoveBack from '@/components/MoveBack';
@@ -86,16 +87,18 @@ export async function generateMetadata(
       };
     }
 
-    return {
-      title: `${filteredContent.product.name}`,
-      description: `${filteredContent.product.name}: ${filteredContent.product.description}`,
-      openGraph: {
-        images: [{ url: filteredContent.proof.screenshot }],
+    return mergeOgImages(
+      {
+        title: `${filteredContent.product.name}`,
+        description: `${filteredContent.product.name}: ${filteredContent.product.description}`,
+        alternates: {
+          canonical: `https://wonderdesk.ai/showcase/${slug}`,
+        },
       },
-      alternates: {
-        canonical: `https://wonderdesk.ai/showcase/${slug}`,
-      },
-    };
+      'showcase',
+      `${filteredContent.product.name} | Wonderdesk Showcase`,
+      slug,
+    );
   } catch (error) {
     console.error('Error in generateMetadata:', error);
     return {

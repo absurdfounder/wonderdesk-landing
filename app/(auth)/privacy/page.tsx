@@ -1,46 +1,15 @@
 import Link from 'next/link';
 // Image import is present but not used in this specific policy content
 import Image from 'next/image';
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-  title: 'Wonder Sites Privacy Policy', // Slightly more descriptive title
-  description: 'Privacy Policy for Wonder Sites (wonderdesk.ai)', // Slightly more descriptive
-  alternates: {
-    canonical: "https://wonderdesk.ai/privacy",
-  },
-  openGraph: {
-    title: 'Wonder Sites Privacy Policy', // Consistent title
-    description: 'How Wonder Sites handles your personal information.', // Specific OG description
-    url: "https://wonderdesk.ai/privacy", // Add URL
-    siteName: 'Wonder Sites', // Add site name
-    images: [
-        {
-            url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
-            width: 1200,
-            height: 630,
-            alt: "Wonder Sites - Notion to Website", // More relevant alt text
-        },
-    ],
-    locale: 'en_US', // Optional: Specify locale
-    type: 'website', // Changed from 'article' to 'website' or 'article' if preferred
-},
-twitter: {
-    card: "summary_large_image",
-    title: 'Wonder Sites Privacy Policy', // Consistent title
-    description: 'How Wonder Sites handles your personal information.', // Specific Twitter description
-    // siteId: '@YourTwitterHandle', // Optional: Add Twitter handle ID
-    // creator: '@YourTwitterHandle', // Optional: Add creator handle
-    // creatorId: 'YourTwitterID', // Optional: Add creator ID
-    images: [ // Twitter uses 'images' array like openGraph
-        {
-            url: "https://dazzling-cat.netlify.app/WonderSites_socialshare.png",
-            alt: "Wonder Sites - Notion to Website", // More relevant alt text
-        },
-    ],
-},
-};
-
-export default function PrivacyPolicyPage() { // Renamed component for clarity
+export const metadata = buildPageMetadata({
+  title: "Privacy Policy",
+  description: "How Wonderdesk collects, uses, and protects your data.",
+  canonical: "https://wonderdesk.ai/privacy",
+  ogKind: "page",
+  ogSlug: "privacy",
+});export default function PrivacyPolicyPage() { // Renamed component for clarity
   return (
     <section>
       <div className="max-w-3xl mx-auto px-4 sm:px-6"> {/* Adjusted max-width for readability */}

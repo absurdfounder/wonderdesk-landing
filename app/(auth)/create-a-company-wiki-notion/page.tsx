@@ -19,33 +19,15 @@ import Aos from "aos";
 import 'aos/dist/aos.css'
 
 
-export const metadata = {
-    title: "Get a company wiki with Notion (no-code and free)",
-    description:
-        "Build a company wiki in Notion, with our Notion company wiki maker. Go live in under a minute.  Build your free Wonder  company wiki website in a minute!",
-    alternates: {
-        canonical: "https://wonderdesk.ai/create-a-company-wiki-notion",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontocompanywiki_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a company wiki with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontocompanywiki_socialshare.png",
-                alt: "Get a company wiki with Notion",
-            },
-        ],
-    },
-};
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
+
+export const metadata = buildPageMetadata({
+  title: "Get a company wiki with Notion",
+  description: "Publish an internal company wiki from Notion with Wonderdesk.",
+  canonical: "https://wonderdesk.ai/create-a-company-wiki-notion",
+  ogKind: 'page',
+  ogSlug: "create-a-company-wiki-notion",
+});
 
 export default function PageDetail() {
     return (

@@ -19,37 +19,16 @@ import WondersitesDashboard from "@/components/watchburn";
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
 
-export const metadata = {
-    title: "Get a blog with Notion (no-code and free)",
-    description:
-        "Build a blog in Notion, with our Notion blog maker. Go live in under a minute.  Build your free Wonder  blog website in a minute!",
-    alternates: {
-        canonical: "https://wonderdesk.ai/create-a-blog-notion",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontoblog_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a blog with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontoblog_socialshare.png",
-                alt: "Get a blog with Notion",
-            },
-        ],
-    },
-};
-
-export default function PageDetail() {
+export const metadata = buildPageMetadata({
+  title: "Watch the Burn",
+  description: "Wonder burn tracker and ecosystem updates.",
+  canonical: "https://wonderdesk.ai/watch-the-burn-wonder",
+  ogKind: "page",
+  ogSlug: "watch-the-burn-wonder",
+});export default function PageDetail() {
     return (
 
 

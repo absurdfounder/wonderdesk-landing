@@ -1,36 +1,14 @@
-// app/(auth)/Showcase/page.tsx (Server Component)
-
 import React from "react";
-import { Metadata } from "next";
 import ShowcaseClient from "./ShowcaseClient";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata: Metadata = {
-  title: "Websites built on Wonder Sites – Simple to Use - Transparent Pricing",
-  description:
-    "Explore the websites built on Wonder Sites. From personal projects to enterprise-scale solutions, unlock unlimited AI-powered websites, custom domains, analytics, SEO tools, and more — all built on Notion. Try free for 3 days!",
-    alternates: {
-      canonical: "https://wonderdesk.ai/showcase",
-    },
-  openGraph: {
-    images: [
-      {
-        url: "https://dazzling-cat.netlify.app/notiontohelpdesk_socialshare.png",
-        width: 1200,
-        height: 630,
-        alt: "Wonder Sites Showcase",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: [
-      {
-        url: "https://dazzling-cat.netlify.app/notiontohelpdesk_socialshare.png",
-        alt: "Wonder Sites Showcase",
-      },
-    ],
-  },
-};
+export const metadata = buildPageMetadata({
+  title: "Websites built on Wonderdesk",
+  description: "Explore help centers, blogs, changelogs, and docs published with Wonderdesk.",
+  canonical: "https://wonderdesk.ai/showcase",
+  ogKind: "hub",
+  ogSlug: "showcase",
+});
 
 export default function ShowcasePage() {
   return <ShowcaseClient />;

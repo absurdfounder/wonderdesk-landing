@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "Internal Knowledge Base - Private docs with login required | Wonder",
-    description:
-        "Create a private internal knowledge base with login required. Keep your team documentation secure and accessible only to authorized users.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/internal-knowledge-base",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "Internal Knowledge Base - Private docs with login required",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "Internal Knowledge Base - Private docs with login required",
-            },
-        ],
-    },
-};
-
-export default function InternalKnowledgeBasePage() {
+export const metadata = buildPageMetadata({
+  title: "Internal Knowledge Base - Private docs with login required | Wonder",
+  description: "Create a private internal knowledge base with login required. Keep your team documentation secure and accessible only to authorized users.",
+  canonical: "https://wonderdesk.ai/features/internal-knowledge-base",
+  ogKind: "feature",
+  ogSlug: "internal-knowledge-base",
+});export default function InternalKnowledgeBasePage() {
     return (
         <div>
             <section 

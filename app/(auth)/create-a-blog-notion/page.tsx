@@ -20,33 +20,15 @@ import 'aos/dist/aos.css'
 import HowToBlog from "@/components/HowToBlog";
 
 
-export const metadata = {
-    title: "Get a blog with Notion (no-code and free)",
-    description:
-        "Build a blog in Notion, with our Notion blog maker. Go live in under a minute.  Build your free Wonder  blog website in a minute!",
-    alternates: {
-        canonical: "https://wonderdesk.ai/create-a-blog-notion",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontoblog_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a blog with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontoblog_socialshare.png",
-                alt: "Get a blog with Notion",
-            },
-        ],
-    },
-};
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
+
+export const metadata = buildPageMetadata({
+  title: "Get a blog with Notion (no-code and free)",
+  description: "Build a blog in Notion with Wonderdesk. Go live in under a minute with a free Notion-powered blog website.",
+  canonical: "https://wonderdesk.ai/create-a-blog-notion",
+  ogKind: 'page',
+  ogSlug: "create-a-blog-notion",
+});
 
 export default function PageDetail() {
     return (

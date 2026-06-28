@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "Automated Screenshots - Screenshots that stay current | Wonder",
-    description:
-        "Automated screenshots that stay current. Wonder automatically updates screenshots in your documentation when your product changes.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/automated-screenshots-for-docs",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "Automated Screenshots - Screenshots that stay current",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "Automated Screenshots - Screenshots that stay current",
-            },
-        ],
-    },
-};
-
-export default function AutomatedScreenshotsPage() {
+export const metadata = buildPageMetadata({
+  title: "Automated Screenshots - Screenshots that stay current | Wonder",
+  description: "Automated screenshots that stay current. Wonderdesk automatically updates screenshots in your documentation when your product changes.",
+  canonical: "https://wonderdesk.ai/features/automated-screenshots-for-docs",
+  ogKind: "feature",
+  ogSlug: "automated-screenshots-for-docs",
+});export default function AutomatedScreenshotsPage() {
     return (
         <div>
             <section 

@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "AI Documentation Agent - AI that writes your docs | Wonder",
-    description:
-        "Let AI write your documentation automatically. Wonder's AI agent creates and maintains your docs so you can focus on building.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/ai-documentation-agent",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "AI Documentation Agent - AI that writes your docs",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "AI Documentation Agent - AI that writes your docs",
-            },
-        ],
-    },
-};
-
-export default function AIDocumentationAgentPage() {
+export const metadata = buildPageMetadata({
+  title: "AI Documentation Agent - AI that writes your docs | Wonder",
+  description: "Let AI write your documentation automatically. Wonderdesk's AI agent creates and maintains your docs so you can focus on building.",
+  canonical: "https://wonderdesk.ai/features/ai-documentation-agent",
+  ogKind: "feature",
+  ogSlug: "ai-documentation-agent",
+});export default function AIDocumentationAgentPage() {
     return (
         <div>
             <section 

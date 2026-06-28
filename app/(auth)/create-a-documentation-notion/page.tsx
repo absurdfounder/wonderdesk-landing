@@ -21,33 +21,15 @@ import 'aos/dist/aos.css'
 import HowToProductDocs from "@/components/HowToProductDocs";
 
 
-export const metadata = {
-    title: "Get a documentation with Notion (no-code and free)",
-    description:
-        "Build a documentation in Notion, with our Notion documentation maker. Go live in under a minute.  Build your free Wonder  documentation website in a minute!",
-    alternates: {
-        canonical: "https://wonderdesk.ai/create-a-documentation-notion",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontodocumentation_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a documentation with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontodocumentation_socialshare.png",
-                alt: "Get a documentation with Notion",
-            },
-        ],
-    },
-};
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
+
+export const metadata = buildPageMetadata({
+  title: "Get documentation with Notion",
+  description: "Publish developer and product documentation from Notion with Wonderdesk.",
+  canonical: "https://wonderdesk.ai/create-a-documentation-notion",
+  ogKind: 'page',
+  ogSlug: "create-a-documentation-notion",
+});
 
 export default function PageDetail() {
     return (

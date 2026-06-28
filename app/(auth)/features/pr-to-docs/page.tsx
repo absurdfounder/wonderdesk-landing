@@ -30,36 +30,15 @@ import PrDocsProductFeaturesSection, {
   PR_DOCS_PRODUCT_W,
 } from '@/components/visuals/PrDocsProductFeaturesSection';
 import FeatureVisualStage from '@/components/ui/FeatureVisualStage';
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-  title: 'PR to Docs — Ship features, docs follow | Wonder',
-  description:
-    'Wonder watches your pull requests and drafts help center articles when customer-facing features ship — so your docs stay current without manual work.',
-  alternates: {
-    canonical: 'https://wonderdesk.ai/features/pr-to-docs',
-  },
-  openGraph: {
-    images: [
-      {
-        url: 'https://dazzling-cat.netlify.app/wondercollectivebanner.png',
-        width: 1200,
-        height: 630,
-        alt: 'PR to Docs — Ship features, docs follow',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [
-      {
-        url: 'https://dazzling-cat.netlify.app/wondercollectivebanner.png',
-        alt: 'PR to Docs — Ship features, docs follow',
-      },
-    ],
-  },
-};
-
-export default function PrToDocsPage() {
+export const metadata = buildPageMetadata({
+  title: "PR to Docs — Ship features, docs follow | Wonder",
+  description: "Wonderdesk watches your pull requests and drafts help center articles when customer-facing features ship — so your docs stay current without manual work.",
+  canonical: "https://wonderdesk.ai/features/pr-to-docs",
+  ogKind: "feature",
+  ogSlug: "pr-to-docs",
+});export default function PrToDocsPage() {
   return (
     <div>
       <section

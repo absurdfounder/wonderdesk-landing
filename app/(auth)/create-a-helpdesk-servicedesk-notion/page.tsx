@@ -23,33 +23,15 @@ import 'aos/dist/aos.css'
 import HowToHelpdesk from "@/components/HowToHelpdesk";
 
 
-export const metadata = {
-    title: "Get a help desk with Notion (no-code and free)",
-    description:
-        "Build a help desk in Notion, with our Notion help desk maker. Go live in under a minute.  Build your free Wonder  help desk website in a minute!",
-    alternates: {
-        canonical: "https://wonderdesk.ai/create-a-helpdesk-servicedesk-notion",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontohelpdesk_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a help desk with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontohelpdesk_socialshare.png",
-                alt: "Get a help desk with Notion",
-            },
-        ],
-    },
-};
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
+
+export const metadata = buildPageMetadata({
+  title: "Get a helpdesk with Notion",
+  description: "Launch a customer helpdesk or service desk from Notion with Wonderdesk.",
+  canonical: "https://wonderdesk.ai/create-a-helpdesk-servicedesk-notion",
+  ogKind: 'page',
+  ogSlug: "create-a-helpdesk-servicedesk-notion",
+});
 
 export default function PageDetail() {
     return (

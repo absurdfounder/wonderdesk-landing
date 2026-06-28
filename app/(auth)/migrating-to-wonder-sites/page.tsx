@@ -1,35 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image'
 import Header from '@/components/ui/header';
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: 'Migrate to Wonder  Sites',
-    description: 'Migrate your helpdesk, blog, or even marketplace to Wonder  Sites. Start living a hassle free life just SET and FORGET.',
-    alternates: {
-        canonical: "https://wonderdesk.ai/migrating-to-wonder-sites",
-      },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/WonderSitesmigration_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a Marketplace with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/WonderSitesmigration_socialshare.png",
-                alt: "Get a Marketplace with Notion",
-            },
-        ],
-    },
-}
-
-export default function PageDetail() {
+export const metadata = buildPageMetadata({
+  title: "Migrating to Wonderdesk",
+  description: "Migrate helpdesks, docs, and sites to Wonderdesk publishing.",
+  canonical: "https://wonderdesk.ai/migrating-to-wonder-sites",
+  ogKind: "page",
+  ogSlug: "migrating-to-wonder-sites",
+});export default function PageDetail() {
     return (
         <section >
 

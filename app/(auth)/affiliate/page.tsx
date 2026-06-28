@@ -1,35 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image'
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
 
-export const metadata = {
-  title: 'Affiliate Program',
-  description: 'Join the Wonder affiliate program to become our partner. Spread the website builder and earn money with us.',
-  alternates: {
-    canonical: "https://wonderdesk.ai/affiliate",
-  },
-  openGraph: {
-    images: [
-        {
-            url: "https://dazzling-cat.netlify.app/WonderSitesaffilate_socialshare.png",
-            width: 1200,
-            height: 630,
-            alt: "Get a Marketplace with Notion",
-        },
-    ],
-},
-twitter: {
-    card: "summary_large_image",
-    images: [
-        {
-            url: "https://dazzling-cat.netlify.app/WonderSitesaffilate_socialshare.png",
-            alt: "Get a Marketplace with Notion",
-        },
-    ],
-},
-}
-
-export default function PageDetail() {
+export const metadata = buildPageMetadata({
+  title: "Affiliate Program",
+  description: "Join the Wonderdesk affiliate program to become our partner. Spread AI-powered docs and earn money with us.",
+  canonical: "https://wonderdesk.ai/affiliate",
+  ogKind: "page",
+  ogSlug: "affiliate",
+});export default function PageDetail() {
   return (
     <section >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

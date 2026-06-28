@@ -21,33 +21,15 @@ import CompanyWikiType from "@/components/CompanyWikiType";
 import HowToChangelog from "@/components/HowToChangelog";
 
 
-export const metadata = {
-    title: "Get a directory with Notion (no-code and free)",
-    description:
-        "Build a directory in Notion, with our Notion directory maker. Go live in under a minute.  Build your free Wonder  directory website in a minute!",
-    alternates: {
-        canonical: "https://wonderdesk.ai/create-a-directory-notion",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontodirectory_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a directory with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontodirectory_socialshare.png",
-                alt: "Get a directory with Notion",
-            },
-        ],
-    },
-};
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
+
+export const metadata = buildPageMetadata({
+  title: "Get a changelog with Notion",
+  description: "Ship product updates with a Notion-backed changelog site on Wonderdesk.",
+  canonical: "https://wonderdesk.ai/create-a-changelog-notion",
+  ogKind: 'page',
+  ogSlug: "create-a-changelog-notion",
+});
 
 export default function PageDetail() {
     return (

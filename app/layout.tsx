@@ -7,6 +7,9 @@ import Script from 'next/script'
 
 import Banner from '@/components/banner'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import { ogImageMeta } from '@/lib/og/url'
+
+const homeOg = ogImageMeta('home', 'Wonderdesk — AI help center and knowledge base software')
 
 /** Body — paragraphs, nav, UI */
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
@@ -42,14 +45,7 @@ openGraph: {
   description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.',
   url: 'https://wonderdesk.ai',
     siteName: 'Wonder',
-    images: [
-      {
-        url: 'https://dazzling-cat.netlify.app/WonderSites_socialshare.png',
-        width: 1200,
-        height: 630,
-        alt: 'Get a Marketplace with Notion',
-      },
-    ],
+    images: homeOg.openGraph!.images,
     locale: 'en_US',
     type: 'website',
   },
@@ -57,12 +53,7 @@ twitter: {
   card: 'summary_large_image',
   title: 'Wonderdesk : AI Help Center, Blog, Changelog & Docs That Stay Up to Date',
   description: 'Wonderdesk is the AI-powered platform that writes, updates, and maintains your help center, blog, changelog, and product documentation automatically. Set it up in minutes, keep it current forever.',
-  images: [
-      {
-        url: 'https://dazzling-cat.netlify.app/WonderSites_socialshare.png',
-        alt: 'Get a Marketplace with Notion',
-      },
-    ],
+  images: homeOg.twitter!.images,
     site: '@WonderDeskAI',
   },
   icons: {

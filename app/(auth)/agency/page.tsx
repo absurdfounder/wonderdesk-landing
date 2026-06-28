@@ -1,36 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image'
 import Header from '@/components/ui/header';
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
 
-export const metadata = {
-    title: 'Hire a Wonder  Expert',
-    description: 'Hire Wonder  Agency when your ready to grow beyond we can help setup, design and manage your helpdesk, blog, or even marketplace. Also add custom code to your website deployment to make sure your needs are always met.',
-    alternates: {
-        canonical: "https://wonderdesk.ai/agency",
-      },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/WonderSitesmigration_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a Marketplace with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/WonderSitesmigration_socialshare.png",
-                alt: "Get a Marketplace with Notion",
-            },
-        ],
-    },
-}
-
-export default function PageDetail() {
+export const metadata = buildPageMetadata({
+  title: "Agency Program",
+  description: "Deploy Wonderdesk help centers and knowledge bases for agency clients.",
+  canonical: "https://wonderdesk.ai/agency",
+  ogKind: "page",
+  ogSlug: "agency",
+});export default function PageDetail() {
     return (
         <section >
             <Header/>

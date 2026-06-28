@@ -2,34 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image'
 import Header from '@/components/ui/header';
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
 import { _loadFromJson } from '@/app/utils/helper';
-export const metadata = {
-  title: 'Wonder Integrations',
-  description: 'Integrate with your stack and extend functionality with powerful integrations built by us and our amazing community.',
-  alternates: {
-    canonical: "https://wonderdesk.ai/integration",
-  },
-  openGraph: {
-    images: [
-        {
-            url: "https://dazzling-cat.netlify.app/WonderSitesintegrations_socialshare.png",
-            width: 1200,
-            height: 630,
-            alt: "Get a Marketplace with Notion",
-        },
-    ],
-},
-twitter: {
-    card: "summary_large_image",
-    images: [
-        {
-            url: "https://dazzling-cat.netlify.app/WonderSitesintegrations_socialshare.png",
-            alt: "Get a Marketplace with Notion",
-        },
-    ],
-},
-}
+export const metadata = buildPageMetadata({
+  title: 'Wonderdesk Integrations',
+  description: 'Integrate with your stack and extend Wonderdesk with powerful integrations built by us and our community.',
+  canonical: 'https://wonderdesk.ai/integration',
+  ogKind: 'hub',
+  ogSlug: 'integration',
+});
 const Integration = async () => {
   const integrations = await _loadFromJson(false);
   return (

@@ -20,33 +20,15 @@ import Aos from "aos";
 import 'aos/dist/aos.css'
 
 
-export const metadata = {
-    title: "Get a Marketplace with Notion (no-code and free)",
-    description:
-        "Build a marketplace in Notion, with our Notion marketplace maker. Go live in under a minute.  Build your free Wonder  marketplace website in a minute!",
-    alternates: {
-        canonical: "https://wonderdesk.ai/create-a-company-wiki-notion",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontomarketplace_socialshare.png",
-                width: 1200,
-                height: 630,
-                alt: "Get a Marketplace with Notion",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/notiontomarketplace_socialshare.png",
-                alt: "Get a Marketplace with Notion",
-            },
-        ],
-    },
-};
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
+
+export const metadata = buildPageMetadata({
+  title: "Get a marketplace with Notion",
+  description: "Launch a two-sided marketplace site with Notion as your CMS on Wonderdesk.",
+  canonical: "https://wonderdesk.ai/create-a-marketplace-notion",
+  ogKind: 'page',
+  ogSlug: "create-a-marketplace-notion",
+});
 
 export default function PageDetail() {
     return (

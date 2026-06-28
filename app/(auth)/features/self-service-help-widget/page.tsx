@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "Self-Service Help Widget - Embed help in your product | Wonder",
-    description:
-        "Embed help directly in your product with Wonder's self-service widget. Reduce support tickets and help customers find answers instantly.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/self-service-help-widget",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "Self-Service Help Widget - Embed help in your product",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "Self-Service Help Widget - Embed help in your product",
-            },
-        ],
-    },
-};
-
-export default function SelfServiceHelpWidgetPage() {
+export const metadata = buildPageMetadata({
+  title: "Self-Service Help Widget - Embed help in your product | Wonder",
+  description: "Embed help directly in your product with Wonderdesk's self-service widget. Reduce support tickets and help customers find answers instantly.",
+  canonical: "https://wonderdesk.ai/features/self-service-help-widget",
+  ogKind: "feature",
+  ogSlug: "self-service-help-widget",
+});export default function SelfServiceHelpWidgetPage() {
     return (
         <div>
             <section 

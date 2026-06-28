@@ -4,36 +4,15 @@ import Header from "@/components/ui/header";
 import FeaturesBlocks from "@/components/FeaturesBlocks";
 import Testimonials from "@/components/testimonials";
 import ModalVideo from "@/components/FullModalVideo";
+import { buildPageMetadata } from '@/lib/og/buildMetadata';
 
-export const metadata = {
-    title: "Code to Help Docs - Sync docs with your code | Wonder",
-    description:
-        "Sync your documentation with your codebase automatically. Wonder generates docs from your code and keeps them in sync.",
-    alternates: {
-        canonical: "https://wonderdesk.ai/features/code-to-docs",
-    },
-    openGraph: {
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                width: 1200,
-                height: 630,
-                alt: "Code to Help Docs - Sync docs with your code",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        images: [
-            {
-                url: "https://dazzling-cat.netlify.app/wondercollectivebanner.png",
-                alt: "Code to Help Docs - Sync docs with your code",
-            },
-        ],
-    },
-};
-
-export default function CodeToDocsPage() {
+export const metadata = buildPageMetadata({
+  title: "Code to Help Docs - Sync docs with your code | Wonder",
+  description: "Sync your documentation with your codebase automatically. Wonderdesk generates docs from your code and keeps them in sync.",
+  canonical: "https://wonderdesk.ai/features/code-to-docs",
+  ogKind: "feature",
+  ogSlug: "code-to-docs",
+});export default function CodeToDocsPage() {
     return (
         <div>
             <section 
